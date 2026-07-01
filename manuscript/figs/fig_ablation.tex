@@ -1,0 +1,18 @@
+\begin{tikzpicture}
+\begin{axis}[xbar, bar width=5pt, width=9.2cm, height=5.0cm, symbolic y coords={multi-scale fusion,edge gating,calibrated uncertainty,boundary-contrastive loss}, ytick={multi-scale fusion,edge gating,calibrated uncertainty,boundary-contrastive loss},
+  y tick label style={font=\scriptsize}, tick label style={font=\scriptsize}, xmin=-0.10, xmax=0.36,  xlabel={$\Delta$ARI when the component is removed (positive $=$ it earns its place)}, xlabel style={font=\small},  nodes near coords, nodes near coords style={font=\tiny}, every node near coord/.append style={/pgf/number format/.cd, fixed, precision=2, print sign},  enlarge y limits=0.18, legend style={font=\scriptsize, at={(0.98,0.05)}, anchor=south east, draw=none}, legend cell align=left]
+\addplot[draw=black!40, fill=tblue] coordinates {
+  (0.283,boundary-contrastive loss)
+  (0.047,calibrated uncertainty)
+  (-0.007,edge gating)
+  (-0.006,multi-scale fusion)
+}; \addlegendentry{MERFISH}
+\addplot[draw=black!40, fill=torange] coordinates {
+  (0.245,boundary-contrastive loss)
+  (-0.002,calibrated uncertainty)
+  (-0.019,edge gating)
+  (-0.034,multi-scale fusion)
+}; \addlegendentry{osmFISH}
+\draw[black, thick] ({axis cs:0,boundary-contrastive loss}|-{rel axis cs:0,0}) -- ({axis cs:0,boundary-contrastive loss}|-{rel axis cs:0,1});
+\end{axis}
+\end{tikzpicture}

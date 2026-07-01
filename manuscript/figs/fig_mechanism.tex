@@ -1,0 +1,38 @@
+\begin{tikzpicture}
+\begin{axis}[width=8.4cm, height=5.8cm, xlabel={GT contiguity (manipulated: scramble $1.0\rightarrow0.0$)},ylabel={ARI / advantage ($\Delta$ARI)}, label style={font=\small}, tick label style={font=\scriptsize},ymin=-0.45, ymax=0.82,legend style={font=\scriptsize, at={(0.02,0.98)}, anchor=north west, draw=none}, legend cell align=left]
+\addplot[color=tgreen, mark=*, mark size=1.6pt, thick] coordinates {
+  (0.181,-0.343)
+  (0.197,-0.344)
+  (0.255,-0.331)
+  (0.363,-0.262)
+  (0.487,-0.132)
+  (0.649,0.089)
+  (0.764,0.295)
+  (0.901,0.480)
+};
+\addlegendentry{advantage, neighbour-mean ($\rho=+0.98$)}
+\addplot[color=tblue, mark=square*, mark size=1.6pt, thick] coordinates {
+  (0.181,-0.329)
+  (0.197,-0.324)
+  (0.255,-0.303)
+  (0.363,-0.204)
+  (0.487,-0.085)
+  (0.649,0.160)
+  (0.764,0.355)
+  (0.901,0.542)
+};
+\addlegendentry{advantage, STAGATE ($\rho=+1.00$)}
+\addplot[color=black!50, mark=triangle*, mark size=1.6pt, thick] coordinates {
+  (0.181,0.345)
+  (0.197,0.345)
+  (0.255,0.345)
+  (0.363,0.345)
+  (0.487,0.345)
+  (0.649,0.345)
+  (0.764,0.345)
+  (0.901,0.345)
+};
+\addlegendentry{non-spatial ARI (control: flat)}
+\draw[tred, dashed] ({rel axis cs:0,0}|-{axis cs:0,0}) -- ({rel axis cs:1,0}|-{axis cs:0,0});
+\end{axis}
+\end{tikzpicture}

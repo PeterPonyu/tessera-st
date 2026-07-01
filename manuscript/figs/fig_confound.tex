@@ -1,0 +1,17 @@
+\begin{tikzpicture}
+\begin{groupplot}[group style={group size=2 by 1, horizontal sep=2.2cm},width=7.0cm, height=5.2cm, tick label style={font=\scriptsize}, title style={font=\small}, label style={font=\small}]
+\nextgroupplot[xbar, /pgf/bar width=8pt, bar shift=0pt, title={(a) marginal $\rho$ vs advantage}, symbolic y coords={modality,dim,K,contiguity}, ytick={modality,dim,K,contiguity}, y tick label style={font=\scriptsize}, xmin=-0.8, xmax=0.9, nodes near coords, nodes near coords style={font=\tiny}, every node near coord/.append style={/pgf/number format/.cd, fixed, precision=2}]
+\addplot+[xbar, draw=black!40, fill=tblue] coordinates {(0.724,contiguity)};
+\addplot+[xbar, draw=black!40, fill=tgray] coordinates {(-0.567,K)};
+\addplot+[xbar, draw=black!40, fill=tgray] coordinates {(-0.352,dim)};
+\addplot+[xbar, draw=black!40, fill=tgray] coordinates {(0.389,modality)};
+\nextgroupplot[ybar, /pgf/bar width=14pt, title={(b) contiguity partial $\rho$}, symbolic x coords={K,dim,modality}, xtick=data, x tick label style={font=\scriptsize}, ymin=0, ymax=1, ylabel={partial $\rho$}, nodes near coords, nodes near coords style={font=\tiny}]
+\addplot+[ybar, draw=black!40, fill=tgreen] coordinates {
+  (K,0.552)
+  (dim,0.861)
+  (modality,0.801)
+};
+\draw[tred, dashed, thick] ({rel axis cs:0,0}|-{axis cs:K,0.667}) -- ({rel axis cs:1,0}|-{axis cs:modality,0.667});
+\node[font=\tiny, tred, anchor=north east] at (rel axis cs:1,1) {control all $=0.67$};
+\end{groupplot}
+\end{tikzpicture}

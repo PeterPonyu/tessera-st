@@ -1,0 +1,47 @@
+% Mechanism schematic (hand-written TikZ). Compiled with lualatex; \input directly into paper.tex.
+% Replaces the README ASCII diagram: the candidate boundary-aware method, in one figure.
+% Colours (tblue/tgreen/torange/tred/tgray) are defined once in paper.tex's preamble.
+\begin{tikzpicture}[
+    font=\small,
+    >={Stealth[round]},
+    box/.style={rounded corners=2pt, draw=black!55, fill=#1, minimum height=8mm,
+                inner sep=4pt, align=center, text width=22mm},
+    data/.style={box=tblue!10}, op/.style={box=torange!14}, res/.style={box=tgreen!14},
+    outbox/.style={box=tred!12},
+    lbl/.style={font=\footnotesize\itshape, text=black!60},
+    arr/.style={->, thick, draw=black!60},
+]
+
+% ---------- main forward path ----------
+\node[data] (expr)  at (0,0)    {expression\\over spatial\\$k$NN graph};
+\node[op]   (gate)  at (3.2,0)  {edge gating\\$g_{ij}\!\in\![0,1]$};
+\node[op]   (mp)    at (6.4,0)  {edge-gated\\message passing};
+\node[op]   (fuse)  at (9.6,0)  {multi-scale\\fusion};
+\node[res]  (emb)   at (12.6,0) {embedding};
+
+\draw[arr] (expr) -- (gate);
+\draw[arr] (gate) -- (mp);
+\draw[arr] (mp)   -- (fuse);
+\draw[arr] (fuse) -- (emb);
+
+% the anti-over-smoothing annotation on the gate
+\node[lbl, align=center, text width=34mm] at (4.8,1.35)
+  {$g_{ij}\!\rightarrow\!0$: \textbf{stop smoothing} across a seam};
+\draw[->, draw=tred!70, thick] (4.8,1.0) -- (gate.north);
+
+% ---------- three first-class outputs ----------
+\node[outbox] (dom)  at (12.6,-2.2) {spatial\\domains};
+\node[outbox] (bmap) at (9.0,-2.2)  {\textbf{boundary}\\\textbf{map}};
+\node[outbox] (conf) at (5.4,-2.2)  {calibrated\\confidence};
+
+\draw[arr] (emb)  -- (dom);
+\draw[arr] (gate.south) -- (bmap.north);
+\draw[arr] (fuse.south) -- (conf.north);
+
+\node[lbl, align=center, text width=90mm] at (9.0,-3.35)
+  {boundaries are a \emph{first-class output}, not an argmax by-product of a smoothed embedding};
+
+% loss tag between the forward path and the outputs
+\node[lbl] at (8.2,-1.0) {recon.\ $+$ boundary-contrastive loss};
+
+\end{tikzpicture}

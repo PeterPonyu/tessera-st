@@ -1,0 +1,68 @@
+\begin{tikzpicture}
+\begin{groupplot}[group style={group size=2 by 1, horizontal sep=1.7cm},width=7.4cm, height=6.0cm, tick label style={font=\scriptsize}, clip=false,label style={font=\small}, title style={font=\small}, axis lines=left]
+\nextgroupplot[xlabel={GT spatial contiguity (oracle)}, ylabel={spatial-prior advantage ($\Delta$ARI)}, title={(a) oracle law: $\rho=+0.72$}, xmin=0.002, xmax=0.951]
+\addplot[domain=0.002:0.951, dashed, draw=tgray, thick]{0.2092*x+-0.0384};
+\addplot[black, dotted] coordinates {(0.002,0)(0.951,0)};
+\addplot[only marks, mark=*, mark size=1.6pt, color=tblue] coordinates {
+  (0.905,0.101)
+  (0.621,-0.005)
+  (0.931,0.314)
+  (0.921,0.168)
+  (0.817,0.196)
+  (0.271,0.022)
+  (0.865,0.042)
+  (0.630,0.139)
+  (0.562,-0.005)
+  (0.274,0.008)
+  (0.022,0.024)
+};
+\node[font=\tiny, anchor=west, inner sep=1.5pt] at (axis cs:0.933,0.101) {DLPFC};
+\node[font=\tiny, anchor=west, inner sep=1.5pt] at (axis cs:0.649,-0.005) {seqFISH};
+\node[font=\tiny, anchor=west, inner sep=1.5pt] at (axis cs:0.959,0.314) {MERFISH};
+\node[font=\tiny, anchor=west, inner sep=1.5pt] at (axis cs:0.949,0.168) {STARmap};
+\node[font=\tiny, anchor=west, inner sep=1.5pt] at (axis cs:0.845,0.196) {osmFISH};
+\draw[very thin, tgray] (axis cs:0.271,0.022) -- (axis cs:0.299,0.043);
+\node[font=\tiny, anchor=west, inner sep=1.5pt] at (axis cs:0.299,0.043) {MIBI-TOF};
+\draw[very thin, tgray] (axis cs:0.865,0.042) -- (axis cs:0.893,0.075);
+\node[font=\tiny, anchor=west, inner sep=1.5pt] at (axis cs:0.893,0.075) {BRCA};
+\node[font=\tiny, anchor=west, inner sep=1.5pt] at (axis cs:0.658,0.139) {IMC};
+\draw[very thin, tgray] (axis cs:0.562,-0.005) -- (axis cs:0.590,0.011);
+\node[font=\tiny, anchor=west, inner sep=1.5pt] at (axis cs:0.590,0.011) {Open-ST};
+\draw[very thin, tgray] (axis cs:0.274,0.008) -- (axis cs:0.302,0.027);
+\node[font=\tiny, anchor=west, inner sep=1.5pt] at (axis cs:0.302,0.027) {Slide-seqV2};
+\draw[very thin, tgray] (axis cs:0.022,0.024) -- (axis cs:0.050,0.059);
+\node[font=\tiny, anchor=west, inner sep=1.5pt] at (axis cs:0.050,0.059) {CODEX};
+\nextgroupplot[xlabel={\texttt{coh\_gain} (label-free)}, ylabel={spatial-prior advantage ($\Delta$ARI)}, title={(b) label-free proxy: $\rho=+0.55$}, xmin=0.114, xmax=0.547]
+\addplot[domain=0.114:0.547, dashed, draw=tgray, thick]{0.4880*x+-0.0627};
+\addplot[black, dotted] coordinates {(0.114,0)(0.547,0)};
+\addplot[only marks, mark=*, mark size=1.6pt, color=tgreen] coordinates {
+  (0.363,0.101)
+  (0.326,-0.005)
+  (0.365,0.314)
+  (0.527,0.168)
+  (0.428,0.196)
+  (0.288,0.022)
+  (0.134,0.042)
+  (0.267,0.139)
+  (0.260,-0.005)
+  (0.341,0.008)
+  (0.171,0.024)
+};
+\node[font=\tiny, anchor=west, inner sep=1.5pt] at (axis cs:0.376,0.101) {DLPFC};
+\node[font=\tiny, anchor=west, inner sep=1.5pt] at (axis cs:0.339,-0.005) {seqFISH};
+\node[font=\tiny, anchor=west, inner sep=1.5pt] at (axis cs:0.378,0.314) {MERFISH};
+\node[font=\tiny, anchor=west, inner sep=1.5pt] at (axis cs:0.540,0.168) {STARmap};
+\node[font=\tiny, anchor=west, inner sep=1.5pt] at (axis cs:0.441,0.196) {osmFISH};
+\draw[very thin, tgray] (axis cs:0.288,0.022) -- (axis cs:0.301,0.043);
+\node[font=\tiny, anchor=west, inner sep=1.5pt] at (axis cs:0.301,0.043) {MIBI-TOF};
+\draw[very thin, tgray] (axis cs:0.134,0.042) -- (axis cs:0.147,0.075);
+\node[font=\tiny, anchor=west, inner sep=1.5pt] at (axis cs:0.147,0.075) {BRCA};
+\node[font=\tiny, anchor=west, inner sep=1.5pt] at (axis cs:0.280,0.139) {IMC};
+\draw[very thin, tgray] (axis cs:0.260,-0.005) -- (axis cs:0.273,0.011);
+\node[font=\tiny, anchor=west, inner sep=1.5pt] at (axis cs:0.273,0.011) {Open-ST};
+\draw[very thin, tgray] (axis cs:0.341,0.008) -- (axis cs:0.354,0.027);
+\node[font=\tiny, anchor=west, inner sep=1.5pt] at (axis cs:0.354,0.027) {Slide-seqV2};
+\draw[very thin, tgray] (axis cs:0.171,0.024) -- (axis cs:0.184,0.059);
+\node[font=\tiny, anchor=west, inner sep=1.5pt] at (axis cs:0.184,0.059) {CODEX};
+\end{groupplot}
+\end{tikzpicture}

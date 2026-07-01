@@ -1,0 +1,17 @@
+\begin{tikzpicture}
+\begin{axis}[ybar, /pgf/bar width=10pt, width=8.4cm, height=5.4cm, symbolic x coords={moran,rawcoh,cohgain}, xtick=data, xticklabels={Moran $I$,raw coh.,\texttt{coh\_gain}},
+  ylabel={Spearman $\rho$}, label style={font=\small}, tick label style={font=\scriptsize}, ymin=-0.6, ymax=0.9,  enlarge x limits=0.25, legend style={font=\scriptsize, at={(0.5,1.03)}, anchor=south, legend columns=2, draw=none}, legend cell align=left]
+\addplot[draw=black!40, fill=tblue!50] coordinates {
+  (moran,0.218)
+  (rawcoh,0.127)
+  (cohgain,0.564)
+}; \addlegendentry{$\rho$ vs GT contiguity}
+\addplot[draw=black!40, fill=torange] coordinates {
+  (moran,-0.337)
+  (rawcoh,-0.424)
+  (cohgain,0.551)
+}; \addlegendentry{$\rho$ vs spatial advantage}
+\draw[tblue, dotted, thick] ({rel axis cs:0,0}|-{axis cs:moran,0.724}) -- ({rel axis cs:1,0}|-{axis cs:cohgain,0.724});
+\node[font=\tiny, tblue, anchor=north west] at (rel axis cs:0.02,0.84) {oracle $\rho=+0.72$};
+\end{axis}
+\end{tikzpicture}

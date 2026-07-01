@@ -1,0 +1,29 @@
+\begin{tikzpicture}
+\begin{groupplot}[group style={group size=2 by 1, horizontal sep=2.4cm},width=6.6cm, height=5.6cm, tick label style={font=\scriptsize}, title style={font=\small}, label style={font=\small}]
+\nextgroupplot[title={(a) published vs mclust-backend advantage}, xlabel={published (GMM-tied)}, ylabel={mclust-style backend}, xmin=-0.048, xmax=0.345, ymin=-0.048, ymax=0.345, axis equal image]
+\addplot[domain=-0.048:0.345, dashed, draw=tgray]{x};
+\addplot[only marks, mark=*, mark size=1.5pt, color=tpurple] coordinates {
+  (0.101,0.113)
+  (-0.005,0.008)
+  (0.314,0.325)
+  (0.168,0.171)
+  (0.196,0.255)
+  (0.022,0.042)
+  (0.042,0.067)
+  (0.139,0.284)
+  (-0.005,0.010)
+  (0.008,0.004)
+  (0.024,-0.028)
+};
+\nextgroupplot[xbar, /pgf/bar width=6pt, bar shift=0pt, title={(b) mean $\Delta$ARI vs published}, symbolic y coords={SpatialLeiden,floor:smoothed,floor:nonspatial,BANKSY-style,GraphST,SpaceFlow,SEDR,STAGATE,Tessera}, ytick={SpatialLeiden,floor:smoothed,floor:nonspatial,BANKSY-style,GraphST,SpaceFlow,SEDR,STAGATE,Tessera}, y tick label style={font=\tiny}, xlabel={mean $\Delta$ARI}, enlarge y limits=0.08]
+\addplot+[xbar, draw=black!40, fill=tpurple!70] coordinates {(0.0090,Tessera)};
+\addplot+[xbar, draw=black!40, fill=tpurple!70] coordinates {(0.0160,STAGATE)};
+\addplot+[xbar, draw=black!40, fill=tpurple!70] coordinates {(0.0010,SEDR)};
+\addplot+[xbar, draw=black!40, fill=tpurple!70] coordinates {(0.0120,SpaceFlow)};
+\addplot+[xbar, draw=black!40, fill=tpurple!70] coordinates {(0.0120,GraphST)};
+\addplot+[xbar, draw=black!40, fill=tpurple!70] coordinates {(-0.0000,BANKSY-style)};
+\addplot+[xbar, draw=black!40, fill=tpurple!70] coordinates {(-0.0040,floor:nonspatial)};
+\addplot+[xbar, draw=black!40, fill=tpurple!70] coordinates {(0.0150,floor:smoothed)};
+\addplot+[xbar, draw=black!40, fill=tpurple!70] coordinates {(0.0060,SpatialLeiden)};
+\end{groupplot}
+\end{tikzpicture}

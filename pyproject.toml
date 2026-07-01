@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tessera-st"
+version = "0.0.0.dev0"
+description = "Boundary-aware, multi-scale spatial-domain detection for spatial transcriptomics — learning where to stop smoothing."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "PeterPonyu", email = "fuzeyu09@gmail.com" }]
+dependencies = ["numpy>=1.26,<3", "scikit-learn>=1.3"]
+
+[project.optional-dependencies]
+# torch is the deep-compute core. Kept optional so contract/metric tests can run
+# CPU-only and offline without a GPU build; torch-dependent tests importorskip.
+torch = ["torch>=2.2"]
+# real-data: anndata h5ad loading for the DLPFC adapter boundary only. Preprocessing is
+# numpy+sklearn (no scanpy/numba), so this stays a single light dep. Opt-in.
+real-data = ["anndata>=0.10"]
+test = ["pytest>=8,<9"]
+dev = ["ruff>=0.5,<0.16", "mypy>=1.8"]
+# Manuscript figures are vector .tex built by manuscript/make_figs.R (R + pgfplots/TikZ,
+# compiled with lualatex); the Python side only exports tidy CSV via experiments/export_*.py
+# using the numpy+sklearn core, so there is no Python plotting dependency.
+
+[project.scripts]
+tessera = "tessera_st.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/PeterPonyu/tessera-st"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+src = ["src", "tests"]
+target-version = "py313"   # matches the `dl` conda env (Python 3.13)
+
+[tool.pyright]
+# This is a scientific-Python repo; the static checker false-positives on dynamically-typed
+# libraries (scipy SignificanceResult `.correlation`/`.pvalue`, sparse `.toarray`, heterogeneous
+# result dicts, sklearn arg stubs) and on baseline methods imported via runtime sys.path inserts
+# (STAGATE/SEDR/GraphST/SpaceFlow/SpaGCN). These are not bugs — pytest passes and every experiment
+# runs. We silence those specific categories while KEEPING real-bug rules (undefined variables,
+# self/None access) ON — e.g. the missing `import os` that crashed a run was a genuine catch.
+pythonVersion = "3.13"
+reportMissingImports = "none"          # runtime-path baseline imports
+reportAttributeAccessIssue = "none"    # scipy .correlation/.pvalue, sparse .toarray
+reportArgumentType = "none"            # sklearn n_init stubs, heterogeneous dict values
+reportPrivateImportUsage = "none"      # torch.device
+reportOptionalMemberAccess = "none"    # AnnData .X union narrowing
+reportCallIssue = "none"
+# kept ON (catch real bugs): reportUndefinedVariable, reportSelfClsParameterName, etc.
