@@ -32,7 +32,12 @@ WHAT IT DOES (when the user runs it)
        (b) the +0.72 law holds with the HMRF family in the panel.
 
 DEPENDENCIES (the reason this is staged, not run in-place)
-    * R + Bioconductor:  BiocManager::install(c("BayesSpace", "SingleCellExperiment"))
+    * R + Bioconductor:  run  Rscript experiments/install_bayesspace.R  (NOT a bare
+      BiocManager::install(c("BayesSpace","SingleCellExperiment")): on this toolchain --- system R
+      4.3.3 + current RcppArmadillo >=15 (needs C++14+) vs BayesSpace 1.12.0's CXX_STD=CXX11 --- the
+      naive install fails the Armadillo C++14 compiler check; the helper adds a scoped
+      CXX11STD=-std=gnu++17 override so the pinned C++11 build compiles as C++17. Verified working:
+      BayesSpace 1.12.0 + SingleCellExperiment 1.24.0 load and run under R 4.3.3.)
       BayesSpace is R-only. This repo already shells out to R for one thing --- mclust, via
       experiments/_mclust.R called with `Rscript` + a CSV round-trip (rpy2 does not build on this
       Python 3.13 env). BayesSpace reuses that exact pattern through the sibling worker
