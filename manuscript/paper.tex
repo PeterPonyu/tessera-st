@@ -114,6 +114,24 @@ aware iterative clustering \citep{hu2021spagcn}. Non-deep pipelines include BANK
 cell with neighbourhood features \citep{singhal2024banksy}, and graph-community detection via the Leiden
 algorithm \citep{traag2019leiden} on a spatially blended graph.
 
+\paragraph{Boundary-aware and anti-over-smoothing methods, and ensemble alternatives.} A parallel
+2025--2026 line targets exactly the boundary-degradation symptom our worked example (\S\ref{sec:tessera})
+is built around---that local graph smoothing blurs the spots near domain seams---but answers it with
+architecture, not a predictive law. Spotscape \citep{oh2025spotscape} diagnoses the symptom most sharply,
+showing with its own boundary-focused metric (``Boundary-CA'') that an attention-based edge weighting can
+raise overall clustering accuracy while leaving boundary spots no better than a plain graph autoencoder;
+its remedy is architecturally opposite to a local edge gate---a global, non-local similarity-consistency
+objective. DWGCN \citep{peng2026dwgcn} replaces uniform spatial adjacency with a fixed inverse-distance
+weighting and reports, as a purely correlational observation, that its gains grow with the ground truth's
+domain-count complexity: a partial, non-formalised precedent for the direction of our law, but never
+framed as a causal claim that the value of a spatial prior is \emph{set} by ground-truth contiguity.
+SpatialESD \citep{cao2025spatialesd} responds to the same ``no single method dominates across datasets''
+fact we document (\S\ref{sec:nosota}), but with an engineering fix---consensus-ensembling several domain
+detectors---rather than an account of \emph{when} a spatial prior is warranted at all. None of these runs
+a controlled contiguity perturbation, and none validates a label-free proxy against a held-out
+spatial-advantage target; the causal-contiguity law developed here is complementary to their
+architectural and ensembling advances rather than a rival to any one of them.
+
 \paragraph{Benchmarking and backends.} Comparisons typically fix one Visium benchmark
 \citep{maynard2021dlpfc} and one clustering backend, often Gaussian mixture model selection via mclust
 \citep{scrucca2016mclust}. We show both choices silently re-rank methods.
@@ -187,14 +205,20 @@ Our predictor is rooted in spatial autocorrelation \citep{moran1950}; clustering
 with the adjusted Rand index \citep{hubert1985ari} and normalised mutual information \citep{strehl2002nmi}.
 Data handling uses Scanpy \citep{wolf2018scanpy} and Squidpy \citep{palla2022squidpy}.
 
-\section{Methods}\label{sec:methods}
+\section{Methods}
 \subsection{Data}
 We assemble 11 datasets spanning sequencing- and imaging-based assays, tissues, and
 GT types (Table~\ref{tab:data}): DLPFC Visium \citep{maynard2021dlpfc}, seqFISH mouse embryo
 \citep{lohoff2022seqfish}, MERFISH hypothalamus \citep{moffitt2018merfish}, STARmap cortex
 \citep{wang2018starmap}, osmFISH cortex \citep{codeluppi2018osmfish}, MIBI-TOF \citep{keren2018mibitof},
 breast IMC \citep{jackson2020imc}, Open-ST \citep{schott2024openst}, Slide-seqV2 \citep{stickels2021slideseq},
-and CODEX spleen \citep{goltsev2018codex}, accessed via Squidpy \citep{palla2022squidpy} where applicable. A review-caught byte-duplicate dataset was removed and a duplicate guard
+and CODEX spleen \citep{goltsev2018codex}, accessed via Squidpy \citep{palla2022squidpy} where applicable.
+% TODO(user): this sentence enumerates only 10 of the n=11 datasets -- BRCA Visium (Table~\ref{tab:data};
+% n=3,798, K=20, contiguity 0.865) is MISSING from this list, has no \citep anywhere in the paper, and is
+% absent from the Data-availability section. Insert "BRCA <tissue> \citep{<brcakey>}" here, add the matching
+% entry to refs.bib, and add BRCA to the Data-availability list -- using the REAL accession, not a fabricated
+% one. Alternative path (drop BRCA -> n=10): see build report for the exact count/stat edits required.
+A review-caught byte-duplicate dataset was removed and a duplicate guard
 added, giving $n{=}11$; three additional cancer datasets extend a robustness analysis to
 $n{=}14$. Large datasets are deterministically subsampled to 16{,}000 cells (logged). Counts are
 library-size normalised and log-transformed; for panels with $>500$ features the top-3000
@@ -244,6 +268,11 @@ Dataset & Modality & GT type & $n$ cells & $K$ & contiguity\\
 MERFISH      & imaging (FISH)      & domain     & 5{,}488  & 8  & 0.931\\
 STARmap      & imaging (FISH)      & region     & 1{,}207  & 7  & 0.921\\
 DLPFC        & Visium (seq.)       & layer      & 3{,}639  & 7  & 0.905\\
+% TODO(user): BRCA is dataset #11 in this table but has NO \citep here, is absent from the Methods
+% "Data" prose above (which enumerates only 10 datasets), and is missing from the Data-availability
+% section. Supply the REAL accession + citation: add a @article{...} for BRCA to refs.bib and cite it
+% on this row, in the Data prose, and in the Data-availability list. Do NOT fabricate an accession/DOI.
+% Alternative path (drop BRCA -> n=10): see build report for the exact count/stat edits required.
 BRCA         & Visium (seq.)       & tumour     & 3{,}798  & 20 & 0.865\\
 osmFISH      & imaging (FISH)      & region     & 5{,}328  & 12 & 0.817\\
 IMC          & imaging (protein)   & cell type  & 4{,}668  & 11 & 0.630\\
@@ -301,9 +330,8 @@ GraphST          & 0.099 & $0.291\pm0.042$\\
 \resizebox{\linewidth}{!}{\input{figs/fig_spatialmap}}
 \caption{Why a spatial prior helps when the ground truth is contiguous (synthetic tessellation,
 signal-to-noise tuned so space is necessary). A non-spatial KMeans scatters the contiguous domains while a
-parameter-free neighbour-mean smoother recovers them (each panel title gives its ARI); the predicted seams
+parameter-free neighbour-mean smoother recovers them (each clustering panel title gives its ARI); the predicted seams
 (right) are an explicit output of the smoother rather than a by-product of the argmax.}
-\label{fig:spatialmap}
 \end{figure}
 
 \section{No universal winner across methods}\label{sec:nosota}
@@ -336,7 +364,7 @@ winner's best-config mean.}
 \begin{figure}[htbp]\centering
 \resizebox{0.95\linewidth}{!}{\input{figs/fig_profile}}
 \caption{Per-method rank versus GT contiguity. Method--task fit is method-specific: SpatialLeiden's profile
-is inverted (wins low-contiguity datasets, last on high-contiguity MERFISH).}
+is inverted (ranks first or second on the low-contiguity datasets, last on high-contiguity MERFISH).}
 \label{fig:profile}
 \end{figure}
 
@@ -345,8 +373,8 @@ is inverted (wins low-contiguity datasets, last on high-contiguity MERFISH).}
 \caption{The complete benchmark: ARI of every method (rows, ordered by mean ARI) on every dataset
 (columns, ordered by GT contiguity, low~$\rightarrow$~high). The black-outlined cell is each dataset's
 winner; it moves across rows, and no method dominates a contiguity band. SEDR, STAGATE, SpaceFlow, Tessera,
-BANKSY-style, SpatialLeiden, and the non-spatial floor each win somewhere, and the high-contiguity column
-(right) is a near-tie, showing the lack of a universal SOTA directly.}
+BANKSY-style, SpatialLeiden, and the non-spatial floor each win somewhere, and the winner in the high-contiguity column
+(right, MERFISH) is a near-tie (SpaceFlow vs.\ Tessera), showing the lack of a universal SOTA directly.}
 \label{fig:heatmap}
 \end{figure}
 
@@ -456,7 +484,7 @@ only the smoothing-gain proxy \texttt{coh\_gain} recovers the sign of the GT-bas
 \label{fig:proxy}
 \end{figure}
 
-\section{Backend fairness: the law is not a backend artifact}\label{sec:backend}
+\section{Backend fairness: the law is not a backend artifact}
 Re-running all 11 datasets with the clusterer the deep methods actually recommend (R's \texttt{mclust})
 leaves the conclusions intact and slightly strengthens the law, to $\rho=+0.79$ ($p=0.004$,
 Fig.~\ref{fig:backend}), above the published GMM-tied $+0.72$. Real mclust wins 20 of 81

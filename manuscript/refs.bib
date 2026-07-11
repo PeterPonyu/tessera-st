@@ -65,11 +65,6 @@
   author={Palla, Giovanni and Spitzer, Hannah and Klein, Michal and others},
   journal={Nature Methods}, volume={19}, number={2}, pages={171--178}, year={2022}}
 
-@article{mcinnes2018umap,
-  title={UMAP: Uniform Manifold Approximation and Projection for Dimension Reduction},
-  author={McInnes, Leland and Healy, John and Melville, James},
-  journal={arXiv preprint arXiv:1802.03426}, year={2018}}
-
 @article{lohoff2022seqfish,
   title={Integration of spatial and single-cell transcriptomic data elucidates mouse organogenesis},
   author={Lohoff, Tim and Ghazanfar, Shila and Missarova, Alsu and others},
@@ -137,8 +132,8 @@
 
 @article{yuan2024benchmark,
   title={Benchmarking spatial clustering methods with spatially resolved transcriptomics data},
-  author={Yuan, Zhiyuan and Zhao, Fusheng and Lin, Senlin and others},
-  journal={Nature Methods}, volume={21}, pages={712--722}, year={2024}}
+  author={Yuan, Zhiyuan and Zhao, Fangyuan and Lin, Senlin and others},
+  journal={Nature Methods}, volume={21}, number={4}, pages={712--722}, year={2024}}
   % DOI 10.1038/s41592-024-02215-8 -- VERIFIED (resolves to nature.com/articles/s41592-024-02215-8).
 
 @article{chen2025imeta,
@@ -162,7 +157,35 @@
 
 @article{sun2025smoothness,
   title={Beyond benchmarking: an expert-guided consensus approach to spatially aware clustering},
-  author={Sun, Jieran and Biharie, N and Cai, L and M{\"u}ller-B{\"o}tticher, N and Kiessling, P and Turner, D and Dam, S and Heyl, F and Kathirchelvan, S and Emons, G and Gunz, T and Twardziok, S and El-Heliebi, A and Zacharias, H and Eils, R and Reinders, M and Gottardo, R and Kuppe, C and Long, Y and Mahfouz, A and Robinson, MD and Ishaque, N},
+  author={Sun, Jieran and Biharie, Kirti and Cai, Peiying and M{\"u}ller-B{\"o}tticher, Niklas and Kiessling, Paul and Turner, Meghan A. and Dam, Soeren Helweg and Heyl, Florian and Kathirchelvan, Sarusan and Emons, Martin and Gunz, Samuel and Twardziok, Sven and El-Heliebi, Amin and Zacharias, Martin and {SpaceHack 2.0 participants} and Reinders, Marcel and Eils, Roland and Gottardo, Raphael and Kuppe, Christoph and Long, Brian and Mahfouz, Ahmed and Robinson, Mark D. and Ishaque, Naveed},
   journal={bioRxiv preprint}, year={2025}}
   % DOI 10.1101/2025.06.23.660861 -- VERIFIED (resolves to biorxiv.org/lookup/doi/10.1101/2025.06.23.660861;
   % PMC12262716 mirror also live). v1 2025-06-27, v2 2025-11-20.
+
+% ---- Build-round additions: the closest 2024-2026 boundary-aware / anti-over-smoothing / ensemble
+% competitor *methods* (distinct from the 5 *benchmark* papers above). DOIs/venues independently
+% web-verified on 2026-07-11; none asserted from memory. Only first-author (+ known co-authors) are
+% listed; "and others" is used rather than guessing co-author names. ----
+
+@inproceedings{oh2025spotscape,
+  title={Global Context-aware Representation Learning for Spatially Resolved Transcriptomics},
+  author={Oh, Yunhak and Lee, Junseok and Kim, Yeongmin and Seo, Sangwoo and Lee, Namkyeong and Park, Chanyoung},
+  booktitle={Proceedings of the 42nd International Conference on Machine Learning (ICML)},
+  series={PMLR}, year={2025}}
+  % Spotscape. arXiv:2506.15698; OpenReview id=jeJGH6UDOL; code github.com/yunhak0/Spotscape;
+  % ICML 2025 poster icml.cc/virtual/2025/poster/44294 -- VERIFIED (all four resolve live 2026-07-11).
+
+@article{cao2025spatialesd,
+  title={SpatialESD: spatial ensemble domain detection in spatial transcriptomics},
+  author={Cao and others},
+  journal={Advanced Science}, year={2025}}
+  % DOI 10.1002/advs.202520912 (advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202520912);
+  % bioRxiv 2025.09.11.675735 -- VERIFIED live 2026-07-11. Co-author list not enumerated (bioRxiv 403);
+  % first author Cao confirmed via Wiley + bioRxiv listings, remaining authors left as "and others".
+
+@article{peng2026dwgcn,
+  title={DWGCN: distance-weighted graph convolutional network for robust spatial domain identification in spatial transcriptomics},
+  author={Peng, C. and Li, G. and Wu, J. and Fan, Q. and Guo, X.},
+  journal={Frontiers in Genetics}, year={2026}}
+  % DOI 10.3389/fgene.2026.1779455 (frontiersin.org/journals/genetics/articles/10.3389/fgene.2026.1779455/full);
+  % mirror PMC12928605 -- VERIFIED live 2026-07-11.
