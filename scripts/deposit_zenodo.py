@@ -34,11 +34,24 @@ ZENODO_META = ROOT / ".zenodo.json"
 INCLUDE = ["experiments", "src", "manuscript", "scripts", "tests",
            "README.md", "DESIGN.md", "CLAIM_LEDGER.md", "BASELINE_REFERENCES.md",
            "ALLOWED_BASELINE_CONTEXTS.md", "pyproject.toml", ".zenodo.json"]
+REQUIRED_ARTIFACTS = [
+    "experiments/mechanism_decoupled_v2.py",
+    "experiments/mechanism_decoupled_v2.json",
+    "experiments/mechanism_decoupled_v2_results.md",
+    "experiments/verify_manuscript.py",
+    "manuscript/FIGURE-MANIFEST.md",
+]
 EXCLUDE_SUFFIX = (".pyc", ".log", ".png.tmp")
 EXCLUDE_DIRS = {"__pycache__", ".pytest_cache", ".omc", "dist", ".git"}
 
 
 def build_archive():
+    missing = [item for item in REQUIRED_ARTIFACTS if not (ROOT / item).is_file()]
+    if missing:
+        raise FileNotFoundError(
+            "release archive is missing required reproducibility artifacts: " + ", ".join(missing)
+        )
+
     ARCHIVE.parent.mkdir(exist_ok=True)
 
     def _filter(ti):

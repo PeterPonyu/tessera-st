@@ -18,7 +18,8 @@ Post-fix gates:
 - LaTeX compile rc=0 on all three passes.
 - `experiments/verify_manuscript.py`: ALL VERIFICATION CHECKS PASS.
 - Undefined references: 0. Multiply-defined labels: 0.
-- Pages: 19. Overfull \hbox: 2, both < 20pt (title 12.78pt; tab:related-benchmarks 5.04pt).
+- Pages: 13. Overfull \hbox: 0. Undefined references: 0. Multiply-defined labels: 0
+  (current 2026-07-14 rebuild, synchronized 2026-08-01).
 
 ---
 
@@ -92,8 +93,9 @@ Post-fix gates:
   "asymptotic Spearman p" (prose judgment) OR switching to 0.083 AND updating the verifier's
   ground-truth assertion + provenance note (touches the machine gate, which is governed by
   CLAIM_LEDGER's LOCKED->graduated process). Both are out of scope for a mechanical apply.
-- Action: REVERTED the trial edit; both values are >0.05 so no inflation either way. Deferred
-  to the user to choose relabel-vs-repoint and to move the change through the claim gate.
+- RESOLVED 2026-08-01: retained `0.079` and labelled it explicitly as the asymptotic
+  uncorrected Spearman p-value; added the permutation-null uncorrected companion `0.083` in
+  the causal section. `verify_manuscript.py` now derives and asserts both values and both labels.
 - Prevention: before trusting a finding's "verifier-safe" tag, grep the verifier for the exact
   literal; the machine gate is authoritative over a finding's self-assessment.
 
@@ -104,6 +106,9 @@ Post-fix gates:
   provenance `\citep` anywhere (see D3); adding a citation-less list item would break the
   pattern every sibling dataset follows. Must be resolved together with a real BRCA source.
 - Deferred to user (needs the accession, not a fabricated citation).
+- RESOLVED 2026-07-13: accession located (see D3). Inserted "a breast-tumour Visium section
+  \citep{tenx2020brca} with per-spot pathology-domain labels from SEDR \citep{xu2024sedr}" into
+  the Methods §Data enumeration and Data-availability; both prose lists now enumerate all 11.
 
 ### D3 — BRCA 11th dataset has no provenance citation (CONFIRMED, mechanical==false)
 - BRCA appears only in `tab:data` and `tab_perdataset.tex` with no `\citep`, is absent from
@@ -111,6 +116,15 @@ Post-fix gates:
 - Not applied: requires the actual accession (e.g. the 10x Genomics breast-cancer Visium
   sample). Do NOT fabricate a citation. Deferred to user to supply the accession, then add a
   `refs.bib` entry + `\citep` + `BASELINE_REFERENCES.md` line, and resolve D2 in the same edit.
+- RESOLVED 2026-07-13: the "e.g." guess was correct. Source is 10x Genomics' public
+  "Human Breast Cancer (Block A Section 1)" Visium demo (sample
+  `V1_Breast_Cancer_Block_A_Section_1`, Space Ranger 1.0.0, CC BY 4.0), with the 20-region
+  per-spot pathology-domain annotation from Xu et al. 2024 (SEDR). The table numbers were NOT
+  placeholders: `experiments/expanded_bench.json` records `n_cells 3798, k 20,
+  GT_contiguity 0.865, subsampled false`, matching the on-disk h5ad
+  (`spatial-omics-reform/data/processed/brca1_visium_10x/anndata.h5ad`, 3,798 × 36,601,
+  `Region`=20 domains). Added `@misc{tenx2020brca}` to `refs.bib`, `\citep` in Methods §Data +
+  Data-availability, and the accession row in `BASELINE_REFERENCES.md`. No fabrication.
 
 ### D4 — fig:ablation caption lacks a non-comparability note (CONFIRMED, mechanical==false)
 - `mechanism_ablation.json` "full" Tessera ARI on MERFISH = 0.4525 exceeds the main-panel
@@ -118,17 +132,14 @@ Post-fix gates:
   2-dataset/3-seed case-study run, but the caption does not flag that its absolute ARIs are
   not comparable to the cross-dataset panel, so a reader could infer Tessera beats the stated
   winner — an inflation risk that the honest-negative posture forbids.
-- Not applied: the clarifying half-sentence requires wording judgment. Deferred, but FLAGGED
-  as the highest-value deferred item for the honest-negative framing. Suggested wording is in
-  the finding; it clarifies (does not inflate).
+- RESOLVED 2026-08-01: caption now states that the absolute ARIs come from a separate
+  two-dataset case-study run and are not directly comparable with the cross-dataset panels.
 
 ### D5 — CLAIM_LEDGER R4 page/overfull line is stale (CONFIRMED, mechanical==false)
-- `CLAIM_LEDGER.md:315` says "paper.pdf 12pp / 0 overfull / 0 undefined"; the current build
-  is 19pp / 2 overfull (title 12.8pt; tab:related-benchmarks 5.0pt) / 0 undefined.
-- Not applied here: finding is classified mechanical==false (the optional overfull-clearing
-  half is judgment). The bare ledger-text refresh is honest and non-inflating; deferred to the
-  user / a ledger-owning pass to keep the claim gate single-authored. Values to land:
-  "19pp / 2 overfull (title 12.8pt; tab:related-benchmarks 5.0pt) / 0 undefined".
+- Initial finding in the polish pass: `CLAIM_LEDGER.md:315` said "paper.pdf 12pp / 0 overfull /
+  0 undefined", while that pass produced 19pp / 2 overfull / 0 undefined.
+- RESOLVED 2026-08-01 from a fresh `make clean pdf`: current build is 13pp / 0 overfull /
+  0 undefined / 0 multiply-defined. `CLAIM_LEDGER.md` and `SUBMISSION-KIT.md` now match the log.
 
 ---
 

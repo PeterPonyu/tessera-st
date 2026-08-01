@@ -12,7 +12,7 @@ Generated: 2026-07-02 (mechanical-fixes-only polish pass; no new compute).
 - Main source: `manuscript/paper.tex`
 - Bibliography: `manuscript/refs.bib` — 30 entries (was 31; orphan `mcinnes2018umap` removed).
 - Compiled PDF: `manuscript/paper.pdf`
-- Pages: 19
+- Pages: 13
 - Backups: `manuscript/paper.tex.prepolish.bak`, `manuscript/refs.bib.prepolish.bak`
 
 ## Target venue
@@ -29,25 +29,27 @@ Generated: 2026-07-02 (mechanical-fixes-only polish pass; no new compute).
   `paper.bbl`; removed `mcinnes2018umap` absent from `paper.bbl`.
 
 ## Known cosmetic items (non-blocking)
-- 2 Overfull \hbox, both < 20pt: title (12.78pt, line 47) and tab:related-benchmarks
-  (5.04pt). Not fixed (clearing them is layout judgment: title `\\`-rebreak or `\sloppy`,
-  table column rebalancing). Safe to submit as-is; optionally clear before camera-ready.
+- Current 2026-07-14 build: 0 overfull boxes, 0 undefined references, 0 multiply-defined labels.
 
-## Remaining PRE-SUBMISSION actions (deferred, need user input or a ledger pass)
-1. BRCA provenance (BLOCKER for the datasets count): supply the real accession for the 11th
-   dataset (BRCA breast-tumour Visium), add a `refs.bib` entry + `\citep`, add it to the
-   Methods §Data enumeration (`paper.tex:192-197`) and Data-availability (`:595-599`), and to
-   `BASELINE_REFERENCES.md`. Currently the prose lists only 10 of the stated 11. Do NOT
-   fabricate a citation. (LESSONS D2, D3)
-2. coh_gain uncorrected p (0.079 vs 0.083): decide relabel-vs-repoint and route through the
-   CLAIM_LEDGER gate + `verify_manuscript.py` line 275. Left at 0.079 to keep the machine gate
-   green; the asymptotic/permutation-null mismatch is real but non-inflating (both >0.05).
-   (LESSONS D1)
-3. fig:ablation caption: add the half-sentence noting its absolute ARIs are a separate
-   case-study run, not comparable to the cross-dataset panels (prevents a false "Tessera beats
-   the winner" read). Highest-value honest-framing item. (LESSONS D4)
-4. CLAIM_LEDGER.md:315: refresh stale "12pp / 0 overfull" to "19pp / 2 overfull (title
-   12.8pt; tab:related-benchmarks 5.0pt) / 0 undefined". (LESSONS D5)
+## PRE-SUBMISSION status (resolved items retained for auditability)
+1. BRCA provenance (RESOLVED 2026-07-13): the 11th dataset is 10x Genomics' public
+   "Human Breast Cancer (Block A Section 1)" Visium demo (sample
+   `V1_Breast_Cancer_Block_A_Section_1`, Space Ranger 1.1.0, CC BY 4.0) with 20-region
+   per-spot pathology-domain labels from Xu et al. 2024 (SEDR). The table numbers
+   (3,798 spots, K=20, contiguity 0.865) are genuine pipeline outputs, confirmed in
+   `experiments/expanded_bench.json` (`n_cells 3798, k 20, GT_contiguity 0.865,
+   subsampled false`) and matching the on-disk h5ad (3,798 × 36,601, 20 domains).
+   Added `@misc{tenx2020brca}` to `refs.bib`, `\citep` in the Methods §Data enumeration,
+   the `tab:data` row, and Data-availability; accession recorded in
+   `BASELINE_REFERENCES.md`. No fabrication; no new compute. (LESSONS D2, D3)
+2. coh_gain p-value labels (RESOLVED 2026-08-01): retained `0.079` as the asymptotic
+   uncorrected Spearman p-value and explicitly distinguished the permutation-null uncorrected
+   companion `0.083`; `verify_manuscript.py` now asserts both values and labels. (LESSONS D1)
+3. fig:ablation non-comparability (RESOLVED 2026-08-01): caption now states that the absolute
+   ARIs are from a separate two-dataset case-study run and are not directly comparable with the
+   cross-dataset panels. (LESSONS D4)
+4. Build-status drift (RESOLVED 2026-08-01): current compiled artifact is 13pp / 0 overfull /
+   0 undefined / 0 multiply-defined; synchronized in `CLAIM_LEDGER.md`. (LESSONS D5)
 5. Author-count / affiliation / competing-interests / funding statements: confirm present and
    venue-appropriate once the venue is chosen.
 

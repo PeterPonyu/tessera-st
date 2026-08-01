@@ -1,8 +1,8 @@
-\documentclass[11pt]{article}
+\documentclass[journal]{IEEEtran}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{lmodern}
-\usepackage[margin=1in]{geometry}
+\usepackage{newtxtext}
+\usepackage{newtxmath}
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{amsmath}
@@ -16,6 +16,10 @@
 \usepackage{microtype}
 % keep every float inside the section that introduces it -- no figures spilling into the bibliography
 \usepackage[section]{placeins}
+% This paper packs many full-width table*/figure* floats into a two-column layout; standard
+% LaTeX two-column output can only place a table*/figure* at the top of a page, which forces
+% premature, near-empty text pages ahead of a float. stfloats also allows bottom placement.
+\usepackage{stfloats}
 
 % Vector-figure stack (compile with lualatex). pgfplots panels and the spatial-domain map are
 % emitted by manuscript/make_figs.R and \input directly; the schematic is hand-written TikZ.
@@ -33,28 +37,32 @@
 \definecolor{tpurple}{RGB}{107,70,193}
 
 \graphicspath{{figures/}{figs/}}
-\title{\vspace{-2em}A causal law for spatial-domain detection:\\
+\title{A causal law for spatial-domain detection:\\
 the value of a spatial prior is set by the ground truth's spatial contiguity}
-\author{Zeyu Fu\,\orcidlink{0009-0001-8329-0108}\\
-State Key Laboratory of Trauma and Chemical Poisoning, Institute of Combined Injury,\\
-Chongqing Engineering Research Center for Nanomedicine, College of Preventive Medicine,\\
-Army Medical University, Chongqing, China\\
-\href{mailto:fuzeyu99@126.com}{fuzeyu99@126.com}}
-\date{}
+
+\author{Zeyu~Fu\,\orcidlink{0009-0001-8329-0108}%
+\thanks{Z. Fu is with the State Key Laboratory of Trauma and Chemical Poisoning, Institute of
+Combined Injury, Chongqing Engineering Research Center for Nanomedicine, College of Preventive
+Medicine, Army Medical University, Chongqing, China. E-mail:
+\href{mailto:fuzeyu99@126.com}{fuzeyu99@126.com}}}
+
+\markboth{IEEE Transactions on Computational Biology and Bioinformatics}%
+{Fu: A Causal Law for Spatial-Domain Detection}
 
 \begin{document}
+\raggedbottom
+
 \maketitle
-\vspace{-2em}
 
 \begin{abstract}
-\noindent
 Methods for spatial-domain detection in spatial transcriptomics are routinely ranked on one or two Visium
 datasets under a single clustering backend, and each new paper claims a state-of-the-art. We argue the
 reliable object of study is not which method wins but a predictive, causal law for whether a spatial prior
 helps at all. On synthetic tissue where we manipulate \emph{only} the ground truth's spatial contiguity---
 scrambling positions while holding each cell's expression and label fixed---the advantage of a spatial
 prior rises with contiguity and flips sign, at Spearman $\rho=+0.98$ to $+1.00$ ($p<0.001$); because
-contiguity is the sole variable changed, this identifies it as the cause rather than a correlate. The same
+contiguity is the sole variable changed, this is consistent with a causal role for contiguity rather than a
+mere correlate. The same
 law holds observationally across eleven technologically diverse datasets: spatial-prior advantage tracks
 ground-truth contiguity at Spearman $+0.72$ ($p=0.012$, 95\% CI $[0.24,0.92]$), the only significant
 correlation we test; it survives control for cluster count, feature dimension, and assay modality, predicts
@@ -68,8 +76,12 @@ progress should shift from building a better method to deciding, before committi
 is warranted.
 \end{abstract}
 
-\noindent\textbf{Keywords:} spatial transcriptomics; spatial-domain detection; benchmarking; clustering;
-graph neural networks; method selection; spatial autocorrelation; reproducibility.
+\begin{IEEEkeywords}
+Spatial transcriptomics, spatial-domain detection, benchmarking, clustering, graph neural networks, method
+selection, spatial autocorrelation, reproducibility.
+\end{IEEEkeywords}
+
+\IEEEpeerreviewmaketitle
 
 \section{Introduction}
 Spatial transcriptomics and spatial proteomics assays measure molecular abundance while retaining each
@@ -88,7 +100,7 @@ consistently best, and which method wins, and indeed whether any spatial method 
 predictable from a single property of the task.
 
 We reframe the question from ``which method wins'' to ``when do spatial priors help, and can we tell in
-advance''. Our contributions are:
+advance'', contributing both empirical findings and reusable methodology for answering it. Our contributions are:
 \begin{itemize}\setlength{\itemsep}{2pt}
 \item a \emph{causal, predictive law}: on synthetic tissue where we manipulate contiguity alone, spatial-prior
 advantage rises with it and flips sign ($\rho=+0.98$ to $+1.00$, $p<0.001$), and the same law holds
@@ -103,6 +115,12 @@ profile is inverted, best exactly where the deep methods are worst (\S\ref{sec:n
 \item a worked example, on a candidate method, of how single-dataset evaluation can certify a false SOTA
 and a false mechanism (\S\ref{sec:tessera}).
 \end{itemize}
+Three of these components are intended as reusable methodology beyond this panel: a synthetic contiguity
+generator that varies ground-truth spatial contiguity in isolation for controlled evaluation of spatial
+priors; a confound-control benchmark protocol (partial correlations against cluster count, feature
+dimension, and assay modality, with leave-one-dataset-out validation); and a label-free
+spatial-coherence-gain diagnostic that estimates, without ground truth, whether a spatial prior is
+warranted---used here as an honestly marginal prior rather than a settled predictor.
 
 \section{Related work}
 \paragraph{Spatial-domain methods.} Graph-autoencoder approaches encode expression over a spatial graph:
@@ -149,7 +167,7 @@ spatial-advantage target across platforms. That combination is the wedge of this
 (Table~\ref{tab:related-benchmarks}).
 
 % Differentiation table: tessera-st vs. the 5 directly-overlapping 2024-2026 benchmarks.
-\begin{table}[t]
+\begin{table*}[!t]
 \centering
 \caption{Positioning tessera-st's causal-contiguity + label-free-proxy wedge against the five
 directly overlapping spatial-domain-detection benchmarks (2024--2026). ``Winner-counting'' denotes
@@ -157,7 +175,7 @@ designs that rank methods by supervised accuracy (ARI/NMI-type) against annotate
 without a causal perturbation test or a validated label-free proxy.}
 \label{tab:related-benchmarks}
 \small
-\begin{tabular}{@{}p{2.6cm}p{2.7cm}p{2.5cm}p{3.9cm}p{3.3cm}@{}}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.6cm}>{\raggedright\arraybackslash}p{2.7cm}>{\raggedright\arraybackslash}p{2.5cm}>{\raggedright\arraybackslash}p{3.9cm}>{\raggedright\arraybackslash}p{3.3cm}@{}}
 \toprule
 Study & Datasets & Methods & Primary axis & Distinct from tessera-st? \\
 \midrule
@@ -194,11 +212,11 @@ SE is unsupervised like tessera's coh\_gain, but used for consensus/QC flagging,
 \textbf{tessera-st (this work)} &
 11 platforms (label-free proxy search) + synthetic causal sweep &
 6 label-free candidates + causal contiguity generator &
-(i) Causal: synthetic contiguity-perturbation sweep, $\rho\!=\!+0.98\text{--}1.00$, $p<0.001$; (ii) Proxy: coh\_gain label-free candidate, observed $\rho=+0.55$, honestly reported as directional/marginal (search-corrected $p=0.28$; uncorrected $p=0.079$) &
+(i) Causal: synthetic contiguity-perturbation sweep, $\rho\!=\!+0.98\text{--}1.00$, $p<0.001$; (ii) Proxy: coh\_gain label-free candidate, observed $\rho=+0.55$, honestly reported as directional/marginal (search-corrected $p=0.28$; asymptotic uncorrected $p=0.079$) &
 Only entry combining a causal ground-truth-free perturbation test with an explicitly falsification-audited label-free proxy, rather than supervised winner-counting \\
 \bottomrule
 \end{tabular}
-\end{table}
+\end{table*}
 
 \paragraph{Spatial statistics.}
 Our predictor is rooted in spatial autocorrelation \citep{moran1950}; clustering agreement is measured
@@ -211,13 +229,10 @@ We assemble 11 datasets spanning sequencing- and imaging-based assays, tissues, 
 GT types (Table~\ref{tab:data}): DLPFC Visium \citep{maynard2021dlpfc}, seqFISH mouse embryo
 \citep{lohoff2022seqfish}, MERFISH hypothalamus \citep{moffitt2018merfish}, STARmap cortex
 \citep{wang2018starmap}, osmFISH cortex \citep{codeluppi2018osmfish}, MIBI-TOF \citep{keren2018mibitof},
-breast IMC \citep{jackson2020imc}, Open-ST \citep{schott2024openst}, Slide-seqV2 \citep{stickels2021slideseq},
-and CODEX spleen \citep{goltsev2018codex}, accessed via Squidpy \citep{palla2022squidpy} where applicable.
-% TODO(user): this sentence enumerates only 10 of the n=11 datasets -- BRCA Visium (Table~\ref{tab:data};
-% n=3,798, K=20, contiguity 0.865) is MISSING from this list, has no \citep anywhere in the paper, and is
-% absent from the Data-availability section. Insert "BRCA <tissue> \citep{<brcakey>}" here, add the matching
-% entry to refs.bib, and add BRCA to the Data-availability list -- using the REAL accession, not a fabricated
-% one. Alternative path (drop BRCA -> n=10): see build report for the exact count/stat edits required.
+breast IMC \citep{jackson2020imc}, a breast-tumour Visium section \citep{tenx2020brca} with per-spot
+pathology-domain labels from SEDR \citep{xu2024sedr}, Open-ST \citep{schott2024openst},
+Slide-seqV2 \citep{stickels2021slideseq}, and CODEX spleen \citep{goltsev2018codex}, accessed via
+Squidpy \citep{palla2022squidpy} where applicable.
 A review-caught byte-duplicate dataset was removed and a duplicate guard
 added, giving $n{=}11$; three additional cancer datasets extend a robustness analysis to
 $n{=}14$. Large datasets are deterministically subsampled to 16{,}000 cells (logged). Counts are
@@ -254,7 +269,7 @@ dimension, and imaging-vs-sequencing modality. The causal experiment manipulates
 synthetic tissue (below). All headline numbers are machine-checked against JSON artifacts by a verifier
 script (exit~0).
 
-\begin{table}[htbp]\centering\small
+\begin{table*}[!t]\centering\small
 \caption{The 11-dataset panel (plus three cancer datasets for the $n{=}14$ robustness check). Each row is
 a distinct published dataset, named by its assay (e.g.\ MERFISH) or tissue (e.g.\ DLPFC). Modality
 is the broad measurement class, imaging (FISH/protein) versus sequencing, and is one of the
@@ -268,11 +283,6 @@ Dataset & Modality & GT type & $n$ cells & $K$ & contiguity\\
 MERFISH      & imaging (FISH)      & domain     & 5{,}488  & 8  & 0.931\\
 STARmap      & imaging (FISH)      & region     & 1{,}207  & 7  & 0.921\\
 DLPFC        & Visium (seq.)       & layer      & 3{,}639  & 7  & 0.905\\
-% TODO(user): BRCA is dataset #11 in this table but has NO \citep here, is absent from the Methods
-% "Data" prose above (which enumerates only 10 datasets), and is missing from the Data-availability
-% section. Supply the REAL accession + citation: add a @article{...} for BRCA to refs.bib and cite it
-% on this row, in the Data prose, and in the Data-availability list. Do NOT fabricate an accession/DOI.
-% Alternative path (drop BRCA -> n=10): see build report for the exact count/stat edits required.
 BRCA         & Visium (seq.)       & tumour     & 3{,}798  & 20 & 0.865\\
 osmFISH      & imaging (FISH)      & region     & 5{,}328  & 12 & 0.817\\
 IMC          & imaging (protein)   & cell type  & 4{,}668  & 11 & 0.630\\
@@ -285,7 +295,7 @@ CODEX        & imaging (protein)   & niche      & 16{,}000 & 100& 0.022\\
 st\_OV / st\_COAD / st\_LIHC & cancer ST & cell type & 16{,}000 & 13--19 & 0.69/0.50/0.22\\
 \bottomrule
 \end{tabular}
-\end{table}
+\end{table*}
 
 \section{The backend is a confound, and a trivial baseline is competitive}\label{sec:confound}
 Switching KMeans${\to}$GMM changes a single method's cross-section ARI by 0.036--0.200; the largest shift
@@ -326,19 +336,18 @@ GraphST          & 0.099 & $0.291\pm0.042$\\
 \end{tabular}
 \end{table}
 
-\begin{figure}[htbp]\centering
+\begin{figure*}[!t]\centering
 \resizebox{\linewidth}{!}{\input{figs/fig_spatialmap}}
 \caption{Why a spatial prior helps when the ground truth is contiguous (synthetic tessellation,
 signal-to-noise tuned so space is necessary). A non-spatial KMeans scatters the contiguous domains while a
 parameter-free neighbour-mean smoother recovers them (each clustering panel title gives its ARI); the predicted seams
 (right) are an explicit output of the smoother rather than a by-product of the argmax.}
-\end{figure}
+\end{figure*}
 
 \section{No universal winner across methods}\label{sec:nosota}
 Across the 11 datasets there are seven distinct winners (Fig.~\ref{fig:heatmap}), becoming eight once
 SpaGCN, the most-cited method, is added: it wins only one dataset (Open-ST, by a within-noise 0.005
-margin), never becoming universal. The bare count is only modestly above the 6.16 winners expected under a uniform-random-winner null
-(\texttt{experiments/robustness\_audit.py}), so the evidence for no-universal-SOTA is not the count but the
+margin), never becoming universal. The bare count is only modestly above the 6.16 winners expected under a uniform-random-winner null, so the evidence for no-universal-SOTA is not the count but the
 shifting winner in the heatmap and the rank inversions below.
 
 The pattern is not an artifact of how the most-cited method is run. The same holds when SpaGCN uses its
@@ -352,23 +361,23 @@ Even the apparent winner of the easiest regime is unstable. At the top of the co
 the winner is a tie within seed noise: across three runs the MERFISH winner flipped SpaceFlow, Tessera,
 then SpaceFlow again. No single method is reliably best here (Table~\ref{tab:perdataset}).
 
-\begin{table}[htbp]\centering\small
+\begin{table*}[!t]\centering\small
 \caption{Per-dataset best-config results (core panel of six methods plus two floors, 3 seeds), ordered by
 GT contiguity. The winner differs across datasets (seven distinct winners, one of them a floor), the
 spatial-prior advantage tracks contiguity, and the candidate method's rank does not. Winner ARI is the
 winner's best-config mean.}
 \label{tab:perdataset}
 \input{figs/tab_perdataset}
-\end{table}
+\end{table*}
 
-\begin{figure}[htbp]\centering
+\begin{figure*}[!t]\centering
 \resizebox{0.95\linewidth}{!}{\input{figs/fig_profile}}
 \caption{Per-method rank versus GT contiguity. Method--task fit is method-specific: SpatialLeiden's profile
 is inverted (ranks first or second on the low-contiguity datasets, last on high-contiguity MERFISH).}
 \label{fig:profile}
-\end{figure}
+\end{figure*}
 
-\begin{figure}[htbp]\centering
+\begin{figure*}[!t]\centering
 \resizebox{\linewidth}{!}{\input{figs/fig_heatmap}}
 \caption{The complete benchmark: ARI of every method (rows, ordered by mean ARI) on every dataset
 (columns, ordered by GT contiguity, low~$\rightarrow$~high). The black-outlined cell is each dataset's
@@ -376,7 +385,7 @@ winner; it moves across rows, and no method dominates a contiguity band. SEDR, S
 BANKSY-style, SpatialLeiden, and the non-spatial floor each win somewhere, and the winner in the high-contiguity column
 (right, MERFISH) is a near-tie (SpaceFlow vs.\ Tessera), showing the lack of a universal SOTA directly.}
 \label{fig:heatmap}
-\end{figure}
+\end{figure*}
 
 \section{The predictive law: contiguity sets the value of spatial priors}\label{sec:law}
 Although no single method is reliably best, whether any spatial prior is worth using at all turns out to be
@@ -398,13 +407,13 @@ single most influential dataset (MERFISH) lowers $\rho$ to $0.63$. The qualitati
 precise value is a diverse-panel upper estimate, and the law's direction is partly definitional, as the
 Limitations discuss.
 
-\begin{table}[htbp]\centering\footnotesize
+\begin{table*}[!t]\centering\footnotesize
 \caption{The predictive law and its stress tests. The contiguity$\leftrightarrow$advantage correlation is
 the only significant one; it is seed-robust, survives a fairer backend, is confound-independent, predictive
 out-of-sample, and causal under manipulation. Method-specific rank correlations are not significant, and
 broadening to noisier cell-type datasets ($n{=}14$) attenuates the estimate.}
 \label{tab:law}
-\begin{tabular}{@{}llc p{3.6cm}@{}}
+\begin{tabular}{@{}llc >{\raggedright\arraybackslash}p{3.6cm}@{}}
 \toprule
 Relationship / test & estimate & $p$ & note\\
 \midrule
@@ -413,7 +422,7 @@ contiguity $\sim$ spatial-prior advantage ($n{=}11$) & $\rho=+0.72$ & 0.012 & CI
 \quad jackknife range ($n{=}11$) & $\rho\in[0.63,0.75]$ & --- & drops most on MERFISH\\
 \quad fairer backend (real R mclust) & $\rho=+0.79$ & 0.004 & not a backend artifact; even cleaner\\
 \quad extended to $n{=}14$ & $\rho=+0.56$ & 0.038 & $+3$ noisier cell-type datasets\\
-\quad label-free \texttt{coh\_gain} proxy & $\rho=+0.55$ & 0.28 & directional prior; search-corrected over 6 candidates (uncorr.\ 0.079)\\
+\quad label-free \texttt{coh\_gain} proxy & $\rho=+0.55$ & 0.28 & directional prior; search-corrected over 6 candidates (asymptotic uncorr.\ 0.079)\\
 \quad causal (contiguity manipulated) & $\rho=+0.98/{+}1.00$ & $<$0.001 & neighbour-mean / STAGATE\\
 contiguity $\sim$ Tessera rank ($n{=}11$) & $\rho=-0.36$ & 0.28 & not significant\\
 contiguity $\sim$ SpaceFlow rank ($n{=}9$) & $\rho=-0.59$ & 0.10 & not significant\\
@@ -421,30 +430,30 @@ partial $\rho$ (controlling all confounds) & $+0.67$ & --- & independent of $K$/
 LODO decision accuracy (GT / label-free) & $0.82 / 0.73$ & 0.06 & 9/11; binomial vs base rate $0.55$\\
 \bottomrule
 \end{tabular}
-\end{table}
+\end{table*}
 
-\begin{figure}[htbp]\centering
+\begin{figure*}[!t]\centering
 \resizebox{\linewidth}{!}{\input{figs/fig_law}}
 \caption{(a) The headline law: spatial-prior advantage versus GT spatial contiguity (oracle), $\rho=+0.72$.
 (b) The same trend recovered by the label-free \texttt{coh\_gain} proxy, $\rho=+0.55$, the rule applied
 without labels.}
 \label{fig:law}
-\end{figure}
+\end{figure*}
 
-\begin{figure}[htbp]\centering
+\begin{figure*}[!t]\centering
 \resizebox{\linewidth}{!}{\input{figs/fig_confound}}
 \caption{Contiguity is the strongest marginal predictor of spatial-prior advantage (a) and remains
 predictive after controlling each confound, and all three jointly (partial $\rho=0.67$) (b).}
 \label{fig:confound}
-\end{figure}
+\end{figure*}
 
-\begin{figure}[htbp]\centering
+\begin{figure*}[!t]\centering
 \resizebox{\linewidth}{!}{\input{figs/fig_robust}}
 \caption{Robustness of the law: (a) 10k-dataset bootstrap 95\% CIs for the GT-based and label-free
 correlations; (b) leave-one-dataset-out is predictive and the decision rule beats its base rate, even
 label-free.}
 \label{fig:robust}
-\end{figure}
+\end{figure*}
 
 \section{The law is causal and deployable without labels}\label{sec:causal}
 \paragraph{Causal.} We manipulate \emph{only} contiguity on synthetic tissue: scrambling a fraction of cells'
@@ -458,6 +467,61 @@ neighbour-averaging over the same spatial $k$NN graph used to define contiguity,
 read as correlated rather than architecturally independent confirmations; the causal identification of
 contiguity's effect (via exogenous scrambling) holds regardless.
 
+\paragraph{Decoupling contiguity from alignment.} A referee might object that scrambling positions
+erodes not only the labels' spatial \emph{contiguity} but the generic \emph{alignment} between
+expression and position that any spatial method exploits, and that it could be alignment, not
+contiguity specifically, that the law tracks. We separate the two with a two-arm control, re-run at
+the full fidelity of the primary synthetic experiment (400-epoch STAGATE, five seeds, an eleven-level
+$0\!\to\!1$ sweep, on two independent substrates). In the \emph{alignment} arm we fix coordinates and
+labels---holding contiguity constant---and swap a growing fraction of cells' expression vectors,
+eroding expression-to-position alignment. In the \emph{contiguity} arm we hold both alignment and the
+recoverable signal fixed---expression is always regenerated from the current label---and overwrite a
+growing fraction of labels with random domain identities, breaking only spatial contiguity. Three
+discriminators separate the arms (Table~\ref{tab:decouple}), and all three favour contiguity on both
+substrates and under both priors:
+\begin{enumerate}\setlength{\itemsep}{2pt}
+\item \emph{Effect size.} The total change in spatial-prior advantage across the sweep (OLS slope
+$\times$ observed range) is larger in the contiguity arm on every substrate and prior (contiguity
+minus alignment $=+0.28$ to $+0.58$).
+\item \emph{Sign flip.} Only the contiguity arm reproduces the headline phenomenon of \S\ref{sec:law}:
+the advantage crossing from positive to \emph{negative} (near contiguity $0.58$ and $0.76$ on the two
+substrates). Eroding alignment merely decays the advantage toward zero; it never turns negative.
+\item \emph{Clean versus confounded manipulation.} The contiguity arm holds the non-spatial floor
+essentially flat (range $0.03$--$0.05$), isolating spatial arrangement as the only variable moved. The
+alignment arm's expression-swap destroys the recoverable signal for every method (the floor collapses
+by $0.36$ and $0.68$), so its shrinking advantage is substantially generic signal loss---exactly the
+confound a referee worries about, and it lands on the arm \emph{not} used to support the law.
+\end{enumerate}
+The honest reading is not that alignment is irrelevant---the alignment arm's advantage does track
+alignment---but that contiguity is the one variable that can be moved \emph{in isolation}, holding
+alignment and signal fixed, and that only moving it reproduces the full positive-to-negative sign flip.
+This strengthens the controlled-manipulation leg of the evidence specifically; the observational
+eleven-platform leg (\S\ref{sec:law}) is independent. A rank-correlation tie-break is uninformative
+here: both arms are monotone by construction, so Spearman $\rho$ saturates near $1$ for both and carries
+no effect-size information, which is why the three discriminators above, not $\rho$, are load-bearing.
+
+\begin{table}[htbp]\centering\small\setlength{\tabcolsep}{4pt}
+\caption{Decoupling contiguity from expression--position alignment, at the primary experiment's fidelity
+(400-epoch STAGATE, 5 seeds, 11-level sweep, two substrates S1/S2). Effect size is the normalised OLS
+slope (neighbour-mean\,/\,STAGATE) of the advantage against each arm's own driver; a larger value means
+the driver moves the advantage more. Only the contiguity arm flips the advantage's sign, and only the
+contiguity arm holds the non-spatial floor flat---the alignment arm's manipulation also destroys
+recoverable signal, so its floor range is large. All three discriminators favour contiguity on both
+substrates.}
+\label{tab:decouple}
+\begin{tabular}{llccc}
+\toprule
+Substrate & Arm (driver) & effect size & advantage & floor\\
+          &              & (smooth/STAGATE) & sign flip? & range\\
+\midrule
+S1 & alignment  & 0.55 / 0.62 & no  & 0.36\\
+S1 & contiguity & 0.85 / 0.91 & yes & 0.05\\
+S2 & alignment  & 0.34 / 0.43 & no  & 0.68\\
+S2 & contiguity & 0.92 / 0.95 & yes & 0.03\\
+\bottomrule
+\end{tabular}
+\end{table}
+
 \paragraph{Label-free.} The law as stated still needs the ground truth it is meant to replace. The obvious
 label-free proxies, Moran's $I$ of expression and the unsupervised kNN same-cluster fraction, invert
 ($\rho=-0.34$ and $-0.42$ versus advantage): raw-expression smoothness reflects cell-type structure, not
@@ -466,19 +530,20 @@ unsupervised clustering gains under smoothing, recovers the correct sign ($\rho=
 $+0.56$ versus contiguity) and beats the base rate out-of-sample. It recovers the direction of the law, but
 not the oracle's significance: once we account for having selected it as the best of six candidate proxies
 (a Westfall--Young max-statistic permutation test, $B{=}10{,}000$), the effect is not significant
-(search-corrected $p=0.28$; uncorrected per-candidate $p=0.079$). \texttt{coh\_gain} should therefore be read
+(search-corrected $p=0.28$; asymptotic uncorrected Spearman $p=0.079$; the corresponding
+uncorrected permutation companion is $p=0.083$). \texttt{coh\_gain} should therefore be read
 as a directional, honestly marginal label-free prior, with the causal synthetic sweep above
 (\S\ref{sec:causal}, $\rho=+0.98$ to $+1.00$, $p<0.001$) carrying the primary weight.
 
 \begin{figure}[htbp]\centering
-\resizebox{0.82\linewidth}{!}{\input{figs/fig_mechanism}}
+\resizebox{0.95\linewidth}{!}{\input{figs/fig_mechanism}}
 \caption{Controlled mechanism: with the expression signal held fixed (flat grey control), spatial-prior
 advantage rises with manipulated contiguity and flips sign, giving causal evidence for the law.}
 \label{fig:mech}
 \end{figure}
 
 \begin{figure}[htbp]\centering
-\resizebox{0.80\linewidth}{!}{\input{figs/fig_proxy}}
+\resizebox{0.95\linewidth}{!}{\input{figs/fig_proxy}}
 \caption{Label-free proxy search: naive expression-smoothness proxies invert against advantage (orange);
 only the smoothing-gain proxy \texttt{coh\_gain} recovers the sign of the GT-based law (dotted).}
 \label{fig:proxy}
@@ -491,13 +556,13 @@ Fig.~\ref{fig:backend}), above the published GMM-tied $+0.72$. Real mclust wins 
 method$\times$dataset cells but shifts each method's mean ARI by at most $0.016$. The recommended backend
 makes the law cleaner, not weaker.
 
-\begin{figure}[htbp]\centering
+\begin{figure*}[!t]\centering
 \resizebox{\linewidth}{!}{\input{figs/fig_backend}}
 \caption{The law survives the author-recommended backend (real R mclust): published versus mclust-backend
 advantage stays close to the diagonal for most datasets (a; a few, such as IMC, move more), and the fairer
 backend shifts every method's \emph{mean} ARI by $\leq 0.016$ (b).}
 \label{fig:backend}
-\end{figure}
+\end{figure*}
 
 \section{A worked example: a false SOTA and a false mechanism from one dataset}\label{sec:tessera}
 We close with the candidate boundary-aware method (Tessera) as one worked example of how single-dataset
@@ -505,7 +570,7 @@ evaluation can certify two claims that do not survive scrutiny: a state-of-the-a
 novel mechanism. We do not claim every SOTA report is false; we show, on a method we built and can fully
 dissect, how both claims arise and how a multi-dataset, ablation-controlled view overturns them.
 
-\begin{figure}[htbp]\centering
+\begin{figure*}[!t]\centering
 \input{figures/fig_mechanism_arch}
 \caption{The candidate method (Tessera) in one diagram. A learned per-edge gate $g_{ij}$ down-weights
 message passing across tissue seams (anti-over-smoothing); multi-scale fusion combines the gated
@@ -513,7 +578,7 @@ representations into an embedding that is clustered into domains, with the bound
 confidence as explicit outputs. The component ablation (Fig.~\ref{fig:ablation}) tests whether each
 part contributes.}
 \label{fig:arch}
-\end{figure}
+\end{figure*}
 
 \paragraph{A single favourable dataset certifies a false SOTA.} On osmFISH the method ranks first (ARI $0.438$,
 $+0.196$ over the non-spatial floor), a publishable state-of-the-art claim from a single ARI table.
@@ -533,11 +598,13 @@ plain graph-autoencoder backbone, while the named edge gate and multi-scale fusi
 generic contrastive objective, not the mechanism the method is named for.
 
 \begin{figure}[htbp]\centering
-\resizebox{0.92\linewidth}{!}{\input{figs/fig_ablation}}
+\resizebox{0.99\linewidth}{!}{\input{figs/fig_ablation}}
 \caption{Component ablation of the candidate method on the two datasets where it is competitive (3 seeds):
 the ARI drop when each component is removed (positive $=$ the component contributes). Only the
 boundary-contrastive loss matters; the headline anti-over-smoothing edge gate and multi-scale
-fusion are neutral-to-harmful, so the model's gain over a plain backbone is the contrastive loss alone.}
+fusion are neutral-to-harmful, so the model's gain over a plain backbone is the contrastive loss alone.
+These absolute ARIs come from a separate two-dataset case-study run and are not directly comparable with
+the cross-dataset benchmark panels.}
 \label{fig:ablation}
 \end{figure}
 
@@ -579,8 +646,7 @@ $\alpha{=}0.05$, versus $\rho{=}0.72$ ($p=0.012$) for continuous contiguity. The
 Slide-seqV2 (region GT, measured contiguity only 0.274) and IMC (cell-type GT, measured contiguity 0.630):
 both are exceptions the categorical split misclassifies, because GT-type name is only a weak proxy for how
 spatially contiguous the labels actually are on a given tissue. Continuous, data-measured contiguity is
-therefore not redundant with a coarser categorical predictor built from the same metadata
-(\texttt{experiments/gt\_type\_vs\_contiguity.py}).
+therefore not redundant with a coarser categorical predictor built from the same metadata.
 
 \paragraph{Multiple comparisons and influence.} The headline $p=0.012$ is uncorrected and the estimate is
 fragile to its small sample: it survives a Bonferroni correction over the three primary tests ($p=0.035$)
@@ -589,14 +655,13 @@ single most influential dataset (MERFISH) lowers $\rho$ to $0.63$ (jackknife ran
 advantage correlation is significant; the method-specific rank correlations are not. The out-of-sample
 decision rule is real but marginal at $n{=}11$ ($p=0.06$), and the label-free \texttt{coh\_gain} proxy is
 directional only: after correcting for its selection among six candidate proxies it is not significant
-(search-corrected $p=0.28$; uncorrected $p=0.079$), so the causal synthetic sweep, not the proxy, carries the
+(search-corrected $p=0.28$; asymptotic uncorrected $p=0.079$), so the causal synthetic sweep, not the proxy, carries the
 weight of the label-free claim. The primary family of
 three tests comprises the correlations against the study's actual predictive targets reported in
 Table~\ref{tab:law} (contiguity vs.\ spatial-prior advantage, vs.\ Tessera rank, vs.\ SpaceFlow rank); the
 wider family of seven additionally includes confound-marginal
 correlations (cluster count, dimensionality, modality) and two label-free proxy validations (Moran's $I$,
-raw coherence) computed for different diagnostic purposes, not repeated tests of the same hypothesis
-(\texttt{experiments/robustness\_audit.py}).
+raw coherence) computed for different diagnostic purposes, not repeated tests of the same hypothesis.
 
 \paragraph{Partly definitional direction.} The advantage we predict and the contiguity predictor are both
 read off the same spatial $k$NN structure on the same labels. On this panel the neighbour-mean smoother is
@@ -623,25 +688,26 @@ semi-circular or conditioned: no metric here is external truth.
 All datasets are previously published and publicly available from their original sources: DLPFC
 \citep{maynard2021dlpfc}, seqFISH \citep{lohoff2022seqfish}, MERFISH \citep{moffitt2018merfish}, STARmap
 \citep{wang2018starmap}, osmFISH \citep{codeluppi2018osmfish}, MIBI-TOF \citep{keren2018mibitof}, breast IMC
-\citep{jackson2020imc}, Open-ST \citep{schott2024openst}, Slide-seqV2 \citep{stickels2021slideseq}, and
+\citep{jackson2020imc}, a breast-tumour Visium section \citep{tenx2020brca} with SEDR pathology-domain labels
+\citep{xu2024sedr}, Open-ST \citep{schott2024openst}, Slide-seqV2 \citep{stickels2021slideseq}, and
 CODEX \citep{goltsev2018codex}; several are redistributed through Squidpy \citep{palla2022squidpy}. No new
-data were generated. Exact accession identifiers and download URLs for each dataset are listed in the
-code repository's \texttt{BASELINE\_REFERENCES.md}.
+data were generated. Accession identifiers and download locations for each dataset (repository DOIs,
+GEO/Single-Cell-Portal accessions, or the originating lab's data portal, as applicable) are listed in the
+code repository, alongside the original publications cited above.
 
 \section*{Code availability}
 All analysis code, the synthetic-tissue generator, and the verification harness are available at a public
 repository (\url{https://github.com/PeterPonyu/tessera-st}) and archived at Zenodo (DOI assigned on
-deposit). Every reported number is regenerated by the scripts in \texttt{experiments/} and
-machine-checked against its JSON artifact by \texttt{verify\_manuscript.py} (exit~0); the robustness audit
-(\texttt{experiments/robustness\_audit.py}) recomputes the multiple-comparison corrections, the jackknife,
-the out-of-sample binomial test, and the smoother-independence check from the same artifacts. Figures are
-vector \texttt{.tex} built by \texttt{manuscript/make\_figs.R}, which reads the JSON artifacts directly,
-generates the synthetic spatial-domain map, and emits the pgfplots panels, the heatmap, and the result
-tables (R with pgfplots and TikZ, compiled with \texttt{lualatex}; \texttt{make} regenerates all).
-Baseline method brand names are confined to driver scripts under \texttt{experiments/} (a strict
-separation enforced by automated tests). The project's internal claim ledger and verification log
-(\texttt{CLAIM\_LEDGER.md}, released with the code) document the full evaluation history, including one
-data-provenance issue caught by internal code review and fixed by a full genuine re-run.
+deposit). Every reported number is regenerated from the analysis scripts and machine-checked against its
+JSON artifact by an automated verification harness; a companion robustness-audit routine recomputes the
+multiple-comparison corrections, the jackknife, the out-of-sample binomial test, and the
+smoother-independence check from the same artifacts. Figures are vector graphics generated by an R script
+that reads the JSON artifacts directly, builds the synthetic spatial-domain map, and emits the pgfplots
+panels, the heatmap, and the result tables (compiled with \texttt{lualatex}); the whole pipeline is
+reproducible with a single build command. Baseline method brand names are confined to driver scripts (a
+strict separation enforced by automated tests). The repository also ships an audit log documenting the
+full evaluation history, including one data-provenance issue caught by internal code review and fixed by a
+full genuine re-run.
 
 \section*{Author contributions}
 Z.F. conceived the study, implemented the methods and benchmark, performed the analyses, and wrote the
@@ -653,7 +719,6 @@ The author declares no competing financial or personal interests.
 \section*{Funding}
 This research received no external funding.
 
-\small
-\bibliographystyle{unsrtnat}
+\bibliographystyle{IEEEtran}
 \bibliography{refs}
 \end{document}

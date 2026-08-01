@@ -261,6 +261,49 @@ Honest standing: Tessera is a peer-ish method whose single defensible, non-circu
 boundary sharpness, not label-agreement. Caveats remain: single section/dataset, unified GMM backend
 (each SOTA's own pipeline may score higher), GraphST adapter not optimised, all metrics semi-circular.
 
+## ★★★★★★★★★★ R6 — decoupling robustness check strengthens the causal leg (2026-07-13)
+
+Triggered by the referee-style objection that the primary synthetic sweep (`mechanism_synth.py`, R3)
+scrambles positions and so erodes BOTH the labels' spatial contiguity AND the generic expression↔position
+alignment any spatial method exploits — so maybe the law tracks alignment, not contiguity specifically.
+Ran a two-arm decoupling control at the primary experiment's full fidelity
+(`experiments/mechanism_decoupled_v2.{py,json}`: 400-epoch STAGATE, 5 seeds, 11-level 0→1 sweep, 2 independent
+substrates S1/S2, GPU, deterministic, runtime 2371 s). Arm A (alignment-only): fix coords+labels
+(contiguity constant), swap a growing fraction of expression vectors. Arm B (contiguity-only): hold alignment
+and signal fixed (expression regenerated from the current label), overwrite a growing fraction of labels with
+random domain ids. **Three discriminators, all favouring contiguity on both substrates and both priors
+(neighbour-mean / STAGATE):** (1) effect size — normalized_slope(B) − normalized_slope(A) = +0.28 … +0.58;
+(2) sign-flip — ONLY Arm B reproduces the paper's headline positive→negative crossing (S1 near contiguity
+0.58, S2 near 0.76); Arm A's advantage only decays toward 0, never flips; (3) clean-vs-confounded — Arm B holds
+the non-spatial floor flat (range 0.03–0.05), while Arm A's expression-swap collapses the floor (by 0.36 on
+S1, 0.68 on S2), i.e. its shrinking advantage is substantially generic signal loss — the confound a referee
+flags, landing on the arm NOT used to support the law. Cross-substrate rollup:
+`norm_slope_both_favor_B` / `only_B_flips_sign` / `B_floor_flatter_than_A` all TRUE on both substrates.
+
+**Corrects a stale auto-verdict.** The earlier low-fidelity v1 (`experiments/mechanism_decoupled.{py,json}`,
+120-epoch, 1 substrate, 6-level) carried an auto-generated verdict claiming this experiment "does NOT support
+contiguity-specificity." That verdict is WRONG — an artifact of using Spearman ρ as the tie-break, but both
+arms are monotone BY CONSTRUCTION so ρ saturates near 1 for both and carries no effect-size information. v2's
+S1 (same substrate) reproduces v1's per-level numbers almost exactly (contrast norm_slope B−A: v1 +0.305/+0.286
+vs v2 +0.302/+0.283), so restoring fidelity did NOT change the underlying result — it added the denser sweep
+(resolves the sign-flip crossing), the 2nd substrate, and the sign-flip/floor-flatness discriminators that ρ
+misses. The v1 json has been annotated with a `superseded_by` pointer; it is not cited anywhere in the
+manuscript or this ledger.
+
+**Evidence state.** v2 is ADOPTED as the R6 robustness artifact and checked directly from the local
+`mechanism_decoupled_v2.json` by `experiments/verify_manuscript.py` (effect-size direction, exclusive sign
+flip, floor flatness, and all four hand-typed `tab:decouple` rows). The JSON remains a git-ignored generated
+artifact under repository policy, but `scripts/deposit_zenodo.py` requires it in the release archive. The
+causal claim itself remains LOCKED under the global honest-claims guardrail: adoption closes evidence
+provenance; it does not graduate a new superiority claim.
+
+**Manuscript.** New paragraph "Decoupling contiguity from alignment" + `Table tab:decouple` added to
+§`sec:causal` (§VII). Framed honestly as strengthening the CONTROLLED-MANIPULATION leg only (the observational
+11-platform leg is independent), and NOT as "alignment is irrelevant" (Arm A's advantage does track alignment
+— it is just confounded and never flips sign); the correct claim is "contiguity is the lever movable in
+isolation, and only moving it reproduces the full sign-flip." Still LOCKED under the honest-claims guardrail:
+this is a robustness check on the existing causal claim, not a new superiority claim.
+
 ## ★★★★★★★★★ R5 — search-corrected proxy + causal-first reframe (manuscript retitle, 2026-07-01)
 
 Triggered by a falsification-first audit of the label-free `coh_gain` proxy: its reported p=0.079 was an
@@ -312,7 +355,7 @@ GENUINE native louvain pipeline in a dedicated env (tessera-spagcn: py3.10/numpy
 on 7/11 platforms (fails ≤36-dim protein panels, like SpaceFlow/GraphST) it CONFIRMS the conclusion: wins
 only openST (1/7), inverted profile ρ=+0.67. So the kmeans-init handicap did NOT drive no-universal-SOTA.
 **G004 FinalGate:** verify_manuscript exit 0 (now also checks paper.tex — the submission artifact); pytest
-23; clean-room intact; paper.pdf 12pp / 0 overfull / 0 undefined. Independent code-review APPROVE after one
+23; clean-room intact; paper.pdf 13pp / 0 overfull / 0 undefined (current 2026-07-14 build). Independent code-review APPROVE after one
 REQUEST-CHANGES round (fixed: a Zenodo token-leak-into-error-URL via query param → Bearer header; paper.tex
 brought into verifier; 3 LOW). Two human-only inputs remain by design: real affiliation/ORCID + a Zenodo
 token. Bugs caught+fixed this round: missing `import os` (crash) and a self-matching pgrep watcher (4.6h spin).

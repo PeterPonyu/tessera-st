@@ -2,6 +2,7 @@
 (within rounding). Fails loudly if the writeup drifts from evidence."""
 
 import json
+import re
 
 rb = json.load(open("experiments/rigorous_bench.json"))
 pa = json.load(open("experiments/pareto_frontier.json"))
@@ -260,6 +261,62 @@ for s in ["+0.72", "+0.79", "+0.56", "+0.98", "0.473", "20 of 81", "0.36", "mclu
     present = s in pa_tex
     checks.append((f"paper.tex contains '{s}'", 1, 1 if present else 0, present))
 
+# R6 decoupling control: load the adopted local artifact directly. JSON files remain git-ignored
+# experiment outputs, but the release builder requires this one and this verifier fails if it is absent.
+dc = json.load(open("experiments/mechanism_decoupled_v2.json"))
+assert dc["status"].startswith("ADOPTED as CLAIM_LEDGER.md R6 robustness evidence"), \
+    f"v2 decoupling artifact is not adopted: {dc['status']}"
+assert dc["fidelity_restored"]["stagate_n_epochs"] == 400, "v2 must match the primary 400-epoch fidelity"
+assert dc["fidelity_restored"]["seeds_v2"] == [1, 2, 3, 4, 5], "v2 must use the reported five seeds"
+assert dc["fidelity_restored"]["n_substrates_v2"] == 2, "v2 must cover both reported substrates"
+
+for substrate_name in ["S1_primary", "S2_independent"]:
+    substrate = dc["results_by_substrate"][substrate_name]
+    arm_a = substrate["arm_A_alignment_only"]
+    arm_b = substrate["arm_B_contiguity_only"]
+    contrast = substrate["contrast"]
+
+    assert contrast["smooth_norm_slope_B_minus_A"] > 0, \
+        f"{substrate_name}: contiguity does not have the larger smoother effect size"
+    assert contrast["stagate_norm_slope_B_minus_A"] > 0, \
+        f"{substrate_name}: contiguity does not have the larger STAGATE effect size"
+    assert contrast["only_B_flips_sign_smooth"] and contrast["only_B_flips_sign_stagate"], \
+        f"{substrate_name}: sign flip is not exclusive to the contiguity arm"
+    assert contrast["B_floor_range"] < contrast["A_floor_range"], \
+        f"{substrate_name}: contiguity arm does not keep the non-spatial floor flatter"
+    assert not arm_a["adv_smooth_flips_sign"] and not arm_a["adv_stagate_flips_sign"], \
+        f"{substrate_name}: alignment arm unexpectedly flips the advantage sign"
+    assert arm_b["adv_smooth_flips_sign"] and arm_b["adv_stagate_flips_sign"], \
+        f"{substrate_name}: contiguity arm does not reproduce the sign flip"
+
+roll = dc["cross_substrate_rollup"]
+for key in ["norm_slope_both_favor_B_all_substrates",
+            "only_B_flips_sign_smooth_all_substrates",
+            "only_B_flips_sign_stagate_all_substrates",
+            "B_floor_flatter_than_A_all_substrates"]:
+    assert roll[key], f"R6 cross-substrate discriminator failed: {key}"
+
+# Pin every hand-typed Table tab:decouple number to the JSON, including effect sizes and floor ranges.
+for substrate_name, label in [("S1_primary", "S1"), ("S2_independent", "S2")]:
+    substrate = dc["results_by_substrate"][substrate_name]
+    for arm_key, arm_label in [("arm_A_alignment_only", "alignment"),
+                               ("arm_B_contiguity_only", "contiguity")]:
+        arm = substrate[arm_key]
+        smooth_effect = re.escape(f"{arm['normalized_slope_vs_adv_smooth']:.2f}")
+        stagate_effect = re.escape(f"{arm['normalized_slope_vs_adv_stagate']:.2f}")
+        floor_range = re.escape(f"{arm['nonspatial_floor_range']:.2f}")
+        row_pattern = (
+            rf"{label}\s*&\s*{arm_label}\s*&\s*"
+            rf"{smooth_effect}\s*/\s*{stagate_effect}\s*&\s*"
+            rf"{'yes' if arm['adv_smooth_flips_sign'] and arm['adv_stagate_flips_sign'] else 'no'}\s*&\s*"
+            rf"{floor_range}"
+        )
+        present = re.search(row_pattern, pa_tex) is not None
+        checks.append((f"paper.tex contains JSON-derived R6 row '{label} {arm_label}'",
+                       1, 1 if present else 0, present))
+checks.append(("R6 v2: slopes favor contiguity; only B flips; B floor is flatter on S1+S2",
+               1, 1, True))
+
 # --- numeric ties: derive hand-typed table/prose values from the JSON and require them in paper.tex
 # (red-team found the presence-only list left tables/p-values un-tied to the ledger; this closes it:
 # a wrong OR deleted value fails the check because the JSON-derived string is no longer present) ---
@@ -272,12 +329,19 @@ _derived = {
     f"{sr['contiguity_partial_controlling_all']:.2f}": "partial controlling all",
     f"{eb['p_contiguity_vs_spatial_advantage']:.3f}": "law p-value",
     f"{_words[eb['n_distinct_winners']]} distinct": "n_distinct_winners (as word)",
-    f"{gp['principled_proxy_coh_gain']['vs_advantage'][1]:.3f}": "coh_gain uncorrected proxy p-value",
+    f"{gp['principled_proxy_coh_gain']['vs_advantage'][1]:.3f}": "coh_gain asymptotic uncorrected proxy p-value",
+    f"{psc['p_uncorrected_selected']:.3f}": "coh_gain permutation uncorrected proxy p-value",
     f"{psc['p_search_corrected']:.2f}": "coh_gain SEARCH-CORRECTED proxy p-value (R5)",
 }
 for s, what in _derived.items():
     present = s in pa_tex
     checks.append((f"paper.tex contains derived {what} '{s}'", 1, 1 if present else 0, present))
+
+for phrase, what in [
+        ("asymptotic uncorrected", "0.079 asymptotic p-value label"),
+        ("uncorrected permutation companion", "0.083 permutation p-value label")]:
+    present = phrase in pa_tex
+    checks.append((f"paper.tex labels {what}", 1, 1 if present else 0, present))
 
 # robustness audit (de-circularised law, multiplicity, jackknife, binomial) -> tie to paper.tex
 if os.path.exists("experiments/robustness_audit.json"):
