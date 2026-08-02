@@ -1,38 +1,409 @@
-\begin{tikzpicture}
-\begin{axis}[width=8.4cm, height=5.8cm, xlabel={GT contiguity (manipulated: scramble $1.0\rightarrow0.0$)},ylabel={ARI / advantage ($\Delta$ARI)}, label style={font=\small}, tick label style={font=\scriptsize},ymin=-0.45, ymax=0.82,legend style={font=\scriptsize, at={(0.02,0.98)}, anchor=north west, draw=none}, legend cell align=left]
-\addplot[color=tgreen, mark=*, mark size=1.6pt, thick] coordinates {
-  (0.181,-0.343)
-  (0.197,-0.344)
-  (0.255,-0.331)
-  (0.363,-0.262)
-  (0.487,-0.132)
-  (0.649,0.089)
-  (0.764,0.295)
-  (0.901,0.480)
-};
-\addlegendentry{advantage, neighbour-mean ($\rho=+0.98$)}
-\addplot[color=tblue, mark=square*, mark size=1.6pt, thick] coordinates {
-  (0.181,-0.329)
-  (0.197,-0.324)
-  (0.255,-0.303)
-  (0.363,-0.204)
-  (0.487,-0.085)
-  (0.649,0.160)
-  (0.764,0.355)
-  (0.901,0.542)
-};
-\addlegendentry{advantage, STAGATE ($\rho=+1.00$)}
-\addplot[color=black!50, mark=triangle*, mark size=1.6pt, thick] coordinates {
-  (0.181,0.345)
-  (0.197,0.345)
-  (0.255,0.345)
-  (0.363,0.345)
-  (0.487,0.345)
-  (0.649,0.345)
-  (0.764,0.345)
-  (0.901,0.345)
-};
-\addlegendentry{non-spatial ARI (control: flat)}
-\draw[tred, dashed] ({rel axis cs:0,0}|-{axis cs:0,0}) -- ({rel axis cs:1,0}|-{axis cs:0,0});
-\end{axis}
+% !TEX encoding = UTF-8 Unicode
+\begin{tikzpicture}[x=1pt,y=1pt]
+\definecolor{fillColor}{RGB}{255,255,255}
+\path[use as bounding box,fill=fillColor,fill opacity=0.00] (0,0) rectangle (516.73,397.48);
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{drawColor}{RGB}{255,255,255}
+\definecolor{fillColor}{RGB}{255,255,255}
+
+\path[draw=drawColor,line width= 0.6pt,line join=round,line cap=round,fill=fillColor] (  0.00,  0.00) rectangle (516.73,397.48);
+\end{scope}
+\begin{scope}
+\path[clip] (  5.50,184.52) rectangle (253.82,391.98);
+\definecolor{fillColor}{RGB}{255,255,255}
+
+\path[fill=fillColor] (  5.50,184.52) rectangle (253.82,391.98);
+\end{scope}
+\begin{scope}
+\path[clip] (253.82,184.52) rectangle (511.23,391.98);
+\definecolor{fillColor}{RGB}{255,255,255}
+
+\path[fill=fillColor] (253.82,184.52) rectangle (511.23,391.98);
+\end{scope}
+\begin{scope}
+\path[clip] (  5.50,  5.50) rectangle (253.82,184.52);
+\definecolor{fillColor}{RGB}{255,255,255}
+
+\path[fill=fillColor] (  5.50,  5.50) rectangle (253.82,184.52);
+\end{scope}
+\begin{scope}
+\path[clip] (253.82,  5.50) rectangle (511.23,184.52);
+\definecolor{fillColor}{RGB}{255,255,255}
+
+\path[fill=fillColor] (253.82,  5.50) rectangle (511.23,184.52);
+\end{scope}
+\begin{scope}
+\path[clip] ( 45.79,231.47) rectangle (249.82,362.39);
+\definecolor{drawColor}{gray}{0.92}
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] ( 45.79,237.42) --
+	(249.82,237.42);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] ( 45.79,268.65) --
+	(249.82,268.65);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] ( 45.79,299.88) --
+	(249.82,299.88);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] ( 45.79,331.12) --
+	(249.82,331.12);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] ( 45.79,362.35) --
+	(249.82,362.35);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] ( 74.94,231.47) --
+	( 74.94,362.39);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (123.52,231.47) --
+	(123.52,362.39);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (172.10,231.47) --
+	(172.10,362.39);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (220.68,231.47) --
+	(220.68,362.39);
+\definecolor{fillColor}{RGB}{47,133,90}
+
+\path[fill=fillColor] ( 58.42,237.42) rectangle ( 74.94,305.98);
+\definecolor{fillColor}{RGB}{43,108,176}
+
+\path[fill=fillColor] ( 74.94,237.42) rectangle ( 91.46,315.21);
+\definecolor{fillColor}{RGB}{47,133,90}
+
+\path[fill=fillColor] (107.00,237.42) rectangle (123.52,343.67);
+\definecolor{fillColor}{RGB}{43,108,176}
+
+\path[fill=fillColor] (123.52,237.42) rectangle (140.04,350.59);
+\definecolor{fillColor}{RGB}{47,133,90}
+
+\path[fill=fillColor] (155.58,237.42) rectangle (172.10,279.76);
+\definecolor{fillColor}{RGB}{43,108,176}
+
+\path[fill=fillColor] (172.10,237.42) rectangle (188.61,291.03);
+\definecolor{fillColor}{RGB}{47,133,90}
+
+\path[fill=fillColor] (204.16,237.42) rectangle (220.68,352.13);
+\definecolor{fillColor}{RGB}{43,108,176}
+
+\path[fill=fillColor] (220.68,237.42) rectangle (237.19,356.44);
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{drawColor}{gray}{0.30}
+
+\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.55] at ( 42.64,235.53) {0.00};
+
+\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.55] at ( 42.64,266.76) {0.25};
+
+\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.55] at ( 42.64,297.99) {0.50};
+
+\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.55] at ( 42.64,329.22) {0.75};
+
+\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.55] at ( 42.64,360.45) {1.00};
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{drawColor}{gray}{0.30}
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.55] at ( 74.94,224.53) {S1 A};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.55] at (123.52,224.53) {S1 B};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.55] at (172.10,224.53) {S2 A};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.55] at (220.68,224.53) {S2 B};
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{drawColor}{RGB}{0,0,0}
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.65] at (147.81,217.23) {substrate / arm};
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{drawColor}{RGB}{0,0,0}
+
+\node[text=drawColor,rotate= 90.00,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.65] at ( 29.85,296.93) {normalized slope};
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{fillColor}{RGB}{47,133,90}
+
+\path[fill=fillColor] (106.64,191.47) rectangle (120.19,205.02);
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{fillColor}{RGB}{43,108,176}
+
+\path[fill=fillColor] (145.69,191.47) rectangle (159.24,205.02);
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{drawColor}{RGB}{0,0,0}
+
+\node[text=drawColor,anchor=base west,inner sep=0pt, outer sep=0pt, scale=  0.55] at (124.14,196.35) {smooth};
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{drawColor}{RGB}{0,0,0}
+
+\node[text=drawColor,anchor=base west,inner sep=0pt, outer sep=0pt, scale=  0.55] at (163.19,196.35) {STAGATE};
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{drawColor}{RGB}{0,0,0}
+
+\node[text=drawColor,anchor=base west,inner sep=0pt, outer sep=0pt, scale=  0.70] at ( 45.79,376.05) {\bfseries effect size};
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{drawColor}{RGB}{0,0,0}
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.90] at ( 17.44,381.82) {\bfseries (A)};
+\end{scope}
+\begin{scope}
+\path[clip] (303.20,231.47) rectangle (507.23,362.39);
+\definecolor{drawColor}{gray}{0.92}
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (303.20,267.17) --
+	(507.23,267.17);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (303.20,326.68) --
+	(507.23,326.68);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (332.35,231.47) --
+	(332.35,362.39);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (380.93,231.47) --
+	(380.93,362.39);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (429.50,231.47) --
+	(429.50,362.39);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (478.08,231.47) --
+	(478.08,362.39);
+\definecolor{drawColor}{RGB}{255,255,255}
+\definecolor{fillColor}{RGB}{237,242,247}
+
+\path[draw=drawColor,line width= 0.1pt,fill=fillColor] (308.06,237.42) rectangle (356.64,296.93);
+
+\path[draw=drawColor,line width= 0.1pt,fill=fillColor] (308.06,296.93) rectangle (356.64,356.44);
+\definecolor{fillColor}{RGB}{197,48,48}
+
+\path[draw=drawColor,line width= 0.1pt,fill=fillColor] (356.64,237.42) rectangle (405.22,296.93);
+
+\path[draw=drawColor,line width= 0.1pt,fill=fillColor] (356.64,296.93) rectangle (405.22,356.44);
+\definecolor{fillColor}{RGB}{237,242,247}
+
+\path[draw=drawColor,line width= 0.1pt,fill=fillColor] (405.22,237.42) rectangle (453.79,296.93);
+
+\path[draw=drawColor,line width= 0.1pt,fill=fillColor] (405.22,296.93) rectangle (453.79,356.44);
+\definecolor{fillColor}{RGB}{197,48,48}
+
+\path[draw=drawColor,line width= 0.1pt,fill=fillColor] (453.79,237.42) rectangle (502.37,296.93);
+
+\path[draw=drawColor,line width= 0.1pt,fill=fillColor] (453.79,296.93) rectangle (502.37,356.44);
+\definecolor{drawColor}{RGB}{0,0,0}
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.60] at (332.35,265.12) {no};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.60] at (332.35,324.63) {no};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.60] at (380.93,265.12) {flip};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.60] at (380.93,324.63) {flip};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.60] at (429.50,265.12) {no};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.60] at (429.50,324.63) {no};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.60] at (478.08,265.12) {flip};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.60] at (478.08,324.63) {flip};
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{drawColor}{gray}{0.30}
+
+\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.55] at (300.05,265.28) {smooth};
+
+\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.55] at (300.05,324.79) {STAGATE};
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{drawColor}{gray}{0.30}
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.55] at (332.35,224.53) {S1 A};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.55] at (380.93,224.53) {S1 B};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.55] at (429.50,224.53) {S2 A};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.55] at (478.08,224.53) {S2 B};
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{drawColor}{RGB}{0,0,0}
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.65] at (405.22,217.23) {substrate / arm};
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{drawColor}{RGB}{0,0,0}
+
+\node[text=drawColor,anchor=base west,inner sep=0pt, outer sep=0pt, scale=  0.60] at (303.20,367.06) {only contiguity arm B flips};
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{drawColor}{RGB}{0,0,0}
+
+\node[text=drawColor,anchor=base west,inner sep=0pt, outer sep=0pt, scale=  0.70] at (303.20,376.05) {\bfseries advantage sign flip};
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{drawColor}{RGB}{0,0,0}
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.90] at (265.82,381.82) {\bfseries (B)};
+\end{scope}
+\begin{scope}
+\path[clip] ( 45.79, 24.00) rectangle (249.82,154.92);
+\definecolor{drawColor}{gray}{0.92}
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] ( 45.79, 29.95) --
+	(249.82, 29.95);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] ( 45.79, 64.85) --
+	(249.82, 64.85);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] ( 45.79, 99.76) --
+	(249.82, 99.76);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] ( 45.79,134.66) --
+	(249.82,134.66);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] ( 74.94, 24.00) --
+	( 74.94,154.92);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (123.52, 24.00) --
+	(123.52,154.92);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (172.10, 24.00) --
+	(172.10,154.92);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (220.68, 24.00) --
+	(220.68,154.92);
+\definecolor{fillColor}{RGB}{221,107,32}
+
+\path[fill=fillColor] ( 59.88, 29.95) rectangle ( 90.00, 93.47);
+\definecolor{fillColor}{RGB}{47,133,90}
+
+\path[fill=fillColor] (108.46, 29.95) rectangle (138.58, 38.68);
+\definecolor{fillColor}{RGB}{221,107,32}
+
+\path[fill=fillColor] (157.04, 29.95) rectangle (187.16,148.97);
+\definecolor{fillColor}{RGB}{47,133,90}
+
+\path[fill=fillColor] (205.62, 29.95) rectangle (235.74, 34.66);
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{drawColor}{gray}{0.30}
+
+\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.55] at ( 42.64, 28.06) {0.0};
+
+\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.55] at ( 42.64, 62.96) {0.2};
+
+\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.55] at ( 42.64, 97.86) {0.4};
+
+\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.55] at ( 42.64,132.76) {0.6};
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{drawColor}{gray}{0.30}
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.55] at ( 74.94, 17.06) {S1 A};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.55] at (123.52, 17.06) {S1 B};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.55] at (172.10, 17.06) {S2 A};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.55] at (220.68, 17.06) {S2 B};
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{drawColor}{RGB}{0,0,0}
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.65] at (147.81,  9.76) {substrate / arm};
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{drawColor}{RGB}{0,0,0}
+
+\node[text=drawColor,rotate= 90.00,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.65] at ( 29.85, 89.46) {non-spatial floor range};
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{drawColor}{RGB}{0,0,0}
+
+\node[text=drawColor,anchor=base west,inner sep=0pt, outer sep=0pt, scale=  0.60] at ( 45.79,159.59) {B remains flat; A destroys signal};
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{drawColor}{RGB}{0,0,0}
+
+\node[text=drawColor,anchor=base west,inner sep=0pt, outer sep=0pt, scale=  0.70] at ( 45.79,168.58) {\bfseries manipulation cleanliness};
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{drawColor}{RGB}{0,0,0}
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.90] at ( 17.44,174.35) {\bfseries (C)};
+\end{scope}
+\begin{scope}
+\path[clip] (303.20, 24.00) rectangle (507.23,154.92);
+\definecolor{drawColor}{RGB}{255,255,255}
+\definecolor{fillColor}{RGB}{47,133,90}
+
+\path[draw=drawColor,line width= 0.1pt,fill=fillColor] (437.09, 29.95) rectangle (500.85,148.97);
+
+\path[draw=drawColor,line width= 0.1pt,fill=fillColor] (309.58, 29.95) rectangle (373.34,148.97);
+
+\path[draw=drawColor,line width= 0.1pt,fill=fillColor] (373.34, 29.95) rectangle (437.09,148.97);
+\definecolor{drawColor}{RGB}{0,0,0}
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.63] at (468.97, 87.30) {favours contiguity};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.63] at (341.46, 87.30) {favours contiguity};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.63] at (405.22, 87.30) {favours contiguity};
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{drawColor}{gray}{0.30}
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.55] at (341.46, 17.06) {exclusive sign flip};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.55] at (405.22, 17.06) {flatter floor};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.55] at (468.97, 17.06) {larger slope};
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{drawColor}{RGB}{0,0,0}
+
+\node[text=drawColor,anchor=base west,inner sep=0pt, outer sep=0pt, scale=  0.60] at (303.20,159.59) {all criteria pass on S1 and S2};
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{drawColor}{RGB}{0,0,0}
+
+\node[text=drawColor,anchor=base west,inner sep=0pt, outer sep=0pt, scale=  0.70] at (303.20,168.58) {\bfseries cross-substrate verdict};
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{drawColor}{RGB}{0,0,0}
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.90] at (265.82,174.35) {\bfseries (D)};
+\end{scope}
 \end{tikzpicture}

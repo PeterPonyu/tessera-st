@@ -44,4 +44,16 @@
 % loss tag between the forward path and the outputs
 \node[lbl] at (8.2,-1.0) {recon.\ $+$ boundary-contrastive loss};
 
+% ---------- A--D production-panel frames ----------
+\begin{scope}[on background layer]
+  \node[draw=tblue!65, dashed, rounded corners=2pt, fit=(expr), inner sep=5pt,
+        label={[font=\bfseries]north west:(A)}] {};
+  \node[draw=torange!70, dashed, rounded corners=2pt, fit=(gate)(mp), inner sep=5pt,
+        label={[font=\bfseries]north west:(B)}] {};
+  \node[draw=tpurple!65, dashed, rounded corners=2pt, fit=(fuse)(emb), inner sep=5pt,
+        label={[font=\bfseries]north west:(C)}] {};
+  \node[draw=tred!65, dashed, rounded corners=2pt, fit=(dom)(bmap)(conf), inner sep=5pt,
+        label={[font=\bfseries]south west:(D)}] {};
+\end{scope}
+
 \end{tikzpicture}

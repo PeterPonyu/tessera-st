@@ -1,18 +1,524 @@
-\begin{tikzpicture}
-\begin{axis}[xbar, bar width=5pt, width=9.2cm, height=5.0cm, symbolic y coords={multi-scale fusion,edge gating,calibrated uncertainty,boundary-contrastive loss}, ytick={multi-scale fusion,edge gating,calibrated uncertainty,boundary-contrastive loss},
-  y tick label style={font=\scriptsize}, tick label style={font=\scriptsize}, xmin=-0.10, xmax=0.36,  xlabel={$\Delta$ARI when the component is removed (positive $=$ it earns its place)}, xlabel style={font=\small},  nodes near coords, nodes near coords style={font=\tiny}, every node near coord/.append style={/pgf/number format/.cd, fixed, precision=2, print sign},  enlarge y limits=0.18, legend style={font=\scriptsize, at={(0.98,0.05)}, anchor=south east, draw=none}, legend cell align=left]
-\addplot[draw=black!40, fill=tblue] coordinates {
-  (0.283,boundary-contrastive loss)
-  (0.047,calibrated uncertainty)
-  (-0.007,edge gating)
-  (-0.006,multi-scale fusion)
-}; \addlegendentry{MERFISH}
-\addplot[draw=black!40, fill=torange] coordinates {
-  (0.245,boundary-contrastive loss)
-  (-0.002,calibrated uncertainty)
-  (-0.019,edge gating)
-  (-0.034,multi-scale fusion)
-}; \addlegendentry{osmFISH}
-\draw[black, thick] ({axis cs:0,boundary-contrastive loss}|-{rel axis cs:0,0}) -- ({axis cs:0,boundary-contrastive loss}|-{rel axis cs:0,1});
-\end{axis}
+% !TEX encoding = UTF-8 Unicode
+\begin{tikzpicture}[x=1pt,y=1pt]
+\definecolor{fillColor}{RGB}{255,255,255}
+\path[use as bounding box,fill=fillColor,fill opacity=0.00] (0,0) rectangle (516.73,397.48);
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{drawColor}{RGB}{255,255,255}
+\definecolor{fillColor}{RGB}{255,255,255}
+
+\path[draw=drawColor,line width= 0.6pt,line join=round,line cap=round,fill=fillColor] (  0.00,  0.00) rectangle (516.73,397.48);
+\end{scope}
+\begin{scope}
+\path[clip] (  5.50,203.14) rectangle (258.31,391.98);
+\definecolor{fillColor}{RGB}{255,255,255}
+
+\path[fill=fillColor] (  5.50,203.14) rectangle (258.31,391.99);
+\end{scope}
+\begin{scope}
+\path[clip] (258.31,203.14) rectangle (511.23,391.98);
+\definecolor{fillColor}{RGB}{255,255,255}
+
+\path[fill=fillColor] (258.31,203.14) rectangle (511.23,391.99);
+\end{scope}
+\begin{scope}
+\path[clip] (  5.50,  5.50) rectangle (258.31,203.14);
+\definecolor{fillColor}{RGB}{255,255,255}
+
+\path[fill=fillColor] (  5.50,  5.50) rectangle (258.31,203.14);
+\end{scope}
+\begin{scope}
+\path[clip] (258.31,  5.50) rectangle (511.23,203.14);
+\definecolor{fillColor}{RGB}{255,255,255}
+
+\path[fill=fillColor] (258.31,  5.50) rectangle (511.23,203.14);
+\end{scope}
+\begin{scope}
+\path[clip] ( 89.21,221.64) rectangle (254.31,371.19);
+\definecolor{drawColor}{gray}{0.92}
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] ( 89.21,243.01) --
+	(254.31,243.01);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] ( 89.21,278.61) --
+	(254.31,278.61);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] ( 89.21,314.22) --
+	(254.31,314.22);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] ( 89.21,349.83) --
+	(254.31,349.83);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (100.58,221.64) --
+	(100.58,371.19);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (152.18,221.64) --
+	(152.18,371.19);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (203.77,221.64) --
+	(203.77,371.19);
+\definecolor{fillColor}{RGB}{43,108,176}
+
+\path[fill=fillColor] (100.58,333.80) rectangle (246.80,365.85);
+
+\path[fill=fillColor] (100.58,298.20) rectangle (124.68,330.24);
+\definecolor{fillColor}{RGB}{160,174,192}
+
+\path[fill=fillColor] ( 96.71,226.98) rectangle (100.58,259.03);
+
+\path[fill=fillColor] ( 97.33,262.59) rectangle (100.58,294.64);
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{drawColor}{gray}{0.30}
+
+\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.55] at ( 86.06,241.11) {edge gating};
+
+\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.55] at ( 86.06,276.72) {multi scale};
+
+\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.55] at ( 86.06,312.32) {calibrated uncertainty};
+
+\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.55] at ( 86.06,347.93) {boundary contrastive};
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{drawColor}{gray}{0.30}
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.55] at (100.58,214.70) {0.0};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.55] at (152.18,214.70) {0.1};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.55] at (203.77,214.70) {0.2};
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{drawColor}{RGB}{0,0,0}
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.65] at (171.76,207.41) {delta ARI when removed};
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{drawColor}{RGB}{0,0,0}
+
+\node[text=drawColor,anchor=base west,inner sep=0pt, outer sep=0pt, scale=  0.70] at ( 89.21,376.05) {\bfseries MERFISH case study};
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{drawColor}{RGB}{0,0,0}
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.90] at ( 17.44,381.82) {\bfseries (A)};
+\end{scope}
+\begin{scope}
+\path[clip] (342.13,221.64) rectangle (507.23,371.19);
+\definecolor{drawColor}{gray}{0.92}
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (342.13,243.01) --
+	(507.23,243.01);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (342.13,278.61) --
+	(507.23,278.61);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (342.13,314.22) --
+	(507.23,314.22);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (342.13,349.83) --
+	(507.23,349.83);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (367.89,221.64) --
+	(367.89,371.19);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (394.82,221.64) --
+	(394.82,371.19);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (421.74,221.64) --
+	(421.74,371.19);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (448.67,221.64) --
+	(448.67,371.19);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (475.60,221.64) --
+	(475.60,371.19);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (502.53,221.64) --
+	(502.53,371.19);
+\definecolor{fillColor}{RGB}{43,108,176}
+
+\path[fill=fillColor] (367.89,333.80) rectangle (499.73,365.85);
+\definecolor{fillColor}{RGB}{160,174,192}
+
+\path[fill=fillColor] (366.60,298.20) rectangle (367.89,330.24);
+
+\path[fill=fillColor] (357.60,262.59) rectangle (367.89,294.64);
+
+\path[fill=fillColor] (349.63,226.98) rectangle (367.89,259.03);
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{drawColor}{gray}{0.30}
+
+\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.55] at (338.98,241.11) {multi scale};
+
+\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.55] at (338.98,276.72) {edge gating};
+
+\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.55] at (338.98,312.32) {calibrated uncertainty};
+
+\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.55] at (338.98,347.93) {boundary contrastive};
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{drawColor}{gray}{0.30}
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.55] at (367.89,214.70) {0.00};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.55] at (394.82,214.70) {0.05};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.55] at (421.74,214.70) {0.10};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.55] at (448.67,214.70) {0.15};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.55] at (475.60,214.70) {0.20};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.55] at (502.53,214.70) {0.25};
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{drawColor}{RGB}{0,0,0}
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.65] at (424.68,207.41) {delta ARI when removed};
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{drawColor}{RGB}{0,0,0}
+
+\node[text=drawColor,anchor=base west,inner sep=0pt, outer sep=0pt, scale=  0.70] at (342.13,376.05) {\bfseries osmFISH case study};
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{drawColor}{RGB}{0,0,0}
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.90] at (270.30,381.82) {\bfseries (B)};
+\end{scope}
+\begin{scope}
+\path[clip] ( 89.21, 24.00) rectangle (254.31,173.55);
+\definecolor{drawColor}{gray}{0.92}
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] ( 89.21, 38.47) --
+	(254.31, 38.47);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] ( 89.21, 62.59) --
+	(254.31, 62.59);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] ( 89.21, 86.71) --
+	(254.31, 86.71);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] ( 89.21,110.83) --
+	(254.31,110.83);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] ( 89.21,134.95) --
+	(254.31,134.95);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] ( 89.21,159.07) --
+	(254.31,159.07);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] ( 96.71, 24.00) --
+	( 96.71,173.55);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (128.53, 24.00) --
+	(128.53,173.55);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (160.34, 24.00) --
+	(160.34,173.55);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (192.15, 24.00) --
+	(192.15,173.55);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (223.96, 24.00) --
+	(223.96,173.55);
+\definecolor{fillColor}{RGB}{221,107,32}
+
+\path[fill=fillColor] ( 96.71, 99.98) rectangle (240.66,121.69);
+
+\path[fill=fillColor] ( 96.71,148.22) rectangle (243.05,169.93);
+
+\path[fill=fillColor] ( 96.71,124.10) rectangle (242.67,145.81);
+
+\path[fill=fillColor] ( 96.71, 51.74) rectangle (150.51, 73.45);
+
+\path[fill=fillColor] ( 96.71, 75.86) rectangle (225.81, 97.57);
+
+\path[fill=fillColor] ( 96.71, 27.62) rectangle (149.30, 49.33);
+\definecolor{drawColor}{RGB}{0,0,0}
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (241.78,108.42) --
+	(241.78,113.25);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (241.78,110.83) --
+	(239.55,110.83);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (239.55,108.42) --
+	(239.55,113.25);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (246.80,156.66) --
+	(246.80,161.49);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (246.80,159.07) --
+	(239.30,159.07);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (239.30,156.66) --
+	(239.30,161.49);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (246.30,132.54) --
+	(246.30,137.37);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (246.30,134.95) --
+	(239.04,134.95);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (239.04,132.54) --
+	(239.04,137.37);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (156.39, 60.18) --
+	(156.39, 65.00);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (156.39, 62.59) --
+	(144.62, 62.59);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (144.62, 60.18) --
+	(144.62, 65.00);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (239.55, 84.30) --
+	(239.55, 89.13);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (239.55, 86.71) --
+	(212.07, 86.71);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (212.07, 84.30) --
+	(212.07, 89.13);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (150.32, 36.06) --
+	(150.32, 40.88);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (150.32, 38.47) --
+	(148.28, 38.47);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (148.28, 36.06) --
+	(148.28, 40.88);
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{drawColor}{gray}{0.30}
+
+\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.55] at ( 86.06, 36.58) {backbone};
+
+\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.55] at ( 86.06, 60.70) {no boundary contrastive};
+
+\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.55] at ( 86.06, 84.82) {no calibrated uncertainty};
+
+\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.55] at ( 86.06,108.94) {full};
+
+\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.55] at ( 86.06,133.06) {no multi scale};
+
+\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.55] at ( 86.06,157.18) {no edge gating};
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{drawColor}{gray}{0.30}
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.55] at ( 96.71, 17.06) {0.0};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.55] at (128.53, 17.06) {0.1};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.55] at (160.34, 17.06) {0.2};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.55] at (192.15, 17.06) {0.3};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.55] at (223.96, 17.06) {0.4};
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{drawColor}{RGB}{0,0,0}
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.65] at (171.76,  9.76) {absolute ARI};
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{drawColor}{RGB}{0,0,0}
+
+\node[text=drawColor,anchor=base west,inner sep=0pt, outer sep=0pt, scale=  0.60] at ( 89.21,178.21) {separate run; not cross-panel comparable};
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{drawColor}{RGB}{0,0,0}
+
+\node[text=drawColor,anchor=base west,inner sep=0pt, outer sep=0pt, scale=  0.70] at ( 89.21,187.21) {\bfseries MERFISH case study configurations};
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{drawColor}{RGB}{0,0,0}
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.90] at ( 17.44,192.98) {\bfseries (C)};
+\end{scope}
+\begin{scope}
+\path[clip] (342.13, 24.00) rectangle (507.23,173.55);
+\definecolor{drawColor}{gray}{0.92}
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (342.13, 38.47) --
+	(507.23, 38.47);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (342.13, 62.59) --
+	(507.23, 62.59);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (342.13, 86.71) --
+	(507.23, 86.71);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (342.13,110.83) --
+	(507.23,110.83);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (342.13,134.95) --
+	(507.23,134.95);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (342.13,159.07) --
+	(507.23,159.07);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (349.63, 24.00) --
+	(349.63,173.55);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (379.27, 24.00) --
+	(379.27,173.55);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (408.90, 24.00) --
+	(408.90,173.55);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (438.53, 24.00) --
+	(438.53,173.55);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (468.17, 24.00) --
+	(468.17,173.55);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (497.80, 24.00) --
+	(497.80,173.55);
+\definecolor{fillColor}{RGB}{221,107,32}
+
+\path[fill=fillColor] (349.63, 75.86) rectangle (482.69, 97.57);
+
+\path[fill=fillColor] (349.63,124.10) rectangle (488.35,145.81);
+
+\path[fill=fillColor] (349.63,148.22) rectangle (492.73,169.93);
+
+\path[fill=fillColor] (349.63, 27.62) rectangle (410.14, 49.33);
+
+\path[fill=fillColor] (349.63, 99.98) rectangle (483.40,121.69);
+
+\path[fill=fillColor] (349.63, 51.74) rectangle (414.77, 73.45);
+\definecolor{drawColor}{RGB}{0,0,0}
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (487.13, 84.30) --
+	(487.13, 89.13);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (487.13, 86.71) --
+	(478.24, 86.71);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (478.24, 84.30) --
+	(478.24, 89.13);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (499.73,132.54) --
+	(499.73,137.37);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (499.73,134.95) --
+	(476.97,134.95);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (476.97,132.54) --
+	(476.97,137.37);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (498.69,156.66) --
+	(498.69,161.49);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (498.69,159.07) --
+	(486.78,159.07);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (486.78,156.66) --
+	(486.78,161.49);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (412.84, 36.06) --
+	(412.84, 40.88);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (412.84, 38.47) --
+	(407.45, 38.47);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (407.45, 36.06) --
+	(407.45, 40.88);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (487.16,108.42) --
+	(487.16,113.25);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (487.16,110.83) --
+	(479.63,110.83);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (479.63,108.42) --
+	(479.63,113.25);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (417.02, 60.18) --
+	(417.02, 65.00);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (417.02, 62.59) --
+	(412.52, 62.59);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round] (412.52, 60.18) --
+	(412.52, 65.00);
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{drawColor}{gray}{0.30}
+
+\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.55] at (338.98, 36.58) {no boundary contrastive};
+
+\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.55] at (338.98, 60.70) {backbone};
+
+\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.55] at (338.98, 84.82) {full};
+
+\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.55] at (338.98,108.94) {no calibrated uncertainty};
+
+\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.55] at (338.98,133.06) {no edge gating};
+
+\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.55] at (338.98,157.18) {no multi scale};
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{drawColor}{gray}{0.30}
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.55] at (349.63, 17.06) {0.0};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.55] at (379.27, 17.06) {0.1};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.55] at (408.90, 17.06) {0.2};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.55] at (438.53, 17.06) {0.3};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.55] at (468.17, 17.06) {0.4};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.55] at (497.80, 17.06) {0.5};
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{drawColor}{RGB}{0,0,0}
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.65] at (424.68,  9.76) {absolute ARI};
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{drawColor}{RGB}{0,0,0}
+
+\node[text=drawColor,anchor=base west,inner sep=0pt, outer sep=0pt, scale=  0.60] at (342.13,178.21) {separate run; not cross-panel comparable};
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{drawColor}{RGB}{0,0,0}
+
+\node[text=drawColor,anchor=base west,inner sep=0pt, outer sep=0pt, scale=  0.70] at (342.13,187.21) {\bfseries osmFISH case study configurations};
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (516.73,397.48);
+\definecolor{drawColor}{RGB}{0,0,0}
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.90] at (270.30,192.98) {\bfseries (D)};
+\end{scope}
 \end{tikzpicture}
