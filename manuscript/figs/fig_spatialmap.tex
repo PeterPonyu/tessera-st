@@ -1,54 +1,54 @@
 % !TEX encoding = UTF-8 Unicode
 \begin{tikzpicture}[x=1pt,y=1pt]
 \definecolor{fillColor}{RGB}{255,255,255}
-\path[use as bounding box,fill=fillColor,fill opacity=0.00] (0,0) rectangle (133.91,127.50);
+\path[use as bounding box,fill=fillColor,fill opacity=0.00] (0,0) rectangle (472.86,130.39);
 \begin{scope}
-\path[clip] (  1.45,  1.45) rectangle (132.46,126.05);
+\path[clip] (  2.89,  2.89) rectangle (469.96,127.50);
 
-\path[] (  1.45,  1.45) rectangle (132.46,126.05);
+\path[] (  2.89,  2.89) rectangle (469.96,127.50);
 \end{scope}
 \begin{scope}
-\path[clip] (  3.45,  3.45) rectangle ( 31.45,115.46);
-\node[inner sep=0pt,outer sep=0pt,anchor=south west,rotate=  0.00] at (  3.45,   3.45) {
-	\pgfimage[width= 28.00pt,height=112.02pt,interpolate=true]{figs/fig_spatialmap_ras1}};
+\path[clip] (  4.89,  4.89) rectangle (116.91,116.91);
+\node[inner sep=0pt,outer sep=0pt,anchor=south west,rotate=  0.00] at (  4.89,   4.89) {
+	\pgfimage[width=112.02pt,height=112.02pt,interpolate=true]{figs/fig_spatialmap_ras1}};
 \end{scope}
 \begin{scope}
-\path[clip] ( 36.45,  3.45) rectangle ( 64.45,115.46);
-\node[inner sep=0pt,outer sep=0pt,anchor=south west,rotate=  0.00] at ( 36.45,   3.45) {
-	\pgfimage[width= 28.00pt,height=112.02pt,interpolate=true]{figs/fig_spatialmap_ras2}};
+\path[clip] (121.91,  4.89) rectangle (233.93,116.91);
+\node[inner sep=0pt,outer sep=0pt,anchor=south west,rotate=  0.00] at (121.91,   4.89) {
+	\pgfimage[width=112.02pt,height=112.02pt,interpolate=true]{figs/fig_spatialmap_ras2}};
 \end{scope}
 \begin{scope}
-\path[clip] ( 69.45,  3.45) rectangle ( 97.46,115.46);
-\node[inner sep=0pt,outer sep=0pt,anchor=south west,rotate=  0.00] at ( 69.45,   3.45) {
-	\pgfimage[width= 28.00pt,height=112.02pt,interpolate=true]{figs/fig_spatialmap_ras3}};
+\path[clip] (238.93,  4.89) rectangle (350.95,116.91);
+\node[inner sep=0pt,outer sep=0pt,anchor=south west,rotate=  0.00] at (238.93,   4.89) {
+	\pgfimage[width=112.02pt,height=112.02pt,interpolate=true]{figs/fig_spatialmap_ras3}};
 \end{scope}
 \begin{scope}
-\path[clip] (102.46,  3.45) rectangle (130.46,115.46);
-\node[inner sep=0pt,outer sep=0pt,anchor=south west,rotate=  0.00] at (102.46,   3.45) {
-	\pgfimage[width= 28.00pt,height=112.02pt,interpolate=true]{figs/fig_spatialmap_ras4}};
+\path[clip] (355.95,  4.89) rectangle (467.96,116.91);
+\node[inner sep=0pt,outer sep=0pt,anchor=south west,rotate=  0.00] at (355.95,   4.89) {
+	\pgfimage[width=112.02pt,height=112.02pt,interpolate=true]{figs/fig_spatialmap_ras4}};
 \end{scope}
 \begin{scope}
-\path[clip] (  3.45,115.46) rectangle ( 31.45,124.05);
+\path[clip] (  4.89,116.91) rectangle (116.91,125.50);
 \definecolor{drawColor}{RGB}{0,0,0}
 
-\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.70] at ( 17.45,118.35) {(A) ground truth};
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.70] at ( 60.90,119.79) {(A) ground truth};
 \end{scope}
 \begin{scope}
-\path[clip] ( 36.45,115.46) rectangle ( 64.45,124.05);
+\path[clip] (121.91,116.91) rectangle (233.93,125.50);
 \definecolor{drawColor}{RGB}{0,0,0}
 
-\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.70] at ( 50.45,118.35) {(B) non-spatial KMeans (ARI 0.25)};
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.70] at (177.92,119.79) {(B) non-spatial KMeans (ARI 0.25)};
 \end{scope}
 \begin{scope}
-\path[clip] ( 69.45,115.46) rectangle ( 97.46,124.05);
+\path[clip] (238.93,116.91) rectangle (350.95,125.50);
 \definecolor{drawColor}{RGB}{0,0,0}
 
-\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.70] at ( 83.46,118.35) {(C) neighbour-mean (ARI 0.96)};
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.70] at (294.94,119.79) {(C) neighbour-mean (ARI 0.96)};
 \end{scope}
 \begin{scope}
-\path[clip] (102.46,115.46) rectangle (130.46,124.05);
+\path[clip] (355.95,116.91) rectangle (467.96,125.50);
 \definecolor{drawColor}{RGB}{0,0,0}
 
-\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.70] at (116.46,118.35) {(D) predicted seams};
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.70] at (411.96,119.79) {(D) predicted seams};
 \end{scope}
 \end{tikzpicture}

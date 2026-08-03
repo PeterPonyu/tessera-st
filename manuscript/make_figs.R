@@ -499,11 +499,12 @@ theme_fp <- function() theme_minimal(base_size = 7) +
         axis.text = element_text(size = 5.5), legend.title = element_blank(),
         legend.text = element_text(size = 5.5), plot.margin = margin(3, 4, 3, 4))
 save4 <- function(name, plots, plot_w_in = 2.15, plot_h_in = 1.55) {
-  p <- wrap_plots(plots, ncol = 2) +
-    plot_annotation(tag_levels = "A", tag_prefix = "(", tag_suffix = ")") &
-    theme(plot.tag = element_text(size = 9, face = "bold"))
+  tagged <- Map(function(p, tag) p + labs(tag = sprintf("(%s)", tag)) +
+                  theme(plot.tag = element_text(size = 9, face = "bold")),
+                plots, LETTERS[seq_along(plots)])
   out <- file.path(figd, paste0(name, ".tex"))
-  fitted <- save_tikz_std(p, out, plot_w_in = plot_w_in, plot_h_in = plot_h_in, sanitize = TRUE)
+  fitted <- save_tikz_composed(tagged, out, ncol = 2, plot_w_in = plot_w_in,
+                               plot_h_in = plot_h_in, sanitize = TRUE)
   std_dims[[name]] <<- c(w_in = fitted$w_in, h_in = fitted$h_in)
   std_sanitize_tikz(out, name)
 }
