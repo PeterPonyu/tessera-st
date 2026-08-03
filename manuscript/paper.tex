@@ -415,7 +415,8 @@ Limitations discuss.
 
 \begin{table*}[!t]\centering\footnotesize
 \caption{The predictive law and its stress tests. The contiguity$\leftrightarrow$advantage correlation is
-the only significant one; it is seed-robust, survives a fairer backend, is confound-independent, predictive
+the only significant one; it is seed-robust, survives a fairer backend, remains positive after confound
+adjustment, is predictive
 out-of-sample, and causal under manipulation. Method-specific rank correlations are not significant, and
 broadening to noisier cell-type datasets ($n{=}14$) attenuates the estimate.}
 \label{tab:law}
@@ -432,7 +433,7 @@ contiguity $\sim$ spatial-prior advantage ($n{=}11$) & $\rho=+0.72$ & 0.012 & CI
 \quad causal (contiguity manipulated) & $\rho=+0.98/{+}1.00$ & $<$0.001 & neighbour-mean / STAGATE\\
 contiguity $\sim$ Tessera rank ($n{=}11$) & $\rho=-0.36$ & 0.28 & not significant\\
 contiguity $\sim$ SpaceFlow rank ($n{=}9$) & $\rho=-0.59$ & 0.10 & not significant\\
-partial $\rho$ (controlling all confounds) & $+0.67$ & --- & independent of $K$/dim/modality\\
+partial $\rho$ (controlling all confounds) & $+0.67$ & --- & positive after adjustment for $K$/dim/modality\\
 LODO decision accuracy (GT / label-free) & $0.82 / 0.73$ & 0.06 & 9/11; binomial vs base rate $0.55$\\
 \bottomrule
 \end{tabular}
