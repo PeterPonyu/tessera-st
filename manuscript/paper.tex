@@ -303,7 +303,10 @@ st\_OV / st\_COAD / st\_LIHC & cancer ST & cell type & 16{,}000 & 13--19 & 0.69/
 \end{tabular}
 \end{table*}
 
-\section{The backend is a confound, and a trivial baseline is competitive}\label{sec:confound}
+\section{Empirical results: law first, controls second}\label{sec:empirical}
+We first establish the study's central result: the value of a spatial prior is set by the ground truth's spatial contiguity. Across 11 platforms, spatial-prior advantage tracks contiguity at Spearman $\rho=+0.72$ ($p=0.012$, 95\% CI $[0.24,0.92]$), predicts held-out magnitude with leave-one-platform-out $\rho=0.51$, and remains positive after confound adjustment (partial $\rho=0.67$; the one-at-a-time partial estimates are $0.55/0.86/0.80$). The law strengthens under the author-recommended real R \texttt{mclust} backend ($\rho=+0.79$, $p=0.004$), while the controlled R6 manipulation independently reproduces the positive-to-negative sign flip when contiguity alone is changed. We then present backend and winner-instability checks as fairness controls: backend robustness is descriptive supporting evidence ($\Delta$ARI=0.036), not a claim of statistical superiority.
+
+\subsection{Backend confounding and a competitive trivial baseline}\label{sec:confound}
 Switching KMeans${\to}$GMM changes a single method's cross-section ARI by 0.036--0.200; the largest shift
 (STAGATE, 0.20) approximately equals the full between-method ARI spread of $0.494-0.291=0.203$, so a
 benchmark that fixes one backend re-ranks methods. That headline spread is anchored to GraphST (0.291),
@@ -413,7 +416,7 @@ single most influential dataset (MERFISH) lowers $\rho$ to $0.63$. The qualitati
 precise value is a diverse-panel upper estimate, and the law's direction is partly definitional, as the
 Limitations discuss.
 
-\begin{table*}[!t]\centering\footnotesize
+\begin{table*}[!tbp]\centering\footnotesize
 \caption{The predictive law and its stress tests. The contiguity$\leftrightarrow$advantage correlation is
 the only significant one; it is seed-robust, survives a fairer backend, remains positive after confound
 adjustment, is predictive
@@ -512,7 +515,7 @@ alignment and signal fixed, and that only moving it reproduces the full positive
 This strengthens the controlled-manipulation leg of the evidence specifically; the observational
 eleven-platform leg (\S\ref{sec:law}) is independent.
 
-\begin{table}[htbp]\centering\small\setlength{\tabcolsep}{4pt}
+\begin{table}[tbp]\centering\small\setlength{\tabcolsep}{4pt}
 \caption{Decoupling contiguity from expression--position alignment, at the primary experiment's fidelity
 (400-epoch STAGATE, 5 seeds, 11-level sweep, two substrates S1/S2). Effect size is the normalised OLS
 slope (neighbour-mean\,/\,STAGATE) of the advantage against each arm's own driver; a larger value means
@@ -561,13 +564,6 @@ only the smoothing-gain proxy \texttt{coh\_gain} recovers the sign of the GT-bas
 \label{fig:proxy}
 \end{figure*}
 
-\section{Backend fairness: the law is not a backend artifact}
-Re-running all 11 datasets with the clusterer the deep methods actually recommend (R's \texttt{mclust})
-leaves the conclusions intact and slightly strengthens the law, to $\rho=+0.79$ ($p=0.004$,
-Fig.~\ref{fig:backend}), above the published GMM-tied $+0.72$. Real mclust wins 20 of 81
-method$\times$dataset cells but shifts each method's mean ARI by at most $0.016$. The recommended backend
-makes the law cleaner, not weaker.
-
 \begin{figure*}[!t]\centering
 \resizebox{\linewidth}{!}{\input{figs/fig_backend}}
 \caption{The law survives the author-recommended backend (real R mclust): published versus mclust-backend
@@ -575,6 +571,13 @@ advantage stays close to the diagonal for most datasets (a; a few, such as IMC, 
 backend shifts every method's \emph{mean} ARI by $\leq 0.016$ (b).}
 \label{fig:backend}
 \end{figure*}
+
+\section{Backend fairness: the law is not a backend artifact}
+Re-running all 11 datasets with the clusterer the deep methods actually recommend (R's \texttt{mclust})
+leaves the conclusions intact and slightly strengthens the law, to $\rho=+0.79$ ($p=0.004$,
+Fig.~\ref{fig:backend}), above the published GMM-tied $+0.72$. Real mclust wins 20 of 81
+method$\times$dataset cells but shifts each method's mean ARI by at most $0.016$. The recommended backend
+makes the law cleaner, not weaker.
 
 \section{A worked example: a false SOTA and a false mechanism from one dataset}\label{sec:tessera}
 We close with the candidate boundary-aware method (Tessera) as one worked example of how single-dataset
