@@ -547,19 +547,19 @@ uncorrected permutation companion is $p=0.083$). \texttt{coh\_gain} should there
 as a directional, honestly marginal label-free prior, with the causal synthetic sweep above
 (\S\ref{sec:causal}, $\rho=+0.98$ to $+1.00$, $p<0.001$) carrying the primary weight.
 
-\begin{figure}[htbp]\centering
-\resizebox{0.95\linewidth}{!}{\input{figs/fig_mechanism}}
+\begin{figure*}[!t]\centering
+\resizebox{\linewidth}{!}{\input{figs/fig_mechanism}}
 \caption{Controlled mechanism: with the expression signal held fixed (flat grey control), spatial-prior
 advantage rises with manipulated contiguity and flips sign, giving causal evidence for the law.}
 \label{fig:mech}
-\end{figure}
+\end{figure*}
 
-\begin{figure}[htbp]\centering
-\resizebox{0.95\linewidth}{!}{\input{figs/fig_proxy}}
+\begin{figure*}[!t]\centering
+\resizebox{\linewidth}{!}{\input{figs/fig_proxy}}
 \caption{Label-free proxy search: naive expression-smoothness proxies invert against advantage (orange);
 only the smoothing-gain proxy \texttt{coh\_gain} recovers the sign of the GT-based law (dotted).}
 \label{fig:proxy}
-\end{figure}
+\end{figure*}
 
 \section{Backend fairness: the law is not a backend artifact}
 Re-running all 11 datasets with the clusterer the deep methods actually recommend (R's \texttt{mclust})
@@ -610,8 +610,8 @@ plain graph-autoencoder backbone, while the named edge gate and multi-scale fusi
 ($-0.01$ to $-0.03$). The full model beats the backbone by $+0.29/+0.23$, but that entire gain is the
 generic contrastive objective, not the mechanism the method is named for.
 
-\begin{figure}[htbp]\centering
-\resizebox{0.99\linewidth}{!}{\input{figs/fig_ablation}}
+\begin{figure*}[!t]\centering
+\resizebox{\linewidth}{!}{\input{figs/fig_ablation}}
 \caption{Component ablation of the candidate method on the two datasets where it is competitive (3 seeds):
 the ARI drop when each component is removed (positive $=$ the component contributes). Only the
 boundary-contrastive loss matters; the headline anti-over-smoothing edge gate and multi-scale
@@ -619,7 +619,7 @@ fusion are neutral-to-harmful, so the model's gain over a plain backbone is the 
 These absolute ARIs come from a separate two-dataset case-study run and are not directly comparable with
 the cross-dataset benchmark panels.}
 \label{fig:ablation}
-\end{figure}
+\end{figure*}
 
 \paragraph{The verdict.} Single-dataset evaluation would have certified two false positives here: a
 state-of-the-art ranking and a working new mechanism. The full panel and the ablation overturn both. This

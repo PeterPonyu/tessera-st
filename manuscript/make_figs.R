@@ -714,8 +714,11 @@ local({
     data.frame(method = relab(m), dataset = colnames(meanmat)[j], ari = meanmat[m, j])
   }))))
   p1 <- ggplot(long, aes(dataset, method, fill = ari)) + geom_tile(color = "white", linewidth = .15) +
-    scale_fill_viridis_c(option = "magma") + labs(x = NULL, y = NULL, title = "core 11-platform ARI matrix") + theme_fp() +
-    theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 4.5), axis.text.y = element_text(size = 4.5), legend.position = "bottom")
+    scale_fill_viridis_c(option = "magma", guide = guide_colorbar(barwidth = unit(2.2, "cm"), barheight = unit(.28, "cm"))) +
+    labs(x = NULL, y = NULL, title = "core 11-platform ARI matrix") + theme_fp() +
+    theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 5.5, margin = margin(t = 2)),
+          axis.text.y = element_text(size = 5.5), legend.position = "bottom",
+          legend.text = element_text(size = 5.5), legend.margin = margin(t = 4))
   wc <- as.data.frame(table(ds$winner)); names(wc) <- c("method", "wins")
   p2 <- ggplot(wc, aes(reorder(method, wins), wins)) + geom_col(fill = CC["blue"]) + coord_flip() +
     labs(x = NULL, y = "datasets won", title = "seven distinct winners") + theme_fp()
@@ -731,7 +734,7 @@ local({
     coord_flip() + scale_fill_manual(values = unname(c(CC["gray"], CC["purple"]))) +
     labs(x = NULL, y = "BayesSpace minus best other ARI", title = "BayesSpace sensitivity",
          subtitle = "8-platform partial; not the full 11-platform panel") + theme_fp()
-  save4("fig_heatmap", list(p1, p2, p3, p4), height = 5.8)
+  save4("fig_heatmap", list(p1, p2, p3, p4), height = 6.1)
 })
 
 cat("make_figs.R: wrote", length(list.files(figd)), "files to", figd, "\n")
