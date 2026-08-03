@@ -2,17 +2,17 @@
 #
 #   make figs    R reads experiments/*.json directly and emits pgfplots/TikZ + the spatial map
 #                + tables into figs/ (no Python, no intermediate CSV)
-#   make pdf     compile paper.pdf with lualatex x2 + bibtex                  (default)
+#   make pdf     compile paper.pdf with pdflatex x2 + bibtex                  (default)
 #   make verify  machine-check the manuscript numbers against the JSON artifacts
 #   make clean   remove LaTeX build artifacts and scratch test files
 #
-# Requires: Rscript (jsonlite, ggplot2, tikzDevice, ggrastr, mclust), lualatex, python3 (verify only).
+# Requires: Rscript (jsonlite, ggplot2, tikzDevice, ggrastr, mclust), pdflatex, python3 (verify only).
 
 PY   ?= python3
 R    ?= Rscript
 HERE := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 ROOT := $(abspath $(HERE)/..)
-LATEX := lualatex -interaction=nonstopmode -halt-on-error
+LATEX := pdflatex -interaction=nonstopmode -halt-on-error
 
 .PHONY: all pdf figs verify clean
 all: pdf

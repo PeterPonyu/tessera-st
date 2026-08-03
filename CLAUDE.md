@@ -35,7 +35,7 @@ own `.claude/`; do not merge or reconcile them with another project's.
 3. **Verify** refs and headline numbers: `experiments/verify_manuscript.py` machine-checks 18
    headline numbers in the manuscript against the JSON artifacts (extended by later rounds — see
    `CLAIM_LEDGER.md`); run it to check drift, not to generate new results.
-4. **Compile** the LaTeX (`manuscript/paper.tex`, via `manuscript/Makefile`, lualatex for the
+4. **Compile** the LaTeX (`manuscript/paper.tex`, via `manuscript/Makefile`, pdflatex for the
    pgfplots/TikZ figure stack) and fix bib/reference issues in `refs.bib`.
 
 Any task that would require running a new benchmark, training a new model, adding a new dataset,

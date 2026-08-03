@@ -64,7 +64,7 @@ python experiments/stat_rigor.py            # -> stat_rigor.json    (bootstrap C
 python experiments/native_baselines.py      # -> native_baselines.json (real R mclust backend fairness)
 python experiments/verify_manuscript.py     # asserts manuscript numbers == artifacts incl. R2 (exit 0)
 
-# vector figures + PDF (R + pgfplots/TikZ; compile with lualatex)
+# vector figures + PDF (R + pgfplots/TikZ; compile with pdflatex)
 make -C manuscript                          # make_figs.R reads experiments/*.json -> .tex -> paper.pdf
 ```
 

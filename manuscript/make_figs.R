@@ -4,7 +4,7 @@
 #
 # R reads the machine-checked experiment artifacts (experiments/*.json) DIRECTLY, computes every
 # derived quantity itself, generates the synthetic spatial-domain map natively, and emits all
-# figures as vector .tex that the manuscript \inputs (compiled with lualatex). There is no Python
+# figures as vector .tex that the manuscript \inputs (compiled with pdflatex). There is no Python
 # in the figure path and no intermediate CSV: the figures are reconstructed from the ledger, not
 # ported from any prior plotting code.
 #
@@ -23,7 +23,16 @@ suppressMessages({
   library(patchwork)
   library(mclust)        # adjustedRandIndex for the native spatial map
 })
-options(tikzDefaultEngine = "luatex", stringsAsFactors = FALSE)
+options(tikzDefaultEngine = "pdftex", stringsAsFactors = FALSE)
+source(file.path("manuscript", "figure_standard.R"))
+
+std_sanitize_tikz <- function(file, name) {
+  ln <- readLines(file)
+  ln <- ln[!grepl("^% Created by tikzDevice", ln)]
+  writeLines(gsub(paste0("{", name, "_ras"), paste0("{figs/", name, "_ras"), ln, fixed = TRUE), file)
+}
+
+std_dims <- list()
 
 expd <- "experiments"
 figd <- "manuscript/figs"
@@ -396,9 +405,9 @@ local({
     theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 6), axis.text.y = element_text(size = 6),
           panel.grid = element_blank(), legend.key.width = unit(6, "pt"), legend.key.height = unit(13, "pt"),
           legend.title = element_text(size = 6), legend.text = element_text(size = 5), plot.margin = margin(2, 2, 2, 2))
-  tikz(file.path(figd, "fig_heatmap.tex"), width = 6.4, height = 3.1, standAlone = FALSE, verbose = FALSE)
-  print(p); invisible(dev.off())
-  f <- file.path(figd, "fig_heatmap.tex")
+  out <- file.path(figd, "fig_heatmap.tex")
+  save_tikz_std(p, out, plot_w_in = 6.4, plot_h_in = 3.1, sanitize = TRUE)
+  f <- out
   ln <- readLines(f)
   ln <- ln[!grepl("^% Created by tikzDevice", ln)]  # drop the timestamp header -> byte-reproducible
   writeLines(gsub("{fig_heatmap_ras", "{figs/fig_heatmap_ras", ln, fixed = TRUE), f)
@@ -471,12 +480,10 @@ local({
     coord_equal() + theme_void(base_size = 9) +
     theme(strip.text = element_text(size = 7, margin = margin(b = 2)), panel.spacing = unit(5, "pt"),
           plot.margin = margin(2, 2, 2, 2))
-  tikz(file.path(figd, "fig_spatialmap.tex"), width = 7.1, height = 2.1, standAlone = FALSE, verbose = FALSE)
-  print(p); invisible(dev.off())
-  f <- file.path(figd, "fig_spatialmap.tex")
-  ln <- readLines(f)
-  ln <- ln[!grepl("^% Created by tikzDevice", ln)]  # drop the timestamp header -> byte-reproducible
-  writeLines(gsub("{fig_spatialmap_ras", "{figs/fig_spatialmap_ras", ln, fixed = TRUE), f)
+  out <- file.path(figd, "fig_spatialmap.tex")
+  fitted <- save_tikz_std(p, out, plot_w_in = 1.55, plot_h_in = 1.55, sanitize = TRUE)
+  std_dims[["fig_spatialmap"]] <<- c(w_in = fitted$w_in, h_in = fitted$h_in)
+  std_sanitize_tikz(out, "fig_spatialmap")
   cat(sprintf("  spatial map: non-spatial ARI=%.3f  neighbour-mean ARI=%.3f\n", ari_ns, ari_sp))
 })
 
@@ -491,16 +498,14 @@ theme_fp <- function() theme_minimal(base_size = 7) +
         plot.subtitle = element_text(size = 6), axis.title = element_text(size = 6.5),
         axis.text = element_text(size = 5.5), legend.title = element_blank(),
         legend.text = element_text(size = 5.5), plot.margin = margin(3, 4, 3, 4))
-save4 <- function(name, plots, width = 7.15, height = 5.5) {
+save4 <- function(name, plots, plot_w_in = 2.15, plot_h_in = 1.55) {
   p <- wrap_plots(plots, ncol = 2) +
     plot_annotation(tag_levels = "A", tag_prefix = "(", tag_suffix = ")") &
     theme(plot.tag = element_text(size = 9, face = "bold"))
-  tikz(file.path(figd, paste0(name, ".tex")), width = width, height = height,
-       standAlone = FALSE, verbose = FALSE, sanitize = TRUE)
-  print(p); invisible(dev.off())
-  f <- file.path(figd, paste0(name, ".tex")); ln <- readLines(f)
-  ln <- ln[!grepl("^% Created by tikzDevice", ln)]
-  writeLines(gsub(paste0("{", name, "_ras"), paste0("{figs/", name, "_ras"), ln, fixed = TRUE), f)
+  out <- file.path(figd, paste0(name, ".tex"))
+  fitted <- save_tikz_std(p, out, plot_w_in = plot_w_in, plot_h_in = plot_h_in, sanitize = TRUE)
+  std_dims[[name]] <<- c(w_in = fitted$w_in, h_in = fitted$h_in)
+  std_sanitize_tikz(out, name)
 }
 
 # fig_law: oracle, label-free, expanded n=14, and explicitly scoped BayesSpace partial.
@@ -734,7 +739,7 @@ local({
     coord_flip() + scale_fill_manual(values = unname(c(CC["gray"], CC["purple"]))) +
     labs(x = NULL, y = "BayesSpace minus best other ARI", title = "BayesSpace sensitivity",
          subtitle = "8-platform partial; not the full 11-platform panel") + theme_fp()
-  save4("fig_heatmap", list(p1, p2, p3, p4), height = 6.1)
+  save4("fig_heatmap", list(p1, p2, p3, p4), plot_h_in = 2.15)
 })
 
 cat("make_figs.R: wrote", length(list.files(figd)), "files to", figd, "\n")
