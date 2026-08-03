@@ -58,11 +58,12 @@ Medicine, Army Medical University, Chongqing, China. E-mail:
 Methods for spatial-domain detection in spatial transcriptomics are routinely ranked on one or two Visium
 datasets under a single clustering backend, and each new paper claims a state-of-the-art. We argue the
 reliable object of study is not which method wins but a predictive, causal law for whether a spatial prior
-helps at all. On synthetic tissue where we manipulate \emph{only} the ground truth's spatial contiguity---
-scrambling positions while holding each cell's expression and label fixed---the advantage of a spatial
-prior rises with contiguity and flips sign, at Spearman $\rho=+0.98$ to $+1.00$ ($p<0.001$); because
-contiguity is the sole variable changed, this is consistent with a causal role for contiguity rather than a
-mere correlate. The same
+helps at all. In the primary synthetic sweep, scrambling positions while holding each cell's expression
+and label fixed makes spatial-prior advantage rise with contiguity and flip sign, at Spearman
+$\rho=+0.98$ to $+1.00$ ($p<0.001$). A decoupled design then isolates the intervention: manipulating
+contiguity alone (v2 Arm B), while holding alignment and recoverable signal fixed, reproduces the sign flip
+on two substrates and keeps the non-spatial floor flat. Together these controls are consistent with a
+causal role for contiguity rather than a mere correlate. The same
 law holds observationally across eleven technologically diverse datasets: spatial-prior advantage tracks
 ground-truth contiguity at Spearman $+0.72$ ($p=0.012$, 95\% CI $[0.24,0.92]$), the only significant
 correlation we test; it survives control for cluster count, feature dimension, and assay modality, predicts
@@ -102,14 +103,18 @@ predictable from a single property of the task.
 We reframe the question from ``which method wins'' to ``when do spatial priors help, and can we tell in
 advance'', contributing both empirical findings and reusable methodology for answering it. Our contributions are:
 \begin{itemize}\setlength{\itemsep}{2pt}
-\item a \emph{causal, predictive law}: on synthetic tissue where we manipulate contiguity alone, spatial-prior
-advantage rises with it and flips sign ($\rho=+0.98$ to $+1.00$, $p<0.001$), and the same law holds
+\item a \emph{causal, predictive law}: the primary position-scrambling sweep makes spatial-prior
+advantage rise with contiguity and flip sign ($\rho=+0.98$ to $+1.00$, $p<0.001$), while v2 Arm B
+manipulates contiguity alone with alignment and recoverable signal fixed; the same law holds
 observationally ($\rho=+0.72$, $p=0.012$) as the only correlation we find that is both significant and robust
 under our stress tests (\S\ref{sec:law},~\S\ref{sec:causal})---this is the primary result;
 \item a label-free spatial-coherence-gain proxy that carries the law to unlabelled tissue, reported honestly
 as a directional, marginal prior once its selection among six candidates is corrected for (\S\ref{sec:causal});
 \item a confound-controlled, eleven-dataset benchmark showing the clustering backend is a first-order
 confound and a trivial neighbour-mean floor is competitive (\S\ref{sec:confound});
+\item a descriptive robustness result for the candidate Tessera method: its KMeans--GMM ARI shift is
+$\Delta$ARI $=0.036$, rank $1/7$ for backend stability in the DLPFC comparison, despite its non-SOTA
+label-agreement performance (\S\ref{sec:tessera});
 \item supporting evidence that there is no universal winner, including a method (SpatialLeiden) whose rank
 profile is inverted, best exactly where the deep methods are worst (\S\ref{sec:nosota}); and
 \item a worked example, on a candidate method, of how single-dataset evaluation can certify a false SOTA
@@ -118,7 +123,8 @@ and a false mechanism (\S\ref{sec:tessera}).
 Three of these components are intended as reusable methodology beyond this panel: a synthetic contiguity
 generator that varies ground-truth spatial contiguity in isolation for controlled evaluation of spatial
 priors; a confound-control benchmark protocol (partial correlations against cluster count, feature
-dimension, and assay modality, with leave-one-dataset-out validation); and a label-free
+dimension, and assay modality, with leave-one-dataset-out (LODO; artifact keys \texttt{lopo\_*})
+validation); and a label-free
 spatial-coherence-gain diagnostic that estimates, without ground truth, whether a spatial prior is
 warranted---used here as an honestly marginal prior rather than a settled predictor.
 
@@ -456,18 +462,26 @@ label-free.}
 \end{figure*}
 
 \section{The law is causal and deployable without labels}\label{sec:causal}
-\paragraph{Causal.} We manipulate \emph{only} contiguity on synthetic tissue: scrambling a fraction of cells'
-positions while each keeps its expression and label holds the expression-to-label map fixed, so the
+\paragraph{Causal.} In the primary synthetic sweep, we manipulate contiguity by scrambling a fraction of cells'
+positions while each keeps its expression and label, holding the expression-to-label map fixed so the
 non-spatial floor's ARI stays at 0.345 throughout. Spatial-prior advantage then rises with contiguity and
 flips sign (Fig.~\ref{fig:mech}): $\rho=+0.98$ for the neighbour-mean smoother and $+1.00$ for STAGATE.
-Since contiguity is the only variable we change, this is causal evidence that contiguity drives the value
-of a spatial prior; the learned-GNN arm bears most of this conclusion, while the neighbour-mean arm mainly
+The exogenous position scrambling provides controlled evidence that contiguity drives the value
+of a spatial prior, while the decoupled v2 control below tests whether that conclusion survives with
+alignment held fixed. The learned-GNN arm bears most of the primary sweep's conclusion, while the neighbour-mean arm mainly
 illustrates the mechanism, though STAGATE's graph-attention mechanism is itself an adaptive form of
 neighbour-averaging over the same spatial $k$NN graph used to define contiguity, so the two arms should be
 read as correlated rather than architecturally independent confirmations; the causal identification of
 contiguity's effect (via exogenous scrambling) holds regardless.
 
-\paragraph{Decoupling contiguity from alignment.} A referee might object that scrambling positions
+\paragraph{Decoupling contiguity from alignment.} The v2 control is read through three core discriminators
+before any rank-correlation comparison: normalised slope measures how far each driver moves
+spatial-prior advantage; an exclusive positive-to-negative sign flip asks which manipulation reproduces the
+headline phenomenon; and a flat non-spatial floor tests whether the manipulation isolates spatial structure
+rather than destroying generic recoverable signal. These criteria, not $|\rho|$, are load-bearing because
+both arms are monotone by construction and therefore make Spearman $\rho$ saturate near $1$.
+
+A referee might object that scrambling positions
 erodes not only the labels' spatial \emph{contiguity} but the generic \emph{alignment} between
 expression and position that any spatial method exploits, and that it could be alignment, not
 contiguity specifically, that the law tracks. We separate the two with a two-arm control, re-run at
@@ -476,29 +490,26 @@ $0\!\to\!1$ sweep, on two independent substrates). In the \emph{alignment} arm w
 labels---holding contiguity constant---and swap a growing fraction of cells' expression vectors,
 eroding expression-to-position alignment. In the \emph{contiguity} arm we hold both alignment and the
 recoverable signal fixed---expression is always regenerated from the current label---and overwrite a
-growing fraction of labels with random domain identities, breaking only spatial contiguity. Three
-discriminators separate the arms (Table~\ref{tab:decouple}), and all three favour contiguity on both
-substrates and under both priors:
+growing fraction of labels with random domain identities, breaking only spatial contiguity. All three
+discriminators favour contiguity on both substrates and under both priors (Table~\ref{tab:decouple}):
 \begin{enumerate}\setlength{\itemsep}{2pt}
-\item \emph{Effect size.} The total change in spatial-prior advantage across the sweep (OLS slope
-$\times$ observed range) is larger in the contiguity arm on every substrate and prior (contiguity
-minus alignment $=+0.28$ to $+0.58$).
+\item \emph{Normalised slope.} The total change in spatial-prior advantage across the sweep (OLS slope
+$\times$ observed range) is larger in the contiguity arm for both priors: the Arm B-minus-Arm A
+differences are $+0.30/+0.28$ on S1 and $+0.58/+0.52$ on S2 (neighbour-mean/STAGATE).
 \item \emph{Sign flip.} Only the contiguity arm reproduces the headline phenomenon of \S\ref{sec:law}:
 the advantage crossing from positive to \emph{negative} (near contiguity $0.58$ and $0.76$ on the two
 substrates). Eroding alignment merely decays the advantage toward zero; it never turns negative.
-\item \emph{Clean versus confounded manipulation.} The contiguity arm holds the non-spatial floor
-essentially flat (range $0.03$--$0.05$), isolating spatial arrangement as the only variable moved. The
-alignment arm's expression-swap destroys the recoverable signal for every method (the floor collapses
-by $0.36$ and $0.68$), so its shrinking advantage is substantially generic signal loss---exactly the
-confound a referee worries about, and it lands on the arm \emph{not} used to support the law.
+\item \emph{Flat floor.} The contiguity arm holds the non-spatial floor essentially flat (ranges
+$0.050/0.027$ on S1/S2), isolating spatial arrangement as the only variable moved. The alignment arm's
+expression-swap destroys the recoverable signal for every method (floor ranges $0.364/0.682$), so its
+shrinking advantage is substantially generic signal loss---exactly the confound a referee worries about,
+and it lands on the arm \emph{not} used to support the law.
 \end{enumerate}
 The honest reading is not that alignment is irrelevant---the alignment arm's advantage does track
 alignment---but that contiguity is the one variable that can be moved \emph{in isolation}, holding
 alignment and signal fixed, and that only moving it reproduces the full positive-to-negative sign flip.
 This strengthens the controlled-manipulation leg of the evidence specifically; the observational
-eleven-platform leg (\S\ref{sec:law}) is independent. A rank-correlation tie-break is uninformative
-here: both arms are monotone by construction, so Spearman $\rho$ saturates near $1$ for both and carries
-no effect-size information, which is why the three discriminators above, not $\rho$, are load-bearing.
+eleven-platform leg (\S\ref{sec:law}) is independent.
 
 \begin{table}[htbp]\centering\small\setlength{\tabcolsep}{4pt}
 \caption{Decoupling contiguity from expression--position alignment, at the primary experiment's fidelity
@@ -586,8 +597,9 @@ Across the full 11-dataset panel, however, it is a backend-robust generalist, no
 swings from $1$ to $8$ (Fig.~\ref{fig:profile}), its one win (osmFISH) is by only $0.005$ ARI over the next
 spatial method, and on IMC it trails the best method by $0.39$ ARI. On the other contiguous task, MERFISH,
 the top spot is a seed-level tie it does not hold (the winner flips SpaceFlow, Tessera, SpaceFlow across
-three runs). No dataset has it uniquely best; the most backend-stable embedding ($\Delta$ARI $0.036$) is its
-real, and far more modest, property.
+three runs). No dataset has it uniquely best; its real, and far more modest, property is backend stability:
+$\Delta$ARI(KMeans$\leftrightarrow$GMM) $=0.036$, descriptively rank $1/7$ in the DLPFC comparison,
+where the other methods' shifts are approximately $0.10$--$0.20$.
 
 \paragraph{The headline mechanism does not drive the gain.} The method's advertised contribution is
 anti-over-smoothing through the learned edge gate (Fig.~\ref{fig:arch}). A component ablation on the two
@@ -630,6 +642,13 @@ Because the relationship is causal, not merely correlational, and does not stand
 dimensionality, or modality, it can be used to choose a method in advance rather than to rationalise a
 result after the fact. Removing the labels costs significance but keeps a positive predictor; broadening to
 noisier tasks shrinks the correlation. Neither overturns the rule.
+
+The benchmark also identifies backend robustness as a distinct, secondary axis of method quality. Tessera
+is not the SOTA label-agreement method, but its $\Delta$ARI(KMeans$\leftrightarrow$GMM) of $0.036$ is
+descriptively rank $1/7$ for backend stability, versus shifts of approximately $0.10$--$0.20$ for the
+more sensitive methods. This does not establish statistical superiority; it shows why robustness to an
+often-unreported analysis choice should be reported alongside accuracy rather than hidden by a single
+backend.
 
 \section{Limitations}\label{sec:limitations}
 \paragraph{Sample size and panel diversity.} The headline rests on $n{=}11$ technologically diverse,
