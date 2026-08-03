@@ -12,7 +12,18 @@ Created: 2026-06-25
 
 ## Claim status
 
-`claim_status = LOCKED` for every scientific claim. Nothing graduates until the gates below pass.
+Claim status has two evidence-governance states:
+
+- `LOCKED-pending`: the proposed scientific claim has not passed its listed gates and must not be added to
+  the manuscript as an established result. The component-superiority claims C1--C5 below remain in this
+  state.
+- `ADOPTED-verified`: the result artifact and its bounded wording have been checked by
+  `experiments/verify_manuscript.py` and may appear in the manuscript with the recorded caveats. R2, R5,
+  and R6 are in this state. Adoption verifies evidence provenance; it does not convert Tessera into a SOTA
+  method or graduate any broader superiority claim.
+
+Thus `LOCKED` applies to pending claim rows, not retroactively to the adopted, verifier-pinned results that
+already support the paper's causal-law manuscript.
 
 | # | Claim (locked) | Missing evidence |
 |---|----------------|------------------|
@@ -31,7 +42,8 @@ Created: 2026-06-25
 5. **Clean leakage scan.** `scripts/check_independence.sh` green; no baseline brand in `src/`.
 6. **Failure-mode analysis + human sign-off.** Where Tessera loses is documented honestly.
 
-Until then, no manuscript prose lands and no row leaves `LOCKED`.
+Until those gates pass, no C1--C5 superiority prose lands and no such row leaves `LOCKED-pending`.
+This restriction does not bar the bounded R2/R5/R6 results already in `ADOPTED-verified` state.
 
 ## Component-retention policy
 
@@ -294,17 +306,20 @@ manuscript or this ledger.
 `mechanism_decoupled_v2.json` by `experiments/verify_manuscript.py` (effect-size direction, exclusive sign
 flip, floor flatness, and all four hand-typed `tab:decouple` rows). The JSON remains a git-ignored generated
 artifact under repository policy, but `scripts/deposit_zenodo.py` requires it in the release archive. The
-causal claim itself remains LOCKED under the global honest-claims guardrail: adoption closes evidence
-provenance; it does not graduate a new superiority claim.
+bounded R6 robustness result is therefore `ADOPTED-verified`; adoption closes evidence provenance and
+permits the recorded causal-control wording, but it does not graduate a new Tessera-superiority claim.
 
 **Manuscript.** New paragraph "Decoupling contiguity from alignment" + `Table tab:decouple` added to
 §`sec:causal` (§VII). Framed honestly as strengthening the CONTROLLED-MANIPULATION leg only (the observational
 11-platform leg is independent), and NOT as "alignment is irrelevant" (Arm A's advantage does track alignment
 — it is just confounded and never flips sign); the correct claim is "contiguity is the lever movable in
-isolation, and only moving it reproduces the full sign-flip." Still LOCKED under the honest-claims guardrail:
-this is a robustness check on the existing causal claim, not a new superiority claim.
+isolation, and only moving it reproduces the full sign-flip." Status is `ADOPTED-verified` under the
+honest-claims guardrail: this is a robustness check on the existing causal claim, not a new superiority claim.
 
 ## ★★★★★★★★★ R5 — search-corrected proxy + causal-first reframe (manuscript retitle, 2026-07-01)
+
+**Status: `ADOPTED-verified`.** The search-corrected proxy wording and causal-first reframe are pinned by
+`experiments/verify_manuscript.py`; this status does not imply a method-superiority claim.
 
 Triggered by a falsification-first audit of the label-free `coh_gain` proxy: its reported p=0.079 was an
 UNCORRECTED per-candidate value, but `coh_gain` was SELECTED as the best of six label-free candidates
@@ -396,6 +411,9 @@ interrupted heavy jobs — root cause diagnosed as machine oversubscription (loa
 multiple concurrent Claude sessions + parent-project R/python deconvolution pipelines), not a code bug.
 
 ## ★★★★★★ R2 — submission-readiness round (G001–G004, 2026-06-28): label-free rule, statistical rigor, backend fairness
+
+**Status: `ADOPTED-verified`.** The prospective-rule, statistical-rigor, and backend-fairness results are
+pinned by `experiments/verify_manuscript.py` with their recorded limitations.
 
 Second ultragoal round (plan archived at `.omc/ultragoal/archive/round1-G001-G010/`) closing the three gaps
 a referee would block §7 on. All numbers machine-checked (`verify_manuscript.py` exit 0, incl. new R2 asserts).
@@ -609,6 +627,37 @@ clustering — weakly circular, not physical truth. So:
 
 No verdict (positive or negative) graduates from a single metric. Comprehensive panel + external
 anchor + cross-sample reproducibility are required.
+
+## Evidence-artifact tiers (current 40-JSON inventory)
+
+The manuscript evidence surface is deliberately narrower than the development history. Filenames below
+refer to the 40 current `experiments/*.json` artifacts.
+
+**Tier 1 — verifier-pinned mainline evidence (19).** These artifacts may support the manuscript only with
+the bounded wording and caveats asserted by `experiments/verify_manuscript.py`:
+
+- `expand_data.json`, `expanded_bench.json`, `gtfree_proxy.json`, `hardened_bench.json`,
+  `mechanism_ablation.json`, `mechanism_decoupled_v2.json`, `mechanism_synth.json`,
+  `multi_platform_bench.json`, `native_baselines.json`, `pareto_frontier.json`,
+  `proxy_search_corrected.json`, `rigorous_bench.json`, `robustness_audit.json`, `seqfish_bench.json`,
+  `spagcn_native.json`, `spagcn_panel.json`, `stat_rigor.json`, `task_fit_law.json`, and
+  `tessera_verdict.json`.
+
+**Tier 2 — development-stage only (21; not manuscript evidence).** These are partial/checkpoint,
+superseded v1, or early single-section artifacts retained for auditability. They must not be cited as
+finished-paper evidence or used to introduce a headline number:
+
+- `bayesspace_bench.json`, `bayesspace_bench_partial.json`, `dlpfc_151673.json`,
+  `dlpfc_151673_3seed.json`, `dlpfc_151673_full.json`, `expand_data_partial.json`,
+  `final_panel_151673.json`, `full_panel_v2.json`, `gtfree_proxy_search.json`,
+  `mechanism_decoupled.json`, `mechanism_decoupled_v2_ckpt.json`, `multisection_panel.json`,
+  `native_baselines_partial.json`, `refine_xsec.json`, `sota_panel_151673.json`,
+  `sota_stagate_151673.json`, `spagcn_native_partial.json`, `spagcn_panel_partial.json`,
+  `synth_ablation.json`, `task_fit_law_extended.json`, and `tessera_gmm_151673.json`.
+
+Naming note: the manuscript uses **leave-one-dataset-out (LODO)**; historical JSON keys remain
+`lopo_*` because the scripts originally called the same split leave-one-platform-out. The paper defines
+this mapping at first use; the keys are not a second validation protocol.
 
 ## Honest-negative policy
 
