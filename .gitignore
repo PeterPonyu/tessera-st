@@ -53,3 +53,17 @@ __pycache__/
 *.fls
 *.synctex.gz
 
+
+# --- never push large local data / caches to GitHub ---
+# (files stay on disk; not for remote)
+data/realgt*_benchmark/
+**/*.rds
+**/*.h5ad
+**/*.h5
+**/*.mtx.gz
+**/*cache_mu_theta*
+**/*.npz
+experiments/**/cache/
+*.tar.gz
+# allow small tar in docs if needed via -f; default deny
+

@@ -11,14 +11,21 @@ Generated: 2026-07-02 (mechanical-fixes-only polish pass; no new compute).
   backend-robustness rank 1). ARI is explicitly semi-circular. Do not re-inflate.
 - Main source: `manuscript/paper.tex`
 - Bibliography: `manuscript/refs.bib` — 30 entries (was 31; orphan `mcinnes2018umap` removed).
-- Compiled PDF: `manuscript/paper.pdf`
-- Pages: 13
+- Compiled PDF (upload): `manuscript/submission_flat/paper.pdf` (13 pp, 2026-08-10)
+- Main-tree PDF: `manuscript/paper.pdf` (currently 21 pp — diverged; do not upload)
+- Pages: 13 (flat pack)
 - Backups: `manuscript/paper.tex.prepolish.bak`, `manuscript/refs.bib.prepolish.bak`
 
 ## Target venue
-- UNDECIDED — pitched at the Nature Methods / Nature Communications / Nature Genetics tier.
-- Keep prose, framing, and formatting VENUE-AGNOSTIC. Do not hard-commit to one journal's
-  template, word limit, or house style until a venue is chosen.
+- **LOCKED (2026-08-10):** IEEE Transactions on Computational Biology and Bioinformatics
+  (TCBB / TCBBIO) — SCIE + \$0 traditional hybrid route (see `VENUE-LOCK.md`).
+- Ordered fallbacks: Computational Biology and Chemistry (\$0) → BMC Bioinformatics /
+  GigaScience (paid, APC auth) → PeerJ (membership) if AMU accepts SCIE credit.
+- **NARGAB is not primary** (live aggregator: ESCI; Clarivate SCIE not confirmed).
+- Body stays mostly venue-agnostic until IEEE template migration at upload; do not migrate
+  house style until fee/route email reconfirm with TCBB editorial office.
+- Cover letter: `COVER-LETTER.md` (causal-law + honest non-SOTA + Spotscape/ESD + why TCBB).
+- Differentiation audit: `docs/DIFFERENTIATION_AUDIT_2026-08-10.md`.
 
 ## Quality gates PASSED this pass
 - LaTeX compile: rc=0 across `lualatex -> bibtex -> lualatex -> lualatex` (Makefile `pdf` seq).
@@ -50,16 +57,17 @@ Generated: 2026-07-02 (mechanical-fixes-only polish pass; no new compute).
    cross-dataset panels. (LESSONS D4)
 4. Build-status drift (RESOLVED 2026-08-01): current compiled artifact is 13pp / 0 overfull /
    0 undefined / 0 multiply-defined; synchronized in `CLAIM_LEDGER.md`. (LESSONS D5)
-5. Author-count / affiliation / competing-interests / funding statements: confirm present and
-   venue-appropriate once the venue is chosen.
+5. Author-count / affiliation / competing-interests / funding statements: venue locked to TCBB.
+   Confirm IEEE Author Center fields + fill funding line in `COVER-LETTER.md` before upload.
+   Competing interests: none (stated). Single author / AMU affiliation already in manuscript.
 
 ## Zero-APC / venue note
-- The corresponding author (China-based) is NOT eligible for income-based APC waivers; assume
-  $0 free open-access routes for this paper. Factor APC into the venue decision: prefer a
-  no-fee or read-and-publish-covered route, or a subscription/transformative journal where the
-  author's institution has an agreement. Do NOT assume a fee waiver will be granted.
-- Venue remains UNDECIDED; keep the manuscript venue-agnostic until the fee/route is confirmed
-  alongside the scientific-fit decision.
+- The corresponding author (China-based) is NOT eligible for income-based APC waivers.
+- **Primary lock uses \$0 traditional hybrid at TCBB** (Gold-OA \$2,800 optional — do not elect).
+- Page contingency: current PDF is 13 pp; TCBB free allowance is 12 pp → accept voluntary
+  ~\$220 overlength rather than pre-submit trim (`VENUE-LOCK.md`).
+- Human before upload: email TCBB editorial office to reconfirm traditional route; fill funding
+  in cover letter; optional AMU Clarivate screenshot for IF quote (do not invent IF).
 
 ## Venue reassessment (2026-07-02, web-verified)
 
@@ -92,4 +100,6 @@ significance and positive/novel findings, publish low volumes, and charge $4.3k�
   ~$599–799) or BMC Bioinformatics only if (a) their SCIE status is confirmed AND (b) a cost is
   authorized. **RECONFIRM TCBB's $0 subscription route survived ACM's 2026-01-01 mandatory-OA shift
   before submitting** (IEEE/ACM co-publish). Authoritative plan: `.future-directions/VENUE_STRATEGY_SCI.md`.
-  **DECISION PENDING (user).**
+  **DECISION LOCKED (2026-08-10):** TCBB primary per `VENUE-LOCK.md`. Nature-tier remains
+  invalidated. NARGAB not primary (ESCI). Human remaining: editorial email + funding line +
+  ScholarOne upload (see `READY_TO_UPLOAD.md`).
