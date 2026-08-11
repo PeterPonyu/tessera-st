@@ -13,6 +13,7 @@ Runs under the numba stub (SpaGCN's louvain init needs it). Writes experiments/s
 """
 
 import sys
+from _roots import data_root, external_root, spatial_omics_root
 
 sys.path.insert(0, "experiments")
 import _numba_stub  # noqa: E402
@@ -33,8 +34,8 @@ from scipy.stats import spearmanr  # noqa: E402
 sys.path.insert(0, "src")
 from tessera_st.eval.refine import refine_labels  # noqa: E402
 
-DR = "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data"
-EXT = "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/external"
+DR = str(data_root())
+EXT = str(external_root())
 SUBSAMPLE = 16000
 SEEDS = [1]  # SpaGCN.train has no seed arg (global-RNG only); 1 seed, honestly noted
 

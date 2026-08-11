@@ -13,9 +13,10 @@ import json
 import numpy as np
 import anndata as ad
 from sklearn.neighbors import NearestNeighbors
+from _roots import data_root, external_root, spatial_omics_root
 
-DR = "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data"
-EXT = "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/external"
+DR = str(data_root())
+EXT = str(external_root())
 DATASETS = {
     "DLPFC(Visium,layer)": (f"{DR}/raw/dlpfc_maynard_2021_visium/dlpfc_maynard_2021_151673.h5ad",
                             ["ground_truth"]),

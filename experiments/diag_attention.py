@@ -20,9 +20,9 @@ from tessera_st.eval import ari
 from tessera_st.losses import boundary_contrastive_loss, reconstruction_loss
 from tessera_st.model.gating import EdgeGate
 from tessera_st.model.graph import build_knn_edges
+from _roots import data_root, external_root, spatial_omics_root
 
-P = ("/home/zeyufu/Desktop/labs/active/spatial-omics-reform/"
-     "data/raw/dlpfc_maynard_2021_visium/dlpfc_maynard_2021_151673.h5ad")
+P = str(spatial_omics_root() / "data/raw/dlpfc_maynard_2021_visium/dlpfc_maynard_2021_151673.h5ad")
 
 
 class AttnGateLayer(nn.Module):

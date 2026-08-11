@@ -19,9 +19,9 @@ from tessera_st.eval.markers import DLPFC_LAYER_MARKERS
 from tessera_st.losses import boundary_contrastive_loss
 from tessera_st.model.encoder import GatedEncoder
 from tessera_st.model.graph import build_knn_edges
+from _roots import data_root, external_root, spatial_omics_root
 
-P = ("/home/zeyufu/Desktop/labs/active/spatial-omics-reform/"
-     "data/raw/dlpfc_maynard_2021_visium/dlpfc_maynard_2021_151673.h5ad")
+P = str(spatial_omics_root() / "data/raw/dlpfc_maynard_2021_visium/dlpfc_maynard_2021_151673.h5ad")
 slide = load_h5ad(P, label_key="ground_truth", marker_dict=DLPFC_LAYER_MARKERS)
 ls = slide.layer_marker_scores
 n = int(len(np.unique(slide.labels[slide.labels >= 0])))

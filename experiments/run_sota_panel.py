@@ -15,12 +15,12 @@ import anndata as ad
 from sklearn.decomposition import PCA
 from sklearn.mixture import GaussianMixture
 from sklearn.neighbors import NearestNeighbors
+from _roots import data_root, external_root, spatial_omics_root
 
-EXT = "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/external"
+EXT = str(external_root())
 sys.path.insert(0, f"{EXT}/STAGATE")
 sys.path.insert(0, f"{EXT}/SEDR")
-P = ("/home/zeyufu/Desktop/labs/active/spatial-omics-reform/"
-     "data/raw/dlpfc_maynard_2021_visium/dlpfc_maynard_2021_151673.h5ad")
+P = str(spatial_omics_root() / "data/raw/dlpfc_maynard_2021_visium/dlpfc_maynard_2021_151673.h5ad")
 
 from tessera_st.ablation import _hard_confidence, _metric_row, format_table  # noqa: E402
 from tessera_st.data.dlpfc import _encode_labels  # noqa: E402

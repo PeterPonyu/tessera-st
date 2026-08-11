@@ -7,6 +7,7 @@ layers), so spatial-smoothing methods may collapse and detail-preserving ones ma
 skipped (too slow under the stub at 19k cells). 1 seed for speed; this is a discovery probe."""
 
 import sys
+from _roots import data_root, external_root, spatial_omics_root
 
 sys.path.insert(0, "experiments")
 import _numba_stub  # noqa: E402
@@ -23,10 +24,10 @@ from sklearn.decomposition import PCA  # noqa: E402
 from sklearn.mixture import GaussianMixture  # noqa: E402
 from sklearn.neighbors import NearestNeighbors  # noqa: E402
 
-EXT = "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/external"
+EXT = str(external_root())
 for s in ("STAGATE", "SEDR"):
     sys.path.insert(0, f"{EXT}/{s}")
-P = "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/raw/squidpy/seqfish.h5ad"
+P = str(spatial_omics_root() / "data/raw/squidpy/seqfish.h5ad")
 
 from tessera_st.ablation import _hard_confidence, _metric_row, format_table  # noqa: E402
 from tessera_st.config import AblationConfig, TrainConfig  # noqa: E402

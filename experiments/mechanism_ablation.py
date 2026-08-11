@@ -5,6 +5,7 @@ mechanism. Hypothesis: the boundary-contrastive term is load-bearing (it was on 
 on the platforms Tessera actually wins ties the win to its boundary-aware design."""
 
 import sys
+from _roots import data_root, external_root, spatial_omics_root
 
 sys.path.insert(0, "experiments")
 import _numba_stub  # noqa: E402
@@ -21,8 +22,8 @@ from sklearn.decomposition import PCA  # noqa: E402
 from sklearn.metrics import adjusted_rand_score as ari  # noqa: E402
 from sklearn.mixture import GaussianMixture  # noqa: E402
 
-DR = "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data"
-EXT = "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/external"
+DR = str(data_root())
+EXT = str(external_root())
 
 from tessera_st.config import TrainConfig, curated_ablation_grid  # noqa: E402
 from tessera_st.eval.refine import refine_labels  # noqa: E402

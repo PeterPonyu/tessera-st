@@ -77,6 +77,7 @@ panel-count / winner claims are re-verified.
 
 import os
 import sys
+from _roots import data_root, external_root, spatial_omics_root
 
 sys.path.insert(0, "experiments")
 
@@ -94,8 +95,8 @@ from scipy.stats import spearmanr  # noqa: E402
 from tessera_st.eval.refine import refine_labels  # noqa: E402
 
 # Same real-data roots + the same 11 platforms/GT columns as native_baselines.py (the published panel).
-DR = "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data"
-EXT = "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/external"
+DR = str(data_root())
+EXT = str(external_root())
 SUBSAMPLE = 16000
 NREP = int(os.environ.get("BAYESSPACE_NREP", "50000"))
 LATTICE_ONLY = os.environ.get("BAYESSPACE_LATTICE_ONLY", "0") == "1"

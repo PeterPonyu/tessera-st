@@ -4,6 +4,7 @@ per-metric Tessera-vs-each-SOTA analysis. numba-stub lets SEDR/GraphST run witho
 Unified backend =横向可比; each SOTA's own recommended backend may score higher (noted)."""
 
 import sys
+from _roots import data_root, external_root, spatial_omics_root
 
 sys.path.insert(0, "experiments")
 import _numba_stub  # noqa: E402
@@ -17,11 +18,10 @@ from sklearn.decomposition import PCA  # noqa: E402
 from sklearn.mixture import GaussianMixture  # noqa: E402
 from sklearn.neighbors import NearestNeighbors  # noqa: E402
 
-EXT = "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/external"
+EXT = str(external_root())
 for sub in ("STAGATE", "SEDR", "GraphST"):
     sys.path.insert(0, f"{EXT}/{sub}")
-P = ("/home/zeyufu/Desktop/labs/active/spatial-omics-reform/"
-     "data/raw/dlpfc_maynard_2021_visium/dlpfc_maynard_2021_151673.h5ad")
+P = str(spatial_omics_root() / "data/raw/dlpfc_maynard_2021_visium/dlpfc_maynard_2021_151673.h5ad")
 
 from tessera_st.ablation import _hard_confidence, _metric_row, format_table  # noqa: E402
 from tessera_st.config import AblationConfig, TrainConfig  # noqa: E402

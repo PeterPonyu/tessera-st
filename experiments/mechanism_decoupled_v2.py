@@ -36,6 +36,7 @@ under the ledger's global honest-claims policy.
 """
 
 import sys
+from _roots import data_root, external_root, spatial_omics_root
 
 sys.path.insert(0, "experiments")
 import _numba_stub  # noqa: E402
@@ -58,7 +59,7 @@ from scipy.stats import spearmanr, linregress  # noqa: E402
 sys.path.insert(0, "src")
 from tessera_st.data.synthetic import make_tessellation  # noqa: E402
 
-EXT = "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/external"
+EXT = str(external_root())
 sys.path.insert(0, f"{EXT}/STAGATE")
 
 # FULL FIDELITY: use the GPU and full threading, exactly like mechanism_synth.py (the primary).

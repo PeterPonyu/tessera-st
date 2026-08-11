@@ -3,6 +3,7 @@
 Add 3 more platforms (BRCA Visium tumour / IMC breast / openST HNSCC), run the hardened protocol
 (best-config Tessera rank), compute each new GT's spatial contiguity, merge with the 6 existing rows
 from task_fit_law.json, and recompute Spearman(contiguity, Tessera rank) and (contiguity, spatial
+from _roots import data_root, external_root, spatial_omics_root
 advantage) over all 9. If the correlations hold/strengthen, the predictive rule is firmer."""
 
 import sys
@@ -23,8 +24,8 @@ from sklearn.metrics import adjusted_rand_score as ari  # noqa: E402
 from sklearn.mixture import GaussianMixture  # noqa: E402
 from sklearn.neighbors import NearestNeighbors  # noqa: E402
 
-EXT = "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/external"
-DR = "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data"
+EXT = str(external_root())
+DR = str(data_root())
 for s in ("STAGATE", "SEDR", "GraphST"):
     sys.path.insert(0, f"{EXT}/{s}")
 

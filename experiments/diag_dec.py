@@ -18,9 +18,9 @@ from tessera_st.eval import ari
 from tessera_st.losses import total_loss
 from tessera_st.model.graph import build_knn_edges
 from tessera_st.model.tessera import TesseraNet
+from _roots import data_root, external_root, spatial_omics_root
 
-P = ("/home/zeyufu/Desktop/labs/active/spatial-omics-reform/"
-     "data/raw/dlpfc_maynard_2021_visium/dlpfc_maynard_2021_151673.h5ad")
+P = str(spatial_omics_root() / "data/raw/dlpfc_maynard_2021_visium/dlpfc_maynard_2021_151673.h5ad")
 
 
 def soft_assign(z, centroids, alpha=1.0):

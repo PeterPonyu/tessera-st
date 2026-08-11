@@ -11,11 +11,9 @@ from tessera_st.config import AblationConfig, TrainConfig
 from tessera_st.data.dlpfc import load_h5ad
 from tessera_st.eval import ari, nmi
 from tessera_st.train import fit_predict
+from _roots import data_root, external_root, spatial_omics_root
 
-P = (
-    "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/"
-    "data/raw/dlpfc_maynard_2021_visium/dlpfc_maynard_2021_151673.h5ad"
-)
+P = str(spatial_omics_root() / "data/raw/dlpfc_maynard_2021_visium/dlpfc_maynard_2021_151673.h5ad")
 
 slide = load_h5ad(P, label_key="ground_truth")
 n = int(len(np.unique(slide.labels[slide.labels >= 0])))
