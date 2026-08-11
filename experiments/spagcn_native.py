@@ -15,6 +15,7 @@ Resumable per-platform cache. Writes experiments/spagcn_native.json.
 import json
 import os
 import warnings
+from _roots import data_root, external_root, spatial_omics_root
 
 warnings.filterwarnings("ignore")
 import numpy as np
@@ -24,8 +25,8 @@ from sklearn.metrics import adjusted_rand_score as ari
 from sklearn.neighbors import NearestNeighbors
 from scipy.stats import spearmanr
 
-DR = "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data"
-EXT = "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/external"
+DR = str(data_root())
+EXT = str(external_root())
 SUBSAMPLE = 16000
 SEEDS = [1]
 

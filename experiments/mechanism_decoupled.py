@@ -47,6 +47,7 @@ verify_manuscript.py, or any bayesspace_*.json artifact. This is a STAGED result
 """
 
 import sys
+from _roots import data_root, external_root, spatial_omics_root
 
 sys.path.insert(0, "experiments")
 import _numba_stub  # noqa: E402
@@ -68,7 +69,7 @@ from scipy.stats import spearmanr, linregress  # noqa: E402
 sys.path.insert(0, "src")
 from tessera_st.data.synthetic import make_tessellation  # noqa: E402
 
-EXT = "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/external"
+EXT = str(external_root())
 sys.path.insert(0, f"{EXT}/STAGATE")
 
 torch.set_num_threads(2)  # be a considerate neighbour -- other CPU jobs are active on this box

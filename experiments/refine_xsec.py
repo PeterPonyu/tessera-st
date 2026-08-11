@@ -4,6 +4,7 @@ refine on/off, full key metrics. GraphST skipped (slow under stub + under-adapte
 This is the test that decides whether refinement is a real improvement or another single-section fluke."""
 
 import sys
+from _roots import data_root, external_root, spatial_omics_root
 
 sys.path.insert(0, "experiments")
 import _numba_stub  # noqa: E402
@@ -22,7 +23,7 @@ from sklearn.decomposition import PCA  # noqa: E402
 from sklearn.mixture import GaussianMixture  # noqa: E402
 from sklearn.neighbors import NearestNeighbors  # noqa: E402
 
-EXT = "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/external"
+EXT = str(external_root())
 BK = f"{EXT}/Banksy/data/DLPFC"
 for s in ("STAGATE", "SEDR"):
     sys.path.insert(0, f"{EXT}/{s}")

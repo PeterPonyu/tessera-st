@@ -85,12 +85,13 @@ recorded in `CLAIM_LEDGER.md`:
 
 ## 6. Legitimate external dependency: spatial-omics-reform
 
-About 30 scripts under `experiments/*.py` hardcode paths into
-`/home/zeyufu/Desktop/labs/active/spatial-omics-reform/{data,external,...}` for real datasets
-(DLPFC/spatialLIBD, multi-platform ST data) and baseline method repos (STAGATE, GraphST, SEDR,
-SpaceFlow, BANKSY). **This is a KEPT, intentional reproduction dependency, not contamination** —
-it lets Tessera's benchmark drop onto the same data/baselines as the established leaderboard (see
-`BASELINE_REFERENCES.md`). Do not "clean up" or redirect these paths without understanding this.
+About 30 scripts under `experiments/*.py` resolve data/baseline roots via
+`experiments/_roots.py` (`TESSERA_DATA_ROOT` / `SPATIAL_OMICS_ROOT` / `LABS_ROOT`, else a sibling
+`spatial-omics-reform` checkout) for real datasets (DLPFC/spatialLIBD, multi-platform ST data)
+and baseline method repos (STAGATE, GraphST, SEDR, SpaceFlow, BANKSY). **This is a KEPT,
+intentional reproduction dependency, not contamination** — it lets Tessera's benchmark drop onto
+the same data/baselines as the established leaderboard (see `BASELINE_REFERENCES.md`). Do not
+redirect these roots without understanding this.
 The clean-room boundary that *does* apply: baseline brand names (STAGATE/GraphST/SEDR/SpaceFlow/
 BANKSY) are banned from `src/`, `tests/`, and `scripts/` — allowed only in `README.md`,
 `DESIGN.md`, `BASELINE_REFERENCES.md`, `CLAIM_LEDGER.md`, and `experiments/**` result notes. This

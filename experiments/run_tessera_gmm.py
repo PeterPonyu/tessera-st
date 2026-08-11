@@ -13,11 +13,9 @@ from tessera_st.config import AblationConfig, TrainConfig
 from tessera_st.data.dlpfc import load_h5ad
 from tessera_st.eval.baselines import kmeans_labels
 from tessera_st.eval.markers import DLPFC_LAYER_MARKERS
+from _roots import data_root, external_root, spatial_omics_root
 
-P = (
-    "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/"
-    "data/raw/dlpfc_maynard_2021_visium/dlpfc_maynard_2021_151673.h5ad"
-)
+P = str(spatial_omics_root() / "data/raw/dlpfc_maynard_2021_visium/dlpfc_maynard_2021_151673.h5ad")
 
 
 def gmm_labels(emb, k, seed):

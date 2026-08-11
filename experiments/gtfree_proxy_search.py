@@ -32,9 +32,10 @@ from sklearn.decomposition import PCA
 from sklearn.metrics import adjusted_rand_score as ari, silhouette_score
 from sklearn.neighbors import NearestNeighbors
 from scipy.stats import spearmanr
+from _roots import data_root, external_root, spatial_omics_root
 
-DR = "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data"
-EXT = "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/external"
+DR = str(data_root())
+EXT = str(external_root())
 PLATFORMS = {
     "DLPFC(Visium,layer)": (f"{DR}/raw/dlpfc_maynard_2021_visium/dlpfc_maynard_2021_151673.h5ad",
                             ["layer_label", "Region", "ground_truth"]),

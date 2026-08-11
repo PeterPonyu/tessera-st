@@ -33,8 +33,8 @@ results/
 *.synctex.gz
 manuscript/au.*
 
-# --- dual-plane: submission capsules live outside this workbench ---
-# Plane C worktrees: labs/capsules/<id>/ (host: submission-capsules)
+# --- submission packaging lives outside this workbench ---
+# Ignore local capsule / portal worktrees if present beside the clone
 /paper/
 /manuscript/
 /submission/
@@ -52,6 +52,12 @@ __pycache__/
 *.fdb_latexmk
 *.fls
 *.synctex.gz
+
+# Ops / capsule / venue-gate docs — keep local; do not ship on make-public
+/CAPSULE_PLANE.md
+/READY_TO_UPLOAD.md
+/VENUE-LOCK.md
+/SUBMISSION-KIT.md
 
 
 # --- never push large local data / caches to GitHub ---

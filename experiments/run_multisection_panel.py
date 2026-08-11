@@ -18,8 +18,9 @@ from scipy.sparse import csc_matrix
 from sklearn.decomposition import PCA
 from sklearn.mixture import GaussianMixture
 from sklearn.neighbors import NearestNeighbors
+from _roots import data_root, external_root, spatial_omics_root
 
-EXT = "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/external"
+EXT = str(external_root())
 BK = f"{EXT}/Banksy/data/DLPFC"
 sys.path.insert(0, f"{EXT}/STAGATE")
 

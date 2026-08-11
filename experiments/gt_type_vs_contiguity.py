@@ -1,8 +1,9 @@
+from pathlib import Path
 import json
 from scipy import stats
 import numpy as np
 
-d = json.load(open('/home/zeyufu/Desktop/labs/active/tessera-st/experiments/expanded_bench.json'))
+d = json.load(open(str(Path(__file__).resolve().parent / 'expanded_bench.json')))
 rows = d['rows']
 
 # map platform string (as it appears in expanded_bench.json) -> Table 1 GT type category

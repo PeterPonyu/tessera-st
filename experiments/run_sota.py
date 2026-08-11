@@ -10,13 +10,11 @@ external/ and is only referenced here in experiments/, never in tessera src.
 import sys
 
 import numpy as np
+from _roots import data_root, external_root, spatial_omics_root
 
-STAGATE_PATH = "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/external/STAGATE"
+STAGATE_PATH = str(external_root() / "STAGATE")
 sys.path.insert(0, STAGATE_PATH)
-P = (
-    "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/"
-    "data/raw/dlpfc_maynard_2021_visium/dlpfc_maynard_2021_151673.h5ad"
-)
+P = str(spatial_omics_root() / "data/raw/dlpfc_maynard_2021_visium/dlpfc_maynard_2021_151673.h5ad")
 
 import anndata as ad  # noqa: E402
 import torch  # noqa: E402

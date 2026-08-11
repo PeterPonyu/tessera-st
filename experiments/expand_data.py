@@ -14,6 +14,7 @@ Writes experiments/expand_data.json; exits non-zero (verify hook) if the law doe
 """
 
 import sys
+from _roots import data_root, external_root, spatial_omics_root
 
 sys.path.insert(0, "experiments")
 import _numba_stub  # noqa: E402
@@ -32,8 +33,8 @@ from sklearn.mixture import GaussianMixture  # noqa: E402
 from sklearn.neighbors import NearestNeighbors  # noqa: E402
 from scipy.stats import spearmanr  # noqa: E402
 
-DR = "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data"
-EXT = "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/external"
+DR = str(data_root())
+EXT = str(external_root())
 for s in ("STAGATE", "SEDR", "GraphST", "SpaceFlow"):
     sys.path.insert(0, f"{EXT}/{s}")
 

@@ -24,6 +24,7 @@ Writes experiments/mechanism_synth.json; exits non-zero (verify hook) if the cau
 """
 
 import sys
+from _roots import data_root, external_root, spatial_omics_root
 
 sys.path.insert(0, "experiments")
 import _numba_stub  # noqa: E402
@@ -45,7 +46,7 @@ from scipy.stats import spearmanr  # noqa: E402
 sys.path.insert(0, "src")
 from tessera_st.data.synthetic import make_tessellation  # noqa: E402
 
-EXT = "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/external"
+EXT = str(external_root())
 sys.path.insert(0, f"{EXT}/STAGATE")
 dev = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 

@@ -1,6 +1,7 @@
 """Confirm SEDR + GraphST actually TRAIN (not just import) under the numba stub, on 151673."""
 
 import sys
+from _roots import data_root, external_root, spatial_omics_root
 
 sys.path.insert(0, "experiments")
 import _numba_stub  # noqa: E402
@@ -13,11 +14,10 @@ import anndata as ad  # noqa: E402
 from sklearn.decomposition import PCA  # noqa: E402
 from sklearn.mixture import GaussianMixture  # noqa: E402
 
-EXT = "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/external"
+EXT = str(external_root())
 sys.path.insert(0, f"{EXT}/SEDR")
 sys.path.insert(0, f"{EXT}/GraphST")
-P = ("/home/zeyufu/Desktop/labs/active/spatial-omics-reform/"
-     "data/raw/dlpfc_maynard_2021_visium/dlpfc_maynard_2021_151673.h5ad")
+P = str(spatial_omics_root() / "data/raw/dlpfc_maynard_2021_visium/dlpfc_maynard_2021_151673.h5ad")
 from tessera_st.data.dlpfc import _encode_labels  # noqa: E402
 from tessera_st.eval import ari  # noqa: E402
 
