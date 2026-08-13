@@ -16,6 +16,7 @@ export const SITE = {
   homepage: 'https://peterponyu.github.io/',
   scportal: 'https://peterponyu.github.io/scportal/',
   siteUrl: 'https://peterponyu.github.io/tessera-st/',
+  github: 'https://github.com/PeterPonyu/tessera-st',
 } as const;
 
 export type BadgeConfig = {
@@ -28,8 +29,8 @@ export type BadgeConfig = {
 export const BADGES = {
   code: {
     label: 'Code',
-    enabled: false,
-    disabledReason: 'Workbench not linked until anonymous public HTTPS 200',
+    href: SITE.github,
+    enabled: true,
   } satisfies BadgeConfig,
   site: {
     label: 'Site',

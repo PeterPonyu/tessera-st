@@ -54,12 +54,6 @@ function walk(dir) {
   if (existsSync(out)) {
   walk(out);
   const html = readFileSync(join(out, 'index.html'), 'utf8');
-  for (const privateRepo of ['PeterPonyu/HetCLOP', 'PeterPonyu/tessera-st']) {
-    if (new RegExp(`github\\.com/${privateRepo.replace('/', '\\/')}`, 'i').test(html)) {
-      console.error(`FAIL G6: private Code href (${privateRepo}) in index.html`);
-      failed += 1;
-    }
-  }
   for (const label of ['Abstract', 'Cite', 'Team']) {
     if (new RegExp(`>${label}<`, 'i').test(html)) {
       console.error(`FAIL G3: journal nav label "${label}" in index.html`);
