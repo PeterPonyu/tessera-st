@@ -17,6 +17,7 @@ __pycache__/
 .pytest_cache/
 # Python
 results/
+!gateway-next/src/app/results/
 .ruff_cache/
 .venv/
 # OMC session/tooling state (never commit)
@@ -72,4 +73,12 @@ data/realgt*_benchmark/
 experiments/**/cache/
 *.tar.gz
 # allow small tar in docs if needed via -f; default deny
+
+# Science gateway Next.js build artifacts
+gateway-next/node_modules/
+gateway-next/.next/
+gateway-next/out/
+pages-gateway-tests/node_modules/
+pages-gateway-tests/test-results/
+pages-gateway-tests/playwright-report/
 
