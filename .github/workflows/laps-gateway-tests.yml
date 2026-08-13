@@ -1,0 +1,68 @@
+name: LAPS gateway policy (browser)
+
+on:
+  pull_request:
+    paths:
+      - "pages-gateway-tests/**"
+      - "gateway-next/**"
+      - ".github/workflows/laps-gateway-tests.yml"
+      - ".github/workflows/pages.yml"
+  push:
+    branches: [master]
+    paths:
+      - "pages-gateway-tests/**"
+      - "gateway-next/**"
+      - ".github/workflows/laps-gateway-tests.yml"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+  schedule:
+    - cron: "30 3 * * *"
+  workflow_run:
+    workflows:
+      - "Deploy Science Gateway (Next static export)"
+    types:
+      - completed
+
+permissions:
+  contents: read
+
+jobs:
+  laps-gateway-browser-gate:
+    name: LAPS science gateway (Playwright)
+    if: >
+      github.event_name != 'workflow_run' ||
+      github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: pages-gateway-tests
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+          cache-dependency-path: pages-gateway-tests/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright Chromium
+        run: npx playwright install chromium --with-deps
+
+      - name: Run LAPS gateway policy suite
+        run: npm test
+
+      - name: Upload Playwright report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: laps-gateway-playwright-report
+          path: |
+            pages-gateway-tests/playwright-report/
+            pages-gateway-tests/test-results/
+          if-no-files-found: warn
