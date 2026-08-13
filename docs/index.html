@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tessera-ST · Contiguity sets the value of a spatial prior</title>
+  <meta name="description" content="Paper companion for Tessera-ST: the value of a spatial prior is set by the ground truth’s spatial contiguity. Shuffle coordinates; hold expression and labels.">
+  <meta name="author" content="Zeyu Fu">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#1d4ed8">
+  <base href="https://peterponyu.github.io/tessera-st/">
+  <link rel="canonical" href="https://peterponyu.github.io/tessera-st/">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%230d9488'/%3E%3Crect x='1' y='1' width='6' height='6' fill='%23f8fafc'/%3E%3Crect x='9' y='1' width='6' height='6' fill='%23e0f2fe'/%3E%3Crect x='1' y='9' width='6' height='6' fill='%23ccfbf1'/%3E%3Crect x='9' y='9' width='6' height='6' fill='%23fef3c7'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap-wide header-inner">
+      <a class="wordmark" href="#home">
+        <span class="wordmark-mark" aria-hidden="true">TS</span>
+        <span class="wordmark-name">Tessera</span>
+      </a>
+      <nav class="nav-primary" aria-label="Primary">
+        <a href="#home">Home</a>
+        <a href="#abstract">Abstract</a>
+        <a href="#figures">Figures</a>
+        <a href="#code">Code</a>
+        <a href="#cite">Cite</a>
+      </nav>
+      <div class="header-chips">
+        <a class="chip" href="https://peterponyu.github.io/" rel="noopener noreferrer" target="_blank">Homepage</a>
+        <a class="chip" href="https://peterponyu.github.io/scportal/" rel="noopener noreferrer" target="_blank">SCPortal</a>
+      </div>
+      <button type="button" class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="mobile-nav">
+        <span data-label>Menu</span>
+        <span aria-hidden="true">☰</span>
+      </button>
+    </div>
+    <div class="mobile-nav" id="mobile-nav">
+      <nav aria-label="Mobile">
+        <a href="#home">Home</a>
+        <a href="#abstract">Abstract</a>
+        <a href="#figures">Figures</a>
+        <a href="#code">Code</a>
+        <a href="#cite">Cite</a>
+        <div class="mobile-graph">
+          <a href="https://peterponyu.github.io/" rel="noopener noreferrer" target="_blank">Homepage — ZF Lab</a>
+          <a href="https://peterponyu.github.io/scportal/" rel="noopener noreferrer" target="_blank">SCPortal — discovery hub</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home">
+      <div class="wrap">
+        <p class="kicker">ZF Lab · spatial domains</p>
+        <h1>Tessera</h1>
+        <p class="lead">A tissue is a tessellation: domains tiled across the slide, separated by seams. Graph encoders smooth over the spatial kNN graph until they bleed across those seams. <strong>The value of a spatial prior is set by the ground truth’s spatial contiguity.</strong> Shuffle cell coordinates; hold expression and labels.</p>
+        <div class="pills">
+          <a class="pill pill-primary" href="#abstract">Read the abstract</a>
+          <a class="pill pill-ghost" href="#figures">Browse figures</a>
+          <a class="pill pill-ghost" href="#cite">Cite</a>
+        </div>
+        <div class="stats">
+          <div class="stat-tile"><strong>32×32</strong><span>synthetic lattice</span></div>
+          <div class="stat-tile"><strong>11</strong><span>observational platforms</span></div>
+          <div class="stat-tile"><strong>0.022</strong><span>CODEX adjacency — scattered niches</span></div>
+          <div class="stat-tile"><strong>0.931</strong><span>MERFISH adjacency — contiguous layers</span></div>
+        </div>
+
+        <article class="paper-card">
+          <span class="disc" aria-hidden="true">1</span>
+          <div>
+            <h2>A causal law for spatial-domain detection: the value of a spatial prior is set by the ground truth's spatial contiguity</h2>
+            <p class="paper-meta"><strong>Fu, Z.</strong> · <em>IEEE Transactions on Computational Biology and Bioinformatics</em> · intended venue, option hold · 2026 · no article DOI</p>
+            <div class="badges">
+              <span class="badge badge-doi is-disabled" title="No article DOI assigned">DOI</span>
+              <a class="badge badge-code" href="https://github.com/PeterPonyu/tessera-st" rel="noopener noreferrer" target="_blank">Code</a>
+              <span class="badge badge-site is-disabled" title="Site waits on HTTP 200 at /tessera-st/">Site</span>
+            </div>
+          </div>
+        </article>
+
+        <div class="legend" aria-label="Domain and seam key">
+          <span><i class="swatch-sq" style="background:var(--domain-0)"></i>Stripe domain 1</span>
+          <span><i class="swatch-sq" style="background:var(--domain-1)"></i>Stripe domain 2</span>
+          <span><i class="swatch-sq" style="background:var(--domain-2)"></i>Stripe domain 3</span>
+          <span><i class="swatch-sq" style="background:var(--domain-3)"></i>Stripe domain 4</span>
+          <span><i class="swatch-sq" style="background:var(--domain-4)"></i>Disc niche</span>
+          <span><i class="swatch-sq" style="background:var(--seam)"></i>Predicted seam</span>
+          <span><i class="swatch-sq" style="background:var(--interior)"></i>Interior</span>
+        </div>
+
+        <div class="seam-grid" aria-label="Synthetic tissue geometry">
+          <figure class="seam-map-frame paper-card" style="display:block;padding:0">
+            <button type="button" class="map-well thumb" data-full="figures/fig_spatialmap_ras1.png" aria-label="Open panel A, ground-truth domains">
+              <img src="figures/fig_spatialmap_ras1.png" width="320" height="320" alt="Ground-truth domains on a 32 by 32 lattice: four vertical stripes and a small disc niche in the lower right">
+            </button>
+            <figcaption>
+              <h3><span class="panel-id">A</span> Ground truth</h3>
+              <p>Four contiguous stripe domains plus a disc niche. This is the tessellation the prior is asked to recover.</p>
+            </figcaption>
+          </figure>
+          <figure class="seam-map-frame paper-card" style="display:block;padding:0">
+            <button type="button" class="map-well thumb" data-full="figures/fig_spatialmap_ras2.png" aria-label="Open panel B, non-spatial KMeans scatter">
+              <img src="figures/fig_spatialmap_ras2.png" width="320" height="320" alt="Non-spatial KMeans scatters the same labels across the lattice instead of recovering the stripes">
+            </button>
+            <figcaption>
+              <h3><span class="panel-id">B</span> Non-spatial KMeans <span class="mono">(ARI 0.25)</span></h3>
+              <p>Expression without coordinates. Contiguous tiles become a scatter. Geometry is missing, so the partition is.</p>
+            </figcaption>
+          </figure>
+          <figure class="seam-map-frame paper-card" style="display:block;padding:0">
+            <button type="button" class="map-well thumb" data-full="figures/fig_spatialmap_ras3.png" aria-label="Open panel C, neighbour-mean recovery">
+              <img src="figures/fig_spatialmap_ras3.png" width="320" height="320" alt="Neighbour-mean smoother recovers the four stripes and the disc niche on the lattice">
+            </button>
+            <figcaption>
+              <h3><span class="panel-id">C</span> Neighbour-mean <span class="mono">(ARI 0.96)</span></h3>
+              <p>A parameter-free spatial prior recovers the tiles when the ground truth is contiguous.</p>
+            </figcaption>
+          </figure>
+          <figure class="seam-map-frame paper-card" style="display:block;padding:0">
+            <button type="button" class="map-well thumb" data-full="figures/fig_spatialmap_ras4.png" aria-label="Open panel D, predicted seams">
+              <img src="figures/fig_spatialmap_ras4.png" width="320" height="320" alt="Predicted seams drawn as red lattice sites along domain boundaries, interior in grey">
+            </button>
+            <figcaption>
+              <h3><span class="panel-id">D</span> Predicted seams</h3>
+              <p>Where smoothing must stop. Seams are an explicit lattice output, not only an argmax colouring.</p>
+            </figcaption>
+          </figure>
+        </div>
+        <p class="evidence-sub">Raster tiles from <span class="mono">fig_spatialmap_ras1–4.png</span> (synthetic 32×32 tessellation). Panel letters A–D here are those compact map tiles, not the unbaked production TikZ A–D layouts.</p>
+
+        <div class="intervention" aria-label="Coordinate-shuffle intervention">
+          <div class="intervention-step">
+            <p class="step-kicker">Intervene</p>
+            <h3>Shuffle coordinates</h3>
+            <p>Move cells on the tissue while destroying spatial contiguity. This is a physical intervention on geometry, not an ARI tweak.</p>
+          </div>
+          <div class="intervention-step">
+            <p class="step-kicker">Hold</p>
+            <h3>Keep expression</h3>
+            <p>Each cell keeps its molecular profile. Recoverable signal stays fixed so the prior is not given a new transcriptome.</p>
+          </div>
+          <div class="intervention-step">
+            <p class="step-kicker">Hold</p>
+            <h3>Keep domain labels</h3>
+            <p>Ground-truth membership does not change. Only where those labels sit on the lattice changes.</p>
+          </div>
+        </div>
+        <div class="intervention-hold">
+          <p>Contiguity is the fraction of spatial kNN neighbours (<span class="mono">k = 6</span>) that share the ground-truth domain label. Continuous bands (MERFISH, DLPFC) can recover a spatial prior; scattered niches (CODEX adjacency <span class="mono">0.022</span>) are hurt by smoothing.</p>
+        </div>
+
+        <div class="callout rho-note">
+          <h3>ρ = +1.00 is saturated Spearman, not an effect size</h3>
+          <p>In the primary synthetic sweep, spatial-prior advantage rises with contiguity and flips sign at Spearman ρ = +0.98 to +1.00 (<span class="mono">p &lt; 0.001</span>). Rank correlation saturates because both arms are monotone. The load-bearing facts are the <strong>sign flip</strong> and the OLS slope, not the ceiling on ρ.</p>
+        </div>
+        <div class="callout exclude-note">
+          <h3>What this site is not</h3>
+          <p>Not a SOTA page for Tessera-the-method (that method is a worked example of how single-dataset evaluation can certify a false SOTA). Not a frozen-PDF screenshot. Production A–D TikZ layouts are not published here. ARI tables are evidence, not the product.</p>
+        </div>
+
+        <div class="routes" style="margin-top:1.5rem">
+          <a class="route-card card-hover" href="#abstract"><span class="disc disc-lg">01</span><div><h3>Abstract</h3><p>The causal law in words. ρ is labeled as saturated Spearman, not an effect size.</p></div></a>
+          <a class="route-card card-hover" href="#figures"><span class="disc disc-lg">02</span><div><h3>Figures</h3><p>Geometry first: ras maps, seams, shuffle. Scores stay secondary.</p></div></a>
+          <a class="route-card card-hover" href="#code"><span class="disc disc-lg">03</span><div><h3>Code</h3><p>Public GitHub remote after anonymous HTTPS 200. Site waits on Pages HTTP 200.</p></div></a>
+          <a class="route-card card-hover" href="#cite"><span class="disc disc-lg">04</span><div><h3>Cite</h3><p>BibTeX stub. No IEEE TCBB article DOI.</p></div></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="abstract">
+      <div class="wrap">
+        <p class="kicker">Abstract</p>
+        <h2 class="section-title">A causal law, not a method crown</h2>
+        <p class="deck">From the manuscript. TeX pointers removed. The object is whether a spatial prior is warranted, not which encoder wins an ARI table.</p>
+        <div class="abstract-prose">
+          <p>Methods for spatial-domain detection in spatial transcriptomics are routinely ranked on one or two Visium datasets under a single clustering backend, and each new paper claims a state-of-the-art. We argue the reliable object of study is not which method wins but a predictive, causal law for whether a spatial prior helps at all. In the primary synthetic sweep, scrambling positions while holding each cell's expression and label fixed makes spatial-prior advantage rise with contiguity and flip sign, at Spearman ρ=+0.98 to +1.00 (p&lt;0.001; a saturated rank correlation, not an effect size). A decoupled design then isolates the intervention: manipulating contiguity alone (v2 Arm B), while holding alignment and recoverable signal fixed, reproduces the sign flip on two substrates and keeps the non-spatial floor flat. Together these controls are consistent with a causal role for contiguity rather than a mere correlate.</p>
+          <p>The same law holds observationally across eleven technologically diverse datasets: spatial-prior advantage tracks ground-truth contiguity at Spearman +0.72 (p=0.012, 95% CI [0.24, 0.92]), the only significant correlation we test; it survives control for cluster count, feature dimension, and assay modality, predicts held-out datasets, and strengthens under the author-recommended backend. Consistent with a law about tasks rather than methods, no method is a universal winner: seven different winners across the panel, a clustering backend that alone re-ranks methods by as much as the entire between-method spread, and a competitive two-line neighbour-mean floor. A label-free spatial-coherence-gain proxy recovers the direction of the law (Spearman +0.55) but, once we correct for having selected it from six candidates, is a directional, honestly marginal prior rather than a significant predictor (search-corrected p=0.28). The unit of progress should shift from building a better method to deciding, before committing, whether a spatial prior is warranted.</p>
+        </div>
+        <div class="kw-row" aria-label="Keywords">
+          <span class="kw">Spatial transcriptomics</span>
+          <span class="kw">Spatial-domain detection</span>
+          <span class="kw">Contiguity</span>
+          <span class="kw">Adjacency</span>
+          <span class="kw">Seams</span>
+          <span class="kw">Graph neural networks</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="figures">
+      <div class="wrap-wide">
+        <p class="kicker">Figures</p>
+        <h2 class="section-title">Geometry first</h2>
+        <p class="deck">The product is domain geometry and adjacency on tissue. ARI and ρ sit in the evidence stack. Production A–D TikZ layouts are not published here.</p>
+        <div class="toolbar" role="group" aria-label="Filter figures">
+          <button type="button" class="filter-chip" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="filter-chip" data-filter="geometry" aria-pressed="false">Geometry</button>
+          <button type="button" class="filter-chip" data-filter="intervention" aria-pressed="false">Shuffle</button>
+          <button type="button" class="filter-chip" data-filter="evidence" aria-pressed="false">Evidence</button>
+        </div>
+        <div class="figure-grid">
+          <figure class="figure-card card-hover" data-findings="geometry" id="fig-ras1">
+            <button type="button" class="thumb" data-full="figures/fig_spatialmap_ras1.png" aria-label="Open ground-truth tessellation">
+              <img src="figures/fig_spatialmap_ras1.png" alt="Ground-truth four-stripe tessellation with a disc niche on a 32 by 32 lattice" width="320" height="320">
+            </button>
+            <figcaption>
+              <div class="fig-kicker"><strong>Map A · Ground truth</strong> <span class="chip-f">Geometry</span></div>
+              <p>Why a spatial prior helps when the ground truth is contiguous (synthetic tessellation, signal-to-noise tuned so space is necessary). The plotted object is tissue-domain geometry on a lattice: contiguous ground-truth tiles.</p>
+            </figcaption>
+          </figure>
+          <figure class="figure-card card-hover" data-findings="geometry" id="fig-ras2">
+            <button type="button" class="thumb" data-full="figures/fig_spatialmap_ras2.png" aria-label="Open non-spatial KMeans map">
+              <img src="figures/fig_spatialmap_ras2.png" alt="Non-spatial KMeans scatter of the same domains across the lattice" width="320" height="320">
+            </button>
+            <figcaption>
+              <div class="fig-kicker"><strong>Map B · Non-spatial KMeans</strong> <span class="chip-f">Geometry</span></div>
+              <p>Without coordinates the same expression yields a scatter of those domains (ARI 0.25). Geometry is the missing object, not a missing hyperparameter.</p>
+            </figcaption>
+          </figure>
+          <figure class="figure-card card-hover" data-findings="geometry" id="fig-ras3">
+            <button type="button" class="thumb" data-full="figures/fig_spatialmap_ras3.png" aria-label="Open neighbour-mean recovery map">
+              <img src="figures/fig_spatialmap_ras3.png" alt="Neighbour-mean smoother recovering stripes and the disc niche" width="320" height="320">
+            </button>
+            <figcaption>
+              <div class="fig-kicker"><strong>Map C · Neighbour-mean</strong> <span class="chip-f">Geometry</span></div>
+              <p>Recovery by a parameter-free neighbour-mean smoother (ARI 0.96). A two-line spatial floor is already competitive when tiles are contiguous.</p>
+            </figcaption>
+          </figure>
+          <figure class="figure-card card-hover" data-findings="geometry seams" id="fig-ras4">
+            <button type="button" class="thumb" data-full="figures/fig_spatialmap_ras4.png" aria-label="Open predicted seams map">
+              <img src="figures/fig_spatialmap_ras4.png" alt="Predicted seams in red along domain boundaries with grey interiors" width="320" height="320">
+            </button>
+            <figcaption>
+              <div class="fig-kicker"><strong>Map D · Predicted seams</strong> <span class="chip-f">Geometry</span></div>
+              <p>Predicted seams as an explicit output of the smoother rather than a by-product of the argmax. Colour is not the only cue: red marks seam sites, grey marks interior, and the caption names both.</p>
+            </figcaption>
+          </figure>
+          <article class="figure-card card-hover" data-findings="intervention" id="fig-mech" style="padding:1.05rem 1.1rem">
+            <div class="fig-kicker"><strong>Intervention · Coordinate shuffle</strong> <span class="chip-f">Shuffle</span></div>
+            <p style="margin:0.45rem 0 0;font-size:0.82rem;color:var(--text-m)">Controlled mechanism: cell positions are scrambled while each cell keeps its expression and domain label. With recoverable signal held fixed (flat grey control), spatial-prior advantage rises with the resulting tissue contiguity and flips sign. The plotted object is coordinate geometry, not an ARI tweak. Spearman ρ saturates near +1 because both arms are monotone; it is not an effect size (load-bearing: sign flip and OLS slope). The production mechanism TikZ is not published on this leaf.</p>
+          </article>
+          <article class="figure-card card-hover" data-findings="evidence" id="fig-law" style="padding:1.05rem 1.1rem">
+            <div class="fig-kicker"><strong>Evidence · Observational law</strong> <span class="chip-f">Evidence</span></div>
+            <p style="margin:0.45rem 0 0;font-size:0.82rem;color:var(--text-m)">Across eleven platforms, spatial-prior advantage tracks ground-truth contiguity at Spearman +0.72 (p=0.012, 95% CI [0.24, 0.92]). A label-free coh_gain proxy recovers the direction (ρ=+0.55) but is honestly marginal after search correction (p=0.28). Seven distinct winners; Tessera-the-method is not a universal crown.</p>
+          </article>
+        </div>
+
+        <div class="callout exclude-note" style="margin-top:1.25rem">
+          <h3>Production A–D not published here</h3>
+          <p>Gate D production TikZ A–D layouts remain unbaked and are not shown as if they were. This gallery uses the existing raster tiles <span class="mono">fig_spatialmap_ras1–4.png</span> only. The frozen 13-page flat kit was not rebuilt for this site.</p>
+        </div>
+
+        <h3 class="section-title" style="margin-top:2rem;font-size:1.15rem">Adjacency across the panel</h3>
+        <p class="deck">Contiguity first; winner ARI is evidence on the same tissues. Ordered as in the manuscript table.</p>
+        <div class="table-wrap">
+          <table class="geo">
+            <thead>
+              <tr>
+                <th>Platform</th>
+                <th>Contiguity</th>
+                <th>Geometry</th>
+                <th>Winner ARI</th>
+                <th>Spatial adv.</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>MERFISH</td><td>0.931</td><td>contiguous layers</td><td>0.429</td><td>+0.314</td></tr>
+              <tr><td>STARmap</td><td>0.921</td><td>contiguous</td><td>0.579</td><td>+0.168</td></tr>
+              <tr><td>DLPFC</td><td>0.905</td><td>cortical layers</td><td>0.584</td><td>+0.101</td></tr>
+              <tr><td>BRCA</td><td>0.865</td><td>contiguous</td><td>0.616</td><td>+0.042</td></tr>
+              <tr><td>osmFISH</td><td>0.817</td><td>contiguous</td><td>0.438</td><td>+0.196</td></tr>
+              <tr><td>IMC</td><td>0.630</td><td>mixed</td><td>0.485</td><td>+0.139</td></tr>
+              <tr><td>seqFISH</td><td>0.621</td><td>mixed</td><td>0.407</td><td>−0.005</td></tr>
+              <tr><td>Open-ST</td><td>0.562</td><td>mixed</td><td>0.264</td><td>−0.005</td></tr>
+              <tr><td>Slide-seqV2</td><td>0.274</td><td>scattered</td><td>0.118</td><td>+0.008</td></tr>
+              <tr><td>MIBI-TOF</td><td>0.271</td><td>scattered</td><td>0.247</td><td>+0.022</td></tr>
+              <tr><td>CODEX</td><td>0.022</td><td>scattered niches</td><td>0.081</td><td>+0.024</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-foot">Contiguity = fraction of spatial kNN (<span class="mono">k = 6</span>) sharing the ground-truth domain label. Winner ARI is the winner’s best-config mean (3 seeds). Tessera rank is omitted from the hero table on purpose: this leaf is the law, not a method crown.</p>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="code">
+      <div class="wrap">
+        <p class="kicker">Code</p>
+        <h2 class="section-title">Public workbench</h2>
+        <p class="deck">Code is the public GitHub remote after anonymous HTTPS 200. No article DOI.</p>
+        <div class="stack">
+          <div class="zenodo-card private-box">
+            <h3>Workbench</h3>
+            <p class="affil" style="margin:0.45rem 0 0;font-size:0.88rem;color:var(--text-m)">Public repository <span class="mono">PeterPonyu/tessera-st</span> (anonymous HTTPS 200). No article or archive DOI on this leaf.</p>
+            <div class="badges" style="margin-top:0.85rem">
+              <a class="badge badge-code" href="https://github.com/PeterPonyu/tessera-st" rel="noopener noreferrer" target="_blank">Code</a>
+              <span class="badge badge-site is-disabled" title="Site waits on HTTP 200 at /tessera-st/">Site</span>
+              <span class="badge badge-doi is-disabled" title="No article or archive DOI on this leaf">DOI · none</span>
+            </div>
+          </div>
+          <div class="related-card">
+            <h3>What you can do now</h3>
+            <p class="affil" style="margin:0.45rem 0 0;font-size:0.88rem;color:var(--text-m)">Read the abstract, inspect the lattice maps, and copy the citation stub. Treat this page as a geometry companion, not a download portal.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="cite">
+      <div class="wrap">
+        <p class="kicker">Cite</p>
+        <h2 class="section-title">Citation stub</h2>
+        <p class="deck">No IEEE TCBB article DOI. Do not paste a fabricated manuscript ID into a reference manager.</p>
+        <div class="cite-block">
+          <div class="cite-toolbar">
+            <h3>BibTeX</h3>
+            <button type="button" class="copy-btn" id="copy-bibtex">Copy BibTeX</button>
+          </div>
+          <pre class="bibtex" id="bibtex">@unpublished{fu2026tessera,
+  author = {Fu, Zeyu},
+  title  = {A causal law for spatial-domain detection: the value of a spatial prior is set by the ground truth's spatial contiguity},
+  year   = {2026},
+  note   = {Manuscript. Intended venue: IEEE Transactions on Computational Biology and Bioinformatics. Article DOI not assigned.}
+}</pre>
+          <p id="copy-status" class="visually-hidden" aria-live="polite"></p>
+          <p class="peerj-line"><strong>Fu, Z.</strong> (2026). <em>A causal law for spatial-domain detection: the value of a spatial prior is set by the ground truth's spatial contiguity</em>. Manuscript; intended venue IEEE TCBB. No article DOI.</p>
+        </div>
+        <div class="author-card" style="margin-top:1rem">
+          <h3>Author</h3>
+          <p class="affil"><strong>Zeyu Fu</strong> · Army Medical University · ORCID <a class="mono" href="https://orcid.org/0009-0001-8329-0108" rel="noopener noreferrer" target="_blank">0009-0001-8329-0108</a></p>
+          <div class="links">
+            <a href="mailto:fuzeyu99@126.com">fuzeyu99@126.com</a>
+            <a href="https://peterponyu.github.io/" rel="noopener noreferrer" target="_blank">Homepage</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <h2>Tessera</h2>
+        <p>ZF Lab paper leaf. Geometry and adjacency on tissue. Preview: <span class="mono">noindex</span>. Not a hub.</p>
+      </div>
+      <div>
+        <h3>Browse</h3>
+        <ul>
+          <li><a href="#abstract">Abstract</a></li>
+          <li><a href="#figures">Figures</a></li>
+          <li><a href="#code">Code</a></li>
+          <li><a href="#cite">Cite</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Graph</h3>
+        <ul>
+          <li><a href="https://peterponyu.github.io/" rel="noopener noreferrer" target="_blank">Homepage</a></li>
+          <li><a href="https://peterponyu.github.io/scportal/" rel="noopener noreferrer" target="_blank">SCPortal</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Code · Cite</h3>
+        <ul>
+          <li><a href="https://github.com/PeterPonyu/tessera-st" rel="noopener noreferrer" target="_blank">GitHub PeterPonyu/tessera-st</a></li>
+          <li>Site badge waits on HTTP 200</li>
+          <li><a href="#cite">BibTeX stub</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <dialog class="lightbox" id="lightbox" aria-labelledby="lightbox-title">
+    <div class="lightbox-bar">
+      <strong id="lightbox-title">Figure</strong>
+      <button type="button" class="lightbox-close" id="lightbox-close">Close</button>
+    </div>
+    <figure>
+      <img id="lightbox-img" alt="">
+      <figcaption id="lightbox-caption"></figcaption>
+    </figure>
+  </dialog>
+
+  <script src="js/site.js"></script>
+</body>
+</html>
