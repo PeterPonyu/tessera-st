@@ -2,9 +2,9 @@ name: Deploy Science Gateway (Next static export)
 
 on:
   push:
-    branches: [main]
+    branches: [master]
   pull_request:
-    branches: [main]
+    branches: [master]
   workflow_dispatch:
 
 permissions:
@@ -17,7 +17,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  NEXT_PUBLIC_BASE_PATH: /science-gateway-reference
+  NEXT_PUBLIC_BASE_PATH: /tessera-st
 
 jobs:
   build:

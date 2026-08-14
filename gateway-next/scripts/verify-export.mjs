@@ -64,6 +64,11 @@ function walk(dir) {
     console.error('FAIL G7: product headline pattern in index.html');
     failed += 1;
   }
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+  if (basePath && /src="\/figures\//.test(html)) {
+    console.error(`FAIL G1: figure src missing basePath prefix (${basePath}) in index.html`);
+    failed += 1;
+  }
 }
 
 if (failed) {

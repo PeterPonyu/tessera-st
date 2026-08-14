@@ -1,5 +1,6 @@
 import { ClaimBlock } from '@/components/PageShell';
 import RouteCards from '@/components/RouteCards';
+import { assetPath } from '@/lib/paths';
 import { SITE, SPATIAL_MAPS, STAT_TILES } from '@/lib/site';
 
 export default function HomePage() {
@@ -38,7 +39,7 @@ export default function HomePage() {
             key={map.id}
             className="overflow-hidden rounded-2xl border border-slate-200 bg-white/80"
           >
-            <img src={map.src} alt={map.title} className="mx-auto max-h-48 w-auto bg-slate-50 p-2" />
+            <img src={assetPath(map.src)} alt={map.title} className="mx-auto max-h-48 w-auto bg-slate-50 p-2" />
             <figcaption className="p-4">
               <p className="text-sm font-semibold text-slate-900">{map.title}</p>
               <p className="mt-1 text-xs text-slate-600">{map.caption}</p>

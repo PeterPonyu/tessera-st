@@ -1,4 +1,5 @@
 import PageShell from '@/components/PageShell';
+import { assetPath } from '@/lib/paths';
 import { SPATIAL_MAPS } from '@/lib/site';
 
 export default function ResultsPage() {
@@ -14,7 +15,7 @@ export default function ResultsPage() {
             key={map.id}
             className="overflow-hidden rounded-2xl border border-slate-200 bg-white/80"
           >
-            <img src={map.src} alt={map.title} className="mx-auto bg-slate-50 p-2" />
+            <img src={assetPath(map.src)} alt={map.title} className="mx-auto bg-slate-50 p-2" />
             <figcaption className="p-4">
               <p className="text-sm font-semibold text-slate-900">{map.title}</p>
               <p className="mt-1 text-sm text-slate-600">{map.caption}</p>
