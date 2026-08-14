@@ -1,8 +1,7 @@
 # Decoupling experiment, full-fidelity re-run (v2) — results
 
-**ADOPTED as R6 robustness evidence.** The result is integrated in `manuscript/paper.tex`,
-recorded in `CLAIM_LEDGER.md` R6, and checked directly from the local JSON artifact by
-`experiments/verify_manuscript.py`. The causal claim remains `LOCKED` under the ledger's global
+**ADOPTED as R6 robustness evidence.** The result is checked directly from the local JSON artifact by
+`experiments/verify_manuscript.py`. The causal claim remains `LOCKED` under the global
 honest-claims policy. v1's `mechanism_decoupled.{py,json}` remains as a superseded audit artifact;
 v2 is `mechanism_decoupled_v2.{py,json}`.
 

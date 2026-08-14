@@ -7,9 +7,9 @@
 > *indiscriminately* over the spatial kNN graph — bleeding signal across boundaries, washing
 > out small domains, and blurring the partition. **Tessera learns where to stop smoothing.**
 
-Status: **11-platform meta-analysis, manuscript-ready.** The project has graduated from a scaffold to a
-cross-platform benchmark and predictive-law study (`manuscript/paper.tex`, machine-checked by
-`experiments/verify_manuscript.py`, exit 0). The headline is not a SOTA claim for any method but a
+Status: **11-platform meta-analysis and benchmark study.** The project has graduated from a scaffold to a
+cross-platform benchmark and predictive-law study, machine-checked by
+`experiments/verify_manuscript.py`, exit 0. The headline is not a SOTA claim for any method but a
 **causal law**: manipulating *only* the ground truth's spatial contiguity on synthetic tissue makes the
 value of a spatial prior rise and flip sign (Spearman $\rho=+0.98$ to $+1.00$, $p<0.001$), and the same law
 holds observationally across 11 technologically diverse datasets ($\rho=+0.72$, $p=0.012$). No method is a
@@ -17,7 +17,7 @@ universal winner (seven distinct winners across the panel; a two-line neighbour-
 A label-free `coh_gain` proxy recovers the law's direction ($\rho=+0.55$) but is reported honestly as a
 directional, marginal prior — after correcting for its selection among six candidates it is not significant
 (search-corrected $p=0.28$). The candidate method (Tessera) itself is retained only as a *worked example* of
-how single-dataset evaluation can certify a false SOTA and a false mechanism — see `CLAIM_LEDGER.md`.
+how single-dataset evaluation can certify a false SOTA and a false mechanism.
 
 ## How this differs from a factor-decomposition spatial-domain method
 
@@ -36,7 +36,7 @@ expression ─▶ edge-gated message passing ─▶ multi-scale fusion ─▶ em
 
 See `DESIGN.md` for the full architecture and rationale.
 
-## Four ablatable components (the paper's spine)
+## Four ablatable components (the study's spine)
 
 | # | Component | OFF degrades to |
 |---|-----------|-----------------|
@@ -116,7 +116,6 @@ src/tessera_st/
 - `BASELINE_REFERENCES.md` — the named external methods we compare against (run from their own
   repos; brand names live here only).
 - `ALLOWED_BASELINE_CONTEXTS.md` — the clean-room boundary.
-- `CLAIM_LEDGER.md` — every claim and what graduation requires.
 
 Clean-room: baseline brand names never appear in `src/` — enforced by
 `tests/test_brand_independence.py` and `scripts/check_independence.sh`.

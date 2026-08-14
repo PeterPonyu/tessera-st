@@ -3,20 +3,20 @@
 The named external spatial-domain methods Tessera positions against. They are **run from their
 own repositories behind an adapter** for parity; no upstream source, class name, or figure is
 copied into this project's `src/`. Brand names appear here and in `ALLOWED_BASELINE_CONTEXTS.md`
-and `CLAIM_LEDGER.md` only.
+only.
 
 Shared data + metrics with this comparison world is deliberate, so results drop straight onto
 the established leaderboard.
 
 ## Primary comparison methods (graph spatial-domain encoders)
 
-| Method | Venue | Why it is the right comparison | Frozen audit clone |
-|--------|-------|--------------------------------|--------------------|
+| Method | Comparison source | Why it is the right comparison | Frozen audit clone |
+|--------|-------------------|--------------------------------|--------------------|
 | STAGATE | Nat. Commun. 2022 | graph-attention autoencoder; canonical DLPFC ARI baseline | `../spatial-omics-reform/external/STAGATE` |
 | GraphST | Nat. Commun. 2023 | contrastive graph self-supervision; closest graph encoder | `../spatial-omics-reform/external/GraphST` |
 | SEDR | Nat. Commun. 2024 | masked graph self-supervised spatial embedding | `../spatial-omics-reform/external/SEDR` |
 | SpaceFlow | Nat. Commun. 2022 | spatial-domain embedding baseline | `../spatial-omics-reform/external/SpaceFlow` |
-| BANKSY | Nat. Genet. 2024 | neighbourhood-augmented feature baseline; target-venue ARI tables | `../spatial-omics-reform/external/Banksy` |
+| BANKSY | Nat. Genet. 2024 | neighbourhood-augmented feature baseline; comparable ARI tables | `../spatial-omics-reform/external/Banksy` |
 
 The over-smoothing failure these share is the gap Tessera's edge gate targets. A transparent,
 brand-neutral over-smoothing reference (`mean_smoothed_kmeans`) lives in `eval/baselines.py` so
@@ -30,7 +30,7 @@ the ablation has an internal anchor that needs no external checkout.
 | Visium mouse brain (ant./post.) | 10x Visium | anatomical regions | cross-tissue generalisation |
 | synthetic tessellation | — | exact, by construction | offline CI + ablation isolation |
 
-## Dataset accessions (11-platform panel, `manuscript/paper.tex` Data availability)
+## Dataset accessions (11-platform panel)
 
 Exact accession identifiers / download locations for the datasets in the 11-platform panel
 (`tab:data`), verified live 2026-07-13. These are the *original* publication's data-deposit

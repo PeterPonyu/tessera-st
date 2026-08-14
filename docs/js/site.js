@@ -133,40 +133,6 @@
     });
   }
 
-  var copyBtn = document.getElementById("copy-bibtex");
-  var bibtex = document.getElementById("bibtex");
-  var copyStatus = document.getElementById("copy-status");
-
-  function flashCopied(ok) {
-    if (!copyBtn || !copyStatus) return;
-    copyBtn.classList.toggle("is-copied", ok);
-    copyBtn.textContent = ok ? "Copied" : "Copy failed, select the text";
-    copyStatus.textContent = ok ? "Copied" : "Copy failed, select the text";
-    window.setTimeout(function () {
-      copyBtn.classList.remove("is-copied");
-      copyBtn.textContent = "Copy BibTeX";
-      copyStatus.textContent = "";
-    }, 2000);
-  }
-
-  if (copyBtn && bibtex) {
-    copyBtn.addEventListener("click", function () {
-      var text = bibtex.textContent || "";
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(
-          function () {
-            flashCopied(true);
-          },
-          function () {
-            flashCopied(false);
-          }
-        );
-      } else {
-        flashCopied(false);
-      }
-    });
-  }
-
   window.addEventListener("keydown", function (event) {
     if (event.key === "Escape") closeMobile();
   });

@@ -71,7 +71,7 @@ emits one tidy table. That table *is* the methods figure.
 candidate hypotheses; the ablation exists to *falsify* them. The runner reports the
 **data-selected** config — the best-scoring Tessera variant on the data at hand — and drops any
 component that does not earn its place. If, on honest evaluation, only multi-scale helps, the
-selected model is `backbone + multi-scale`, and the paper says so. A component that never wins
+selected model is `backbone + multi-scale`, and the study says so. A component that never wins
 on real data gets cut, not shipped "because we built it".
 
 ### Baselines and SOTA live in the same table

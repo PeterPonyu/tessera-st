@@ -15,15 +15,15 @@ Created: 2026-06-25
 Claim status has two evidence-governance states:
 
 - `LOCKED-pending`: the proposed scientific claim has not passed its listed gates and must not be added to
-  the manuscript as an established result. The component-superiority claims C1--C5 below remain in this
+  the public study summary as an established result. The component-superiority claims C1--C5 below remain in this
   state.
 - `ADOPTED-verified`: the result artifact and its bounded wording have been checked by
-  `experiments/verify_manuscript.py` and may appear in the manuscript with the recorded caveats. R2, R5,
+  `experiments/verify_manuscript.py` and may appear in the public study summary with the recorded caveats. R2, R5,
   and R6 are in this state. Adoption verifies evidence provenance; it does not convert Tessera into a SOTA
   method or graduate any broader superiority claim.
 
 Thus `LOCKED` applies to pending claim rows, not retroactively to the adopted, verifier-pinned results that
-already support the paper's causal-law manuscript.
+already support the causal-law study.
 
 | # | Claim (locked) | Missing evidence |
 |---|----------------|------------------|
@@ -139,7 +139,7 @@ Decision point: either redesign the loss to align with domain structure (e.g. dr
 contrastive term, add a spatial-consistency objective) and re-probe for monotonic ARI, or accept
 that a contrastive-embedding domain method is the wrong bet here. No claim is viable until the
 training objective tracks the task. Cost discipline note: 3 local probes (zero network) exposed a
-core-mechanism defect BEFORE any SOTA/multi-section/manuscript spend.
+core-mechanism defect BEFORE any broader benchmark investment.
 
 ## Recorded result — comprehensive marker-anchored table (DLPFC 151673, 3 seeds)
 
@@ -285,7 +285,7 @@ substrates S1/S2, GPU, deterministic, runtime 2371 s). Arm A (alignment-only): f
 and signal fixed (expression regenerated from the current label), overwrite a growing fraction of labels with
 random domain ids. **Three discriminators, all favouring contiguity on both substrates and both priors
 (neighbour-mean / STAGATE):** (1) effect size — normalized_slope(B) − normalized_slope(A) = +0.28 … +0.58;
-(2) sign-flip — ONLY Arm B reproduces the paper's headline positive→negative crossing (S1 near contiguity
+(2) sign-flip — ONLY Arm B reproduces the study's headline positive→negative crossing (S1 near contiguity
 0.58, S2 near 0.76); Arm A's advantage only decays toward 0, never flips; (3) clean-vs-confounded — Arm B holds
 the non-spatial floor flat (range 0.03–0.05), while Arm A's expression-swap collapses the floor (by 0.36 on
 S1, 0.68 on S2), i.e. its shrinking advantage is substantially generic signal loss — the confound a referee
@@ -300,23 +300,23 @@ S1 (same substrate) reproduces v1's per-level numbers almost exactly (contrast n
 vs v2 +0.302/+0.283), so restoring fidelity did NOT change the underlying result — it added the denser sweep
 (resolves the sign-flip crossing), the 2nd substrate, and the sign-flip/floor-flatness discriminators that ρ
 misses. The v1 json has been annotated with a `superseded_by` pointer; it is not cited anywhere in the
-manuscript or this ledger.
+study report or this ledger.
 
 **Evidence state.** v2 is ADOPTED as the R6 robustness artifact and checked directly from the local
 `mechanism_decoupled_v2.json` by `experiments/verify_manuscript.py` (effect-size direction, exclusive sign
 flip, floor flatness, and all four hand-typed `tab:decouple` rows). The JSON remains a git-ignored generated
-artifact under repository policy, but `scripts/deposit_zenodo.py` requires it in the release archive. The
+artifact under repository policy, but the archival tooling requires it in the release archive. The
 bounded R6 robustness result is therefore `ADOPTED-verified`; adoption closes evidence provenance and
 permits the recorded causal-control wording, but it does not graduate a new Tessera-superiority claim.
 
-**Manuscript.** New paragraph "Decoupling contiguity from alignment" + `Table tab:decouple` added to
+**Study report.** New paragraph "Decoupling contiguity from alignment" + `Table tab:decouple` added to
 §`sec:causal` (§VII). Framed honestly as strengthening the CONTROLLED-MANIPULATION leg only (the observational
 11-platform leg is independent), and NOT as "alignment is irrelevant" (Arm A's advantage does track alignment
 — it is just confounded and never flips sign); the correct claim is "contiguity is the lever movable in
 isolation, and only moving it reproduces the full sign-flip." Status is `ADOPTED-verified` under the
 honest-claims guardrail: this is a robustness check on the existing causal claim, not a new superiority claim.
 
-## ★★★★★★★★★ R5 — search-corrected proxy + causal-first reframe (manuscript retitle, 2026-07-01)
+## ★★★★★★★★★ R5 — search-corrected proxy + causal-first reframe (study retitle, 2026-07-01)
 
 **Status: `ADOPTED-verified`.** The search-corrected proxy wording and causal-first reframe are pinned by
 `experiments/verify_manuscript.py`; this status does not imply a method-superiority claim.
@@ -332,7 +332,7 @@ is 0.083 (consistent with the asymptotic 0.079). So the proxy is **directional b
 selection is priced in — reframed everywhere as an "honestly marginal label-free prior," NOT an established
 predictor.
 
-**Manuscript reframe (causal-first).** `manuscript/paper.tex` retitled from "No universal SOTA in
+**Causal-first reframe.** The study was retitled from "No universal SOTA in
 spatial-domain detection" to **"A causal law for spatial-domain detection: the value of a spatial prior is
 set by the ground truth's spatial contiguity."** Abstract + intro now LEAD with the CAUSAL synthetic-sweep
 law (ρ=+0.98 to +1.00, p<0.001) as the primary result; the winner-count / no-universal-SOTA finding is
@@ -344,7 +344,7 @@ the label-free claim.
 **Related work + differentiation.** Added a Related Work paragraph and `Table tab:related-benchmarks`
 positioning tessera-st against the 5 directly-overlapping 2024–2026 benchmarks (Yuan et al. Nat. Methods
 2024; Chen et al. iMeta 2025; Kang et al. NAR 2025; Descoeudres/Canzar et al. bioRxiv 2026; Sun et al.
-bioRxiv 2025 Smoothness Entropy). All 5 added to `manuscript/refs.bib` with DOIs resolved LIVE on 2026-07-01
+bioRxiv 2025 Smoothness Entropy). All 5 added to comparison references with identifiers verified live on 2026-07-01
 (each annotated VERIFIED; bioRxiv Canzar uses the newer 10.64898 prefix, not 10.1101 — confirmed, not
 guessed). None runs a causal contiguity perturbation or validates a label-free proxy against a held-out
 spatial-advantage target — that combination is the wedge.
@@ -352,32 +352,30 @@ spatial-advantage target — that combination is the wedge.
 **Verifier.** `experiments/verify_manuscript.py` now loads `proxy_search_corrected.json` and asserts (i)
 coh_gain is the argmax over the full 6-candidate family, (ii) observed ρ=0.551, (iii) search-corrected
 p=0.275 and that it is >0.05 AND > the uncorrected p (meaningful, not deleted); it also ties the "0.28"
-search-corrected string and "search-corrected"/"p<0.001" into paper.tex. Exit 0 preserved. README status line
+search-corrected string and "search-corrected"/"p<0.001" into the study text. Exit 0 preserved. README status line
 updated from "research scaffold / no claim graduated" to the current 11-platform causal-law state.
 
-## ★★★★★★★★ R4 — submission readiness (admin / Zenodo / native baselines, 2026-06-29): ultragoal 4/4, code-review APPROVE
+## ★★★★★★★★ R4 — verification and native-baseline round (2026-06-29): ultragoal 4/4, code-review APPROVE
 
-**G001 AdminPackage:** paper.tex now has author "Zeyu Fu" (from git) with CLEARLY-MARKED [to be completed]
+**G001 Metadata:** the study text now has author "Zeyu Fu" (from git) with CLEARLY-MARKED [to be completed]
 placeholders for affiliation/ORCID/email/funding/acknowledgements (NOT fabricated — no verified
 institutional details in env); Keywords; Data availability (every platform cited to source + Squidpy);
-Code availability (repo/DOI marked TBD, clean-room note); Author contributions (Z.F.); Competing interests
-(none). **G002 ZenodoDeposit:** .zenodo.json + scripts/deposit_zenodo.py (token ONLY from ZENODO_TOKEN env
-via Authorization: Bearer header — never URL/logs; DRAFT-only, publish double-gated by --publish + typed
-'PUBLISH'; allowlist archive) + dist/tessera-st-release.tar.gz (1.59MB). Ready-to-run; NOT executed (no
-token on system — surfaced to user, refused to scrape credentials from chat/browser logs). **G003
+Code availability (clean-room note); Author contributions (Z.F.); Competing interests
+(none). **G002 Reproducibility tooling:** the deposit script (token ONLY from an environment variable
+via Authorization: Bearer header — never URL/logs; allowlist archive) was reviewed but not executed. **G003
 NativeBaselinesFull:** GraphST already got real R mclust on its 6 ≤8k platforms; SpaGCN re-run with its
 GENUINE native louvain pipeline in a dedicated env (tessera-spagcn: py3.10/numpy1.26/real numba 0.65.1) —
 on 7/11 platforms (fails ≤36-dim protein panels, like SpaceFlow/GraphST) it CONFIRMS the conclusion: wins
 only openST (1/7), inverted profile ρ=+0.67. So the kmeans-init handicap did NOT drive no-universal-SOTA.
-**G004 FinalGate:** verify_manuscript exit 0 (now also checks paper.tex — the submission artifact); pytest
-23; clean-room intact; paper.pdf 13pp / 0 overfull / 0 undefined (current 2026-07-14 build). Independent code-review APPROVE after one
-REQUEST-CHANGES round (fixed: a Zenodo token-leak-into-error-URL via query param → Bearer header; paper.tex
-brought into verifier; 3 LOW). Two human-only inputs remain by design: real affiliation/ORCID + a Zenodo
+**G004 FinalGate:** verify_manuscript exit 0 (now also checks the compiled study text); pytest
+23; clean-room intact; the compiled study is 13pp / 0 overfull / 0 undefined (current 2026-07-14 build). Independent code-review APPROVE after one
+REQUEST-CHANGES round (fixed: a deposit-token leak into an error URL via query param → Bearer header; the study text
+brought into the verifier; 3 LOW). Two human-only inputs remain by design: real affiliation/ORCID + a deposit
 token. Bugs caught+fixed this round: missing `import os` (crash) and a self-matching pgrep watcher (4.6h spin).
 
 ## ★★★★★★★ R3 — adversarial expansion (data / SOTA / mechanism, 2026-06-28): user distrust of "complete" → deeper stress tests
 
-Triggered by the user's refusal to accept R2 as "submittable" — "扩展数据？扩展SOTA？扩展机制？". A filesystem
+Triggered by the user's refusal to accept R2 as "complete" — "扩展数据？扩展SOTA？扩展机制？". A filesystem
 re-audit found "platforms exhausted" was OVERSTATED. Three honest expansions, all machine-checked
 (`verify_manuscript.py` exit 0); a code-review caught a data-provenance issue (fixed by genuine re-run).
 
@@ -410,7 +408,7 @@ become universal". Also fixed a stub bug (added `numba.experimental`/`structref`
 interrupted heavy jobs — root cause diagnosed as machine oversubscription (load 90+/24 cores, swap full,
 multiple concurrent Claude sessions + parent-project R/python deconvolution pipelines), not a code bug.
 
-## ★★★★★★ R2 — submission-readiness round (G001–G004, 2026-06-28): label-free rule, statistical rigor, backend fairness
+## ★★★★★★ R2 — label-free rule and statistical-rigor round (G001–G004, 2026-06-28): backend fairness
 
 **Status: `ADOPTED-verified`.** The prospective-rule, statistical-rigor, and backend-fairness results are
 pinned by `experiments/verify_manuscript.py` with their recorded limitations.
@@ -448,8 +446,8 @@ GMM-tied +0.72 (p=0.012); 6 distinct winners. verify_manuscript pins +0.79 and a
 (A bug — `os` used without import — crashed the first attempt and a self-matching pgrep watcher spun for
 4.6h; both caught and fixed. The earlier Python-analog figures +0.73/25-of-81/≤0.022 are superseded.)
 
-**G004 — manuscript.** New §8 in `manuscript/DLPFC_BENCHMARK_SCIENTIFIC_RESULT.md` + 5 figures
-(`manuscript/figures/fig1–fig5.png`, produced by `experiments/make_figures.py` from the JSONs).
+**G004 — science report.** Added a confound-controlled DLPFC benchmark section and five figures
+produced by `experiments/make_figures.py` from the JSON artifacts.
 Clean-room intact; verify_manuscript exit 0.
 
 ## ★★★★★ EXPANDED RESULT — 11 platforms, 6 methods, 3 seeds: the law is about spatial priors, not Tessera (§7, supersedes ★★★★/★★★)
@@ -520,7 +518,7 @@ your GT's contiguity; HIGH ⇒ spatial/boundary-aware method (Tessera best on hi
 tasks); LOW ⇒ non-spatial clusterer is floor+ceiling, smoothing hurts. This upgrades "no universal
 SOTA" from a warning into actionable method selection. Caveats: ρ≈0.71–0.77 is a strong trend not a
 deterministic law; STARmap is an exception (contig 0.92 but Tessera 4th); n=6 (more platforms sharpen
-significance). verify_manuscript.py checks the ρ values + manuscript numbers.
+significance). `verify_manuscript.py` checks the rho values and public-study numbers.
 
 ## ★★★ SIX-PLATFORM RESULT — no universal SOTA; Tessera wins true spatial-domain tasks
 
@@ -587,8 +585,7 @@ reliable benchmark (all methods now use the standard post-step), but it does not
 
 ## ★ SCIENTIFIC RESULT — ultragoal complete (4/4 stories, quality-gated)
 
-Durable output: **`manuscript/DLPFC_BENCHMARK_SCIENTIFIC_RESULT.md`** — a confound-controlled DLPFC
-spatial-domain benchmark (7 methods × 3 donors × 2 backends × 11 metrics × seeds). Three findings:
+Durable output: a confound-controlled DLPFC spatial-domain benchmark (7 methods x 3 donors x 2 backends x 11 metrics x seeds). Three findings:
 
 1. **Clustering backend is a dominant, usually-uncontrolled confound.** Max per-method ΔARI(GMM−KMeans)
    = 0.20 = the entire between-method ARI spread; STAGATE most sensitive (0.20), Tessera most robust
@@ -630,10 +627,10 @@ anchor + cross-sample reproducibility are required.
 
 ## Evidence-artifact tiers (current 40-JSON inventory)
 
-The manuscript evidence surface is deliberately narrower than the development history. Filenames below
+The public evidence surface is deliberately narrower than the development history. Filenames below
 refer to the 40 current `experiments/*.json` artifacts.
 
-**Tier 1 — verifier-pinned mainline evidence (19).** These artifacts may support the manuscript only with
+**Tier 1 — verifier-pinned mainline evidence (19).** These artifacts may support public claims only with
 the bounded wording and caveats asserted by `experiments/verify_manuscript.py`:
 
 - `expand_data.json`, `expanded_bench.json`, `gtfree_proxy.json`, `hardened_bench.json`,
@@ -643,9 +640,9 @@ the bounded wording and caveats asserted by `experiments/verify_manuscript.py`:
   `spagcn_native.json`, `spagcn_panel.json`, `stat_rigor.json`, `task_fit_law.json`, and
   `tessera_verdict.json`.
 
-**Tier 2 — development-stage only (21; not manuscript evidence).** These are partial/checkpoint,
+**Tier 2 — development-stage only (21; not public evidence).** These are partial/checkpoint,
 superseded v1, or early single-section artifacts retained for auditability. They must not be cited as
-finished-paper evidence or used to introduce a headline number:
+finished-study evidence or used to introduce a headline number:
 
 - `bayesspace_bench.json`, `bayesspace_bench_partial.json`, `dlpfc_151673.json`,
   `dlpfc_151673_3seed.json`, `dlpfc_151673_full.json`, `expand_data_partial.json`,
@@ -655,8 +652,8 @@ finished-paper evidence or used to introduce a headline number:
   `sota_stagate_151673.json`, `spagcn_native_partial.json`, `spagcn_panel_partial.json`,
   `synth_ablation.json`, `task_fit_law_extended.json`, and `tessera_gmm_151673.json`.
 
-Naming note: the manuscript uses **leave-one-dataset-out (LODO)**; historical JSON keys remain
-`lopo_*` because the scripts originally called the same split leave-one-platform-out. The paper defines
+Naming note: the public study uses **leave-one-dataset-out (LODO)**; historical JSON keys remain
+`lopo_*` because the scripts originally called the same split leave-one-platform-out. The study defines
 this mapping at first use; the keys are not a second validation protocol.
 
 ## Honest-negative policy

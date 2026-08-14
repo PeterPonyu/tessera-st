@@ -29,7 +29,6 @@
         <a href="#abstract">Abstract</a>
         <a href="#figures">Figures</a>
         <a href="#code">Code</a>
-        <a href="#cite">Cite</a>
       </nav>
       <div class="header-chips">
         <a class="chip" href="https://peterponyu.github.io/" rel="noopener noreferrer" target="_blank">Homepage</a>
@@ -46,7 +45,6 @@
         <a href="#abstract">Abstract</a>
         <a href="#figures">Figures</a>
         <a href="#code">Code</a>
-        <a href="#cite">Cite</a>
         <div class="mobile-graph">
           <a href="https://peterponyu.github.io/" rel="noopener noreferrer" target="_blank">Homepage — ZF Lab</a>
           <a href="https://peterponyu.github.io/scportal/" rel="noopener noreferrer" target="_blank">SCPortal — discovery hub</a>
@@ -64,7 +62,6 @@
         <div class="pills">
           <a class="pill pill-primary" href="#abstract">Read the abstract</a>
           <a class="pill pill-ghost" href="#figures">Browse figures</a>
-          <a class="pill pill-ghost" href="#cite">Cite</a>
         </div>
         <div class="stats">
           <div class="stat-tile"><strong>32×32</strong><span>synthetic lattice</span></div>
@@ -77,7 +74,7 @@
           <span class="disc" aria-hidden="true">1</span>
           <div>
             <h2>A causal law for spatial-domain detection: the value of a spatial prior is set by the ground truth's spatial contiguity</h2>
-            <p class="paper-meta"><strong>Fu, Z.</strong> · <em>IEEE Transactions on Computational Biology and Bioinformatics</em> · intended venue, option hold · 2026 · no article DOI</p>
+            <p class="paper-meta"><strong>Fu, Z.</strong> · Tessera-ST study · 2026</p>
             <div class="badges">
               <span class="badge badge-doi is-disabled" title="No article DOI assigned">DOI</span>
               <a class="badge badge-code" href="https://github.com/PeterPonyu/tessera-st" rel="noopener noreferrer" target="_blank">Code</a>
@@ -170,7 +167,6 @@
           <a class="route-card card-hover" href="#abstract"><span class="disc disc-lg">01</span><div><h3>Abstract</h3><p>The causal law in words. ρ is labeled as saturated Spearman, not an effect size.</p></div></a>
           <a class="route-card card-hover" href="#figures"><span class="disc disc-lg">02</span><div><h3>Figures</h3><p>Geometry first: ras maps, seams, shuffle. Scores stay secondary.</p></div></a>
           <a class="route-card card-hover" href="#code"><span class="disc disc-lg">03</span><div><h3>Code</h3><p>Public GitHub remote (anonymous HTTPS 200). Live site at /tessera-st/.</p></div></a>
-          <a class="route-card card-hover" href="#cite"><span class="disc disc-lg">04</span><div><h3>Cite</h3><p>BibTeX stub. No IEEE TCBB article DOI.</p></div></a>
         </div>
       </div>
     </section>
@@ -179,7 +175,7 @@
       <div class="wrap">
         <p class="kicker">Abstract</p>
         <h2 class="section-title">A causal law, not a method crown</h2>
-        <p class="deck">From the manuscript. TeX pointers removed. The object is whether a spatial prior is warranted, not which encoder wins an ARI table.</p>
+        <p class="deck">The object is whether a spatial prior is warranted, not which encoder wins an ARI table.</p>
         <div class="abstract-prose">
           <p>Methods for spatial-domain detection in spatial transcriptomics are routinely ranked on one or two Visium datasets under a single clustering backend, and each new paper claims a state-of-the-art. We argue the reliable object of study is not which method wins but a predictive, causal law for whether a spatial prior helps at all. In the primary synthetic sweep, scrambling positions while holding each cell's expression and label fixed makes spatial-prior advantage rise with contiguity and flip sign, at Spearman ρ=+0.98 to +1.00 (p&lt;0.001; a saturated rank correlation, not an effect size). A decoupled design then isolates the intervention: manipulating contiguity alone (v2 Arm B), while holding alignment and recoverable signal fixed, reproduces the sign flip on two substrates and keeps the non-spatial floor flat. Together these controls are consistent with a causal role for contiguity rather than a mere correlate.</p>
           <p>The same law holds observationally across eleven technologically diverse datasets: spatial-prior advantage tracks ground-truth contiguity at Spearman +0.72 (p=0.012, 95% CI [0.24, 0.92]), the only significant correlation we test; it survives control for cluster count, feature dimension, and assay modality, predicts held-out datasets, and strengthens under the author-recommended backend. Consistent with a law about tasks rather than methods, no method is a universal winner: seven different winners across the panel, a clustering backend that alone re-ranks methods by as much as the entire between-method spread, and a competitive two-line neighbour-mean floor. A label-free spatial-coherence-gain proxy recovers the direction of the law (Spearman +0.55) but, once we correct for having selected it from six candidates, is a directional, honestly marginal prior rather than a significant predictor (search-corrected p=0.28). The unit of progress should shift from building a better method to deciding, before committing, whether a spatial prior is warranted.</p>
@@ -254,12 +250,12 @@
         </div>
 
         <div class="callout exclude-note" style="margin-top:1.25rem">
-          <h3>Production A–D not published here</h3>
-          <p>Gate D production TikZ A–D layouts remain unbaked and are not shown as if they were. This gallery uses the existing raster tiles <span class="mono">fig_spatialmap_ras1–4.png</span> only. The frozen 13-page flat kit was not rebuilt for this site.</p>
+          <h3>Displayed figure scope</h3>
+          <p>This gallery uses the existing raster tiles <span class="mono">fig_spatialmap_ras1–4.png</span>. ARI and rho remain supporting evidence for the geometry shown.</p>
         </div>
 
         <h3 class="section-title" style="margin-top:2rem;font-size:1.15rem">Adjacency across the panel</h3>
-        <p class="deck">Contiguity first; winner ARI is evidence on the same tissues. Ordered as in the manuscript table.</p>
+        <p class="deck">Contiguity first; winner ARI is evidence on the same tissues.</p>
         <div class="table-wrap">
           <table class="geo">
             <thead>
@@ -307,30 +303,8 @@
           </div>
           <div class="related-card">
             <h3>What you can do now</h3>
-            <p class="affil" style="margin:0.45rem 0 0;font-size:0.88rem;color:var(--text-m)">Read the abstract, inspect the lattice maps, and copy the citation stub. Treat this page as a geometry companion, not a download portal.</p>
+            <p class="affil" style="margin:0.45rem 0 0;font-size:0.88rem;color:var(--text-m)">Read the abstract and inspect the lattice maps. Treat this page as a geometry companion, not a download portal.</p>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="cite">
-      <div class="wrap">
-        <p class="kicker">Cite</p>
-        <h2 class="section-title">Citation stub</h2>
-        <p class="deck">No IEEE TCBB article DOI. Do not paste a fabricated manuscript ID into a reference manager.</p>
-        <div class="cite-block">
-          <div class="cite-toolbar">
-            <h3>BibTeX</h3>
-            <button type="button" class="copy-btn" id="copy-bibtex">Copy BibTeX</button>
-          </div>
-          <pre class="bibtex" id="bibtex">@unpublished{fu2026tessera,
-  author = {Fu, Zeyu},
-  title  = {A causal law for spatial-domain detection: the value of a spatial prior is set by the ground truth's spatial contiguity},
-  year   = {2026},
-  note   = {Manuscript. Intended venue: IEEE Transactions on Computational Biology and Bioinformatics. Article DOI not assigned.}
-}</pre>
-          <p id="copy-status" class="visually-hidden" aria-live="polite"></p>
-          <p class="peerj-line"><strong>Fu, Z.</strong> (2026). <em>A causal law for spatial-domain detection: the value of a spatial prior is set by the ground truth's spatial contiguity</em>. Manuscript; intended venue IEEE TCBB. No article DOI.</p>
         </div>
         <div class="author-card" style="margin-top:1rem">
           <h3>Author</h3>
@@ -342,13 +316,14 @@
         </div>
       </div>
     </section>
+
   </main>
 
   <footer class="site-footer">
     <div class="wrap footer-grid">
       <div>
         <h2>Tessera</h2>
-        <p>ZF Lab paper leaf. Geometry and adjacency on tissue. Preview: <span class="mono">noindex</span>. Not a hub.</p>
+        <p>ZF Lab science leaf. Geometry and adjacency on tissue. Preview: <span class="mono">noindex</span>. Not a hub.</p>
       </div>
       <div>
         <h3>Browse</h3>
@@ -356,7 +331,6 @@
           <li><a href="#abstract">Abstract</a></li>
           <li><a href="#figures">Figures</a></li>
           <li><a href="#code">Code</a></li>
-          <li><a href="#cite">Cite</a></li>
         </ul>
       </div>
       <div>
@@ -367,11 +341,10 @@
         </ul>
       </div>
       <div>
-        <h3>Code · Cite</h3>
+        <h3>Code</h3>
         <ul>
           <li><a href="https://github.com/PeterPonyu/tessera-st" rel="noopener noreferrer" target="_blank">GitHub PeterPonyu/tessera-st</a></li>
           <li><a href="https://peterponyu.github.io/tessera-st/" rel="noopener noreferrer" target="_blank">Site · /tessera-st/</a></li>
-          <li><a href="#cite">BibTeX stub</a></li>
         </ul>
       </div>
     </div>

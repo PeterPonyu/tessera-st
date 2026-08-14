@@ -10,10 +10,10 @@ WHY THIS EXISTS
     with the HMRF family included, to test whether "no universal SOTA" and the +0.72 law survive a
     broader, peer-normed baseline set.
 
-    This is genuinely NEW compute (a BayesSpace MCMC run per platform). Per this repo's CLAUDE.md
+    This is genuinely NEW compute (a BayesSpace MCMC run per platform). Per repo policy
     (no-new-heavy-recompute-by-default) it is therefore STAGED, not run: the file is committed so the
     user can execute it deliberately after installing BayesSpace. It is ADDITIVE --- it does not touch
-    any number the current manuscript claims, and verify_manuscript.py does not depend on its output.
+    any number the current study claims, and verify_manuscript.py does not depend on its output.
 
 WHAT IT DOES (when the user runs it)
     1. Reuses the EXACT already-computed per-method ARIs from experiments/expanded_bench.json (the
@@ -70,7 +70,7 @@ RUNTIME ESTIMATE (inferred --- no BayesSpace run exists on disk to calibrate aga
     BAYESSPACE_LATTICE_ONLY=1 for a ~5-15 min DLPFC+BRCA-only check. These are order-of-magnitude
     estimates from BayesSpace's published scaling, NOT measured here.
 
-DO NOT add BayesSpace numbers to the manuscript from a single unvalidated run: fold results in only
+DO NOT add BayesSpace numbers to the public study from a single unvalidated run: fold results in only
 after the neighbour-structure caveat is checked and (per CLAIM_LEDGER.md's LOCKED->graduated gate) the
 panel-count / winner claims are re-verified.
 """

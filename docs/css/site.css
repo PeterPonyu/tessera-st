@@ -1003,42 +1003,6 @@ table.geo a {
   font-size: 0.95rem;
 }
 
-.copy-btn {
-  min-height: 44px;
-  padding: 0.4rem 0.85rem;
-  border: 1px solid var(--border);
-  border-radius: 0.6rem;
-  background: #fff;
-  color: var(--teal-dark);
-  font: inherit;
-  font-size: 0.8rem;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.copy-btn.is-copied {
-  background: #f0fdfa;
-  border-color: #99f6e4;
-}
-
-pre.bibtex {
-  margin: 0;
-  padding: 0.85rem 1rem;
-  border-radius: 0.75rem;
-  background: #0f172a;
-  color: #e2e8f0;
-  overflow-x: auto;
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  line-height: 1.55;
-}
-
-.peerj-line {
-  margin: 0.85rem 0 0;
-  font-size: 0.9rem;
-  color: var(--text-m);
-}
-
 /* Team */
 .author-card .affil {
   margin: 0.45rem 0 0;
@@ -1145,7 +1109,6 @@ pre.bibtex {
   .menu-btn,
   .mobile-nav,
   .pills,
-  .copy-btn,
   .lightbox,
   .toolbar {
     display: none !important;
