@@ -55,7 +55,7 @@ export default function HomePage() {
       <section className="mt-10 rounded-2xl border border-amber-200 bg-amber-50/60 p-5 text-sm text-slate-700">
         <h2 className="font-semibold text-slate-900">What this site is not</h2>
         <p className="mt-2">
-          Not a SOTA page for Tessera-the-method. Not a frozen-PDF screenshot. Production A–D TikZ
+          Not a method-ranking page for Tessera-the-method. Not a frozen-PDF screenshot. Production A–D TikZ
           layouts are not published here. ρ = +1.00 is saturated Spearman, not an effect size.
         </p>
       </section>

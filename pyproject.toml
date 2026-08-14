@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "tessera-st"
 version = "0.0.0.dev0"
-description = "Boundary-aware, multi-scale spatial-domain detection for spatial transcriptomics — learning where to stop smoothing."
+description = "Boundary-aware, multi-scale spatial-domain detection for spatial transcriptomics."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }

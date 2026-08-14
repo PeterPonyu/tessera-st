@@ -90,13 +90,19 @@ service-account*.json
 manuscript/au.*
 
 # --- submission packaging lives outside this workbench ---
-# Ignore local capsule / portal worktrees if present beside the clone
+# Ignore local capsule / portal worktrees if present beside the clone.
+# /submission/ (2026-08-09 dual-plane) hid Plane-C / PeerJ capsule dumps
+# dropped at repo root. The house pack now occupies submission/ and must
+# stay trackable (README, default-article sources, submit-* pointers,
+# locks/, checklists/, figures/). Old PeerJ/flat dumps remain ignored
+# via the paths below. LaTeX junk is already covered by the global
+# *.aux/*.log/*.out/*.bbl/*.blg/*.synctex.gz rules.
 /paper/
 /manuscript/
-/submission/
 /submission_flat/
 /peerj_workspace/
 /submission_figures/
+submission/default-article/paper.pdf
 Rplots.pdf
 .omc/
 .omx/

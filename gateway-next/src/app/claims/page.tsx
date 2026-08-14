@@ -19,7 +19,7 @@ export default function ClaimsPage() {
           Out of scope
         </h3>
         <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-slate-600">
-          <li>Tessera-the-method as universal SOTA across the eleven-platform panel</li>
+          <li>Tessera-the-method as a universal winner across the eleven-platform panel</li>
           <li>ρ = +1.00 interpreted as effect size rather than saturated rank correlation</li>
           <li>Journal venue packaging, BibTeX stubs, or invented article DOI</li>
         </ul>

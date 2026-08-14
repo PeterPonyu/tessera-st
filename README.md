@@ -5,24 +5,24 @@
 > A tissue is a *tessellation*: a few spatial domains tiled across the slide, separated by
 > sharp biological seams. Graph encoders for spatial domains smooth node features
 > *indiscriminately* over the spatial kNN graph — bleeding signal across boundaries, washing
-> out small domains, and blurring the partition. **Tessera learns where to stop smoothing.**
+> out small domains, and blurring the partition. The encoder learns a per-edge gate that can stop
+> smoothing at a seam.
 
-Status: **11-platform meta-analysis and benchmark study.** The project has graduated from a scaffold to a
-cross-platform benchmark and predictive-law study, machine-checked by
-`experiments/verify_manuscript.py`, exit 0. The headline is not a SOTA claim for any method but a
+Status: **11-platform meta-analysis.** Machine-checked by
+`experiments/verify_manuscript.py`, exit 0. The object is a
 **causal law**: manipulating *only* the ground truth's spatial contiguity on synthetic tissue makes the
 value of a spatial prior rise and flip sign (Spearman $\rho=+0.98$ to $+1.00$, $p<0.001$), and the same law
 holds observationally across 11 technologically diverse datasets ($\rho=+0.72$, $p=0.012$). No method is a
 universal winner (seven distinct winners across the panel; a two-line neighbour-mean floor is competitive).
-A label-free `coh_gain` proxy recovers the law's direction ($\rho=+0.55$) but is reported honestly as a
+A label-free `coh_gain` proxy recovers the law's direction ($\rho=+0.55`) but is reported honestly as a
 directional, marginal prior — after correcting for its selection among six candidates it is not significant
 (search-corrected $p=0.28$). The candidate method (Tessera) itself is retained only as a *worked example* of
-how single-dataset evaluation can certify a false SOTA and a false mechanism.
+how single-dataset evaluation can certify a false ranking and a false mechanism.
 
 ## How this differs from a factor-decomposition spatial-domain method
 
 A nonnegative-factor decoder asks *"what gene programs compose each domain?"*. Tessera asks
-*"where are the seams, and how confident are we?"* — boundaries are a **first-class output**,
+*"where are the seams, and how confident are we?"* — boundaries are an **explicit output**,
 not the by-product of an argmax over a smoothed embedding. Same data, same baselines, same
 ARI/NMI table; a different mechanism and two additional boundary-aware metrics.
 
@@ -49,16 +49,15 @@ See `DESIGN.md` for the full architecture and rationale.
 in one table:
 
 - `ref:nonspatial-kmeans` (non-spatial floor) · `ref:smoothed-kmeans` (naive over-smoothing)
-- `full` + 4 leave-one-out + `backbone` (a standard graph-autoencoder — the brand-neutral
-  SOTA-class stand-in; named-SOTA parity is the real-DLPFC gate)
-- a printed **data-selected config**: the best Tessera variant on this data, *not* an assumed
+- `full` + 4 leave-one-out + `backbone` (a standard graph-autoencoder stand-in;
+  named-method parity is the real-DLPFC gate)
+- a printed **data-selected config**: the selected Tessera variant on this data, *not* an assumed
   `full`. Components are hypotheses — anything that does not earn its place is dropped.
 
 ## Quick start
 
 ```bash
-conda activate dl                 # torch 2.x + CUDA; matches the parent program's env
-pip install -e ".[test,torch]"
+pip install -e ".[test,torch]"    # PyTorch extra; see pyproject.toml
 
 pytest -q                         # 11 tests: metrics, smoke, ablation toggles, clean-room
 
@@ -74,8 +73,7 @@ tessera ablate-real /path/to/dlpfc_151673.h5ad --label-key layer_guess
 
 Spatial-domain detection is unsupervised, so **no metric here is clean external truth** — each is
 circular to some degree. We report the full panel, flag each one's circularity, and **triangulate**;
-no single metric decides a verdict (see `DESIGN.md` for the full audit and
-[memory: comprehensive evaluation]).
+no single metric decides a verdict (see `DESIGN.md` for the full audit).
 
 | Dimension | Metric | Dir. | Circularity |
 |-----------|--------|:----:|-------------|
