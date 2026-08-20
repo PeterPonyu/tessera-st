@@ -16,30 +16,25 @@ concurrency:
   group: pages
   cancel-in-progress: false
 
-env:
-  NEXT_PUBLIC_BASE_PATH: /tessera-st
-
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: gateway-next
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: npm
-          cache-dependency-path: gateway-next/package-lock.json
-      - run: npm ci
-      - run: npm run build
-      - run: npm run verify
+      - name: Fail closed if landing carries result tokens
+        run: |
+          set -euo pipefail
+          test -f pages-landing/index.html
+          test -f pages-landing/404.html
+          if grep -ERi 'unpublished results|Spearman|[[:space:]]rho[[:space:]=]|0\.022|0\.931|ARI 0\.|causal law|32×32' pages-landing/; then
+            echo 'pages-landing must stay a code description (no result tokens)' >&2
+            exit 1
+          fi
       - name: Upload Pages artifact
         if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3
         with:
-          path: gateway-next/out
+          path: pages-landing
 
   deploy:
     if: github.event_name != 'pull_request'

@@ -1,0 +1,130 @@
+/* Tessera-ST code leaf — unique workshop chrome, not the science-gateway kit. */
+:root {
+  --ink: #241c14;
+  --paper: #f3ead8;
+  --card: #fff8ec;
+  --rule: #c9b89a;
+  --clay: #9a4a1a;
+  --moss: #3d5a3a;
+  --mute: #6b5b4a;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+html { background: var(--paper); }
+
+body {
+  color: var(--ink);
+  font: 17px/1.55 "Segoe UI", "Helvetica Neue", sans-serif;
+  min-height: 100vh;
+  background-image:
+    linear-gradient(90deg, rgba(154, 74, 26, 0.06) 1px, transparent 1px),
+    linear-gradient(rgba(154, 74, 26, 0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.ts-mast {
+  position: sticky;
+  top: 0;
+  z-index: 8;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem 1rem;
+  padding: 0.7rem 1rem;
+  background: rgba(243, 234, 216, 0.94);
+  border-bottom: 2px solid var(--clay);
+}
+
+.ts-mark {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.ts-tile {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 1.55rem;
+  height: 1.55rem;
+  border: 1.5px solid var(--ink);
+}
+
+.ts-tile i:nth-child(1) { background: var(--clay); }
+.ts-tile i:nth-child(2) { background: var(--paper); }
+.ts-tile i:nth-child(3) { background: var(--card); }
+.ts-tile i:nth-child(4) { background: var(--moss); }
+
+.ts-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.ts-nav a {
+  color: var(--moss);
+  text-decoration: none;
+  border: 1px solid var(--rule);
+  background: var(--card);
+  padding: 0.28rem 0.65rem;
+  font-size: 0.86rem;
+}
+
+.ts-nav a:hover { border-color: var(--clay); color: var(--clay); }
+
+.ts-sheet {
+  width: min(44rem, calc(100% - 2rem));
+  margin: 1.4rem auto 2.4rem;
+  background: var(--card);
+  border: 1px solid var(--rule);
+  padding: 1.25rem 1.2rem 1.6rem;
+}
+
+.ts-kicker {
+  margin: 0;
+  color: var(--clay);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0.35rem 0 0.8rem;
+  font: 700 1.7rem/1.25 Georgia, "Iowan Old Style", serif;
+}
+
+.ts-sheet p { margin: 0.7rem 0; color: var(--ink); }
+.ts-sheet .mute { color: var(--mute); }
+
+h2 {
+  margin: 1.3rem 0 0.45rem;
+  font: 700 1.05rem/1.3 Georgia, "Iowan Old Style", serif;
+}
+
+ul { margin: 0.4rem 0 0.8rem 1.15rem; padding: 0; }
+li { margin: 0.28rem 0; }
+
+pre {
+  margin: 0.7rem 0;
+  padding: 0.8rem 0.9rem;
+  overflow-x: auto;
+  background: #241c14;
+  color: #f3ead8;
+  font: 0.84rem/1.45 ui-monospace, "Cascadia Code", monospace;
+}
+
+.ts-foot {
+  margin-top: 1.4rem;
+  padding-top: 0.8rem;
+  border-top: 1px dashed var(--rule);
+  color: var(--mute);
+  font-size: 0.88rem;
+}
+
+.ts-foot a { color: var(--moss); }

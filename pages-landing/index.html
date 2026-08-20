@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tessera-ST · public code</title>
+  <meta name="description" content="Code description for Tessera-ST, a spatial-domain detection package with an explicit per-edge stop gate.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://peterponyu.github.io/tessera-st/">
+  <link rel="stylesheet" href="landing.css">
+</head>
+<body>
+  <header class="ts-mast">
+    <a class="ts-mark" href="/tessera-st/">
+      <span class="ts-tile" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      Tessera-ST
+    </a>
+    <nav class="ts-nav" aria-label="Series">
+      <a href="https://peterponyu.github.io/">Homepage</a>
+      <a href="https://peterponyu.github.io/scportal/">SCPortal</a>
+      <a href="https://github.com/PeterPonyu/tessera-st">Code</a>
+    </nav>
+  </header>
+
+  <main class="ts-sheet">
+    <p class="ts-kicker">Public code leaf</p>
+    <h1>Tessera-ST spatial-domain detection code</h1>
+    <p>
+      This page describes the public repository
+      <a href="https://github.com/PeterPonyu/tessera-st">PeterPonyu/tessera-st</a>.
+      It is a code leaf, not a results, claims, or paper-companion site.
+    </p>
+    <p class="mute">
+      Experimental maps, tables, and numerical findings are not hosted here.
+      Old result routes on this leaf are retired.
+    </p>
+
+    <h2>What the package does</h2>
+    <p>
+      Tessera-ST is Python code for spatial-domain detection in spatial transcriptomics.
+      Graph encoders can smooth features over a spatial neighborhood graph; this package
+      studies that mechanism by learning a per-edge gate that can stop smoothing at a
+      predicted seam. The seam is an explicit output, not only an argmax over a smoothed
+      embedding.
+    </p>
+    <ul>
+      <li>Adaptive edge gating (off: plain mean aggregation)</li>
+      <li>Multi-scale fusion (off: last layer only)</li>
+      <li>Boundary-contrastive loss (off: reconstruction only)</li>
+      <li>Calibrated uncertainty (off: raw softmax entropy)</li>
+    </ul>
+
+    <h2>Install and smoke</h2>
+    <pre>pip install -e ".[test,torch]"
+pytest -q
+tessera smoke-synth --epochs 150 --out experiments/synth_ablation.json</pre>
+    <p class="mute">
+      Real-section ablation needs a local labelled <code>.h5ad</code> and the
+      <code>real-data</code> extra. See the repository README for command flags.
+    </p>
+
+    <h2>What this leaf is not</h2>
+    <p>
+      Not a method-ranking page. Not a journal companion. Not an archive of figures.
+      Install the package from GitHub if you want the code; do not treat this leaf
+      as a findings report.
+    </p>
+
+    <p class="ts-foot">
+      Source:
+      <a href="https://github.com/PeterPonyu/tessera-st">github.com/PeterPonyu/tessera-st</a>.
+      No article DOI is assigned on this leaf.
+    </p>
+  </main>
+</body>
+</html>
