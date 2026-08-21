@@ -1,17 +1,17 @@
-name: LAPS gateway policy (browser)
+name: Tessera-ST Pages landing policy
 
 on:
   pull_request:
     paths:
       - "pages-gateway-tests/**"
-      - "gateway-next/**"
+      - "pages-landing/**"
       - ".github/workflows/laps-gateway-tests.yml"
       - ".github/workflows/pages.yml"
   push:
     branches: [master]
     paths:
       - "pages-gateway-tests/**"
-      - "gateway-next/**"
+      - "pages-landing/**"
       - ".github/workflows/laps-gateway-tests.yml"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
@@ -27,8 +27,8 @@ permissions:
   contents: read
 
 jobs:
-  laps-gateway-browser-gate:
-    name: LAPS science gateway (Playwright)
+  tessera-pages-landing-gate:
+    name: Tessera-ST Pages landing (Playwright)
     if: >
       github.event_name != 'workflow_run' ||
       github.event.workflow_run.conclusion == 'success'
@@ -54,14 +54,14 @@ jobs:
       - name: Install Playwright Chromium
         run: npx playwright install chromium --with-deps
 
-      - name: Run LAPS gateway policy suite
+      - name: Run Tessera-ST landing policy suite
         run: npm test
 
       - name: Upload Playwright report
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: laps-gateway-playwright-report
+          name: tessera-pages-landing-playwright-report
           path: |
             pages-gateway-tests/playwright-report/
             pages-gateway-tests/test-results/

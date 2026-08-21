@@ -1,8 +1,8 @@
 {
-  "name": "laps-pages-gateway-tests",
+  "name": "tessera-st-pages-landing-tests",
   "version": "1.0.0",
   "private": true,
-  "description": "Browser policy gate for LAPS GitHub Pages science gateways",
+  "description": "Browser policy gate for the Tessera-ST GitHub Pages code leaf",
   "type": "module",
   "scripts": {
     "test": "playwright test",
