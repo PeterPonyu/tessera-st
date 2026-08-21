@@ -15,8 +15,6 @@ on:
       - ".github/workflows/laps-gateway-tests.yml"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
-  schedule:
-    - cron: "30 3 * * *"
   workflow_run:
     workflows:
       - "Deploy Science Gateway (Next static export)"
