@@ -1,12 +1,8 @@
 # Tessera-ST
 
-**Boundary-aware, multi-scale spatial-domain detection for spatial transcriptomics.**
+Spatial-domain detection code for spatial transcriptomics. The encoder learns a per-edge gate that can stop smoothing at a predicted seam.
 
-> A tissue is a *tessellation*: a few spatial domains tiled across the slide, separated by
-> sharp biological seams. Graph encoders for spatial domains smooth node features
-> *indiscriminately* over the spatial kNN graph — bleeding signal across boundaries, washing
-> out small domains, and blurring the partition. The encoder learns a per-edge gate that can stop
-> smoothing at a seam.
+Graph encoders for spatial domains often smooth node features over the spatial kNN graph. That can mix signal across domain boundaries and shrink small domains. This repository studies that mechanism and the value of a spatial prior.
 
 Status: **11-platform meta-analysis.** Machine-checked by
 `experiments/verify_manuscript.py`, exit 0. The object is a

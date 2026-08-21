@@ -150,3 +150,13 @@ pages-gateway-tests/node_modules/
 pages-gateway-tests/test-results/
 pages-gateway-tests/playwright-report/
 
+# --- security-audit: secrets, agent state, clinical/bulk data ---
+secrets.env
+credentials.json
+id_rsa
+.npmrc
+.netrc
+.agent/
+spermdata/
+harmonized_donor_samples.csv
+donor_exposure*.csv

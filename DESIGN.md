@@ -74,7 +74,7 @@ component that does not earn its place. If, on honest evaluation, only multi-sca
 selected model is `backbone + multi-scale`, and the study says so. A component that never wins
 on real data gets cut, not shipped "because we built it".
 
-### Baselines and SOTA live in the same table
+### Baselines and named methods live in the same table
 
 A component grid in isolation says nothing. Every run also scores:
 
@@ -82,15 +82,15 @@ A component grid in isolation says nothing. Every run also scores:
 - **`ref:smoothed-kmeans`** — averages features over neighbours then clusters; the transparent
   over-smoothing baseline whose failure mode the edge gate targets.
 - **`backbone`** — a standard graph-autoencoder + clustering, i.e. a brand-neutral stand-in for
-  the *graph spatial-domain encoder family* (the SOTA class).
+  the *graph spatial-domain encoder family*.
 
-Parity against the **named** SOTA methods (STAGATE / GraphST / SEDR / BANKSY) is run from their
+Parity against the **named** methods (STAGATE / GraphST / SEDR / BANKSY) is run from their
 own repositories behind an adapter and is a **real-DLPFC gate** — synthetic data cannot settle
 it, and we do not pretend it can.
 
 ## What stays identical to the comparison world
 
-So results drop straight into the established leaderboard:
+So results can be compared on the same ARI/NMI table:
 
 - **Data:** DLPFC / `spatialLIBD` (12 Visium sections, manual cortical-layer ground truth),
   plus Visium mouse brain and a synthetic *tessellation* generator for offline CI.
@@ -104,7 +104,7 @@ So the table reports one or two metrics per *independent* dimension:
 
 | Dimension | Metric(s) | Dir. | What it catches that ARI/NMI miss |
 |-----------|-----------|:----:|-----------------------------------|
-| label agreement | ARI, NMI | ↑ | (the standard axis; kept for leaderboard comparability) |
+| label agreement | ARI, NMI | ↑ | (the standard axis; kept for table comparability) |
 | spatial coherence | CHAOS | ↓ | domains that are spatially scattered despite high label agreement |
 | spatial fragmentation | PAS | ↓ | speckle: spots disagreeing with their spatial neighbourhood |
 | geometric separation (INTERNAL ⚠) | ASW, DBI | ↑ / ↓ | embedding clusters that overlap — but see caveat |
