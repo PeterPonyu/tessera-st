@@ -1,0 +1,68 @@
+{
+  "n_platforms": 11,
+  "B_bootstrap": 10000,
+  "bootstrap_gt_contiguity": {
+    "rho": 0.724,
+    "ci95": [
+      0.243,
+      0.916
+    ],
+    "frac_positive": 0.987,
+    "n_boot": 10000
+  },
+  "bootstrap_gtfree_cohgain": {
+    "rho": 0.551,
+    "ci95": [
+      -0.151,
+      0.833
+    ],
+    "frac_positive": 0.948,
+    "n_boot": 10000
+  },
+  "lopo_gt_contiguity": {
+    "loo_pred_vs_actual_rho": 0.51,
+    "decision_rule_accuracy": 0.818,
+    "base_rate_accuracy": 0.545,
+    "tau": 0.05,
+    "n": 11
+  },
+  "lopo_gtfree_cohgain": {
+    "loo_pred_vs_actual_rho": 0.296,
+    "decision_rule_accuracy": 0.727,
+    "base_rate_accuracy": 0.545,
+    "tau": 0.05,
+    "n": 11
+  },
+  "confound_marginal_spearman_vs_advantage": {
+    "GT_contiguity": {
+      "rho": 0.724,
+      "p": 0.0117
+    },
+    "k_nclasses": {
+      "rho": -0.567,
+      "p": 0.0692
+    },
+    "eff_dim": {
+      "rho": -0.352,
+      "p": 0.2883
+    },
+    "modality_imaging": {
+      "rho": 0.389,
+      "p": 0.2366
+    }
+  },
+  "contiguity_partial_spearman_controlling": {
+    "k_nclasses": 0.552,
+    "eff_dim": 0.861,
+    "modality_imaging": 0.801
+  },
+  "contiguity_partial_controlling_all": 0.667,
+  "standardized_ols_beta": {
+    "intercept": 0.0,
+    "contiguity": 0.793,
+    "k_nclasses": 0.051,
+    "eff_dim": -1.097,
+    "modality_imaging": -0.6,
+    "_caveat": "n=11 with 4 predictors is overfit-prone; partial correlations above are the primary read."
+  }
+}

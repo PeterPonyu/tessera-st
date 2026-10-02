@@ -1,0 +1,412 @@
+\documentclass[journal]{IEEEtran}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{newtxtext}
+\usepackage{newtxmath}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{siunitx}
+\usepackage{xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Auditing spatial-prior evaluation: coordinate frames, expression-only controls and specified interventions},pdfauthor={Zeyu Fu},pdfsubject={Field-aware spatial benchmarking and intervention estimands}}
+\usepackage{orcidlink}
+\usepackage{microtype}
+% Allow two-column floats to follow the text without forcing half-empty section pages.
+% An explicit barrier before the back matter keeps all figures before the references.
+\usepackage{placeins}
+% This paper packs many full-width table*/figure* floats into a two-column layout; standard
+% LaTeX two-column output can only place a table*/figure* at the top of a page, which forces
+% premature, near-empty text pages ahead of a float. stfloats also allows bottom placement.
+\usepackage{stfloats}
+\renewcommand{\dbltopfraction}{0.92}
+\renewcommand{\dblfloatpagefraction}{0.88}
+\renewcommand{\textfraction}{0.08}
+\setlength{\dbltextfloatsep}{12pt plus 2pt minus 2pt}
+\setlength{\dblfloatsep}{12pt plus 2pt minus 2pt}
+\setlength{\textfloatsep}{12pt plus 2pt minus 2pt}
+\makeatletter
+\setlength{\@dblfptop}{0pt}
+\setlength{\@dblfpsep}{16pt plus 2pt minus 2pt}
+\setlength{\@dblfpbot}{0pt plus 1fil}
+\makeatother
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+% balance the last references page instead of inventing citations or a DOI
+\usepackage{flushend}
+
+% Default IEEEtran journal face (compile with pdflatex). Pre-rendered PDF
+% panels live in figs/ and are included at their declared physical size.
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepgfplotslibrary{groupplots}
+\usetikzlibrary{positioning,arrows.meta,calc,fit,backgrounds}
+% shared figure palette -- the named colours referenced by make_figs.R's output
+\definecolor{tblue}{RGB}{43,108,176}
+\definecolor{tgreen}{RGB}{47,133,90}
+\definecolor{torange}{RGB}{221,107,32}
+\definecolor{tred}{RGB}{197,48,48}
+\definecolor{tgray}{RGB}{160,174,192}
+\definecolor{tpurple}{RGB}{107,70,193}
+
+\graphicspath{{figs/}}
+\title{Auditing spatial-prior evaluation:\\
+coordinate frames, expression-only controls and specified interventions}
+
+\author{Zeyu~Fu\,\orcidlink{0009-0001-8329-0108}%
+\thanks{Z. Fu is with the State Key Laboratory of Trauma and Chemical Poisoning, Institute of
+Combined Injury, Chongqing Engineering Research Center for Nanomedicine, College of Preventive
+Medicine, Army Medical University, Chongqing, China. E-mail:
+\href{mailto:fuzeyu99@126.com}{fuzeyu99@126.com}}}
+
+\markboth{IEEE Transactions on Computational Biology and Bioinformatics}%
+{Fu: Auditing Spatial-Prior Evaluation}
+
+\begin{document}
+\raggedbottom
+
+\maketitle
+\begin{center}\small\bfseries Author-review revision: Field-identified protocol audit; historical broad benchmark is outside the retained scope. Independent scientific clearance pending. Not cleared for submission.\end{center}
+
+\begin{abstract}
+Spatial-prior comparisons depend on the physical meaning of coordinates and on what the reference control actually uses. We audit an existing spatial-transcriptomic and proteomic benchmark and find that 66.53\% of MIBI-TOF and 99.83\% of CODEX directed six-neighbour links joined independent local fields. The nominally expression-only control also underwent spatial label refinement. We rebuild a seven-object panel selected by explicit field or section identity, preserving the previous deterministic cell cap and three seed identities. Graph construction, spatial features, external-method graph inputs, refinement and spatial metrics now use within-field neighbourhoods; a fixed PCA--KMeans expression-only comparator never receives coordinates. Named-method contrasts are reported separately from oracle selection. Methods lacking an audited spatial path remain unavailable, so earlier eleven-, twelve- and fourteen-object correlations are not replaced by a mixture of protocols. A separate synthetic position intervention retains its generator-scoped total effect, but label regeneration changes expression spatial autocorrelation and class frequencies and does not identify an independent contiguity mechanism. Correct mid-ranks remove row-order dependence in partial correlations. The contribution is a protocol audit with corrected, traceable tissue comparisons and specified-intervention counterexamples, not a universal spatial law or a validated method selector.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Spatial transcriptomics, spatial-domain detection, benchmarking, clustering, graph neural networks, method
+selection, spatial autocorrelation, reproducibility.
+\end{IEEEkeywords}
+
+\IEEEpeerreviewmaketitle
+
+\section{Introduction}
+Spatial transcriptomics and spatial proteomics assays measure molecular abundance while retaining each
+cell's or spot's tissue location \citep{stahl2016st,moffitt2018merfish}. A central unsupervised task is
+\emph{spatial-domain detection}: partitioning a tissue into coherent regions such as cortical layers,
+anatomical domains, or tumour versus stroma. Most methods encode expression over a spatial nearest-neighbour graph so
+that physically adjacent cells obtain similar embeddings, then cluster those embeddings
+\citep{dong2022stagate,xu2024sedr,long2023graphst,ren2022spaceflow,hu2021spagcn}.
+
+Spatial neighbourhoods encode a modelling assumption: nearby locations are expected to share information relevant to the requested tissue partition. That assumption can differ between anatomical regions, reference cell types and clustering-derived annotations. A benchmark must therefore distinguish the physical tissue, the annotation target and the computational assignments it evaluates.
+
+We ask how spatial-prior utility should be assessed across tissue contexts and clustering backends. The design separates a field-identified tissue reanalysis, archived exploratory comparisons and specified interventions in a synthetic generator. The reanalysis addresses concrete coordinate and control errors; it is not selected to preserve an earlier association. An intervention can estimate the total effect of the objects it changes within a generator, whereas tissue associations require separate validation.
+
+\noindent
+Graph-autoencoder approaches encode expression over a spatial graph:
+STAGATE uses a graph-attention autoencoder \citep{dong2022stagate}; SEDR a variational graph autoencoder
+with self-supervision \citep{xu2024sedr}. Contrastive and infomax approaches include GraphST
+\citep{long2023graphst} and SpaceFlow, which adds spatial regularisation to deep graph infomax
+\citep{ren2022spaceflow}. SpaGCN couples a graph convolutional network with histology and a spatially
+aware iterative clustering \citep{hu2021spagcn}. Non-deep pipelines include BANKSY, which augments each
+cell with neighbourhood features \citep{singhal2024banksy}, and graph-community detection via the Leiden
+algorithm \citep{traag2019leiden} on a spatially blended graph.
+
+A parallel
+2025--2026 line addresses boundary degradation: local graph smoothing can blur spots near domain seams. Spotscape \citep{oh2025spotscape} diagnoses the symptom most sharply,
+showing with its own boundary-focused metric (``Boundary-CA'') that an attention-based edge weighting can
+raise overall clustering accuracy while leaving boundary spots no better than a plain graph autoencoder;
+its remedy is architecturally opposite to a local edge gate---a global, non-local similarity-consistency
+objective. DWGCN \citep{peng2026dwgcn} replaces uniform spatial adjacency with a fixed inverse-distance
+weighting and reports, as a purely correlational observation, that its gains grow with the ground truth's
+domain-count complexity: a partial, non-formalised precedent for the direction of our association, but never
+framed as a causal claim that the value of a spatial prior is \emph{set} by ground-truth contiguity.
+SpatialESD \citep{cao2025spatialesd} responds to the same ``no single method dominates across datasets''
+problem through consensus-ensembling several domain detectors. Our focus is complementary to architectural improvement: whether the graph represents physical neighbours, whether the control is genuinely non-spatial, and which quantities a generator intervention actually changes.
+
+Comparisons typically fix one Visium benchmark
+\citep{maynard2021dlpfc} and one clustering backend, often Gaussian mixture model selection via mclust
+\citep{scrucca2016mclust}. Both choices are part of the evaluation protocol and should be specified when comparing methods.
+
+A wave of recent benchmarks scores many methods over many
+datasets. Yuan et al.\ (13 methods, 34 samples) \citep{yuan2024benchmark}, Chen et al.\ (14 methods, $\sim$600
+real and simulated datasets, with a replicate-consistency axis) \citep{chen2025imeta}, and Kang et al.\ (19
+methods, scored jointly with domain-specific spatially variable genes) \citep{kang2025nar} all rank methods by
+supervised accuracy against annotated ground truth; Descoeudres, Canzar et al.\ (26 methods) add an explanatory
+regression of \emph{why} methods perform well, but still on a supervised-accuracy target
+\citep{canzar2026biorxiv}; and Sun et al.\ introduce an unsupervised Smoothness Entropy for expert-guided
+consensus and quality control \citep{sun2025smoothness}. These studies motivate broad evaluation. The present contribution is narrower: reproducible examples of how coordinate-frame pooling, a spatially contaminated control and an incorrectly interpreted intervention alter the meaning of a benchmark. The exploratory label-free proxy in the archived panel is not a validated contribution.
+
+% Differentiation table: tessera-st vs. the 5 directly-overlapping 2024-2026 benchmarks.
+\begin{table*}[!t]
+\centering
+\caption{Context from selected spatial-domain benchmarks. Dataset and method coverage are reported for orientation, not an exhaustive novelty claim. The present study audits coordinate identities, reference controls and intervention estimands; its exploratory proxy is not validated.}
+
+\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.6cm}>{\raggedright\arraybackslash}p{2.7cm}>{\raggedright\arraybackslash}p{2.5cm}>{\raggedright\arraybackslash}p{3.9cm}>{\raggedright\arraybackslash}p{3.3cm}@{}}
+\toprule
+Study & Datasets & Methods & Primary axis & Relation to this audit \\
+\midrule
+Yuan et al., \textit{Nat. Methods} 2024 \citep{yuan2024benchmark} &
+34 real (7 datasets) + 22 hard extension &
+13 &
+Accuracy, continuity, marker genes, scalability, robustness (winner-counting) &
+Broad method comparison motivates explicit annotation and coordinate checks \\
+\addlinespace
+Chen et al., \textit{iMeta} 2025 \citep{chen2025imeta} &
+$\sim$600 real + simulated (incl.\ replicate sims) &
+14 &
+Accuracy + replicate/neighborhood-disruption robustness (winner-counting) &
+Replicate and neighbourhood robustness address complementary protocol sensitivities \\
+\addlinespace
+Kang et al., \textit{NAR} 2025 \citep{kang2025nar} &
+30 real (6 platforms) + 27 synthetic &
+19 &
+Domain accuracy jointly with domain-specific SVG detection; cross-method concordance (winner-counting) &
+Joint domain and feature evaluation motivates target-specific interpretation \\
+\addlinespace
+Descoeudres/Canzar et al., bioRxiv 2026 \citep{canzar2026biorxiv} &
+63 real (6 platforms) + $>$1000 semi-synthetic &
+26 &
+Explanatory attribution of \emph{why} methods perform well (regression on supervised accuracy) &
+Explanatory regression complements checking whether the input geometry and controls are valid \\
+\addlinespace
+Sun et al., bioRxiv 2025 \citep{sun2025smoothness} (Smoothness Entropy) &
+15 datasets, 9 technologies, 170+ samples &
+22 (61 configs) &
+Smoothness Entropy / Cross-Method Entropy for expert-guided consensus QC (unsupervised flagging, not proxy validation) &
+Unsupervised quality diagnostics do not remove the need for field identities or matched controls \\
+\midrule
+\textbf{tessera-st (this work)} &
+Field-identified tissue subset and separate synthetic generator &
+Spatial methods, non-spatial controls and candidate proxies &
+Coordinate/control audit and specified-intervention total effects &
+Preserves valid evidence while separating corrected runs from incomplete historical replacements \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+The audit uses spatial autocorrelation \citep{moran1950}; clustering agreement is measured
+with the adjusted Rand index \citep{hubert1985ari} and normalised mutual information \citep{strehl2002nmi}.
+Data handling uses Scanpy \citep{wolf2018scanpy} and Squidpy \citep{palla2022squidpy}.
+
+
+The study keeps three evidence types separate. Named-method tissue contrasts measure agreement under a specified evaluation protocol. Synthetic interventions estimate the total effect of a position permutation or label-regeneration operation, not a purified effect of contiguity. A label-free proxy would require validation against an independently evaluated target. No one of these evidence types substitutes for another.
+
+This separation matters for the physical meaning of the inputs. Coordinates identify sampling locations, expression or protein abundance supplies measured features, reference labels define the evaluation target, and computational assignments are outputs of the tested pipeline. A schematic may connect these objects and make the proposed mechanism legible, but it cannot make an inferred boundary into an observed tissue structure. The protocol therefore treats field identity, annotation provenance, backend choice, and the unit of resampling as part of the estimand rather than as implementation details.
+
+\section{Methods}
+\subsection{Data}
+The historical panel assembled 11 datasets spanning sequencing- and imaging-based assays, tissues, and
+GT types: DLPFC Visium \citep{maynard2021dlpfc}, seqFISH mouse embryo
+\citep{lohoff2022seqfish}, MERFISH hypothalamus \citep{moffitt2018merfish}, STARmap cortex
+\citep{wang2018starmap}, osmFISH cortex \citep{codeluppi2018osmfish}, MIBI-TOF \citep{hartmann2021scmep},
+breast IMC \citep{jackson2020imc}, a breast-tumour Visium section \citep{tenx2020brca} with per-spot
+pathology-domain labels from SEDR \citep{xu2024sedr}---SEDR is also a scored competitor on this
+panel, so BRCA is not an independent ground truth for ranking SEDR---Open-ST \citep{schott2024openst},
+Slide-seqV2 \citep{stickels2021slideseq}, and CODEX spleen \citep{goltsev2018codex}, accessed via
+Squidpy \citep{palla2022squidpy} where applicable.
+Byte-level duplicate checks preserve distinct datasets. Three additional cancer datasets form a separately identified historical robustness panel. For the new reanalysis, eligibility requires an explicit field/section identifier or a single registered Visium spatial library. This retains DLPFC, MERFISH, STARmap, MIBI-TOF, Open-ST and CODEX, plus the previously studied Zhuang anatomy-labelled section. The other five original objects and three cancer objects remain outside this reanalysis because frame identity was not established here, not because of their outcomes. This seven-object set is not a representative tissue population. Large datasets are deterministically subsampled to 16{,}000 cells (logged), using the original fixed sampling seed before label filtering. Counts are
+library-size normalised to 10,000 and log-transformed only when all values are nonnegative and numerically integer-valued; this heuristic is recorded per input and is not an assay-type classifier. For panels with $>500$ features, at most 3,000 features are retained in descending empirical-variance order; this is not a model-based highly-variable-gene procedure. Features are then globally $z$-scored and clipped to $[-10,10]$.
+
+\subsection{Methods and backends}
+The historical panel comprised Tessera (the candidate boundary-aware method),
+STAGATE, SEDR, GraphST, SpaceFlow, SpaGCN, SpatialLeiden, BANKSY-style neighbour augmentation, and two
+floors (non-spatial clustering; neighbour-mean smoothing). Historical SEDR, GraphST, and SpaceFlow runs used a no-op
+\texttt{numba} shim so they execute on \texttt{numpy}~$\geq$~2.3 without changing the environment; each
+brand name is confined to driver scripts (a strict separation enforced by tests). Clustering backends are
+KMeans \citep{macqueen1967kmeans} and Gaussian mixtures; for a backend-fairness analysis we add
+the clusterer the deep methods recommend, R's \texttt{mclust} \citep{scrucca2016mclust}, called
+via an \texttt{Rscript} subprocess (rpy2 does not build in our Python environment, so we round-trip
+the embedding through a CSV). Each historical method score selects the best agreement with the reference labels over backends
+$\times$ \{refinement off, on\}. This is an oracle comparison, not label-free model selection. The new protocol instead fixes KMeans (ten initialisations) and reports each named spatial method against PCA with thirty components followed by KMeans. Embedding methods use the reference class count; the comparison is therefore reference-conditioned, not fully label-free. SpatialLeiden directly returns community assignments, with a fixed resolution search targeting the same count but not guaranteed to attain it; the actual CODEX output counts are stated in Table~\ref{tab:field-ari}. Two-round spatial label refinement is a separate sensitivity analysis, never a selectable improvement to the expression-only comparator. No missing method score is imputed.
+
+\subsection{Field-aware execution and source identity}
+Every spatial neighbour query is restricted to the source field, uses at most six distinct other cells and excludes self by row identity rather than zero distance. Distinct cells with coincident coordinates remain eligible; singletons have no neighbour agreement term and retain their own features under smoothing. Graphs, neighbour features, label refinement and contiguity use the same field identities. STAGATE receives an explicitly constructed within-field graph, checked again after its conversion to the runtime input. SEDR receives a symmetrised within-field graph and explicit within-field non-neighbour reconstruction pairs; pair normalisation counts only within-field pairs. Its upstream negative sampler cannot be used unchanged because it selects candidate-array positions instead of actual non-neighbour identities. This repaired adapter is specified as such, not claimed identical to an unmodified native protocol.
+
+The existing epoch budgets are retained: Tessera 120, STAGATE 600 and SEDR 200, with seeds 1, 2 and 3. This reanalysis uses the available numerical environment without the old no-op numba shim. SpaceFlow is unavailable because its global spatial-distance penalty still needs a field-aware adapter; GraphST and SpaGCN also lack a fully audited spatial path in this revision. Source observations, fields, selected indices, feature identities, predictions, actual seed numbers, package versions and implementation fingerprints accompany each run. Unavailable or failed runs remain explicit. No new model architecture or dependency is introduced.
+
+\subsection{Metrics and definitions}
+The evaluation registry distinguishes clustering agreement, spatial coherence, separation, boundary, small-domain and marker-purity metrics and records their dependence on reference labels. A confidence metric requires a probability model trained and calibrated for the cluster assignments being scored; unvalidated confidence outputs are withheld. We define a GT's \emph{spatial contiguity} as the mean fraction of each
+cell's spatial $k$-nearest-neighbours ($k{=}6$) that share its GT label ($1$ = perfectly contiguous). In the repaired analysis this is cell-weighted among labelled cells with at least one labelled within-field neighbour. The exact within-field permutation expectation is $\sum_c n_{fc}(n_{fc}-1)/[n_f(n_f-1)]$ for field $f$, averaged over contributing cells. Chance-adjusted contiguity is $(C-C_0)/(1-C_0)$; $1/K$ is only a balanced-class approximation. The primary method contrast is a named method's raw ARI minus raw expression-only ARI. The historical \emph{oracle spatial-prior advantage} instead takes the maximum across methods and backend/refinement settings and is kept separate. The \emph{label-free} proxy \texttt{coh\_gain} is the gain
+in spatial coherence (kNN same-cluster fraction) when unsupervised clustering is run on spatially smoothed
+versus raw expression.
+
+\subsection{Statistical analysis}
+For the contiguity definition above, let $V$ contain labelled cells with at
+least one labelled within-field neighbour, and let $N_i$ be that neighbour
+set for cell $i$. With reference label $y_i$,
+\begin{equation}\label{eq:contiguity}
+C=\frac{1}{|V|}\sum_{i\in V}\frac{1}{|N_i|}
+\sum_{j\in N_i}\mathbf{1}\{y_i=y_j\}.
+\end{equation}
+Equation~\ref{eq:contiguity} is cell-weighted, not edge-weighted. In the
+field-preserving expectation $C_0$, $n_f$ and $n_{fc}$ denote labelled-cell
+counts in field $f$ and its class $c$; the field expectation is weighted
+by its contributing cells in $V$. Both $C$ and $C_0$ are dimensionless;
+the chance adjustment is undefined if $C_0=1$.
+
+Correlations use Spearman's $\rho$ with explicit average ranks for ties. The new panel reports named contrasts and seed standard deviations; three optimisation seeds are not three independent tissues. Cross-object associations are descriptive, and exploratory partial associations do not exclude unmeasured confounding. Historical 10{,}000-resample dataset intervals and leave-one-dataset-out (LODO) summaries remain conditional on the old protocol. LODO predicts whether advantage exceeds $0.05$ using overlapping training panels; proxy selection was not nested inside folds, so this is internal panel cross-validation, not independent deployment validation. Ordinary independent-binomial inference for its fold outcomes is not retained. Synthetic interventions retain fixed expression--label pairs during position permutation, or a fixed expression--label generation rule during label regeneration; neither holds all spatial relationships fixed. Printed revision tables and figures are generated from the bound new run records. A machine-readable reproducibility
+supplement supplies the committed result ledgers and analysis scripts. Full tissue-model reruns additionally require the public input datasets and external method implementations.
+
+For a partial rank association, $r_x$ and $r_y$ are vectors of average
+midranks, and $Z$ contains an intercept and the ranked control covariates.
+OLS residuals and their association are
+\begin{align}
+e_x&=r_x-ZZ^+r_x,\quad e_y=r_y-ZZ^+r_y,\label{eq:rank-residuals}\\
+\rho_{xy\cdot Z}&=\operatorname{cor}(e_x,e_y),\label{eq:partial-rank}
+\end{align}
+where $Z^+$ is the Moore--Penrose pseudoinverse and $\operatorname{cor}$
+is Pearson correlation. Equations~\ref{eq:rank-residuals}--\ref{eq:partial-rank}
+describe the row-order diagnostic and exploratory partial associations;
+zero residual variance makes the association undefined. They do not
+identify a causal mechanism or remove unknown confounders.
+
+\section{Results}
+\input{ledgers/revision_20260923/field_results.tex}
+
+SI Table~S1 records the field and annotation identities and the 21
+completed prediction checks per object; SI Table~S2 retains the named
+method-minus-expression contrasts. All 147 method--seed records belong to
+this explicitly retained seven-object scope. Full selected-cell and source
+hashes remain in the machine-readable ledgers; unavailable historical
+methods and objects remain outside the current estimand. The physical
+context in Fig.~\ref{fig:objects} separates registered DLPFC locations
+from three local MIBI fields. Those source illustrations add no samples,
+MIBI predictions or independent validation.
+
+\begin{figure*}[!htbp]\centering
+\includegraphics[width=\linewidth]{figs/fig_spatialmap.pdf}
+\caption{Physical tissue context from existing source data. (A) Source histology for DLPFC section 151673. (B) Layer annotations at registered spot coordinates. (C--D) Previously saved expression-only and six-neighbour-smoothed PCA--KMeans maps, with seed 1 and label colours matched only for display. The tissue geometry is identical; changes are computational assignments, not a biological transformation. (E) Supplied MIBI-TOF composite for colorectal biopsy point16: CD45 (cyan), cytokeratin (magenta) and vimentin (yellow). (F--H) Source segmentation masks coloured by annotated cell class, separately for point16, point23 and point8. All three fields are displayed without joining their local coordinate systems. Pixel bars denote source pixels, not inferred micrometre lengths. No MIBI prediction or performance estimate is drawn in this retained source-context figure; corrected comparisons are reported separately in Section~\ref{sec:field}. These are illustrations from the existing panel, not new samples or independent validation.}
+\label{fig:objects}
+\end{figure*}
+
+\subsection{A numerical counterexample: tied ranks and row order}
+The unchanged historical eleven-object panel is used only to demonstrate an implementation defect. Assigning ordinal ranks to tied covariates changes the reported joint partial correlation when rows are permuted. Average ranks remove that dependence (Fig.~\ref{fig:confound}). Neither version establishes a biological mechanism or repairs the historical graph and control.
+SI Table~S3 records a row-order range of $0.585$--$0.956$
+for the ordinal-rank implementation and $0.928$ to numerical precision after
+average midranks. This is a software-contract result, not a tissue result;
+the historical coordinate pooling and control contamination are not repaired
+by changing the rank operator.
+\begin{figure*}[!htbp]\centering
+\includegraphics[width=\linewidth]{figs/fig_rank_audit.pdf}
+\caption{Tie-handling diagnostic on the unchanged historical eleven-object panel. Across 200 row permutations, ordinal ranks assigned to tied class counts, feature dimensions and modalities change the joint partial correlation from 0.585 to 0.956. Average ranks preserve equal values and return 0.928 for every ordering to numerical precision. The horizontal span is a computational order-sensitivity range, not a confidence interval. Correcting this algorithm does not repair the historical coordinates or control and is not evidence of an independent biological mechanism.}
+\label{fig:confound}
+\end{figure*}
+
+\subsection{Specified generator interventions and their total effects}\label{sec:causal}
+
+
+Synthetic scoring is reference-conditioned and oracle-selected. For each embedding the archived programs set $K$ to the generated reference class count and report $S(E,y)=\max\{\mathrm{ARI}(y,\mathrm{KMeans}_K(E)),\mathrm{ARI}(y,\mathrm{GMM}_{K,\mathrm{tied}}(E))\}$. KMeans uses ten initialisations; the tied-covariance GMM uses three, with KMeans alone retained if GMM fails. Reference labels select the better ARI separately for the expression-only and spatial embeddings. Advantage is their score difference, not the output of a label-free deployment selector. This function applies to the original position sweep, the 48-seed neighbour-mean expansion and the two-arm experiment below; it differs from the fixed-KMeans named-method tissue protocol.
+
+Synthetic position intervention. We permute a fraction of cells'
+positions while each keeps its expression and label. This holds the expression-to-label map fixed, so the
+non-spatial floor's ARI stays at 0.345 throughout. Spatial-prior advantage then rises with contiguity and
+flips sign (Fig.~\ref{fig:mech}): $\rho=+0.98$ for the neighbour-mean smoother and $+1.00$ for STAGATE.
+The exogenous position scrambling identifies the total effect of this specified spatial-organisation intervention on that oracle-scored readout within the generator. It changes expression--position relationships together with label contiguity. The learned-GNN arm contributes a second implementation, while the neighbour-mean arm
+illustrates an averaging operation, though STAGATE's graph-attention mechanism is itself an adaptive form of
+neighbour-averaging over the same spatial $k$NN graph used to define contiguity, so the two arms should be
+read as correlated rather than architecturally independent confirmations; the identification remains scoped to this generator and intervention.
+
+
+
+Scaled generator. The stored neighbour-mean expansion contains 48 seeds at eight position-scramble levels on one substrate and 80 additional generated tissues across five parameterisations. For the 48-seed endpoint contrast, the archived seed-resampling interval for $\Delta\mathrm{ARI}=\mathrm{adv}(s=0)-\mathrm{adv}(s=1)$ is $[0.817,0.827]$, with point $+0.822$; the sign reverses in 48/48 seeds. This uncertainty conditions on the chosen generator, intervention and reference-dependent oracle scorer $S$; it is not a fixed-backend or label-free utility interval. Dependent sweep points are not treated as independent tissues, and their pooled correlations and point-level intervals are excluded from the primary inference. STAGATE was not rerun at this scale. No generator estimate is pooled with a tissue association.
+
+Two specified interventions, not isolated mechanisms. The existing two-arm experiment uses 400-epoch STAGATE, five seeds, eleven intervention levels and two substrate parameterisations. The expression-permutation arm fixes coordinates and labels but swaps expression vectors, changing expression--label correspondence as well as expression--position alignment. The label-regeneration arm fixes coordinates and the conditional expression-generation rule while replacing selected labels with uniformly drawn classes and regenerating expression from the current labels. It therefore changes class frequencies, label contiguity and expression spatial autocorrelation together. The program's assigned alignment value of one is not a measured spatial-invariance check.
+
+Endpoint recomputation over the same five seeds confirms these coupled changes. On S1, mean expression Moran's $I$ falls from $0.06299$ to approximately $-0.000068$, and the small-class fraction changes from $4.24\%$ to $16.16\%$. On S2 the corresponding values are $0.08000$ to $0.000083$ and $4.31\%$ to $13.94\%$. Expression--label residual standard deviation stays near one. Thus the fixed object is the conditional generation rule, not expression--position alignment or category balance. The reported sign reversals and slope-times-range summaries remain descriptions of these particular interventions (Table~\ref{tab:decouple}); their different scales do not rank the causal importance of contiguity versus alignment. No independent contiguity mechanism is identified, and no synthetic effect is pooled with the tissue panel.
+SI Table~S4 reports the five-seed endpoint means, and SI Table~S5 retains
+the paired seed-level Moran's-$I$, class-balance, residual-spread and random
+same-label records. These records expose the coupled changes; they are not
+new independent tissues or evidence of an isolated mechanism.
+
+\begin{table}[htbp]\centering\footnotesize\setlength{\tabcolsep}{2.5pt}
+\caption{Archived outcomes of two specified generator interventions (400-epoch STAGATE, five seeds, eleven levels and two substrates). ``Sweep change'' is the OLS slope times that arm's observed driver range for neighbour-mean/STAGATE. It is not a comparable isolated-mechanism effect size. Expression permutation changes expression--label correspondence; label regeneration also changes class balance and expression spatial autocorrelation. Sign reversals and non-spatial-floor ranges describe these operations, not independent contiguity or alignment effects.}
+\label{tab:decouple}
+\begin{tabular}{llccc}
+\toprule
+Substrate & Intervention & sweep change & advantage & floor\\
+          &              & (smooth/STAGATE) & sign flip? & range\\
+\midrule
+S1 & expression swap  & 0.55 / 0.62 & no  & 0.36\\
+S1 & label redraw & 0.85 / 0.91 & yes & 0.05\\
+S2 & expression swap  & 0.34 / 0.43 & no  & 0.68\\
+S2 & label redraw & 0.92 / 0.95 & yes & 0.03\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+
+\begin{figure}[!htbp]\centering
+\includegraphics[width=0.95\linewidth]{figs/fig_mechanism.pdf}
+\caption{Specified position-permutation intervention under reference-dependent oracle scoring. Each cell retains its expression and label while positions are permuted, leaving the expression-only control fixed. Advantage subtracts the control's max(KMeans, tied-GMM) reference-label ARI from the spatial embedding's corresponding maximum; both use reference $K$, with KMeans-only fallback if GMM fails. This is the total effect of the intervention on that scorer in the generator, not fixed-backend utility; expression--position alignment also changes. Saturated Spearman correlations are not effect sizes or tissue-level causal laws.}
+\label{fig:mech}
+\end{figure}
+
+\subsection{Candidate pipeline as an auditable implementation}
+Tessera is one of the seven evaluated procedures, not a newly validated superior architecture. Its diagram identifies computational steps and withheld outputs (Fig.~\ref{fig:arch}). The archived component-removal study is not rerun under the corrected field protocol and is excluded from the current attribution claim.
+\begin{figure*}[!htbp]\centering
+\includegraphics[width=\linewidth]{figs/fig_mechanism_arch.pdf}
+\caption{Implemented candidate pipeline and its evidence boundary. Local tissue coordinates define within-field neighbours in the repaired graph; features pass through a learned gate, message passing and multi-scale fusion. The embedding supplies KMeans domain labels and a feature-reconstruction objective; gate-derived boundary scores are computational estimates, not observed histological borders. The contrastive objective uses graph neighbours as positives and sampled nodes as negatives. A separate legacy soft head has no training-loss or held-out calibration step and does not supply validated confidence in KMeans labels; that output is withheld. Field-aware graph support does not establish a corrected external-method benchmark.}
+\label{fig:arch}
+\end{figure*}
+
+
+
+\subsection{Scope and remaining submission hold}
+The stored MIBI-TOF pooled six-neighbour graph contains 13,208 cross-field directed links among 19,854 links (66.53\%). CODEX contains 95,840 cross-field links among 96,000 links (99.83\%). These are not physical neighbours. The corrected seven-object panel has zero cross-field spatial edges and a genuinely expression-only comparator.
+
+The source-identity and field-aware checks in SI Table~S1
+also record zero cross-field edges for each retained object and 21 completed
+method--seed runs per object. The corrected field panel is therefore not only
+a relabelled plot: it is a different graph-construction and control protocol,
+with its run identities and unavailable methods kept explicit.
+
+SpaceFlow, GraphST and SpaGCN are outside the completed replacement method set; eight historical objects lack established frame provenance here. Their old scores, oracle maxima, proxy search, rank, posterior and power summaries are archived outside the main result and cannot support current inference. Restoring the old broad benchmark would require their replacement, but the narrower protocol audit does not claim that coverage. CODEX SpatialLeiden is not count-matched to 100 reference classes, so no equal-$K$ superiority conclusion is drawn. Independent scientific review of the adapters, generator uncertainty and annotation scope remains necessary. Legacy confidence and ECE stay withdrawn; no validated probability model is supplied.
+
+\section{Discussion}
+% Let the pending full-width architecture float coexist with the discussion
+% instead of forcing a half-empty two-column page. The back-matter barrier
+% below still keeps all scientific figures ahead of availability/references.
+Spatial-domain detection assigns computational labels to physical tissue locations. The tissue coordinates, molecular measurements and histology are observed inputs; the domain map changes when the representation, graph or clustering rule changes. A different predicted map is therefore a change in inference rather than cell movement or a measured biological transformation.
+
+A spatial prior should be evaluated in relation to the intended annotation target. Anatomical boundaries, intermingled cell identities and clustering-derived niches pose different tasks. Treating one reference annotation as universal truth can conflate spatial coherence with biological correctness. Matched expression-only controls, independent biological labels and field-aware neighbourhoods are necessary to interpret a method comparison.
+
+Synthetic interventions have a complementary role. A randomised operation identifies its specified total effect within the generator, not a component mechanism when multiple spatial properties change together. Here position permutation changes expression--position organisation, and label regeneration additionally changes class balance. Transfer to measured tissue requires separate evidence. Neither a shared direction nor many dependent generator points justifies pooling the two evidence types.
+
+Practical progress depends on separating model hypotheses from evaluated components. A diagram can specify how neighbourhoods, gates and embeddings produce assignments, but ablation and independent evaluation are needed before attributing an effect to a particular component. Probability calibration is also separate from clustering accuracy and requires confidence to correspond to the labels actually returned.
+
+\noindent
+The field-identified seven-object reanalysis is completed for its seven named procedures and three seeds, with raw-input and prediction-rescore checks. It is a substantive replacement for those comparisons, not a clearance of the larger historical panel. The unavailable external methods and unresolved frame provenance must remain explicit; historical dependent analyses cannot inherit the new protocol's status. Legacy confidence outputs stay withheld.
+
+Additional limits concern dependent datasets, heterogeneous annotation types, tuning asymmetry, oracle backend selection and multiple exploratory comparisons. Cluster-derived annotations are proxy references, and competitor-supplied pathology labels are not independent ground truth for ranking that competitor. An expanded panel must preserve field identities, independent sampling units and consistently defined controls. Retrospective planning calculations are conditional on observed effects and are not prospective guarantees. These restrictions also limit clinical or biological interpretation of computational boundaries.
+
+
+A useful interpretation of the study is methodological rather than biological. The size and direction of a measured spatial advantage depend on the field, annotation, backend and comparison method. A generator intervention estimates the effect of its specified operation, while tissue data require valid coordinate handling, appropriate reference labels and a genuinely non-spatial control. Those conditions define what a benchmark comparison means.
+
+The corrected named-method results demonstrate how to implement this contract without requiring a favourable outcome. Each field keeps its coordinates and neighbourhood, the expression-only comparator remains unrefined, and failed or unavailable methods are not filled from old results. This supports a reproducible audit, not a universal ranking or an externally validated selector.
+
+The remaining uncertainty is actionable. Preserve field identifiers through graph construction and refinement, keep method-specific preprocessing explicit, and separate exploratory proxy searches from the primary estimand. Train and calibrate any confidence head on the labels it is meant to describe, then evaluate it on independent fields. A visually clear architecture diagram can help reviewers trace those commitments, but it should never be used as evidence that a computational boundary is a histological boundary or that a generator effect has transferred to tissue.
+
+\FloatBarrier
+\section*{Data availability}
+All datasets are previously published and publicly available from their original sources: DLPFC
+\citep{maynard2021dlpfc}, seqFISH \citep{lohoff2022seqfish}, MERFISH \citep{moffitt2018merfish}, STARmap
+\citep{wang2018starmap}, osmFISH \citep{codeluppi2018osmfish}, MIBI-TOF \citep{hartmann2021scmep}, breast IMC
+\citep{jackson2020imc}, a breast-tumour Visium section \citep{tenx2020brca} with SEDR pathology-domain labels
+\citep{xu2024sedr} (SEDR is also a scored competitor, so BRCA is not an independent ground truth for
+ranking SEDR), Open-ST \citep{schott2024openst}, Slide-seqV2 \citep{stickels2021slideseq}, and
+CODEX \citep{goltsev2018codex}; several are redistributed through Squidpy \citep{palla2022squidpy}. No new data were generated. A readable Supporting Information PDF (Tables S1--S5) and machine-readable reproducibility supplement accompany the manuscript;
+the historical audit record is supplied as source only, with no archived DOI. Accession identifiers
+are listed in the code repository, alongside the original publications cited above.
+
+\section*{Code availability}
+The accompanying reproducibility package includes manuscript sources, vector figures, result ledgers, analysis scripts, the synthetic generator and verification commands. Its source inventory binds the files to this review version. Figures redraw from bundled inputs; tissue benchmarks require the listed public datasets and external method implementations. The tissue-object figure includes source images, per-field annotations and saved illustrative DLPFC maps. The development repository is \url{https://github.com/PeterPonyu/tessera-st}. The observational tissue results are not cleared for submission; no archival DOI has been assigned to this revised package.
+
+\section*{Author contributions}
+Z.F. conceived the study, implemented the methods and benchmark, performed the analyses, and wrote the
+manuscript.
+
+\section*{Competing interests}
+The author declares no competing financial or personal interests.
+
+\section*{Funding}
+This research received no external funding.
+
+\setlength{\bibsep}{0pt plus 0.2pt}
+\bibliographystyle{IEEEtran}
+\bibliography{refs}
+\end{document}

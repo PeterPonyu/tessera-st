@@ -1,0 +1,71 @@
+{
+  "new_rows": [
+    {
+      "platform": "st_COAD(cancer,ctype)",
+      "GT_contiguity": 0.498,
+      "k": 16,
+      "winner": "floor:nonspatial",
+      "spatial_advantage": -0.014,
+      "means": {
+        "Tessera": 0.2304,
+        "STAGATE": 0.1554,
+        "SEDR": 0.2584,
+        "SpaceFlow": 0.0866,
+        "BANKSY-style": 0.2644,
+        "floor:nonspatial": 0.2786,
+        "floor:smoothed": 0.1327,
+        "SpatialLeiden": 0.2452
+      }
+    },
+    {
+      "platform": "st_LIHC(cancer,ctype)",
+      "GT_contiguity": 0.223,
+      "k": 19,
+      "winner": "BANKSY-style",
+      "spatial_advantage": 0.032,
+      "means": {
+        "Tessera": 0.1307,
+        "STAGATE": 0.1004,
+        "SEDR": 0.1628,
+        "SpaceFlow": 0.0094,
+        "BANKSY-style": 0.1888,
+        "floor:nonspatial": 0.1568,
+        "floor:smoothed": 0.0434,
+        "SpatialLeiden": 0.1391
+      }
+    },
+    {
+      "platform": "st_OV(cancer,ctype)",
+      "GT_contiguity": 0.685,
+      "k": 13,
+      "winner": "floor:nonspatial",
+      "spatial_advantage": -0.102,
+      "means": {
+        "Tessera": 0.1387,
+        "STAGATE": 0.2343,
+        "SEDR": 0.2259,
+        "SpaceFlow": 0.0834,
+        "BANKSY-style": 0.255,
+        "floor:nonspatial": 0.3571,
+        "floor:smoothed": 0.1276,
+        "SpatialLeiden": 0.1662
+      }
+    }
+  ],
+  "n_new": 3,
+  "n_total": 14,
+  "spearman_published_n11": 0.724,
+  "p_published_n11": 0.0117,
+  "spearman_expanded": 0.559,
+  "p_expanded": 0.0378,
+  "distinct_winners_all": [
+    "BANKSY-style",
+    "SEDR",
+    "STAGATE",
+    "SpaceFlow",
+    "SpatialLeiden",
+    "Tessera",
+    "floor:nonspatial"
+  ],
+  "n_distinct_winners_all": 7
+}

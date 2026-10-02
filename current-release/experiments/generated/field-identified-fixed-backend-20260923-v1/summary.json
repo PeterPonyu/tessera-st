@@ -1,0 +1,1290 @@
+{
+  "protocol_id": "field-identified-fixed-backend-20260923-v1",
+  "rows": [
+    {
+      "dataset": "DLPFC",
+      "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/raw/dlpfc_maynard_2021_visium/dlpfc_maynard_2021_151673.h5ad",
+      "source_sha256": "46f364d590e34bfccdd90e1bc34ec485fac6e9e0cd4b6bdd395d80569a038268",
+      "n_total": 3639,
+      "n_cells": 3639,
+      "n_labelled": 3611,
+      "n_classes": 7,
+      "n_features": 3000,
+      "n_fields": 1,
+      "label_key": "Region",
+      "field_key": "uns:spatial",
+      "annotation": "layer",
+      "count_normalization_applied": true,
+      "classes": {
+        "Layer1": 0,
+        "Layer2": 1,
+        "Layer3": 2,
+        "Layer4": 3,
+        "Layer5": 4,
+        "Layer6": 5,
+        "WM": 6
+      },
+      "selection": "all rows or RandomState(0) 16000 without replacement, sorted; before label filtering",
+      "selected_index_sha256": "5270c1529a0debc3fc48c008f68461982ab707ed90a94db1b59a06fe74cd2a9f",
+      "contiguity_cell_weighted": 0.9048278408566418,
+      "contiguity_edge_weighted": 0.9048278408566417,
+      "within_field_permutation_expectation": 0.18069855803788212,
+      "chance_adjusted": 0.8838374323918757,
+      "labelled_directed_edges": 21666,
+      "labelled_cross_field_edges": 0,
+      "labelled_singletons_excluded": 0,
+      "pooled_contiguity": 0.9048278408566417,
+      "pooled_cross_field_edges": 0,
+      "pooled_directed_edges": 21666,
+      "graph_directed_edges": 21834,
+      "graph_cross_field_edges": 0,
+      "methods": {
+        "expression-only": {
+          "status": "complete",
+          "seeds": [
+            1,
+            2,
+            3
+          ],
+          "raw_per_seed": [
+            0.19583143941944273,
+            0.193323713504543,
+            0.1929779644673881
+          ],
+          "raw_mean": 0.19404437246379128,
+          "raw_sd": 0.0015572706338846155,
+          "diagnostic_only_refined_control_ari_mean": 0.23243109548422813,
+          "delta_ari_vs_expression": 0.0
+        },
+        "neighbor-mean": {
+          "status": "complete",
+          "seeds": [
+            1,
+            2,
+            3
+          ],
+          "raw_per_seed": [
+            0.25759327704282997,
+            0.25598470685976016,
+            0.2560838235401774
+          ],
+          "raw_mean": 0.25655393581425584,
+          "raw_sd": 0.0009014591899496732,
+          "refined_ari_mean": 0.2641829059488014,
+          "delta_ari_vs_expression": 0.06250956335046456
+        },
+        "BANKSY-style": {
+          "status": "complete",
+          "seeds": [
+            1,
+            2,
+            3
+          ],
+          "raw_per_seed": [
+            0.24924533461621243,
+            0.24948207755066462,
+            0.2504692405451219
+          ],
+          "raw_mean": 0.2497322175706663,
+          "raw_sd": 0.0006491640416025497,
+          "refined_ari_mean": 0.25826896662592563,
+          "delta_ari_vs_expression": 0.05568784510687502
+        },
+        "SpatialLeiden": {
+          "status": "complete",
+          "seeds": [
+            1,
+            2,
+            3
+          ],
+          "raw_per_seed": [
+            0.47879339914809865,
+            0.4944390260691529,
+            0.4336568827240877
+          ],
+          "raw_mean": 0.46896310264711305,
+          "raw_sd": 0.031560945555828654,
+          "refined_ari_mean": 0.48830364646888635,
+          "delta_ari_vs_expression": 0.2749187301833218
+        },
+        "Tessera": {
+          "status": "complete",
+          "seeds": [
+            1,
+            2,
+            3
+          ],
+          "raw_per_seed": [
+            0.4349897524687888,
+            0.3593059115812843,
+            0.41025961817398837
+          ],
+          "raw_mean": 0.4015184274080205,
+          "raw_sd": 0.03859167338787678,
+          "refined_ari_mean": 0.44813777428520396,
+          "delta_ari_vs_expression": 0.20747405494422924
+        },
+        "STAGATE": {
+          "status": "complete",
+          "seeds": [
+            1,
+            2,
+            3
+          ],
+          "raw_per_seed": [
+            0.2523636191853681,
+            0.25652808673637456,
+            0.25240793449024235
+          ],
+          "raw_mean": 0.25376654680399496,
+          "raw_sd": 0.0023916663772685152,
+          "refined_ari_mean": 0.26646084619524363,
+          "delta_ari_vs_expression": 0.05972217434020369
+        },
+        "SEDR": {
+          "status": "complete",
+          "seeds": [
+            1,
+            2,
+            3
+          ],
+          "raw_per_seed": [
+            0.3790019087127255,
+            0.33831837068914256,
+            0.32445392196866
+          ],
+          "raw_mean": 0.3472580671235093,
+          "raw_sd": 0.028351531593754475,
+          "refined_ari_mean": 0.3761693500475575,
+          "delta_ari_vs_expression": 0.15321369465971804
+        }
+      }
+    },
+    {
+      "dataset": "MERFISH",
+      "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/baselines/serial3d_ref/merfish_mouse_hypothalamus/merfish_0.h5ad",
+      "source_sha256": "1b40d0f40171aac452457e6f381333c101bf9c18954d5c3aaf34731cd5dd42e2",
+      "n_total": 5488,
+      "n_cells": 5488,
+      "n_labelled": 5488,
+      "n_classes": 8,
+      "n_features": 155,
+      "n_fields": 1,
+      "label_key": "domain",
+      "field_key": "slice_id",
+      "annotation": "domain",
+      "count_normalization_applied": false,
+      "classes": {
+        "BST": 0,
+        "MPA": 1,
+        "MPN": 2,
+        "PV": 3,
+        "PVH": 4,
+        "PVT": 5,
+        "V3": 6,
+        "fx": 7
+      },
+      "selection": "all rows or RandomState(0) 16000 without replacement, sorted; before label filtering",
+      "selected_index_sha256": "13aba6412e6fca512638628c1f1fafcf6213adc87d9aac9118c86dfc1b3d8f5b",
+      "contiguity_cell_weighted": 0.9311224489795918,
+      "contiguity_edge_weighted": 0.9311224489795918,
+      "within_field_permutation_expectation": 0.17381841043845483,
+      "chance_adjusted": 0.91663146227095,
+      "labelled_directed_edges": 32928,
+      "labelled_cross_field_edges": 0,
+      "labelled_singletons_excluded": 0,
+      "pooled_contiguity": 0.9311224489795918,
+      "pooled_cross_field_edges": 0,
+      "pooled_directed_edges": 32928,
+      "graph_directed_edges": 32928,
+      "graph_cross_field_edges": 0,
+      "methods": {
+        "expression-only": {
+          "status": "complete",
+          "seeds": [
+            1,
+            2,
+            3
+          ],
+          "raw_per_seed": [
+            0.08833877994981021,
+            0.06930215087447034,
+            0.06906938922320224
+          ],
+          "raw_mean": 0.07557010668249427,
+          "raw_sd": 0.011058607835174232,
+          "diagnostic_only_refined_control_ari_mean": 0.11558694718593332,
+          "delta_ari_vs_expression": 0.0
+        },
+        "neighbor-mean": {
+          "status": "complete",
+          "seeds": [
+            1,
+            2,
+            3
+          ],
+          "raw_per_seed": [
+            0.23906508047209174,
+            0.2053625822843717,
+            0.17333862133860659
+          ],
+          "raw_mean": 0.20592209469835668,
+          "raw_sd": 0.03286680161139012,
+          "refined_ari_mean": 0.2406223961278784,
+          "delta_ari_vs_expression": 0.1303519880158624
+        },
+        "BANKSY-style": {
+          "status": "complete",
+          "seeds": [
+            1,
+            2,
+            3
+          ],
+          "raw_per_seed": [
+            0.14123050166987675,
+            0.1544559504011067,
+            0.15512648891095981
+          ],
+          "raw_mean": 0.15027098032731442,
+          "raw_sd": 0.0078364594199159,
+          "refined_ari_mean": 0.1962520839891235,
+          "delta_ari_vs_expression": 0.07470087364482016
+        },
+        "SpatialLeiden": {
+          "status": "complete",
+          "seeds": [
+            1,
+            2,
+            3
+          ],
+          "raw_per_seed": [
+            0.08699319732732796,
+            0.08699319732732796,
+            0.08699319732732796
+          ],
+          "raw_mean": 0.08699319732732796,
+          "raw_sd": 0.0,
+          "refined_ari_mean": 0.10541293964219924,
+          "delta_ari_vs_expression": 0.011423090644833697
+        },
+        "Tessera": {
+          "status": "complete",
+          "seeds": [
+            1,
+            2,
+            3
+          ],
+          "raw_per_seed": [
+            0.38138182006163995,
+            0.36227396725320177,
+            0.37024978350392135
+          ],
+          "raw_mean": 0.37130185693958767,
+          "raw_sd": 0.009597273238934112,
+          "refined_ari_mean": 0.4181333589425698,
+          "delta_ari_vs_expression": 0.2957317502570934
+        },
+        "STAGATE": {
+          "status": "complete",
+          "seeds": [
+            1,
+            2,
+            3
+          ],
+          "raw_per_seed": [
+            0.12457707685963859,
+            0.14948054636742208,
+            0.14925529370189186
+          ],
+          "raw_mean": 0.14110430564298418,
+          "raw_sd": 0.014313443091500287,
+          "refined_ari_mean": 0.16610992833423305,
+          "delta_ari_vs_expression": 0.06553419896048991
+        },
+        "SEDR": {
+          "status": "complete",
+          "seeds": [
+            1,
+            2,
+            3
+          ],
+          "raw_per_seed": [
+            0.11356833751690144,
+            0.11819404187590336,
+            0.11640918429222542
+          ],
+          "raw_mean": 0.11605718789501007,
+          "raw_sd": 0.0023328547537216668,
+          "refined_ari_mean": 0.1934148676290941,
+          "delta_ari_vs_expression": 0.040487081212515805
+        }
+      }
+    },
+    {
+      "dataset": "STARmap",
+      "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/starmap_mouse_vcortex_wang2018/anndata.h5ad",
+      "source_sha256": "ce93557645928cf104a6131d0d03599b01ee86ea4dce04837cf429222a01f0ce",
+      "n_total": 1207,
+      "n_cells": 1207,
+      "n_labelled": 1207,
+      "n_classes": 7,
+      "n_features": 1020,
+      "n_fields": 1,
+      "label_key": "layer_label",
+      "field_key": "section_id",
+      "annotation": "region",
+      "count_normalization_applied": true,
+      "classes": {
+        "CC": 0,
+        "HPC": 1,
+        "L1": 2,
+        "L2/3": 3,
+        "L4": 4,
+        "L5": 5,
+        "L6": 6
+      },
+      "selection": "all rows or RandomState(0) 16000 without replacement, sorted; before label filtering",
+      "selected_index_sha256": "642edb3a5cd2c609aced3d7be28e9f3bb44c9bec56b479791b02f6462563f39c",
+      "contiguity_cell_weighted": 0.9212924606462303,
+      "contiguity_edge_weighted": 0.9212924606462303,
+      "within_field_permutation_expectation": 0.16188595822324445,
+      "chance_adjusted": 0.906089702080502,
+      "labelled_directed_edges": 7242,
+      "labelled_cross_field_edges": 0,
+      "labelled_singletons_excluded": 0,
+      "pooled_contiguity": 0.9212924606462303,
+      "pooled_cross_field_edges": 0,
+      "pooled_directed_edges": 7242,
+      "graph_directed_edges": 7242,
+      "graph_cross_field_edges": 0,
+      "methods": {
+        "expression-only": {
+          "status": "complete",
+          "seeds": [
+            1,
+            2,
+            3
+          ],
+          "raw_per_seed": [
+            0.16533013695361987,
+            0.16300784526329046,
+            0.1649887845276511
+          ],
+          "raw_mean": 0.16444225558152048,
+          "raw_sd": 0.0012539059336577998,
+          "diagnostic_only_refined_control_ari_mean": 0.31194545197129786,
+          "delta_ari_vs_expression": 0.0
+        },
+        "neighbor-mean": {
+          "status": "complete",
+          "seeds": [
+            1,
+            2,
+            3
+          ],
+          "raw_per_seed": [
+            0.527822047351041,
+            0.5342974486560415,
+            0.5221528786572808
+          ],
+          "raw_mean": 0.5280907915547878,
+          "raw_sd": 0.0060767435933224215,
+          "refined_ari_mean": 0.5677639167769865,
+          "delta_ari_vs_expression": 0.3636485359732673
+        },
+        "BANKSY-style": {
+          "status": "complete",
+          "seeds": [
+            1,
+            2,
+            3
+          ],
+          "raw_per_seed": [
+            0.4889599763824383,
+            0.4983120060856699,
+            0.49880748204714476
+          ],
+          "raw_mean": 0.49535982150508434,
+          "raw_sd": 0.00554796244602392,
+          "refined_ari_mean": 0.5184534863294569,
+          "delta_ari_vs_expression": 0.33091756592356386
+        },
+        "SpatialLeiden": {
+          "status": "complete",
+          "seeds": [
+            1,
+            2,
+            3
+          ],
+          "raw_per_seed": [
+            0.36120514551715,
+            0.33280609644826586,
+            0.4053935008667306
+          ],
+          "raw_mean": 0.3664682476107155,
+          "raw_sd": 0.03657879170759893,
+          "refined_ari_mean": 0.48770215522403265,
+          "delta_ari_vs_expression": 0.20202599202919502
+        },
+        "Tessera": {
+          "status": "complete",
+          "seeds": [
+            1,
+            2,
+            3
+          ],
+          "raw_per_seed": [
+            0.49791735010008986,
+            0.5160663938152593,
+            0.4887857666116748
+          ],
+          "raw_mean": 0.5009231701756747,
+          "raw_sd": 0.013886481588232873,
+          "refined_ari_mean": 0.5602868357138555,
+          "delta_ari_vs_expression": 0.3364809145941542
+        },
+        "STAGATE": {
+          "status": "complete",
+          "seeds": [
+            1,
+            2,
+            3
+          ],
+          "raw_per_seed": [
+            0.308555938426439,
+            0.31661229855271394,
+            0.25965674953730805
+          ],
+          "raw_mean": 0.2949416621721537,
+          "raw_sd": 0.030821989380271583,
+          "refined_ari_mean": 0.4149543779693052,
+          "delta_ari_vs_expression": 0.1304994065906332
+        },
+        "SEDR": {
+          "status": "complete",
+          "seeds": [
+            1,
+            2,
+            3
+          ],
+          "raw_per_seed": [
+            0.3810897779986873,
+            0.3879776266399884,
+            0.3601799732518479
+          ],
+          "raw_mean": 0.37641579263017455,
+          "raw_sd": 0.014476256003905267,
+          "refined_ari_mean": 0.5069818400328898,
+          "delta_ari_vs_expression": 0.21197353704865407
+        }
+      }
+    },
+    {
+      "dataset": "MIBI",
+      "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/raw/squidpy/mibitof.h5ad",
+      "source_sha256": "3f125c51695d78ed1c36d5485dc390ab400154d021f0c7715b89f8ee83978690",
+      "n_total": 3309,
+      "n_cells": 3309,
+      "n_labelled": 3309,
+      "n_classes": 8,
+      "n_features": 36,
+      "n_fields": 3,
+      "label_key": "Cluster",
+      "field_key": "library_id",
+      "annotation": "cell cluster",
+      "count_normalization_applied": false,
+      "classes": {
+        "Endothelial": 0,
+        "Epithelial": 1,
+        "Fibroblast": 2,
+        "Imm_other": 3,
+        "Myeloid_CD11c": 4,
+        "Myeloid_CD68": 5,
+        "Tcell_CD4": 6,
+        "Tcell_CD8": 7
+      },
+      "selection": "all rows or RandomState(0) 16000 without replacement, sorted; before label filtering",
+      "selected_index_sha256": "67708e69f31beabdc767487bbc2277d44d99870515cb12bfe817dc50595ca10a",
+      "contiguity_cell_weighted": 0.48635035761055706,
+      "contiguity_edge_weighted": 0.48635035761055706,
+      "within_field_permutation_expectation": 0.21250517174968905,
+      "chance_adjusted": 0.34774220228126296,
+      "labelled_directed_edges": 19854,
+      "labelled_cross_field_edges": 0,
+      "labelled_singletons_excluded": 0,
+      "pooled_contiguity": 0.2707766696887277,
+      "pooled_cross_field_edges": 13209,
+      "pooled_directed_edges": 19854,
+      "graph_directed_edges": 19854,
+      "graph_cross_field_edges": 0,
+      "methods": {
+        "expression-only": {
+          "status": "complete",
+          "seeds": [
+            1,
+            2,
+            3
+          ],
+          "raw_per_seed": [
+            0.21043932712393176,
+            0.21145930235516655,
+            0.2121214005603545
+          ],
+          "raw_mean": 0.21134001001315092,
+          "raw_sd": 0.0008473581052467879,
+          "diagnostic_only_refined_control_ari_mean": 0.1748654567987693,
+          "delta_ari_vs_expression": 0.0
+        },
+        "neighbor-mean": {
+          "status": "complete",
+          "seeds": [
+            1,
+            2,
+            3
+          ],
+          "raw_per_seed": [
+            0.1473038948595282,
+            0.1536930142089697,
+            0.15899012235036394
+          ],
+          "raw_mean": 0.1533290104729539,
+          "raw_sd": 0.005851611084288361,
+          "refined_ari_mean": 0.15666283258956734,
+          "diagnostic_only_pooled_coordinate_ari_mean": 0.03217850001560848,
+          "delta_ari_vs_expression": -0.058010999540197006
+        },
+        "BANKSY-style": {
+          "status": "complete",
+          "seeds": [
+            1,
+            2,
+            3
+          ],
+          "raw_per_seed": [
+            0.16217782175610876,
+            0.17474678017731946,
+            0.17600918557203682
+          ],
+          "raw_mean": 0.17097792916848834,
+          "raw_sd": 0.007647210909685731,
+          "refined_ari_mean": 0.15685483068215786,
+          "delta_ari_vs_expression": -0.040362080844662585
+        },
+        "SpatialLeiden": {
+          "status": "complete",
+          "seeds": [
+            1,
+            2,
+            3
+          ],
+          "raw_per_seed": [
+            0.23441545528081578,
+            0.22469873605800986,
+            0.23452795597207016
+          ],
+          "raw_mean": 0.23121404910363194,
+          "raw_sd": 0.005642706988956903,
+          "refined_ari_mean": 0.18286530168413095,
+          "delta_ari_vs_expression": 0.01987403909048102
+        },
+        "Tessera": {
+          "status": "complete",
+          "seeds": [
+            1,
+            2,
+            3
+          ],
+          "raw_per_seed": [
+            0.1716820329965201,
+            0.15498597085045412,
+            0.23403831192543506
+          ],
+          "raw_mean": 0.18690210525746975,
+          "raw_sd": 0.0416660066130674,
+          "refined_ari_mean": 0.17827546679405837,
+          "delta_ari_vs_expression": -0.024437904755681167
+        },
+        "STAGATE": {
+          "status": "complete",
+          "seeds": [
+            1,
+            2,
+            3
+          ],
+          "raw_per_seed": [
+            0.18373417345003687,
+            0.17455418096227301,
+            0.1776690776485285
+          ],
+          "raw_mean": 0.17865247735361278,
+          "raw_sd": 0.00466833715083006,
+          "refined_ari_mean": 0.1678422211470262,
+          "delta_ari_vs_expression": -0.03268753265953814
+        },
+        "SEDR": {
+          "status": "complete",
+          "seeds": [
+            1,
+            2,
+            3
+          ],
+          "raw_per_seed": [
+            0.205514751145263,
+            0.20620899764533426,
+            0.20641946720775237
+          ],
+          "raw_mean": 0.20604773866611656,
+          "raw_sd": 0.0004734248960662356,
+          "refined_ari_mean": 0.1699674893872253,
+          "delta_ari_vs_expression": -0.005292271347034361
+        }
+      }
+    },
+    {
+      "dataset": "Open-ST",
+      "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/openst_hnscc_sub15k/anndata.h5ad",
+      "source_sha256": "8faac6daec67977f775a42abd88e6ec20520030431a39757e0c197b9bdcf74de",
+      "n_total": 15000,
+      "n_cells": 15000,
+      "n_labelled": 13420,
+      "n_classes": 14,
+      "n_features": 3000,
+      "n_fields": 1,
+      "label_key": "ground_truth",
+      "field_key": "section_id",
+      "annotation": "annotation",
+      "count_normalization_applied": false,
+      "classes": {
+        "CAF": 0,
+        "CAM": 1,
+        "Cortex_CCL21": 2,
+        "Cytotoxic_IFN_signaling": 3,
+        "Fibroblasts": 4,
+        "Germinal_Center_Plasma_IgM_B_cell": 5,
+        "High_Endothelial_Venules": 6,
+        "M1_macrophages": 7,
+        "Macrophages": 8,
+        "Plasma_IgA": 9,
+        "Plasma_IgG": 10,
+        "T_cell": 11,
+        "Tumor": 12,
+        "Tumor_Keratin_Pearl": 13
+      },
+      "selection": "all rows or RandomState(0) 16000 without replacement, sorted; before label filtering",
+      "selected_index_sha256": "73d295ca909190595400dc80767ceb22ae3ed0f6d9f4ec3ed32947d5c2c788a3",
+      "contiguity_cell_weighted": 0.5621957277694982,
+      "contiguity_edge_weighted": 0.5621957277694982,
+      "within_field_permutation_expectation": 0.18319215952556983,
+      "chance_adjusted": 0.46400579115865254,
+      "labelled_directed_edges": 80520,
+      "labelled_cross_field_edges": 0,
+      "labelled_singletons_excluded": 0,
+      "pooled_contiguity": 0.5621957277694982,
+      "pooled_cross_field_edges": 0,
+      "pooled_directed_edges": 80520,
+      "graph_directed_edges": 90000,
+      "graph_cross_field_edges": 0,
+      "methods": {
+        "expression-only": {
+          "status": "complete",
+          "seeds": [
+            1,
+            2,
+            3
+          ],
+          "raw_per_seed": [
+            0.2615991649450847,
+            0.261216115205976,
+            0.26153737359003204
+          ],
+          "raw_mean": 0.2614508845803642,
+          "raw_sd": 0.00020565027900004657,
+          "diagnostic_only_refined_control_ari_mean": 0.2379026726628151,
+          "delta_ari_vs_expression": 0.0
+        },
+        "neighbor-mean": {
+          "status": "complete",
+          "seeds": [
+            1,
+            2,
+            3
+          ],
+          "raw_per_seed": [
+            0.21723090707612436,
+            0.2093138788432373,
+            0.21793807071437746
+          ],
+          "raw_mean": 0.21482761887791302,
+          "raw_sd": 0.00478811204759312,
+          "refined_ari_mean": 0.21221085651925395,
+          "delta_ari_vs_expression": -0.04662326570245118
+        },
+        "BANKSY-style": {
+          "status": "complete",
+          "seeds": [
+            1,
+            2,
+            3
+          ],
+          "raw_per_seed": [
+            0.22003294524563943,
+            0.21423516361195694,
+            0.2292456222700644
+          ],
+          "raw_mean": 0.22117124370922026,
+          "raw_sd": 0.00756969350937217,
+          "refined_ari_mean": 0.21318730203075256,
+          "delta_ari_vs_expression": -0.04027964087114394
+        },
+        "SpatialLeiden": {
+          "status": "complete",
+          "seeds": [
+            1,
+            2,
+            3
+          ],
+          "raw_per_seed": [
+            0.26596351751053965,
+            0.26640399973088197,
+            0.2422281068385229
+          ],
+          "raw_mean": 0.2581985413599815,
+          "raw_sd": 0.013832555449003527,
+          "refined_ari_mean": 0.23022900479027644,
+          "delta_ari_vs_expression": -0.003252343220382703
+        },
+        "Tessera": {
+          "status": "complete",
+          "seeds": [
+            1,
+            2,
+            3
+          ],
+          "raw_per_seed": [
+            0.23157200496299324,
+            0.23653976493201131,
+            0.20401409238944979
+          ],
+          "raw_mean": 0.2240419540948181,
+          "raw_sd": 0.017521589344133823,
+          "refined_ari_mean": 0.20641579101567856,
+          "delta_ari_vs_expression": -0.03740893048554608
+        },
+        "STAGATE": {
+          "status": "complete",
+          "seeds": [
+            1,
+            2,
+            3
+          ],
+          "raw_per_seed": [
+            0.22508526967360615,
+            0.2255821128316511,
+            0.2522257561549132
+          ],
+          "raw_mean": 0.2342977128867235,
+          "raw_sd": 0.015528128182446402,
+          "refined_ari_mean": 0.2283078333693319,
+          "delta_ari_vs_expression": -0.027153171693640704
+        },
+        "SEDR": {
+          "status": "complete",
+          "seeds": [
+            1,
+            2,
+            3
+          ],
+          "raw_per_seed": [
+            0.24085094035462826,
+            0.24796580044251101,
+            0.2613067414016309
+          ],
+          "raw_mean": 0.2500411607329234,
+          "raw_sd": 0.01038461792122869,
+          "refined_ari_mean": 0.21607748497843304,
+          "delta_ari_vs_expression": -0.011409723847440822
+        }
+      }
+    },
+    {
+      "dataset": "CODEX",
+      "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/codex_spleen_goltsev2018/anndata.h5ad",
+      "source_sha256": "cab5de36581c645743adc1485ec22701cc9f68e1d61c314becf92e7b7292c441",
+      "n_total": 734101,
+      "n_cells": 16000,
+      "n_labelled": 15454,
+      "n_classes": 100,
+      "n_features": 32,
+      "n_fields": 565,
+      "label_key": "niche",
+      "field_key": "section_id",
+      "annotation": "cluster-derived niche proxy",
+      "count_normalization_applied": false,
+      "classes": {
+        "0.0": 0,
+        "1.0": 1,
+        "10.0": 2,
+        "11.0": 3,
+        "12.0": 4,
+        "13.0": 5,
+        "14.0": 6,
+        "15.0": 7,
+        "16.0": 8,
+        "17.0": 9,
+        "18.0": 10,
+        "19.0": 11,
+        "2.0": 12,
+        "20.0": 13,
+        "21.0": 14,
+        "22.0": 15,
+        "23.0": 16,
+        "24.0": 17,
+        "25.0": 18,
+        "26.0": 19,
+        "27.0": 20,
+        "28.0": 21,
+        "29.0": 22,
+        "3.0": 23,
+        "30.0": 24,
+        "31.0": 25,
+        "32.0": 26,
+        "33.0": 27,
+        "34.0": 28,
+        "35.0": 29,
+        "36.0": 30,
+        "37.0": 31,
+        "38.0": 32,
+        "39.0": 33,
+        "4.0": 34,
+        "40.0": 35,
+        "41.0": 36,
+        "42.0": 37,
+        "43.0": 38,
+        "44.0": 39,
+        "45.0": 40,
+        "46.0": 41,
+        "47.0": 42,
+        "48.0": 43,
+        "49.0": 44,
+        "5.0": 45,
+        "50.0": 46,
+        "51.0": 47,
+        "52.0": 48,
+        "53.0": 49,
+        "54.0": 50,
+        "55.0": 51,
+        "56.0": 52,
+        "57.0": 53,
+        "58.0": 54,
+        "59.0": 55,
+        "6.0": 56,
+        "60.0": 57,
+        "61.0": 58,
+        "62.0": 59,
+        "63.0": 60,
+        "64.0": 61,
+        "65.0": 62,
+        "66.0": 63,
+        "67.0": 64,
+        "68.0": 65,
+        "69.0": 66,
+        "7.0": 67,
+        "70.0": 68,
+        "71.0": 69,
+        "72.0": 70,
+        "73.0": 71,
+        "74.0": 72,
+        "75.0": 73,
+        "76.0": 74,
+        "77.0": 75,
+        "78.0": 76,
+        "79.0": 77,
+        "8.0": 78,
+        "80.0": 79,
+        "81.0": 80,
+        "82.0": 81,
+        "83.0": 82,
+        "84.0": 83,
+        "85.0": 84,
+        "86.0": 85,
+        "87.0": 86,
+        "88.0": 87,
+        "89.0": 88,
+        "9.0": 89,
+        "90.0": 90,
+        "91.0": 91,
+        "92.0": 92,
+        "93.0": 93,
+        "94.0": 94,
+        "95.0": 95,
+        "96.0": 96,
+        "97.0": 97,
+        "98.0": 98,
+        "99.0": 99
+      },
+      "selection": "all rows or RandomState(0) 16000 without replacement, sorted; before label filtering",
+      "selected_index_sha256": "06f587a18ff0280585fc92d4eb5f4e69e450b1bac9da40ba8f4889de4f7c8780",
+      "contiguity_cell_weighted": 0.12042537587092043,
+      "contiguity_edge_weighted": 0.1204522894998058,
+      "within_field_permutation_expectation": 0.08584421631130783,
+      "chance_adjusted": 0.03782851913934717,
+      "labelled_directed_edges": 92684,
+      "labelled_cross_field_edges": 0,
+      "labelled_singletons_excluded": 1,
+      "pooled_contiguity": 0.02086838359000906,
+      "pooled_cross_field_edges": 92658,
+      "pooled_directed_edges": 92724,
+      "graph_directed_edges": 95966,
+      "graph_cross_field_edges": 0,
+      "methods": {
+        "expression-only": {
+          "status": "complete",
+          "seeds": [
+            1,
+            2,
+            3
+          ],
+          "raw_per_seed": [
+            0.05364401899015767,
+            0.05324883218211977,
+            0.051496197229371814
+          ],
+          "raw_mean": 0.05279634946721642,
+          "raw_sd": 0.0011431710434099728,
+          "diagnostic_only_refined_control_ari_mean": 0.052760721284879325,
+          "delta_ari_vs_expression": 0.0
+        },
+        "neighbor-mean": {
+          "status": "complete",
+          "seeds": [
+            1,
+            2,
+            3
+          ],
+          "raw_per_seed": [
+            0.05050691162151922,
+            0.04846571233144901,
+            0.04961959665947079
+          ],
+          "raw_mean": 0.049530740204146335,
+          "raw_sd": 0.0010234965743398479,
+          "refined_ari_mean": 0.053970202906124976,
+          "diagnostic_only_pooled_coordinate_ari_mean": -0.00012133076790280462,
+          "delta_ari_vs_expression": -0.0032656092630700823
+        },
+        "BANKSY-style": {
+          "status": "complete",
+          "seeds": [
+            1,
+            2,
+            3
+          ],
+          "raw_per_seed": [
+            0.0551550839760337,
+            0.05416556590449681,
+            0.056626775175764706
+          ],
+          "raw_mean": 0.0553158083520984,
+          "raw_sd": 0.0012384514576840723,
+          "refined_ari_mean": 0.05865580889669202,
+          "delta_ari_vs_expression": 0.0025194588848819824
+        },
+        "SpatialLeiden": {
+          "status": "complete",
+          "seeds": [
+            1,
+            2,
+            3
+          ],
+          "raw_per_seed": [
+            0.08152976423452518,
+            0.08556843124833118,
+            0.09420865410110739
+          ],
+          "raw_mean": 0.08710228319465459,
+          "raw_sd": 0.006477120379239552,
+          "refined_ari_mean": 0.0841525549692888,
+          "delta_ari_vs_expression": 0.03430593372743817
+        },
+        "Tessera": {
+          "status": "complete",
+          "seeds": [
+            1,
+            2,
+            3
+          ],
+          "raw_per_seed": [
+            0.05846496258400211,
+            0.05351568354905705,
+            0.05758374233177079
+          ],
+          "raw_mean": 0.05652146282160999,
+          "raw_sd": 0.0026401077742617424,
+          "refined_ari_mean": 0.05381225554289107,
+          "delta_ari_vs_expression": 0.003725113354393572
+        },
+        "STAGATE": {
+          "status": "complete",
+          "seeds": [
+            1,
+            2,
+            3
+          ],
+          "raw_per_seed": [
+            0.05703372229126066,
+            0.062014453297039904,
+            0.061130734793833984
+          ],
+          "raw_mean": 0.06005963679404485,
+          "raw_sd": 0.0026575098366416034,
+          "refined_ari_mean": 0.05992361593703329,
+          "delta_ari_vs_expression": 0.007263287326828433
+        },
+        "SEDR": {
+          "status": "complete",
+          "seeds": [
+            1,
+            2,
+            3
+          ],
+          "raw_per_seed": [
+            0.05426555074587313,
+            0.0506733011750987,
+            0.05409567300288062
+          ],
+          "raw_mean": 0.053011508307950816,
+          "raw_sd": 0.0020267274259212656,
+          "refined_ari_mean": 0.05450198351620153,
+          "delta_ari_vs_expression": 0.00021515884073439878
+        }
+      }
+    },
+    {
+      "dataset": "Zhuang",
+      "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/niche_abc_zhuang1_brain_slice/anndata.h5ad",
+      "source_sha256": "c055b6751a2225fab55f0dc669095d5b7d22cec53174624d4c92815a884de59a",
+      "n_total": 22072,
+      "n_cells": 16000,
+      "n_labelled": 16000,
+      "n_classes": 17,
+      "n_features": 1122,
+      "n_fields": 1,
+      "label_key": "domain",
+      "field_key": "section_id",
+      "annotation": "atlas anatomy",
+      "count_normalization_applied": true,
+      "classes": {
+        "CTXsp": 0,
+        "HPF": 1,
+        "HY": 2,
+        "Isocortex": 3,
+        "OLF": 4,
+        "PAL": 5,
+        "STR": 6,
+        "TH": 7,
+        "V3": 8,
+        "VL": 9,
+        "cm": 10,
+        "eps": 11,
+        "fiber tracts-unassigned": 12,
+        "lfbs": 13,
+        "mfbs": 14,
+        "scwm": 15,
+        "unassigned": 16
+      },
+      "selection": "all rows or RandomState(0) 16000 without replacement, sorted; before label filtering",
+      "selected_index_sha256": "1f9e7609cb12b128be5feb87d7ef3390d290dcde624d48531f3103d8fef61499",
+      "contiguity_cell_weighted": 0.9453645833333333,
+      "contiguity_edge_weighted": 0.9453645833333333,
+      "within_field_permutation_expectation": 0.16249155415963498,
+      "chance_adjusted": 0.9347643394666367,
+      "labelled_directed_edges": 96000,
+      "labelled_cross_field_edges": 0,
+      "labelled_singletons_excluded": 0,
+      "pooled_contiguity": 0.9453645833333333,
+      "pooled_cross_field_edges": 0,
+      "pooled_directed_edges": 96000,
+      "graph_directed_edges": 96000,
+      "graph_cross_field_edges": 0,
+      "methods": {
+        "expression-only": {
+          "status": "complete",
+          "seeds": [
+            1,
+            2,
+            3
+          ],
+          "raw_per_seed": [
+            0.07761533633779102,
+            0.09743303069708899,
+            0.07493306478020761
+          ],
+          "raw_mean": 0.08332714393836255,
+          "raw_sd": 0.012289453857461111,
+          "diagnostic_only_refined_control_ari_mean": 0.17419272463299942,
+          "delta_ari_vs_expression": 0.0
+        },
+        "neighbor-mean": {
+          "status": "complete",
+          "seeds": [
+            1,
+            2,
+            3
+          ],
+          "raw_per_seed": [
+            0.2572020304514514,
+            0.2536268521820296,
+            0.2528188689578615
+          ],
+          "raw_mean": 0.25454925053044747,
+          "raw_sd": 0.0023326251744751805,
+          "refined_ari_mean": 0.2752077502512883,
+          "delta_ari_vs_expression": 0.17122210659208492
+        },
+        "BANKSY-style": {
+          "status": "complete",
+          "seeds": [
+            1,
+            2,
+            3
+          ],
+          "raw_per_seed": [
+            0.21717629894443669,
+            0.22148753677400523,
+            0.21332247777584953
+          ],
+          "raw_mean": 0.21732877116476382,
+          "raw_sd": 0.004084664361281041,
+          "refined_ari_mean": 0.251786695502699,
+          "delta_ari_vs_expression": 0.13400162722640127
+        },
+        "SpatialLeiden": {
+          "status": "complete",
+          "seeds": [
+            1,
+            2,
+            3
+          ],
+          "raw_per_seed": [
+            0.14528909176430707,
+            0.15700025341777446,
+            0.14087214193446895
+          ],
+          "raw_mean": 0.14772049570551682,
+          "raw_sd": 0.008334433924897388,
+          "refined_ari_mean": 0.2656917616642206,
+          "delta_ari_vs_expression": 0.06439335176715427
+        },
+        "Tessera": {
+          "status": "complete",
+          "seeds": [
+            1,
+            2,
+            3
+          ],
+          "raw_per_seed": [
+            0.16311403095582194,
+            0.21512323808924608,
+            0.18277598715585985
+          ],
+          "raw_mean": 0.18700441873364262,
+          "raw_sd": 0.02626117156312427,
+          "refined_ari_mean": 0.26016066966416757,
+          "delta_ari_vs_expression": 0.10367727479528008
+        },
+        "STAGATE": {
+          "status": "complete",
+          "seeds": [
+            1,
+            2,
+            3
+          ],
+          "raw_per_seed": [
+            0.1926770281420556,
+            0.1964245366631482,
+            0.186031848048263
+          ],
+          "raw_mean": 0.1917111376178223,
+          "raw_sd": 0.005263240688026147,
+          "refined_ari_mean": 0.2195520759075834,
+          "delta_ari_vs_expression": 0.10838399367945975
+        },
+        "SEDR": {
+          "status": "complete",
+          "seeds": [
+            1,
+            2,
+            3
+          ],
+          "raw_per_seed": [
+            0.16278630005563002,
+            0.1732791497676963,
+            0.1346556923486284
+          ],
+          "raw_mean": 0.15690704739065156,
+          "raw_sd": 0.01997165678341759,
+          "refined_ari_mean": 0.20429598690489711,
+          "delta_ari_vs_expression": 0.07357990345228901
+        }
+      }
+    }
+  ],
+  "correlations": {
+    "neighbor-mean": {
+      "n": 7,
+      "rho": 0.7857142857142859,
+      "p_uncorrected_descriptive": 0.03623846267982713,
+      "chance_adjusted_rho": 0.7857142857142859,
+      "partial_class_count_feature_dim": 0.7946326588602322,
+      "permutation_order_max_abs_difference": 4.440892098500626e-16,
+      "scope": "descriptive seven-object convenience panel; seeds not independent tissues; no confounding exclusion"
+    },
+    "BANKSY-style": {
+      "n": 7,
+      "rho": 0.7857142857142859,
+      "p_uncorrected_descriptive": 0.03623846267982713,
+      "chance_adjusted_rho": 0.7857142857142859,
+      "partial_class_count_feature_dim": 0.7946326588602322,
+      "permutation_order_max_abs_difference": 4.440892098500626e-16,
+      "scope": "descriptive seven-object convenience panel; seeds not independent tissues; no confounding exclusion"
+    },
+    "SpatialLeiden": {
+      "n": 7,
+      "rho": 0.21428571428571433,
+      "p_uncorrected_descriptive": 0.6445115810207203,
+      "chance_adjusted_rho": 0.21428571428571433,
+      "partial_class_count_feature_dim": 0.12176883576291986,
+      "permutation_order_max_abs_difference": 2.498001805406602e-16,
+      "scope": "descriptive seven-object convenience panel; seeds not independent tissues; no confounding exclusion"
+    },
+    "Tessera": {
+      "n": 7,
+      "rho": 0.6071428571428572,
+      "p_uncorrected_descriptive": 0.1482311614811614,
+      "chance_adjusted_rho": 0.6071428571428572,
+      "partial_class_count_feature_dim": 0.7658844647034916,
+      "permutation_order_max_abs_difference": 3.3306690738754696e-16,
+      "scope": "descriptive seven-object convenience panel; seeds not independent tissues; no confounding exclusion"
+    },
+    "STAGATE": {
+      "n": 7,
+      "rho": 0.7857142857142859,
+      "p_uncorrected_descriptive": 0.03623846267982713,
+      "chance_adjusted_rho": 0.7857142857142859,
+      "partial_class_count_feature_dim": 0.7946326588602322,
+      "permutation_order_max_abs_difference": 4.440892098500626e-16,
+      "scope": "descriptive seven-object convenience panel; seeds not independent tissues; no confounding exclusion"
+    },
+    "SEDR": {
+      "n": 7,
+      "rho": 0.5714285714285715,
+      "p_uncorrected_descriptive": 0.1802019889115274,
+      "chance_adjusted_rho": 0.5714285714285715,
+      "partial_class_count_feature_dim": 0.5831441299587217,
+      "permutation_order_max_abs_difference": 2.220446049250313e-16,
+      "scope": "descriptive seven-object convenience panel; seeds not independent tissues; no confounding exclusion"
+    }
+  },
+  "status": "new field-identified audit panel; historical n11/n12/n14 and unadapted methods remain HOLD",
+  "note": "Fixed named contrasts are primary. No oracle maximum used to select a method. Three seeds give SD, not tissue-level uncertainty."
+}

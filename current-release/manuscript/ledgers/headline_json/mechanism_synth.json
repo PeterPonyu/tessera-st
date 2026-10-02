@@ -1,0 +1,101 @@
+{
+  "rows": [
+    {
+      "scramble": 0.0,
+      "contiguity": 0.901,
+      "nonspatial_ari": 0.345,
+      "smooth_ari": 0.825,
+      "stagate_ari": 0.887,
+      "adv_smooth": 0.48,
+      "adv_stagate": 0.542
+    },
+    {
+      "scramble": 0.1,
+      "contiguity": 0.764,
+      "nonspatial_ari": 0.345,
+      "smooth_ari": 0.64,
+      "stagate_ari": 0.7,
+      "adv_smooth": 0.295,
+      "adv_stagate": 0.355
+    },
+    {
+      "scramble": 0.2,
+      "contiguity": 0.649,
+      "nonspatial_ari": 0.345,
+      "smooth_ari": 0.434,
+      "stagate_ari": 0.505,
+      "adv_smooth": 0.089,
+      "adv_stagate": 0.16
+    },
+    {
+      "scramble": 0.35,
+      "contiguity": 0.487,
+      "nonspatial_ari": 0.345,
+      "smooth_ari": 0.213,
+      "stagate_ari": 0.26,
+      "adv_smooth": -0.132,
+      "adv_stagate": -0.085
+    },
+    {
+      "scramble": 0.5,
+      "contiguity": 0.363,
+      "nonspatial_ari": 0.345,
+      "smooth_ari": 0.083,
+      "stagate_ari": 0.141,
+      "adv_smooth": -0.262,
+      "adv_stagate": -0.204
+    },
+    {
+      "scramble": 0.7,
+      "contiguity": 0.255,
+      "nonspatial_ari": 0.345,
+      "smooth_ari": 0.014,
+      "stagate_ari": 0.042,
+      "adv_smooth": -0.331,
+      "adv_stagate": -0.303
+    },
+    {
+      "scramble": 0.9,
+      "contiguity": 0.197,
+      "nonspatial_ari": 0.345,
+      "smooth_ari": 0.001,
+      "stagate_ari": 0.021,
+      "adv_smooth": -0.344,
+      "adv_stagate": -0.324
+    },
+    {
+      "scramble": 1.0,
+      "contiguity": 0.181,
+      "nonspatial_ari": 0.345,
+      "smooth_ari": 0.002,
+      "stagate_ari": 0.016,
+      "adv_smooth": -0.343,
+      "adv_stagate": -0.329
+    }
+  ],
+  "scramble_levels": [
+    0.0,
+    0.1,
+    0.2,
+    0.35,
+    0.5,
+    0.7,
+    0.9,
+    1.0
+  ],
+  "seeds": [
+    1,
+    2,
+    3
+  ],
+  "spearman_contig_vs_adv_smooth": 0.976,
+  "p_contig_vs_adv_smooth": 0.0,
+  "spearman_contig_vs_adv_stagate": 1.0,
+  "p_contig_vs_adv_stagate": 0.0,
+  "nonspatial_ari_range": 0.0,
+  "adv_smooth_min": -0.344,
+  "adv_smooth_max": 0.48,
+  "adv_stagate_min": -0.329,
+  "adv_stagate_max": 0.542,
+  "conclusion": "In a controlled sweep where ONLY spatial contiguity is manipulated (expression signal held fixed, verified by ~flat non-spatial ARI), spatial-prior advantage rises with contiguity and flips from negative to positive \u2014 causal evidence that GT contiguity drives the value of spatial priors, upgrading the cross-platform correlation (\u00a76\u2013\u00a77) to a manipulated cause."
+}

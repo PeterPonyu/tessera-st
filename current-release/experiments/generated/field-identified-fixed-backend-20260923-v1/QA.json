@@ -1,0 +1,64 @@
+{
+  "status": "raw-source identity, spatial metrics and prediction rescore passed",
+  "scientific_ready": false,
+  "protocol_sha256": "ed165f146b42da3ff09019246cbb8107ba279f5f29412df8cf9a3dde0c95a5f9",
+  "datasets": {
+    "DLPFC": {
+      "n_cells": 3639,
+      "n_fields": 1,
+      "zero_cross_field_edges": true,
+      "completed_method_seeds_rescored": 21,
+      "contiguity_raw_source_reproduced": true
+    },
+    "MERFISH": {
+      "n_cells": 5488,
+      "n_fields": 1,
+      "zero_cross_field_edges": true,
+      "completed_method_seeds_rescored": 21,
+      "contiguity_raw_source_reproduced": true
+    },
+    "STARmap": {
+      "n_cells": 1207,
+      "n_fields": 1,
+      "zero_cross_field_edges": true,
+      "completed_method_seeds_rescored": 21,
+      "contiguity_raw_source_reproduced": true
+    },
+    "MIBI": {
+      "n_cells": 3309,
+      "n_fields": 3,
+      "zero_cross_field_edges": true,
+      "completed_method_seeds_rescored": 21,
+      "contiguity_raw_source_reproduced": true
+    },
+    "Open-ST": {
+      "n_cells": 15000,
+      "n_fields": 1,
+      "zero_cross_field_edges": true,
+      "completed_method_seeds_rescored": 21,
+      "contiguity_raw_source_reproduced": true
+    },
+    "CODEX": {
+      "n_cells": 16000,
+      "n_fields": 565,
+      "zero_cross_field_edges": true,
+      "completed_method_seeds_rescored": 21,
+      "contiguity_raw_source_reproduced": true
+    },
+    "Zhuang": {
+      "n_cells": 16000,
+      "n_fields": 1,
+      "zero_cross_field_edges": true,
+      "completed_method_seeds_rescored": 21,
+      "contiguity_raw_source_reproduced": true
+    }
+  },
+  "completed_method_seeds": 147,
+  "expected_method_seeds": 147,
+  "failed_runs": [],
+  "unavailable_methods": [
+    "SpaceFlow",
+    "GraphST",
+    "SpaGCN"
+  ]
+}

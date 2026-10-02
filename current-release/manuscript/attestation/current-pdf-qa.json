@@ -1,0 +1,430 @@
+{
+  "scope": "Machine text/bounds/log checks and rasterisation; not visual QA",
+  "status": "passed",
+  "scientific_ready_attested": false,
+  "visual_review_attested": false,
+  "visual_review": "NOT_PERFORMED",
+  "visual_review_blocker": "Machine checks do not perform visual review; inspect the separately bound page-review record.",
+  "paper": {
+    "path": "paper.pdf",
+    "sha256": "5598116ab0d965ff2eb400e3df8ac6fed388db1b2b6d233ce5ec2ef8277f09d4",
+    "pages": [
+      {
+        "page": 1,
+        "words": 436,
+        "width_pt": 612.0,
+        "height_pt": 792.0,
+        "outside_page_words": 0,
+        "replacement_glyphs": 0,
+        "unresolved_placeholders": 0,
+        "minimum_text_size_pt": 7.27269983291626
+      },
+      {
+        "page": 2,
+        "words": 615,
+        "width_pt": 612.0,
+        "height_pt": 792.0,
+        "outside_page_words": 0,
+        "replacement_glyphs": 0,
+        "unresolved_placeholders": 0,
+        "minimum_text_size_pt": 10.799457550048828
+      },
+      {
+        "page": 3,
+        "words": 449,
+        "width_pt": 612.0,
+        "height_pt": 792.0,
+        "outside_page_words": 0,
+        "replacement_glyphs": 0,
+        "unresolved_placeholders": 0,
+        "minimum_text_size_pt": 9.862470626831055
+      },
+      {
+        "page": 4,
+        "words": 645,
+        "width_pt": 612.0,
+        "height_pt": 792.0,
+        "outside_page_words": 0,
+        "replacement_glyphs": 0,
+        "unresolved_placeholders": 0,
+        "minimum_text_size_pt": 7.970099925994873
+      },
+      {
+        "page": 5,
+        "words": 508,
+        "width_pt": 612.0,
+        "height_pt": 792.0,
+        "outside_page_words": 0,
+        "replacement_glyphs": 0,
+        "unresolved_placeholders": 0,
+        "minimum_text_size_pt": 6.077199935913086
+      },
+      {
+        "page": 6,
+        "words": 377,
+        "width_pt": 612.0,
+        "height_pt": 792.0,
+        "outside_page_words": 0,
+        "replacement_glyphs": 0,
+        "unresolved_placeholders": 0,
+        "minimum_text_size_pt": 7.27269983291626
+      },
+      {
+        "page": 7,
+        "words": 459,
+        "width_pt": 612.0,
+        "height_pt": 792.0,
+        "outside_page_words": 0,
+        "replacement_glyphs": 0,
+        "unresolved_placeholders": 0,
+        "minimum_text_size_pt": 7.600228309631348
+      },
+      {
+        "page": 8,
+        "words": 505,
+        "width_pt": 612.0,
+        "height_pt": 792.0,
+        "outside_page_words": 0,
+        "replacement_glyphs": 0,
+        "unresolved_placeholders": 0,
+        "minimum_text_size_pt": 7.600228309631348
+      },
+      {
+        "page": 9,
+        "words": 235,
+        "width_pt": 612.0,
+        "height_pt": 792.0,
+        "outside_page_words": 0,
+        "replacement_glyphs": 0,
+        "unresolved_placeholders": 0,
+        "minimum_text_size_pt": 7.600228309631348
+      },
+      {
+        "page": 10,
+        "words": 494,
+        "width_pt": 612.0,
+        "height_pt": 792.0,
+        "outside_page_words": 0,
+        "replacement_glyphs": 0,
+        "unresolved_placeholders": 0,
+        "minimum_text_size_pt": 7.600228309631348
+      },
+      {
+        "page": 11,
+        "words": 108,
+        "width_pt": 612.0,
+        "height_pt": 792.0,
+        "outside_page_words": 0,
+        "replacement_glyphs": 0,
+        "unresolved_placeholders": 0,
+        "minimum_text_size_pt": 10.799457550048828
+      },
+      {
+        "page": 12,
+        "words": 443,
+        "width_pt": 612.0,
+        "height_pt": 792.0,
+        "outside_page_words": 0,
+        "replacement_glyphs": 0,
+        "unresolved_placeholders": 0,
+        "minimum_text_size_pt": 7.76745080947876
+      },
+      {
+        "page": 13,
+        "words": 620,
+        "width_pt": 612.0,
+        "height_pt": 792.0,
+        "outside_page_words": 0,
+        "replacement_glyphs": 0,
+        "unresolved_placeholders": 0,
+        "minimum_text_size_pt": 10.799457550048828
+      },
+      {
+        "page": 14,
+        "words": 373,
+        "width_pt": 612.0,
+        "height_pt": 792.0,
+        "outside_page_words": 0,
+        "replacement_glyphs": 0,
+        "unresolved_placeholders": 0,
+        "minimum_text_size_pt": 10.799457550048828
+      },
+      {
+        "page": 15,
+        "words": 572,
+        "width_pt": 612.0,
+        "height_pt": 792.0,
+        "outside_page_words": 0,
+        "replacement_glyphs": 0,
+        "unresolved_placeholders": 0,
+        "minimum_text_size_pt": 10.799457550048828
+      },
+      {
+        "page": 16,
+        "words": 195,
+        "width_pt": 612.0,
+        "height_pt": 792.0,
+        "outside_page_words": 0,
+        "replacement_glyphs": 0,
+        "unresolved_placeholders": 0,
+        "minimum_text_size_pt": 10.8214750289917
+      }
+    ],
+    "errors": [],
+    "metadata": {
+      "format": "PDF 1.5",
+      "title": "Auditing spatial-prior evaluation: coordinate frames, expression-only controls and specified interventions",
+      "author": "Zeyu Fu",
+      "subject": "Field-aware spatial benchmarking and intervention estimands",
+      "keywords": "",
+      "creator": "LaTeX with hyperref",
+      "producer": "pdfTeX-1.40.25",
+      "creationDate": "D:20261002040228-07'00'",
+      "modDate": "D:20261002040228-07'00'",
+      "trapped": "",
+      "encryption": null
+    }
+  },
+  "supporting_information": {
+    "path": "SI.pdf",
+    "sha256": "aed564eeb05ce41a1cd0fa5777c466da2d39a41e25c9045f9063b5ba372f0d83",
+    "pages": [
+      {
+        "page": 1,
+        "words": 316,
+        "width_pt": 612.0,
+        "height_pt": 792.0,
+        "outside_page_words": 0,
+        "replacement_glyphs": 0,
+        "unresolved_placeholders": 0,
+        "minimum_text_size_pt": 9.887598037719727
+      },
+      {
+        "page": 2,
+        "words": 443,
+        "width_pt": 612.0,
+        "height_pt": 792.0,
+        "outside_page_words": 0,
+        "replacement_glyphs": 0,
+        "unresolved_placeholders": 0,
+        "minimum_text_size_pt": 7.27269983291626
+      },
+      {
+        "page": 3,
+        "words": 333,
+        "width_pt": 612.0,
+        "height_pt": 792.0,
+        "outside_page_words": 0,
+        "replacement_glyphs": 0,
+        "unresolved_placeholders": 0,
+        "minimum_text_size_pt": 9.862470626831055
+      }
+    ],
+    "errors": [],
+    "metadata": {
+      "format": "PDF 1.5",
+      "title": "",
+      "author": "",
+      "subject": "",
+      "keywords": "",
+      "creator": "LaTeX with hyperref",
+      "producer": "pdfTeX-1.40.25",
+      "creationDate": "D:20261002040229-07'00'",
+      "modDate": "D:20261002040229-07'00'",
+      "trapped": "",
+      "encryption": null
+    }
+  },
+  "figures": [
+    {
+      "path": "figs/fig_field_comparison.pdf",
+      "sha256": "de21c37ab770538dc291b4899f879269764693b7d875ddcf6d72cd5fd247a747",
+      "pages": [
+        {
+          "page": 1,
+          "words": 37,
+          "width_pt": 515.52001953125,
+          "height_pt": 230.39999389648438,
+          "outside_page_words": 0,
+          "replacement_glyphs": 0,
+          "unresolved_placeholders": 0,
+          "minimum_text_size_pt": 7.599999904632568
+        }
+      ],
+      "errors": [],
+      "metadata": {
+        "format": "PDF 1.4",
+        "title": "",
+        "author": "",
+        "subject": "",
+        "keywords": "",
+        "creator": "Matplotlib v3.10.8, https://matplotlib.org",
+        "producer": "Matplotlib pdf backend v3.10.8",
+        "creationDate": "",
+        "modDate": "",
+        "trapped": "",
+        "encryption": null
+      }
+    },
+    {
+      "path": "figs/fig_field_controls.pdf",
+      "sha256": "221b7125649bb9ae6e1bcd37bc8f97ac5545f46364977b35cb434665030ba585",
+      "pages": [
+        {
+          "page": 1,
+          "words": 47,
+          "width_pt": 515.52001953125,
+          "height_pt": 208.8000030517578,
+          "outside_page_words": 0,
+          "replacement_glyphs": 0,
+          "unresolved_placeholders": 0,
+          "minimum_text_size_pt": 7.599999904632568
+        }
+      ],
+      "errors": [],
+      "metadata": {
+        "format": "PDF 1.4",
+        "title": "",
+        "author": "",
+        "subject": "",
+        "keywords": "",
+        "creator": "Matplotlib v3.10.8, https://matplotlib.org",
+        "producer": "Matplotlib pdf backend v3.10.8",
+        "creationDate": "",
+        "modDate": "",
+        "trapped": "",
+        "encryption": null
+      }
+    },
+    {
+      "path": "figs/fig_mechanism.pdf",
+      "sha256": "8c53adee2806a3da072f8183cefe002fb50e3a727b42ef91f22910555d858240",
+      "pages": [
+        {
+          "page": 1,
+          "words": 26,
+          "width_pt": 244.8000030517578,
+          "height_pt": 198.0,
+          "outside_page_words": 0,
+          "replacement_glyphs": 0,
+          "unresolved_placeholders": 0,
+          "minimum_text_size_pt": 7.800000190734863
+        }
+      ],
+      "errors": [],
+      "metadata": {
+        "format": "PDF 1.4",
+        "title": "",
+        "author": "",
+        "subject": "",
+        "keywords": "",
+        "creator": "Matplotlib v3.10.8, https://matplotlib.org",
+        "producer": "Matplotlib pdf backend v3.10.8",
+        "creationDate": "",
+        "modDate": "",
+        "trapped": "",
+        "encryption": null
+      }
+    },
+    {
+      "path": "figs/fig_mechanism_arch.pdf",
+      "sha256": "e610be988505470c73478057dbc33fdd9d3196d646a46601421b75af1622b153",
+      "pages": [
+        {
+          "page": 1,
+          "words": 90,
+          "width_pt": 400.67999267578125,
+          "height_pt": 207.4199981689453,
+          "outside_page_words": 0,
+          "replacement_glyphs": 0,
+          "unresolved_placeholders": 0,
+          "minimum_text_size_pt": 6.036300182342529
+        }
+      ],
+      "errors": [],
+      "metadata": {
+        "format": "PDF 1.5",
+        "title": "",
+        "author": "",
+        "subject": "",
+        "keywords": "",
+        "creator": " XeTeX output 1970.01.01:0000",
+        "producer": "xdvipdfmx (20220710)",
+        "creationDate": "D:19700101000000-00'00'",
+        "modDate": "",
+        "trapped": "",
+        "encryption": null
+      }
+    },
+    {
+      "path": "figs/fig_rank_audit.pdf",
+      "sha256": "02de13e7fcb661717ac058351fbfd496542a0bff7cf0d00306af1ff57a837c5f",
+      "pages": [
+        {
+          "page": 1,
+          "words": 28,
+          "width_pt": 515.52001953125,
+          "height_pt": 147.60000610351562,
+          "outside_page_words": 0,
+          "replacement_glyphs": 0,
+          "unresolved_placeholders": 0,
+          "minimum_text_size_pt": 7.599999904632568
+        }
+      ],
+      "errors": [],
+      "metadata": {
+        "format": "PDF 1.4",
+        "title": "",
+        "author": "",
+        "subject": "",
+        "keywords": "",
+        "creator": "Matplotlib v3.10.8, https://matplotlib.org",
+        "producer": "Matplotlib pdf backend v3.10.8",
+        "creationDate": "",
+        "modDate": "",
+        "trapped": "",
+        "encryption": null
+      }
+    },
+    {
+      "path": "figs/fig_spatialmap.pdf",
+      "sha256": "3d6d9d05f3e85766865531fded22b2bb4e643caa118a8627b8005948d6ec45eb",
+      "pages": [
+        {
+          "page": 1,
+          "words": 96,
+          "width_pt": 515.52001953125,
+          "height_pt": 329.760009765625,
+          "outside_page_words": 0,
+          "replacement_glyphs": 0,
+          "unresolved_placeholders": 0,
+          "minimum_text_size_pt": 7.599999904632568
+        }
+      ],
+      "errors": [],
+      "metadata": {
+        "format": "PDF 1.4",
+        "title": "",
+        "author": "",
+        "subject": "",
+        "keywords": "",
+        "creator": "Matplotlib v3.10.8, https://matplotlib.org",
+        "producer": "Matplotlib pdf backend v3.10.8",
+        "creationDate": "",
+        "modDate": "",
+        "trapped": "",
+        "encryption": null
+      }
+    }
+  ],
+  "latex_log_sha256": "b9c4b7f34c144f4620e010bf485db12cb46d5963d7fb961418b696832e4116ba",
+  "si_log_sha256": "b7fd8fb4651c53ff1fb6c23deff6bc7eadba8d8a61c1faa755c42026aa411f4b",
+  "font_embedding": {
+    "status": "passed",
+    "font_entries": 24,
+    "unembedded": []
+  },
+  "latex_problems": [],
+  "rendered_pages": 16,
+  "rendered_si_pages": 3
+}

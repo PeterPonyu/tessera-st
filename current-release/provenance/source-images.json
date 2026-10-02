@@ -1,0 +1,106 @@
+{
+  "scope": "Physical source tissue views from existing h5ad objects. DLPFC uses the already saved single-section seed-1 maps. MIBI fields remain separate; no pooled-field predictions displayed.",
+  "environment": {
+    "numpy": "2.2.6",
+    "scipy": "1.16.3",
+    "scikit-learn": "1.8.0",
+    "anndata": "0.12.10",
+    "matplotlib": "3.10.8"
+  },
+  "cases": [
+    {
+      "dataset": "DLPFC",
+      "source_relative": "raw/dlpfc_maynard_2021_visium/dlpfc_maynard_2021_151673.h5ad",
+      "source_sha256": "46f364d590e34bfccdd90e1bc34ec485fac6e9e0cd4b6bdd395d80569a038268",
+      "label_column": "Region",
+      "n_original": 3639,
+      "n_plotted": 3639,
+      "n_labelled": 3611,
+      "K": 7,
+      "classes": [
+        "Layer1",
+        "Layer2",
+        "Layer3",
+        "Layer4",
+        "Layer5",
+        "Layer6",
+        "WM"
+      ],
+      "seed": 1,
+      "n_init": 10,
+      "n_pca": 30,
+      "n_neighbors": 6,
+      "benchmark_best_config": false,
+      "contiguity": 0.9048278408566417,
+      "nonspatial_ari": 0.19583143941944273,
+      "smoothed_ari": 0.25759327704282997,
+      "image": "DLPFC-histology.png",
+      "image_scale": 0.150015
+    },
+    {
+      "dataset": "MIBI-TOF",
+      "source_relative": "raw/squidpy/mibitof.h5ad",
+      "source_sha256": "3f125c51695d78ed1c36d5485dc390ab400154d021f0c7715b89f8ee83978690",
+      "label_column": "Cluster",
+      "n_original": 3309,
+      "n_plotted": 3309,
+      "n_labelled": 3309,
+      "K": 8,
+      "classes": [
+        "Endothelial",
+        "Epithelial",
+        "Fibroblast",
+        "Imm_other",
+        "Myeloid_CD11c",
+        "Myeloid_CD68",
+        "Tcell_CD4",
+        "Tcell_CD8"
+      ],
+      "benchmark_best_config": false,
+      "fields": [
+        {
+          "field": "point16",
+          "n_cells": 1023,
+          "coordinate_scale": 1,
+          "image": "MIBI-point16-source.png",
+          "table": "MIBI-point16.csv"
+        },
+        {
+          "field": "point23",
+          "n_cells": 1241,
+          "coordinate_scale": 1,
+          "image": "MIBI-point23-source.png",
+          "table": "MIBI-point23.csv"
+        },
+        {
+          "field": "point8",
+          "n_cells": 1045,
+          "coordinate_scale": 1,
+          "image": "MIBI-point8-source.png",
+          "table": "MIBI-point8.csv"
+        }
+      ],
+      "scope": "Reference annotations and supplied RGB composite only. Invalid pooled-coordinate prediction maps withdrawn; no refit or replacement benchmark score.",
+      "image_source_documentation": "https://squidpy.readthedocs.io/en/stable/notebooks/tutorials/tutorial_mibitof.html",
+      "image_channels": {
+        "cyan": "145_CD45",
+        "magenta": "174_CK",
+        "yellow": "113_vimentin"
+      },
+      "biological_source": "Three colorectal carcinoma biopsies from different donors; Hartmann et al., doi:10.1038/s41587-020-0651-8"
+    }
+  ],
+  "assets": {
+    "MIBI-point8-source.png": "a860ba759c61bd00cc4c41a756e35a0117e97c9fc9f819561290487295c427ee",
+    "MIBI-point8-segmentation.png": "0b8d8eff35b475a513349b82ae914dddb012152aea224c68742f57ab49b8bd0b",
+    "DLPFC.csv": "c7f4742d119fc2cfd6fdc69c0b33d98870749c442723fd76d0b141022b833137",
+    "MIBI-point23-source.png": "cfc6a6ab16fda9362bc7d744520c0cf6eba90a7900b4fd9f5a49207db6240ba3",
+    "MIBI-point16-source.png": "e400bb3ebc4b16c72c4d36d183ec11aec492c43ce1f7bf83f77e5127e5392c9b",
+    "MIBI-point8.csv": "a7bf5ecbfca0c0adc219bc372eebc60ffa56098e09c469fbd9494657db46b998",
+    "MIBI-point16.csv": "177682b23e6d7f0952786668ba143fc29b152941a9d354e7bc59f64052443373",
+    "MIBI-point23-segmentation.png": "01b665d554dd859e9fda51e243405e81ba1cc40345ab7f8c110fd4ece338a6ed",
+    "MIBI-point23.csv": "25bf651d0c796b38102c2dd8a6379bda285b8e4072dd7c1e4a627da83dbdf3cb",
+    "MIBI-point16-segmentation.png": "0d473d158a512c8250aa4be5f12dcc4d0540c99fae974843607acb92b7e3aab5",
+    "DLPFC-histology.png": "f24c542fa2c99feea5a52d59a9116eb59e15ea7439451581b37ed36a6697593f"
+  }
+}

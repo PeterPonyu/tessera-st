@@ -1,0 +1,18 @@
+{
+  "protocol_id": "field-identified-fixed-backend-20260923-v1",
+  "dataset": "CODEX",
+  "method": "BANKSY-style",
+  "seed": 3,
+  "source_sha256": "cab5de36581c645743adc1485ec22701cc9f68e1d61c314becf92e7b7292c441",
+  "protocol_sha256": "ed165f146b42da3ff09019246cbb8107ba279f5f29412df8cf9a3dde0c95a5f9",
+  "n_cells": 16000,
+  "n_classes": 100,
+  "device": "cuda",
+  "status": "complete",
+  "raw_ari": 0.056626775175764706,
+  "fitted_n_clusters": 100,
+  "spatial_refinement": true,
+  "refined_ari": 0.06645432462565642,
+  "predictions_sha256": "ca5d56a1902c4ebbdc78fdab8a2c4f6d4af9a4092a0b5dd189fe5d6b7ef3a649",
+  "seconds": 1.2319398770014232
+}

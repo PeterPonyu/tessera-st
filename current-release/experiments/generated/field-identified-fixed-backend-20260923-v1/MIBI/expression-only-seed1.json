@@ -1,0 +1,18 @@
+{
+  "protocol_id": "field-identified-fixed-backend-20260923-v1",
+  "dataset": "MIBI",
+  "method": "expression-only",
+  "seed": 1,
+  "source_sha256": "3f125c51695d78ed1c36d5485dc390ab400154d021f0c7715b89f8ee83978690",
+  "protocol_sha256": "ed165f146b42da3ff09019246cbb8107ba279f5f29412df8cf9a3dde0c95a5f9",
+  "n_cells": 3309,
+  "n_classes": 8,
+  "device": "cuda",
+  "status": "complete",
+  "raw_ari": 0.21043932712393176,
+  "fitted_n_clusters": 8,
+  "spatial_refinement": false,
+  "diagnostic_only_refined_control_ari": 0.16986994680935502,
+  "predictions_sha256": "31f40bb9db24ade12ff06cacfedda5eb95029e287a91d12cc688d3ecd0166477",
+  "seconds": 0.049464037001598626
+}

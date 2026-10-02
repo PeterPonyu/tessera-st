@@ -1,0 +1,32 @@
+{
+  "protocol_id": "field-identified-fixed-backend-20260923-v1",
+  "renderer_sha256": "a456763a4917cc2e2a41c1a06a32b4b272a0ec94012108152e2dd610d4290a56",
+  "input_sha256": {
+    "summary.json": "bcd5fb11e888cb09a4c9b9a20ff36b1d6d35b5dbd04f34003863539442aab3de",
+    "QA.json": "2b067659eb171cf2df2d6d52b7530afaecd8f28ac68a4c07a2593a15260b82c1",
+    "protocol.json": "ed165f146b42da3ff09019246cbb8107ba279f5f29412df8cf9a3dde0c95a5f9",
+    "estimand-audit.json": "6bd5f56a910624a23de699ab9a6cdf7c50d8bc68943a105209dd61b9dccf79e0"
+  },
+  "figures": [
+    "fig_field_comparison",
+    "fig_field_controls",
+    "fig_rank_audit"
+  ],
+  "historical_panels_not_replaced": [
+    "n11",
+    "n12",
+    "n14",
+    "native backend",
+    "proxy search",
+    "ablation"
+  ],
+  "generated_sha256": {
+    "ledgers/revision_20260923/field_results.tex": "d44abd644edeb4a49eeb05f06ff4940528fe9d0828be101aca5d001b0eeb27e3",
+    "figs/fig_field_comparison.pdf": "de21c37ab770538dc291b4899f879269764693b7d875ddcf6d72cd5fd247a747",
+    "figs/fig_field_comparison.png": "eeb6c0bc619e4efda6cdd235b447c9d96dba945e0564c195607bc11fe36e28b5",
+    "figs/fig_field_controls.pdf": "221b7125649bb9ae6e1bcd37bc8f97ac5545f46364977b35cb434665030ba585",
+    "figs/fig_field_controls.png": "e6ed26940c29c28eed83ff386e6e5402a0b4ca6f5d94bf1ca53ea60e33253e45",
+    "figs/fig_rank_audit.pdf": "02de13e7fcb661717ac058351fbfd496542a0bff7cf0d00306af1ff57a837c5f",
+    "figs/fig_rank_audit.png": "a1cba79c2df8ff24c9f2a7c336834415690cb7099a43b50689f5d9b4b4b4e3b9"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "role": "new science-hardening tokens printed on official face 2026-09-18; not leftover 961d6662",
+  "invented": false,
+  "source": "manuscript/ledgers/science_core_20260918/science_core_20260918.json",
+  "source_sha256": "e8416c8e63dfa7e0e13222e3a35235cbdecaea52eb4b11b52b923676f766d2e0",
+  "versions": {"python": "3.13.5", "numpy": "2.2.6", "scipy": "1.16.3", "sklearn": "1.8.0", "seed_master": 20260918},
+  "synthetic": {
+    "runs_added": 1000,
+    "original_evaluations": 24,
+    "new_paper_seed_evaluations": 360,
+    "extra_config_evaluations": 640,
+    "n_paper_seeds": 48,
+    "n_extra_tissues": 80,
+    "pooled_rho_paper": 0.92,
+    "pooled_ci95": [0.89, 0.94],
+    "delta_ari": 0.822,
+    "delta_ci95": [0.817, 0.827],
+    "per_seed_rho_mean": 0.992,
+    "per_seed_rho_ci95": [0.989, 0.995],
+    "all_configs_pooled_rho": 0.80,
+    "all_configs_pooled_ci95": [0.77, 0.83]
+  },
+  "power": {
+    "rho": 0.72,
+    "n80_uncorrected_mc": 14,
+    "n80_family7_mc": 21,
+    "n80_proxy_uncorrected_mc": 26,
+    "n80_lodo_binomial": 21
+  },
+  "loo": [
+    {"dropped": "MERFISH", "rho": 0.63},
+    {"dropped": "STARmap", "rho": 0.67},
+    {"dropped": "IMC", "rho": 0.69},
+    {"dropped": "DLPFC", "rho": 0.71},
+    {"dropped": "BRCA", "rho": 0.71},
+    {"dropped": "osmFISH", "rho": 0.73},
+    {"dropped": "seqFISH", "rho": 0.75},
+    {"dropped": "openST", "rho": 0.75},
+    {"dropped": "MIBI-TOF", "rho": 0.75},
+    {"dropped": "SlideseqV2", "rho": 0.75},
+    {"dropped": "CODEX", "rho": 0.75}
+  ]
+}

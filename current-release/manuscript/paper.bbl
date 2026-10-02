@@ -1,0 +1,241 @@
+\begin{thebibliography}{34}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[{10x Genomics}(2020)]{tenx2020brca}
+{10x Genomics}.
+\newblock Human breast cancer (block a section 1): Visium spatial gene
+  expression (space ranger 1.0.0).
+\newblock
+  \url{https://www.10xgenomics.com/datasets/human-breast-cancer-block-a-section-1-1-standard-1-0-0},
+  2020.
+\newblock Visium demonstration dataset, CC BY 4.0; sample
+  V1\_Breast\_Cancer\_Block\_A\_Section\_1. Per-spot pathology-domain labels
+  from Xu et al. 2024 (SEDR), redistributed at github.com/JinmiaoChenLab/SEDR.
+
+\bibitem[Cao et~al.(2025)Cao, Liu, Xia, Chen, Wang, Yang, Fang, Luo, Zeng, Yu,
+  Zhang, and Cui]{cao2025spatialesd}
+Hongyan Cao, Gaiqin Liu, Jingyi Xia, Runle Chen, Tong Wang, Xiaoling Yang,
+  Ruiling Fang, Yanhong Luo, Ping Zeng, Hongmei Yu, Yanbo Zhang, and Yuehua
+  Cui.
+\newblock Spatialesd: spatial ensemble domain detection in spatial
+  transcriptomics.
+\newblock \emph{Advanced Science}, 2025.
+
+\bibitem[Chen et~al.(2025)Chen, Yao, Qian, Peng, Shao, and Fan]{chen2025imeta}
+R~Chen, Y~Yao, J~Qian, X~Peng, X~Shao, and X~Fan.
+\newblock A comprehensive benchmarking for spatially resolved transcriptomics
+  clustering methods across variable technologies, organs, and replicates.
+\newblock \emph{iMeta}, 4\penalty0 (6):\penalty0 e70084, 2025.
+
+\bibitem[Codeluppi et~al.(2018)Codeluppi, Borm, Zeisel,
+  et~al.]{codeluppi2018osmfish}
+Simone Codeluppi, Lars~E Borm, Amit Zeisel, et~al.
+\newblock Spatial organization of the somatosensory cortex revealed by osmfish.
+\newblock \emph{Nature Methods}, 15\penalty0 (11):\penalty0 932--935, 2018.
+
+\bibitem[Descoeudres et~al.(2026)Descoeudres, Prusina, Schmidt, Do, Mages,
+  Klughammer, Matijevic, and Canzar]{canzar2026biorxiv}
+Alice Descoeudres, Tomislav Prusina, Noah Schmidt, Van~Hoan Do, Simon Mages,
+  Johanna Klughammer, Domagoj Matijevic, and Stefan Canzar.
+\newblock An explanatory benchmark of spatial domain detection reveals key
+  drivers of method performance.
+\newblock \emph{bioRxiv preprint}, 2026.
+
+\bibitem[Dong and Zhang(2022)]{dong2022stagate}
+Kangning Dong and Shihua Zhang.
+\newblock Deciphering spatial domains from spatially resolved transcriptomics
+  with an adaptive graph attention auto-encoder.
+\newblock \emph{Nature Communications}, 13\penalty0 (1):\penalty0 1739, 2022.
+
+\bibitem[Goltsev et~al.(2018)Goltsev, Samusik, Kennedy-Darling,
+  et~al.]{goltsev2018codex}
+Yury Goltsev, Nikolay Samusik, Julia Kennedy-Darling, et~al.
+\newblock Deep profiling of mouse splenic architecture with codex multiplexed
+  imaging.
+\newblock \emph{Cell}, 174\penalty0 (4):\penalty0 968--981, 2018.
+
+\bibitem[Hartmann et~al.(2021)Hartmann, Mrdjen, McCaffrey,
+  et~al.]{hartmann2021scmep}
+Felix~J Hartmann, Dunja Mrdjen, Erin McCaffrey, et~al.
+\newblock Single-cell metabolic profiling of human cytotoxic t cells.
+\newblock \emph{Nature Biotechnology}, 39:\penalty0 186--197, 2021.
+\newblock \doi{10.1038/s41587-020-0651-8}.
+
+\bibitem[Hu et~al.(2021)Hu, Li, Coleman, et~al.]{hu2021spagcn}
+Jian Hu, Xiangjie Li, Kyle Coleman, et~al.
+\newblock Spagcn: Integrating gene expression, spatial location and histology
+  to identify spatial domains and spatially variable genes by graph
+  convolutional network.
+\newblock \emph{Nature Methods}, 18\penalty0 (11):\penalty0 1342--1351, 2021.
+
+\bibitem[Hubert and Arabie(1985)]{hubert1985ari}
+Lawrence Hubert and Phipps Arabie.
+\newblock Comparing partitions.
+\newblock \emph{Journal of Classification}, 2\penalty0 (1):\penalty0 193--218,
+  1985.
+
+\bibitem[Jackson et~al.(2020)Jackson, Fischer, Zanotelli,
+  et~al.]{jackson2020imc}
+Hartland~W Jackson, Jana~R Fischer, Vito~RT Zanotelli, et~al.
+\newblock The single-cell pathology landscape of breast cancer.
+\newblock \emph{Nature}, 578\penalty0 (7796):\penalty0 615--620, 2020.
+
+\bibitem[Kang et~al.(2025)Kang, Zhang, Qian, Liang, and Wu]{kang2025nar}
+L~Kang, Q~Zhang, F~Qian, J~Liang, and X~Wu.
+\newblock Benchmarking computational methods for detecting spatial domains and
+  domain-specific spatially variable genes from spatial transcriptomics data.
+\newblock \emph{Nucleic Acids Research}, 53\penalty0 (7):\penalty0 gkaf303,
+  2025.
+
+\bibitem[Lohoff et~al.(2022)Lohoff, Ghazanfar, Missarova,
+  et~al.]{lohoff2022seqfish}
+Tim Lohoff, Shila Ghazanfar, Alsu Missarova, et~al.
+\newblock Integration of spatial and single-cell transcriptomic data elucidates
+  mouse organogenesis.
+\newblock \emph{Nature Biotechnology}, 40\penalty0 (1):\penalty0 74--85, 2022.
+
+\bibitem[Long et~al.(2023)Long, Ang, Li, et~al.]{long2023graphst}
+Yahui Long, Kok~Siong Ang, Mengwei Li, et~al.
+\newblock Spatially informed clustering, integration, and deconvolution of
+  spatial transcriptomics with graphst.
+\newblock \emph{Nature Communications}, 14\penalty0 (1):\penalty0 1155, 2023.
+
+\bibitem[MacQueen(1967)]{macqueen1967kmeans}
+James MacQueen.
+\newblock Some methods for classification and analysis of multivariate
+  observations.
+\newblock \emph{Proc. 5th Berkeley Symposium on Math. Statistics and
+  Probability}, 1:\penalty0 281--297, 1967.
+
+\bibitem[Maynard et~al.(2021)Maynard, Collado-Torres, Weber,
+  et~al.]{maynard2021dlpfc}
+Kristen~R Maynard, Leonardo Collado-Torres, Lukas~M Weber, et~al.
+\newblock Transcriptome-scale spatial gene expression in the human dorsolateral
+  prefrontal cortex.
+\newblock \emph{Nature Neuroscience}, 24\penalty0 (3):\penalty0 425--436, 2021.
+
+\bibitem[Moffitt et~al.(2018)Moffitt, Bambah-Mukku, Eichhorn,
+  et~al.]{moffitt2018merfish}
+Jeffrey~R Moffitt, Dhananjay Bambah-Mukku, Stephen~W Eichhorn, et~al.
+\newblock Molecular, spatial, and functional single-cell profiling of the
+  hypothalamic preoptic region.
+\newblock \emph{Science}, 362\penalty0 (6416):\penalty0 eaau5324, 2018.
+
+\bibitem[Moran(1950)]{moran1950}
+Patrick~AP Moran.
+\newblock Notes on continuous stochastic phenomena.
+\newblock \emph{Biometrika}, 37\penalty0 (1/2):\penalty0 17--23, 1950.
+
+\bibitem[Oh et~al.(2025)Oh, Lee, Kim, Seo, Lee, and Park]{oh2025spotscape}
+Yunhak Oh, Junseok Lee, Yeongmin Kim, Sangwoo Seo, Namkyeong Lee, and Chanyoung
+  Park.
+\newblock Global context-aware representation learning for spatially resolved
+  transcriptomics.
+\newblock In \emph{Proceedings of the 42nd International Conference on Machine
+  Learning (ICML)}, PMLR, 2025.
+
+\bibitem[Palla et~al.(2022)Palla, Spitzer, Klein, et~al.]{palla2022squidpy}
+Giovanni Palla, Hannah Spitzer, Michal Klein, et~al.
+\newblock Squidpy: a scalable framework for spatial omics analysis.
+\newblock \emph{Nature Methods}, 19\penalty0 (2):\penalty0 171--178, 2022.
+
+\bibitem[Peng et~al.(2026)Peng, Li, Wu, Fan, and Guo]{peng2026dwgcn}
+C.~Peng, G.~Li, J.~Wu, Q.~Fan, and X.~Guo.
+\newblock Dwgcn: distance-weighted graph convolutional network for robust
+  spatial domain identification in spatial transcriptomics.
+\newblock \emph{Frontiers in Genetics}, 2026.
+
+\bibitem[Ren et~al.(2022)Ren, Walker, Cang, and Nie]{ren2022spaceflow}
+Honglei Ren, Benjamin~L Walker, Zixuan Cang, and Qing Nie.
+\newblock Identifying multicellular spatiotemporal organization of cells with
+  spaceflow.
+\newblock \emph{Nature Communications}, 13\penalty0 (1):\penalty0 4076, 2022.
+
+\bibitem[Schott et~al.(2024)Schott, Le{\'o}n-Peri{\~n}{\'a}n, Splendiani,
+  et~al.]{schott2024openst}
+Marie Schott, Daniel Le{\'o}n-Peri{\~n}{\'a}n, Elena Splendiani, et~al.
+\newblock Open-st: High-resolution spatial transcriptomics in 3d.
+\newblock \emph{Cell}, 187\penalty0 (15):\penalty0 3953--3972, 2024.
+
+\bibitem[Scrucca et~al.(2016)Scrucca, Fop, Murphy, and
+  Raftery]{scrucca2016mclust}
+Luca Scrucca, Michael Fop, T~Brendan Murphy, and Adrian~E Raftery.
+\newblock mclust 5: clustering, classification and density estimation using
+  gaussian finite mixture models.
+\newblock \emph{The R Journal}, 8\penalty0 (1):\penalty0 289--317, 2016.
+
+\bibitem[Singhal et~al.(2024)Singhal, Chou, Lee, et~al.]{singhal2024banksy}
+Vipul Singhal, Nigel Chou, Joseph Lee, et~al.
+\newblock Banksy unifies cell typing and tissue domain segmentation for
+  scalable spatial omics data analysis.
+\newblock \emph{Nature Genetics}, 56:\penalty0 431--441, 2024.
+
+\bibitem[St{\aa}hl et~al.(2016)St{\aa}hl, Salm{\'e}n, Vickovic,
+  et~al.]{stahl2016st}
+Patrik~L St{\aa}hl, Fredrik Salm{\'e}n, Sanja Vickovic, et~al.
+\newblock Visualization and analysis of gene expression in tissue sections by
+  spatial transcriptomics.
+\newblock \emph{Science}, 353\penalty0 (6294):\penalty0 78--82, 2016.
+
+\bibitem[Stickels et~al.(2021)Stickels, Murray, Kumar,
+  et~al.]{stickels2021slideseq}
+Robert~R Stickels, Evan Murray, Pawan Kumar, et~al.
+\newblock Highly sensitive spatial transcriptomics at near-cellular resolution
+  with slide-seqv2.
+\newblock \emph{Nature Biotechnology}, 39\penalty0 (3):\penalty0 313--319,
+  2021.
+
+\bibitem[Strehl and Ghosh(2002)]{strehl2002nmi}
+Alexander Strehl and Joydeep Ghosh.
+\newblock Cluster ensembles---a knowledge reuse framework for combining
+  multiple partitions.
+\newblock \emph{Journal of Machine Learning Research}, 3:\penalty0 583--617,
+  2002.
+
+\bibitem[Sun et~al.(2025)Sun, Biharie, Cai, M{\"u}ller-B{\"o}tticher,
+  Kiessling, Turner, Dam, Heyl, Kathirchelvan, Emons, Gunz, Twardziok,
+  El-Heliebi, Zacharias, {SpaceHack 2.0 participants}, Reinders, Eils,
+  Gottardo, Kuppe, Long, Mahfouz, Robinson, and Ishaque]{sun2025smoothness}
+Jieran Sun, Kirti Biharie, Peiying Cai, Niklas M{\"u}ller-B{\"o}tticher, Paul
+  Kiessling, Meghan~A. Turner, Soeren~Helweg Dam, Florian Heyl, Sarusan
+  Kathirchelvan, Martin Emons, Samuel Gunz, Sven Twardziok, Amin El-Heliebi,
+  Martin Zacharias, {SpaceHack 2.0 participants}, Marcel Reinders, Roland Eils,
+  Raphael Gottardo, Christoph Kuppe, Brian Long, Ahmed Mahfouz, Mark~D.
+  Robinson, and Naveed Ishaque.
+\newblock Beyond benchmarking: an expert-guided consensus approach to spatially
+  aware clustering.
+\newblock \emph{bioRxiv preprint}, 2025.
+
+\bibitem[Traag et~al.(2019)Traag, Waltman, and van Eck]{traag2019leiden}
+Vincent~A Traag, Ludo Waltman, and Nees~Jan van Eck.
+\newblock From louvain to leiden: guaranteeing well-connected communities.
+\newblock \emph{Scientific Reports}, 9\penalty0 (1):\penalty0 5233, 2019.
+
+\bibitem[Wang et~al.(2018)Wang, Allen, Wright, et~al.]{wang2018starmap}
+Xiao Wang, William~E Allen, Matthew~A Wright, et~al.
+\newblock Three-dimensional intact-tissue sequencing of single-cell
+  transcriptional states.
+\newblock \emph{Science}, 361\penalty0 (6400):\penalty0 eaat5691, 2018.
+
+\bibitem[Wolf et~al.(2018)Wolf, Angerer, and Theis]{wolf2018scanpy}
+F~Alexander Wolf, Philipp Angerer, and Fabian~J Theis.
+\newblock Scanpy: large-scale single-cell gene expression data analysis.
+\newblock \emph{Genome Biology}, 19:\penalty0 15, 2018.
+
+\bibitem[Xu et~al.(2024)Xu, Fu, Long, et~al.]{xu2024sedr}
+Hang Xu, Huazhu Fu, Yahui Long, et~al.
+\newblock Unsupervised spatially embedded deep representation of spatial
+  transcriptomics.
+\newblock \emph{Genome Medicine}, 16:\penalty0 12, 2024.
+
+\bibitem[Yuan et~al.(2024)Yuan, Zhao, Lin, et~al.]{yuan2024benchmark}
+Zhiyuan Yuan, Fangyuan Zhao, Senlin Lin, et~al.
+\newblock Benchmarking spatial clustering methods with spatially resolved
+  transcriptomics data.
+\newblock \emph{Nature Methods}, 21\penalty0 (4):\penalty0 712--722, 2024.
+
+\end{thebibliography}

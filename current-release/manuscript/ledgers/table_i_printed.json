@@ -1,0 +1,28 @@
+{
+  "role": "minimal committed ledger of printed Table II (tab:data) n cells / K / contiguity only; filename table_i_printed.json is historical",
+  "printed_table": "Table II / tab:data on the official 15 pp face (Table I is the related-work card)",
+  "not": "the gitignored workbench experiments/*.json tree; not official leftover 961d6662",
+  "self_contained_capsule": false,
+  "invented": false,
+  "zenodo_doi": null,
+  "source_local_gitignored": "labs/active/tessera-st/experiments/expanded_bench.json",
+  "rematch_date": "2026-09-10",
+  "rematch": "local expanded_bench.json n_cells/k/GT_contiguity rematch official Table II (tab:data) at printed precision",
+  "not_in_this_ledger": [
+    "st_OV/st_COAD/st_LIHC n=14 footer (not in expanded_bench.json; not rematched; not invented)",
+    "bootstrap CI, partial rho, mclust rho, coh_gain column, synthetic sweep, per-seed vectors, full means/stds"
+  ],
+  "table_i": [
+    {"dataset": "MERFISH", "n_cells": 5488, "k": 8, "contiguity": 0.931},
+    {"dataset": "STARmap", "n_cells": 1207, "k": 7, "contiguity": 0.921},
+    {"dataset": "DLPFC", "n_cells": 3639, "k": 7, "contiguity": 0.905},
+    {"dataset": "BRCA", "n_cells": 3798, "k": 20, "contiguity": 0.865},
+    {"dataset": "osmFISH", "n_cells": 5328, "k": 12, "contiguity": 0.817},
+    {"dataset": "IMC", "n_cells": 4668, "k": 11, "contiguity": 0.630},
+    {"dataset": "seqFISH", "n_cells": 16000, "k": 22, "contiguity": 0.621},
+    {"dataset": "Open-ST", "n_cells": 15000, "k": 14, "contiguity": 0.562},
+    {"dataset": "Slide-seqV2", "n_cells": 16000, "k": 14, "contiguity": 0.274},
+    {"dataset": "MIBI-TOF", "n_cells": 3309, "k": 8, "contiguity": 0.271},
+    {"dataset": "CODEX", "n_cells": 16000, "k": 100, "contiguity": 0.022}
+  ]
+}

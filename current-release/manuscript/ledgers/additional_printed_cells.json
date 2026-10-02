@@ -1,0 +1,639 @@
+{
+  "role": "additional printed/load-bearing cells copied from already-existing local workbench JSON",
+  "not": "the gitignored experiments/ tree; not a freeze-kit bind; not a Zenodo archive",
+  "self_contained_capsule": false,
+  "zenodo_doi": null,
+  "invented": false,
+  "rematch_date": "2026-09-10",
+  "note": "Values are copied from local JSON already on disk. n=14 added rows have no n_cells in the source. Capsule remains non-self-contained.",
+  "provenance": [
+    {
+      "artifact": "experiments/expanded_bench.json",
+      "sha256": "f97a38e6ac1fc9492f08213844eea433357ec6de8678673d77e82934ed63f23a"
+    },
+    {
+      "artifact": "experiments/stat_rigor.json",
+      "sha256": "20b342a977b6c8c25c97e3e2ba893f8453f09407cf993478c397f8a9deeecb23"
+    },
+    {
+      "artifact": "experiments/expand_data.json",
+      "sha256": "ec7eec7e356e298b1257f196ad519fea0700166aa5d3f85319850fa4e0fa151d"
+    },
+    {
+      "artifact": "experiments/gtfree_proxy.json",
+      "sha256": "960c0b0012354f97048ea5c722213318122d5805d23c9bdd838101b435a28bf9"
+    },
+    {
+      "artifact": "experiments/proxy_search_corrected.json",
+      "sha256": "d189a4115ac6dc07b01070ce727fa695c4ca838e257e914e310f6c80efb468e5"
+    },
+    {
+      "artifact": "experiments/native_baselines.json",
+      "sha256": "db67223a364fd81a735603df7480ca47f93f5144bcb584cf3da8154e8eb5d04d"
+    },
+    {
+      "artifact": "experiments/robustness_audit.json",
+      "sha256": "41ba1678dc534ecb5a906e4323aea0e76f5025b6e12754418986e1796e7e9af5"
+    },
+    {
+      "artifact": "experiments/mechanism_synth.json",
+      "sha256": "7ce2ce8d734f0c1606fecdb868516d7b288aa79adcb1c56404034362e58f4292"
+    },
+    {
+      "artifact": "experiments/mechanism_decoupled_v2.json",
+      "sha256": "6533ae8f1c498aef3a1ff428b0632999470c6682d4e07e8eeca6cf53e9491270"
+    },
+    {
+      "artifact": "experiments/rigorous_bench.json",
+      "sha256": "c6798e9af9cefee13cd6b784c0f4f7a66bcba1d13d3de50d92cd9dd93a081694"
+    }
+  ],
+  "cells": {
+    "per_dataset_expanded": [
+      {
+        "dataset": "DLPFC",
+        "platform_key": "DLPFC(Visium,layer)",
+        "n_cells": 3639,
+        "k": 7,
+        "contiguity": 0.905,
+        "spatial_advantage": 0.101,
+        "winner": "SEDR",
+        "winner_ari": 0.5841,
+        "tessera_rank": 2,
+        "spaceflow_rank": 8
+      },
+      {
+        "dataset": "seqFISH",
+        "platform_key": "seqFISH(embryo,ctype)",
+        "n_cells": 16000,
+        "k": 22,
+        "contiguity": 0.621,
+        "spatial_advantage": -0.005,
+        "winner": "floor:nonspatial",
+        "winner_ari": 0.4069,
+        "tessera_rank": 8,
+        "spaceflow_rank": 7
+      },
+      {
+        "dataset": "MERFISH",
+        "platform_key": "MERFISH(hypo,domain)",
+        "n_cells": 5488,
+        "k": 8,
+        "contiguity": 0.931,
+        "spatial_advantage": 0.314,
+        "winner": "SpaceFlow",
+        "winner_ari": 0.4293,
+        "tessera_rank": 2,
+        "spaceflow_rank": 1
+      },
+      {
+        "dataset": "STARmap",
+        "platform_key": "STARmap(cortex,region)",
+        "n_cells": 1207,
+        "k": 7,
+        "contiguity": 0.921,
+        "spatial_advantage": 0.168,
+        "winner": "SEDR",
+        "winner_ari": 0.5785,
+        "tessera_rank": 5,
+        "spaceflow_rank": 4
+      },
+      {
+        "dataset": "osmFISH",
+        "platform_key": "osmFISH(cortex,Region)",
+        "n_cells": 5328,
+        "k": 12,
+        "contiguity": 0.817,
+        "spatial_advantage": 0.196,
+        "winner": "Tessera",
+        "winner_ari": 0.4376,
+        "tessera_rank": 1,
+        "spaceflow_rank": 5
+      },
+      {
+        "dataset": "MIBI-TOF",
+        "platform_key": "MIBI-TOF(protein,Cluster)",
+        "n_cells": 3309,
+        "k": 8,
+        "contiguity": 0.271,
+        "spatial_advantage": 0.022,
+        "winner": "BANKSY-style",
+        "winner_ari": 0.2469,
+        "tessera_rank": 5,
+        "spaceflow_rank": null
+      },
+      {
+        "dataset": "BRCA",
+        "platform_key": "BRCA(Visium,tumor)",
+        "n_cells": 3798,
+        "k": 20,
+        "contiguity": 0.865,
+        "spatial_advantage": 0.042,
+        "winner": "STAGATE",
+        "winner_ari": 0.6157,
+        "tessera_rank": 2,
+        "spaceflow_rank": 8
+      },
+      {
+        "dataset": "IMC",
+        "platform_key": "IMC(breast,ctype)",
+        "n_cells": 4668,
+        "k": 11,
+        "contiguity": 0.63,
+        "spatial_advantage": 0.139,
+        "winner": "SEDR",
+        "winner_ari": 0.4852,
+        "tessera_rank": 8,
+        "spaceflow_rank": 7
+      },
+      {
+        "dataset": "Open-ST",
+        "platform_key": "openST(HNSCC,annot)",
+        "n_cells": 15000,
+        "k": 14,
+        "contiguity": 0.562,
+        "spatial_advantage": -0.005,
+        "winner": "floor:nonspatial",
+        "winner_ari": 0.2635,
+        "tessera_rank": 5,
+        "spaceflow_rank": 8
+      },
+      {
+        "dataset": "Slide-seqV2",
+        "platform_key": "SlideseqV2(hippo,Region)",
+        "n_cells": 16000,
+        "k": 14,
+        "contiguity": 0.274,
+        "spatial_advantage": 0.008,
+        "winner": "SEDR",
+        "winner_ari": 0.1185,
+        "tessera_rank": 4,
+        "spaceflow_rank": 8
+      },
+      {
+        "dataset": "CODEX",
+        "platform_key": "CODEX(spleen,niche)",
+        "n_cells": 16000,
+        "k": 100,
+        "contiguity": 0.022,
+        "spatial_advantage": 0.024,
+        "winner": "SpatialLeiden",
+        "winner_ari": 0.0806,
+        "tessera_rank": 3,
+        "spaceflow_rank": null
+      }
+    ],
+    "observational_summary": {
+      "n": 11,
+      "rho": 0.724,
+      "p": 0.0117,
+      "tessera_rank_rho": -0.357,
+      "tessera_rank_p": 0.2806,
+      "spaceflow_rank_rho": -0.586,
+      "spaceflow_rank_p": 0.0974,
+      "n_spaceflow": 9,
+      "n_distinct_winners": 7,
+      "rho_adv_per_seed": [
+        0.691,
+        0.773,
+        0.709
+      ],
+      "rho_adv_per_seed_min": 0.691,
+      "rho_adv_per_seed_max": 0.773
+    },
+    "stat_rigor": {
+      "bootstrap_ci95": [
+        0.243,
+        0.916
+      ],
+      "bootstrap_positive_fraction": 0.987,
+      "lodo_magnitude_rho": 0.51,
+      "lodo_decision_accuracy": 0.818,
+      "lodo_base_rate": 0.545,
+      "lodo_label_free_decision_accuracy": 0.727,
+      "partial_one_at_a_time": {
+        "k_nclasses": 0.552,
+        "eff_dim": 0.861,
+        "modality_imaging": 0.801
+      },
+      "partial_all": 0.667
+    },
+    "multiplicity": {
+      "m": 3,
+      "raw": 0.0117,
+      "bonferroni": 0.0351,
+      "bh": 0.0351,
+      "family7_bonferroni": 0.0819,
+      "jackknife_min": 0.632,
+      "jackknife_max": 0.754,
+      "most_influential_drop": "MERFISH",
+      "lodo_binomial_p": 0.061,
+      "lodo_k_correct": 9
+    },
+    "proxy": {
+      "per_dataset": [
+        {
+          "dataset": "DLPFC",
+          "n_cells": 3639,
+          "contiguity": 0.905,
+          "coh_gain": 0.363,
+          "moran": 0.563,
+          "raw_coh": 0.427,
+          "spatial_advantage": 0.101
+        },
+        {
+          "dataset": "seqFISH",
+          "n_cells": 16000,
+          "contiguity": 0.621,
+          "coh_gain": 0.326,
+          "moran": 0.527,
+          "raw_coh": 0.526,
+          "spatial_advantage": -0.005
+        },
+        {
+          "dataset": "MERFISH",
+          "n_cells": 5488,
+          "contiguity": 0.931,
+          "coh_gain": 0.365,
+          "moran": 0.21,
+          "raw_coh": 0.293,
+          "spatial_advantage": 0.314
+        },
+        {
+          "dataset": "STARmap",
+          "n_cells": 1207,
+          "contiguity": 0.921,
+          "coh_gain": 0.527,
+          "moran": 0.204,
+          "raw_coh": 0.279,
+          "spatial_advantage": 0.168
+        },
+        {
+          "dataset": "osmFISH",
+          "n_cells": 5328,
+          "contiguity": 0.817,
+          "coh_gain": 0.428,
+          "moran": 0.241,
+          "raw_coh": 0.299,
+          "spatial_advantage": 0.196
+        },
+        {
+          "dataset": "MIBI-TOF",
+          "n_cells": 3309,
+          "contiguity": 0.271,
+          "coh_gain": 0.288,
+          "moran": 0.195,
+          "raw_coh": 0.224,
+          "spatial_advantage": 0.022
+        },
+        {
+          "dataset": "BRCA",
+          "n_cells": 3798,
+          "contiguity": 0.865,
+          "coh_gain": 0.134,
+          "moran": 0.723,
+          "raw_coh": 0.705,
+          "spatial_advantage": 0.042
+        },
+        {
+          "dataset": "IMC",
+          "n_cells": 4668,
+          "contiguity": 0.63,
+          "coh_gain": 0.267,
+          "moran": 0.38,
+          "raw_coh": 0.397,
+          "spatial_advantage": 0.139
+        },
+        {
+          "dataset": "Open-ST",
+          "n_cells": 15000,
+          "contiguity": 0.562,
+          "coh_gain": 0.26,
+          "moran": 0.581,
+          "raw_coh": 0.561,
+          "spatial_advantage": -0.005
+        },
+        {
+          "dataset": "Slide-seqV2",
+          "n_cells": 16000,
+          "contiguity": 0.274,
+          "coh_gain": 0.341,
+          "moran": 0.451,
+          "raw_coh": 0.5,
+          "spatial_advantage": 0.008
+        },
+        {
+          "dataset": "CODEX",
+          "n_cells": 16000,
+          "contiguity": 0.022,
+          "coh_gain": 0.171,
+          "moran": 0.005,
+          "raw_coh": 0.174,
+          "spatial_advantage": 0.024
+        }
+      ],
+      "rho_vs_advantage": 0.551,
+      "p_vs_advantage_asymptotic": 0.0788,
+      "rho_vs_contiguity": 0.564,
+      "naive_moran_vs_advantage": -0.337,
+      "naive_raw_coh_vs_advantage": -0.424,
+      "coh_gain_per_seed_rho": [
+        0.551,
+        0.478,
+        0.515
+      ],
+      "search_correction_keys_present": [
+        "B",
+        "candidates",
+        "description",
+        "n_platforms",
+        "null_max_abs_rho_quantiles",
+        "observed_max_abs_rho",
+        "observed_rho_per_candidate",
+        "observed_selected_rho",
+        "p_search_corrected",
+        "p_search_corrected_plus1",
+        "p_uncorrected_selected",
+        "p_uncorrected_selected_plus1",
+        "sanity_coh_gain_rho_matches_0p551",
+        "selected_candidate"
+      ],
+      "search_correction": {
+        "description": "Westfall-Young max-statistic permutation test. Null = max over 6 label-free candidates of |Spearman rho| vs permuted spatial_advantage. Search-corrected p controls family-wise error over the 6-candidate search.",
+        "n_platforms": 11,
+        "candidates": [
+          "raw_coh",
+          "smooth_coh",
+          "coh_gain",
+          "partition_shift",
+          "sil_gain",
+          "smoothing_score"
+        ],
+        "selected_candidate": "coh_gain",
+        "B": 10000,
+        "observed_rho_per_candidate": {
+          "raw_coh": -0.4236913042477309,
+          "smooth_coh": -0.36446563806256416,
+          "coh_gain": 0.5512542775696284,
+          "partition_shift": 0.4145796632961667,
+          "sil_gain": -0.20501192141019234,
+          "smoothing_score": 0.4373587656750771
+        },
+        "observed_selected_rho": 0.5512542775696284,
+        "observed_max_abs_rho": 0.5512542775696284,
+        "p_uncorrected_selected": 0.083,
+        "p_uncorrected_selected_plus1": 0.08309169083091691,
+        "p_search_corrected": 0.275,
+        "p_search_corrected_plus1": 0.27507249275072493,
+        "null_max_abs_rho_quantiles": {
+          "q50.0": 0.437358765675077,
+          "q90.0": 0.6788172508915258,
+          "q95.0": 0.7425987375524745,
+          "q97.5": 0.7837150173464059,
+          "q99.0": 0.8337151470681157
+        },
+        "sanity_coh_gain_rho_matches_0p551": true
+      }
+    },
+    "expanded_n14": {
+      "n": 14,
+      "rho": 0.559,
+      "p": 0.0378,
+      "added_rows": [
+        {
+          "dataset": "st_COAD",
+          "k": 16,
+          "contiguity": 0.498,
+          "spatial_advantage": -0.014,
+          "winner": "floor:nonspatial",
+          "n_cells": null,
+          "n_cells_note": "expand_data.json does not record n cells; printed leftover footer is <=16000, not an invented exact count"
+        },
+        {
+          "dataset": "st_LIHC",
+          "k": 19,
+          "contiguity": 0.223,
+          "spatial_advantage": 0.032,
+          "winner": "BANKSY-style",
+          "n_cells": null,
+          "n_cells_note": "expand_data.json does not record n cells; printed leftover footer is <=16000, not an invented exact count"
+        },
+        {
+          "dataset": "st_OV",
+          "k": 13,
+          "contiguity": 0.685,
+          "spatial_advantage": -0.102,
+          "winner": "floor:nonspatial",
+          "n_cells": null,
+          "n_cells_note": "expand_data.json does not record n cells; printed leftover footer is <=16000, not an invented exact count"
+        }
+      ]
+    },
+    "native_backend": {
+      "rho": 0.791,
+      "p": 0.0037,
+      "distinct_winners": 6,
+      "backend_win_counts": {
+        "gmm-tied": 44,
+        "mclust-R": 20,
+        "kmeans": 17
+      },
+      "mean_delta_vs_published_per_method": {
+        "Tessera": 0.009,
+        "STAGATE": 0.016,
+        "SEDR": 0.001,
+        "SpaceFlow": 0.012,
+        "GraphST": 0.012,
+        "BANKSY-style": -0.0,
+        "floor:nonspatial": -0.004,
+        "floor:smoothed": 0.015,
+        "SpatialLeiden": 0.006
+      }
+    },
+    "synthetic_scramble": {
+      "rho_smooth": 0.976,
+      "rho_stagate": 1.0,
+      "p_smooth": 0.0,
+      "p_stagate": 0.0,
+      "nonspatial_ari_constant": 0.345,
+      "nonspatial_ari_range": 0.0,
+      "adv_smooth_min": -0.344,
+      "adv_stagate_min": -0.329,
+      "sweep_rows": [
+        {
+          "scramble": 0.0,
+          "contiguity": 0.901,
+          "nonspatial_ari": 0.345,
+          "adv_smooth": 0.48,
+          "adv_stagate": 0.542
+        },
+        {
+          "scramble": 0.1,
+          "contiguity": 0.764,
+          "nonspatial_ari": 0.345,
+          "adv_smooth": 0.295,
+          "adv_stagate": 0.355
+        },
+        {
+          "scramble": 0.2,
+          "contiguity": 0.649,
+          "nonspatial_ari": 0.345,
+          "adv_smooth": 0.089,
+          "adv_stagate": 0.16
+        },
+        {
+          "scramble": 0.35,
+          "contiguity": 0.487,
+          "nonspatial_ari": 0.345,
+          "adv_smooth": -0.132,
+          "adv_stagate": -0.085
+        },
+        {
+          "scramble": 0.5,
+          "contiguity": 0.363,
+          "nonspatial_ari": 0.345,
+          "adv_smooth": -0.262,
+          "adv_stagate": -0.204
+        },
+        {
+          "scramble": 0.7,
+          "contiguity": 0.255,
+          "nonspatial_ari": 0.345,
+          "adv_smooth": -0.331,
+          "adv_stagate": -0.303
+        },
+        {
+          "scramble": 0.9,
+          "contiguity": 0.197,
+          "nonspatial_ari": 0.345,
+          "adv_smooth": -0.344,
+          "adv_stagate": -0.324
+        },
+        {
+          "scramble": 1.0,
+          "contiguity": 0.181,
+          "nonspatial_ari": 0.345,
+          "adv_smooth": -0.343,
+          "adv_stagate": -0.329
+        }
+      ]
+    },
+    "decouple_v2_printed": {
+      "table_vi": [
+        {
+          "substrate": "S1",
+          "arm": "alignment",
+          "normalized_slope_smooth": 0.55,
+          "normalized_slope_stagate": 0.62,
+          "normalized_slope_smooth_raw": 0.5488,
+          "normalized_slope_stagate_raw": 0.6227,
+          "sign_flip": false,
+          "floor_range": 0.364,
+          "floor_range_printed": 0.36
+        },
+        {
+          "substrate": "S1",
+          "arm": "contiguity",
+          "normalized_slope_smooth": 0.85,
+          "normalized_slope_stagate": 0.91,
+          "normalized_slope_smooth_raw": 0.8505,
+          "normalized_slope_stagate_raw": 0.9059,
+          "sign_flip": true,
+          "floor_range": 0.05,
+          "floor_range_printed": 0.05
+        },
+        {
+          "substrate": "S2",
+          "arm": "alignment",
+          "normalized_slope_smooth": 0.34,
+          "normalized_slope_stagate": 0.43,
+          "normalized_slope_smooth_raw": 0.3389,
+          "normalized_slope_stagate_raw": 0.4291,
+          "sign_flip": false,
+          "floor_range": 0.682,
+          "floor_range_printed": 0.68
+        },
+        {
+          "substrate": "S2",
+          "arm": "contiguity",
+          "normalized_slope_smooth": 0.92,
+          "normalized_slope_stagate": 0.95,
+          "normalized_slope_smooth_raw": 0.9182,
+          "normalized_slope_stagate_raw": 0.9527,
+          "sign_flip": true,
+          "floor_range": 0.027,
+          "floor_range_printed": 0.03
+        }
+      ],
+      "contrast_S1": {
+        "smooth_abs_rho_B_minus_A": -0.018,
+        "stagate_abs_rho_B_minus_A": -0.027,
+        "smooth_norm_slope_B_minus_A": 0.3017,
+        "stagate_norm_slope_B_minus_A": 0.2832,
+        "only_B_flips_sign_smooth": true,
+        "only_B_flips_sign_stagate": true,
+        "A_floor_range": 0.364,
+        "B_floor_range": 0.05
+      },
+      "contrast_S2": {
+        "smooth_abs_rho_B_minus_A": 0.246,
+        "stagate_abs_rho_B_minus_A": 0.118,
+        "smooth_norm_slope_B_minus_A": 0.5793,
+        "stagate_norm_slope_B_minus_A": 0.5236,
+        "only_B_flips_sign_smooth": true,
+        "only_B_flips_sign_stagate": true,
+        "A_floor_range": 0.682,
+        "B_floor_range": 0.027
+      },
+      "cross_substrate_rollup": {
+        "norm_slope_both_favor_B_all_substrates": true,
+        "only_B_flips_sign_smooth_all_substrates": true,
+        "only_B_flips_sign_stagate_all_substrates": true,
+        "B_floor_flatter_than_A_all_substrates": true,
+        "abs_rho_both_favor_B_all_substrates": false,
+        "abs_rho_both_favor_A_all_substrates": false
+      }
+    },
+    "backend_table_dlpfc": {
+      "delta_ari": {
+        "Tessera": 0.0358,
+        "STAGATE": 0.1995,
+        "SEDR": 0.1703,
+        "GraphST": 0.0989,
+        "BANKSY-style": 0.1492,
+        "floor:nonspatial": 0.1659,
+        "floor:smoothed": 0.1643
+      },
+      "cross_section": {
+        "Tessera": {
+          "mean": 0.3918,
+          "std": 0.0824
+        },
+        "STAGATE": {
+          "mean": 0.494,
+          "std": 0.087
+        },
+        "SEDR": {
+          "mean": 0.483,
+          "std": 0.0564
+        },
+        "GraphST": {
+          "mean": 0.291,
+          "std": 0.0415
+        },
+        "BANKSY-style": {
+          "mean": 0.4501,
+          "std": 0.0317
+        },
+        "floor:nonspatial": {
+          "mean": 0.3441,
+          "std": 0.0611
+        },
+        "floor:smoothed": {
+          "mean": 0.473,
+          "std": 0.0547
+        }
+      }
+    }
+  }
+}

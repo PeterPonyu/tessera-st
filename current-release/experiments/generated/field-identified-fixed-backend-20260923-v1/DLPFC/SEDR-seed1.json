@@ -1,0 +1,18 @@
+{
+  "protocol_id": "field-identified-fixed-backend-20260923-v1",
+  "dataset": "DLPFC",
+  "method": "SEDR",
+  "seed": 1,
+  "source_sha256": "46f364d590e34bfccdd90e1bc34ec485fac6e9e0cd4b6bdd395d80569a038268",
+  "protocol_sha256": "ed165f146b42da3ff09019246cbb8107ba279f5f29412df8cf9a3dde0c95a5f9",
+  "n_cells": 3639,
+  "n_classes": 7,
+  "device": "cuda",
+  "status": "complete",
+  "raw_ari": 0.3790019087127255,
+  "fitted_n_clusters": 7,
+  "spatial_refinement": true,
+  "refined_ari": 0.4061426770970682,
+  "predictions_sha256": "e5565b51cc0d10b2966073134870e30f871728f6b227f67ad04b7275c3fb4d5e",
+  "seconds": 1.4696920620008314
+}

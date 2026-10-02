@@ -1,0 +1,49 @@
+{
+  "rho_hat": 0.6900185713132712,
+  "p_two_sided": 0.01301224318408305,
+  "fisher_z_uniform": {
+    "rho_hat": 0.6900185713132712,
+    "n": 12,
+    "prior": "uniform",
+    "likelihood": "Fisher-z Normal(atanh(\u03c1), 1/sqrt(n-3))",
+    "z_obs": 0.8479912042885009,
+    "se_z": 0.3333333333333333,
+    "posterior_mean": 0.5817559609981322,
+    "posterior_median": 0.6148845000000002,
+    "credible95": [
+      0.1118880000000001,
+      0.8711280000000002
+    ],
+    "P_rho_gt_0": 0.9900639632874588,
+    "P_rho_gt_0.5": 0.7041219138431742,
+    "P_rho_gt_0.72": 0.2712211803755953
+  },
+  "fisher_z_skeptical": {
+    "rho_hat": 0.6900185713132712,
+    "n": 12,
+    "prior": "skeptical",
+    "likelihood": "Fisher-z Normal(atanh(\u03c1), 1/sqrt(n-3))",
+    "z_obs": 0.8479912042885009,
+    "se_z": 0.3333333333333333,
+    "posterior_mean": 0.5029001211864578,
+    "posterior_median": 0.5279715000000001,
+    "credible95": [
+      0.03196800000000011,
+      0.8376615000000002
+    ],
+    "P_rho_gt_0": 0.9811777851022768,
+    "P_rho_gt_0.5": 0.5496710503113874,
+    "P_rho_gt_0.72": 0.1517821488046838
+  },
+  "bayes_bootstrap": {
+    "method": "Rubin Bayesian bootstrap (multinomial resample), B=5000",
+    "n_boot": 5000,
+    "mean": 0.63438315875676,
+    "median": 0.6536504877387845,
+    "credible95": [
+      0.21052943629791906,
+      0.8785768398268398
+    ],
+    "P_rho_gt_0": 0.9936
+  }
+}

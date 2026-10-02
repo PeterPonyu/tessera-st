@@ -1,0 +1,225 @@
+{
+  "rows": [
+    {
+      "platform": "DLPFC(Visium,layer)",
+      "n_cells": 3639,
+      "subsampled": false,
+      "GT_contiguity": 0.905,
+      "moran": 0.563,
+      "raw_coh": 0.427,
+      "coh_gain": 0.363,
+      "coh_gain_per_seed": [
+        0.368,
+        0.352,
+        0.37
+      ],
+      "spatial_advantage": 0.101
+    },
+    {
+      "platform": "seqFISH(embryo,ctype)",
+      "n_cells": 16000,
+      "subsampled": true,
+      "GT_contiguity": 0.621,
+      "moran": 0.527,
+      "raw_coh": 0.526,
+      "coh_gain": 0.326,
+      "coh_gain_per_seed": [
+        0.317,
+        0.329,
+        0.331
+      ],
+      "spatial_advantage": -0.005
+    },
+    {
+      "platform": "MERFISH(hypo,domain)",
+      "n_cells": 5488,
+      "subsampled": false,
+      "GT_contiguity": 0.931,
+      "moran": 0.21,
+      "raw_coh": 0.293,
+      "coh_gain": 0.365,
+      "coh_gain_per_seed": [
+        0.379,
+        0.362,
+        0.354
+      ],
+      "spatial_advantage": 0.314
+    },
+    {
+      "platform": "STARmap(cortex,region)",
+      "n_cells": 1207,
+      "subsampled": false,
+      "GT_contiguity": 0.921,
+      "moran": 0.204,
+      "raw_coh": 0.279,
+      "coh_gain": 0.527,
+      "coh_gain_per_seed": [
+        0.533,
+        0.517,
+        0.531
+      ],
+      "spatial_advantage": 0.168
+    },
+    {
+      "platform": "osmFISH(cortex,Region)",
+      "n_cells": 5328,
+      "subsampled": false,
+      "GT_contiguity": 0.817,
+      "moran": 0.241,
+      "raw_coh": 0.299,
+      "coh_gain": 0.428,
+      "coh_gain_per_seed": [
+        0.438,
+        0.43,
+        0.416
+      ],
+      "spatial_advantage": 0.196
+    },
+    {
+      "platform": "MIBI-TOF(protein,Cluster)",
+      "n_cells": 3309,
+      "subsampled": false,
+      "GT_contiguity": 0.271,
+      "moran": 0.195,
+      "raw_coh": 0.224,
+      "coh_gain": 0.288,
+      "coh_gain_per_seed": [
+        0.278,
+        0.291,
+        0.295
+      ],
+      "spatial_advantage": 0.022
+    },
+    {
+      "platform": "BRCA(Visium,tumor)",
+      "n_cells": 3798,
+      "subsampled": false,
+      "GT_contiguity": 0.865,
+      "moran": 0.723,
+      "raw_coh": 0.705,
+      "coh_gain": 0.134,
+      "coh_gain_per_seed": [
+        0.133,
+        0.137,
+        0.131
+      ],
+      "spatial_advantage": 0.042
+    },
+    {
+      "platform": "IMC(breast,ctype)",
+      "n_cells": 4668,
+      "subsampled": false,
+      "GT_contiguity": 0.63,
+      "moran": 0.38,
+      "raw_coh": 0.397,
+      "coh_gain": 0.267,
+      "coh_gain_per_seed": [
+        0.277,
+        0.254,
+        0.271
+      ],
+      "spatial_advantage": 0.139
+    },
+    {
+      "platform": "openST(HNSCC,annot)",
+      "n_cells": 15000,
+      "subsampled": false,
+      "GT_contiguity": 0.562,
+      "moran": 0.581,
+      "raw_coh": 0.561,
+      "coh_gain": 0.26,
+      "coh_gain_per_seed": [
+        0.254,
+        0.263,
+        0.262
+      ],
+      "spatial_advantage": -0.005
+    },
+    {
+      "platform": "SlideseqV2(hippo,Region)",
+      "n_cells": 16000,
+      "subsampled": true,
+      "GT_contiguity": 0.274,
+      "moran": 0.451,
+      "raw_coh": 0.5,
+      "coh_gain": 0.341,
+      "coh_gain_per_seed": [
+        0.347,
+        0.324,
+        0.353
+      ],
+      "spatial_advantage": 0.008
+    },
+    {
+      "platform": "CODEX(spleen,niche)",
+      "n_cells": 16000,
+      "subsampled": true,
+      "GT_contiguity": 0.022,
+      "moran": 0.005,
+      "raw_coh": 0.174,
+      "coh_gain": 0.171,
+      "coh_gain_per_seed": [
+        0.176,
+        0.174,
+        0.163
+      ],
+      "spatial_advantage": 0.024
+    }
+  ],
+  "n_platforms": 11,
+  "k_grid": [
+    6,
+    8,
+    10,
+    12,
+    15,
+    20
+  ],
+  "seeds": [
+    1,
+    2,
+    3
+  ],
+  "naive_proxies_FAIL": {
+    "moran": {
+      "vs_gtcontig": [
+        0.218,
+        0.5192
+      ],
+      "vs_advantage": [
+        -0.337,
+        0.3107
+      ]
+    },
+    "raw_coh": {
+      "vs_gtcontig": [
+        0.127,
+        0.7092
+      ],
+      "vs_advantage": [
+        -0.424,
+        0.1941
+      ]
+    }
+  },
+  "principled_proxy_coh_gain": {
+    "vs_gtcontig": [
+      0.564,
+      0.071
+    ],
+    "vs_advantage": [
+      0.551,
+      0.0788
+    ]
+  },
+  "coh_gain_headline_per_seed_rho": [
+    0.551,
+    0.478,
+    0.515
+  ],
+  "oracle_gtcontig_vs_advantage": {
+    "rho": 0.724,
+    "p": 0.0117
+  },
+  "rule_prospective": "Label-free deployment of the \u00a77 rule: do NOT use raw-expression smoothness (it inverts). Instead compute coh_gain = the extra spatial coherence unsupervised clustering gains when run on spatially-smoothed vs raw expression. HIGH coh_gain \u21d2 spatial smoothing reveals contiguous structure \u21d2 use a spatial/boundary-aware method; LOW \u21d2 a non-spatial clusterer is floor-and-ceiling. coh_gain recovers the GT-based trend's sign (rho\u2248+0.55 vs +0.72 oracle), marginal at n=11 \u2014 the honest cost of having no labels."
+}

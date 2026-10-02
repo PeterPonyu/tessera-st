@@ -1,0 +1,175 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.8in]{geometry}
+\usepackage{newtxtext,newtxmath,amsmath,booktabs,array,longtable,microtype,xurl}
+\usepackage{caption,float}
+\captionsetup{font=small,skip=6pt}
+\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thepage}{S\arabic{page}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.6em}
+\emergencystretch=3em
+\input{ledgers/revision_20260923/supporting_tables}
+\begin{document}
+\begin{center}
+{\Large\bfseries Supporting Information}\par\smallskip
+{\large Auditing spatial-prior evaluation: coordinate frames,
+expression-only controls and specified interventions}\par\medskip
+Zeyu Fu
+\end{center}
+\textbf{Author-review supplement, 1 October 2026. Scientific submission HOLD.}
+This readable supplement exports committed records underlying the retained
+Results. It adds no tissue, method fit, model selection, resampling or
+independent validation. The machine-readable records retain full precision,
+source hashes, predictions and implementation identities. Historical broad
+benchmark outputs are not promoted into the corrected field panel.
+
+\section*{S1. Retained coordinate identities and completed checks}
+The seven retained objects have explicit field or section identities, or a
+single registered spatial library. Table~\ref{tab:identities} records the
+keys used to keep neighbourhoods within a physical frame and the number of
+method--seed predictions checked against saved records. Raw-input checks
+reproduce selected cells, fields and labels. Zero cross-field links is an
+execution property, not evidence that the annotation is biologically correct.
+CODEX niches are cluster-derived proxies, not independent biological labels.
+Full source identities and selection hashes are in the protocol, summary and
+QA ledgers; three optimisation seeds are not three independent tissues.
+
+\begin{table}[H]\centering\small
+\caption{Field identities and committed source/prediction checks.
+Every object has seven procedures at seeds 1, 2 and 3. The single-library
+DLPFC input uses its registered spatial library rather than an observation
+column as its coordinate frame.}
+\label{tab:identities}
+\begin{tabular}{llllr}\toprule
+Object & Field key & Label key & Cross-field links & Rescored runs\\\midrule
+\csname siidentityDLPFC\endcsname
+\csname siidentityMERFISH\endcsname
+\csname siidentitySTARmap\endcsname
+\csname siidentityMIBI\endcsname
+\csname siidentityOpen-ST\endcsname
+\csname siidentityCODEX\endcsname
+\csname siidentityZhuang\endcsname
+\bottomrule\end{tabular}
+\end{table}
+
+\section*{S2. Named-method contrasts and excluded counterfactual controls}
+Table~\ref{tab:contrasts} gives the three-seed mean of each named procedure's
+raw ARI minus the genuinely expression-only PCA--KMeans ARI on the same
+cells and seed identities. These are fixed-protocol differences, not
+reference-label maxima across backends or refinement settings. The main
+article gives raw ARI and paired-seed SD separately. SD describes optimisation
+variation; no tissue-level interval is inferred from these seeds.
+
+\begin{table}[H]\centering\footnotesize
+\caption{Named raw-ARI differences from the expression-only control.
+``Mean'' denotes neighbour-mean smoothing, ``BANKSY'' denotes the
+BANKSY-style implementation and ``Leiden'' denotes SpatialLeiden.
+CODEX Leiden returns 51/51/54 clusters against 100 reference classes;
+its entry is not an equal-$K$ superiority comparison.}
+\label{tab:contrasts}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrrrr}\toprule
+Object & Mean & BANKSY & Leiden & Tessera & STAGATE & SEDR\\\midrule
+\csname sideltaDLPFC\endcsname
+\csname sideltaMERFISH\endcsname
+\csname sideltaSTARmap\endcsname
+\csname sideltaMIBI\endcsname
+\csname sideltaOpen-ST\endcsname
+\csname sideltaCODEX\endcsname
+\csname sideltaZhuang\endcsname
+\bottomrule\end{tabular}
+\end{table}
+
+The pooled-coordinate neighbour-mean arms and spatially refined nominal
+control are diagnostic counterfactuals, not eligible comparators. Neither
+enters these differences. SpaceFlow, GraphST and SpaGCN remain unavailable
+under the audited spatial path; no historical score is imputed. Frame
+provenance remains unestablished here for seqFISH, osmFISH, BRCA, IMC,
+Slide-seqV2, st\_COAD, st\_LIHC and st\_OV. Their old outcomes, oracle
+maxima, proxy searches and component-removal analyses are outside current
+inference, not failed observations in this seven-object table.
+
+\section*{S3. Row-order sensitivity from assigning ordinal ranks to ties}
+The unchanged historical eleven-object panel is a numerical counterexample
+only. For each of 200 row permutations, the joint partial association uses
+ranked covariates for class count, feature dimension and modality, an
+intercept, separate OLS rank residuals and their Pearson correlation.
+Assigning ordinal ranks to equal values makes this output row-order
+dependent; average midranks preserve ties (Table~\ref{tab:ranks}). The range
+is across computational row orders, not an uncertainty interval. Correct
+ranking does not repair the historical graph or contaminated control and
+does not establish a tissue-level mechanism.
+
+\begin{table}[H]\centering
+\caption{Joint partial-correlation range across 200 row permutations of
+one unchanged historical panel. Six-decimal printing collapses the
+midrank range, whose machine-level width is below $10^{-12}$.}
+\label{tab:ranks}
+\begin{tabular}{lrr}\toprule
+Rank operator & Minimum & Maximum\\\midrule
+Ordinal tied ranks & \RankOrdinalLow & \RankOrdinalHigh\\
+Average midranks & \RankMidrankLow & \RankMidrankHigh\\
+\bottomrule\end{tabular}
+\end{table}
+
+\section*{S4. Coupled changes in the label-regeneration intervention}
+The endpoint audit recomputes generator quantities without fitting STAGATE.
+It reuses two substrates, five seed identities and intervention levels zero
+and one. Coordinates and the conditional expression-generation rule are
+fixed, while selected labels are redrawn and expression regenerated from
+the current labels. The operation changes class frequencies, contiguity
+and expression spatial autocorrelation together. Tables~\ref{tab:endpoints}
+and \ref{tab:seed-endpoints} report the substrate means and all 20 seed-level
+endpoint records, respectively. They are not additional independent
+tissues or independent-contiguity estimates.
+
+Expression Moran's $I$ is averaged across features on the fixed directed
+six-neighbour graph. Residual SD is the population-form standard deviation
+of expression minus its generated label-conditioned mean. ``Small class''
+is the final generator class, not a retrospectively selected minority.
+Random same-label probability is $\sum_c n_c(n_c-1)/[n(n-1)]$, where $n_c$
+is the generated count for class $c$ and $n$ is the substrate's cell count.
+All four readouts are dimensionless except residual SD, which retains the
+synthetic expression scale. Level is the label-redraw fraction, not measured
+expression--position alignment.
+
+\begin{table}[H]\centering\small
+\caption{Five-seed mean endpoints for label regeneration. The conditional
+rule remains fixed, while expression Moran's $I$ and class balance change.}
+\label{tab:endpoints}
+\begin{tabular}{llrrrr}\toprule
+Substrate & Level & Moran's $I$ & Small class (\%) & Residual SD & Random same label\\\midrule
+\csname siendpointS10\endcsname
+\csname siendpointS11\endcsname
+\csname siendpointS20\endcsname
+\csname siendpointS21\endcsname
+\bottomrule\end{tabular}
+\end{table}
+
+\begin{longtable}{llrrrrr}
+\caption{Seed-level endpoints underlying Table~\ref{tab:endpoints}.
+Each seed contributes both levels; the rows are paired, not independent
+replications of a tissue mechanism.}\label{tab:seed-endpoints}\\
+\toprule
+Substrate & Seed & Level & Moran's $I$ & Small class (\%) & Residual SD & Random same label\\\midrule
+\endfirsthead
+\toprule
+Substrate & Seed & Level & Moran's $I$ & Small class (\%) & Residual SD & Random same label\\\midrule
+\endhead
+\bottomrule\endfoot
+\SISeedRows
+\end{longtable}
+
+\section*{Reproducibility and scientific boundary}
+The readable tables are exported by the current SI build script from
+\path{ledgers/revision_20260923/} protocol, summary, QA and estimand-audit
+records. The export rejects incomplete objects, changed audit sources or
+missing endpoint identities and saves input and generated-table hashes.
+Those hashes establish identity, not scientific correctness. Independent
+review of the field-aware adapters, generator uncertainty and annotation
+scope remains open. No calibrated probability model is supplied for the
+returned KMeans labels; historical confidence and ECE claims stay withdrawn.
+\end{document}

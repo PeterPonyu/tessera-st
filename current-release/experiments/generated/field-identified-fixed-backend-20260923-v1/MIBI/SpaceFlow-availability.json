@@ -1,0 +1,10 @@
+{
+  "method": "SpaceFlow",
+  "status": "not_run",
+  "reason": "Full field-aware spatial distance/loss/refinement path not validated; no score supplied",
+  "seeds_not_run": [
+    1,
+    2,
+    3
+  ]
+}

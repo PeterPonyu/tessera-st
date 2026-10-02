@@ -1,0 +1,18 @@
+{
+  "protocol_id": "field-identified-fixed-backend-20260923-v1",
+  "dataset": "MIBI",
+  "method": "Tessera",
+  "seed": 1,
+  "source_sha256": "3f125c51695d78ed1c36d5485dc390ab400154d021f0c7715b89f8ee83978690",
+  "protocol_sha256": "ed165f146b42da3ff09019246cbb8107ba279f5f29412df8cf9a3dde0c95a5f9",
+  "n_cells": 3309,
+  "n_classes": 8,
+  "device": "cuda",
+  "status": "complete",
+  "raw_ari": 0.1716820329965201,
+  "fitted_n_clusters": 8,
+  "spatial_refinement": true,
+  "refined_ari": 0.16359083383251036,
+  "predictions_sha256": "e7830236b2432c4d739cef5e485dddebef9eabb208dfba65898b2e337e89cbca",
+  "seconds": 2.3133036689978326
+}

@@ -1,0 +1,73 @@
+{
+  "platform": "Zhuang-ABCA-1.069(MERFISH,domain)",
+  "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/niche_abc_zhuang1_brain_slice/anndata.h5ad",
+  "gt_column": "domain",
+  "gt_provenance": "Allen-CCF-2020 anatomical division (AllenCCF-Ontology-2017); per-cell CCF registration, non-clustering-derived",
+  "n_cells_used": 16000,
+  "n_cells_source": 22072,
+  "subsampled": true,
+  "k": 17,
+  "GT_contiguity": 0.945,
+  "GT_contiguity_raw": 0.9453645833333333,
+  "winner": "SpaceFlow",
+  "spatial_advantage": 0.189,
+  "spatial_advantage_raw": 0.18871311927726156,
+  "means": {
+    "Tessera": 0.2646,
+    "STAGATE": 0.2169,
+    "SEDR": 0.2175,
+    "SpaceFlow": 0.3477,
+    "BANKSY-style": 0.2562,
+    "floor:nonspatial": 0.159,
+    "floor:smoothed": 0.2837,
+    "SpatialLeiden": 0.2657
+  },
+  "per_seed": {
+    "Tessera": [
+      0.2613656341442429,
+      0.2636707250789046,
+      0.26873333867987537
+    ],
+    "STAGATE": [
+      0.23145045222845986,
+      0.1908220462433013,
+      0.22854850240148067
+    ],
+    "SEDR": [
+      0.24237945364306737,
+      0.21583047849068954,
+      0.19441978973738946
+    ],
+    "SpaceFlow": [
+      0.3558250859179632,
+      0.3201104780597944,
+      0.36724711671504157
+    ],
+    "BANKSY-style": [
+      0.26746506913341683,
+      0.25695769604665275,
+      0.24415225646735877
+    ],
+    "floor:nonspatial": [
+      0.15663734260718565,
+      0.1584031151240668,
+      0.162002865129762
+    ],
+    "floor:smoothed": [
+      0.30448612191451596,
+      0.27595594247568417,
+      0.2707067922533716
+    ],
+    "SpatialLeiden": [
+      0.26874714052346255,
+      0.28250101393245536,
+      0.2458271305367439
+    ]
+  },
+  "seeds": [
+    1,
+    2,
+    3
+  ],
+  "protocol": "expand_data.py / expanded_bench.py identical"
+}

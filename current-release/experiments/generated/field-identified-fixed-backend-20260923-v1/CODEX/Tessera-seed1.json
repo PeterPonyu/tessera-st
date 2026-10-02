@@ -1,0 +1,18 @@
+{
+  "protocol_id": "field-identified-fixed-backend-20260923-v1",
+  "dataset": "CODEX",
+  "method": "Tessera",
+  "seed": 1,
+  "source_sha256": "cab5de36581c645743adc1485ec22701cc9f68e1d61c314becf92e7b7292c441",
+  "protocol_sha256": "ed165f146b42da3ff09019246cbb8107ba279f5f29412df8cf9a3dde0c95a5f9",
+  "n_cells": 16000,
+  "n_classes": 100,
+  "device": "cuda",
+  "status": "complete",
+  "raw_ari": 0.05846496258400211,
+  "fitted_n_clusters": 100,
+  "spatial_refinement": true,
+  "refined_ari": 0.05749700082194018,
+  "predictions_sha256": "c385b482bd4a6b0205c0ab4e599ec1a975631a74b61e2162a781dd930261fe31",
+  "seconds": 7.1741862509989005
+}

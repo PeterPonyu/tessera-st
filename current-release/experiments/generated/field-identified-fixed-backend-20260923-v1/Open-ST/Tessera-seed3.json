@@ -1,0 +1,18 @@
+{
+  "protocol_id": "field-identified-fixed-backend-20260923-v1",
+  "dataset": "Open-ST",
+  "method": "Tessera",
+  "seed": 3,
+  "source_sha256": "8faac6daec67977f775a42abd88e6ec20520030431a39757e0c197b9bdcf74de",
+  "protocol_sha256": "ed165f146b42da3ff09019246cbb8107ba279f5f29412df8cf9a3dde0c95a5f9",
+  "n_cells": 15000,
+  "n_classes": 14,
+  "device": "cuda",
+  "status": "complete",
+  "raw_ari": 0.20401409238944979,
+  "fitted_n_clusters": 14,
+  "spatial_refinement": true,
+  "refined_ari": 0.18717958089709547,
+  "predictions_sha256": "cd79fbd155bdb2e45ff562bbf06d1cbce4ea1898468bc40e04afd0f2b56e7717",
+  "seconds": 4.691479765002441
+}

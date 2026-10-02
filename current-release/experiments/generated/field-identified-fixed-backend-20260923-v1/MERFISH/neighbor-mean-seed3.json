@@ -1,0 +1,18 @@
+{
+  "protocol_id": "field-identified-fixed-backend-20260923-v1",
+  "dataset": "MERFISH",
+  "method": "neighbor-mean",
+  "seed": 3,
+  "source_sha256": "1b40d0f40171aac452457e6f381333c101bf9c18954d5c3aaf34731cd5dd42e2",
+  "protocol_sha256": "ed165f146b42da3ff09019246cbb8107ba279f5f29412df8cf9a3dde0c95a5f9",
+  "n_cells": 5488,
+  "n_classes": 8,
+  "device": "cuda",
+  "status": "complete",
+  "raw_ari": 0.17333862133860659,
+  "fitted_n_clusters": 8,
+  "spatial_refinement": true,
+  "refined_ari": 0.1933901180971598,
+  "predictions_sha256": "821f9c936a3d66b3c5519a017f514c7878932c9e783fb665ab39a020da851d94",
+  "seconds": 0.11768522800048231
+}

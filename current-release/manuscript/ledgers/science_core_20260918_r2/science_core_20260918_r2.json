@@ -1,0 +1,6364 @@
+{
+  "role": "science-hardening round 2 2026-09-18; n-raise screen + Bayesian ρ + meta decision",
+  "started_utc": "2026-09-18T17:21:13.534419+00:00",
+  "finished_utc": "2026-09-18T17:23:06.955185+00:00",
+  "versions": {
+    "python": "3.13.5",
+    "numpy": "2.2.6",
+    "scipy": "1.16.3",
+    "anndata": "0.12.10",
+    "SOURCE_DATE_EPOCH": "0",
+    "seed": 20260918,
+    "grid": 4001
+  },
+  "inclusion_criteria": {
+    "C1_spatial": "obsm['spatial'] present with shape (n, >=2)",
+    "C2_biological_gt": "at least one obs column is a published biological annotation (domain/region/layer/tumour/cell type/niche/annotation/cluster/ground_truth) with >=2 valid classes; not a single dummy",
+    "C3_not_duplicate": "not a byte-duplicate of an already-included file",
+    "C4_independent_platform": "not an extra slice/section of an already-included experiment counted as +1 n",
+    "C5_gt_independence_new": "NEW rows beyond the published 11 require independent biological GT. Method-derived labels (Harmony clusters, FUSEmap domains, Leiden on the same matrix, a competitor method's domains) do not qualify. BRCA/SEDR is a disclosed exception already on the panel, not a licence to add more method-derived rows.",
+    "C6_not_technical": "not technical-only (e.g. segmentation_method)",
+    "C7_not_scrna": "not scRNA-seq / atlas without spatial coordinates"
+  },
+  "candidate": {
+    "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/baselines/serial3d_ref/merfish_mouse_hypothalamus/deepstarmap_mouse_brain.h5ad",
+    "exists": true,
+    "size_bytes": 875040084,
+    "n_obs": 198675,
+    "n_vars": 1017,
+    "obs_columns": [
+      "Harmony_labels",
+      "FUSEmap_main_level",
+      "FUSEmap_sub_level"
+    ],
+    "obsm_keys": [
+      "X_fusemap",
+      "X_umap",
+      "spatial"
+    ],
+    "uns_keys": [],
+    "has_spatial": true,
+    "spatial_shape": [
+      198675,
+      3
+    ],
+    "label_columns": [
+      {
+        "column": "Harmony_labels",
+        "n_valid": 198675,
+        "n_classes": 22,
+        "example_classes": [
+          "Astrocytes",
+          "Cholinergic and monoaminergic neurons",
+          "Choroid plexus epithelial cells",
+          "Dentate gyrus granule neurons",
+          "Di- and mesencephalon excitatory neurons",
+          "Di- and mesencephalon inhibitory neurons",
+          "Ependymal cells",
+          "Hindbrain neurons/Spinal cord neurons",
+          "Microglia",
+          "Non-glutamatergic neuroblasts",
+          "Olfactory inhibitory neurons",
+          "Oligodendrocyte precursor cells"
+        ],
+        "method_derived_name": true,
+        "technical_name": false
+      },
+      {
+        "column": "FUSEmap_main_level",
+        "n_valid": 198675,
+        "n_classes": 19,
+        "example_classes": [
+          "Astrocytes",
+          "Cholinergic and monoaminergic neurons",
+          "Choroid plexus epithelial cells",
+          "Dentate gyrus granule neurons",
+          "Di- and mesencephalon excitatory neurons",
+          "Di- and mesencephalon inhibitory neurons",
+          "Ependymal cells",
+          "Microglia",
+          "Non-glutamatergic neuroblasts",
+          "Oligodendrocyte precursor cells",
+          "Oligodendrocytes",
+          "Peptidergic neurons"
+        ],
+        "method_derived_name": true,
+        "technical_name": false
+      },
+      {
+        "column": "FUSEmap_sub_level",
+        "n_valid": 198675,
+        "n_classes": 137,
+        "example_classes": [
+          "AC_1",
+          "AC_2",
+          "AC_3",
+          "AC_4",
+          "AC_5",
+          "AC_6",
+          "CHOR",
+          "CHO_3",
+          "DEGLU_1",
+          "DEGLU_2",
+          "DEGLU_3",
+          "DEGLU_4"
+        ],
+        "method_derived_name": true,
+        "technical_name": false
+      }
+    ],
+    "fails": [
+      "C5_gt_independence_new"
+    ],
+    "qualifies_as_new_n": false,
+    "independent_gt_columns": [],
+    "method_derived_columns": [
+      "Harmony_labels",
+      "FUSEmap_main_level",
+      "FUSEmap_sub_level"
+    ],
+    "head16_sha256": "47bc8d5cdba1da9becf29524ae13b3ca5e670371fb6ec1ecb47225eb4c1483eb",
+    "full_sha256": "c0eb7fb3afffc00a52b2455d154062762c386dc34bf7abd1a729cec74db9525f",
+    "same_folder_as_included_merfish_0": true,
+    "merfish_0_n_obs": 5488,
+    "distinct_from_merfish_0": true,
+    "criterion_applied": "C5_gt_independence_new",
+    "decision": "FAIL C5"
+  },
+  "n_rose": true,
+  "n_published": 11,
+  "n_if_candidate_added": 11,
+  "disk_screen": {
+    "n_h5ad": 78,
+    "n_qualify_as_new": 5,
+    "qualifying_paths": [
+      "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/aether_serial_merfish/concat.h5ad",
+      "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/dlpfc_maynard_2021_visium/anndata.h5ad",
+      "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/niche_abc_zhuang1_brain_slice/anndata.h5ad",
+      "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/niche_abc_zhuang2_brain_slice/anndata.h5ad",
+      "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/niche_merfish_slice/anndata.h5ad"
+    ],
+    "rows": [
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/baselines/serial3d_ref/merfish_mouse_hypothalamus/concat.h5ad",
+        "exists": true,
+        "size_bytes": 15957922,
+        "n_obs": 22829,
+        "n_vars": 155,
+        "obs_columns": [
+          "cell_class",
+          "neuron_class",
+          "domain",
+          "Region",
+          "annotation",
+          "slice_id",
+          "z_index"
+        ],
+        "obsm_keys": [
+          "spatial"
+        ],
+        "uns_keys": [],
+        "has_spatial": true,
+        "spatial_shape": [
+          22829,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "cell_class",
+            "n_valid": 22829,
+            "n_classes": 15,
+            "example_classes": [
+              "Astrocyte",
+              "Endothelial 1",
+              "Endothelial 2",
+              "Endothelial 3",
+              "Ependymal",
+              "Excitatory",
+              "Inhibitory",
+              "Microglia",
+              "OD Immature 1",
+              "OD Immature 2",
+              "OD Mature 1",
+              "OD Mature 2"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "neuron_class",
+            "n_valid": 14798,
+            "n_classes": 67,
+            "example_classes": [
+              "E-1",
+              "E-10",
+              "E-11",
+              "E-12",
+              "E-13",
+              "E-14",
+              "E-15",
+              "E-16",
+              "E-17",
+              "E-18",
+              "E-19",
+              "E-2"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "domain",
+            "n_valid": 22829,
+            "n_classes": 8,
+            "example_classes": [
+              "BST",
+              "MPA",
+              "MPN",
+              "PV",
+              "PVH",
+              "PVT",
+              "V3",
+              "fx"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "Region",
+            "n_valid": 22829,
+            "n_classes": 8,
+            "example_classes": [
+              "BST",
+              "MPA",
+              "MPN",
+              "PV",
+              "PVH",
+              "PVT",
+              "V3",
+              "fx"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "annotation",
+            "n_valid": 22829,
+            "n_classes": 8,
+            "example_classes": [
+              "BST",
+              "MPA",
+              "MPN",
+              "PV",
+              "PVH",
+              "PVT",
+              "V3",
+              "fx"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "same_study_as": "MERFISH Moffitt hypothalamus (merfish_0 already in n=11)",
+        "fails": [
+          "C4_independent_platform"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "cell_class",
+          "neuron_class",
+          "domain",
+          "Region",
+          "annotation"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/baselines/serial3d_ref/merfish_mouse_hypothalamus/deepstarmap_mouse_brain.h5ad",
+        "exists": true,
+        "size_bytes": 875040084,
+        "n_obs": 198675,
+        "n_vars": 1017,
+        "obs_columns": [
+          "Harmony_labels",
+          "FUSEmap_main_level",
+          "FUSEmap_sub_level"
+        ],
+        "obsm_keys": [
+          "X_fusemap",
+          "X_umap",
+          "spatial"
+        ],
+        "uns_keys": [],
+        "has_spatial": true,
+        "spatial_shape": [
+          198675,
+          3
+        ],
+        "label_columns": [
+          {
+            "column": "Harmony_labels",
+            "n_valid": 198675,
+            "n_classes": 22,
+            "example_classes": [
+              "Astrocytes",
+              "Cholinergic and monoaminergic neurons",
+              "Choroid plexus epithelial cells",
+              "Dentate gyrus granule neurons",
+              "Di- and mesencephalon excitatory neurons",
+              "Di- and mesencephalon inhibitory neurons",
+              "Ependymal cells",
+              "Hindbrain neurons/Spinal cord neurons",
+              "Microglia",
+              "Non-glutamatergic neuroblasts",
+              "Olfactory inhibitory neurons",
+              "Oligodendrocyte precursor cells"
+            ],
+            "method_derived_name": true,
+            "technical_name": false
+          },
+          {
+            "column": "FUSEmap_main_level",
+            "n_valid": 198675,
+            "n_classes": 19,
+            "example_classes": [
+              "Astrocytes",
+              "Cholinergic and monoaminergic neurons",
+              "Choroid plexus epithelial cells",
+              "Dentate gyrus granule neurons",
+              "Di- and mesencephalon excitatory neurons",
+              "Di- and mesencephalon inhibitory neurons",
+              "Ependymal cells",
+              "Microglia",
+              "Non-glutamatergic neuroblasts",
+              "Oligodendrocyte precursor cells",
+              "Oligodendrocytes",
+              "Peptidergic neurons"
+            ],
+            "method_derived_name": true,
+            "technical_name": false
+          },
+          {
+            "column": "FUSEmap_sub_level",
+            "n_valid": 198675,
+            "n_classes": 137,
+            "example_classes": [
+              "AC_1",
+              "AC_2",
+              "AC_3",
+              "AC_4",
+              "AC_5",
+              "AC_6",
+              "CHOR",
+              "CHO_3",
+              "DEGLU_1",
+              "DEGLU_2",
+              "DEGLU_3",
+              "DEGLU_4"
+            ],
+            "method_derived_name": true,
+            "technical_name": false
+          }
+        ],
+        "fails": [
+          "C5_gt_independence_new"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [],
+        "method_derived_columns": [
+          "Harmony_labels",
+          "FUSEmap_main_level",
+          "FUSEmap_sub_level"
+        ],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/baselines/serial3d_ref/merfish_mouse_hypothalamus/imc_human_breastcancer/imc_0.h5ad",
+        "exists": true,
+        "size_bytes": 6948593,
+        "n_obs": 7787,
+        "n_vars": 25,
+        "obs_columns": [
+          "leiden",
+          "phenograph",
+          "cell_type",
+          "spatial_z",
+          "z_coord"
+        ],
+        "obsm_keys": [
+          "X_pca",
+          "X_umap",
+          "spatial",
+          "spatial_3d"
+        ],
+        "uns_keys": [
+          "leiden",
+          "leiden_colors",
+          "moranI",
+          "neighbors",
+          "pca",
+          "spatial_neighbors",
+          "umap"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          7787,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "cell_type",
+            "n_valid": 7104,
+            "n_classes": 7,
+            "example_classes": [
+              "Basal Epi",
+              "Endothelial",
+              "Fibroblasts",
+              "Luminal Epi",
+              "Myeloid Cells",
+              "Plasma Cells",
+              "T Cells"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "same_study_as": "IMC Jackson breast (niche_imc_breast already in n=11)",
+        "fails": [
+          "C4_independent_platform"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "cell_type"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/baselines/serial3d_ref/merfish_mouse_hypothalamus/imc_human_breastcancer/imc_1.h5ad",
+        "exists": true,
+        "size_bytes": 6190785,
+        "n_obs": 6931,
+        "n_vars": 25,
+        "obs_columns": [
+          "leiden",
+          "phenograph",
+          "cell_type",
+          "spatial_z",
+          "z_coord"
+        ],
+        "obsm_keys": [
+          "X_pca",
+          "X_umap",
+          "spatial",
+          "spatial_3d"
+        ],
+        "uns_keys": [
+          "leiden",
+          "leiden_colors",
+          "moranI",
+          "neighbors",
+          "pca",
+          "spatial_neighbors",
+          "umap"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          6931,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "cell_type",
+            "n_valid": 5870,
+            "n_classes": 7,
+            "example_classes": [
+              "Basal Epi",
+              "Endothelial",
+              "Fibroblasts",
+              "Luminal Epi",
+              "Myeloid Cells",
+              "Plasma Cells",
+              "T Cells"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "same_study_as": "IMC Jackson breast (niche_imc_breast already in n=11)",
+        "fails": [
+          "C4_independent_platform"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "cell_type"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/baselines/serial3d_ref/merfish_mouse_hypothalamus/imc_human_breastcancer/imc_10.h5ad",
+        "exists": true,
+        "size_bytes": 6405739,
+        "n_obs": 7161,
+        "n_vars": 25,
+        "obs_columns": [
+          "leiden",
+          "phenograph",
+          "cell_type",
+          "spatial_z",
+          "z_coord"
+        ],
+        "obsm_keys": [
+          "X_pca",
+          "X_umap",
+          "spatial",
+          "spatial_3d"
+        ],
+        "uns_keys": [
+          "leiden",
+          "leiden_colors",
+          "moranI",
+          "neighbors",
+          "pca",
+          "spatial_neighbors",
+          "umap"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          7161,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "cell_type",
+            "n_valid": 7043,
+            "n_classes": 7,
+            "example_classes": [
+              "Basal Epi",
+              "Endothelial",
+              "Fibroblasts",
+              "Luminal Epi",
+              "Myeloid Cells",
+              "Plasma Cells",
+              "T Cells"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "same_study_as": "IMC Jackson breast (niche_imc_breast already in n=11)",
+        "fails": [
+          "C4_independent_platform"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "cell_type"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/baselines/serial3d_ref/merfish_mouse_hypothalamus/imc_human_breastcancer/imc_11.h5ad",
+        "exists": true,
+        "size_bytes": 6524143,
+        "n_obs": 7301,
+        "n_vars": 25,
+        "obs_columns": [
+          "leiden",
+          "phenograph",
+          "cell_type",
+          "spatial_z",
+          "z_coord"
+        ],
+        "obsm_keys": [
+          "X_pca",
+          "X_umap",
+          "spatial",
+          "spatial_3d"
+        ],
+        "uns_keys": [
+          "leiden",
+          "leiden_colors",
+          "moranI",
+          "neighbors",
+          "pca",
+          "spatial_neighbors",
+          "umap"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          7301,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "cell_type",
+            "n_valid": 7160,
+            "n_classes": 7,
+            "example_classes": [
+              "Basal Epi",
+              "Endothelial",
+              "Fibroblasts",
+              "Luminal Epi",
+              "Myeloid Cells",
+              "Plasma Cells",
+              "T Cells"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "same_study_as": "IMC Jackson breast (niche_imc_breast already in n=11)",
+        "fails": [
+          "C4_independent_platform"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "cell_type"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/baselines/serial3d_ref/merfish_mouse_hypothalamus/imc_human_breastcancer/imc_12.h5ad",
+        "exists": true,
+        "size_bytes": 6543258,
+        "n_obs": 7318,
+        "n_vars": 25,
+        "obs_columns": [
+          "leiden",
+          "phenograph",
+          "cell_type",
+          "spatial_z",
+          "z_coord"
+        ],
+        "obsm_keys": [
+          "X_pca",
+          "X_umap",
+          "spatial",
+          "spatial_3d"
+        ],
+        "uns_keys": [
+          "leiden",
+          "leiden_colors",
+          "moranI",
+          "neighbors",
+          "pca",
+          "spatial_neighbors",
+          "umap"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          7318,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "cell_type",
+            "n_valid": 7168,
+            "n_classes": 7,
+            "example_classes": [
+              "Basal Epi",
+              "Endothelial",
+              "Fibroblasts",
+              "Luminal Epi",
+              "Myeloid Cells",
+              "Plasma Cells",
+              "T Cells"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "same_study_as": "IMC Jackson breast (niche_imc_breast already in n=11)",
+        "fails": [
+          "C4_independent_platform"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "cell_type"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/baselines/serial3d_ref/merfish_mouse_hypothalamus/imc_human_breastcancer/imc_13.h5ad",
+        "exists": true,
+        "size_bytes": 6372974,
+        "n_obs": 7122,
+        "n_vars": 25,
+        "obs_columns": [
+          "leiden",
+          "phenograph",
+          "cell_type",
+          "spatial_z",
+          "z_coord"
+        ],
+        "obsm_keys": [
+          "X_pca",
+          "X_umap",
+          "spatial",
+          "spatial_3d"
+        ],
+        "uns_keys": [
+          "leiden",
+          "leiden_colors",
+          "moranI",
+          "neighbors",
+          "pca",
+          "spatial_neighbors",
+          "umap"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          7122,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "cell_type",
+            "n_valid": 6761,
+            "n_classes": 8,
+            "example_classes": [
+              "B Cells",
+              "Basal Epi",
+              "Endothelial",
+              "Fibroblasts",
+              "Luminal Epi",
+              "Myeloid Cells",
+              "Plasma Cells",
+              "T Cells"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "same_study_as": "IMC Jackson breast (niche_imc_breast already in n=11)",
+        "fails": [
+          "C4_independent_platform"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "cell_type"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/baselines/serial3d_ref/merfish_mouse_hypothalamus/imc_human_breastcancer/imc_14.h5ad",
+        "exists": true,
+        "size_bytes": 6604092,
+        "n_obs": 7388,
+        "n_vars": 25,
+        "obs_columns": [
+          "leiden",
+          "phenograph",
+          "cell_type",
+          "spatial_z",
+          "z_coord"
+        ],
+        "obsm_keys": [
+          "X_pca",
+          "X_umap",
+          "spatial",
+          "spatial_3d"
+        ],
+        "uns_keys": [
+          "leiden",
+          "leiden_colors",
+          "moranI",
+          "neighbors",
+          "pca",
+          "spatial_neighbors",
+          "umap"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          7388,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "cell_type",
+            "n_valid": 7275,
+            "n_classes": 8,
+            "example_classes": [
+              "B Cells",
+              "Basal Epi",
+              "Endothelial",
+              "Fibroblasts",
+              "Luminal Epi",
+              "Myeloid Cells",
+              "Plasma Cells",
+              "T Cells"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "same_study_as": "IMC Jackson breast (niche_imc_breast already in n=11)",
+        "fails": [
+          "C4_independent_platform"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "cell_type"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/baselines/serial3d_ref/merfish_mouse_hypothalamus/imc_human_breastcancer/imc_2.h5ad",
+        "exists": true,
+        "size_bytes": 6077084,
+        "n_obs": 6812,
+        "n_vars": 25,
+        "obs_columns": [
+          "leiden",
+          "phenograph",
+          "cell_type",
+          "spatial_z",
+          "z_coord"
+        ],
+        "obsm_keys": [
+          "X_pca",
+          "X_umap",
+          "spatial",
+          "spatial_3d"
+        ],
+        "uns_keys": [
+          "leiden",
+          "leiden_colors",
+          "moranI",
+          "neighbors",
+          "pca",
+          "spatial_neighbors",
+          "umap"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          6812,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "cell_type",
+            "n_valid": 6702,
+            "n_classes": 8,
+            "example_classes": [
+              "B Cells",
+              "Basal Epi",
+              "Endothelial",
+              "Fibroblasts",
+              "Luminal Epi",
+              "Myeloid Cells",
+              "Plasma Cells",
+              "T Cells"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "same_study_as": "IMC Jackson breast (niche_imc_breast already in n=11)",
+        "fails": [
+          "C4_independent_platform"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "cell_type"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/baselines/serial3d_ref/merfish_mouse_hypothalamus/imc_human_breastcancer/imc_3.h5ad",
+        "exists": true,
+        "size_bytes": 5999309,
+        "n_obs": 6719,
+        "n_vars": 25,
+        "obs_columns": [
+          "leiden",
+          "phenograph",
+          "cell_type",
+          "spatial_z",
+          "z_coord"
+        ],
+        "obsm_keys": [
+          "X_pca",
+          "X_umap",
+          "spatial",
+          "spatial_3d"
+        ],
+        "uns_keys": [
+          "leiden",
+          "leiden_colors",
+          "moranI",
+          "neighbors",
+          "pca",
+          "spatial_neighbors",
+          "umap"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          6719,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "cell_type",
+            "n_valid": 6569,
+            "n_classes": 8,
+            "example_classes": [
+              "B Cells",
+              "Basal Epi",
+              "Endothelial",
+              "Fibroblasts",
+              "Luminal Epi",
+              "Myeloid Cells",
+              "Plasma Cells",
+              "T Cells"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "same_study_as": "IMC Jackson breast (niche_imc_breast already in n=11)",
+        "fails": [
+          "C4_independent_platform"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "cell_type"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/baselines/serial3d_ref/merfish_mouse_hypothalamus/imc_human_breastcancer/imc_4.h5ad",
+        "exists": true,
+        "size_bytes": 6014313,
+        "n_obs": 6739,
+        "n_vars": 25,
+        "obs_columns": [
+          "leiden",
+          "phenograph",
+          "cell_type",
+          "spatial_z",
+          "z_coord"
+        ],
+        "obsm_keys": [
+          "X_pca",
+          "X_umap",
+          "spatial",
+          "spatial_3d"
+        ],
+        "uns_keys": [
+          "leiden",
+          "leiden_colors",
+          "moranI",
+          "neighbors",
+          "pca",
+          "spatial_neighbors",
+          "umap"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          6739,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "cell_type",
+            "n_valid": 6560,
+            "n_classes": 8,
+            "example_classes": [
+              "B Cells",
+              "Basal Epi",
+              "Endothelial",
+              "Fibroblasts",
+              "Luminal Epi",
+              "Myeloid Cells",
+              "Plasma Cells",
+              "T Cells"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "same_study_as": "IMC Jackson breast (niche_imc_breast already in n=11)",
+        "fails": [
+          "C4_independent_platform"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "cell_type"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/baselines/serial3d_ref/merfish_mouse_hypothalamus/imc_human_breastcancer/imc_5.h5ad",
+        "exists": true,
+        "size_bytes": 5935526,
+        "n_obs": 6650,
+        "n_vars": 25,
+        "obs_columns": [
+          "leiden",
+          "phenograph",
+          "cell_type",
+          "spatial_z",
+          "z_coord"
+        ],
+        "obsm_keys": [
+          "X_pca",
+          "X_umap",
+          "spatial",
+          "spatial_3d"
+        ],
+        "uns_keys": [
+          "leiden",
+          "leiden_colors",
+          "moranI",
+          "neighbors",
+          "pca",
+          "spatial_neighbors",
+          "umap"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          6650,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "cell_type",
+            "n_valid": 6489,
+            "n_classes": 7,
+            "example_classes": [
+              "Basal Epi",
+              "Endothelial",
+              "Fibroblasts",
+              "Luminal Epi",
+              "Myeloid Cells",
+              "Plasma Cells",
+              "T Cells"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "same_study_as": "IMC Jackson breast (niche_imc_breast already in n=11)",
+        "fails": [
+          "C4_independent_platform"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "cell_type"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/baselines/serial3d_ref/merfish_mouse_hypothalamus/imc_human_breastcancer/imc_6.h5ad",
+        "exists": true,
+        "size_bytes": 6107007,
+        "n_obs": 6837,
+        "n_vars": 25,
+        "obs_columns": [
+          "leiden",
+          "phenograph",
+          "cell_type",
+          "spatial_z",
+          "z_coord"
+        ],
+        "obsm_keys": [
+          "X_pca",
+          "X_umap",
+          "spatial",
+          "spatial_3d"
+        ],
+        "uns_keys": [
+          "leiden",
+          "leiden_colors",
+          "moranI",
+          "neighbors",
+          "pca",
+          "spatial_neighbors",
+          "umap"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          6837,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "cell_type",
+            "n_valid": 6132,
+            "n_classes": 7,
+            "example_classes": [
+              "Basal Epi",
+              "Endothelial",
+              "Fibroblasts",
+              "Luminal Epi",
+              "Myeloid Cells",
+              "Plasma Cells",
+              "T Cells"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "same_study_as": "IMC Jackson breast (niche_imc_breast already in n=11)",
+        "fails": [
+          "C4_independent_platform"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "cell_type"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/baselines/serial3d_ref/merfish_mouse_hypothalamus/imc_human_breastcancer/imc_7.h5ad",
+        "exists": true,
+        "size_bytes": 6447439,
+        "n_obs": 7205,
+        "n_vars": 25,
+        "obs_columns": [
+          "leiden",
+          "phenograph",
+          "cell_type",
+          "spatial_z",
+          "z_coord"
+        ],
+        "obsm_keys": [
+          "X_pca",
+          "X_umap",
+          "spatial",
+          "spatial_3d"
+        ],
+        "uns_keys": [
+          "leiden",
+          "leiden_colors",
+          "moranI",
+          "neighbors",
+          "pca",
+          "spatial_neighbors",
+          "umap"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          7205,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "cell_type",
+            "n_valid": 6386,
+            "n_classes": 8,
+            "example_classes": [
+              "B Cells",
+              "Basal Epi",
+              "Endothelial",
+              "Fibroblasts",
+              "Luminal Epi",
+              "Myeloid Cells",
+              "Plasma Cells",
+              "T Cells"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "same_study_as": "IMC Jackson breast (niche_imc_breast already in n=11)",
+        "fails": [
+          "C4_independent_platform"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "cell_type"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/baselines/serial3d_ref/merfish_mouse_hypothalamus/imc_human_breastcancer/imc_8.h5ad",
+        "exists": true,
+        "size_bytes": 6426823,
+        "n_obs": 7181,
+        "n_vars": 25,
+        "obs_columns": [
+          "leiden",
+          "phenograph",
+          "cell_type",
+          "spatial_z",
+          "z_coord"
+        ],
+        "obsm_keys": [
+          "X_pca",
+          "X_umap",
+          "spatial",
+          "spatial_3d"
+        ],
+        "uns_keys": [
+          "leiden",
+          "leiden_colors",
+          "moranI",
+          "neighbors",
+          "pca",
+          "spatial_neighbors",
+          "umap"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          7181,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "cell_type",
+            "n_valid": 6971,
+            "n_classes": 7,
+            "example_classes": [
+              "Basal Epi",
+              "Endothelial",
+              "Fibroblasts",
+              "Luminal Epi",
+              "Myeloid Cells",
+              "Plasma Cells",
+              "T Cells"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "same_study_as": "IMC Jackson breast (niche_imc_breast already in n=11)",
+        "fails": [
+          "C4_independent_platform"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "cell_type"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/baselines/serial3d_ref/merfish_mouse_hypothalamus/imc_human_breastcancer/imc_9.h5ad",
+        "exists": true,
+        "size_bytes": 6752569,
+        "n_obs": 7555,
+        "n_vars": 25,
+        "obs_columns": [
+          "leiden",
+          "phenograph",
+          "cell_type",
+          "spatial_z",
+          "z_coord"
+        ],
+        "obsm_keys": [
+          "X_pca",
+          "X_umap",
+          "spatial",
+          "spatial_3d"
+        ],
+        "uns_keys": [
+          "leiden",
+          "leiden_colors",
+          "moranI",
+          "neighbors",
+          "pca",
+          "spatial_neighbors",
+          "umap"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          7555,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "cell_type",
+            "n_valid": 7383,
+            "n_classes": 7,
+            "example_classes": [
+              "Basal Epi",
+              "Endothelial",
+              "Fibroblasts",
+              "Luminal Epi",
+              "Myeloid Cells",
+              "Plasma Cells",
+              "T Cells"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "same_study_as": "IMC Jackson breast (niche_imc_breast already in n=11)",
+        "fails": [
+          "C4_independent_platform"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "cell_type"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/baselines/serial3d_ref/merfish_mouse_hypothalamus/merfish_0.h5ad",
+        "exists": true,
+        "size_bytes": 3840880,
+        "n_obs": 5488,
+        "n_vars": 155,
+        "obs_columns": [
+          "cell_class",
+          "neuron_class",
+          "domain",
+          "Region",
+          "annotation",
+          "slice_id"
+        ],
+        "obsm_keys": [
+          "spatial"
+        ],
+        "uns_keys": [
+          "domain_colors"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          5488,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "cell_class",
+            "n_valid": 5488,
+            "n_classes": 14,
+            "example_classes": [
+              "Astrocyte",
+              "Endothelial 1",
+              "Endothelial 2",
+              "Endothelial 3",
+              "Ependymal",
+              "Excitatory",
+              "Inhibitory",
+              "Microglia",
+              "OD Immature 1",
+              "OD Immature 2",
+              "OD Mature 1",
+              "OD Mature 2"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "neuron_class",
+            "n_valid": 3358,
+            "n_classes": 61,
+            "example_classes": [
+              "E-1",
+              "E-10",
+              "E-11",
+              "E-12",
+              "E-13",
+              "E-14",
+              "E-15",
+              "E-16",
+              "E-17",
+              "E-18",
+              "E-19",
+              "E-2"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "domain",
+            "n_valid": 5488,
+            "n_classes": 8,
+            "example_classes": [
+              "BST",
+              "MPA",
+              "MPN",
+              "PV",
+              "PVH",
+              "PVT",
+              "V3",
+              "fx"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "Region",
+            "n_valid": 5488,
+            "n_classes": 8,
+            "example_classes": [
+              "BST",
+              "MPA",
+              "MPN",
+              "PV",
+              "PVH",
+              "PVT",
+              "V3",
+              "fx"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "annotation",
+            "n_valid": 5488,
+            "n_classes": 8,
+            "example_classes": [
+              "BST",
+              "MPA",
+              "MPN",
+              "PV",
+              "PVH",
+              "PVT",
+              "V3",
+              "fx"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "fails": [
+          "C3_not_duplicate"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "cell_class",
+          "neuron_class",
+          "domain",
+          "Region",
+          "annotation"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": true
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/baselines/serial3d_ref/merfish_mouse_hypothalamus/merfish_1.h5ad",
+        "exists": true,
+        "size_bytes": 3886282,
+        "n_obs": 5557,
+        "n_vars": 155,
+        "obs_columns": [
+          "cell_class",
+          "neuron_class",
+          "domain",
+          "Region",
+          "annotation",
+          "slice_id"
+        ],
+        "obsm_keys": [
+          "spatial"
+        ],
+        "uns_keys": [
+          "domain_colors"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          5557,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "cell_class",
+            "n_valid": 5557,
+            "n_classes": 15,
+            "example_classes": [
+              "Astrocyte",
+              "Endothelial 1",
+              "Endothelial 2",
+              "Endothelial 3",
+              "Ependymal",
+              "Excitatory",
+              "Inhibitory",
+              "Microglia",
+              "OD Immature 1",
+              "OD Immature 2",
+              "OD Mature 1",
+              "OD Mature 2"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "neuron_class",
+            "n_valid": 3617,
+            "n_classes": 63,
+            "example_classes": [
+              "E-1",
+              "E-10",
+              "E-11",
+              "E-12",
+              "E-13",
+              "E-14",
+              "E-15",
+              "E-16",
+              "E-17",
+              "E-18",
+              "E-19",
+              "E-2"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "domain",
+            "n_valid": 5557,
+            "n_classes": 8,
+            "example_classes": [
+              "BST",
+              "MPA",
+              "MPN",
+              "PV",
+              "PVH",
+              "PVT",
+              "V3",
+              "fx"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "Region",
+            "n_valid": 5557,
+            "n_classes": 8,
+            "example_classes": [
+              "BST",
+              "MPA",
+              "MPN",
+              "PV",
+              "PVH",
+              "PVT",
+              "V3",
+              "fx"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "annotation",
+            "n_valid": 5557,
+            "n_classes": 8,
+            "example_classes": [
+              "BST",
+              "MPA",
+              "MPN",
+              "PV",
+              "PVH",
+              "PVT",
+              "V3",
+              "fx"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "same_study_as": "MERFISH Moffitt hypothalamus (merfish_0 already in n=11)",
+        "fails": [
+          "C4_independent_platform"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "cell_class",
+          "neuron_class",
+          "domain",
+          "Region",
+          "annotation"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/baselines/serial3d_ref/merfish_mouse_hypothalamus/merfish_2.h5ad",
+        "exists": true,
+        "size_bytes": 4129084,
+        "n_obs": 5926,
+        "n_vars": 155,
+        "obs_columns": [
+          "cell_class",
+          "neuron_class",
+          "domain",
+          "Region",
+          "annotation",
+          "slice_id"
+        ],
+        "obsm_keys": [
+          "spatial"
+        ],
+        "uns_keys": [
+          "domain_colors"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          5926,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "cell_class",
+            "n_valid": 5926,
+            "n_classes": 15,
+            "example_classes": [
+              "Astrocyte",
+              "Endothelial 1",
+              "Endothelial 2",
+              "Endothelial 3",
+              "Ependymal",
+              "Excitatory",
+              "Inhibitory",
+              "Microglia",
+              "OD Immature 1",
+              "OD Immature 2",
+              "OD Mature 1",
+              "OD Mature 2"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "neuron_class",
+            "n_valid": 3942,
+            "n_classes": 62,
+            "example_classes": [
+              "E-1",
+              "E-10",
+              "E-11",
+              "E-12",
+              "E-13",
+              "E-14",
+              "E-15",
+              "E-16",
+              "E-17",
+              "E-18",
+              "E-19",
+              "E-2"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "domain",
+            "n_valid": 5926,
+            "n_classes": 8,
+            "example_classes": [
+              "BST",
+              "MPA",
+              "MPN",
+              "PV",
+              "PVH",
+              "PVT",
+              "V3",
+              "fx"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "Region",
+            "n_valid": 5926,
+            "n_classes": 8,
+            "example_classes": [
+              "BST",
+              "MPA",
+              "MPN",
+              "PV",
+              "PVH",
+              "PVT",
+              "V3",
+              "fx"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "annotation",
+            "n_valid": 5926,
+            "n_classes": 8,
+            "example_classes": [
+              "BST",
+              "MPA",
+              "MPN",
+              "PV",
+              "PVH",
+              "PVT",
+              "V3",
+              "fx"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "same_study_as": "MERFISH Moffitt hypothalamus (merfish_0 already in n=11)",
+        "fails": [
+          "C4_independent_platform"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "cell_class",
+          "neuron_class",
+          "domain",
+          "Region",
+          "annotation"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/baselines/serial3d_ref/merfish_mouse_hypothalamus/merfish_3.h5ad",
+        "exists": true,
+        "size_bytes": 4019478,
+        "n_obs": 5803,
+        "n_vars": 155,
+        "obs_columns": [
+          "cell_class",
+          "neuron_class",
+          "domain",
+          "Region",
+          "annotation",
+          "slice_id"
+        ],
+        "obsm_keys": [
+          "spatial"
+        ],
+        "uns_keys": [
+          "domain_colors"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          5803,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "cell_class",
+            "n_valid": 5803,
+            "n_classes": 15,
+            "example_classes": [
+              "Astrocyte",
+              "Endothelial 1",
+              "Endothelial 2",
+              "Endothelial 3",
+              "Ependymal",
+              "Excitatory",
+              "Inhibitory",
+              "Microglia",
+              "OD Immature 1",
+              "OD Immature 2",
+              "OD Mature 1",
+              "OD Mature 2"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "neuron_class",
+            "n_valid": 3801,
+            "n_classes": 60,
+            "example_classes": [
+              "E-1",
+              "E-10",
+              "E-11",
+              "E-12",
+              "E-13",
+              "E-14",
+              "E-15",
+              "E-16",
+              "E-17",
+              "E-18",
+              "E-19",
+              "E-2"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "domain",
+            "n_valid": 5803,
+            "n_classes": 8,
+            "example_classes": [
+              "BST",
+              "MPA",
+              "MPN",
+              "PV",
+              "PVH",
+              "PVT",
+              "V3",
+              "fx"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "Region",
+            "n_valid": 5803,
+            "n_classes": 8,
+            "example_classes": [
+              "BST",
+              "MPA",
+              "MPN",
+              "PV",
+              "PVH",
+              "PVT",
+              "V3",
+              "fx"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "annotation",
+            "n_valid": 5803,
+            "n_classes": 8,
+            "example_classes": [
+              "BST",
+              "MPA",
+              "MPN",
+              "PV",
+              "PVH",
+              "PVT",
+              "V3",
+              "fx"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "same_study_as": "MERFISH Moffitt hypothalamus (merfish_0 already in n=11)",
+        "fails": [
+          "C4_independent_platform"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "cell_class",
+          "neuron_class",
+          "domain",
+          "Region",
+          "annotation"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/baselines/serial3d_ref/merfish_mouse_hypothalamus/merfish_4.h5ad",
+        "exists": true,
+        "size_bytes": 3877070,
+        "n_obs": 5543,
+        "n_vars": 155,
+        "obs_columns": [
+          "cell_class",
+          "neuron_class",
+          "domain",
+          "Region",
+          "annotation",
+          "slice_id"
+        ],
+        "obsm_keys": [
+          "spatial"
+        ],
+        "uns_keys": [
+          "domain_colors"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          5543,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "cell_class",
+            "n_valid": 5543,
+            "n_classes": 15,
+            "example_classes": [
+              "Astrocyte",
+              "Endothelial 1",
+              "Endothelial 2",
+              "Endothelial 3",
+              "Ependymal",
+              "Excitatory",
+              "Inhibitory",
+              "Microglia",
+              "OD Immature 1",
+              "OD Immature 2",
+              "OD Mature 1",
+              "OD Mature 2"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "neuron_class",
+            "n_valid": 3438,
+            "n_classes": 63,
+            "example_classes": [
+              "E-1",
+              "E-10",
+              "E-11",
+              "E-12",
+              "E-13",
+              "E-14",
+              "E-15",
+              "E-16",
+              "E-17",
+              "E-18",
+              "E-19",
+              "E-2"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "domain",
+            "n_valid": 5543,
+            "n_classes": 8,
+            "example_classes": [
+              "BST",
+              "MPA",
+              "MPN",
+              "PV",
+              "PVH",
+              "PVT",
+              "V3",
+              "fx"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "Region",
+            "n_valid": 5543,
+            "n_classes": 8,
+            "example_classes": [
+              "BST",
+              "MPA",
+              "MPN",
+              "PV",
+              "PVH",
+              "PVT",
+              "V3",
+              "fx"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "annotation",
+            "n_valid": 5543,
+            "n_classes": 8,
+            "example_classes": [
+              "BST",
+              "MPA",
+              "MPN",
+              "PV",
+              "PVH",
+              "PVT",
+              "V3",
+              "fx"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "same_study_as": "MERFISH Moffitt hypothalamus (merfish_0 already in n=11)",
+        "fails": [
+          "C4_independent_platform"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "cell_class",
+          "neuron_class",
+          "domain",
+          "Region",
+          "annotation"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/baselines/st_impute_ref/processed_data/st_CESC_test.h5ad",
+        "exists": true,
+        "size_bytes": 471920398,
+        "n_obs": 718455,
+        "n_vars": 10000,
+        "obs_columns": [
+          "cell_id",
+          "transcript_counts",
+          "control_probe_counts",
+          "genomic_control_counts",
+          "control_codeword_counts",
+          "unassigned_codeword_counts",
+          "deprecated_codeword_counts",
+          "total_counts",
+          "cell_area",
+          "nucleus_area",
+          "nucleus_count",
+          "segmentation_method",
+          "region",
+          "z_level"
+        ],
+        "obsm_keys": [
+          "spatial"
+        ],
+        "uns_keys": [],
+        "has_spatial": true,
+        "spatial_shape": [
+          718455,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "region",
+            "n_valid": 718455,
+            "n_classes": 1,
+            "example_classes": [
+              "cell_circles"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "same_study_as": "st_impute CESC/NSCLC/PRAD technical-label siblings of the n=14 extras",
+        "fails": [
+          "C2_biological_gt",
+          "C4_independent_platform"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/baselines/st_impute_ref/processed_data/st_COAD_test.h5ad",
+        "exists": true,
+        "size_bytes": 780439558,
+        "n_obs": 344515,
+        "n_vars": 10000,
+        "obs_columns": [
+          "codex_common",
+          "annotation",
+          "spatial_cluster",
+          "high_quality"
+        ],
+        "obsm_keys": [
+          "spatial"
+        ],
+        "uns_keys": [],
+        "has_spatial": true,
+        "spatial_shape": [
+          344515,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "annotation",
+            "n_valid": 344515,
+            "n_classes": 16,
+            "example_classes": [
+              "B",
+              "CD4T",
+              "CD8T",
+              "Endothelial",
+              "Epithelial",
+              "Fibroblast",
+              "Macrophage",
+              "Mast",
+              "Monocyte",
+              "Neutrophil",
+              "Plasma",
+              "SMC"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "spatial_cluster",
+            "n_valid": 344499,
+            "n_classes": 5,
+            "example_classes": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "fails": [
+          "C3_not_duplicate"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "annotation",
+          "spatial_cluster"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": true
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/baselines/st_impute_ref/processed_data/st_LIHC_test.h5ad",
+        "exists": true,
+        "size_bytes": 671888978,
+        "n_obs": 231001,
+        "n_vars": 10000,
+        "obs_columns": [
+          "codex_common",
+          "annotation",
+          "spatial_cluster",
+          "high_quality"
+        ],
+        "obsm_keys": [
+          "spatial"
+        ],
+        "uns_keys": [],
+        "has_spatial": true,
+        "spatial_shape": [
+          231001,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "annotation",
+            "n_valid": 231001,
+            "n_classes": 20,
+            "example_classes": [
+              "B",
+              "CD4T",
+              "CD8T",
+              "Doublet Hepatocyte",
+              "Endothelial",
+              "HCC",
+              "Kupffer",
+              "Macrophage",
+              "Mast",
+              "Monocyte",
+              "NK",
+              "Neutrophil"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "spatial_cluster",
+            "n_valid": 230231,
+            "n_classes": 6,
+            "example_classes": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "fails": [
+          "C3_not_duplicate"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "annotation",
+          "spatial_cluster"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": true
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/baselines/st_impute_ref/processed_data/st_NSCLC_test.h5ad",
+        "exists": true,
+        "size_bytes": 434030454,
+        "n_obs": 236483,
+        "n_vars": 10000,
+        "obs_columns": [
+          "cell_id",
+          "transcript_counts",
+          "control_probe_counts",
+          "genomic_control_counts",
+          "control_codeword_counts",
+          "unassigned_codeword_counts",
+          "deprecated_codeword_counts",
+          "total_counts",
+          "cell_area",
+          "nucleus_area",
+          "nucleus_count",
+          "segmentation_method",
+          "region",
+          "z_level"
+        ],
+        "obsm_keys": [
+          "spatial"
+        ],
+        "uns_keys": [],
+        "has_spatial": true,
+        "spatial_shape": [
+          236483,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "region",
+            "n_valid": 236483,
+            "n_classes": 1,
+            "example_classes": [
+              "cell_circles"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "same_study_as": "st_impute CESC/NSCLC/PRAD technical-label siblings of the n=14 extras",
+        "fails": [
+          "C2_biological_gt",
+          "C4_independent_platform"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/baselines/st_impute_ref/processed_data/st_OV_test.h5ad",
+        "exists": true,
+        "size_bytes": 995487844,
+        "n_obs": 348618,
+        "n_vars": 10000,
+        "obs_columns": [
+          "codex_common",
+          "annotation",
+          "spatial_cluster",
+          "high_quality"
+        ],
+        "obsm_keys": [
+          "spatial"
+        ],
+        "uns_keys": [],
+        "has_spatial": true,
+        "spatial_shape": [
+          348618,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "annotation",
+            "n_valid": 348618,
+            "n_classes": 13,
+            "example_classes": [
+              "CD4T",
+              "CD8T",
+              "DC",
+              "Endothelial",
+              "Epithelial",
+              "Fibroblast",
+              "Macrophage",
+              "Mast",
+              "Monocyte",
+              "NK",
+              "Neutrophil",
+              "Plasma"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "spatial_cluster",
+            "n_valid": 347561,
+            "n_classes": 6,
+            "example_classes": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "fails": [
+          "C3_not_duplicate"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "annotation",
+          "spatial_cluster"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": true
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/baselines/st_impute_ref/processed_data/st_PRAD_test.h5ad",
+        "exists": true,
+        "size_bytes": 180530890,
+        "n_obs": 163589,
+        "n_vars": 10000,
+        "obs_columns": [
+          "cell_id",
+          "transcript_counts",
+          "control_probe_counts",
+          "genomic_control_counts",
+          "control_codeword_counts",
+          "unassigned_codeword_counts",
+          "deprecated_codeword_counts",
+          "total_counts",
+          "cell_area",
+          "nucleus_area",
+          "nucleus_count",
+          "segmentation_method",
+          "region",
+          "z_level"
+        ],
+        "obsm_keys": [
+          "spatial"
+        ],
+        "uns_keys": [],
+        "has_spatial": true,
+        "spatial_shape": [
+          163589,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "region",
+            "n_valid": 163589,
+            "n_classes": 1,
+            "example_classes": [
+              "cell_circles"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "same_study_as": "st_impute CESC/NSCLC/PRAD technical-label siblings of the n=14 extras",
+        "fails": [
+          "C2_biological_gt",
+          "C4_independent_platform"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/aether_serial_merfish/concat.h5ad",
+        "exists": true,
+        "size_bytes": 19776770,
+        "n_obs": 28317,
+        "n_vars": 155,
+        "obs_columns": [
+          "cell_class",
+          "neuron_class",
+          "domain",
+          "Region",
+          "annotation",
+          "slice_id",
+          "z_index"
+        ],
+        "obsm_keys": [
+          "spatial"
+        ],
+        "uns_keys": [],
+        "has_spatial": true,
+        "spatial_shape": [
+          28317,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "cell_class",
+            "n_valid": 28317,
+            "n_classes": 15,
+            "example_classes": [
+              "Astrocyte",
+              "Endothelial 1",
+              "Endothelial 2",
+              "Endothelial 3",
+              "Ependymal",
+              "Excitatory",
+              "Inhibitory",
+              "Microglia",
+              "OD Immature 1",
+              "OD Immature 2",
+              "OD Mature 1",
+              "OD Mature 2"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "neuron_class",
+            "n_valid": 18156,
+            "n_classes": 67,
+            "example_classes": [
+              "E-1",
+              "E-10",
+              "E-11",
+              "E-12",
+              "E-13",
+              "E-14",
+              "E-15",
+              "E-16",
+              "E-17",
+              "E-18",
+              "E-19",
+              "E-2"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "domain",
+            "n_valid": 28317,
+            "n_classes": 8,
+            "example_classes": [
+              "BST",
+              "MPA",
+              "MPN",
+              "PV",
+              "PVH",
+              "PVT",
+              "V3",
+              "fx"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "Region",
+            "n_valid": 28317,
+            "n_classes": 8,
+            "example_classes": [
+              "BST",
+              "MPA",
+              "MPN",
+              "PV",
+              "PVH",
+              "PVT",
+              "V3",
+              "fx"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "annotation",
+            "n_valid": 28317,
+            "n_classes": 8,
+            "example_classes": [
+              "BST",
+              "MPA",
+              "MPN",
+              "PV",
+              "PVH",
+              "PVT",
+              "V3",
+              "fx"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "fails": [],
+        "qualifies_as_new_n": true,
+        "independent_gt_columns": [
+          "cell_class",
+          "neuron_class",
+          "domain",
+          "Region",
+          "annotation"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/brca1_visium_10x/anndata.h5ad",
+        "exists": true,
+        "size_bytes": 174672794,
+        "n_obs": 3798,
+        "n_vars": 36601,
+        "obs_columns": [
+          "fine_annot_type",
+          "annot_type",
+          "Region",
+          "ground_truth"
+        ],
+        "obsm_keys": [
+          "spatial"
+        ],
+        "uns_keys": [],
+        "has_spatial": true,
+        "spatial_shape": [
+          3798,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "fine_annot_type",
+            "n_valid": 3798,
+            "n_classes": 20,
+            "example_classes": [
+              "DCIS/LCIS_1",
+              "DCIS/LCIS_2",
+              "DCIS/LCIS_3",
+              "DCIS/LCIS_4",
+              "DCIS/LCIS_5",
+              "Healthy_1",
+              "Healthy_2",
+              "IDC_1",
+              "IDC_2",
+              "IDC_3",
+              "IDC_4",
+              "IDC_5"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "annot_type",
+            "n_valid": 3798,
+            "n_classes": 4,
+            "example_classes": [
+              "Healthy",
+              "Invasive",
+              "Surrounding tumor",
+              "Tumor"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "Region",
+            "n_valid": 3798,
+            "n_classes": 20,
+            "example_classes": [
+              "DCIS/LCIS_1",
+              "DCIS/LCIS_2",
+              "DCIS/LCIS_3",
+              "DCIS/LCIS_4",
+              "DCIS/LCIS_5",
+              "Healthy_1",
+              "Healthy_2",
+              "IDC_1",
+              "IDC_2",
+              "IDC_3",
+              "IDC_4",
+              "IDC_5"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "ground_truth",
+            "n_valid": 3798,
+            "n_classes": 20,
+            "example_classes": [
+              "DCIS/LCIS_1",
+              "DCIS/LCIS_2",
+              "DCIS/LCIS_3",
+              "DCIS/LCIS_4",
+              "DCIS/LCIS_5",
+              "Healthy_1",
+              "Healthy_2",
+              "IDC_1",
+              "IDC_2",
+              "IDC_3",
+              "IDC_4",
+              "IDC_5"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "fails": [
+          "C3_not_duplicate"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "fine_annot_type",
+          "annot_type",
+          "Region",
+          "ground_truth"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": true
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/coad_visium_10x/anndata.h5ad",
+        "exists": true,
+        "size_bytes": 92912946,
+        "n_obs": 3138,
+        "n_vars": 36601,
+        "obs_columns": [
+          "array_row",
+          "array_col"
+        ],
+        "obsm_keys": [
+          "spatial"
+        ],
+        "uns_keys": [
+          "data_card_id",
+          "fetch_mode",
+          "source"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          3138,
+          2
+        ],
+        "label_columns": [],
+        "fails": [
+          "C2_biological_gt"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/codex_spleen_goltsev2018/anndata.h5ad",
+        "exists": true,
+        "size_bytes": 138076532,
+        "n_obs": 734101,
+        "n_vars": 32,
+        "obs_columns": [
+          "cell_type",
+          "niche",
+          "section_id",
+          "z_coord"
+        ],
+        "obsm_keys": [
+          "spatial"
+        ],
+        "uns_keys": [
+          "data_card_id",
+          "feature_type",
+          "ground_truth",
+          "source"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          734101,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "cell_type",
+            "n_valid": 734101,
+            "n_classes": 58,
+            "example_classes": [
+              "9587",
+              "9588",
+              "9589",
+              "9590",
+              "9591",
+              "9592",
+              "9593",
+              "9594",
+              "9595",
+              "9596",
+              "9597",
+              "9598"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "niche",
+            "n_valid": 707290,
+            "n_classes": 100,
+            "example_classes": [
+              "0.0",
+              "1.0",
+              "10.0",
+              "11.0",
+              "12.0",
+              "13.0",
+              "14.0",
+              "15.0",
+              "16.0",
+              "17.0",
+              "18.0",
+              "19.0"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "fails": [
+          "C3_not_duplicate"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "cell_type",
+          "niche"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": true
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/contamguard_xenium_cervix_controls/anndata.h5ad",
+        "exists": true,
+        "size_bytes": 575310873,
+        "n_obs": 840387,
+        "n_vars": 9475,
+        "obs_columns": [],
+        "obsm_keys": [
+          "spatial"
+        ],
+        "uns_keys": [
+          "data_card_id",
+          "feature_type_counts",
+          "modality",
+          "source"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          840387,
+          2
+        ],
+        "label_columns": [],
+        "fails": [
+          "C2_biological_gt"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/dlpfc_GSE307403_Br2719/anndata.h5ad",
+        "exists": true,
+        "size_bytes": 132911112,
+        "n_obs": 4986,
+        "n_vars": 36601,
+        "obs_columns": [
+          "in_tissue"
+        ],
+        "obsm_keys": [
+          "spatial"
+        ],
+        "uns_keys": [
+          "data_card_id",
+          "ground_truth_domain",
+          "source"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          4986,
+          2
+        ],
+        "label_columns": [],
+        "fails": [
+          "C2_biological_gt"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/dlpfc_maynard_2021_visium/anndata.h5ad",
+        "exists": true,
+        "size_bytes": 120061312,
+        "n_obs": 3639,
+        "n_vars": 33538,
+        "obs_columns": [
+          "in_tissue",
+          "array_row",
+          "array_col",
+          "Region",
+          "ground_truth",
+          "layer_label",
+          "section_id"
+        ],
+        "obsm_keys": [
+          "spatial"
+        ],
+        "uns_keys": [
+          "data_card_id",
+          "ground_truth_label_source",
+          "source",
+          "spatial"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          3639,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "Region",
+            "n_valid": 3611,
+            "n_classes": 7,
+            "example_classes": [
+              "Layer1",
+              "Layer2",
+              "Layer3",
+              "Layer4",
+              "Layer5",
+              "Layer6",
+              "WM"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "ground_truth",
+            "n_valid": 3611,
+            "n_classes": 7,
+            "example_classes": [
+              "Layer1",
+              "Layer2",
+              "Layer3",
+              "Layer4",
+              "Layer5",
+              "Layer6",
+              "WM"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "layer_label",
+            "n_valid": 3611,
+            "n_classes": 7,
+            "example_classes": [
+              "Layer1",
+              "Layer2",
+              "Layer3",
+              "Layer4",
+              "Layer5",
+              "Layer6",
+              "WM"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "fails": [],
+        "qualifies_as_new_n": true,
+        "independent_gt_columns": [
+          "Region",
+          "ground_truth",
+          "layer_label"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/lumina_ref_breast_wu_ref/sc_reference.h5ad",
+        "exists": true,
+        "size_bytes": 2136917432,
+        "n_obs": 100064,
+        "n_vars": 28468,
+        "obs_columns": [],
+        "obsm_keys": [],
+        "uns_keys": [],
+        "has_spatial": false,
+        "label_columns": [],
+        "same_study_as": "scRNA-seq reference (lumina/qukun *_ref)",
+        "fails": [
+          "C1_spatial",
+          "C2_biological_gt",
+          "C4_independent_platform",
+          "C7_not_scrna"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/lumina_ref_coad_gse132465/sc_reference.h5ad",
+        "exists": true,
+        "size_bytes": 964022405,
+        "n_obs": 63689,
+        "n_vars": 33694,
+        "obs_columns": [
+          "cell_type",
+          "cancer_type",
+          "sample",
+          "tumor_normal",
+          "patient"
+        ],
+        "obsm_keys": [],
+        "uns_keys": [
+          "counts_are_raw",
+          "data_card_id",
+          "source"
+        ],
+        "has_spatial": false,
+        "label_columns": [
+          {
+            "column": "cell_type",
+            "n_valid": 63689,
+            "n_classes": 6,
+            "example_classes": [
+              "B cells",
+              "Epithelial cells",
+              "Mast cells",
+              "Myeloids",
+              "Stromal cells",
+              "T cells"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "tumor_normal",
+            "n_valid": 63689,
+            "n_classes": 2,
+            "example_classes": [
+              "Normal",
+              "Tumor"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "same_study_as": "scRNA-seq reference (lumina/qukun *_ref)",
+        "fails": [
+          "C1_spatial",
+          "C4_independent_platform",
+          "C7_not_scrna"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "cell_type",
+          "tumor_normal"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/lumina_ref_mouse_cortex_ref/sc_reference.h5ad",
+        "exists": true,
+        "size_bytes": 1611865848,
+        "n_obs": 21697,
+        "n_vars": 36826,
+        "obs_columns": [],
+        "obsm_keys": [],
+        "uns_keys": [],
+        "has_spatial": false,
+        "label_columns": [],
+        "same_study_as": "scRNA-seq reference (lumina/qukun *_ref)",
+        "fails": [
+          "C1_spatial",
+          "C2_biological_gt",
+          "C4_independent_platform",
+          "C7_not_scrna"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/mibitof_colorectal/anndata.h5ad",
+        "exists": true,
+        "size_bytes": 18808749,
+        "n_obs": 3309,
+        "n_vars": 36,
+        "obs_columns": [
+          "row_num",
+          "point",
+          "cell_id",
+          "X1",
+          "center_rowcoord",
+          "center_colcoord",
+          "cell_size",
+          "category",
+          "donor",
+          "Cluster",
+          "batch",
+          "library_id",
+          "cell_type",
+          "Region",
+          "ground_truth",
+          "section_id"
+        ],
+        "obsm_keys": [
+          "spatial"
+        ],
+        "uns_keys": [
+          "Cluster_colors",
+          "batch_colors",
+          "neighbors",
+          "spatial",
+          "umap"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          3309,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "Cluster",
+            "n_valid": 3309,
+            "n_classes": 8,
+            "example_classes": [
+              "Endothelial",
+              "Epithelial",
+              "Fibroblast",
+              "Imm_other",
+              "Myeloid_CD11c",
+              "Myeloid_CD68",
+              "Tcell_CD4",
+              "Tcell_CD8"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "cell_type",
+            "n_valid": 3309,
+            "n_classes": 8,
+            "example_classes": [
+              "Endothelial",
+              "Epithelial",
+              "Fibroblast",
+              "Imm_other",
+              "Myeloid_CD11c",
+              "Myeloid_CD68",
+              "Tcell_CD4",
+              "Tcell_CD8"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "Region",
+            "n_valid": 3309,
+            "n_classes": 8,
+            "example_classes": [
+              "Endothelial",
+              "Epithelial",
+              "Fibroblast",
+              "Imm_other",
+              "Myeloid_CD11c",
+              "Myeloid_CD68",
+              "Tcell_CD4",
+              "Tcell_CD8"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "ground_truth",
+            "n_valid": 3309,
+            "n_classes": 8,
+            "example_classes": [
+              "Endothelial",
+              "Epithelial",
+              "Fibroblast",
+              "Imm_other",
+              "Myeloid_CD11c",
+              "Myeloid_CD68",
+              "Tcell_CD4",
+              "Tcell_CD8"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "same_study_as": "MIBI-TOF colorectal duplicate of squidpy mibitof",
+        "fails": [
+          "C4_independent_platform"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "Cluster",
+          "cell_type",
+          "Region",
+          "ground_truth"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/moleculepoint_bento_merfish/anndata.h5ad",
+        "exists": true,
+        "size_bytes": 48864,
+        "n_obs": 15,
+        "n_vars": 130,
+        "obs_columns": [],
+        "obsm_keys": [
+          "spatial"
+        ],
+        "uns_keys": [
+          "data_card_id",
+          "modality",
+          "source"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          15,
+          2
+        ],
+        "label_columns": [],
+        "fails": [
+          "C2_biological_gt"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/niche_abc_zhuang1_brain_slice/anndata.h5ad",
+        "exists": true,
+        "size_bytes": 101472456,
+        "n_obs": 22072,
+        "n_vars": 1122,
+        "obs_columns": [
+          "brain_section_label",
+          "cell_class",
+          "cell_subclass",
+          "cell_supertype",
+          "domain",
+          "domain_division",
+          "domain_structure",
+          "section_id",
+          "brain_id",
+          "donor_sex"
+        ],
+        "obsm_keys": [
+          "spatial"
+        ],
+        "uns_keys": [
+          "data_card_id",
+          "domain_label_provenance",
+          "split_seed"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          22072,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "brain_section_label",
+            "n_valid": 22072,
+            "n_classes": 1,
+            "example_classes": [
+              "Zhuang-ABCA-1.069"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "cell_class",
+            "n_valid": 22072,
+            "n_classes": 24,
+            "example_classes": [
+              "01 IT-ET Glut",
+              "02 NP-CT-L6b Glut",
+              "03 OB-CR Glut",
+              "04 DG-IMN Glut",
+              "05 OB-IMN GABA",
+              "06 CTX-CGE GABA",
+              "07 CTX-MGE GABA",
+              "08 CNU-MGE GABA",
+              "09 CNU-LGE GABA",
+              "10 LSX GABA",
+              "11 CNU-HYa GABA",
+              "12 HY GABA"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "cell_subclass",
+            "n_valid": 22072,
+            "n_classes": 124,
+            "example_classes": [
+              "001 CLA-EPd-CTX Car3 Glut",
+              "002 IT EP-CLA Glut",
+              "004 L6 IT CTX Glut",
+              "005 L5 IT CTX Glut",
+              "006 L4/5 IT CTX Glut",
+              "007 L2/3 IT CTX Glut",
+              "009 L2/3 IT PIR-ENTl Glut",
+              "010 IT AON-TT-DP Glut",
+              "012 MEA Slc17a7 Glut",
+              "014 LA-BLA-BMA-PA Glut",
+              "018 L2 IT PPP-APr Glut",
+              "020 L2/3 IT RSP Glut"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "domain",
+            "n_valid": 22072,
+            "n_classes": 17,
+            "example_classes": [
+              "CTXsp",
+              "HPF",
+              "HY",
+              "Isocortex",
+              "OLF",
+              "PAL",
+              "STR",
+              "TH",
+              "V3",
+              "VL",
+              "cm",
+              "eps"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "domain_division",
+            "n_valid": 22072,
+            "n_classes": 17,
+            "example_classes": [
+              "CTXsp",
+              "HPF",
+              "HY",
+              "Isocortex",
+              "OLF",
+              "PAL",
+              "STR",
+              "TH",
+              "V3",
+              "VL",
+              "cm",
+              "eps"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "domain_structure",
+            "n_valid": 22072,
+            "n_classes": 71,
+            "example_classes": [
+              "AAA",
+              "ACAd",
+              "ACAv",
+              "AD",
+              "AHN",
+              "AIp",
+              "AM",
+              "AV",
+              "BMA",
+              "CEA",
+              "CLA",
+              "CM"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "fails": [],
+        "qualifies_as_new_n": true,
+        "independent_gt_columns": [
+          "cell_class",
+          "cell_subclass",
+          "domain",
+          "domain_division",
+          "domain_structure"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/niche_abc_zhuang2_brain_slice/anndata.h5ad",
+        "exists": true,
+        "size_bytes": 105628049,
+        "n_obs": 22971,
+        "n_vars": 1122,
+        "obs_columns": [
+          "brain_section_label",
+          "cell_class",
+          "cell_subclass",
+          "cell_supertype",
+          "domain",
+          "domain_division",
+          "domain_structure",
+          "section_id",
+          "brain_id",
+          "donor_sex"
+        ],
+        "obsm_keys": [
+          "spatial"
+        ],
+        "uns_keys": [
+          "data_card_id",
+          "domain_label_provenance",
+          "split_seed"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          22971,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "brain_section_label",
+            "n_valid": 22971,
+            "n_classes": 1,
+            "example_classes": [
+              "Zhuang-ABCA-2.037"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "cell_class",
+            "n_valid": 22971,
+            "n_classes": 24,
+            "example_classes": [
+              "01 IT-ET Glut",
+              "02 NP-CT-L6b Glut",
+              "03 OB-CR Glut",
+              "04 DG-IMN Glut",
+              "05 OB-IMN GABA",
+              "06 CTX-CGE GABA",
+              "07 CTX-MGE GABA",
+              "08 CNU-MGE GABA",
+              "09 CNU-LGE GABA",
+              "11 CNU-HYa GABA",
+              "12 HY GABA",
+              "13 CNU-HYa Glut"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "cell_subclass",
+            "n_valid": 22971,
+            "n_classes": 126,
+            "example_classes": [
+              "001 CLA-EPd-CTX Car3 Glut",
+              "002 IT EP-CLA Glut",
+              "004 L6 IT CTX Glut",
+              "005 L5 IT CTX Glut",
+              "006 L4/5 IT CTX Glut",
+              "007 L2/3 IT CTX Glut",
+              "008 L2/3 IT ENT Glut",
+              "009 L2/3 IT PIR-ENTl Glut",
+              "012 MEA Slc17a7 Glut",
+              "013 COAp Grxcr2 Glut",
+              "014 LA-BLA-BMA-PA Glut",
+              "016 CA1-ProS Glut"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "domain",
+            "n_valid": 22971,
+            "n_classes": 17,
+            "example_classes": [
+              "CTXsp",
+              "HPF",
+              "HY",
+              "Isocortex",
+              "OLF",
+              "PAL",
+              "STR",
+              "TH",
+              "V3",
+              "VL",
+              "cm",
+              "eps"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "domain_division",
+            "n_valid": 22971,
+            "n_classes": 17,
+            "example_classes": [
+              "CTXsp",
+              "HPF",
+              "HY",
+              "Isocortex",
+              "OLF",
+              "PAL",
+              "STR",
+              "TH",
+              "V3",
+              "VL",
+              "cm",
+              "eps"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "domain_structure",
+            "n_valid": 22971,
+            "n_classes": 86,
+            "example_classes": [
+              "AHN",
+              "AIp",
+              "ARH",
+              "AUDd",
+              "BLA",
+              "BMA",
+              "CA1",
+              "CA2",
+              "CA3",
+              "CEA",
+              "CL",
+              "CM"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "fails": [],
+        "qualifies_as_new_n": true,
+        "independent_gt_columns": [
+          "cell_class",
+          "cell_subclass",
+          "domain",
+          "domain_division",
+          "domain_structure"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/niche_imc_breast/anndata.h5ad",
+        "exists": true,
+        "size_bytes": 1562392,
+        "n_obs": 4668,
+        "n_vars": 34,
+        "obs_columns": [
+          "cell type",
+          "cell_type",
+          "Region",
+          "ground_truth"
+        ],
+        "obsm_keys": [
+          "spatial"
+        ],
+        "uns_keys": [
+          "cell type_colors"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          4668,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "cell_type",
+            "n_valid": 4668,
+            "n_classes": 11,
+            "example_classes": [
+              "CK low HR low tumor cell",
+              "CK+ HR+ tumor cell",
+              "T cells",
+              "apoptotic tumor cell",
+              "basal CK tumor cell",
+              "endothelial",
+              "macrophages",
+              "p53+ EGFR+ tumor cell",
+              "proliferative tumor cell",
+              "small elongated stromal cell",
+              "vimentin hi stromal cell"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "Region",
+            "n_valid": 4668,
+            "n_classes": 11,
+            "example_classes": [
+              "CK low HR low tumor cell",
+              "CK+ HR+ tumor cell",
+              "T cells",
+              "apoptotic tumor cell",
+              "basal CK tumor cell",
+              "endothelial",
+              "macrophages",
+              "p53+ EGFR+ tumor cell",
+              "proliferative tumor cell",
+              "small elongated stromal cell",
+              "vimentin hi stromal cell"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "ground_truth",
+            "n_valid": 4668,
+            "n_classes": 11,
+            "example_classes": [
+              "CK low HR low tumor cell",
+              "CK+ HR+ tumor cell",
+              "T cells",
+              "apoptotic tumor cell",
+              "basal CK tumor cell",
+              "endothelial",
+              "macrophages",
+              "p53+ EGFR+ tumor cell",
+              "proliferative tumor cell",
+              "small elongated stromal cell",
+              "vimentin hi stromal cell"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "fails": [
+          "C3_not_duplicate"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "cell_type",
+          "Region",
+          "ground_truth"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": true
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/niche_merfish_slice/anndata.h5ad",
+        "exists": true,
+        "size_bytes": 3841712,
+        "n_obs": 5488,
+        "n_vars": 155,
+        "obs_columns": [
+          "cell_class",
+          "neuron_class",
+          "domain",
+          "Region",
+          "annotation",
+          "slice_id"
+        ],
+        "obsm_keys": [
+          "spatial"
+        ],
+        "uns_keys": [
+          "data_card_id",
+          "domain_colors",
+          "preprocessing_config_hash",
+          "split_seed"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          5488,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "cell_class",
+            "n_valid": 5488,
+            "n_classes": 14,
+            "example_classes": [
+              "Astrocyte",
+              "Endothelial 1",
+              "Endothelial 2",
+              "Endothelial 3",
+              "Ependymal",
+              "Excitatory",
+              "Inhibitory",
+              "Microglia",
+              "OD Immature 1",
+              "OD Immature 2",
+              "OD Mature 1",
+              "OD Mature 2"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "neuron_class",
+            "n_valid": 3358,
+            "n_classes": 61,
+            "example_classes": [
+              "E-1",
+              "E-10",
+              "E-11",
+              "E-12",
+              "E-13",
+              "E-14",
+              "E-15",
+              "E-16",
+              "E-17",
+              "E-18",
+              "E-19",
+              "E-2"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "domain",
+            "n_valid": 5488,
+            "n_classes": 8,
+            "example_classes": [
+              "BST",
+              "MPA",
+              "MPN",
+              "PV",
+              "PVH",
+              "PVT",
+              "V3",
+              "fx"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "Region",
+            "n_valid": 5488,
+            "n_classes": 8,
+            "example_classes": [
+              "BST",
+              "MPA",
+              "MPN",
+              "PV",
+              "PVH",
+              "PVT",
+              "V3",
+              "fx"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "annotation",
+            "n_valid": 5488,
+            "n_classes": 8,
+            "example_classes": [
+              "BST",
+              "MPA",
+              "MPN",
+              "PV",
+              "PVH",
+              "PVT",
+              "V3",
+              "fx"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "fails": [],
+        "qualifies_as_new_n": true,
+        "independent_gt_columns": [
+          "cell_class",
+          "neuron_class",
+          "domain",
+          "Region",
+          "annotation"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/openst_hnscc_gse251926/serial_sections.h5ad",
+        "exists": true,
+        "size_bytes": 8871739795,
+        "n_obs": 1097769,
+        "n_vars": 28943,
+        "obs_columns": [
+          "cell_ID_mask",
+          "n_genes_by_counts",
+          "total_counts",
+          "total_counts_mt",
+          "pct_counts_mt",
+          "n_reads",
+          "reads_per_counts",
+          "n_joined",
+          "exact_entropy",
+          "theoretical_entropy",
+          "exact_compression",
+          "theoretical_compression",
+          "n_counts",
+          "annotation",
+          "annotation_key",
+          "n_section",
+          "z_coord",
+          "section_id",
+          "cell_class"
+        ],
+        "obsm_keys": [
+          "spatial",
+          "spatial_3d_aligned"
+        ],
+        "uns_keys": [
+          "data_card_id",
+          "log1p",
+          "source",
+          "z_ordering_source"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          1097769,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "annotation",
+            "n_valid": 971452,
+            "n_classes": 16,
+            "example_classes": [
+              "CAF",
+              "CAM",
+              "Cortex_CCL21",
+              "Cytotoxic_IFN_signaling",
+              "Dendritic_cells",
+              "Fibroblasts",
+              "Germinal_Center_Plasma_IgM_B_cell",
+              "High_Endothelial_Venules",
+              "M1_macrophages",
+              "Macrophages",
+              "Mast_cells",
+              "Plasma_IgA"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "annotation_key",
+            "n_valid": 77868,
+            "n_classes": 17,
+            "example_classes": [
+              "1.0",
+              "10.0",
+              "11.0",
+              "12.0",
+              "13.0",
+              "14.0",
+              "15.0",
+              "16.0",
+              "17.0",
+              "2.0",
+              "3.0",
+              "4.0"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "cell_class",
+            "n_valid": 971452,
+            "n_classes": 16,
+            "example_classes": [
+              "CAF",
+              "CAM",
+              "Cortex_CCL21",
+              "Cytotoxic_IFN_signaling",
+              "Dendritic_cells",
+              "Fibroblasts",
+              "Germinal_Center_Plasma_IgM_B_cell",
+              "High_Endothelial_Venules",
+              "M1_macrophages",
+              "Macrophages",
+              "Mast_cells",
+              "Plasma_IgA"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "same_study_as": "Open-ST HNSCC (openst_hnscc_sub15k already in n=11)",
+        "fails": [
+          "C4_independent_platform"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "annotation",
+          "annotation_key",
+          "cell_class"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/openst_hnscc_sec26_dom/anndata.h5ad",
+        "exists": true,
+        "size_bytes": 427532765,
+        "n_obs": 73665,
+        "n_vars": 3000,
+        "obs_columns": [
+          "cell_ID_mask",
+          "n_genes_by_counts",
+          "total_counts",
+          "total_counts_mt",
+          "pct_counts_mt",
+          "n_reads",
+          "reads_per_counts",
+          "n_joined",
+          "exact_entropy",
+          "theoretical_entropy",
+          "exact_compression",
+          "theoretical_compression",
+          "n_counts",
+          "annotation",
+          "annotation_key",
+          "n_section",
+          "z_coord",
+          "section_id",
+          "cell_class",
+          "ground_truth",
+          "Region"
+        ],
+        "obsm_keys": [
+          "spatial",
+          "spatial_3d_aligned"
+        ],
+        "uns_keys": [
+          "data_card_id",
+          "log1p",
+          "source",
+          "z_ordering_source"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          73665,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "annotation",
+            "n_valid": 73665,
+            "n_classes": 15,
+            "example_classes": [
+              "CAF",
+              "CAM",
+              "Cortex_CCL21",
+              "Cytotoxic_IFN_signaling",
+              "Dendritic_cells",
+              "Fibroblasts",
+              "Germinal_Center_Plasma_IgM_B_cell",
+              "High_Endothelial_Venules",
+              "M1_macrophages",
+              "Macrophages",
+              "Plasma_IgA",
+              "Plasma_IgG"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "annotation_key",
+            "n_valid": 0,
+            "n_classes": 0,
+            "example_classes": [],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "cell_class",
+            "n_valid": 73665,
+            "n_classes": 15,
+            "example_classes": [
+              "CAF",
+              "CAM",
+              "Cortex_CCL21",
+              "Cytotoxic_IFN_signaling",
+              "Dendritic_cells",
+              "Fibroblasts",
+              "Germinal_Center_Plasma_IgM_B_cell",
+              "High_Endothelial_Venules",
+              "M1_macrophages",
+              "Macrophages",
+              "Plasma_IgA",
+              "Plasma_IgG"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "ground_truth",
+            "n_valid": 73665,
+            "n_classes": 15,
+            "example_classes": [
+              "CAF",
+              "CAM",
+              "Cortex_CCL21",
+              "Cytotoxic_IFN_signaling",
+              "Dendritic_cells",
+              "Fibroblasts",
+              "Germinal_Center_Plasma_IgM_B_cell",
+              "High_Endothelial_Venules",
+              "M1_macrophages",
+              "Macrophages",
+              "Plasma_IgA",
+              "Plasma_IgG"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "Region",
+            "n_valid": 73665,
+            "n_classes": 15,
+            "example_classes": [
+              "CAF",
+              "CAM",
+              "Cortex_CCL21",
+              "Cytotoxic_IFN_signaling",
+              "Dendritic_cells",
+              "Fibroblasts",
+              "Germinal_Center_Plasma_IgM_B_cell",
+              "High_Endothelial_Venules",
+              "M1_macrophages",
+              "Macrophages",
+              "Plasma_IgA",
+              "Plasma_IgG"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "same_study_as": "Open-ST HNSCC (openst_hnscc_sub15k already in n=11)",
+        "fails": [
+          "C4_independent_platform"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "annotation",
+          "cell_class",
+          "ground_truth",
+          "Region"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/openst_hnscc_serial3d/concat.h5ad",
+        "exists": true,
+        "size_bytes": 5052293163,
+        "n_obs": 1097769,
+        "n_vars": 2000,
+        "obs_columns": [
+          "cell_ID_mask",
+          "n_genes_by_counts",
+          "total_counts",
+          "total_counts_mt",
+          "pct_counts_mt",
+          "n_reads",
+          "reads_per_counts",
+          "n_joined",
+          "exact_entropy",
+          "theoretical_entropy",
+          "exact_compression",
+          "theoretical_compression",
+          "n_counts",
+          "annotation",
+          "annotation_key",
+          "n_section",
+          "z_coord",
+          "section_id",
+          "cell_class",
+          "z_index"
+        ],
+        "obsm_keys": [
+          "spatial"
+        ],
+        "uns_keys": [
+          "data_card_id",
+          "log1p",
+          "source",
+          "z_ordering_source"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          1097769,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "annotation",
+            "n_valid": 971452,
+            "n_classes": 16,
+            "example_classes": [
+              "CAF",
+              "CAM",
+              "Cortex_CCL21",
+              "Cytotoxic_IFN_signaling",
+              "Dendritic_cells",
+              "Fibroblasts",
+              "Germinal_Center_Plasma_IgM_B_cell",
+              "High_Endothelial_Venules",
+              "M1_macrophages",
+              "Macrophages",
+              "Mast_cells",
+              "Plasma_IgA"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "annotation_key",
+            "n_valid": 77868,
+            "n_classes": 17,
+            "example_classes": [
+              "1.0",
+              "10.0",
+              "11.0",
+              "12.0",
+              "13.0",
+              "14.0",
+              "15.0",
+              "16.0",
+              "17.0",
+              "2.0",
+              "3.0",
+              "4.0"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "cell_class",
+            "n_valid": 971452,
+            "n_classes": 16,
+            "example_classes": [
+              "CAF",
+              "CAM",
+              "Cortex_CCL21",
+              "Cytotoxic_IFN_signaling",
+              "Dendritic_cells",
+              "Fibroblasts",
+              "Germinal_Center_Plasma_IgM_B_cell",
+              "High_Endothelial_Venules",
+              "M1_macrophages",
+              "Macrophages",
+              "Mast_cells",
+              "Plasma_IgA"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "same_study_as": "Open-ST HNSCC (openst_hnscc_sub15k already in n=11)",
+        "fails": [
+          "C4_independent_platform"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "annotation",
+          "annotation_key",
+          "cell_class"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/openst_hnscc_sub15k/anndata.h5ad",
+        "exists": true,
+        "size_bytes": 126240200,
+        "n_obs": 15000,
+        "n_vars": 28943,
+        "obs_columns": [
+          "cell_ID_mask",
+          "n_genes_by_counts",
+          "total_counts",
+          "total_counts_mt",
+          "pct_counts_mt",
+          "n_reads",
+          "reads_per_counts",
+          "n_joined",
+          "exact_entropy",
+          "theoretical_entropy",
+          "exact_compression",
+          "theoretical_compression",
+          "n_counts",
+          "annotation",
+          "annotation_key",
+          "n_section",
+          "z_coord",
+          "section_id",
+          "cell_class",
+          "Region",
+          "ground_truth"
+        ],
+        "obsm_keys": [
+          "spatial",
+          "spatial_3d_aligned"
+        ],
+        "uns_keys": [
+          "data_card_id",
+          "log1p",
+          "source",
+          "z_ordering_source"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          15000,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "annotation",
+            "n_valid": 13420,
+            "n_classes": 14,
+            "example_classes": [
+              "CAF",
+              "CAM",
+              "Cortex_CCL21",
+              "Cytotoxic_IFN_signaling",
+              "Fibroblasts",
+              "Germinal_Center_Plasma_IgM_B_cell",
+              "High_Endothelial_Venules",
+              "M1_macrophages",
+              "Macrophages",
+              "Plasma_IgA",
+              "Plasma_IgG",
+              "T_cell"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "annotation_key",
+            "n_valid": 0,
+            "n_classes": 0,
+            "example_classes": [],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "cell_class",
+            "n_valid": 13420,
+            "n_classes": 14,
+            "example_classes": [
+              "CAF",
+              "CAM",
+              "Cortex_CCL21",
+              "Cytotoxic_IFN_signaling",
+              "Fibroblasts",
+              "Germinal_Center_Plasma_IgM_B_cell",
+              "High_Endothelial_Venules",
+              "M1_macrophages",
+              "Macrophages",
+              "Plasma_IgA",
+              "Plasma_IgG",
+              "T_cell"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "Region",
+            "n_valid": 13420,
+            "n_classes": 14,
+            "example_classes": [
+              "CAF",
+              "CAM",
+              "Cortex_CCL21",
+              "Cytotoxic_IFN_signaling",
+              "Fibroblasts",
+              "Germinal_Center_Plasma_IgM_B_cell",
+              "High_Endothelial_Venules",
+              "M1_macrophages",
+              "Macrophages",
+              "Plasma_IgA",
+              "Plasma_IgG",
+              "T_cell"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "ground_truth",
+            "n_valid": 13420,
+            "n_classes": 14,
+            "example_classes": [
+              "CAF",
+              "CAM",
+              "Cortex_CCL21",
+              "Cytotoxic_IFN_signaling",
+              "Fibroblasts",
+              "Germinal_Center_Plasma_IgM_B_cell",
+              "High_Endothelial_Venules",
+              "M1_macrophages",
+              "Macrophages",
+              "Plasma_IgA",
+              "Plasma_IgG",
+              "T_cell"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "fails": [
+          "C3_not_duplicate"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "annotation",
+          "cell_class",
+          "Region",
+          "ground_truth"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": true
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/pathscope_coad_visium_he/expression.h5ad",
+        "exists": true,
+        "size_bytes": 92913226,
+        "n_obs": 3138,
+        "n_vars": 36601,
+        "obs_columns": [
+          "array_row",
+          "array_col"
+        ],
+        "obsm_keys": [
+          "spatial"
+        ],
+        "uns_keys": [
+          "data_card_id",
+          "fetch_mode",
+          "paired_he_patches",
+          "source"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          3138,
+          2
+        ],
+        "label_columns": [],
+        "fails": [
+          "C2_biological_gt"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/qukun_ds18_ref/sc_reference.h5ad",
+        "exists": true,
+        "size_bytes": 17658488,
+        "n_obs": 4748,
+        "n_vars": 913,
+        "obs_columns": [],
+        "obsm_keys": [],
+        "uns_keys": [],
+        "has_spatial": false,
+        "label_columns": [],
+        "same_study_as": "scRNA-seq reference (lumina/qukun *_ref)",
+        "fails": [
+          "C1_spatial",
+          "C2_biological_gt",
+          "C4_independent_platform",
+          "C7_not_scrna"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/qukun_ds18_spatial/anndata.h5ad",
+        "exists": true,
+        "size_bytes": 3689536,
+        "n_obs": 982,
+        "n_vars": 913,
+        "obs_columns": [],
+        "obsm_keys": [
+          "spatial"
+        ],
+        "uns_keys": [],
+        "has_spatial": true,
+        "spatial_shape": [
+          982,
+          2
+        ],
+        "label_columns": [],
+        "fails": [
+          "C2_biological_gt"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/qukun_ds19_ref/sc_reference.h5ad",
+        "exists": true,
+        "size_bytes": 18524872,
+        "n_obs": 4816,
+        "n_vars": 945,
+        "obs_columns": [],
+        "obsm_keys": [],
+        "uns_keys": [],
+        "has_spatial": false,
+        "label_columns": [],
+        "same_study_as": "scRNA-seq reference (lumina/qukun *_ref)",
+        "fails": [
+          "C1_spatial",
+          "C2_biological_gt",
+          "C4_independent_platform",
+          "C7_not_scrna"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/qukun_ds19_spatial/anndata.h5ad",
+        "exists": true,
+        "size_bytes": 3865196,
+        "n_obs": 995,
+        "n_vars": 945,
+        "obs_columns": [],
+        "obsm_keys": [
+          "spatial"
+        ],
+        "uns_keys": [],
+        "has_spatial": true,
+        "spatial_shape": [
+          995,
+          2
+        ],
+        "label_columns": [],
+        "fails": [
+          "C2_biological_gt"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/qukun_ds20_ref/sc_reference.h5ad",
+        "exists": true,
+        "size_bytes": 25087680,
+        "n_obs": 6178,
+        "n_vars": 999,
+        "obs_columns": [],
+        "obsm_keys": [],
+        "uns_keys": [],
+        "has_spatial": false,
+        "label_columns": [],
+        "same_study_as": "scRNA-seq reference (lumina/qukun *_ref)",
+        "fails": [
+          "C1_spatial",
+          "C2_biological_gt",
+          "C4_independent_platform",
+          "C7_not_scrna"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/qukun_ds20_spatial/anndata.h5ad",
+        "exists": true,
+        "size_bytes": 19402872,
+        "n_obs": 4784,
+        "n_vars": 999,
+        "obs_columns": [],
+        "obsm_keys": [
+          "spatial"
+        ],
+        "uns_keys": [],
+        "has_spatial": true,
+        "spatial_shape": [
+          4784,
+          2
+        ],
+        "label_columns": [],
+        "fails": [
+          "C2_biological_gt"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/qukun_ds27_ref/sc_reference.h5ad",
+        "exists": true,
+        "size_bytes": 13900124,
+        "n_obs": 3415,
+        "n_vars": 999,
+        "obs_columns": [],
+        "obsm_keys": [],
+        "uns_keys": [],
+        "has_spatial": false,
+        "label_columns": [],
+        "same_study_as": "scRNA-seq reference (lumina/qukun *_ref)",
+        "fails": [
+          "C1_spatial",
+          "C2_biological_gt",
+          "C4_independent_platform",
+          "C7_not_scrna"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/qukun_ds27_spatial/anndata.h5ad",
+        "exists": true,
+        "size_bytes": 865216,
+        "n_obs": 198,
+        "n_vars": 999,
+        "obs_columns": [],
+        "obsm_keys": [
+          "spatial"
+        ],
+        "uns_keys": [],
+        "has_spatial": true,
+        "spatial_shape": [
+          198,
+          2
+        ],
+        "label_columns": [],
+        "fails": [
+          "C2_biological_gt"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/seqfish_embryo/anndata.h5ad",
+        "exists": true,
+        "size_bytes": 40734964,
+        "n_obs": 17771,
+        "n_vars": 351,
+        "obs_columns": [
+          "Area",
+          "celltype_mapped_refined",
+          "Region",
+          "ground_truth",
+          "cell_type"
+        ],
+        "obsm_keys": [
+          "spatial"
+        ],
+        "uns_keys": [
+          "celltype_mapped_refined_colors"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          17771,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "celltype_mapped_refined",
+            "n_valid": 17771,
+            "n_classes": 21,
+            "example_classes": [
+              "Allantois",
+              "Anterior somitic tissues",
+              "Cardiomyocytes",
+              "Cranial mesoderm",
+              "Definitive endoderm",
+              "Dermomyotome",
+              "Endothelium",
+              "Erythroid",
+              "Forebrain/Midbrain/Hindbrain",
+              "Gut tube",
+              "Haematoendothelial progenitors",
+              "Intermediate mesoderm"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "Region",
+            "n_valid": 17771,
+            "n_classes": 21,
+            "example_classes": [
+              "Allantois",
+              "Anterior somitic tissues",
+              "Cardiomyocytes",
+              "Cranial mesoderm",
+              "Definitive endoderm",
+              "Dermomyotome",
+              "Endothelium",
+              "Erythroid",
+              "Forebrain/Midbrain/Hindbrain",
+              "Gut tube",
+              "Haematoendothelial progenitors",
+              "Intermediate mesoderm"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "ground_truth",
+            "n_valid": 17771,
+            "n_classes": 21,
+            "example_classes": [
+              "Allantois",
+              "Anterior somitic tissues",
+              "Cardiomyocytes",
+              "Cranial mesoderm",
+              "Definitive endoderm",
+              "Dermomyotome",
+              "Endothelium",
+              "Erythroid",
+              "Forebrain/Midbrain/Hindbrain",
+              "Gut tube",
+              "Haematoendothelial progenitors",
+              "Intermediate mesoderm"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "cell_type",
+            "n_valid": 17771,
+            "n_classes": 21,
+            "example_classes": [
+              "Allantois",
+              "Anterior somitic tissues",
+              "Cardiomyocytes",
+              "Cranial mesoderm",
+              "Definitive endoderm",
+              "Dermomyotome",
+              "Endothelium",
+              "Erythroid",
+              "Forebrain/Midbrain/Hindbrain",
+              "Gut tube",
+              "Haematoendothelial progenitors",
+              "Intermediate mesoderm"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "same_study_as": "seqFISH embryo already in n=11",
+        "fails": [
+          "C4_independent_platform"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "celltype_mapped_refined",
+          "Region",
+          "ground_truth",
+          "cell_type"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/slideseqv2_hippo/anndata.h5ad",
+        "exists": true,
+        "size_bytes": 872429534,
+        "n_obs": 41786,
+        "n_vars": 4000,
+        "obs_columns": [
+          "ground_truth",
+          "Region",
+          "cluster",
+          "leiden"
+        ],
+        "obsm_keys": [
+          "spatial"
+        ],
+        "uns_keys": [
+          "cluster_colors",
+          "hvg",
+          "leiden",
+          "leiden_colors",
+          "neighbors",
+          "pca",
+          "spatial_neighbors",
+          "umap"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          41786,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "ground_truth",
+            "n_valid": 41786,
+            "n_classes": 14,
+            "example_classes": [
+              "Astrocytes",
+              "CA1_CA2_CA3_Subiculum",
+              "DentatePyramids",
+              "Endothelial_Stalk",
+              "Endothelial_Tip",
+              "Ependymal",
+              "Interneurons",
+              "Microglia",
+              "Mural",
+              "Neurogenesis",
+              "Oligodendrocytes",
+              "Polydendrocytes"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "Region",
+            "n_valid": 41786,
+            "n_classes": 14,
+            "example_classes": [
+              "Astrocytes",
+              "CA1_CA2_CA3_Subiculum",
+              "DentatePyramids",
+              "Endothelial_Stalk",
+              "Endothelial_Tip",
+              "Ependymal",
+              "Interneurons",
+              "Microglia",
+              "Mural",
+              "Neurogenesis",
+              "Oligodendrocytes",
+              "Polydendrocytes"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "cluster",
+            "n_valid": 41786,
+            "n_classes": 14,
+            "example_classes": [
+              "Astrocytes",
+              "CA1_CA2_CA3_Subiculum",
+              "DentatePyramids",
+              "Endothelial_Stalk",
+              "Endothelial_Tip",
+              "Ependymal",
+              "Interneurons",
+              "Microglia",
+              "Mural",
+              "Neurogenesis",
+              "Oligodendrocytes",
+              "Polydendrocytes"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "fails": [
+          "C3_not_duplicate"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "ground_truth",
+          "Region",
+          "cluster"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": true
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/starmap_mouse_vcortex_wang2018/anndata.h5ad",
+        "exists": true,
+        "size_bytes": 5113528,
+        "n_obs": 1207,
+        "n_vars": 1020,
+        "obs_columns": [
+          "Total_counts",
+          "X",
+          "Y",
+          "label",
+          "region",
+          "Region",
+          "ground_truth",
+          "layer_label",
+          "section_id"
+        ],
+        "obsm_keys": [
+          "spatial"
+        ],
+        "uns_keys": [
+          "data_card_id",
+          "ground_truth_label_source",
+          "label_colors",
+          "source"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          1207,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "label",
+            "n_valid": 1207,
+            "n_classes": 7,
+            "example_classes": [
+              "CC",
+              "HPC",
+              "L1",
+              "L2/3",
+              "L4",
+              "L5",
+              "L6"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "region",
+            "n_valid": 1207,
+            "n_classes": 7,
+            "example_classes": [
+              "CC",
+              "HPC",
+              "L1",
+              "L2/3",
+              "L4",
+              "L5",
+              "L6"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "Region",
+            "n_valid": 1207,
+            "n_classes": 7,
+            "example_classes": [
+              "CC",
+              "HPC",
+              "L1",
+              "L2/3",
+              "L4",
+              "L5",
+              "L6"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "ground_truth",
+            "n_valid": 1207,
+            "n_classes": 7,
+            "example_classes": [
+              "CC",
+              "HPC",
+              "L1",
+              "L2/3",
+              "L4",
+              "L5",
+              "L6"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "layer_label",
+            "n_valid": 1207,
+            "n_classes": 7,
+            "example_classes": [
+              "CC",
+              "HPC",
+              "L1",
+              "L2/3",
+              "L4",
+              "L5",
+              "L6"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "fails": [
+          "C3_not_duplicate"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "label",
+          "region",
+          "Region",
+          "ground_truth",
+          "layer_label"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": true
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/synthetic/aether_3d/slice_000_z0um.h5ad",
+        "exists": true,
+        "size_bytes": 39544,
+        "n_obs": 80,
+        "n_vars": 30,
+        "obs_columns": [
+          "cell_class",
+          "slice_id"
+        ],
+        "obsm_keys": [
+          "spatial"
+        ],
+        "uns_keys": [
+          "content_hash",
+          "data_card_id",
+          "physical_z_um",
+          "preprocessing_config_hash",
+          "split_seed"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          80,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "cell_class",
+            "n_valid": 80,
+            "n_classes": 4,
+            "example_classes": [
+              "B_cell",
+              "Endothelial",
+              "Epithelial",
+              "T_cell"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "same_study_as": "synthetic generator tissue, not a real dataset",
+        "fails": [
+          "C4_independent_platform"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "cell_class"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/synthetic/aether_3d/slice_001_z10um.h5ad",
+        "exists": true,
+        "size_bytes": 39544,
+        "n_obs": 80,
+        "n_vars": 30,
+        "obs_columns": [
+          "cell_class",
+          "slice_id"
+        ],
+        "obsm_keys": [
+          "spatial"
+        ],
+        "uns_keys": [
+          "content_hash",
+          "data_card_id",
+          "physical_z_um",
+          "preprocessing_config_hash",
+          "split_seed"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          80,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "cell_class",
+            "n_valid": 80,
+            "n_classes": 4,
+            "example_classes": [
+              "B_cell",
+              "Endothelial",
+              "Epithelial",
+              "T_cell"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "same_study_as": "synthetic generator tissue, not a real dataset",
+        "fails": [
+          "C4_independent_platform"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "cell_class"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/synthetic/aether_3d/slice_002_z20um.h5ad",
+        "exists": true,
+        "size_bytes": 39544,
+        "n_obs": 80,
+        "n_vars": 30,
+        "obs_columns": [
+          "cell_class",
+          "slice_id"
+        ],
+        "obsm_keys": [
+          "spatial"
+        ],
+        "uns_keys": [
+          "content_hash",
+          "data_card_id",
+          "physical_z_um",
+          "preprocessing_config_hash",
+          "split_seed"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          80,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "cell_class",
+            "n_valid": 80,
+            "n_classes": 4,
+            "example_classes": [
+              "B_cell",
+              "Endothelial",
+              "Epithelial",
+              "T_cell"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "same_study_as": "synthetic generator tissue, not a real dataset",
+        "fails": [
+          "C4_independent_platform"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "cell_class"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/synthetic/aether_3d/slice_003_z30um.h5ad",
+        "exists": true,
+        "size_bytes": 39544,
+        "n_obs": 80,
+        "n_vars": 30,
+        "obs_columns": [
+          "cell_class",
+          "slice_id"
+        ],
+        "obsm_keys": [
+          "spatial"
+        ],
+        "uns_keys": [
+          "content_hash",
+          "data_card_id",
+          "physical_z_um",
+          "preprocessing_config_hash",
+          "split_seed"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          80,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "cell_class",
+            "n_valid": 80,
+            "n_classes": 4,
+            "example_classes": [
+              "B_cell",
+              "Endothelial",
+              "Epithelial",
+              "T_cell"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "same_study_as": "synthetic generator tissue, not a real dataset",
+        "fails": [
+          "C4_independent_platform"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "cell_class"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/synthetic/aether_3d/slice_004_z40um.h5ad",
+        "exists": true,
+        "size_bytes": 39544,
+        "n_obs": 80,
+        "n_vars": 30,
+        "obs_columns": [
+          "cell_class",
+          "slice_id"
+        ],
+        "obsm_keys": [
+          "spatial"
+        ],
+        "uns_keys": [
+          "content_hash",
+          "data_card_id",
+          "physical_z_um",
+          "preprocessing_config_hash",
+          "split_seed"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          80,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "cell_class",
+            "n_valid": 80,
+            "n_classes": 4,
+            "example_classes": [
+              "B_cell",
+              "Endothelial",
+              "Epithelial",
+              "T_cell"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "same_study_as": "synthetic generator tissue, not a real dataset",
+        "fails": [
+          "C4_independent_platform"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "cell_class"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/synthetic/lumina_st/target_spatial.h5ad",
+        "exists": true,
+        "size_bytes": 101688,
+        "n_obs": 320,
+        "n_vars": 50,
+        "obs_columns": [
+          "cancer_type"
+        ],
+        "obsm_keys": [
+          "spatial"
+        ],
+        "uns_keys": [
+          "content_hash",
+          "data_card_id",
+          "preprocessing_config_hash",
+          "split_seed"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          320,
+          2
+        ],
+        "label_columns": [],
+        "same_study_as": "synthetic generator tissue, not a real dataset",
+        "fails": [
+          "C2_biological_gt",
+          "C4_independent_platform"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/xenium_5k_cervix/anndata.h5ad",
+        "exists": true,
+        "size_bytes": 558912762,
+        "n_obs": 840387,
+        "n_vars": 5101,
+        "obs_columns": [],
+        "obsm_keys": [
+          "spatial"
+        ],
+        "uns_keys": [
+          "data_card_id",
+          "fetch_mode",
+          "source"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          840387,
+          2
+        ],
+        "label_columns": [],
+        "fails": [
+          "C2_biological_gt"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/raw/abc_zhuang/Zhuang-ABCA-1/raw.h5ad",
+        "exists": true,
+        "size_bytes": 1193452436,
+        "n_obs": 4167870,
+        "n_vars": 1122,
+        "obs_columns": [
+          "brain_section_label"
+        ],
+        "obsm_keys": [],
+        "uns_keys": [],
+        "has_spatial": false,
+        "label_columns": [
+          {
+            "column": "brain_section_label",
+            "n_valid": 4167870,
+            "n_classes": 147,
+            "example_classes": [
+              "Zhuang-ABCA-1.001",
+              "Zhuang-ABCA-1.002",
+              "Zhuang-ABCA-1.003",
+              "Zhuang-ABCA-1.004",
+              "Zhuang-ABCA-1.005",
+              "Zhuang-ABCA-1.006",
+              "Zhuang-ABCA-1.007",
+              "Zhuang-ABCA-1.008",
+              "Zhuang-ABCA-1.009",
+              "Zhuang-ABCA-1.010",
+              "Zhuang-ABCA-1.011",
+              "Zhuang-ABCA-1.012"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "fails": [
+          "C1_spatial",
+          "C7_not_scrna"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "brain_section_label"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/raw/abc_zhuang/Zhuang-ABCA-2/raw.h5ad",
+        "exists": true,
+        "size_bytes": 520384543,
+        "n_obs": 1915594,
+        "n_vars": 1122,
+        "obs_columns": [
+          "brain_section_label"
+        ],
+        "obsm_keys": [],
+        "uns_keys": [],
+        "has_spatial": false,
+        "label_columns": [
+          {
+            "column": "brain_section_label",
+            "n_valid": 1915594,
+            "n_classes": 66,
+            "example_classes": [
+              "Zhuang-ABCA-2.001",
+              "Zhuang-ABCA-2.002",
+              "Zhuang-ABCA-2.003",
+              "Zhuang-ABCA-2.004",
+              "Zhuang-ABCA-2.005",
+              "Zhuang-ABCA-2.006",
+              "Zhuang-ABCA-2.007",
+              "Zhuang-ABCA-2.008",
+              "Zhuang-ABCA-2.009",
+              "Zhuang-ABCA-2.010",
+              "Zhuang-ABCA-2.011",
+              "Zhuang-ABCA-2.012"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "fails": [
+          "C1_spatial",
+          "C7_not_scrna"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "brain_section_label"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/raw/dlpfc_maynard_2021_visium/dlpfc_maynard_2021_151673.h5ad",
+        "exists": true,
+        "size_bytes": 120074074,
+        "n_obs": 3639,
+        "n_vars": 33538,
+        "obs_columns": [
+          "in_tissue",
+          "array_row",
+          "array_col",
+          "Region",
+          "ground_truth"
+        ],
+        "obsm_keys": [
+          "spatial"
+        ],
+        "uns_keys": [
+          "spatial"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          3639,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "Region",
+            "n_valid": 3611,
+            "n_classes": 7,
+            "example_classes": [
+              "Layer1",
+              "Layer2",
+              "Layer3",
+              "Layer4",
+              "Layer5",
+              "Layer6",
+              "WM"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "ground_truth",
+            "n_valid": 3611,
+            "n_classes": 7,
+            "example_classes": [
+              "Layer1",
+              "Layer2",
+              "Layer3",
+              "Layer4",
+              "Layer5",
+              "Layer6",
+              "WM"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "fails": [
+          "C3_not_duplicate"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "Region",
+          "ground_truth"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": true
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/raw/lumina_refs/sc_mouse_cortex.h5ad",
+        "exists": true,
+        "size_bytes": 3254624804,
+        "n_obs": 21697,
+        "n_vars": 36826,
+        "obs_columns": [
+          "sample_name",
+          "organism",
+          "donor_sex",
+          "cell_class",
+          "cell_subclass",
+          "cell_cluster",
+          "n_genes_by_counts",
+          "log1p_n_genes_by_counts",
+          "total_counts",
+          "log1p_total_counts",
+          "pct_counts_in_top_50_genes",
+          "pct_counts_in_top_100_genes",
+          "pct_counts_in_top_200_genes",
+          "pct_counts_in_top_500_genes",
+          "total_counts_mt",
+          "log1p_total_counts_mt",
+          "pct_counts_mt",
+          "n_counts"
+        ],
+        "obsm_keys": [
+          "X_pca",
+          "X_umap"
+        ],
+        "uns_keys": [
+          "cell_class_colors",
+          "cell_subclass_colors",
+          "hvg",
+          "neighbors",
+          "pca",
+          "umap"
+        ],
+        "has_spatial": false,
+        "label_columns": [
+          {
+            "column": "cell_class",
+            "n_valid": 21697,
+            "n_classes": 4,
+            "example_classes": [
+              "Endothelial",
+              "GABAergic",
+              "Glutamatergic",
+              "Non-Neuronal"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "cell_subclass",
+            "n_valid": 21697,
+            "n_classes": 23,
+            "example_classes": [
+              "Astro",
+              "CR",
+              "Endo",
+              "L2/3 IT",
+              "L4",
+              "L5 IT",
+              "L5 PT",
+              "L6 CT",
+              "L6 IT",
+              "L6b",
+              "Lamp5",
+              "Macrophage"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "cell_cluster",
+            "n_valid": 21697,
+            "n_classes": 133,
+            "example_classes": [
+              "Astro Aqp4",
+              "CR Lhx5",
+              "Endo Ctla2a",
+              "Endo Cytl1",
+              "L2/3 IT ALM Macc1 Lrg1",
+              "L2/3 IT ALM Ptrf",
+              "L2/3 IT ALM Sla",
+              "L2/3 IT VISp Adamts2",
+              "L2/3 IT VISp Agmat",
+              "L2/3 IT VISp Rrad",
+              "L4 IT VISp Rspo1",
+              "L5 IT ALM Cbln4 Fezf2"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "same_study_as": "scRNA-seq reference (lumina/qukun *_ref)",
+        "fails": [
+          "C1_spatial",
+          "C4_independent_platform",
+          "C7_not_scrna"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "cell_class",
+          "cell_subclass",
+          "cell_cluster"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/raw/lumina_refs/wu_breast_atlas.h5ad",
+        "exists": true,
+        "size_bytes": 843892052,
+        "n_obs": 100064,
+        "n_vars": 28468,
+        "obs_columns": [
+          "donor_id",
+          "percent_mito",
+          "nCount_RNA",
+          "nFeature_RNA",
+          "celltype_major",
+          "celltype_minor",
+          "celltype_subset",
+          "subtype",
+          "gene_module",
+          "calls",
+          "normal_cell_call",
+          "CNA_value",
+          "batch_run",
+          "multiplexed",
+          "cryo_state",
+          "development_stage_ontology_term_id",
+          "cancer_type",
+          "ER",
+          "PR",
+          "HER2_IHC",
+          "HER2_ISH",
+          "HER2_ISH_ratio",
+          "Ki67",
+          "subtype_by_IHC",
+          "treatment_status",
+          "treatment_details",
+          "assay_ontology_term_id",
+          "tissue_ontology_term_id",
+          "suspension_type",
+          "sex_ontology_term_id",
+          "self_reported_ethnicity_ontology_term_id",
+          "is_primary_data",
+          "disease_ontology_term_id",
+          "grade",
+          "cell_type_ontology_term_id",
+          "tissue_type",
+          "cell_type",
+          "assay",
+          "disease",
+          "sex",
+          "tissue",
+          "self_reported_ethnicity",
+          "development_stage",
+          "observation_joinid"
+        ],
+        "obsm_keys": [
+          "X_Three-D",
+          "X_umap"
+        ],
+        "uns_keys": [
+          "citation",
+          "is_pre_analysis",
+          "organism",
+          "organism_ontology_term_id",
+          "schema_reference",
+          "schema_version",
+          "title"
+        ],
+        "has_spatial": false,
+        "label_columns": [
+          {
+            "column": "celltype_major",
+            "n_valid": 100064,
+            "n_classes": 9,
+            "example_classes": [
+              "B-cells",
+              "CAFs",
+              "Cancer Epithelial",
+              "Endothelial",
+              "Myeloid",
+              "Normal Epithelial",
+              "PVL",
+              "Plasmablasts",
+              "T-cells"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "celltype_minor",
+            "n_valid": 100064,
+            "n_classes": 29,
+            "example_classes": [
+              "B cells Memory",
+              "B cells Naive",
+              "CAFs MSC iCAF-like",
+              "CAFs myCAF-like",
+              "Cancer Basal SC",
+              "Cancer Cycling",
+              "Cancer Her2 SC",
+              "Cancer LumA SC",
+              "Cancer LumB SC",
+              "Cycling PVL",
+              "Cycling T-cells",
+              "Cycling_Myeloid"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "celltype_subset",
+            "n_valid": 100064,
+            "n_classes": 49,
+            "example_classes": [
+              "B cells Memory",
+              "B cells Naive",
+              "CAFs MSC iCAF-like s1",
+              "CAFs MSC iCAF-like s2",
+              "CAFs Transitioning s3",
+              "CAFs myCAF like s4",
+              "CAFs myCAF like s5",
+              "Cancer Basal SC",
+              "Cancer Cycling",
+              "Cancer Her2 SC",
+              "Cancer LumA SC",
+              "Cancer LumB SC"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "cell_type_ontology_term_id",
+            "n_valid": 100064,
+            "n_classes": 18,
+            "example_classes": [
+              "CL:0000084",
+              "CL:0000115",
+              "CL:0000235",
+              "CL:0000576",
+              "CL:0000623",
+              "CL:0000624",
+              "CL:0000625",
+              "CL:0000669",
+              "CL:0000763",
+              "CL:0000787",
+              "CL:0000788",
+              "CL:0000814"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "cell_type",
+            "n_valid": 100064,
+            "n_classes": 18,
+            "example_classes": [
+              "CD4-positive, alpha-beta T cell",
+              "CD8-positive, alpha-beta T cell",
+              "T cell",
+              "basal-myoepithelial cell of mammary gland",
+              "endothelial cell",
+              "endothelial cell of lymphatic vessel",
+              "fibroblast of breast",
+              "luminal epithelial cell of mammary gland",
+              "macrophage",
+              "mammary gland epithelial cell",
+              "mature NK T cell",
+              "memory B cell"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "same_study_as": "scRNA-seq reference (lumina/qukun *_ref)",
+        "fails": [
+          "C1_spatial",
+          "C4_independent_platform",
+          "C7_not_scrna"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "celltype_major",
+          "celltype_minor",
+          "celltype_subset",
+          "cell_type_ontology_term_id",
+          "cell_type"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/raw/openst_hnscc_gse251926/GSE251926_metastatic_lymph_node_3d.h5ad",
+        "exists": true,
+        "size_bytes": 8869538409,
+        "n_obs": 1097769,
+        "n_vars": 28943,
+        "obs_columns": [
+          "cell_ID_mask",
+          "n_genes_by_counts",
+          "total_counts",
+          "total_counts_mt",
+          "pct_counts_mt",
+          "n_reads",
+          "reads_per_counts",
+          "n_joined",
+          "exact_entropy",
+          "theoretical_entropy",
+          "exact_compression",
+          "theoretical_compression",
+          "n_counts",
+          "annotation",
+          "annotation_key",
+          "n_section"
+        ],
+        "obsm_keys": [
+          "spatial",
+          "spatial_3d_aligned"
+        ],
+        "uns_keys": [
+          "log1p"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          1097769,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "annotation",
+            "n_valid": 971452,
+            "n_classes": 16,
+            "example_classes": [
+              "CAF",
+              "CAM",
+              "Cortex_CCL21",
+              "Cytotoxic_IFN_signaling",
+              "Dendritic_cells",
+              "Fibroblasts",
+              "Germinal_Center_Plasma_IgM_B_cell",
+              "High_Endothelial_Venules",
+              "M1_macrophages",
+              "Macrophages",
+              "Mast_cells",
+              "Plasma_IgA"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "annotation_key",
+            "n_valid": 77868,
+            "n_classes": 17,
+            "example_classes": [
+              "1.0",
+              "10.0",
+              "11.0",
+              "12.0",
+              "13.0",
+              "14.0",
+              "15.0",
+              "16.0",
+              "17.0",
+              "2.0",
+              "3.0",
+              "4.0"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "same_study_as": "Open-ST HNSCC (openst_hnscc_sub15k already in n=11)",
+        "fails": [
+          "C4_independent_platform"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "annotation",
+          "annotation_key"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/raw/squidpy/imc.h5ad",
+        "exists": true,
+        "size_bytes": 1574836,
+        "n_obs": 4668,
+        "n_vars": 34,
+        "obs_columns": [
+          "cell type"
+        ],
+        "obsm_keys": [
+          "spatial"
+        ],
+        "uns_keys": [
+          "cell type_colors"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          4668,
+          2
+        ],
+        "label_columns": [],
+        "same_study_as": "IMC Jackson breast (niche_imc_breast already in n=11)",
+        "fails": [
+          "C2_biological_gt",
+          "C4_independent_platform"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/raw/squidpy/mibitof.h5ad",
+        "exists": true,
+        "size_bytes": 20272897,
+        "n_obs": 3309,
+        "n_vars": 36,
+        "obs_columns": [
+          "row_num",
+          "point",
+          "cell_id",
+          "X1",
+          "center_rowcoord",
+          "center_colcoord",
+          "cell_size",
+          "category",
+          "donor",
+          "Cluster",
+          "batch",
+          "library_id"
+        ],
+        "obsm_keys": [
+          "X_scanorama",
+          "X_umap",
+          "spatial"
+        ],
+        "uns_keys": [
+          "Cluster_colors",
+          "batch_colors",
+          "neighbors",
+          "spatial",
+          "umap"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          3309,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "Cluster",
+            "n_valid": 3309,
+            "n_classes": 8,
+            "example_classes": [
+              "Endothelial",
+              "Epithelial",
+              "Fibroblast",
+              "Imm_other",
+              "Myeloid_CD11c",
+              "Myeloid_CD68",
+              "Tcell_CD4",
+              "Tcell_CD8"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "fails": [
+          "C3_not_duplicate"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "Cluster"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": true
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/raw/squidpy/seqfish.h5ad",
+        "exists": true,
+        "size_bytes": 32167384,
+        "n_obs": 19416,
+        "n_vars": 351,
+        "obs_columns": [
+          "Area",
+          "celltype_mapped_refined"
+        ],
+        "obsm_keys": [
+          "X_umap",
+          "spatial"
+        ],
+        "uns_keys": [
+          "celltype_mapped_refined_colors"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          19416,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "celltype_mapped_refined",
+            "n_valid": 19416,
+            "n_classes": 22,
+            "example_classes": [
+              "Allantois",
+              "Anterior somitic tissues",
+              "Cardiomyocytes",
+              "Cranial mesoderm",
+              "Definitive endoderm",
+              "Dermomyotome",
+              "Endothelium",
+              "Erythroid",
+              "Forebrain/Midbrain/Hindbrain",
+              "Gut tube",
+              "Haematoendothelial progenitors",
+              "Intermediate mesoderm"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "fails": [
+          "C3_not_duplicate"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "celltype_mapped_refined"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": true
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/raw/squidpy/slideseqv2.h5ad",
+        "exists": true,
+        "size_bytes": 263517114,
+        "n_obs": 41786,
+        "n_vars": 4000,
+        "obs_columns": [
+          "barcode",
+          "x",
+          "y",
+          "n_genes_by_counts",
+          "log1p_n_genes_by_counts",
+          "total_counts",
+          "log1p_total_counts",
+          "pct_counts_in_top_50_genes",
+          "pct_counts_in_top_100_genes",
+          "pct_counts_in_top_200_genes",
+          "pct_counts_in_top_500_genes",
+          "total_counts_MT",
+          "log1p_total_counts_MT",
+          "pct_counts_MT",
+          "n_counts",
+          "leiden",
+          "cluster"
+        ],
+        "obsm_keys": [
+          "X_pca",
+          "X_umap",
+          "deconvolution_results",
+          "spatial"
+        ],
+        "uns_keys": [
+          "cluster_colors",
+          "hvg",
+          "leiden",
+          "leiden_colors",
+          "neighbors",
+          "pca",
+          "spatial_neighbors",
+          "umap"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          41786,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "cluster",
+            "n_valid": 41786,
+            "n_classes": 14,
+            "example_classes": [
+              "Astrocytes",
+              "CA1_CA2_CA3_Subiculum",
+              "DentatePyramids",
+              "Endothelial_Stalk",
+              "Endothelial_Tip",
+              "Ependymal",
+              "Interneurons",
+              "Microglia",
+              "Mural",
+              "Neurogenesis",
+              "Oligodendrocytes",
+              "Polydendrocytes"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "same_study_as": "Slide-seqV2 hippo already in n=11",
+        "fails": [
+          "C4_independent_platform"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "cluster"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      },
+      {
+        "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/raw/starmap_mouse_vcortex_wang2018/starmap_mouse_vcortex_wang2018.h5ad",
+        "exists": true,
+        "size_bytes": 5107752,
+        "n_obs": 1207,
+        "n_vars": 1020,
+        "obs_columns": [
+          "Total_counts",
+          "X",
+          "Y",
+          "label",
+          "region",
+          "Region",
+          "ground_truth"
+        ],
+        "obsm_keys": [
+          "spatial"
+        ],
+        "uns_keys": [
+          "label_colors"
+        ],
+        "has_spatial": true,
+        "spatial_shape": [
+          1207,
+          2
+        ],
+        "label_columns": [
+          {
+            "column": "label",
+            "n_valid": 1207,
+            "n_classes": 7,
+            "example_classes": [
+              "CC",
+              "HPC",
+              "L1",
+              "L2/3",
+              "L4",
+              "L5",
+              "L6"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "region",
+            "n_valid": 1207,
+            "n_classes": 7,
+            "example_classes": [
+              "CC",
+              "HPC",
+              "L1",
+              "L2/3",
+              "L4",
+              "L5",
+              "L6"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "Region",
+            "n_valid": 1207,
+            "n_classes": 7,
+            "example_classes": [
+              "CC",
+              "HPC",
+              "L1",
+              "L2/3",
+              "L4",
+              "L5",
+              "L6"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          },
+          {
+            "column": "ground_truth",
+            "n_valid": 1207,
+            "n_classes": 7,
+            "example_classes": [
+              "CC",
+              "HPC",
+              "L1",
+              "L2/3",
+              "L4",
+              "L5",
+              "L6"
+            ],
+            "method_derived_name": false,
+            "technical_name": false
+          }
+        ],
+        "same_study_as": "STARmap Wang 2018 already in n=11",
+        "fails": [
+          "C4_independent_platform"
+        ],
+        "qualifies_as_new_n": false,
+        "independent_gt_columns": [
+          "label",
+          "region",
+          "Region",
+          "ground_truth"
+        ],
+        "method_derived_columns": [],
+        "already_in_panel": false
+      }
+    ],
+    "n_qualify_as_new_after_inspection": 1,
+    "false_positive_path_rules": [
+      "processed/dlpfc_maynard_2021_visium/anndata.h5ad is section 151673 (C3)",
+      "processed/niche_merfish_slice/anndata.h5ad is merfish_0 (C3, n=5488)",
+      "processed/aether_serial_merfish/concat.h5ad is merfish_0-4 concat (C4)",
+      "processed/niche_abc_zhuang2_brain_slice is a second mouse of the same atlas (C4 once zhuang1 is taken)"
+    ]
+  },
+  "posteriors": {
+    "primary_n11_contiguity_vs_advantage": {
+      "estimand": "Spearman ρ(GT-contiguity, spatial-prior advantage), n=11 published panel",
+      "role": "primary",
+      "rho_hat": 0.7243754556493464,
+      "p_two_sided": 0.011696567268823264,
+      "fisher_z_uniform": {
+        "rho_hat": 0.7243754556493464,
+        "n": 11,
+        "prior": "uniform",
+        "likelihood": "Fisher-z Normal(atanh(ρ), 1/sqrt(n-3))",
+        "z_obs": 0.9167903080808077,
+        "se_z": 0.35355339059327373,
+        "posterior_mean": 0.606355859786206,
+        "posterior_median": 0.6423570000000002,
+        "credible95": [
+          0.12487500000000018,
+          0.8896095000000003
+        ],
+        "P_rho_gt_0": 0.9906811549963197,
+        "P_rho_gt_0.5": 0.7416994623634462,
+        "P_rho_gt_0.72": 0.33063278252980627
+      },
+      "fisher_z_skeptical": {
+        "rho_hat": 0.7243754556493464,
+        "n": 11,
+        "prior": "skeptical",
+        "likelihood": "Fisher-z Normal(atanh(ρ), 1/sqrt(n-3))",
+        "z_obs": 0.9167903080808077,
+        "se_z": 0.35355339059327373,
+        "posterior_mean": 0.5222013246418581,
+        "posterior_median": 0.5499495000000002,
+        "credible95": [
+          0.034965000000000024,
+          0.8581410000000002
+        ],
+        "P_rho_gt_0": 0.9814529672077733,
+        "P_rho_gt_0.5": 0.5858373945442732,
+        "P_rho_gt_0.72": 0.1903814021272946
+      },
+      "bayes_bootstrap": {
+        "method": "Rubin Bayesian bootstrap (multinomial resample), B=5000",
+        "n_boot": 5000,
+        "mean": 0.6639414870985828,
+        "median": 0.6939940369514694,
+        "credible95": [
+          0.25288992288980616,
+          0.9158878504672897
+        ],
+        "P_rho_gt_0": 0.9864
+      }
+    },
+    "family7_same_estimand": {
+      "estimand": "same ρ as primary; family-7 is a frequentist multiplicity correction, not a new ρ",
+      "role": "pre-specified secondary (multiplicity)",
+      "rho_hat": 0.7243754556493464,
+      "bonferroni_p": 0.0819,
+      "note": "The posterior on ρ is identical to the primary. Bonferroni p=0.082 is a frequentist threshold statement, not a Bayesian quantity. Never call p=0.082 significant.",
+      "fisher_z_uniform": {
+        "rho_hat": 0.7243754556493464,
+        "n": 11,
+        "prior": "uniform",
+        "likelihood": "Fisher-z Normal(atanh(ρ), 1/sqrt(n-3))",
+        "z_obs": 0.9167903080808077,
+        "se_z": 0.35355339059327373,
+        "posterior_mean": 0.606355859786206,
+        "posterior_median": 0.6423570000000002,
+        "credible95": [
+          0.12487500000000018,
+          0.8896095000000003
+        ],
+        "P_rho_gt_0": 0.9906811549963197,
+        "P_rho_gt_0.5": 0.7416994623634462,
+        "P_rho_gt_0.72": 0.33063278252980627
+      },
+      "P_rho_gt_0_is_the_same_as_primary": true
+    },
+    "proxy_coh_gain_vs_advantage": {
+      "estimand": "Spearman ρ(coh_gain, spatial-prior advantage), n=11",
+      "role": "pre-specified secondary after 6-candidate search",
+      "rho_hat": 0.5512542775696283,
+      "p_two_sided": 0.07878928423361271,
+      "fisher_z_uniform": {
+        "rho_hat": 0.5512542775696283,
+        "n": 11,
+        "prior": "uniform",
+        "likelihood": "Fisher-z Normal(atanh(ρ), 1/sqrt(n-3))",
+        "z_obs": 0.6201813432225483,
+        "se_z": 0.35355339059327373,
+        "posterior_mean": 0.43669048382634507,
+        "posterior_median": 0.46903050000000024,
+        "credible95": [
+          -0.1188809999999999,
+          0.8191800000000001
+        ],
+        "P_rho_gt_0": 0.9436619853449506,
+        "P_rho_gt_0.5": 0.4498131074506794,
+        "P_rho_gt_0.72": 0.11132303676530651
+      },
+      "fisher_z_skeptical": {
+        "rho_hat": 0.5512542775696283,
+        "n": 11,
+        "prior": "skeptical",
+        "likelihood": "Fisher-z Normal(atanh(ρ), 1/sqrt(n-3))",
+        "z_obs": 0.6201813432225483,
+        "se_z": 0.35355339059327373,
+        "posterior_mean": 0.356874125868961,
+        "posterior_median": 0.3751245000000002,
+        "credible95": [
+          -0.15584399999999987,
+          0.7677315000000001
+        ],
+        "P_rho_gt_0": 0.9178412478599516,
+        "P_rho_gt_0.5": 0.30258912961370155,
+        "P_rho_gt_0.72": 0.050625726283688104
+      },
+      "bayes_bootstrap": {
+        "method": "Rubin Bayesian bootstrap (multinomial resample), B=5000",
+        "n_boot": 5000,
+        "mean": 0.5071247212799717,
+        "median": 0.5687778717860787,
+        "credible95": [
+          -0.13532321283861962,
+          0.8389003849320242
+        ],
+        "P_rho_gt_0": 0.9492
+      }
+    },
+    "robustness_n14_already_scored": {
+      "estimand": "Spearman ρ on the n=14 expansion (nests the 11; not independent)",
+      "role": "already-printed robustness, not a new dataset",
+      "rho_hat": 0.5588562237643083,
+      "p_two_sided": 0.03775941698237578,
+      "fisher_z_uniform": {
+        "rho_hat": 0.5588562237643083,
+        "n": 14,
+        "prior": "uniform",
+        "likelihood": "Fisher-z Normal(atanh(ρ), 1/sqrt(n-3))",
+        "z_obs": 0.6311683979553665,
+        "se_z": 0.30151134457776363,
+        "posterior_mean": 0.4699621601800499,
+        "posterior_median": 0.49600350000000015,
+        "credible95": [
+          -0.005494499999999847,
+          0.8021970000000002
+        ],
+        "P_rho_gt_0": 0.973848257774214,
+        "P_rho_gt_0.5": 0.4924921495338046,
+        "P_rho_gt_0.72": 0.10110886280684055
+      },
+      "fisher_z_skeptical": {
+        "rho_hat": 0.5588562237643083,
+        "n": 14,
+        "prior": "skeptical",
+        "likelihood": "Fisher-z Normal(atanh(ρ), 1/sqrt(n-3))",
+        "z_obs": 0.6311683979553665,
+        "se_z": 0.30151134457776363,
+        "posterior_mean": 0.4020150371019875,
+        "posterior_median": 0.4195800000000002,
+        "credible95": [
+          -0.05344649999999995,
+          0.7597395000000001
+        ],
+        "P_rho_gt_0": 0.9596823770815461,
+        "P_rho_gt_0.5": 0.351526757776338,
+        "P_rho_gt_0.72": 0.04879841815297696
+      },
+      "bayes_bootstrap": {
+        "method": "Rubin Bayesian bootstrap (multinomial resample), B=5000",
+        "n_boot": 5000,
+        "mean": 0.5160845984444149,
+        "median": 0.5650489351938774,
+        "credible95": [
+          -0.08678753396575285,
+          0.849323649639592
+        ],
+        "P_rho_gt_0": 0.9642
+      }
+    },
+    "n12_zhuang": {
+      "estimand": "Spearman ρ on n=11 + Zhuang-ABCA-1.069",
+      "role": "designed expansion of the primary estimand, reported alongside n=11, not a new headline",
+      "rho_hat": 0.6900185713132712,
+      "p_two_sided": 0.01301224318408305,
+      "fisher_z_uniform": {
+        "rho_hat": 0.6900185713132712,
+        "n": 12,
+        "prior": "uniform",
+        "likelihood": "Fisher-z Normal(atanh(ρ), 1/sqrt(n-3))",
+        "z_obs": 0.8479912042885009,
+        "se_z": 0.3333333333333333,
+        "posterior_mean": 0.5817559609981322,
+        "posterior_median": 0.6148845000000002,
+        "credible95": [
+          0.1118880000000001,
+          0.8711280000000002
+        ],
+        "P_rho_gt_0": 0.9900639632874588,
+        "P_rho_gt_0.5": 0.7041219138431742,
+        "P_rho_gt_0.72": 0.2712211803755953
+      },
+      "fisher_z_skeptical": {
+        "rho_hat": 0.6900185713132712,
+        "n": 12,
+        "prior": "skeptical",
+        "likelihood": "Fisher-z Normal(atanh(ρ), 1/sqrt(n-3))",
+        "z_obs": 0.8479912042885009,
+        "se_z": 0.3333333333333333,
+        "posterior_mean": 0.5029001211864578,
+        "posterior_median": 0.5279715000000001,
+        "credible95": [
+          0.03196800000000011,
+          0.8376615000000002
+        ],
+        "P_rho_gt_0": 0.9811777851022768,
+        "P_rho_gt_0.5": 0.5496710503113874,
+        "P_rho_gt_0.72": 0.1517821488046838
+      },
+      "bayes_bootstrap": {
+        "method": "Rubin Bayesian bootstrap (multinomial resample), B=5000",
+        "n_boot": 5000,
+        "mean": 0.63438315875676,
+        "median": 0.6536504877387845,
+        "credible95": [
+          0.21052943629791906,
+          0.8785768398268398
+        ],
+        "P_rho_gt_0": 0.9936
+      }
+    }
+  },
+  "meta_analysis": {
+    "combinable": false,
+    "model_considered": "fixed-effect or random-effects meta-analysis of Fisher-z",
+    "why_not_exchangeable": [
+      "Different estimands: cross-dataset observational association vs within-generator intervention.",
+      "Different units: 11 published tissues vs 384 dependent tessellation evaluations.",
+      "Different spatial methods: full competitor panel vs neighbour-mean only.",
+      "Synthetic points share one generator and are not independent studies.",
+      "n=14 nests n=11, so it is also not a second observational study."
+    ],
+    "naive_ivw_counterexample": {
+      "computed_only_as_counterexample": true,
+      "model_if_wrongly_applied": "fixed-effect IVW on Fisher-z",
+      "obs": {
+        "rho": 0.7243754556493464,
+        "n": 11,
+        "weight_n_minus_3": 8
+      },
+      "synth": {
+        "rho": 0.9195443779396417,
+        "n": 384,
+        "weight_n_minus_3": 381
+      },
+      "wrong_pooled_rho": 0.9173915676043916,
+      "synth_weight_fraction": 0.9794344473007712,
+      "why_invalid": "The observational unit is a published dataset (n=11). The synthetic unit is a tessellation condition-evaluation (n=384 paper-config points) from one generator. Different estimands, different methods (full panel vs neighbour-mean), different sampling units, and the synthetic points are dependent. IVW would assign ~98% of the weight to the generator and silently replace the observational claim."
+    }
+  },
+  "preregistration": {
+    "primary": "Spearman ρ(GT-contiguity, spatial-prior advantage) on the de-duplicated n=11 panel. Uncorrected two-sided α=0.05. Designed 80% power at ρ=+0.72 needs n=14 (MC)/n=13 (Fisher-z).",
+    "secondary_multiplicity": "Family-7 Bonferroni on the same ρ. Designed 80% power needs n=21 (MC)/n=18 (Fisher-z). Observed Bonferroni p=0.082 is not significant.",
+    "secondary_proxy": "coh_gain vs advantage after a 6-candidate search (Westfall-Young). Designed 80% power at ρ=+0.55 needs n=26 uncorrected.",
+    "secondary_lodo": "LODO decision-rule accuracy vs base 0.545. Designed 80% needs n=21.",
+    "not_primary": "generator ΔARI / pooled synthetic ρ are a separate causal arm, not pooled with observational ρ."
+  },
+  "n_after_rescreen": 12,
+  "n_rose_via": "Zhuang-ABCA-1.069, not deepstarmap",
+  "n12_row": {
+    "platform": "Zhuang-ABCA-1.069(MERFISH,domain)",
+    "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/niche_abc_zhuang1_brain_slice/anndata.h5ad",
+    "gt_column": "domain",
+    "gt_provenance": "Allen-CCF-2020 anatomical division (AllenCCF-Ontology-2017); per-cell CCF registration, non-clustering-derived",
+    "n_cells_used": 16000,
+    "n_cells_source": 22072,
+    "subsampled": true,
+    "k": 17,
+    "GT_contiguity": 0.945,
+    "GT_contiguity_raw": 0.9453645833333333,
+    "winner": "floor:smoothed",
+    "spatial_advantage": 0.125,
+    "spatial_advantage_raw": 0.12470184459418579,
+    "means": {
+      "Tessera": 0.2718,
+      "STAGATE": 0.2456,
+      "SEDR": 0.2166,
+      "BANKSY-style": 0.2562,
+      "floor:nonspatial": 0.159,
+      "floor:smoothed": 0.2837,
+      "SpatialLeiden": 0.2657
+    },
+    "per_seed": {
+      "Tessera": [
+        0.2613656341442429,
+        0.2684356307381409,
+        0.28564528823603313
+      ],
+      "STAGATE": [
+        0.28103661660598916,
+        0.22542701940397622,
+        0.23040020121539354
+      ],
+      "SEDR": [
+        0.24237945364306737,
+        0.21583047849068954,
+        0.19154117193967246
+      ],
+      "BANKSY-style": [
+        0.26746506913341683,
+        0.25695769604665275,
+        0.24415225646735877
+      ],
+      "floor:nonspatial": [
+        0.15663734260718565,
+        0.1584031151240668,
+        0.162002865129762
+      ],
+      "floor:smoothed": [
+        0.30448612191451596,
+        0.27595594247568417,
+        0.2707067922533716
+      ],
+      "SpatialLeiden": [
+        0.26874714052346255,
+        0.28250101393245536,
+        0.2458271305367439
+      ]
+    },
+    "seeds": [
+      1,
+      2,
+      3
+    ],
+    "protocol": "expand_data.py / expanded_bench.py identical"
+  },
+  "n12_spearman": {
+    "rho": 0.6900185713132712,
+    "p": 0.01301224318408305,
+    "n": 12,
+    "n_boot": 5000,
+    "ci95": [
+      0.233495919630009,
+      0.8785822318251142
+    ],
+    "frac_positive": 0.9942
+  },
+  "official_hash": {
+    "old": "af3624fe86c56452d12f6d2a6649f344aaefaaba97f21bc8fbde4222ec342742",
+    "new": "dcd5209012caf8f698988fda4e620fd909d50cf8b0ae7a2895c58eaa4b3a74cb",
+    "pages": 15
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "protocol_id": "field-identified-fixed-backend-20260923-v1",
+  "dataset": "Zhuang",
+  "method": "Tessera",
+  "seed": 1,
+  "source_sha256": "c055b6751a2225fab55f0dc669095d5b7d22cec53174624d4c92815a884de59a",
+  "protocol_sha256": "ed165f146b42da3ff09019246cbb8107ba279f5f29412df8cf9a3dde0c95a5f9",
+  "n_cells": 16000,
+  "n_classes": 17,
+  "device": "cuda",
+  "status": "complete",
+  "raw_ari": 0.16311403095582194,
+  "fitted_n_clusters": 17,
+  "spatial_refinement": true,
+  "refined_ari": 0.2651726620042394,
+  "predictions_sha256": "a5202c8b76a3113b32c0329191fcc1d70c789d3bc68e980e68d37a94f2b4264c",
+  "seconds": 4.794254198000999
+}

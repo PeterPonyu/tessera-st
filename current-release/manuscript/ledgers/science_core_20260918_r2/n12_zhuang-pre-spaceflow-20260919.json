@@ -1,0 +1,157 @@
+{
+  "role": "n=12 Zhuang-ABCA-1.069 under published-panel protocol",
+  "started_utc": "2026-09-18T17:27:39.905222+00:00",
+  "finished_utc": "2026-09-18T17:38:25.603488+00:00",
+  "device": "cuda",
+  "new_row": {
+    "platform": "Zhuang-ABCA-1.069(MERFISH,domain)",
+    "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/niche_abc_zhuang1_brain_slice/anndata.h5ad",
+    "gt_column": "domain",
+    "gt_provenance": "Allen-CCF-2020 anatomical division (AllenCCF-Ontology-2017); per-cell CCF registration, non-clustering-derived",
+    "n_cells_used": 16000,
+    "n_cells_source": 22072,
+    "subsampled": true,
+    "k": 17,
+    "GT_contiguity": 0.945,
+    "GT_contiguity_raw": 0.9453645833333333,
+    "winner": "floor:smoothed",
+    "spatial_advantage": 0.125,
+    "spatial_advantage_raw": 0.12470184459418579,
+    "means": {
+      "Tessera": 0.2718,
+      "STAGATE": 0.2456,
+      "SEDR": 0.2166,
+      "BANKSY-style": 0.2562,
+      "floor:nonspatial": 0.159,
+      "floor:smoothed": 0.2837,
+      "SpatialLeiden": 0.2657
+    },
+    "per_seed": {
+      "Tessera": [
+        0.2613656341442429,
+        0.2684356307381409,
+        0.28564528823603313
+      ],
+      "STAGATE": [
+        0.28103661660598916,
+        0.22542701940397622,
+        0.23040020121539354
+      ],
+      "SEDR": [
+        0.24237945364306737,
+        0.21583047849068954,
+        0.19154117193967246
+      ],
+      "BANKSY-style": [
+        0.26746506913341683,
+        0.25695769604665275,
+        0.24415225646735877
+      ],
+      "floor:nonspatial": [
+        0.15663734260718565,
+        0.1584031151240668,
+        0.162002865129762
+      ],
+      "floor:smoothed": [
+        0.30448612191451596,
+        0.27595594247568417,
+        0.2707067922533716
+      ],
+      "SpatialLeiden": [
+        0.26874714052346255,
+        0.28250101393245536,
+        0.2458271305367439
+      ]
+    },
+    "seeds": [
+      1,
+      2,
+      3
+    ],
+    "protocol": "expand_data.py / expanded_bench.py identical"
+  },
+  "n11": {
+    "rho": 0.7243754556493464,
+    "p": 0.011696567268823264,
+    "n": 11,
+    "n_boot": 5000,
+    "ci95": [
+      0.2552085015087011,
+      0.9166666666666666
+    ],
+    "frac_positive": 0.9878
+  },
+  "n12": {
+    "rho": 0.6900185713132712,
+    "p": 0.01301224318408305,
+    "n": 12,
+    "n_boot": 5000,
+    "ci95": [
+      0.233495919630009,
+      0.8785822318251142
+    ],
+    "frac_positive": 0.9942
+  },
+  "points_n12": [
+    {
+      "platform": "DLPFC(Visium,layer)",
+      "contiguity": 0.905,
+      "advantage": 0.101
+    },
+    {
+      "platform": "seqFISH(embryo,ctype)",
+      "contiguity": 0.621,
+      "advantage": -0.005
+    },
+    {
+      "platform": "MERFISH(hypo,domain)",
+      "contiguity": 0.931,
+      "advantage": 0.314
+    },
+    {
+      "platform": "STARmap(cortex,region)",
+      "contiguity": 0.921,
+      "advantage": 0.168
+    },
+    {
+      "platform": "osmFISH(cortex,Region)",
+      "contiguity": 0.817,
+      "advantage": 0.196
+    },
+    {
+      "platform": "MIBI-TOF(protein,Cluster)",
+      "contiguity": 0.271,
+      "advantage": 0.022
+    },
+    {
+      "platform": "BRCA(Visium,tumor)",
+      "contiguity": 0.865,
+      "advantage": 0.042
+    },
+    {
+      "platform": "IMC(breast,ctype)",
+      "contiguity": 0.63,
+      "advantage": 0.139
+    },
+    {
+      "platform": "openST(HNSCC,annot)",
+      "contiguity": 0.562,
+      "advantage": -0.005
+    },
+    {
+      "platform": "SlideseqV2(hippo,Region)",
+      "contiguity": 0.274,
+      "advantage": 0.008
+    },
+    {
+      "platform": "CODEX(spleen,niche)",
+      "contiguity": 0.022,
+      "advantage": 0.024
+    },
+    {
+      "platform": "Zhuang-ABCA-1.069(MERFISH,domain)",
+      "contiguity": 0.945,
+      "advantage": 0.125
+    }
+  ]
+}

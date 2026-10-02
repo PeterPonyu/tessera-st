@@ -1,0 +1,29 @@
+% Audited schematic: computational hypotheses, not measured tissue dynamics.
+\begin{tikzpicture}[
+ font=\fontsize{8.3}{10}\selectfont, >={Stealth[round]},
+ box/.style={draw=black!50,rounded corners=2pt,align=center,inner sep=5pt,minimum height=12mm,text width=24mm},
+ arr/.style={->,thick,draw=black!60}, note/.style={font=\fontsize{8}{9.5}\selectfont,align=center,text=black!65}]
+\node[font=\bfseries,anchor=west] at (-1.4,1.1) {A};
+\node[font=\fontsize{8.3}{10}\selectfont,anchor=center] at (1.6,1.1) {Tissue and neighbourhoods};
+\node[box,fill=tblue!9] (input) at (0,0) {\tikz[baseline=-0.5ex,scale=.34]{\foreach \x/\y in {0/0,1/.25,2/-.05}{\fill[tblue] (\x,\y) circle (1.8pt);}}\\cell features\\and local\\coordinates};
+\node[box,fill=tblue!9] (graph) at (3.2,0) {\tikz[baseline=-0.5ex,scale=.33]{\draw[tblue!70,thin] (0,0)--(.7,.35)--(1.3,-.05)--cycle;\foreach \x/\y in {0/0,.7/.35,1.3/-.05}{\fill[tblue] (\x,\y) circle (2pt);}}\\within-field\\$k$NN graph};
+\draw[arr] (input) -- (graph);
+\node[note,text width=59mm] at (1.6,-1.4) {Each local field remains separate.\\No artificial coordinate offsets.};
+\node[font=\bfseries,anchor=west] at (5.2,1.1) {B};
+\node[font=\fontsize{8.3}{10}\selectfont,anchor=center] at (8.3,1.1) {Learned representation};
+\node[box,fill=torange!12] (gate) at (6.6,0) {\tikz[baseline=-0.5ex,scale=.33]{\draw[torange!85,thick] (0,0) -- (.7,.4) -- (1.4,0) -- (.7,-.4) -- cycle;\fill[torange] (.7,0) circle (2pt);}\\edge gate $g_{ij}$\\and\\\mbox{message passing}};
+\node[box,fill=torange!12] (emb) at (10.0,0) {\tikz[baseline=-0.5ex,scale=.33]{\foreach \x/\y in {0/0,.65/.4,1.3/0,.65/-.4}{\fill[torange!80] (\x,\y) circle (2pt);\draw[torange!70] (.65,.4)--(.65,-.4);}}\\multi-scale\\fusion and\\embedding};
+\draw[arr] (graph) -- (gate);
+\draw[arr] (gate) -- (emb);
+\node[note,text width=60mm] at (8.3,-1.4) {Reconstruction + contrastive loss.\\Component attribution is not validated here.};
+\node[font=\bfseries,anchor=west] at (-1.4,-2.15) {C};
+\node[font=\fontsize{8.3}{10}\selectfont,anchor=center] at (5.2,-2.15) {Computational outputs};
+\node[box,fill=tgreen!12] (bound) at (3.2,-3.15) {\tikz[baseline=-0.5ex,scale=.33]{\draw[tgreen!80,thick] (0,-.25) -- (.45,.3) -- (.9,-.15) -- (1.35,.3);}\\gate-derived\\boundary score};
+\node[box,fill=tgreen!12] (labels) at (10.0,-3.15) {\tikz[baseline=-0.5ex,scale=.33]{\fill[tgreen] (0,0) circle (2.4pt);\fill[tgreen!60] (.65,.35) circle (2.4pt);\fill[tgreen!35] (1.3,-.1) circle (2.4pt);}\\KMeans\\domain labels};
+\draw[arr] (gate.west) -- (5.05,0) -- (5.05,-1.9) -- (2.4,-1.9) -- (2.4,-2.4) -| (bound.north);
+\draw[arr] (emb.east) -- (11.8,0) |- (labels.east);
+\node[note,text width=46mm] at (3.2,-4.35) {Estimated boundary signal;\\not an observed tissue border.};
+\node[note,text width=45mm] at (10.0,-4.35) {Computational assignments;\\not physical cell movement.};
+\node[draw=tred!60,fill=tred!5,rounded corners=2pt,align=left,text width=121mm,inner sep=6pt,font=\fontsize{8}{9.5}\selectfont] at (4.5,-5.45)
+ {Confidence withheld. The legacy soft head is untrained and has no held-out calibration.\\Its outputs do not define confidence in the KMeans labels.};
+\end{tikzpicture}

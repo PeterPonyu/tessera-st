@@ -1,0 +1,334 @@
+{
+  "schema_version": "field-identified-working-face-2",
+  "entrypoint": "scripts/rebuild_current.sh",
+  "status": "SCIENTIFIC_SUBMISSION_HOLD",
+  "scientific_ready_attested": false,
+  "visual_review_attested": false,
+  "visual_review": "NOT_PERFORMED",
+  "working_face": "paper.tex -> paper.pdf; original manuscript integrated in place",
+  "historical_faces": [
+    "submission_flat/",
+    "submission_flat_candidate/"
+  ],
+  "scope": {
+    "protocol_id": "field-identified-fixed-backend-20260923-v1",
+    "protocol_sha256": "ed165f146b42da3ff09019246cbb8107ba279f5f29412df8cf9a3dde0c95a5f9",
+    "objects": [
+      "DLPFC",
+      "MERFISH",
+      "STARmap",
+      "MIBI",
+      "Open-ST",
+      "CODEX",
+      "Zhuang"
+    ],
+    "methods_run": [
+      "expression-only",
+      "neighbor-mean",
+      "BANKSY-style",
+      "SpatialLeiden",
+      "Tessera",
+      "STAGATE",
+      "SEDR"
+    ],
+    "seeds": [
+      1,
+      2,
+      3
+    ],
+    "completed_runs": 147,
+    "failed_runs": [],
+    "methods_not_run": [
+      "SpaceFlow",
+      "GraphST",
+      "SpaGCN"
+    ],
+    "model_reruns_in_rebuild": false
+  },
+  "remaining_blockers": [
+    "SpaceFlow, GraphST and SpaGCN not run under the corrected spatial protocol; no scores imputed.",
+    "Field provenance unestablished here for seqFISH, osmFISH, BRCA, IMC, Slide-seqV2, st_COAD, st_LIHC and st_OV.",
+    "Historical n11/n12/n14 oracle, proxy, backend, winner/rank and tissue-ablation results are archived outside the main inference, not repaired.",
+    "CODEX SpatialLeiden is not count-matched to 100 classes; no equal-K superiority conclusion is licensed.",
+    "Legacy confidence/ECE claims withdrawn; no calibrated confidence model for returned KMeans labels.",
+    "Independent scientific review of revised estimands, field-aware adapters and annotation scope pending.",
+    "Machine build does not attest visual acceptance; the separately hash-bound final-package review supplies its own visual record."
+  ],
+  "method_contract": {
+    "path": "reproducibility/method-contract.json",
+    "sha256": "8347de697f72a9c9183c10deabfd63229da3b9361e69bf074a70e379b38b8f0e"
+  },
+  "method_contract_path_root": "capsule",
+  "build_inputs": [
+    {
+      "path": "FIGURE-MANIFEST.md",
+      "sha256": "260340a52f3cfcc035d94ec4406e920ecf2128d88140c8103306dba547519b2f"
+    },
+    {
+      "path": "Makefile",
+      "sha256": "2a44b41cbb903f4833b8168aceb36fb861a60a513f1704efd68781afb8297da0"
+    },
+    {
+      "path": "README.md",
+      "sha256": "63c5c497905d3ea148a96451f24ddc672641ff7caa0030cc1a4d667f1d451ade"
+    },
+    {
+      "path": "SI.tex",
+      "sha256": "3fd2caaf67b6fdc3ec4a2b68be6811cf2323c58d5cd13ffd673671017e716242"
+    },
+    {
+      "path": "figs/fig_field_comparison.pdf",
+      "sha256": "de21c37ab770538dc291b4899f879269764693b7d875ddcf6d72cd5fd247a747"
+    },
+    {
+      "path": "figs/fig_field_controls.pdf",
+      "sha256": "221b7125649bb9ae6e1bcd37bc8f97ac5545f46364977b35cb434665030ba585"
+    },
+    {
+      "path": "figs/fig_mechanism.pdf",
+      "sha256": "8c53adee2806a3da072f8183cefe002fb50e3a727b42ef91f22910555d858240"
+    },
+    {
+      "path": "figs/fig_mechanism_arch.pdf",
+      "sha256": "e610be988505470c73478057dbc33fdd9d3196d646a46601421b75af1622b153"
+    },
+    {
+      "path": "figs/fig_rank_audit.pdf",
+      "sha256": "02de13e7fcb661717ac058351fbfd496542a0bff7cf0d00306af1ff57a837c5f"
+    },
+    {
+      "path": "figs/fig_spatialmap.pdf",
+      "sha256": "3d6d9d05f3e85766865531fded22b2bb4e643caa118a8627b8005948d6ec45eb"
+    },
+    {
+      "path": "ledgers/additional_printed_cells.json",
+      "sha256": "9c6e49560b1b2c81fb4af34aec1d2afab0cca23371f2b431460525d5806351f3"
+    },
+    {
+      "path": "ledgers/headline_json/FETCH.md",
+      "sha256": "690471b3c00983775503b3eb525467c3f07945aa94a8e620f820ebb448ed362b"
+    },
+    {
+      "path": "ledgers/headline_json/expand_data.json",
+      "sha256": "ec7eec7e356e298b1257f196ad519fea0700166aa5d3f85319850fa4e0fa151d"
+    },
+    {
+      "path": "ledgers/headline_json/expanded_bench.json",
+      "sha256": "f97a38e6ac1fc9492f08213844eea433357ec6de8678673d77e82934ed63f23a"
+    },
+    {
+      "path": "ledgers/headline_json/gtfree_proxy.json",
+      "sha256": "960c0b0012354f97048ea5c722213318122d5805d23c9bdd838101b435a28bf9"
+    },
+    {
+      "path": "ledgers/headline_json/mechanism_synth.json",
+      "sha256": "7ce2ce8d734f0c1606fecdb868516d7b288aa79adcb1c56404034362e58f4292"
+    },
+    {
+      "path": "ledgers/headline_json/native_baselines.json",
+      "sha256": "db67223a364fd81a735603df7480ca47f93f5144bcb584cf3da8154e8eb5d04d"
+    },
+    {
+      "path": "ledgers/headline_json/proxy_search_corrected.json",
+      "sha256": "d189a4115ac6dc07b01070ce727fa695c4ca838e257e914e310f6c80efb468e5"
+    },
+    {
+      "path": "ledgers/headline_json/robustness_audit.json",
+      "sha256": "41ba1678dc534ecb5a906e4323aea0e76f5025b6e12754418986e1796e7e9af5"
+    },
+    {
+      "path": "ledgers/headline_json/stat_rigor.json",
+      "sha256": "20b342a977b6c8c25c97e3e2ba893f8453f09407cf993478c397f8a9deeecb23"
+    },
+    {
+      "path": "ledgers/revision_20260923/QA.json",
+      "sha256": "2b067659eb171cf2df2d6d52b7530afaecd8f28ac68a4c07a2593a15260b82c1"
+    },
+    {
+      "path": "ledgers/revision_20260923/estimand-audit.json",
+      "sha256": "6bd5f56a910624a23de699ab9a6cdf7c50d8bc68943a105209dd61b9dccf79e0"
+    },
+    {
+      "path": "ledgers/revision_20260923/field_results.tex",
+      "sha256": "d44abd644edeb4a49eeb05f06ff4940528fe9d0828be101aca5d001b0eeb27e3"
+    },
+    {
+      "path": "ledgers/revision_20260923/figure-source.json",
+      "sha256": "2bc8ca5faa4a068feda0ec0f4901b7c2398e9043e554b5095105daffc64ed1b8"
+    },
+    {
+      "path": "ledgers/revision_20260923/protocol.json",
+      "sha256": "ed165f146b42da3ff09019246cbb8107ba279f5f29412df8cf9a3dde0c95a5f9"
+    },
+    {
+      "path": "ledgers/revision_20260923/summary.json",
+      "sha256": "bcd5fb11e888cb09a4c9b9a20ff36b1d6d35b5dbd04f34003863539442aab3de"
+    },
+    {
+      "path": "ledgers/revision_20260923/supporting_tables-provenance.json",
+      "sha256": "f15a2c41b55f40b266aa4f7393e897e18e0d6a554708e675656873125bdb8f4a"
+    },
+    {
+      "path": "ledgers/revision_20260923/supporting_tables.tex",
+      "sha256": "b9a7cadff2746b6e82bb7d76b82016349531d60602a11a49c19dd5e4c9602172"
+    },
+    {
+      "path": "ledgers/science_core_20260918/printed_claims.json",
+      "sha256": "db611cc29c1453567344b715d5bbef0b3bd807157ccebb67fce43856e2087a2e"
+    },
+    {
+      "path": "ledgers/science_core_20260918/science_core_20260918.json",
+      "sha256": "e8416c8e63dfa7e0e13222e3a35235cbdecaea52eb4b11b52b923676f766d2e0"
+    },
+    {
+      "path": "ledgers/science_core_20260918/science_harden_20260918.py",
+      "sha256": "b8430f774bef2dc95ae0fd19e8be911d00d4f631724f52827436e6c73a46e7f7"
+    },
+    {
+      "path": "ledgers/science_core_20260918/synth_rows.json",
+      "sha256": "dd4bdc8103bff134914d5da533ca180f49fc500440dd78865b8ecfb5b9c8d607"
+    },
+    {
+      "path": "ledgers/science_core_20260918/synth_summaries.json",
+      "sha256": "ffef4ec92082e24605f0a8b8a679abb2a6a917612a04e2bc47c48e417e95e308"
+    },
+    {
+      "path": "ledgers/science_core_20260918_r2/fill_spaceflow_protein_panels.py",
+      "sha256": "5f942ac1b999aba5ede96b520056eaca2e06cc59bc85ce7f29997924007b24fe"
+    },
+    {
+      "path": "ledgers/science_core_20260918_r2/n11_spaceflow_protein_panels.json",
+      "sha256": "e80958872f68199a2c191e65bc035a914708eb1833297f02646a94f07724d216"
+    },
+    {
+      "path": "ledgers/science_core_20260918_r2/n12_lodo.json",
+      "sha256": "ffb99d5fb35627c262f451f2e9e2796133ab07cabaf212893ecf3354a27080aa"
+    },
+    {
+      "path": "ledgers/science_core_20260918_r2/n12_partial-pre-spaceflow-20260919.json",
+      "sha256": "c1a3a1d66fa88abc45293a3f47adddfd968fa86654d1134c832d5bb81d478658"
+    },
+    {
+      "path": "ledgers/science_core_20260918_r2/n12_partial.json",
+      "sha256": "407f21386ba3db78529848b5fdefb4ce2663607dba63a5fb1cf9fe534cfa88a1"
+    },
+    {
+      "path": "ledgers/science_core_20260918_r2/n12_posterior-pre-spaceflow-20260919.json",
+      "sha256": "76a784322fbd888a2c11916198fece99ccc399e98495e72d101207ec487e36fd"
+    },
+    {
+      "path": "ledgers/science_core_20260918_r2/n12_posterior.json",
+      "sha256": "3d0a76e343acead1c70569d67d58472d2e6dd22039a32d21910f87d8454e6046"
+    },
+    {
+      "path": "ledgers/science_core_20260918_r2/n12_zhuang-pre-spaceflow-20260919.json",
+      "sha256": "4a0f9c729682163b8956c910e9be3e271112cdb0e18518d812ad1693fdf282f4"
+    },
+    {
+      "path": "ledgers/science_core_20260918_r2/n12_zhuang.json",
+      "sha256": "15c321eb344a010aedeac6e91cc453ffae9d0e5a4907c098e315939a07af8db3"
+    },
+    {
+      "path": "ledgers/science_core_20260918_r2/science_core_20260918_r2.json",
+      "sha256": "6009710f5f41997bf1c26f38fc247764b9f16b59750b6407fc8ee43a2ef580f0"
+    },
+    {
+      "path": "ledgers/science_core_20260918_r2/science_harden_20260918_r2.py",
+      "sha256": "4ebf609b4b6d698865095490d34eb0c50325b27a354cbc48c7033dd9b6a12ab4"
+    },
+    {
+      "path": "ledgers/science_core_20260918_r2/science_harden_20260918_r2_n12.py",
+      "sha256": "afcfb12916e81b63a748096e2ecfd4368d23c7870c2370bb9bbfc50d5c8cc2b0"
+    },
+    {
+      "path": "ledgers/table_i_printed.json",
+      "sha256": "f43b04c1b4df84c1d28889c38fed6e1a86412aad609a15d3795ba719e944e9f8"
+    },
+    {
+      "path": "ledgers/working_printed_claims.json",
+      "sha256": "9a534119bdb9a1ff12ff558149ee446d477e75af58fffb04b7580190ca0a8609"
+    },
+    {
+      "path": "paper.bbl",
+      "sha256": "8b00e28b5ef44343ef424d918a0930965a15f249a869404a6c26570d7c25112b"
+    },
+    {
+      "path": "paper.tex",
+      "sha256": "be3450ea2acac766d2e9224b629221cea82ea3fac310d0eb413d453e9f93938f"
+    },
+    {
+      "path": "refs.bib",
+      "sha256": "e64d0300b58cfb2e1f6011d7c5c921ae574bcfb1c2c5fd78cfd30c02d638c5d1"
+    },
+    {
+      "path": "scripts/bind_revision_contracts.py",
+      "sha256": "37db840ecc2b9c6e21de2ea6fb0f24159c3fd01e690e9ba75d112bc0a5d3e508"
+    },
+    {
+      "path": "scripts/build_field_revision.py",
+      "sha256": "a456763a4917cc2e2a41c1a06a32b4b272a0ec94012108152e2dd610d4290a56"
+    },
+    {
+      "path": "scripts/build_supporting_information.py",
+      "sha256": "66124147efaa47f32de86b3f56e95054f727a65fbe26e0f2c5d8abf528d5a34b"
+    },
+    {
+      "path": "scripts/check_revision_pdf.py",
+      "sha256": "a00d2a955b301801ccc707e93a8fae08718c4623fc0150e2cc1b713559ff2e81"
+    },
+    {
+      "path": "scripts/compile_figures.py",
+      "sha256": "d42b9127514994d42c9ef1d72b1db8ad33e301ed2a99f262cee6fe0043fd8c32"
+    },
+    {
+      "path": "scripts/make_graphical_abstract.py",
+      "sha256": "4ef0d082d4b886cfee5333779f42ceb0c32d0140ce919691c527a9e2f5255c6a"
+    },
+    {
+      "path": "scripts/polish_stat_panels.py",
+      "sha256": "f12594ef40173336c72015376da02f8e1843a9f42dc429d29ad871875b89f1b0"
+    },
+    {
+      "path": "scripts/real_spatial_maps.py",
+      "sha256": "a28ea3e6ad969a1b68fb05157598aa211857350235abaabd08751264939529e5"
+    },
+    {
+      "path": "scripts/rebuild_current.sh",
+      "sha256": "05023a51077be448a80efac4683cacdf71435e0b7ba181a6aa6176d5453a2798"
+    },
+    {
+      "path": "verify_committed_claims.py",
+      "sha256": "cce4699f3b1b5082b9b7596288909a5c607b77348e0d934d8db6ab32792d6bc6"
+    }
+  ],
+  "documents": [
+    {
+      "path": "paper.pdf",
+      "sha256": "68fa2b82dd5cabb1533e3a3e529adf3280e615e86ee67e73049a1185852f4655",
+      "pages": 11
+    },
+    {
+      "path": "SI.pdf",
+      "sha256": "277a0ecbecf6a772ee0f6fbaedf67bc9d02d54496f12f1b2787d46cfae9f348d",
+      "pages": 3
+    }
+  ],
+  "machine_pdf_qa": {
+    "path": "attestation/current-pdf-qa.json",
+    "sha256": "6ab3f9c6ba0ef1952954e83c016b7bb870c4341c288410d20e1b8b17b38e571b"
+  },
+  "regression_tests": {
+    "path": "attestation/revision-tests.xml",
+    "sha256": "b5bf19978dd331f26329cb4bdc3f557e5de9aac09146ee6f8eed0cbd97cf75b6",
+    "tests": 34,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "scope": "Saved 34-test run; ordinary manuscript rebuild does not refit models or rerun tests"
+  },
+  "historical_preservation": {
+    "path": "attestation/historical-snapshots-20260923.json",
+    "sha256": "c77a9bc12bf61c9ac2de30f35ef684992aa95157364a8d89ee2c4e51c42bc909",
+    "files_compared": 180
+  }
+}

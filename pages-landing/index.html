@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tessera-ST · public code</title>
-  <meta name="description" content="Code description for Tessera-ST, a spatial-domain detection package with an explicit per-edge stop gate.">
+  <title>Tessera-ST · field-aware protocol audit</title>
+  <meta name="description" content="Public code and author-review archive for a field-aware spatial evaluation-protocol audit. Scientific submission remains on hold.">
   <meta name="robots" content="noindex, follow">
   <link rel="canonical" href="https://peterponyu.github.io/tessera-st/">
   <link rel="stylesheet" href="landing.css">
@@ -24,39 +24,39 @@
 
   <main class="ts-sheet">
     <p class="ts-kicker">Public code leaf</p>
-    <h1>Tessera-ST spatial-domain detection code</h1>
+    <h1>Tessera-ST field-aware protocol audit</h1>
     <p>
       This page describes the public repository
       <a href="https://github.com/PeterPonyu/tessera-st">PeterPonyu/tessera-st</a>.
-      It is a code leaf, not a results, claims, or paper-companion site.
+      The current research version is under <code>current-release/</code>, not the older root-level workbench.
     </p>
     <p class="mute">
-      Experimental maps, tables, and numerical findings are not hosted here.
-      Old result routes on this leaf are retired.
+      This leaf points to the versioned research release. Scientific submission remains on HOLD;
+      public availability does not establish scientific clearance.
     </p>
 
     <h2>What the package does</h2>
     <p>
-      Tessera-ST is Python code for spatial-domain detection in spatial transcriptomics.
-      Graph encoders can smooth features over a spatial neighborhood graph; this package
-      studies that mechanism by learning a per-edge gate that can stop smoothing at a
-      predicted seam. The seam is an explicit output, not only an argmax over a smoothed
-      embedding.
+      The release audits coordinate-frame identities, genuinely expression-only controls
+      and the interpretation of specified synthetic interventions. Tessera is one audited
+      procedure, not a validated superior architecture or a deployment-ready selector.
     </p>
     <ul>
       <li>Adaptive edge gating (off: plain mean aggregation)</li>
       <li>Multi-scale fusion (off: last layer only)</li>
       <li>Boundary-contrastive loss (off: reconstruction only)</li>
-      <li>Calibrated uncertainty (off: raw softmax entropy)</li>
+      <li>Legacy confidence output withheld; no validated confidence claim</li>
     </ul>
 
-    <h2>Install and smoke</h2>
-    <pre>pip install -e ".[test,torch]"
-pytest -q
-tessera smoke-synth --epochs 150 --out experiments/synth_ablation.json</pre>
+    <h2>Current code and archive</h2>
+    <p><a href="https://github.com/PeterPonyu/tessera-st/tree/author-review-2026-10-02/current-release">Versioned research code and saved outputs</a><br>
+      <a href="https://doi.org/10.5281/zenodo.23101191">Zenodo research archive</a><br>
+      <a href="https://github.com/PeterPonyu/tessera-st/blob/author-review-2026-10-02/current-release/manuscript/paper.pdf">Current single-column article</a></p>
+    <pre>cd current-release
+python verify_release.py</pre>
     <p class="mute">
-      Real-section ablation needs a local labelled <code>.h5ad</code> and the
-      <code>real-data</code> extra. See the repository README for command flags.
+      Complete refits require separately acquired, hash-matched upstream data and methods.
+      See the current release README for distinct verification and reproduction tiers.
     </p>
 
     <h2>What this leaf is not</h2>

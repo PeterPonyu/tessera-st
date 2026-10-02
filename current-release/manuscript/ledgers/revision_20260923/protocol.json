@@ -1,0 +1,130 @@
+{
+  "protocol_id": "field-identified-fixed-backend-20260923-v1",
+  "seeds": [
+    1,
+    2,
+    3
+  ],
+  "methods": [
+    "expression-only",
+    "neighbor-mean",
+    "BANKSY-style",
+    "SpatialLeiden",
+    "Tessera",
+    "STAGATE",
+    "SEDR"
+  ],
+  "retained_inputs": {
+    "DLPFC": [
+      "raw/dlpfc_maynard_2021_visium/dlpfc_maynard_2021_151673.h5ad",
+      "Region",
+      "uns:spatial",
+      "layer"
+    ],
+    "MERFISH": [
+      "baselines/serial3d_ref/merfish_mouse_hypothalamus/merfish_0.h5ad",
+      "domain",
+      "slice_id",
+      "domain"
+    ],
+    "STARmap": [
+      "processed/starmap_mouse_vcortex_wang2018/anndata.h5ad",
+      "layer_label",
+      "section_id",
+      "region"
+    ],
+    "MIBI": [
+      "raw/squidpy/mibitof.h5ad",
+      "Cluster",
+      "library_id",
+      "cell cluster"
+    ],
+    "Open-ST": [
+      "processed/openst_hnscc_sub15k/anndata.h5ad",
+      "ground_truth",
+      "section_id",
+      "annotation"
+    ],
+    "CODEX": [
+      "processed/codex_spleen_goltsev2018/anndata.h5ad",
+      "niche",
+      "section_id",
+      "cluster-derived niche proxy"
+    ],
+    "Zhuang": [
+      "processed/niche_abc_zhuang1_brain_slice/anndata.h5ad",
+      "domain",
+      "section_id",
+      "atlas anatomy"
+    ]
+  },
+  "excluded_inputs": {
+    "seqFISH": "Frame identity not established in this revision; no outcome-based exclusion",
+    "osmFISH": "Frame identity not established in this revision; no outcome-based exclusion",
+    "BRCA": "Frame identity not established in this revision; no outcome-based exclusion",
+    "IMC": "Frame identity not established in this revision; no outcome-based exclusion",
+    "Slide-seqV2": "Frame identity not established in this revision; no outcome-based exclusion",
+    "st_COAD": "Frame identity not established in this revision; no outcome-based exclusion",
+    "st_LIHC": "Frame identity not established in this revision; no outcome-based exclusion",
+    "st_OV": "Frame identity not established in this revision; no outcome-based exclusion"
+  },
+  "unavailable_methods": [
+    "SpaceFlow",
+    "GraphST",
+    "SpaGCN"
+  ],
+  "primary": "named method raw KMeans ARI minus raw expression-only PCA30 KMeans ARI; no backend oracle",
+  "secondary": "fixed two-round within-field refinement on spatial methods only; no winner selection",
+  "graph": "k=6 within field; self excluded by row ID; duplicates retained; min(6,n_field-1); singleton no neighbours",
+  "preprocessing": "count heuristic log1p CPM1e4; top variance max3000 if p>500; global z clip[-10,10]; recorded per input",
+  "epochs": {
+    "Tessera": 120,
+    "STAGATE": 600,
+    "SEDR": 200
+  },
+  "sedr_mask": "positive symmetric adjacency plus self; fixed seeded within-field non-neighbours, at most positives per row; within-field pair normalization",
+  "code_sha256": {
+    "/home/zeyufu/Desktop/labs/capsules/tessera-option-hold/experiments/field_aware_panel_20260923.py": "bf1a5bbf6837e5f084eb39554610fd5ce52766288588ef90fd579aeae83e02fe",
+    "/home/zeyufu/Desktop/labs/capsules/tessera-option-hold/experiments/field_aware_adapters.py": "808b4346bd6bef1b6dcf891047913fbebe38cba850e5f479c56c95947a571a0e",
+    "/home/zeyufu/Desktop/labs/capsules/tessera-option-hold/src/tessera_st/__init__.py": "9ab15619d82cb0282d3cd0568526f1fbc5dffda490d0c45b1a392f0b45e7b2f3",
+    "/home/zeyufu/Desktop/labs/capsules/tessera-option-hold/src/tessera_st/ablation.py": "40d3f5324a6f05b1de42317b09c27b60bcc12bbd369ac40c9661a08e177a49cb",
+    "/home/zeyufu/Desktop/labs/capsules/tessera-option-hold/src/tessera_st/cli.py": "bc9c7816f337e6c83a40637ba02088fcc62f6a3b2cc4899ed284bcb964fe2ed6",
+    "/home/zeyufu/Desktop/labs/capsules/tessera-option-hold/src/tessera_st/config.py": "0ef79d4eca86b5306b7802daa2a635099f14a774d1d5fc53898f8a871e0428ce",
+    "/home/zeyufu/Desktop/labs/capsules/tessera-option-hold/src/tessera_st/data/__init__.py": "89a0799ac53eae1f6df95e0272db0cf2dc3925ef370b04f2fb85c01a01d84fea",
+    "/home/zeyufu/Desktop/labs/capsules/tessera-option-hold/src/tessera_st/data/dlpfc.py": "4a787de388a222b422da6f653f8108c914c17f0df8ba79f3b0fb6195d0d2e19e",
+    "/home/zeyufu/Desktop/labs/capsules/tessera-option-hold/src/tessera_st/data/synthetic.py": "d061ee6938fea2712b6861f1854775729abf79ed5742fd94fd4e5bf3b194c7e0",
+    "/home/zeyufu/Desktop/labs/capsules/tessera-option-hold/src/tessera_st/eval/__init__.py": "5d950582652c648be799ce0b7801375ed9996b6b5728e2337b3f7efccd8ab887",
+    "/home/zeyufu/Desktop/labs/capsules/tessera-option-hold/src/tessera_st/eval/baselines.py": "8fef94320fd61c8bf8d2049e8bb3d095d4c27aa2be0c283894b5c7b672ecad51",
+    "/home/zeyufu/Desktop/labs/capsules/tessera-option-hold/src/tessera_st/eval/markers.py": "10ad51515cb325961fa937dde942e992721322fa703255f58554645afe7bf2bb",
+    "/home/zeyufu/Desktop/labs/capsules/tessera-option-hold/src/tessera_st/eval/metrics.py": "22ba43d70ad7ce33a2a415e5074ad5e9f5f5e01fcc4274634e5091205f9f4e6c",
+    "/home/zeyufu/Desktop/labs/capsules/tessera-option-hold/src/tessera_st/eval/refine.py": "d79c20c013b4c97d4dacfacb20de87082be3359c67c2717bc4757dbdd1380cbd",
+    "/home/zeyufu/Desktop/labs/capsules/tessera-option-hold/src/tessera_st/losses.py": "f2bd9a990de26f588139d67fb6685779ea3125ecc1136390764956f79f6ccb2f",
+    "/home/zeyufu/Desktop/labs/capsules/tessera-option-hold/src/tessera_st/model/__init__.py": "1c49146ee48e0ccbecdf01ca321239c934dfd94652749dbda9e4b729f139a8ef",
+    "/home/zeyufu/Desktop/labs/capsules/tessera-option-hold/src/tessera_st/model/encoder.py": "f537e4b7d153271a3440c04f7719c740766e3f0b2cbe6038c298cc12e3774f5c",
+    "/home/zeyufu/Desktop/labs/capsules/tessera-option-hold/src/tessera_st/model/gating.py": "8f628b9884086783fd74c10d1f77c2a84435f1ccc2d9c26a565ae8a910314ef3",
+    "/home/zeyufu/Desktop/labs/capsules/tessera-option-hold/src/tessera_st/model/graph.py": "4a9e3e175603aa7b24242d485df90f48fbc9222cb47db8c83662357f3e48ba08",
+    "/home/zeyufu/Desktop/labs/capsules/tessera-option-hold/src/tessera_st/model/heads.py": "9d5e6104b68e13cc3ee5297a3c65af1d41f7a41c41eb3a8b8cfcd7c40739bbba",
+    "/home/zeyufu/Desktop/labs/capsules/tessera-option-hold/src/tessera_st/model/tessera.py": "28a6673ba632228a88adeda63335ca922c9a64f30f540c0024aa1920c2166ba2",
+    "/home/zeyufu/Desktop/labs/capsules/tessera-option-hold/src/tessera_st/spatial.py": "434a289946b23869b3a0cbee99f8cf4c8295c14fbda99fa149c4916444836ee6",
+    "/home/zeyufu/Desktop/labs/capsules/tessera-option-hold/src/tessera_st/train.py": "21ac9c746a3776e6cf6413526b5fa8673903f032f1f56dbcce9bcfc41d499a01",
+    "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/external/STAGATE/STAGATE_pyG/STAGATE.py": "2224eb23af303b1b8e175740f62d1d8fdee991b9ba32e74d4f805daf3f40fb92",
+    "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/external/STAGATE/STAGATE_pyG/Train_STAGATE.py": "997fcaea97ec690e809f6513d48cf3ef8892784c15305b4eab75bd400995efa5",
+    "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/external/STAGATE/STAGATE_pyG/__init__.py": "8f10eab6261e2e4ecabda13f6fc3171f433c27600d36d199d9ed60b0ec41edd4",
+    "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/external/STAGATE/STAGATE_pyG/gat_conv.py": "b755a485692edf3eb166bd2d25289b4f304f126b0c30e14ea33fb9560b3c09b2",
+    "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/external/STAGATE/STAGATE_pyG/utils.py": "df8295dbe9b11b9492f1baa2d15e6183282289f6b3993d4bf088c27b24b09ecd",
+    "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/external/SEDR/SEDR/SEDR_model.py": "a963e0bb2fceb4c3ff288bc837a7363e160a0dd8ec9819629d067b5fdcfb5ab4",
+    "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/external/SEDR/SEDR/SEDR_module.py": "4d7cf66f5566815775df97c52066d4430ed54c51c564bb7663504d2f3b971a39",
+    "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/external/SEDR/SEDR/__init__.py": "8302718bfe986b6213769004efc01e1468d411079913cc0ed0ee6fd6779cbe72",
+    "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/external/SEDR/SEDR/clustering_func.py": "1425dc0e1ec796163648631cee6f19e9cc5cc9951faff6c39a690778cd34f366",
+    "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/external/SEDR/SEDR/graph_func.py": "f5c3a2bff938c952077eea60f7f52631617465e43921e53d08c43ae10fddefec",
+    "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/external/SEDR/SEDR/utils_func.py": "c82c002ea07948113c9811d9efad81bab501a17fb731221201ac5426499981ad"
+  },
+  "packages": {
+    "numpy": "2.2.6",
+    "scipy": "1.16.3",
+    "scikit-learn": "1.8.0",
+    "torch": "2.12.0+cu130",
+    "torch-geometric": "2.7.0",
+    "anndata": "0.12.10"
+  }
+}

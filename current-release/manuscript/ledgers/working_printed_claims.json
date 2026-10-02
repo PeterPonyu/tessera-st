@@ -1,0 +1,25 @@
+{
+  "role": "leftover-only ledger for selected hand-typed working-face claims; not an official-kit ledger",
+  "scope": "Values printed in leftover manuscript/paper.tex (961d6662 / 22 pp, not official). Official tokens live in submission_flat/paper.tex. Not raw observations or a complete experiment archive. Not a promotion trigger.",
+  "self_contained_capsule": false,
+  "invented": false,
+  "zenodo_doi": null,
+  "provenance": [
+    {"artifact": "experiments/expanded_bench.json", "sha256": "f97a38e6ac1fc9492f08213844eea433357ec6de8678673d77e82934ed63f23a"},
+    {"artifact": "experiments/stat_rigor.json", "sha256": "20b342a977b6c8c25c97e3e2ba893f8453f09407cf993478c397f8a9deeecb23"},
+    {"artifact": "experiments/expand_data.json", "sha256": "ec7eec7e356e298b1257f196ad519fea0700166aa5d3f85319850fa4e0fa151d"},
+    {"artifact": "experiments/gtfree_proxy.json", "sha256": "960c0b0012354f97048ea5c722213318122d5805d23c9bdd838101b435a28bf9"},
+    {"artifact": "experiments/proxy_search_corrected.json", "sha256": "d189a4115ac6dc07b01070ce727fa695c4ca838e257e914e310f6c80efb468e5"},
+    {"artifact": "experiments/native_baselines.json", "sha256": "db67223a364fd81a735603df7480ca47f93f5144bcb584cf3da8154e8eb5d04d"},
+    {"artifact": "experiments/robustness_audit.json", "sha256": "41ba1678dc534ecb5a906e4323aea0e76f5025b6e12754418986e1796e7e9af5"}
+  ],
+  "claims": {
+    "observational": {"n": 11, "rho": 0.724, "p": 0.0117, "bootstrap_ci95": [0.243, 0.916], "bootstrap_positive_fraction": 0.987, "per_seed_rho_range": [0.69, 0.77]},
+    "lodo": {"magnitude_rho": 0.51, "decision_correct": 9, "decision_n": 11, "decision_accuracy": 0.818, "base_rate": 0.545, "binomial_p": 0.061},
+    "partial_rho": {"k_nclasses": 0.552, "eff_dim": 0.861, "modality_imaging": 0.801, "all": 0.667},
+    "expanded_n14": {"n": 14, "rho": 0.559, "p": 0.0378, "added_rows": [{"dataset": "st_OV", "k": 13, "contiguity": 0.685, "spatial_advantage": -0.102}, {"dataset": "st_COAD", "k": 16, "contiguity": 0.498, "spatial_advantage": -0.014}, {"dataset": "st_LIHC", "k": 19, "contiguity": 0.223, "spatial_advantage": 0.032}], "cell_count_statement": "producer subsamples rows above 16000; source artifact does not record original or used n per added row"},
+    "proxy": {"rho_vs_advantage": 0.551, "rho_vs_contiguity": 0.564, "asymptotic_uncorrected_p": 0.0788, "permutation_uncorrected_p": 0.083, "search_corrected_p": 0.275, "candidates": 6},
+    "native_backend": {"rho": 0.791, "p": 0.0037, "distinct_winners": 6, "mclust_wins": 20, "backend_cells": 81},
+    "multiplicity": {"family3_bonferroni_p": 0.0351, "family7_bonferroni_p": 0.0819, "jackknife_rho_range": [0.632, 0.754]}
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "protocol_id": "field-identified-fixed-backend-20260923-v1",
+  "dataset": "STARmap",
+  "method": "SEDR",
+  "seed": 2,
+  "source_sha256": "ce93557645928cf104a6131d0d03599b01ee86ea4dce04837cf429222a01f0ce",
+  "protocol_sha256": "ed165f146b42da3ff09019246cbb8107ba279f5f29412df8cf9a3dde0c95a5f9",
+  "n_cells": 1207,
+  "n_classes": 7,
+  "device": "cuda",
+  "status": "complete",
+  "raw_ari": 0.3879776266399884,
+  "fitted_n_clusters": 7,
+  "spatial_refinement": true,
+  "refined_ari": 0.508713027033961,
+  "predictions_sha256": "498df59c29875936c3178b25ad4456526fbc8fb8c546a3f7a2ccfc6c5cf0b4d9",
+  "seconds": 1.2601824260018475
+}

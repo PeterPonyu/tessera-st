@@ -1,0 +1,2446 @@
+{
+  "source": "Current authoritative scientific capsule at 2026-10-02",
+  "source_state": "SCIENTIFIC_SUBMISSION_HOLD",
+  "members": [
+    {
+      "path": "REPRODUCIBILITY-CURRENT.md",
+      "sha256": "51e2b9e26a74cb0c058d88bb8ad7ebc6f90901d8751f6412dc04e8003a5a3919",
+      "bytes": 8754
+    },
+    {
+      "path": "experiments/_numba_stub.py",
+      "sha256": "2d179894986cbeeb283cefa9364c4c87e8348d7c9c1a7460fc23400ff8032334",
+      "bytes": 3699
+    },
+    {
+      "path": "experiments/_roots.py",
+      "sha256": "89f8a5996684f8da88dce058bb70d62e73fbc236a2d7ccf016c218919362c10d",
+      "bytes": 1047
+    },
+    {
+      "path": "experiments/audit_estimands_20260923.py",
+      "sha256": "1e45d78e0d9d0583e3bd490063063f87a8676f575c37b5c0b4377fe49fa1a774",
+      "bytes": 4075
+    },
+    {
+      "path": "experiments/bayesspace_bench.py",
+      "sha256": "32e3b2be3472f72f1a4244fe20cc78a027ab3833182e4c65b5384d43e99cb9dc",
+      "bytes": 16256
+    },
+    {
+      "path": "experiments/bayesspace_merge_parallel.py",
+      "sha256": "0a4d31afc6aa29957ef3b224271d2741d293ab1bde990403871957d65c7046c8",
+      "bytes": 833
+    },
+    {
+      "path": "experiments/bayesspace_parallel_worker.py",
+      "sha256": "fee4e2a0fb263fcf525c44ee492ed25432d18ee30d8644094abba55be573069c",
+      "bytes": 1994
+    },
+    {
+      "path": "experiments/coordinate_guard.py",
+      "sha256": "a9cf5bdce25030ec7139bff02e25834f7999eb5f97f1e7f34725d2727e5afdb6",
+      "bytes": 709
+    },
+    {
+      "path": "experiments/diag_anneal.py",
+      "sha256": "a2d772786587deb09e444dd4dc1c16ccd92e6ea9996c947d376267436153eee7",
+      "bytes": 2897
+    },
+    {
+      "path": "experiments/diag_attention.py",
+      "sha256": "f2b98d77031ce744fc47542bf3a20bc8afd574b23a777f4abaff221b4ac62e63",
+      "bytes": 4604
+    },
+    {
+      "path": "experiments/diag_attn_full.py",
+      "sha256": "913155f36c06f98a1a7788893a4f1e4e239cbbc4744b3d01b328f198d9466e97",
+      "bytes": 5040
+    },
+    {
+      "path": "experiments/diag_aug.py",
+      "sha256": "14bf40510ce60ccaa714489fb8b2fb877fbc31ff2eefe766f802183c11fb17e1",
+      "bytes": 3194
+    },
+    {
+      "path": "experiments/diag_collapse.py",
+      "sha256": "3af8a14317cdd40ed211fa535d639768526b0815d2ff4c1f25545ae1fdefcf35",
+      "bytes": 3001
+    },
+    {
+      "path": "experiments/diag_dec.py",
+      "sha256": "27146d317879b62de29cd5df3eaef07c39984f0d51d01d41047f7ead51e44f15",
+      "bytes": 3903
+    },
+    {
+      "path": "experiments/diag_decouple.py",
+      "sha256": "d4857ff3f9a8cf06850459389ff048a6277ee0ef43ea9a097deaa93dcd556947",
+      "bytes": 4515
+    },
+    {
+      "path": "experiments/diag_epochs.py",
+      "sha256": "97ce7de839f507be700e09adaae0c1755c1add12c47b3493b9b7422541cfc481",
+      "bytes": 1448
+    },
+    {
+      "path": "experiments/diag_recon_gmm.py",
+      "sha256": "aa4be38fdee00a8c9f887345d63f853c61f50bf39f17530ed7819d68ba770417",
+      "bytes": 2591
+    },
+    {
+      "path": "experiments/diag_vae.py",
+      "sha256": "98a817a0972551cdd332a0c2c4df69f19f6f6d82497a36e3000e407b7c6eeee4",
+      "bytes": 4503
+    },
+    {
+      "path": "experiments/expand_data.py",
+      "sha256": "0afa14b0c8983789b4b94c6ba68025c8b378d47c3faeb707d5b40827ae6577f8",
+      "bytes": 13396
+    },
+    {
+      "path": "experiments/expanded_bench.py",
+      "sha256": "24d1e11fb5ba5502ab9c782e0ea372f50f7098a1a1be8c07e227c805ff4c1531",
+      "bytes": 17980
+    },
+    {
+      "path": "experiments/extend_platforms.py",
+      "sha256": "e7700029d26453abb79b7013ba984f75d38b5f425c3bfadcdd61610e3c7ea71b",
+      "bytes": 8023
+    },
+    {
+      "path": "experiments/field_aware_adapters.py",
+      "sha256": "808b4346bd6bef1b6dcf891047913fbebe38cba850e5f479c56c95947a571a0e",
+      "bytes": 5743
+    },
+    {
+      "path": "experiments/field_aware_panel_20260923.py",
+      "sha256": "bf1a5bbf6837e5f084eb39554610fd5ce52766288588ef90fd579aeae83e02fe",
+      "bytes": 15040
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/CODEX/BANKSY-style-seed1.json",
+      "sha256": "92915c71f3f3619378275815c166ed13b45ce553f3345ed4efcbff6f1bb6dd02",
+      "bytes": 643
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/CODEX/BANKSY-style-seed1.npz",
+      "sha256": "fdf45a2875f790460de6cbbd1b2b7257f72aca9acdcd95157e941b9caa87937d",
+      "bytes": 33495
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/CODEX/BANKSY-style-seed2.json",
+      "sha256": "88f28ec527e85e73cc8ab728e165db1059b8a0b3353f68e7e2231f2432e0dd1a",
+      "bytes": 645
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/CODEX/BANKSY-style-seed2.npz",
+      "sha256": "22d504ece2fa7f2ee46078cfe8cda8f21dd1733cbde4459fdb5973f517ee702b",
+      "bytes": 33778
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/CODEX/BANKSY-style-seed3.json",
+      "sha256": "bca0ed926fddb7fb0f390f27d8ed3ac815df33fff8b411a87c4eb8cfca5b1cb3",
+      "bytes": 645
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/CODEX/BANKSY-style-seed3.npz",
+      "sha256": "ca5d56a1902c4ebbdc78fdab8a2c4f6d4af9a4092a0b5dd189fe5d6b7ef3a649",
+      "bytes": 33450
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/CODEX/GraphST-availability.json",
+      "sha256": "b46a497f63c0e92c90c4edf86d4cd534dfb44fe9ed26ff9cbdd273b42b50c5a3",
+      "bytes": 198
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/CODEX/SEDR-seed1.json",
+      "sha256": "4a1c8e729d2b3c983226bf58ed2b061d124902f4ee93599eff5a04a72a124f6c",
+      "bytes": 637
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/CODEX/SEDR-seed1.npz",
+      "sha256": "e54247ca09ac68c45e69c457c0bc077dad2c0b95ff324b83ff352d3ba9411f7e",
+      "bytes": 31783
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/CODEX/SEDR-seed2.json",
+      "sha256": "f1efaeafbf59315d1b96e44bcff75b9885cc5f0c14f90a9ba5bd721bf053deb6",
+      "bytes": 634
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/CODEX/SEDR-seed2.npz",
+      "sha256": "4e7c379d8b725b2563fcb7c5be41c4cf844785da2437c6924a710686c0715685",
+      "bytes": 31573
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/CODEX/SEDR-seed3.json",
+      "sha256": "ae9874520a5ba28add3d8a271941bddc9fe5a68ce14f2fb30d3bb7ddf64928e4",
+      "bytes": 636
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/CODEX/SEDR-seed3.npz",
+      "sha256": "cb4b0728591542500263ee4ad88b46d71e94d4eb983d0f4418b9a99c313e923b",
+      "bytes": 31384
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/CODEX/STAGATE-seed1.json",
+      "sha256": "e275fd726828ebdc53a830041c48702be43bef3602badb4493e7e5ffacd1956d",
+      "bytes": 638
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/CODEX/STAGATE-seed1.npz",
+      "sha256": "274d55828a2c5d553f49e1da4df3ee831f64cbbcbaec8ee477ce6b211217d7d8",
+      "bytes": 34027
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/CODEX/STAGATE-seed2.json",
+      "sha256": "ae35fe74ff899783a85dd817ce19a1783f7eaee222000d2a04b2427dbcfa6d81",
+      "bytes": 639
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/CODEX/STAGATE-seed2.npz",
+      "sha256": "7d6306af67582ac21aacc33839fdcd03662e841e52be0d2bee7c3d49f6674a57",
+      "bytes": 33811
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/CODEX/STAGATE-seed3.json",
+      "sha256": "97cee9f01eaf4bdb9dc7feae272a71b509f612961c108ef7077d5d590bdd798b",
+      "bytes": 640
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/CODEX/STAGATE-seed3.npz",
+      "sha256": "10aaa9c614df5eabd3b57ac95e3aace16e1c9372b2d602989b78d21df70385f6",
+      "bytes": 34219
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/CODEX/SpaGCN-availability.json",
+      "sha256": "23a3a0f2e3ec14cec447e15b4bc5cd23eea5d34491524d1cc3ab3e52d94d9696",
+      "bytes": 197
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/CODEX/SpaceFlow-availability.json",
+      "sha256": "861d59caedb4f77f3573fad55e8571e341e3cc1c3cc3868b122edd13819333e9",
+      "bytes": 200
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/CODEX/SpatialLeiden-seed1.json",
+      "sha256": "b17d41e1265d54fa079f6f719172fa015a5283ab34612ef090df6a5da05b1148",
+      "bytes": 644
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/CODEX/SpatialLeiden-seed1.npz",
+      "sha256": "2101fb1443000501fb7846c5d8ab8567bff5af5113aeda77f7a6d3ef7903f29d",
+      "bytes": 27855
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/CODEX/SpatialLeiden-seed2.json",
+      "sha256": "155bbd2e455cffa2ff301f9747947dce39788a5b2ba516418a3a61bf3f2e57a4",
+      "bytes": 642
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/CODEX/SpatialLeiden-seed2.npz",
+      "sha256": "a038e57e98d3727251d64752775717bc0c023a867d1e114bdd945194decdf257",
+      "bytes": 27580
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/CODEX/SpatialLeiden-seed3.json",
+      "sha256": "2df3037284834397ca2a442bc809693ddb27465200515a1fcafb182bfb8ec77d",
+      "bytes": 644
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/CODEX/SpatialLeiden-seed3.npz",
+      "sha256": "77f10e4ddcd70b339fe981f8c00ea5fde46621a90efa75a4f175adaccdc1e002",
+      "bytes": 27794
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/CODEX/Tessera-seed1.json",
+      "sha256": "fdb45c1320c947d9d1336369191106248171657b604aba1af5f2633fa4e1d1e2",
+      "bytes": 639
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/CODEX/Tessera-seed1.npz",
+      "sha256": "c385b482bd4a6b0205c0ab4e599ec1a975631a74b61e2162a781dd930261fe31",
+      "bytes": 34919
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/CODEX/Tessera-seed2.json",
+      "sha256": "dbc770b48c4e5f670792c89dabea393cde7f2e50de5aafe164389c8ee3402cc0",
+      "bytes": 638
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/CODEX/Tessera-seed2.npz",
+      "sha256": "2c7a9e7a151cc71d8c398820d3d8978d59a9fc1bb434b2cb4a87b2210b40e481",
+      "bytes": 34851
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/CODEX/Tessera-seed3.json",
+      "sha256": "424defbafc334187d6f28684eae06aa329f8d3cb7e96eec41e95b427a0461daf",
+      "bytes": 639
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/CODEX/Tessera-seed3.npz",
+      "sha256": "f01a045b9df5a31ea729921693b0dc6d1a5a16d640a296524f38bbe0d9108129",
+      "bytes": 34952
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/CODEX/expression-only-seed1.json",
+      "sha256": "3a8aae4b9f5a400f15e310c0431b0edeb4130dc6e08b9aff9fe342a1b76b2da2",
+      "bytes": 672
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/CODEX/expression-only-seed1.npz",
+      "sha256": "564c02fdfa4b5f66d240bb4e50a4eea2ca384e42b33fbbba8d2dcd6d3171caa9",
+      "bytes": 31086
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/CODEX/expression-only-seed2.json",
+      "sha256": "38d6be3389d3cd94e5b2f05c35502e018dc1abae163754aca06d066100adea39",
+      "bytes": 671
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/CODEX/expression-only-seed2.npz",
+      "sha256": "e4b416b3602433b98e73284f6f92c95687e9565427b3d5e7b5b1b7da97f49370",
+      "bytes": 31665
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/CODEX/expression-only-seed3.json",
+      "sha256": "a1a056bc595007798a7510c91d78ef1b6b2d09d18efd04c3e3b0b11cadea26fd",
+      "bytes": 674
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/CODEX/expression-only-seed3.npz",
+      "sha256": "b2439c851cb4af79a304ee1094ccca1604f7d139b5cbe89620a304feaf563600",
+      "bytes": 30895
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/CODEX/input.json",
+      "sha256": "a3d34515fefdfdb94c339defcee49f95d89e77a2dcac4532a7966592956dd7e4",
+      "bytes": 2786
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/CODEX/neighbor-mean-seed1.json",
+      "sha256": "c8171da6619df1c2e57098533dbb7417c5f6f1187a4d759ef439ae3bcf4cc33d",
+      "bytes": 713
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/CODEX/neighbor-mean-seed1.npz",
+      "sha256": "a803e4d1cc625dab458bddd1c69d43f3d90c10d3b05351ad9e28f650f620d1c9",
+      "bytes": 54743
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/CODEX/neighbor-mean-seed2.json",
+      "sha256": "3ca2a7fab5ccf692f3515e8f375c7119406ba58654fd6a1c2b5a78cc858a4300",
+      "bytes": 711
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/CODEX/neighbor-mean-seed2.npz",
+      "sha256": "4000b2d341437ecfaa27ce1baa4144961621ef6f65fe04e90b284e196b94d0f4",
+      "bytes": 55290
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/CODEX/neighbor-mean-seed3.json",
+      "sha256": "efe3a2a9e61c35b722ebf6c58bfcad98b043bc61d9187b8129e2bf8c57b6a9e5",
+      "bytes": 711
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/CODEX/neighbor-mean-seed3.npz",
+      "sha256": "679a4569b01bfda3d7f3fc829c3243fa61785a6c8184bb95c9b41fdeceaade6f",
+      "bytes": 54983
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/CODEX/rows.npz",
+      "sha256": "d971e3400b74bd873c4d684b30afcdc1a3bf19b3e1d00f58b377bbde34a2ffc8",
+      "bytes": 422654
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/DLPFC/BANKSY-style-seed1.json",
+      "sha256": "40dd9ae4cd25035498620974f04262876936637862f5ab76fbdd88aea720b271",
+      "bytes": 639
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/DLPFC/BANKSY-style-seed1.npz",
+      "sha256": "94e113d52d07a2536c6738e2596f4b5388e901420cb4e17c3b0e9e27aa7a09e6",
+      "bytes": 5034
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/DLPFC/BANKSY-style-seed2.json",
+      "sha256": "5b4dfb61880a02522e84091e6850f5b973fbf6d15825914ebe727710dc132d4f",
+      "bytes": 635
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/DLPFC/BANKSY-style-seed2.npz",
+      "sha256": "22e20c67de7fe262eb8992f7206400aace001748bb416ac9362623eca2734183",
+      "bytes": 4970
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/DLPFC/BANKSY-style-seed3.json",
+      "sha256": "ec51a3544f6ecf335dc2ab92538ddc0b83180e10e7c738f13aca54e4442909d5",
+      "bytes": 638
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/DLPFC/BANKSY-style-seed3.npz",
+      "sha256": "de3577e78b954bfd3ece964c3b68212f76cb9a203d273175cc4e37e8dc0ab642",
+      "bytes": 5053
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/DLPFC/GraphST-availability.json",
+      "sha256": "b46a497f63c0e92c90c4edf86d4cd534dfb44fe9ed26ff9cbdd273b42b50c5a3",
+      "bytes": 198
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/DLPFC/SEDR-seed1.json",
+      "sha256": "22340c5e69fedc2d31564c19de0b2f9778263b99af5ab3de379cbbb513c3c3fc",
+      "bytes": 629
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/DLPFC/SEDR-seed1.npz",
+      "sha256": "e5565b51cc0d10b2966073134870e30f871728f6b227f67ad04b7275c3fb4d5e",
+      "bytes": 5090
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/DLPFC/SEDR-seed2.json",
+      "sha256": "d1898f9cd5f5689c71a8f1a0198b55e3073b123b52bf536008def60725c34987",
+      "bytes": 630
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/DLPFC/SEDR-seed2.npz",
+      "sha256": "98f70c603c3fd70050f8415f56552cb2e74ae153b2c0849f35373fc845e1f444",
+      "bytes": 5069
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/DLPFC/SEDR-seed3.json",
+      "sha256": "65a8ceb934f04ea0040e65f5b333a9547afee775558b67a8b1b38bed1f62630b",
+      "bytes": 628
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/DLPFC/SEDR-seed3.npz",
+      "sha256": "3d9cc2a068c84518a2a41a1bae2525c83ceb7f52628897ea531c278b705fa489",
+      "bytes": 5016
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/DLPFC/STAGATE-seed1.json",
+      "sha256": "137a68205d8285ea995988edb681f18d2c5c442addcf66e70c473d6185008a71",
+      "bytes": 632
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/DLPFC/STAGATE-seed1.npz",
+      "sha256": "c99a1e2b1b50e23b53236873bef497806bc71888d26ab8ee43403d97d74308b7",
+      "bytes": 4959
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/DLPFC/STAGATE-seed2.json",
+      "sha256": "145bd3dc9823708ee9e07e928b5eaacaf6729e2cdb74e595243218baba5c315f",
+      "bytes": 632
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/DLPFC/STAGATE-seed2.npz",
+      "sha256": "412aef1dc0826e9ff56891c4ac7eaf1ee287017a53bab59aa8d99793746c5722",
+      "bytes": 4953
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/DLPFC/STAGATE-seed3.json",
+      "sha256": "aedfb7eebd373d61209e0d93d8425c88135fbdc40d80d12acc9d49591b0b264b",
+      "bytes": 632
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/DLPFC/STAGATE-seed3.npz",
+      "sha256": "1bb407a3888cecda308106dd7f0d9afe3e0cf4f3de2ae9671cb52059ba590b4e",
+      "bytes": 4979
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/DLPFC/SpaGCN-availability.json",
+      "sha256": "23a3a0f2e3ec14cec447e15b4bc5cd23eea5d34491524d1cc3ab3e52d94d9696",
+      "bytes": 197
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/DLPFC/SpaceFlow-availability.json",
+      "sha256": "861d59caedb4f77f3573fad55e8571e341e3cc1c3cc3868b122edd13819333e9",
+      "bytes": 200
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/DLPFC/SpatialLeiden-seed1.json",
+      "sha256": "3b8a91cc92e76ba9e3a39f0992b1082b3950a767c6369323de74a8fe33f96fbd",
+      "bytes": 639
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/DLPFC/SpatialLeiden-seed1.npz",
+      "sha256": "9130c05a1fc3c65c2ac5a757d8a5484975ef7bf4af898e31916182d72bc6bc13",
+      "bytes": 5346
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/DLPFC/SpatialLeiden-seed2.json",
+      "sha256": "2d939029a0f0f8d3b701248f5a87705f2d6abf59b5787277194d7523ca1dfa75",
+      "bytes": 638
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/DLPFC/SpatialLeiden-seed2.npz",
+      "sha256": "5f67e78e81a3f14b1fccc41afe877f5a1deae77856a30da6a481f32f00f5a16b",
+      "bytes": 5164
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/DLPFC/SpatialLeiden-seed3.json",
+      "sha256": "a3db0f4484a9e65807268daaaa8f208b01cf99faa01b7109fabeed6ea9545223",
+      "bytes": 639
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/DLPFC/SpatialLeiden-seed3.npz",
+      "sha256": "c09fcdc9b1e8beec704a351f898a27a1f8f54c780408b394c4f0b39f92800fe4",
+      "bytes": 5352
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/DLPFC/Tessera-seed1.json",
+      "sha256": "5e72897d02c14068f95f76d693a9814f8c98da48878c28875582736e9621556d",
+      "bytes": 632
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/DLPFC/Tessera-seed1.npz",
+      "sha256": "22f199e4f392baf5ef04b33b81617d0734606ec52a9f232275386ca929ad3092",
+      "bytes": 5106
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/DLPFC/Tessera-seed2.json",
+      "sha256": "4748810f1e4a5cc48904a5389c7917467ef5387026f341b53d8d20fc6c702edd",
+      "bytes": 633
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/DLPFC/Tessera-seed2.npz",
+      "sha256": "19d9b5d01da344368f165bdf0bce97098c7bacb4e1b02a6105905f9805ce51a1",
+      "bytes": 5106
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/DLPFC/Tessera-seed3.json",
+      "sha256": "22de7c48df7a42bdad172c623d3de45172ea3a938a091db844296feb91ecf12d",
+      "bytes": 633
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/DLPFC/Tessera-seed3.npz",
+      "sha256": "e230648ce1a65723d45d23ac00cd487ba21d60d972b6c95555cce0f2517df4f5",
+      "bytes": 5090
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/DLPFC/expression-only-seed1.json",
+      "sha256": "85efc2a9b4f9945c08579fca2fd4ba91ac35444702f2bd1607a459b95fb85b20",
+      "bytes": 667
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/DLPFC/expression-only-seed1.npz",
+      "sha256": "569f0335f0685421705bf917d3ee1ffd76d14d0be38cdbc1e0b48bd4300b65ec",
+      "bytes": 4965
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/DLPFC/expression-only-seed2.json",
+      "sha256": "523c45c04adddcd55f23b38ad3c10a00d8f5b3b188f31a9714b1d7c4f15ee532",
+      "bytes": 666
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/DLPFC/expression-only-seed2.npz",
+      "sha256": "4ef985cc3227e951a0060b982b4b01ae768edb2dee88ab6973cb59273f5342f2",
+      "bytes": 5000
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/DLPFC/expression-only-seed3.json",
+      "sha256": "6eb7fb1cddf79adf4766052813cf2d055fc823ee39a2d1f59d47b116959bb108",
+      "bytes": 667
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/DLPFC/expression-only-seed3.npz",
+      "sha256": "4232150165fb9d323c8b744f95204f8a80910e8c17498f387219bf7da666f1a0",
+      "bytes": 5008
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/DLPFC/input.json",
+      "sha256": "84ebb5d723e3d16b1dc5d006a58a44fba924999bbb5498d49ab6e6234f43ea46",
+      "bytes": 1300
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/DLPFC/neighbor-mean-seed1.json",
+      "sha256": "0a79f21384bde2b1f0e0ea6fdecd543de29b0cc6cc54082e09b72cbcc2d984ae",
+      "bytes": 638
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/DLPFC/neighbor-mean-seed1.npz",
+      "sha256": "8886313e85d109c8cf2d50916c6b623973865fc902c90449c8ebfebe6949a48e",
+      "bytes": 5033
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/DLPFC/neighbor-mean-seed2.json",
+      "sha256": "04ef2df2e26b8260376b09a7c4e36d5f76bdb3bf861d7fea44b26e5d09754e70",
+      "bytes": 638
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/DLPFC/neighbor-mean-seed2.npz",
+      "sha256": "bbcc4afa205baa5ac431a1af715de70017fd50c6670afc5a930301aad2fbec69",
+      "bytes": 5066
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/DLPFC/neighbor-mean-seed3.json",
+      "sha256": "ade992544f65b15a5fba4f58c73c7c321f8e3c374bd12fd8c4d8ffa6016a8442",
+      "bytes": 639
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/DLPFC/neighbor-mean-seed3.npz",
+      "sha256": "9b813af5d426a0e6bc7ee4e7af771e6a6094653e5b2361c0ea4b740ad188b6c7",
+      "bytes": 5030
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/DLPFC/rows.npz",
+      "sha256": "476e1c820679358f621fb56f48e73205575b0b4fa50420210e022347dabe9b04",
+      "bytes": 129352
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MERFISH/BANKSY-style-seed1.json",
+      "sha256": "5a32a3d8664d3fed09680545efda6c49dca1a2a76e387834757b0c2cb063877b",
+      "bytes": 642
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MERFISH/BANKSY-style-seed1.npz",
+      "sha256": "0d157c7aa508815fd0260032657dadeb22be42a19c755e3b78e2b981ecb71ddf",
+      "bytes": 4390
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MERFISH/BANKSY-style-seed2.json",
+      "sha256": "e38dc49d94e98349109493e797edc2be64d117b08aeedf6d8c8d5f13b1b91aee",
+      "bytes": 641
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MERFISH/BANKSY-style-seed2.npz",
+      "sha256": "3af1e6266828a4d88b76608a5fb06184a5cf04504c7a5d247cb713b8ef7c58aa",
+      "bytes": 4319
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MERFISH/BANKSY-style-seed3.json",
+      "sha256": "e197036ec8fa5ab79f039ab3d19f7d962c6db7b3fa4082b0e70ea01353a167df",
+      "bytes": 642
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MERFISH/BANKSY-style-seed3.npz",
+      "sha256": "31c018cd72da6813eb223a04b14082244584e4ba912af7e97a1f4ea98edee70c",
+      "bytes": 4419
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MERFISH/GraphST-availability.json",
+      "sha256": "b46a497f63c0e92c90c4edf86d4cd534dfb44fe9ed26ff9cbdd273b42b50c5a3",
+      "bytes": 198
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MERFISH/SEDR-seed1.json",
+      "sha256": "315d2eb7b7e20b0dc036583d44608b4cef7d030f7ccec70a6fae823916c3d7a7",
+      "bytes": 632
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MERFISH/SEDR-seed1.npz",
+      "sha256": "eb486a6b0e82cc85a6451232c1431ba0bebead76062b3214e8fe6451132951ad",
+      "bytes": 4889
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MERFISH/SEDR-seed2.json",
+      "sha256": "5fa67d4029a2ad4c22a684b3b1335adcc49c13c1438cff5c3a6bc0004e680255",
+      "bytes": 633
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MERFISH/SEDR-seed2.npz",
+      "sha256": "840e9b57787cdc988fe6039a1cce246c06753384f385b1531106500f410a0ed2",
+      "bytes": 4671
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MERFISH/SEDR-seed3.json",
+      "sha256": "8dbbaa478ee71b5233feacad79e729c7f30888743a255baa60a97a991baea2f6",
+      "bytes": 632
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MERFISH/SEDR-seed3.npz",
+      "sha256": "93090435f42f14e2ebc857050559580b5bce1bf8343cd34a741900392b1eae3c",
+      "bytes": 4793
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MERFISH/STAGATE-seed1.json",
+      "sha256": "c37a1d7d0b603971958c6f35f403a4c8e9aadfa9d7af1a8d2d47908ac191d5b3",
+      "bytes": 635
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MERFISH/STAGATE-seed1.npz",
+      "sha256": "f3867f7a1119bd33f6fc023c9ba0edb4feab615fec9d74b41415789eb2c6c18e",
+      "bytes": 5060
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MERFISH/STAGATE-seed2.json",
+      "sha256": "07433701683c5867f05083c9fc4e654a0d737c1009c5b912e99a6c6e5c4bf2d6",
+      "bytes": 634
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MERFISH/STAGATE-seed2.npz",
+      "sha256": "f568f8035c6df53a106c4d1d5159cfe6937d73c2d99f8a348e039cd5a153652d",
+      "bytes": 4740
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MERFISH/STAGATE-seed3.json",
+      "sha256": "48ceba7face763af2f2c91e68e98f34df280294cc3d81aa8cecfd920f6f061fd",
+      "bytes": 635
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MERFISH/STAGATE-seed3.npz",
+      "sha256": "cd607a90582703f4566bc8c412a564854cf7e2d96826490e16c6d49b6a0ef96d",
+      "bytes": 4689
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MERFISH/SpaGCN-availability.json",
+      "sha256": "23a3a0f2e3ec14cec447e15b4bc5cd23eea5d34491524d1cc3ab3e52d94d9696",
+      "bytes": 197
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MERFISH/SpaceFlow-availability.json",
+      "sha256": "861d59caedb4f77f3573fad55e8571e341e3cc1c3cc3868b122edd13819333e9",
+      "bytes": 200
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MERFISH/SpatialLeiden-seed1.json",
+      "sha256": "c4de39402f8bef96cd4dc52c89791fc9265f2b81969a3cf6ce418e8d33dc815a",
+      "bytes": 642
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MERFISH/SpatialLeiden-seed1.npz",
+      "sha256": "ba1508311a2e54803603b4b2321d27f21d3efaa4306a6dbccec90727ccc6bb4b",
+      "bytes": 3726
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MERFISH/SpatialLeiden-seed2.json",
+      "sha256": "725d2f9a423aeecdc4ea113b3e1cca8a9b8c273cb30eb859c265ea47e871749b",
+      "bytes": 641
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MERFISH/SpatialLeiden-seed2.npz",
+      "sha256": "ba1508311a2e54803603b4b2321d27f21d3efaa4306a6dbccec90727ccc6bb4b",
+      "bytes": 3726
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MERFISH/SpatialLeiden-seed3.json",
+      "sha256": "5da1a502b0a70f730406c793a8ab7b6242f32350409fb57acc8ed6e5ceff0b79",
+      "bytes": 642
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MERFISH/SpatialLeiden-seed3.npz",
+      "sha256": "ba1508311a2e54803603b4b2321d27f21d3efaa4306a6dbccec90727ccc6bb4b",
+      "bytes": 3726
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MERFISH/Tessera-seed1.json",
+      "sha256": "f2dd9cecc918c279d3b72091c9945f4a70ead82b3bfedd721cabe3f31dc4a2e4",
+      "bytes": 636
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MERFISH/Tessera-seed1.npz",
+      "sha256": "b3b55266ea8fc8d1bbc74f1640d8241c8757a53127ca07ea88b495918394fab2",
+      "bytes": 3803
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MERFISH/Tessera-seed2.json",
+      "sha256": "831482590aa5486828d054859e265f3021bf647905f2480920564d68bfb94dae",
+      "bytes": 636
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MERFISH/Tessera-seed2.npz",
+      "sha256": "f4463725a45178bf9a238a59c8217c8d482c12904912a1ad74f7e7519811d69e",
+      "bytes": 3828
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MERFISH/Tessera-seed3.json",
+      "sha256": "cc83f7e555ffef4b8c27907faad68074244519070ea66db235934a1db79343e0",
+      "bytes": 634
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MERFISH/Tessera-seed3.npz",
+      "sha256": "fb037cd51304083e4b8bd71c5c423c16d0cc03539459ec383c34d54d67a1e6f6",
+      "bytes": 3551
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MERFISH/expression-only-seed1.json",
+      "sha256": "960e12394045971940a4515087f0d56a6fe0f9a2f581f3a688263e36cac0c63e",
+      "bytes": 670
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MERFISH/expression-only-seed1.npz",
+      "sha256": "9d923f4b2fc179115feb2610a0c06e720d7fdc23d8346bbbb60137abf8e8b885",
+      "bytes": 4763
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MERFISH/expression-only-seed2.json",
+      "sha256": "8d11bd2db4c57b8e352d5bd7debe62231a0d6b64051d74975b16392942f75862",
+      "bytes": 670
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MERFISH/expression-only-seed2.npz",
+      "sha256": "857936e3197751c0affd3e7b47b98fbae44dfce5e1e25e98b37bc687af672ad0",
+      "bytes": 5301
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MERFISH/expression-only-seed3.json",
+      "sha256": "ad0eca4a2712a4ed45da2e47fe0ad26a1c301d3c97235e29718991e19b8f47eb",
+      "bytes": 669
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MERFISH/expression-only-seed3.npz",
+      "sha256": "c9fdfe2bded41a1387d01fa880961c1263d031f06bc5ee15e0f9e997cd430c97",
+      "bytes": 5311
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MERFISH/input.json",
+      "sha256": "949bbf31447cb0b8f9bbd1c7e74a78883c05f6fdd001953d32515cf30e40f861",
+      "bytes": 1296
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MERFISH/neighbor-mean-seed1.json",
+      "sha256": "852663341ca63e6440be6dfa966afcb71033f08577a0d10d6c5be53d148d7164",
+      "bytes": 642
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MERFISH/neighbor-mean-seed1.npz",
+      "sha256": "69b5372fb5a06cb6c2bea7bfeb39a156d661aa0509b767b948be95a273ead5d5",
+      "bytes": 3940
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MERFISH/neighbor-mean-seed2.json",
+      "sha256": "e9192ba4e928e98a40a427b46c5655cf92a176e7625a4ef3ddc69578c88ba4d5",
+      "bytes": 641
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MERFISH/neighbor-mean-seed2.npz",
+      "sha256": "272ee2ac6a486043d48abdd2c315a03b10cc1df9998aea8e66455f29c85e9554",
+      "bytes": 4165
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MERFISH/neighbor-mean-seed3.json",
+      "sha256": "6aa97fde3a6e7e1788d98bea4c62aa5b08ce5038bc8392a2a95923d2d1ab2a52",
+      "bytes": 642
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MERFISH/neighbor-mean-seed3.npz",
+      "sha256": "821f9c936a3d66b3c5519a017f514c7878932c9e783fb665ab39a020da851d94",
+      "bytes": 4282
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MERFISH/rows.npz",
+      "sha256": "6b55ac89a4e546f7fe8ef0791ca1333b210728d4ec49de2059a6b5a556c0ba97",
+      "bytes": 183709
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MIBI/BANKSY-style-seed1.json",
+      "sha256": "2ee936777ce4e6905d2cc9072e28812fdfab9d0534ae6bdcf13a8c28b61b491a",
+      "bytes": 639
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MIBI/BANKSY-style-seed1.npz",
+      "sha256": "4adfc711b475452801a1db14d827ddf301c07d1aa631f44320e2958f6c922798",
+      "bytes": 4024
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MIBI/BANKSY-style-seed2.json",
+      "sha256": "5bee6bec7d10a2b2158b39e1b80822e0fcce331a4066d0367a0228f0de5eadbb",
+      "bytes": 639
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MIBI/BANKSY-style-seed2.npz",
+      "sha256": "389b5add0c410d38866a8f3db8d9408d18837b6ec627d9e2f5d5a53bdad1ce1e",
+      "bytes": 4238
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MIBI/BANKSY-style-seed3.json",
+      "sha256": "0f424f6b562999d35ef65f8efbef9ab0bcc11652b9576f1b19f8e60dd4b5b07d",
+      "bytes": 639
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MIBI/BANKSY-style-seed3.npz",
+      "sha256": "d51ead1ddc21fe6538953048fa3ed5fcb783cd3a1fd604bdfde2ae50910e2f58",
+      "bytes": 4232
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MIBI/GraphST-availability.json",
+      "sha256": "b46a497f63c0e92c90c4edf86d4cd534dfb44fe9ed26ff9cbdd273b42b50c5a3",
+      "bytes": 198
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MIBI/SEDR-seed1.json",
+      "sha256": "4cf3c4b4343af942c4daccb13c97a1a3ec0966bb6628258fa7a3a24bd9b2cc05",
+      "bytes": 628
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MIBI/SEDR-seed1.npz",
+      "sha256": "c3f9395acca53ac4d79d4728caf85f9d46ce0d777ae3b761b6c001713f8c87bd",
+      "bytes": 4363
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MIBI/SEDR-seed2.json",
+      "sha256": "ce00a2e0288140eb474677f159b9c4ec581e7dbfe9470f983416853790b2f983",
+      "bytes": 629
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MIBI/SEDR-seed2.npz",
+      "sha256": "d158d296c0d4d8ceb5cf473917fee7d03f1a095db0002619b5b601617d3d3bd9",
+      "bytes": 4324
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MIBI/SEDR-seed3.json",
+      "sha256": "59b80887beea4e4eccb25f20d2309182f328f45678ea9e6bf3b6361c1adf719c",
+      "bytes": 630
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MIBI/SEDR-seed3.npz",
+      "sha256": "5737c20154b2922a2d0206d1016394206ccd42591d6fd370374fdefe3f29ceba",
+      "bytes": 4350
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MIBI/STAGATE-seed1.json",
+      "sha256": "fafa7e375eba58977a56301e8f72c92cb0e777f495f4a33be9faf370d84d3558",
+      "bytes": 632
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MIBI/STAGATE-seed1.npz",
+      "sha256": "fd3c7752bc4defaf58ee86b6714565d16c4c677fbd4acd54b211fa0868f3aa8f",
+      "bytes": 4272
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MIBI/STAGATE-seed2.json",
+      "sha256": "cc1302f522eae13745bf615b0d7f8711188c515502c40ab3463b354cf98fde09",
+      "bytes": 631
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MIBI/STAGATE-seed2.npz",
+      "sha256": "467bee5e58a3f4882f313fcbfc85af859690be3af39d3630edbb196c4f2c4692",
+      "bytes": 4286
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MIBI/STAGATE-seed3.json",
+      "sha256": "18b1c98f0817081995571fe21cbdaa74edd9c672f2774949d2bad53431239cf2",
+      "bytes": 632
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MIBI/STAGATE-seed3.npz",
+      "sha256": "5c0a478c9e51e7448e78c5d299fa765812eccf3b9fef13b4687b2eccd91309b1",
+      "bytes": 4259
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MIBI/SpaGCN-availability.json",
+      "sha256": "23a3a0f2e3ec14cec447e15b4bc5cd23eea5d34491524d1cc3ab3e52d94d9696",
+      "bytes": 197
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MIBI/SpaceFlow-availability.json",
+      "sha256": "861d59caedb4f77f3573fad55e8571e341e3cc1c3cc3868b122edd13819333e9",
+      "bytes": 200
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MIBI/SpatialLeiden-seed1.json",
+      "sha256": "080597ed3569382665e7e0fa180a1cd94a3bfe15844acc2a6bec393e406f53f1",
+      "bytes": 639
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MIBI/SpatialLeiden-seed1.npz",
+      "sha256": "e9cb3fd2b7f1d528c7fd439d023c4a71b1eaac4e47b73e6a117b19b7e701f364",
+      "bytes": 4608
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MIBI/SpatialLeiden-seed2.json",
+      "sha256": "735d38fc43a2243f655d54330cc32a5e683976f0b4bdcecfac34cce71636e3ec",
+      "bytes": 639
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MIBI/SpatialLeiden-seed2.npz",
+      "sha256": "45961a70dca478e5dfaf77229e0fa511529b30650f3a46cf2dcd6dcd038a98ca",
+      "bytes": 4646
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MIBI/SpatialLeiden-seed3.json",
+      "sha256": "f0b3bd9394496f9d3bbf332eddba45e97eccbb8700165d91591a00ed76ff6037",
+      "bytes": 640
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MIBI/SpatialLeiden-seed3.npz",
+      "sha256": "2f17b563bb87074816389eb612dc72b64430321e7affa65e0a44d7933a8ad90e",
+      "bytes": 4435
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MIBI/Tessera-seed1.json",
+      "sha256": "ecf1c0b24663c9064c80fccf8e6a9f39dae45f96520d9fc079aaff259d306984",
+      "bytes": 632
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MIBI/Tessera-seed1.npz",
+      "sha256": "e7830236b2432c4d739cef5e485dddebef9eabb208dfba65898b2e337e89cbca",
+      "bytes": 4194
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MIBI/Tessera-seed2.json",
+      "sha256": "5c242c24bf506cca037de0e94aa63b4e6255cac30bb55c8bd6a070a872009080",
+      "bytes": 632
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MIBI/Tessera-seed2.npz",
+      "sha256": "59d9a59fe069f2a06ffd02635b131a48dcb31e91ef11072c5fc4aa888e523199",
+      "bytes": 4001
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MIBI/Tessera-seed3.json",
+      "sha256": "c3cae5563d910b54a989801f991f421aacc30818922a15c5ab77d7075af4006d",
+      "bytes": 633
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MIBI/Tessera-seed3.npz",
+      "sha256": "33fe015848482b40664207526a5e42102194614f73c2bc4ebf9cd823ff5c2948",
+      "bytes": 4058
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MIBI/expression-only-seed1.json",
+      "sha256": "d9ab66dddc18368525e2b9c374a31cd1f401b1c1ff7df17be43c060b2e7df207",
+      "bytes": 668
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MIBI/expression-only-seed1.npz",
+      "sha256": "31f40bb9db24ade12ff06cacfedda5eb95029e287a91d12cc688d3ecd0166477",
+      "bytes": 4391
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MIBI/expression-only-seed2.json",
+      "sha256": "ebe6a964c22e02a30a367c5bbe1e3168223ed181061cb609a74386e7b2ba168e",
+      "bytes": 668
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MIBI/expression-only-seed2.npz",
+      "sha256": "403712fefb6998906213cc30d6f3bb10d84a9e31f479ae92f0458e63655c631e",
+      "bytes": 4469
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MIBI/expression-only-seed3.json",
+      "sha256": "814d5212cbed9ae0113c7c76a294a7f60f5116fd7b844c0d71bf72cb843ffc30",
+      "bytes": 665
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MIBI/expression-only-seed3.npz",
+      "sha256": "deb6d5b7435ef4df10eeba189986bfb64d21bb564ca588589a0f4263717ccd0c",
+      "bytes": 4477
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MIBI/input.json",
+      "sha256": "4e0a9b7b81e401ea99fe23b425361497b45992ab882908554b619d50c9fc020e",
+      "bytes": 1332
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MIBI/neighbor-mean-seed1.json",
+      "sha256": "c47c796a8bdf3b306e7443b262d09bc421e7174661129b5d51445e05ea22893b",
+      "bytes": 704
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MIBI/neighbor-mean-seed1.npz",
+      "sha256": "4dd25053fa4d3129fd72e77fe8a79b00821cd07de77cf15d60609e26c5e0e53e",
+      "bytes": 6190
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MIBI/neighbor-mean-seed2.json",
+      "sha256": "22cfcaf622e5fb9477b81b64404e7f1bb9fcbc9fe48cccd489196c7410b231d3",
+      "bytes": 703
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MIBI/neighbor-mean-seed2.npz",
+      "sha256": "4bbc23dfdc0a4ee48fb189cd25af84766b6a7ad180671f535a4517596d5bbb19",
+      "bytes": 6404
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MIBI/neighbor-mean-seed3.json",
+      "sha256": "a11091ce7e22245583a910263d807cc31fb118cb8d8b28646b24d8f6670a435f",
+      "bytes": 704
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MIBI/neighbor-mean-seed3.npz",
+      "sha256": "b0b088083593ff9d270dec848bf8e7c4352eac9dc09a2b9a1faf48a630b4dcba",
+      "bytes": 6389
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/MIBI/rows.npz",
+      "sha256": "33cd5e60e73731fbfaad7b1c5dfc54961b815562451deab621b4ca89530a45f5",
+      "bytes": 66287
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Open-ST/BANKSY-style-seed1.json",
+      "sha256": "9038770996e02f999d7b6d40b40f1c1982d46c680cd0d72ff245b43deb073bc5",
+      "bytes": 644
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Open-ST/BANKSY-style-seed1.npz",
+      "sha256": "c0e5a72e070176925cd8716592168f2d7408b49ac6fef773842d81d64626d4a9",
+      "bytes": 22979
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Open-ST/BANKSY-style-seed2.json",
+      "sha256": "db24445f80cfbff7b43dafe4522eea9fdf2011f3b113192e5f59b1343fa48f6d",
+      "bytes": 644
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Open-ST/BANKSY-style-seed2.npz",
+      "sha256": "9f0692741e9108d6611c1b1af0661acc5140cb53e5d849e1872c6620a7f92778",
+      "bytes": 23227
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Open-ST/BANKSY-style-seed3.json",
+      "sha256": "5943e1ee62e37a62d50a3e67d6bb76aae7253126a6db70cad6dba2995ea9c9aa",
+      "bytes": 642
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Open-ST/BANKSY-style-seed3.npz",
+      "sha256": "bb76a2ada722536b77bb1d38e2a40df5fd0989e1b8f232a0691414268f0843b1",
+      "bytes": 23386
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Open-ST/GraphST-availability.json",
+      "sha256": "b46a497f63c0e92c90c4edf86d4cd534dfb44fe9ed26ff9cbdd273b42b50c5a3",
+      "bytes": 198
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Open-ST/SEDR-seed1.json",
+      "sha256": "188ece36c534cf1b775a04147130fc8baee43e1cc8885145cb4f867b86dac606",
+      "bytes": 634
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Open-ST/SEDR-seed1.npz",
+      "sha256": "f162a3dec7b4f36c2e42bb02cfa4249bad63afc8e0bd7d6069a4a4e22217aea9",
+      "bytes": 23283
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Open-ST/SEDR-seed2.json",
+      "sha256": "1945218f72cfcd062666749caa79438061f8c493f0d8447a14fdad630f0effb1",
+      "bytes": 635
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Open-ST/SEDR-seed2.npz",
+      "sha256": "e17c628e939640897e5d110c073ad4aba4771a2e4dc9abc8c99f2025b5ccadbd",
+      "bytes": 23252
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Open-ST/SEDR-seed3.json",
+      "sha256": "06e67ed053e35489d602d027b1fb2dda561d3ad4d5fc3dce873503bfb9dd076d",
+      "bytes": 635
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Open-ST/SEDR-seed3.npz",
+      "sha256": "4bca725828e970cbd5886a4ca03c756e308764edf05c8d9e20068520bb3eaf3c",
+      "bytes": 23393
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Open-ST/STAGATE-seed1.json",
+      "sha256": "ed86c4ae40ec052472529f70d93422c5796a0fc6103a9478503c0907005b278c",
+      "bytes": 638
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Open-ST/STAGATE-seed1.npz",
+      "sha256": "474b5618f45537611a3d5fd085aac762a4b52d3c17775418a2063933a28b0114",
+      "bytes": 23133
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Open-ST/STAGATE-seed2.json",
+      "sha256": "2b5c872379cc68a18e8fba7ac6dea95103e1ff24536756081b01a7269adf2806",
+      "bytes": 631
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Open-ST/STAGATE-seed2.npz",
+      "sha256": "744ba691d91c04041619d97f54968b86a6c10992d589d53fc19dd2784c91a639",
+      "bytes": 23160
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Open-ST/STAGATE-seed3.json",
+      "sha256": "cbf2ac8bceb94df22a5bd96f71935f27ddc6347ce487f3373b38b29995bdc007",
+      "bytes": 636
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Open-ST/STAGATE-seed3.npz",
+      "sha256": "cf90186c69b2075fc00f15f17846e36d93e6399a0d27f0d605d17bbc5722248f",
+      "bytes": 22914
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Open-ST/SpaGCN-availability.json",
+      "sha256": "23a3a0f2e3ec14cec447e15b4bc5cd23eea5d34491524d1cc3ab3e52d94d9696",
+      "bytes": 197
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Open-ST/SpaceFlow-availability.json",
+      "sha256": "861d59caedb4f77f3573fad55e8571e341e3cc1c3cc3868b122edd13819333e9",
+      "bytes": 200
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Open-ST/SpatialLeiden-seed1.json",
+      "sha256": "77abb6c1038e5f3868c118a0eea4a666a2289ddbceadef0ee325882082b0ce70",
+      "bytes": 644
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Open-ST/SpatialLeiden-seed1.npz",
+      "sha256": "d0980c05312abf7ab88f00a723ecb1f1f69600215a637c54dfecec3f9d55ef67",
+      "bytes": 24891
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Open-ST/SpatialLeiden-seed2.json",
+      "sha256": "809578ed76974948532f3c463dbbd8ca3e53a8dd7dbae38ee771291217f62153",
+      "bytes": 644
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Open-ST/SpatialLeiden-seed2.npz",
+      "sha256": "32379c414b1da365931d68a099de560407c01a89685635f4d3b0467fbbf03f61",
+      "bytes": 24687
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Open-ST/SpatialLeiden-seed3.json",
+      "sha256": "3f079a08ff28185a07541bbb8faccab5651d03e7b45e6c76bb216fd513f5578a",
+      "bytes": 642
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Open-ST/SpatialLeiden-seed3.npz",
+      "sha256": "fa59b2b6026e3453008149a5bc93c0d1777133adeb56035e6dd71da894f2f0b5",
+      "bytes": 24768
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Open-ST/Tessera-seed1.json",
+      "sha256": "71eee0a714c2378db7ce84af5e94a5ab4eeb785ae66f075aff30557c7f20e90c",
+      "bytes": 638
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Open-ST/Tessera-seed1.npz",
+      "sha256": "5a27b1c11d41944e95f612ad39a6dbcd914dd8989fed73296774affba33ecd30",
+      "bytes": 24038
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Open-ST/Tessera-seed2.json",
+      "sha256": "a69cc63a274f162eab7280e82891e5e2db785514590b7c6e4d7a308bcdbe6e0e",
+      "bytes": 638
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Open-ST/Tessera-seed2.npz",
+      "sha256": "4d5081c9748ce71e7fbd93d04416e614a8f1683dbfdbcf46cb3e702dc4e8760d",
+      "bytes": 23968
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Open-ST/Tessera-seed3.json",
+      "sha256": "d002260fb66850dddd081d324c12da30e7524df61feab24ef8064a846852e0a2",
+      "bytes": 638
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Open-ST/Tessera-seed3.npz",
+      "sha256": "cd79fbd155bdb2e45ff562bbf06d1cbce4ea1898468bc40e04afd0f2b56e7717",
+      "bytes": 23791
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Open-ST/expression-only-seed1.json",
+      "sha256": "3efec89141d33ded0fb246869ae3d6d5b077b8b963bfe93a60fa5e76653edfae",
+      "bytes": 671
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Open-ST/expression-only-seed1.npz",
+      "sha256": "84b7f821d07e2f1c848d8bbf5850a12c634709b29d939b258d159c71930e70b5",
+      "bytes": 23700
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Open-ST/expression-only-seed2.json",
+      "sha256": "cd4e2157f90127ba2e730f439f3cdf3cbbadcc6a2be87bd404862f11b6400fc0",
+      "bytes": 670
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Open-ST/expression-only-seed2.npz",
+      "sha256": "728d1673f5bd6d8a318dfd9f19aac4002160428ae0dacf3466d19b2df3db93a2",
+      "bytes": 23547
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Open-ST/expression-only-seed3.json",
+      "sha256": "5a7072c340aa6f7b693dee7c32be6e4dfd2cdb8385bf9d31963f386e94e84eef",
+      "bytes": 671
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Open-ST/expression-only-seed3.npz",
+      "sha256": "b94167d8f7a091da4452d37f836d188bd8580737ccb829806bad616834c7c2cc",
+      "bytes": 23762
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Open-ST/input.json",
+      "sha256": "effe9003a05b1ebc071584dce1c0102b7da5d575cb5ce52c335efa26e6c3baf7",
+      "bytes": 1527
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Open-ST/neighbor-mean-seed1.json",
+      "sha256": "4f2b7327390ca74b9d58628f6f8f4a816567204fd7b1199b8a72b1e9de1a16be",
+      "bytes": 644
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Open-ST/neighbor-mean-seed1.npz",
+      "sha256": "b39b2b6ea9aa2f5b62ffd702b680ef3d5e1310e8c1879aeea2ed96462c089ee5",
+      "bytes": 23263
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Open-ST/neighbor-mean-seed2.json",
+      "sha256": "921c2cc6667e53bcd9330d1df1d8b2b47bf4c0ced866805117444d0eb6e24088",
+      "bytes": 642
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Open-ST/neighbor-mean-seed2.npz",
+      "sha256": "84a851f34eb5e82c6cddb2275ef1989878b21cc6529d7362366ccb733d13ff7a",
+      "bytes": 23174
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Open-ST/neighbor-mean-seed3.json",
+      "sha256": "3cb81bbb4bdffb555362480d2e5848e390dd55ea68d65c8d729a4b4891c6f744",
+      "bytes": 643
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Open-ST/neighbor-mean-seed3.npz",
+      "sha256": "145044fedc7e35e11a57b0703f30af24d0d51b572fddb1388ab2160deecbd940",
+      "bytes": 23396
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Open-ST/rows.npz",
+      "sha256": "b3f3cbdfaddbe7327ab508067590a3b60e4d0fe5e09fd247865b291c9cf653b3",
+      "bytes": 511578
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/QA.json",
+      "sha256": "2b067659eb171cf2df2d6d52b7530afaecd8f28ac68a4c07a2593a15260b82c1",
+      "bytes": 1769
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/STARmap/BANKSY-style-seed1.json",
+      "sha256": "6995f9d22f657f2c2bb4079f39de0271cbf92239577e44e8c039e9053d505e04",
+      "bytes": 640
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/STARmap/BANKSY-style-seed1.npz",
+      "sha256": "ce871ac92924455aa8230b68d2c7c9e29f53b2c9c085656d766c7d6ee1232682",
+      "bytes": 2003
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/STARmap/BANKSY-style-seed2.json",
+      "sha256": "4e0a73802c9dbf23c3c81374c55e9e24b8e3e2d321c99e7cd9e0a2c6c15e65c3",
+      "bytes": 638
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/STARmap/BANKSY-style-seed2.npz",
+      "sha256": "a3f7213745a90801685859e2f607c1b5ff396145cbd654504959dc3d2bad499d",
+      "bytes": 2014
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/STARmap/BANKSY-style-seed3.json",
+      "sha256": "22498f3cba9d8a5c21c972cb0c5bd6e6e35955fe4a37dabc64fab444131ee6c8",
+      "bytes": 641
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/STARmap/BANKSY-style-seed3.npz",
+      "sha256": "72bc911b888b246da5b3e0dcce7776855c2675e77ad688ffb28555182fa4c964",
+      "bytes": 2023
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/STARmap/GraphST-availability.json",
+      "sha256": "b46a497f63c0e92c90c4edf86d4cd534dfb44fe9ed26ff9cbdd273b42b50c5a3",
+      "bytes": 198
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/STARmap/SEDR-seed1.json",
+      "sha256": "d92a347a5f22f4c44af181b08cab309e182b966f5fbab144773c5f03c53eed9b",
+      "bytes": 631
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/STARmap/SEDR-seed1.npz",
+      "sha256": "d088a42e3928883b954932baec2daa91ce3ceb8386d7f0bee779be84aeefd5f3",
+      "bytes": 2079
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/STARmap/SEDR-seed2.json",
+      "sha256": "5822144c09d63189bc2409a496d93a4b04008b5e3b83518518cda9ee4628add5",
+      "bytes": 630
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/STARmap/SEDR-seed2.npz",
+      "sha256": "498df59c29875936c3178b25ad4456526fbc8fb8c546a3f7a2ccfc6c5cf0b4d9",
+      "bytes": 2045
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/STARmap/SEDR-seed3.json",
+      "sha256": "b294f12f643df8f124f778e4f02f49548d5246a71710ef29c05c88d96f4880ca",
+      "bytes": 631
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/STARmap/SEDR-seed3.npz",
+      "sha256": "bef2f259490f01d5dae8fd7c1f1c19b2f0ecf32b3aa2e220ff193ec582b0a791",
+      "bytes": 2073
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/STARmap/STAGATE-seed1.json",
+      "sha256": "a8227248118ca8f691be411b00e560fcf2289aa7937b70c1b8f4dad70c2616a2",
+      "bytes": 632
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/STARmap/STAGATE-seed1.npz",
+      "sha256": "95cd6ad3d320fbb675e22d3c86a67b1cc4dfa98780da8fd643cb2e04a5d26877",
+      "bytes": 2086
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/STARmap/STAGATE-seed2.json",
+      "sha256": "bf168b8f6b3b05c6beae9cb472a7cba5faadd9d74f367b6aa45372b7a1641a60",
+      "bytes": 636
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/STARmap/STAGATE-seed2.npz",
+      "sha256": "f32c8b49af1b04013f39aa68ede85e2d69329fa888812cef74ae09787fce617b",
+      "bytes": 2055
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/STARmap/STAGATE-seed3.json",
+      "sha256": "191f28a319151c63bdeb9b59864d405772bef2090ea9e87ea1a0e9b179caa659",
+      "bytes": 635
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/STARmap/STAGATE-seed3.npz",
+      "sha256": "291a696a0d4e6f3e72116dffd0853f0ce0b61939cdc5083b84b0c5039757dcea",
+      "bytes": 1958
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/STARmap/SpaGCN-availability.json",
+      "sha256": "23a3a0f2e3ec14cec447e15b4bc5cd23eea5d34491524d1cc3ab3e52d94d9696",
+      "bytes": 197
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/STARmap/SpaceFlow-availability.json",
+      "sha256": "861d59caedb4f77f3573fad55e8571e341e3cc1c3cc3868b122edd13819333e9",
+      "bytes": 200
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/STARmap/SpatialLeiden-seed1.json",
+      "sha256": "c7a9e5b36f543f96ed96aa9d3dda2acbeff793aa08b8dabc7c8044fcd84d67bd",
+      "bytes": 640
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/STARmap/SpatialLeiden-seed1.npz",
+      "sha256": "40456c09862c58a668fa82767476a88df4015d5e203257f1f5a015e054bf6c30",
+      "bytes": 2026
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/STARmap/SpatialLeiden-seed2.json",
+      "sha256": "a63c10d524ad8e43e85b879a36dd9e414f74987da0be0fd52f9859ba9d42ac34",
+      "bytes": 641
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/STARmap/SpatialLeiden-seed2.npz",
+      "sha256": "8fd6af647288c4fc172721f1b8d625b9b09be54f9843c61d30b2fabd9574ff70",
+      "bytes": 2102
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/STARmap/SpatialLeiden-seed3.json",
+      "sha256": "ac76a5bc50b32ece3fc4234a063c4be0705b9f462149a7fadcda77ff8a48782f",
+      "bytes": 640
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/STARmap/SpatialLeiden-seed3.npz",
+      "sha256": "81099283e9047049f12edce8f5629b4ed4c6b08de5064788f4dfbfe443db2497",
+      "bytes": 2111
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/STARmap/Tessera-seed1.json",
+      "sha256": "23769b918944d05ff781305c601b3098356268b4ccc0a0621be52a489c887c87",
+      "bytes": 635
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/STARmap/Tessera-seed1.npz",
+      "sha256": "523ffa99e4c95457604028c1ee73e7e3042be4f65b54b154727385bd2685c494",
+      "bytes": 2066
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/STARmap/Tessera-seed2.json",
+      "sha256": "8beaada1c49a9bb4e0444135175454944983034959c56dda525aec2ff0ca5095",
+      "bytes": 634
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/STARmap/Tessera-seed2.npz",
+      "sha256": "38c05ab45f1e26cc192a99357c290da6523f7a2b46e702a193a7a9ec90eafd9b",
+      "bytes": 1982
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/STARmap/Tessera-seed3.json",
+      "sha256": "587cf28061fd33f1bc7fe652e873c462e8a04b85749ad770afbfa7b37661c3f9",
+      "bytes": 634
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/STARmap/Tessera-seed3.npz",
+      "sha256": "58096c01dea897b11052e05408e4a2a33a1174232ae0d58b5a5830ac949d2420",
+      "bytes": 2008
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/STARmap/expression-only-seed1.json",
+      "sha256": "3ff50ebbaefa8721a7e1a58a6e1925416376f646840a315c372c899984c2422d",
+      "bytes": 668
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/STARmap/expression-only-seed1.npz",
+      "sha256": "332c06d32c1a57f765b83a259679de0cba77acde7b5eaacd7ea4bef86d3a432e",
+      "bytes": 2060
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/STARmap/expression-only-seed2.json",
+      "sha256": "9107163d08b260981c419bbddb24d7e7e003786e318a0cc263e0c2396a9f5b06",
+      "bytes": 669
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/STARmap/expression-only-seed2.npz",
+      "sha256": "03882bc499741c11c96bbcb0ec34ed62821912209c8b7905aa077eeb3c396916",
+      "bytes": 2043
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/STARmap/expression-only-seed3.json",
+      "sha256": "a2cd65e758cf7fa9d4ac8fddc3968131bce93f8a7b06e00cd52d6dea48c0be98",
+      "bytes": 668
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/STARmap/expression-only-seed3.npz",
+      "sha256": "2af73678d711710431e1d29757d2250b53af241e00e7aa4cb105a49b7526e98e",
+      "bytes": 2039
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/STARmap/input.json",
+      "sha256": "464fd4e08149a1fed480f93609d03c53f585dde6470cdd7a7c508bbbb1f7781c",
+      "bytes": 1275
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/STARmap/neighbor-mean-seed1.json",
+      "sha256": "32583ff2fc570846fe9543fedc2bd57931e5b0d297d4326549ea62f770cf1fe1",
+      "bytes": 640
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/STARmap/neighbor-mean-seed1.npz",
+      "sha256": "393f5d284959a30114c4495b7028d54a041d3e03eab4a3c5e660c6a8322ad00e",
+      "bytes": 2002
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/STARmap/neighbor-mean-seed2.json",
+      "sha256": "ab51472534309ffb1fcad12c0a59684915db11e957cf195f89f71eb1654c576a",
+      "bytes": 640
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/STARmap/neighbor-mean-seed2.npz",
+      "sha256": "7669f5b904fe97d408a8efd3e952c736d19f7460b596de9dc4ac6e3b25ebf4e0",
+      "bytes": 1991
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/STARmap/neighbor-mean-seed3.json",
+      "sha256": "78ec7b89f9ffe681747f620d2236b944cbc914301f2ee96b1010d04b395a21ec",
+      "bytes": 642
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/STARmap/neighbor-mean-seed3.npz",
+      "sha256": "438b8407bc3ff7100d65dc466fbc122e54da19e235afb58eddc1ab7e3fb9543d",
+      "bytes": 2011
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/STARmap/rows.npz",
+      "sha256": "977689cf63f5f1b8a6c066d363b60895bd47cb11af4bb457cf67c999d8251747",
+      "bytes": 38398
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Zhuang/BANKSY-style-seed1.json",
+      "sha256": "b89ab0ee134d147f6974edc7ee40da48c7fbfea03b49c5765986c08662c3710f",
+      "bytes": 643
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Zhuang/BANKSY-style-seed1.npz",
+      "sha256": "51f298e1f7eda856ea54a194c212b0d32e579e495997a7627cb107866fb40e24",
+      "bytes": 12829
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Zhuang/BANKSY-style-seed2.json",
+      "sha256": "e68d7bcb3b2295536fc368397a0d5836f08343e537b8abbb2321855d3dffbbb9",
+      "bytes": 643
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Zhuang/BANKSY-style-seed2.npz",
+      "sha256": "b205dbec1063eb38ec77049345e3914111781a0c1ef606c078440d0c92c73e1f",
+      "bytes": 12900
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Zhuang/BANKSY-style-seed3.json",
+      "sha256": "7fc359f02b737ae71b7cab68a6cf91f26bad3cf0e6b82a969539aef45b6d56ea",
+      "bytes": 643
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Zhuang/BANKSY-style-seed3.npz",
+      "sha256": "021cb97e676fd5744cff50c021056bfba08e5ad61ecfed6eb9ce7ea5bbd77bbf",
+      "bytes": 12960
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Zhuang/GraphST-availability.json",
+      "sha256": "b46a497f63c0e92c90c4edf86d4cd534dfb44fe9ed26ff9cbdd273b42b50c5a3",
+      "bytes": 198
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Zhuang/SEDR-seed1.json",
+      "sha256": "528369ab156909b8ec7d0e89b891e18431d32d995e4515f542511ff1e0d79f07",
+      "bytes": 634
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Zhuang/SEDR-seed1.npz",
+      "sha256": "97ee2f757c0a874297f95505466b4293c979cdba50ba27c6363694d9e78ad82a",
+      "bytes": 10207
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Zhuang/SEDR-seed2.json",
+      "sha256": "cf2b164f62f2d64b26a2f83d1c8573f3dd65ed8affd111330b6326b91a77dbed",
+      "bytes": 633
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Zhuang/SEDR-seed2.npz",
+      "sha256": "8234d104dcf416359f8438e24de2cf361d6e05a41db7240adf43b19db516229b",
+      "bytes": 10881
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Zhuang/SEDR-seed3.json",
+      "sha256": "d8d26b9caa3174410da02fce6492d9b77a951541c8757e83a65b453715e0670b",
+      "bytes": 633
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Zhuang/SEDR-seed3.npz",
+      "sha256": "147c9e0fbc1715cb4d35ca672c008032e77a2ef94fa27d09fcb0f99e1e10da83",
+      "bytes": 10909
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Zhuang/STAGATE-seed1.json",
+      "sha256": "8980277ba2fa0d1611c3b7852c03df0403d9695ccb24d153f818324ef90f0e01",
+      "bytes": 637
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Zhuang/STAGATE-seed1.npz",
+      "sha256": "2d8fbfe3bc584f4c2cd5034a4740ddfca06570ddd30ebbb9e78e4df136a485bb",
+      "bytes": 13300
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Zhuang/STAGATE-seed2.json",
+      "sha256": "0bfe69aa8b62f0b704dc6c1c8d17f012feb4aff543e37b27052e8f7428a687cd",
+      "bytes": 636
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Zhuang/STAGATE-seed2.npz",
+      "sha256": "018270516ff0925f3e2a24b9c87cceeed11a2df7ff4d57bdff9f4854560fc198",
+      "bytes": 13467
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Zhuang/STAGATE-seed3.json",
+      "sha256": "594dcdf89eadaba2fdca51ca07d4fd893704081aa9d9526b6cbf788abc7d764a",
+      "bytes": 636
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Zhuang/STAGATE-seed3.npz",
+      "sha256": "0d142b06ff0170a0a934c7f9d895122b7d52e9000eb22a80d96f3eeac7f11456",
+      "bytes": 13580
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Zhuang/SpaGCN-availability.json",
+      "sha256": "23a3a0f2e3ec14cec447e15b4bc5cd23eea5d34491524d1cc3ab3e52d94d9696",
+      "bytes": 197
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Zhuang/SpaceFlow-availability.json",
+      "sha256": "861d59caedb4f77f3573fad55e8571e341e3cc1c3cc3868b122edd13819333e9",
+      "bytes": 200
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Zhuang/SpatialLeiden-seed1.json",
+      "sha256": "2b0505e7a3663b868fb136056312071ca5aa74c59b7a19ab2010bc2abadf955e",
+      "bytes": 643
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Zhuang/SpatialLeiden-seed1.npz",
+      "sha256": "6f5ef7527a7d57787444d1f94e42a01737050f7aa517cf8f8483011c6ca64204",
+      "bytes": 7913
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Zhuang/SpatialLeiden-seed2.json",
+      "sha256": "c34d5acd809665cc617263a5aea1536efc8da604c9ec8ad12bff9a977c7804c9",
+      "bytes": 644
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Zhuang/SpatialLeiden-seed2.npz",
+      "sha256": "782b0458ba9eacc5821cf5b5d4300ed1fd1541723ce73a029e0df760cc2d6457",
+      "bytes": 7832
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Zhuang/SpatialLeiden-seed3.json",
+      "sha256": "011a9f1d7042c7868f10b99cc2168dae6d2cd7fec14226d00413ff3483a2a971",
+      "bytes": 643
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Zhuang/SpatialLeiden-seed3.npz",
+      "sha256": "f200d9aac6b70c56e4e0cca851ed4e738ef9351dd4b4de45be99eb165d295e3f",
+      "bytes": 7636
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Zhuang/Tessera-seed1.json",
+      "sha256": "8c5ecd1d2a5e2f45d89bca67ff3ae23dfdaae79e73cb38284d6b4f1cf091cb25",
+      "bytes": 636
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Zhuang/Tessera-seed1.npz",
+      "sha256": "a5202c8b76a3113b32c0329191fcc1d70c789d3bc68e980e68d37a94f2b4264c",
+      "bytes": 11437
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Zhuang/Tessera-seed2.json",
+      "sha256": "85c1291697393782d00c4c36830e262f52aef95b1f5fedbc4435e97aa3477577",
+      "bytes": 637
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Zhuang/Tessera-seed2.npz",
+      "sha256": "57e0e8729ef205c19c96f1ecc593d198cb205a4aab397e3e99803efa30655b95",
+      "bytes": 11334
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Zhuang/Tessera-seed3.json",
+      "sha256": "d1f07457a6452a65408ef5167954e6e9f2349bfdbb9c3f7983a2553a639be7a2",
+      "bytes": 635
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Zhuang/Tessera-seed3.npz",
+      "sha256": "29002a4286c981ce24dcd97f40e53e9c4634323a62abb74f9dc5714509fc90c3",
+      "bytes": 11021
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Zhuang/expression-only-seed1.json",
+      "sha256": "cb749e370c07c2d3a28e9a6f360bb383b47c0f18d8a28229d01b6e25d6597889",
+      "bytes": 672
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Zhuang/expression-only-seed1.npz",
+      "sha256": "3dbd07cdba05ce3c30604902d38ef3b8c5d272acfe8a63b0e43510baa7f02886",
+      "bytes": 10349
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Zhuang/expression-only-seed2.json",
+      "sha256": "b8ff48482f6724ee41310bb85e018c5058d040795750ed333d5c2eff717b92b6",
+      "bytes": 672
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Zhuang/expression-only-seed2.npz",
+      "sha256": "c65c10143028af152ed6f9ddff99285e6ceb005032b8e0f46f6b0b9990370c2e",
+      "bytes": 10163
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Zhuang/expression-only-seed3.json",
+      "sha256": "cbd35a1b343beecde504409d03f094c0251d29ad902a53c68a313969ff5c38dd",
+      "bytes": 670
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Zhuang/expression-only-seed3.npz",
+      "sha256": "11d57c5775420711c662bc75a47628c066a28219b7c06b582a238a77ee06ed5f",
+      "bytes": 10336
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Zhuang/input.json",
+      "sha256": "d2cb5a748cb945252df05cbdb62805cbc3cb92760225b494814f29f15591e9c2",
+      "bytes": 1467
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Zhuang/neighbor-mean-seed1.json",
+      "sha256": "dcbee6a8caa93d253aaeb83e42a4cd2f0fa785b37f8516616be753e170271a13",
+      "bytes": 641
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Zhuang/neighbor-mean-seed1.npz",
+      "sha256": "b8a0447a1fe8ca6e8198423f3deac921d9efa9bacd7f80714288feeba59f24e9",
+      "bytes": 12596
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Zhuang/neighbor-mean-seed2.json",
+      "sha256": "01c77388d568010df031aa8d81e718edfddca411f0fd94f4221978f34a47032e",
+      "bytes": 643
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Zhuang/neighbor-mean-seed2.npz",
+      "sha256": "ec05bb0c19cde08f4d2d46e65a1c7f236e414bc5edc9fc800b2138f46d0c15c6",
+      "bytes": 12996
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Zhuang/neighbor-mean-seed3.json",
+      "sha256": "783b4285c1ce9e4dee29806e14ab7dd98ecee421c5838414c9c7fba12c1b672e",
+      "bytes": 642
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Zhuang/neighbor-mean-seed3.npz",
+      "sha256": "6b6fe065c9cf361d853e78b1b679608cb0890a491f25d2afd157c2ded8af5780",
+      "bytes": 12738
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/Zhuang/rows.npz",
+      "sha256": "f61e806788c6ce0e54e95f7cf66f4360af0f9c1d6ed97fc5545d2a14b01ca4ec",
+      "bytes": 900961
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/protocol.json",
+      "sha256": "ed165f146b42da3ff09019246cbb8107ba279f5f29412df8cf9a3dde0c95a5f9",
+      "bytes": 8506
+    },
+    {
+      "path": "experiments/generated/field-identified-fixed-backend-20260923-v1/summary.json",
+      "sha256": "bcd5fb11e888cb09a4c9b9a20ff36b1d6d35b5dbd04f34003863539442aab3de",
+      "bytes": 39113
+    },
+    {
+      "path": "experiments/gt_type_vs_contiguity.py",
+      "sha256": "7ae812557ccacdd781ef31cc4eb5cb4f42e93d963225eef75d22537d9aea40f9",
+      "bytes": 2214
+    },
+    {
+      "path": "experiments/gtfree_proxy.py",
+      "sha256": "e291c96baa8986059de54bf2720b35f6a1fc1fcbcb315478e4aab74c3b826c17",
+      "bytes": 12079
+    },
+    {
+      "path": "experiments/gtfree_proxy_search.py",
+      "sha256": "b8e33bbdbf2c11b38f2241d34b337f580f6c2fdf2c1fbf9dd06c6a0b292dadf0",
+      "bytes": 8739
+    },
+    {
+      "path": "experiments/hardened_bench.py",
+      "sha256": "308f658167caa334688dcdcbc6897d4ea95db25f615b42848684fc0280011bef",
+      "bytes": 7499
+    },
+    {
+      "path": "experiments/mechanism_ablation.py",
+      "sha256": "67dea3dc4695cc99d5973bf5cb5cf8779e3146daf7d1ab7213e261d94491385c",
+      "bytes": 4737
+    },
+    {
+      "path": "experiments/mechanism_decoupled.py",
+      "sha256": "6a2359e94733faf224521657d462e84aa4b7e588612743dd60d42f4c92a44a18",
+      "bytes": 16560
+    },
+    {
+      "path": "experiments/mechanism_decoupled_v2.py",
+      "sha256": "f8e6a26977d1ab31d994f2fbc61f669279b6160121c535e72816da5ba67b360f",
+      "bytes": 19977
+    },
+    {
+      "path": "experiments/mechanism_synth.py",
+      "sha256": "31cdd0d3b1d1c1c35fb5a03b7e8ac8c4f674533c05273131d05e6f6e010e75a6",
+      "bytes": 9537
+    },
+    {
+      "path": "experiments/multi_platform_bench.py",
+      "sha256": "a24017a6e0db35805d636074823e9f3ba64b611cbb3f487a3919026ff9198408",
+      "bytes": 7045
+    },
+    {
+      "path": "experiments/native_baselines.py",
+      "sha256": "14298cea131b0d6668e0f07244c6561256f81a50b4fbb860c21105e40147d187",
+      "bytes": 17953
+    },
+    {
+      "path": "experiments/pareto_frontier.py",
+      "sha256": "6e45c427ad2df99c721310de99ca5f8e502a306b2f94e9768979c9a089f77d27",
+      "bytes": 3231
+    },
+    {
+      "path": "experiments/probe_sota_run.py",
+      "sha256": "b0d25a0cf44ca220d98ac0c4ad077f47a562f4796895199204c36efc2254f428",
+      "bytes": 2524
+    },
+    {
+      "path": "experiments/protocol_guard.py",
+      "sha256": "d1856d55357314d0cf9a802123ad4eecde68274651728bcb04d8e9a259c464b3",
+      "bytes": 5078
+    },
+    {
+      "path": "experiments/proxy_search_corrected.py",
+      "sha256": "d28a678690aa82a61610eeea782017302a738426acc1ea5b901f83eea5fac533",
+      "bytes": 5041
+    },
+    {
+      "path": "experiments/refine_panel.py",
+      "sha256": "6bec35ce134a9b9bb5b5db58a5aed63a2ace37b7967273f5a8b75d4103c53455",
+      "bytes": 6298
+    },
+    {
+      "path": "experiments/refine_xsec.py",
+      "sha256": "25db72d4653c334df667d0001e5c5078684cc75f07d5f17b158ab00f9a41b66c",
+      "bytes": 7109
+    },
+    {
+      "path": "experiments/rigorous_bench.py",
+      "sha256": "9e3a1019a9d3b16c802f524b8a94b5229be075e6a8d6e2c2107932b0d9a3a82a",
+      "bytes": 8246
+    },
+    {
+      "path": "experiments/robustness_audit.py",
+      "sha256": "19fcfa04d8328bb6170af81be2ff9c25a24b82e9eacee3a1f749fb2bc5b5692a",
+      "bytes": 6523
+    },
+    {
+      "path": "experiments/run_final_panel.py",
+      "sha256": "4bd591b6b59145cd7af0a20294d55581d8e41e71ddae0b710a90260d5e9afc16",
+      "bytes": 2890
+    },
+    {
+      "path": "experiments/run_full_panel_v2.py",
+      "sha256": "5117f50fef5c6d61c59a309eb72879f0961a1f7ff3fa170791260b72d18d3808",
+      "bytes": 6478
+    },
+    {
+      "path": "experiments/run_multisection_panel.py",
+      "sha256": "644eefc2a1c14c60875467865f64bfa222a33e016adee3c7d2519800c76aa05d",
+      "bytes": 6755
+    },
+    {
+      "path": "experiments/run_sota.py",
+      "sha256": "867df62f54bad488326ad078a9b211f835a8c0e1628c668b9a3a8cc571d2b0ed",
+      "bytes": 4177
+    },
+    {
+      "path": "experiments/run_sota_panel.py",
+      "sha256": "c3b8157849a5fb7fc86b49a73dbbe106027e87dd7eb599c4663a45b7bbc109d3",
+      "bytes": 5547
+    },
+    {
+      "path": "experiments/run_tessera_gmm.py",
+      "sha256": "eaecb94864d1e61c94adaef315490070b7b0c839d41ad9b2ed3fe730fb8b86f9",
+      "bytes": 2747
+    },
+    {
+      "path": "experiments/science_harden_20260918.py",
+      "sha256": "b8430f774bef2dc95ae0fd19e8be911d00d4f631724f52827436e6c73a46e7f7",
+      "bytes": 18106
+    },
+    {
+      "path": "experiments/science_harden_20260918_r2.py",
+      "sha256": "4ebf609b4b6d698865095490d34eb0c50325b27a354cbc48c7033dd9b6a12ab4",
+      "bytes": 20680
+    },
+    {
+      "path": "experiments/science_harden_20260918_r2_n12.py",
+      "sha256": "ac8c1ca75411e33942e8c6a373328746e556cb8eadc70832fec54588e75568bb",
+      "bytes": 5840
+    },
+    {
+      "path": "experiments/science_harden_20260919_r3_n12_posterior.py",
+      "sha256": "983cc25f366e31281ed0985ec8ea22ff18b0c2ad8cb00515b82fc8a83b8d3d26",
+      "bytes": 6528
+    },
+    {
+      "path": "experiments/seqfish_bench.py",
+      "sha256": "0d836b8a2148d2abcede110367282e995aaa953eb0eb278261d931cacf9ef4b5",
+      "bytes": 5260
+    },
+    {
+      "path": "experiments/spagcn_native.py",
+      "sha256": "cdc08b52010453a8f4b9c6109adc196d36230027f5ec0035a1301db9272707a9",
+      "bytes": 8922
+    },
+    {
+      "path": "experiments/spagcn_panel.py",
+      "sha256": "7a149e1f53aeb8d71c138885db50a7a6c92f788a41c410daf8a0b7d1f6d2d1ea",
+      "bytes": 9706
+    },
+    {
+      "path": "experiments/stat_rigor.py",
+      "sha256": "707ab9d3697720b8fdd7cfae13ac21ed997ae7bccfe0a644d22040d0ee485b6b",
+      "bytes": 9556
+    },
+    {
+      "path": "experiments/summarize_field_aware_panel_20260923.py",
+      "sha256": "59bcea977b9289814617e5cce6843f41b05e63bb1dbd9df7b94a75d1b4b67a13",
+      "bytes": 3795
+    },
+    {
+      "path": "experiments/task_fit_law.py",
+      "sha256": "ce14966d07a6f2fe92b2ca235869efae5ebf18474b12a8979bdf1c6f72578e74",
+      "bytes": 5149
+    },
+    {
+      "path": "experiments/tessera_verdict.py",
+      "sha256": "d8a12ea43112da3ffad365d80541b53c2961a3101109981bb75d780fe9daadd5",
+      "bytes": 3183
+    },
+    {
+      "path": "experiments/verify_field_aware_panel_20260923.py",
+      "sha256": "66260b532af2c3640747ac8c7bfed3534c3495940d26fb64c392b50878ee50d2",
+      "bytes": 5822
+    },
+    {
+      "path": "experiments/verify_manuscript.py",
+      "sha256": "1c260c7755e3e4f945dc3de73ad2ffa8bbf8891e4cae6f7ca1b9d655fd68e85f",
+      "bytes": 25458
+    },
+    {
+      "path": "manuscript/FIGURE-MANIFEST.md",
+      "sha256": "260340a52f3cfcc035d94ec4406e920ecf2128d88140c8103306dba547519b2f",
+      "bytes": 11571
+    },
+    {
+      "path": "manuscript/Makefile",
+      "sha256": "2a44b41cbb903f4833b8168aceb36fb861a60a513f1704efd68781afb8297da0",
+      "bytes": 887
+    },
+    {
+      "path": "manuscript/README.md",
+      "sha256": "63c5c497905d3ea148a96451f24ddc672641ff7caa0030cc1a4d667f1d451ade",
+      "bytes": 7757
+    },
+    {
+      "path": "manuscript/SI.pdf",
+      "sha256": "277a0ecbecf6a772ee0f6fbaedf67bc9d02d54496f12f1b2787d46cfae9f348d",
+      "bytes": 119155
+    },
+    {
+      "path": "manuscript/SI.tex",
+      "sha256": "3fd2caaf67b6fdc3ec4a2b68be6811cf2323c58d5cd13ffd673671017e716242",
+      "bytes": 8689
+    },
+    {
+      "path": "manuscript/figs/fig_field_comparison.pdf",
+      "sha256": "de21c37ab770538dc291b4899f879269764693b7d875ddcf6d72cd5fd247a747",
+      "bytes": 29822
+    },
+    {
+      "path": "manuscript/figs/fig_field_controls.pdf",
+      "sha256": "221b7125649bb9ae6e1bcd37bc8f97ac5545f46364977b35cb434665030ba585",
+      "bytes": 31562
+    },
+    {
+      "path": "manuscript/figs/fig_mechanism.pdf",
+      "sha256": "8c53adee2806a3da072f8183cefe002fb50e3a727b42ef91f22910555d858240",
+      "bytes": 20469
+    },
+    {
+      "path": "manuscript/figs/fig_mechanism_arch.pdf",
+      "sha256": "e610be988505470c73478057dbc33fdd9d3196d646a46601421b75af1622b153",
+      "bytes": 32981
+    },
+    {
+      "path": "manuscript/figs/fig_mechanism_arch.tex",
+      "sha256": "48c18ad1536c6508acfb19ff7679ee1a1984114305c9cdb1e02c4e6a33f1b5ee",
+      "bytes": 3160
+    },
+    {
+      "path": "manuscript/figs/fig_rank_audit.pdf",
+      "sha256": "02de13e7fcb661717ac058351fbfd496542a0bff7cf0d00306af1ff57a837c5f",
+      "bytes": 18222
+    },
+    {
+      "path": "manuscript/figs/fig_spatialmap.pdf",
+      "sha256": "3d6d9d05f3e85766865531fded22b2bb4e643caa118a8627b8005948d6ec45eb",
+      "bytes": 2090131
+    },
+    {
+      "path": "manuscript/ledgers/additional_printed_cells.json",
+      "sha256": "9c6e49560b1b2c81fb4af34aec1d2afab0cca23371f2b431460525d5806351f3",
+      "bytes": 18434
+    },
+    {
+      "path": "manuscript/ledgers/headline_json/FETCH.md",
+      "sha256": "690471b3c00983775503b3eb525467c3f07945aa94a8e620f820ebb448ed362b",
+      "bytes": 3893
+    },
+    {
+      "path": "manuscript/ledgers/headline_json/expand_data.json",
+      "sha256": "ec7eec7e356e298b1257f196ad519fea0700166aa5d3f85319850fa4e0fa151d",
+      "bytes": 1664
+    },
+    {
+      "path": "manuscript/ledgers/headline_json/expanded_bench.json",
+      "sha256": "f97a38e6ac1fc9492f08213844eea433357ec6de8678673d77e82934ed63f23a",
+      "bytes": 11643
+    },
+    {
+      "path": "manuscript/ledgers/headline_json/gtfree_proxy.json",
+      "sha256": "960c0b0012354f97048ea5c722213318122d5805d23c9bdd838101b435a28bf9",
+      "bytes": 4856
+    },
+    {
+      "path": "manuscript/ledgers/headline_json/mechanism_synth.json",
+      "sha256": "7ce2ce8d734f0c1606fecdb868516d7b288aa79adcb1c56404034362e58f4292",
+      "bytes": 2478
+    },
+    {
+      "path": "manuscript/ledgers/headline_json/native_baselines.json",
+      "sha256": "db67223a364fd81a735603df7480ca47f93f5144bcb584cf3da8154e8eb5d04d",
+      "bytes": 9228
+    },
+    {
+      "path": "manuscript/ledgers/headline_json/proxy_search_corrected.json",
+      "sha256": "d189a4115ac6dc07b01070ce727fa695c4ca838e257e914e310f6c80efb468e5",
+      "bytes": 1314
+    },
+    {
+      "path": "manuscript/ledgers/headline_json/robustness_audit.json",
+      "sha256": "41ba1678dc534ecb5a906e4323aea0e76f5025b6e12754418986e1796e7e9af5",
+      "bytes": 1287
+    },
+    {
+      "path": "manuscript/ledgers/headline_json/stat_rigor.json",
+      "sha256": "20b342a977b6c8c25c97e3e2ba893f8453f09407cf993478c397f8a9deeecb23",
+      "bytes": 1440
+    },
+    {
+      "path": "manuscript/ledgers/revision_20260923/QA.json",
+      "sha256": "2b067659eb171cf2df2d6d52b7530afaecd8f28ac68a4c07a2593a15260b82c1",
+      "bytes": 1769
+    },
+    {
+      "path": "manuscript/ledgers/revision_20260923/estimand-audit.json",
+      "sha256": "6bd5f56a910624a23de699ab9a6cdf7c50d8bc68943a105209dd61b9dccf79e0",
+      "bytes": 5889
+    },
+    {
+      "path": "manuscript/ledgers/revision_20260923/field_results.tex",
+      "sha256": "d44abd644edeb4a49eeb05f06ff4940528fe9d0828be101aca5d001b0eeb27e3",
+      "bytes": 7024
+    },
+    {
+      "path": "manuscript/ledgers/revision_20260923/figure-source.json",
+      "sha256": "2bc8ca5faa4a068feda0ec0f4901b7c2398e9043e554b5095105daffc64ed1b8",
+      "bytes": 1523
+    },
+    {
+      "path": "manuscript/ledgers/revision_20260923/protocol.json",
+      "sha256": "ed165f146b42da3ff09019246cbb8107ba279f5f29412df8cf9a3dde0c95a5f9",
+      "bytes": 8506
+    },
+    {
+      "path": "manuscript/ledgers/revision_20260923/summary.json",
+      "sha256": "bcd5fb11e888cb09a4c9b9a20ff36b1d6d35b5dbd04f34003863539442aab3de",
+      "bytes": 39113
+    },
+    {
+      "path": "manuscript/ledgers/revision_20260923/supporting_tables-provenance.json",
+      "sha256": "f15a2c41b55f40b266aa4f7393e897e18e0d6a554708e675656873125bdb8f4a",
+      "bytes": 769
+    },
+    {
+      "path": "manuscript/ledgers/revision_20260923/supporting_tables.tex",
+      "sha256": "b9a7cadff2746b6e82bb7d76b82016349531d60602a11a49c19dd5e4c9602172",
+      "bytes": 3425
+    },
+    {
+      "path": "manuscript/ledgers/science_core_20260918/printed_claims.json",
+      "sha256": "db611cc29c1453567344b715d5bbef0b3bd807157ccebb67fce43856e2087a2e",
+      "bytes": 1506
+    },
+    {
+      "path": "manuscript/ledgers/science_core_20260918/science_core_20260918.json",
+      "sha256": "e8416c8e63dfa7e0e13222e3a35235cbdecaea52eb4b11b52b923676f766d2e0",
+      "bytes": 93024
+    },
+    {
+      "path": "manuscript/ledgers/science_core_20260918/science_harden_20260918.py",
+      "sha256": "b8430f774bef2dc95ae0fd19e8be911d00d4f631724f52827436e6c73a46e7f7",
+      "bytes": 18106
+    },
+    {
+      "path": "manuscript/ledgers/science_core_20260918/synth_rows.json",
+      "sha256": "dd4bdc8103bff134914d5da533ca180f49fc500440dd78865b8ecfb5b9c8d607",
+      "bytes": 201806
+    },
+    {
+      "path": "manuscript/ledgers/science_core_20260918/synth_summaries.json",
+      "sha256": "ffef4ec92082e24605f0a8b8a679abb2a6a917612a04e2bc47c48e417e95e308",
+      "bytes": 85651
+    },
+    {
+      "path": "manuscript/ledgers/science_core_20260918_r2/fill_spaceflow_protein_panels.py",
+      "sha256": "5f942ac1b999aba5ede96b520056eaca2e06cc59bc85ce7f29997924007b24fe",
+      "bytes": 6222
+    },
+    {
+      "path": "manuscript/ledgers/science_core_20260918_r2/n11_spaceflow_protein_panels.json",
+      "sha256": "e80958872f68199a2c191e65bc035a914708eb1833297f02646a94f07724d216",
+      "bytes": 10559
+    },
+    {
+      "path": "manuscript/ledgers/science_core_20260918_r2/n12_lodo.json",
+      "sha256": "ffb99d5fb35627c262f451f2e9e2796133ab07cabaf212893ecf3354a27080aa",
+      "bytes": 2914
+    },
+    {
+      "path": "manuscript/ledgers/science_core_20260918_r2/n12_partial-pre-spaceflow-20260919.json",
+      "sha256": "c1a3a1d66fa88abc45293a3f47adddfd968fa86654d1134c832d5bb81d478658",
+      "bytes": 1664
+    },
+    {
+      "path": "manuscript/ledgers/science_core_20260918_r2/n12_partial.json",
+      "sha256": "407f21386ba3db78529848b5fdefb4ce2663607dba63a5fb1cf9fe534cfa88a1",
+      "bytes": 1787
+    },
+    {
+      "path": "manuscript/ledgers/science_core_20260918_r2/n12_posterior-pre-spaceflow-20260919.json",
+      "sha256": "76a784322fbd888a2c11916198fece99ccc399e98495e72d101207ec487e36fd",
+      "bytes": 1393
+    },
+    {
+      "path": "manuscript/ledgers/science_core_20260918_r2/n12_posterior.json",
+      "sha256": "3d0a76e343acead1c70569d67d58472d2e6dd22039a32d21910f87d8454e6046",
+      "bytes": 2294
+    },
+    {
+      "path": "manuscript/ledgers/science_core_20260918_r2/n12_zhuang-pre-spaceflow-20260919.json",
+      "sha256": "4a0f9c729682163b8956c910e9be3e271112cdb0e18518d812ad1693fdf282f4",
+      "bytes": 3753
+    },
+    {
+      "path": "manuscript/ledgers/science_core_20260918_r2/n12_zhuang.json",
+      "sha256": "15c321eb344a010aedeac6e91cc453ffae9d0e5a4907c098e315939a07af8db3",
+      "bytes": 3891
+    },
+    {
+      "path": "manuscript/ledgers/science_core_20260918_r2/science_core_20260918_r2.json",
+      "sha256": "6009710f5f41997bf1c26f38fc247764b9f16b59750b6407fc8ee43a2ef580f0",
+      "bytes": 174900
+    },
+    {
+      "path": "manuscript/ledgers/science_core_20260918_r2/science_harden_20260918_r2.py",
+      "sha256": "4ebf609b4b6d698865095490d34eb0c50325b27a354cbc48c7033dd9b6a12ab4",
+      "bytes": 20680
+    },
+    {
+      "path": "manuscript/ledgers/science_core_20260918_r2/science_harden_20260918_r2_n12.py",
+      "sha256": "afcfb12916e81b63a748096e2ecfd4368d23c7870c2370bb9bbfc50d5c8cc2b0",
+      "bytes": 5461
+    },
+    {
+      "path": "manuscript/ledgers/table_i_printed.json",
+      "sha256": "f43b04c1b4df84c1d28889c38fed6e1a86412aad609a15d3795ba719e944e9f8",
+      "bytes": 1747
+    },
+    {
+      "path": "manuscript/ledgers/working_printed_claims.json",
+      "sha256": "9a534119bdb9a1ff12ff558149ee446d477e75af58fffb04b7580190ca0a8609",
+      "bytes": 2666
+    },
+    {
+      "path": "manuscript/make_figs.R",
+      "sha256": "1cbf7ecc68f2c2b06cc9a3899597bb9670f08ed756fdd8b2eee5049e9e111a57",
+      "bytes": 26829
+    },
+    {
+      "path": "manuscript/paper.bbl",
+      "sha256": "8b00e28b5ef44343ef424d918a0930965a15f249a869404a6c26570d7c25112b",
+      "bytes": 9107
+    },
+    {
+      "path": "manuscript/paper.pdf",
+      "sha256": "68fa2b82dd5cabb1533e3a3e529adf3280e615e86ee67e73049a1185852f4655",
+      "bytes": 2482336
+    },
+    {
+      "path": "manuscript/paper.tex",
+      "sha256": "be3450ea2acac766d2e9224b629221cea82ea3fac310d0eb413d453e9f93938f",
+      "bytes": 42430
+    },
+    {
+      "path": "manuscript/refs.bib",
+      "sha256": "e64d0300b58cfb2e1f6011d7c5c921ae574bcfb1c2c5fd78cfd30c02d638c5d1",
+      "bytes": 12544
+    },
+    {
+      "path": "manuscript/release-current.json",
+      "sha256": "2baa2e290e653f7c7b904dfd42a0e3c8b29a90add22a43e16a94a04d3cfeb558",
+      "bytes": 12354
+    },
+    {
+      "path": "manuscript/release-spec.json",
+      "sha256": "2baa2e290e653f7c7b904dfd42a0e3c8b29a90add22a43e16a94a04d3cfeb558",
+      "bytes": 12354
+    },
+    {
+      "path": "manuscript/scripts/bind_revision_contracts.py",
+      "sha256": "37db840ecc2b9c6e21de2ea6fb0f24159c3fd01e690e9ba75d112bc0a5d3e508",
+      "bytes": 14241
+    },
+    {
+      "path": "manuscript/scripts/build_field_revision.py",
+      "sha256": "a456763a4917cc2e2a41c1a06a32b4b272a0ec94012108152e2dd610d4290a56",
+      "bytes": 15084
+    },
+    {
+      "path": "manuscript/scripts/build_supporting_information.py",
+      "sha256": "66124147efaa47f32de86b3f56e95054f727a65fbe26e0f2c5d8abf528d5a34b",
+      "bytes": 4965
+    },
+    {
+      "path": "manuscript/scripts/check_revision_pdf.py",
+      "sha256": "a00d2a955b301801ccc707e93a8fae08718c4623fc0150e2cc1b713559ff2e81",
+      "bytes": 7676
+    },
+    {
+      "path": "manuscript/scripts/compile_figures.py",
+      "sha256": "d42b9127514994d42c9ef1d72b1db8ad33e301ed2a99f262cee6fe0043fd8c32",
+      "bytes": 1683
+    },
+    {
+      "path": "manuscript/scripts/make_graphical_abstract.py",
+      "sha256": "4ef0d082d4b886cfee5333779f42ceb0c32d0140ce919691c527a9e2f5255c6a",
+      "bytes": 30732
+    },
+    {
+      "path": "manuscript/scripts/polish_stat_panels.py",
+      "sha256": "f12594ef40173336c72015376da02f8e1843a9f42dc429d29ad871875b89f1b0",
+      "bytes": 13018
+    },
+    {
+      "path": "manuscript/scripts/real_spatial_maps.py",
+      "sha256": "a28ea3e6ad969a1b68fb05157598aa211857350235abaabd08751264939529e5",
+      "bytes": 4610
+    },
+    {
+      "path": "manuscript/scripts/rebuild_current.sh",
+      "sha256": "05023a51077be448a80efac4683cacdf71435e0b7ba181a6aa6176d5453a2798",
+      "bytes": 760
+    },
+    {
+      "path": "manuscript/verify_committed_claims.py",
+      "sha256": "cce4699f3b1b5082b9b7596288909a5c607b77348e0d934d8db6ab32792d6bc6",
+      "bytes": 9950
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "627509004e4d7719a261892553123427928b800e7d6cb5dc011e666638b7b631",
+      "bytes": 2497
+    },
+    {
+      "path": "reproducibility/METHOD-AUDIT.md",
+      "sha256": "a3cae1988d33288ebdf5ee49fb7db7c7988dc77a84cdfa1014dae5bc2e5c0550",
+      "bytes": 7241
+    },
+    {
+      "path": "reproducibility/method-contract.json",
+      "sha256": "8347de697f72a9c9183c10deabfd63229da3b9361e69bf074a70e379b38b8f0e",
+      "bytes": 91891
+    },
+    {
+      "path": "reproducibility/tests/test_field_aware_adapters.py",
+      "sha256": "fa37aafebcb17bc035dff9bf562cf96d11806159a1890fa47fa1fe9a1c0f0beb",
+      "bytes": 2981
+    },
+    {
+      "path": "reproducibility/tests/test_rank_ties.py",
+      "sha256": "56a6e55675b548f4bad127bde8ed33ff770000f51cb03e6143f26230b80e79f0",
+      "bytes": 1922
+    },
+    {
+      "path": "reproducibility/tests/test_revision_contract.py",
+      "sha256": "37fd0c00430698ffecb0f743f700e54343be5621d1dc2ee40440d1232efd5e78",
+      "bytes": 2276
+    },
+    {
+      "path": "reproducibility/tests/test_supporting_information.py",
+      "sha256": "d465d70fdadcf5289cb303c8bfc1c3b55bad6aa36574bd289f211d47396e5ab6",
+      "bytes": 3507
+    },
+    {
+      "path": "reproducibility/tests/test_tessera_method_integrity.py",
+      "sha256": "e66890670fd0f1ee6fb3a414437ae7304c7c5c302505ba0a45edb1ab646b277e",
+      "bytes": 8096
+    },
+    {
+      "path": "reproducibility/verify_method_contract.py",
+      "sha256": "db96e1f0941075f10032341fec711b23917acf07d123eb9c84654ed85375f751",
+      "bytes": 647
+    },
+    {
+      "path": "src/tessera_st/__init__.py",
+      "sha256": "9ab15619d82cb0282d3cd0568526f1fbc5dffda490d0c45b1a392f0b45e7b2f3",
+      "bytes": 480
+    },
+    {
+      "path": "src/tessera_st/ablation.py",
+      "sha256": "40d3f5324a6f05b1de42317b09c27b60bcc12bbd369ac40c9661a08e177a49cb",
+      "bytes": 15205
+    },
+    {
+      "path": "src/tessera_st/cli.py",
+      "sha256": "bc9c7816f337e6c83a40637ba02088fcc62f6a3b2cc4899ed284bcb964fe2ed6",
+      "bytes": 3379
+    },
+    {
+      "path": "src/tessera_st/config.py",
+      "sha256": "0ef79d4eca86b5306b7802daa2a635099f14a774d1d5fc53898f8a871e0428ce",
+      "bytes": 3457
+    },
+    {
+      "path": "src/tessera_st/data/__init__.py",
+      "sha256": "89a0799ac53eae1f6df95e0272db0cf2dc3925ef370b04f2fb85c01a01d84fea",
+      "bytes": 214
+    },
+    {
+      "path": "src/tessera_st/data/dlpfc.py",
+      "sha256": "4a787de388a222b422da6f653f8108c914c17f0df8ba79f3b0fb6195d0d2e19e",
+      "bytes": 5828
+    },
+    {
+      "path": "src/tessera_st/data/synthetic.py",
+      "sha256": "d061ee6938fea2712b6861f1854775729abf79ed5742fd94fd4e5bf3b194c7e0",
+      "bytes": 3391
+    },
+    {
+      "path": "src/tessera_st/eval/__init__.py",
+      "sha256": "5d950582652c648be799ce0b7801375ed9996b6b5728e2337b3f7efccd8ab887",
+      "bytes": 519
+    },
+    {
+      "path": "src/tessera_st/eval/baselines.py",
+      "sha256": "8fef94320fd61c8bf8d2049e8bb3d095d4c27aa2be0c283894b5c7b672ecad51",
+      "bytes": 1607
+    },
+    {
+      "path": "src/tessera_st/eval/markers.py",
+      "sha256": "10ad51515cb325961fa937dde942e992721322fa703255f58554645afe7bf2bb",
+      "bytes": 3138
+    },
+    {
+      "path": "src/tessera_st/eval/metrics.py",
+      "sha256": "22ba43d70ad7ce33a2a415e5074ad5e9f5f5e01fcc4274634e5091205f9f4e6c",
+      "bytes": 6561
+    },
+    {
+      "path": "src/tessera_st/eval/refine.py",
+      "sha256": "d79c20c013b4c97d4dacfacb20de87082be3359c67c2717bc4757dbdd1380cbd",
+      "bytes": 1414
+    },
+    {
+      "path": "src/tessera_st/losses.py",
+      "sha256": "f2bd9a990de26f588139d67fb6685779ea3125ecc1136390764956f79f6ccb2f",
+      "bytes": 2419
+    },
+    {
+      "path": "src/tessera_st/model/__init__.py",
+      "sha256": "1c49146ee48e0ccbecdf01ca321239c934dfd94652749dbda9e4b729f139a8ef",
+      "bytes": 139
+    },
+    {
+      "path": "src/tessera_st/model/encoder.py",
+      "sha256": "f537e4b7d153271a3440c04f7719c740766e3f0b2cbe6038c298cc12e3774f5c",
+      "bytes": 3568
+    },
+    {
+      "path": "src/tessera_st/model/gating.py",
+      "sha256": "8f628b9884086783fd74c10d1f77c2a84435f1ccc2d9c26a565ae8a910314ef3",
+      "bytes": 1340
+    },
+    {
+      "path": "src/tessera_st/model/graph.py",
+      "sha256": "4a9e3e175603aa7b24242d485df90f48fbc9222cb47db8c83662357f3e48ba08",
+      "bytes": 996
+    },
+    {
+      "path": "src/tessera_st/model/heads.py",
+      "sha256": "9d5e6104b68e13cc3ee5297a3c65af1d41f7a41c41eb3a8b8cfcd7c40739bbba",
+      "bytes": 1602
+    },
+    {
+      "path": "src/tessera_st/model/tessera.py",
+      "sha256": "28a6673ba632228a88adeda63335ca922c9a64f30f540c0024aa1920c2166ba2",
+      "bytes": 1534
+    },
+    {
+      "path": "src/tessera_st/spatial.py",
+      "sha256": "434a289946b23869b3a0cbee99f8cf4c8295c14fbda99fa149c4916444836ee6",
+      "bytes": 2401
+    },
+    {
+      "path": "src/tessera_st/train.py",
+      "sha256": "21ac9c746a3776e6cf6413526b5fa8673903f032f1f56dbcce9bcfc41d499a01",
+      "bytes": 3615
+    }
+  ]
+}

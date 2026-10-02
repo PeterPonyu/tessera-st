@@ -1,0 +1,39 @@
+{
+  "description": "Westfall-Young max-statistic permutation test. Null = max over 6 label-free candidates of |Spearman rho| vs permuted spatial_advantage. Search-corrected p controls family-wise error over the 6-candidate search.",
+  "n_platforms": 11,
+  "candidates": [
+    "raw_coh",
+    "smooth_coh",
+    "coh_gain",
+    "partition_shift",
+    "sil_gain",
+    "smoothing_score"
+  ],
+  "target": "spatial_advantage",
+  "selected_candidate": "coh_gain",
+  "selected_is_argmax_over_search": true,
+  "seed": 1234,
+  "B": 10000,
+  "observed_rho_per_candidate": {
+    "raw_coh": -0.4236913042477309,
+    "smooth_coh": -0.36446563806256416,
+    "coh_gain": 0.5512542775696284,
+    "partition_shift": 0.4145796632961667,
+    "sil_gain": -0.20501192141019234,
+    "smoothing_score": 0.4373587656750771
+  },
+  "observed_selected_rho": 0.5512542775696284,
+  "observed_max_abs_rho": 0.5512542775696284,
+  "p_uncorrected_selected": 0.083,
+  "p_uncorrected_selected_plus1": 0.08309169083091691,
+  "p_search_corrected": 0.275,
+  "p_search_corrected_plus1": 0.27507249275072493,
+  "null_max_abs_rho_quantiles": {
+    "q50.0": 0.437358765675077,
+    "q90.0": 0.6788172508915258,
+    "q95.0": 0.7425987375524745,
+    "q97.5": 0.7837150173464059,
+    "q99.0": 0.8337151470681157
+  },
+  "sanity_coh_gain_rho_matches_0p551": true
+}

@@ -1,0 +1,109 @@
+{
+  "role": "leave-one-dataset-out on the SpaceFlow-updated n=12 points",
+  "off_print": false,
+  "headline_remains_n11": true,
+  "observational_synthetic_combinable": false,
+  "n12_rho": 0.7460606887803388,
+  "n12_p": 0.005329434752570122,
+  "rows": [
+    {
+      "dropped": "DLPFC(Visium,layer)",
+      "n": 11,
+      "rho": 0.7334870966009104,
+      "p_two_sided": 0.010201284290763361,
+      "delta_vs_n12": -0.012573592179428439
+    },
+    {
+      "dropped": "seqFISH(embryo,ctype)",
+      "n": 11,
+      "rho": 0.7545454545454545,
+      "p_two_sided": 0.00728204100842914,
+      "delta_vs_n12": 0.008484765765115698
+    },
+    {
+      "dropped": "MERFISH(hypo,domain)",
+      "n": 11,
+      "rho": 0.6879288918430899,
+      "p_two_sided": 0.01929108555090816,
+      "delta_vs_n12": -0.0581317969372489
+    },
+    {
+      "dropped": "STARmap(cortex,region)",
+      "n": 11,
+      "rho": 0.7061521737462181,
+      "p_two_sided": 0.01515373920533224,
+      "delta_vs_n12": -0.03990851503412074
+    },
+    {
+      "dropped": "osmFISH(cortex,Region)",
+      "n": 11,
+      "rho": 0.7881569423102951,
+      "p_two_sided": 0.003956192304592836,
+      "delta_vs_n12": 0.04209625352995627
+    },
+    {
+      "dropped": "MIBI-TOF(protein,Cluster)",
+      "n": 11,
+      "rho": 0.7608220194556026,
+      "p_two_sided": 0.006545082815417342,
+      "delta_vs_n12": 0.01476133067526375
+    },
+    {
+      "dropped": "BRCA(Visium,tumor)",
+      "n": 11,
+      "rho": 0.7334870966009104,
+      "p_two_sided": 0.010201284290763361,
+      "delta_vs_n12": -0.012573592179428439
+    },
+    {
+      "dropped": "IMC(breast,ctype)",
+      "n": 11,
+      "rho": 0.7152638146977822,
+      "p_two_sided": 0.013344487724182714,
+      "delta_vs_n12": -0.030796874082556602
+    },
+    {
+      "dropped": "openST(HNSCC,annot)",
+      "n": 11,
+      "rho": 0.7545454545454545,
+      "p_two_sided": 0.00728204100842914,
+      "delta_vs_n12": 0.008484765765115698
+    },
+    {
+      "dropped": "SlideseqV2(hippo,Region)",
+      "n": 11,
+      "rho": 0.7608220194556026,
+      "p_two_sided": 0.006545082815417342,
+      "delta_vs_n12": 0.01476133067526375
+    },
+    {
+      "dropped": "CODEX(spleen,niche)",
+      "n": 11,
+      "rho": 0.7608220194556026,
+      "p_two_sided": 0.006545082815417342,
+      "delta_vs_n12": 0.01476133067526375
+    },
+    {
+      "dropped": "Zhuang-ABCA-1.069(MERFISH,domain)",
+      "n": 11,
+      "rho": 0.7243754556493464,
+      "p_two_sided": 0.011696567268823264,
+      "delta_vs_n12": -0.021685233130992465
+    }
+  ],
+  "min_rho": {
+    "dropped": "MERFISH(hypo,domain)",
+    "n": 11,
+    "rho": 0.6879288918430899,
+    "p_two_sided": 0.01929108555090816,
+    "delta_vs_n12": -0.0581317969372489
+  },
+  "max_rho": {
+    "dropped": "osmFISH(cortex,Region)",
+    "n": 11,
+    "rho": 0.7881569423102951,
+    "p_two_sided": 0.003956192304592836,
+    "delta_vs_n12": 0.04209625352995627
+  },
+  "ready": "NO"
+}

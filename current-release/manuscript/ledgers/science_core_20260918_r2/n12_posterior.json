@@ -1,0 +1,66 @@
+{
+  "role": "n=12 posterior after 2026-09-19 SpaceFlow rerun",
+  "off_print": false,
+  "headline_remains_n11": true,
+  "n11_rho_unchanged": 0.7243754556493464,
+  "family7_bonferroni_p": 0.082,
+  "family7_significant": false,
+  "observational_synthetic_combinable": false,
+  "created_utc": "2026-09-19T16:54:30Z",
+  "source_ledger": "/home/zeyufu/Desktop/labs/capsules/tessera-option-hold/manuscript/ledgers/science_core_20260918_r2/n12_zhuang.json",
+  "source_sha256": "15c321eb344a010aedeac6e91cc453ffae9d0e5a4907c098e315939a07af8db3",
+  "pre_rerun_posterior": "/home/zeyufu/Desktop/labs/capsules/tessera-option-hold/manuscript/ledgers/science_core_20260918_r2/n12_posterior-pre-spaceflow-20260919.json",
+  "rho_hat": 0.7460606887803388,
+  "p_two_sided": 0.005329434752570122,
+  "n": 12,
+  "seed": 20260918,
+  "grid": 4001,
+  "fisher_z_uniform": {
+    "rho_hat": 0.7460606887803388,
+    "n": 12,
+    "prior": "uniform",
+    "likelihood": "Fisher-z Normal(atanh(\u03c1), 1/sqrt(n-3))",
+    "z_obs": 0.9640110941417355,
+    "se_z": 0.3333333333333333,
+    "posterior_mean": 0.6418149305067794,
+    "posterior_median": 0.6748245000000003,
+    "credible95": [
+      0.2077920000000001,
+      0.8946045000000001
+    ],
+    "P_rho_gt_0": 0.9959888936295852,
+    "P_rho_gt_0.5": 0.8056881480549047,
+    "P_rho_gt_0.72": 0.38946536397475073
+  },
+  "fisher_z_skeptical": {
+    "rho_hat": 0.7460606887803388,
+    "n": 12,
+    "prior": "skeptical",
+    "likelihood": "Fisher-z Normal(atanh(\u03c1), 1/sqrt(n-3))",
+    "z_obs": 0.9640110941417355,
+    "se_z": 0.3333333333333333,
+    "posterior_mean": 0.5667645135454226,
+    "posterior_median": 0.5944050000000002,
+    "credible95": [
+      0.11338650000000017,
+      0.8681310000000001
+    ],
+    "P_rho_gt_0": 0.9912991428951173,
+    "P_rho_gt_0.5": 0.6704613544900903,
+    "P_rho_gt_0.72": 0.24152783780432302
+  },
+  "bayes_bootstrap": {
+    "method": "Rubin Bayesian bootstrap (multinomial resample), B=5000",
+    "n_boot": 5000,
+    "mean": 0.6927816587147955,
+    "median": 0.7153024911032029,
+    "credible95": [
+      0.2948770843942265,
+      0.9197080291970804
+    ],
+    "P_rho_gt_0": 0.9956
+  },
+  "ready": "NO",
+  "official_pdf_sha256": "af3624fe86c56452d12f6d2a6649f344aaefaaba97f21bc8fbde4222ec342742",
+  "official_pdf_unchanged": false
+}

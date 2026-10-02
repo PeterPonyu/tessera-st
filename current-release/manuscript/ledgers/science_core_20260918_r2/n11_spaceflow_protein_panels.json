@@ -1,0 +1,114 @@
+{
+  "role": "n=11 SpaceFlow fill on the two protein panels that were NA",
+  "started_utc": "2026-09-20T16:36:05.031742+00:00",
+  "protocol": "expanded_bench.py SpaceFlow + best-of KMeans/GMM-tied, 3 seeds, 16k subsample",
+  "headline_remains_n11": true,
+  "do_not_invent": true,
+  "panels": {
+    "MIBI-TOF(protein,Cluster)": {
+      "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/raw/squidpy/mibitof.h5ad",
+      "exists": true,
+      "gt_cols": [
+        "Cluster"
+      ],
+      "status": "blocked_runtime",
+      "gt_column": "Cluster",
+      "n_cells_source": 3309,
+      "n_cells_used": 3309,
+      "n_genes": 36,
+      "k": 8,
+      "subsampled": false,
+      "seed_errors": [
+        {
+          "seed": 1,
+          "error": "Bin edges must be unique: Index([nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n       nan, nan, nan, nan, nan, nan, nan],\n      dtype='float64').\nYou can drop duplicate edges by setting the 'duplicates' kwarg"
+        },
+        {
+          "seed": 2,
+          "error": "Bin edges must be unique: Index([nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n       nan, nan, nan, nan, nan, nan, nan],\n      dtype='float64').\nYou can drop duplicate edges by setting the 'duplicates' kwarg"
+        },
+        {
+          "seed": 3,
+          "error": "Bin edges must be unique: Index([nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n       nan, nan, nan, nan, nan, nan, nan],\n      dtype='float64').\nYou can drop duplicate edges by setting the 'duplicates' kwarg"
+        }
+      ]
+    },
+    "CODEX(spleen,niche)": {
+      "path": "/home/zeyufu/Desktop/labs/active/spatial-omics-reform/data/processed/codex_spleen_goltsev2018/anndata.h5ad",
+      "exists": true,
+      "gt_cols": [
+        "niche",
+        "cell_type"
+      ],
+      "status": "blocked_runtime",
+      "gt_column": "niche",
+      "n_cells_source": 734101,
+      "n_cells_used": 16000,
+      "n_genes": 32,
+      "k": 100,
+      "subsampled": true,
+      "seed_errors": [
+        {
+          "seed": 1,
+          "error": "Bin edges must be unique: Index([nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n       nan, nan, nan, nan, nan, nan, nan],\n      dtype='float64').\nYou can drop duplicate edges by setting the 'duplicates' kwarg"
+        },
+        {
+          "seed": 2,
+          "error": "Bin edges must be unique: Index([nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n       nan, nan, nan, nan, nan, nan, nan],\n      dtype='float64').\nYou can drop duplicate edges by setting the 'duplicates' kwarg"
+        },
+        {
+          "seed": 3,
+          "error": "Bin edges must be unique: Index([nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n       nan, nan, nan, nan, nan, nan, nan],\n      dtype='float64').\nYou can drop duplicate edges by setting the 'duplicates' kwarg"
+        }
+      ]
+    }
+  },
+  "blocked": [
+    {
+      "platform": "MIBI-TOF(protein,Cluster)",
+      "reason": "spaceflow_runtime",
+      "errors": [
+        {
+          "seed": 1,
+          "error": "Bin edges must be unique: Index([nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n       nan, nan, nan, nan, nan, nan, nan],\n      dtype='float64').\nYou can drop duplicate edges by setting the 'duplicates' kwarg",
+          "trace": " in _get_mean_bins\n    return pd.cut(means, bins=bins)\n           ~~~~~~^^^^^^^^^^^^^^^^^^\n  File \"/home/zeyufu/miniconda3/envs/dl/lib/python3.13/site-packages/pandas/core/reshape/tile.py\", line 257, in cut\n    fac, bins = _bins_to_cuts(\n                ~~~~~~~~~~~~~^\n        x_idx,\n        ^^^^^^\n    ...<6 lines>...\n        ordered=ordered,\n        ^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"/home/zeyufu/miniconda3/envs/dl/lib/python3.13/site-packages/pandas/core/reshape/tile.py\", line 443, in _bins_to_cuts\n    raise ValueError(\n    ...<2 lines>...\n    )\nValueError: Bin edges must be unique: Index([nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n       nan, nan, nan, nan, nan, nan, nan],\n      dtype='float64').\nYou can drop duplicate edges by setting the 'duplicates' kwarg\n"
+        },
+        {
+          "seed": 2,
+          "error": "Bin edges must be unique: Index([nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n       nan, nan, nan, nan, nan, nan, nan],\n      dtype='float64').\nYou can drop duplicate edges by setting the 'duplicates' kwarg",
+          "trace": " in _get_mean_bins\n    return pd.cut(means, bins=bins)\n           ~~~~~~^^^^^^^^^^^^^^^^^^\n  File \"/home/zeyufu/miniconda3/envs/dl/lib/python3.13/site-packages/pandas/core/reshape/tile.py\", line 257, in cut\n    fac, bins = _bins_to_cuts(\n                ~~~~~~~~~~~~~^\n        x_idx,\n        ^^^^^^\n    ...<6 lines>...\n        ordered=ordered,\n        ^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"/home/zeyufu/miniconda3/envs/dl/lib/python3.13/site-packages/pandas/core/reshape/tile.py\", line 443, in _bins_to_cuts\n    raise ValueError(\n    ...<2 lines>...\n    )\nValueError: Bin edges must be unique: Index([nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n       nan, nan, nan, nan, nan, nan, nan],\n      dtype='float64').\nYou can drop duplicate edges by setting the 'duplicates' kwarg\n"
+        },
+        {
+          "seed": 3,
+          "error": "Bin edges must be unique: Index([nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n       nan, nan, nan, nan, nan, nan, nan],\n      dtype='float64').\nYou can drop duplicate edges by setting the 'duplicates' kwarg",
+          "trace": " in _get_mean_bins\n    return pd.cut(means, bins=bins)\n           ~~~~~~^^^^^^^^^^^^^^^^^^\n  File \"/home/zeyufu/miniconda3/envs/dl/lib/python3.13/site-packages/pandas/core/reshape/tile.py\", line 257, in cut\n    fac, bins = _bins_to_cuts(\n                ~~~~~~~~~~~~~^\n        x_idx,\n        ^^^^^^\n    ...<6 lines>...\n        ordered=ordered,\n        ^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"/home/zeyufu/miniconda3/envs/dl/lib/python3.13/site-packages/pandas/core/reshape/tile.py\", line 443, in _bins_to_cuts\n    raise ValueError(\n    ...<2 lines>...\n    )\nValueError: Bin edges must be unique: Index([nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n       nan, nan, nan, nan, nan, nan, nan],\n      dtype='float64').\nYou can drop duplicate edges by setting the 'duplicates' kwarg\n"
+        }
+      ]
+    },
+    {
+      "platform": "CODEX(spleen,niche)",
+      "reason": "spaceflow_runtime",
+      "errors": [
+        {
+          "seed": 1,
+          "error": "Bin edges must be unique: Index([nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n       nan, nan, nan, nan, nan, nan, nan],\n      dtype='float64').\nYou can drop duplicate edges by setting the 'duplicates' kwarg",
+          "trace": " in _get_mean_bins\n    return pd.cut(means, bins=bins)\n           ~~~~~~^^^^^^^^^^^^^^^^^^\n  File \"/home/zeyufu/miniconda3/envs/dl/lib/python3.13/site-packages/pandas/core/reshape/tile.py\", line 257, in cut\n    fac, bins = _bins_to_cuts(\n                ~~~~~~~~~~~~~^\n        x_idx,\n        ^^^^^^\n    ...<6 lines>...\n        ordered=ordered,\n        ^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"/home/zeyufu/miniconda3/envs/dl/lib/python3.13/site-packages/pandas/core/reshape/tile.py\", line 443, in _bins_to_cuts\n    raise ValueError(\n    ...<2 lines>...\n    )\nValueError: Bin edges must be unique: Index([nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n       nan, nan, nan, nan, nan, nan, nan],\n      dtype='float64').\nYou can drop duplicate edges by setting the 'duplicates' kwarg\n"
+        },
+        {
+          "seed": 2,
+          "error": "Bin edges must be unique: Index([nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n       nan, nan, nan, nan, nan, nan, nan],\n      dtype='float64').\nYou can drop duplicate edges by setting the 'duplicates' kwarg",
+          "trace": " in _get_mean_bins\n    return pd.cut(means, bins=bins)\n           ~~~~~~^^^^^^^^^^^^^^^^^^\n  File \"/home/zeyufu/miniconda3/envs/dl/lib/python3.13/site-packages/pandas/core/reshape/tile.py\", line 257, in cut\n    fac, bins = _bins_to_cuts(\n                ~~~~~~~~~~~~~^\n        x_idx,\n        ^^^^^^\n    ...<6 lines>...\n        ordered=ordered,\n        ^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"/home/zeyufu/miniconda3/envs/dl/lib/python3.13/site-packages/pandas/core/reshape/tile.py\", line 443, in _bins_to_cuts\n    raise ValueError(\n    ...<2 lines>...\n    )\nValueError: Bin edges must be unique: Index([nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n       nan, nan, nan, nan, nan, nan, nan],\n      dtype='float64').\nYou can drop duplicate edges by setting the 'duplicates' kwarg\n"
+        },
+        {
+          "seed": 3,
+          "error": "Bin edges must be unique: Index([nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n       nan, nan, nan, nan, nan, nan, nan],\n      dtype='float64').\nYou can drop duplicate edges by setting the 'duplicates' kwarg",
+          "trace": " in _get_mean_bins\n    return pd.cut(means, bins=bins)\n           ~~~~~~^^^^^^^^^^^^^^^^^^\n  File \"/home/zeyufu/miniconda3/envs/dl/lib/python3.13/site-packages/pandas/core/reshape/tile.py\", line 257, in cut\n    fac, bins = _bins_to_cuts(\n                ~~~~~~~~~~~~~^\n        x_idx,\n        ^^^^^^\n    ...<6 lines>...\n        ordered=ordered,\n        ^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"/home/zeyufu/miniconda3/envs/dl/lib/python3.13/site-packages/pandas/core/reshape/tile.py\", line 443, in _bins_to_cuts\n    raise ValueError(\n    ...<2 lines>...\n    )\nValueError: Bin edges must be unique: Index([nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n       nan, nan, nan, nan, nan, nan, nan],\n      dtype='float64').\nYou can drop duplicate edges by setting the 'duplicates' kwarg\n"
+        }
+      ]
+    }
+  ],
+  "finished_utc": "2026-09-20T16:36:08.280035+00:00",
+  "n_ok": 0,
+  "diagnosis": "SpaceFlow published HVG preprocessing (scanpy highly_variable_genes / pd.cut) yields all-NaN bin edges on protein assays (MIBI 3309x36; CODEX 16k-subsample of 734101x32). Files exist; gudhi is present in conda dl. Failure is assay/preprocessing, not a missing h5ad. Do not invent ARI. n=11 SpaceFlow ranks stay n=9.",
+  "headline_spaceflow_ranks": "n=9"
+}

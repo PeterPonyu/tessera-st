@@ -1,0 +1,15 @@
+{
+  "scope": "Readable SI export of committed records; no training or resampling",
+  "scientific_ready_attested": false,
+  "source_sha256": {
+    "protocol.json": "ed165f146b42da3ff09019246cbb8107ba279f5f29412df8cf9a3dde0c95a5f9",
+    "summary.json": "bcd5fb11e888cb09a4c9b9a20ff36b1d6d35b5dbd04f34003863539442aab3de",
+    "QA.json": "2b067659eb171cf2df2d6d52b7530afaecd8f28ac68a4c07a2593a15260b82c1",
+    "estimand-audit.json": "6bd5f56a910624a23de699ab9a6cdf7c50d8bc68943a105209dd61b9dccf79e0"
+  },
+  "renderer_sha256": "66124147efaa47f32de86b3f56e95054f727a65fbe26e0f2c5d8abf528d5a34b",
+  "generated_sha256": "b9a7cadff2746b6e82bb7d76b82016349531d60602a11a49c19dd5e4c9602172",
+  "field_objects": 7,
+  "completed_method_seeds": 147,
+  "generator_endpoint_rows": 20
+}

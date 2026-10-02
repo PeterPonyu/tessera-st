@@ -1,0 +1,18 @@
+{
+  "protocol_id": "field-identified-fixed-backend-20260923-v1",
+  "dataset": "CODEX",
+  "method": "SpatialLeiden",
+  "seed": 1,
+  "source_sha256": "cab5de36581c645743adc1485ec22701cc9f68e1d61c314becf92e7b7292c441",
+  "protocol_sha256": "ed165f146b42da3ff09019246cbb8107ba279f5f29412df8cf9a3dde0c95a5f9",
+  "n_cells": 16000,
+  "n_classes": 100,
+  "device": "cuda",
+  "status": "complete",
+  "raw_ari": 0.08152976423452518,
+  "fitted_n_clusters": 51,
+  "spatial_refinement": true,
+  "refined_ari": 0.07562668331176155,
+  "predictions_sha256": "2101fb1443000501fb7846c5d8ab8567bff5af5113aeda77f7a6d3ef7903f29d",
+  "seconds": 10.274508825001249
+}

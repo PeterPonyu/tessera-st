@@ -1,0 +1,56 @@
+{
+ "n_datasets": 11,
+ "smoother_independence": {
+  "smoother_is_best_spatial_method_count": 0,
+  "max_advantage_diff_with_vs_without_smoother": 0.0,
+  "note": "smoother never wins -> advantage is smoother-independent on this panel; the deeper kNN-shared-with-predictor circularity is NOT addressed by this and is disclosed in Limitations"
+ },
+ "multiplicity": {
+  "family3": {
+   "contiguity_vs_advantage": 0.0117,
+   "contiguity_vs_tessera_rank": 0.2806,
+   "contiguity_vs_spaceflow_rank": 0.0974,
+   "contiguity_corrected": {
+    "m": 3,
+    "raw": 0.0117,
+    "bonferroni": 0.0351,
+    "bh": 0.0351
+   }
+  },
+  "family7": {
+   "contiguity": 0.0117,
+   "k_nclasses": 0.0692,
+   "eff_dim": 0.2883,
+   "modality": 0.2366,
+   "coh_gain": 0.0788,
+   "moran": 0.3107,
+   "raw_coh": 0.1941,
+   "contiguity_corrected": {
+    "m": 7,
+    "raw": 0.0117,
+    "bonferroni": 0.0819,
+    "bh": 0.0819
+   }
+  }
+ },
+ "jackknife": {
+  "published_min": 0.632,
+  "published_max": 0.754,
+  "learned_min": 0.624,
+  "learned_max": 0.745,
+  "most_influential_drop": "MERFISH"
+ },
+ "lopo_binomial": {
+  "k_correct": 9,
+  "n": 11,
+  "accuracy": 0.818,
+  "base_rate": 0.545,
+  "p_value": 0.061
+ },
+ "distinct_winners": {
+  "observed": 7,
+  "n_methods": 8,
+  "n_datasets": 11,
+  "expected_under_null": 6.16
+ }
+}

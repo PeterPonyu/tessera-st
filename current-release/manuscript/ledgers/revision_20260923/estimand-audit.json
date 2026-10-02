@@ -1,0 +1,199 @@
+{
+  "scope": "Generator diagnostic and historical-panel rank counterexample; not repaired tissue correlation",
+  "generator_rows": [
+    {
+      "substrate": "S1",
+      "seed": 1,
+      "level": 0.0,
+      "expression_moran": 0.057859078196672645,
+      "small_class_fraction": 0.04238754325259515,
+      "residual_sd": 0.9967247914022613,
+      "random_same_label": 0.1859854102068635
+    },
+    {
+      "substrate": "S1",
+      "seed": 1,
+      "level": 1.0,
+      "expression_moran": -0.0007288325958583374,
+      "small_class_fraction": 0.16003460207612458,
+      "residual_sd": 1.003016217777485,
+      "random_same_label": 0.16679698617414881
+    },
+    {
+      "substrate": "S1",
+      "seed": 2,
+      "level": 0.0,
+      "expression_moran": 0.06184819364879501,
+      "small_class_fraction": 0.04238754325259515,
+      "residual_sd": 0.9999313200210923,
+      "random_same_label": 0.1859854102068635
+    },
+    {
+      "substrate": "S1",
+      "seed": 2,
+      "level": 1.0,
+      "expression_moran": -0.0011511145509579426,
+      "small_class_fraction": 0.17301038062283736,
+      "residual_sd": 1.005459202919853,
+      "random_same_label": 0.16666966251741339
+    },
+    {
+      "substrate": "S1",
+      "seed": 3,
+      "level": 0.0,
+      "expression_moran": 0.0679821333273906,
+      "small_class_fraction": 0.04238754325259515,
+      "residual_sd": 1.0010835860264578,
+      "random_same_label": 0.1859854102068635
+    },
+    {
+      "substrate": "S1",
+      "seed": 3,
+      "level": 1.0,
+      "expression_moran": 0.0022459623220493496,
+      "small_class_fraction": 0.15657439446366783,
+      "residual_sd": 1.0030551190716108,
+      "random_same_label": 0.16691682020401744
+    },
+    {
+      "substrate": "S1",
+      "seed": 4,
+      "level": 0.0,
+      "expression_moran": 0.06430851859460684,
+      "small_class_fraction": 0.04238754325259515,
+      "residual_sd": 1.0004262405872297,
+      "random_same_label": 0.1859854102068635
+    },
+    {
+      "substrate": "S1",
+      "seed": 4,
+      "level": 1.0,
+      "expression_moran": -0.0002841629424096135,
+      "small_class_fraction": 0.15570934256055363,
+      "residual_sd": 1.006123860923043,
+      "random_same_label": 0.16612291975613774
+    },
+    {
+      "substrate": "S1",
+      "seed": 5,
+      "level": 0.0,
+      "expression_moran": 0.06294981178743618,
+      "small_class_fraction": 0.04238754325259515,
+      "residual_sd": 0.997656942888611,
+      "random_same_label": 0.1859854102068635
+    },
+    {
+      "substrate": "S1",
+      "seed": 5,
+      "level": 1.0,
+      "expression_moran": -0.000422286231238048,
+      "small_class_fraction": 0.16262975778546712,
+      "residual_sd": 1.0037416097879732,
+      "random_same_label": 0.16616635959196513
+    },
+    {
+      "substrate": "S2",
+      "seed": 1,
+      "level": 0.0,
+      "expression_moran": 0.0652424611480738,
+      "small_class_fraction": 0.043125,
+      "residual_sd": 0.9985829039194247,
+      "random_same_label": 0.15562148217636024
+    },
+    {
+      "substrate": "S2",
+      "seed": 1,
+      "level": 1.0,
+      "expression_moran": -0.0001911037687862918,
+      "small_class_fraction": 0.143125,
+      "residual_sd": 1.0017929034456945,
+      "random_same_label": 0.1431058474046279
+    },
+    {
+      "substrate": "S2",
+      "seed": 2,
+      "level": 0.0,
+      "expression_moran": 0.08662754411892085,
+      "small_class_fraction": 0.043125,
+      "residual_sd": 0.9984754108352591,
+      "random_same_label": 0.15562148217636024
+    },
+    {
+      "substrate": "S2",
+      "seed": 2,
+      "level": 1.0,
+      "expression_moran": -0.001365572408169575,
+      "small_class_fraction": 0.125625,
+      "residual_sd": 1.002804650000194,
+      "random_same_label": 0.14296122576610382
+    },
+    {
+      "substrate": "S2",
+      "seed": 3,
+      "level": 0.0,
+      "expression_moran": 0.08740200662711013,
+      "small_class_fraction": 0.043125,
+      "residual_sd": 1.0009518025360347,
+      "random_same_label": 0.15562148217636024
+    },
+    {
+      "substrate": "S2",
+      "seed": 3,
+      "level": 1.0,
+      "expression_moran": -2.8397607437944995e-05,
+      "small_class_fraction": 0.153125,
+      "residual_sd": 1.0016143766710985,
+      "random_same_label": 0.14315900562851783
+    },
+    {
+      "substrate": "S2",
+      "seed": 4,
+      "level": 0.0,
+      "expression_moran": 0.08075044234488314,
+      "small_class_fraction": 0.043125,
+      "residual_sd": 1.0022857830355918,
+      "random_same_label": 0.15562148217636024
+    },
+    {
+      "substrate": "S2",
+      "seed": 4,
+      "level": 1.0,
+      "expression_moran": 0.0009951793378482957,
+      "small_class_fraction": 0.133125,
+      "residual_sd": 1.0033600184509317,
+      "random_same_label": 0.14277048155096936
+    },
+    {
+      "substrate": "S2",
+      "seed": 5,
+      "level": 0.0,
+      "expression_moran": 0.07995993448880506,
+      "small_class_fraction": 0.043125,
+      "residual_sd": 0.9985312671720874,
+      "random_same_label": 0.15562148217636024
+    },
+    {
+      "substrate": "S2",
+      "seed": 5,
+      "level": 1.0,
+      "expression_moran": 0.0010066921263797732,
+      "small_class_fraction": 0.141875,
+      "residual_sd": 1.0003964114383146,
+      "random_same_label": 0.14290572232645404
+    }
+  ],
+  "legacy_joint_partial_range": [
+    0.5847475858848538,
+    0.9562796067803637
+  ],
+  "midrank_joint_partial_range": [
+    0.9283849412573882,
+    0.9283849412573888
+  ],
+  "source_sha256": {
+    "experiments/mechanism_decoupled_v2.py": "f8e6a26977d1ab31d994f2fbc61f669279b6160121c535e72816da5ba67b360f",
+    "src/tessera_st/data/synthetic.py": "d061ee6938fea2712b6861f1854775729abf79ed5742fd94fd4e5bf3b194c7e0",
+    "experiments/expanded_bench.json": "f97a38e6ac1fc9492f08213844eea433357ec6de8678673d77e82934ed63f23a",
+    "experiments/stat_rigor.py": "707ab9d3697720b8fdd7cfae13ac21ed997ae7bccfe0a644d22040d0ee485b6b"
+  }
+}
