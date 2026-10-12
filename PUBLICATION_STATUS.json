@@ -1,0 +1,13 @@
+{
+  "software_version": "2026.10.11-controls-audit",
+  "software_publication_and_download_check": "PASS",
+  "editorial_document_release": "https://github.com/PeterPonyu/tessera-st/releases/tag/submission-2026-10-12",
+  "editorial_document_commit": "35598778916bb2063a9479b508158f14957e15f3",
+  "immutable_archives_and_release_tags_changed": false,
+  "metadata_scope": "Mutable default-branch publication metadata; frozen software/source manifests in historical releases remain unchanged.",
+  "only_removed_checksum_entry": "COVER_LETTER_DRAFT.md",
+  "prior_manifest_sha256": "13f9414d07e3e987d1733bb6a20d03b0a87007bc7b1ca6a22b5c815d54183728",
+  "current_manifest_sha256": "684a7e0081b49d6c5f871a6efb1dbc0e81bc54a5732f9065476094219bc292d3",
+  "prior_complete_archive_manifest_retained_in_immutable_release": true,
+  "fresh_full_analysis_manifest_run_claimed": false
+}

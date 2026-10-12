@@ -15,3 +15,5 @@ The complete versioned source and saved-evidence archive is associated with [sof
 This checkout and the compact source/document ZIP include current code, protocols, documents, score tables and receipts. Retained input/embedding arrays and model states are supplied in the complete archive. [Compact-distribution instructions](current-release/README.md) explain which checks run here and which require the complete archive. Saved-result verification and full refitting have distinct requirements and documented limits.
 
 Author-owned code is MIT; author-owned research content is CC BY 4.0. [Licensing](LICENSING.md) and [source notices](NOTICE.md) preserve third-party terms. Breast displays use author-generated coordinate maps; no 10x breast H&E image/background is redistributed in the current release. The separate dataset-licensed CRC images retain their attribution.
+
+The mutable compact checksum list omits the removed obsolete cover draft; the complete published archive retains its original manifest. `PUBLICATION_STATUS.json` records this housekeeping change separately from the frozen software and document releases.
