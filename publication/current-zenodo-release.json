@@ -1,0 +1,200 @@
+{
+  "record_id": 23308077,
+  "doi": "10.5281/zenodo.23308077",
+  "version": "2026.10.11-controls-audit",
+  "repository": "PeterPonyu/tessera-st",
+  "tag": "2026.10.11-controls-audit",
+  "canonical_archive_name": "tessera-2026.10.11-controls-audit-full-source.zip",
+  "canonical_archive_sha256": "09c75b7a7927755e60d4097fbb85b3120ee792bc2f1372b0f2d1a14a5cdde680",
+  "archive_parts": [
+    "tessera-2026.10.11-controls-audit-full-source.zip.part-001",
+    "tessera-2026.10.11-controls-audit-full-source.zip.part-002",
+    "tessera-2026.10.11-controls-audit-full-source.zip.part-003",
+    "tessera-2026.10.11-controls-audit-full-source.zip.part-004",
+    "tessera-2026.10.11-controls-audit-full-source.zip.part-005",
+    "tessera-2026.10.11-controls-audit-full-source.zip.part-006",
+    "tessera-2026.10.11-controls-audit-full-source.zip.part-007",
+    "tessera-2026.10.11-controls-audit-full-source.zip.part-008",
+    "tessera-2026.10.11-controls-audit-full-source.zip.part-009",
+    "tessera-2026.10.11-controls-audit-full-source.zip.part-010",
+    "tessera-2026.10.11-controls-audit-full-source.zip.part-011",
+    "tessera-2026.10.11-controls-audit-full-source.zip.part-012",
+    "tessera-2026.10.11-controls-audit-full-source.zip.part-013",
+    "tessera-2026.10.11-controls-audit-full-source.zip.part-014",
+    "tessera-2026.10.11-controls-audit-full-source.zip.part-015",
+    "tessera-2026.10.11-controls-audit-full-source.zip.part-016",
+    "tessera-2026.10.11-controls-audit-full-source.zip.part-017",
+    "tessera-2026.10.11-controls-audit-full-source.zip.part-018",
+    "tessera-2026.10.11-controls-audit-full-source.zip.part-019"
+  ],
+  "files": [
+    {
+      "name": "SHA256SUMS",
+      "bytes": 2491,
+      "sha256": "978263d06d493d65b2fc28dd3dcb9eb6c36ec57cad9949392294c9808915b494",
+      "md5": "47313711b6728b3a91ce00442f45a981",
+      "url": "https://github.com/PeterPonyu/tessera-st/releases/download/2026.10.11-controls-audit/SHA256SUMS"
+    },
+    {
+      "name": "REASSEMBLE.md",
+      "bytes": 1190,
+      "sha256": "6d440b1433d083f29949eeb38bf65b9e1c4fba265bc7d30e50e61c70ad4c41e4",
+      "md5": "12be9b51b1459f3f75fb24b42c39a1c4",
+      "url": "https://github.com/PeterPonyu/tessera-st/releases/download/2026.10.11-controls-audit/REASSEMBLE.md"
+    },
+    {
+      "name": "PARTS.json",
+      "bytes": 3947,
+      "sha256": "0a92aa01334f305a4915b580791e4184ffda4eadf3202ce0177fb6a2aef9589c",
+      "md5": "000f28425a96f71a88f3d8c0c18ba3d2",
+      "url": "https://github.com/PeterPonyu/tessera-st/releases/download/2026.10.11-controls-audit/PARTS.json"
+    },
+    {
+      "name": "scientific-reports-manuscript-inline.pdf",
+      "bytes": 2583972,
+      "sha256": "44ab40a066eeecf23ab03dc597810a4920b428bd7cba22fe90638a6d0219d409",
+      "md5": "30afa0bfdf466c5e26f1d61e2e1b15b6",
+      "url": "https://github.com/PeterPonyu/tessera-st/releases/download/2026.10.11-controls-audit/scientific-reports-manuscript-inline.pdf"
+    },
+    {
+      "name": "scientific-reports-supplement.pdf",
+      "bytes": 8180109,
+      "sha256": "15a15e3738733668eb36ea4fded6a73ad95b403a59cf229f62341add5e24bb0a",
+      "md5": "9105e444fd619f55a92969f88230b4f8",
+      "url": "https://github.com/PeterPonyu/tessera-st/releases/download/2026.10.11-controls-audit/scientific-reports-supplement.pdf"
+    },
+    {
+      "name": "tessera-2026.10.11-controls-audit-full-source.zip.part-001",
+      "bytes": 33554432,
+      "sha256": "224f4405ca5def85f22a7cd71809ebebe8d505211ae54f2b18d02aa993b03c52",
+      "md5": "b1e317cb6e7d666259c652c721db740b",
+      "url": "https://github.com/PeterPonyu/tessera-st/releases/download/2026.10.11-controls-audit/tessera-2026.10.11-controls-audit-full-source.zip.part-001"
+    },
+    {
+      "name": "tessera-2026.10.11-controls-audit-full-source.zip.part-002",
+      "bytes": 33554432,
+      "sha256": "c35937765500961aa725f4cdf2146feb71c95a5d0a4a2784f5012ba05b6b003c",
+      "md5": "d331aed1888765e2e358c066b8ca35bc",
+      "url": "https://github.com/PeterPonyu/tessera-st/releases/download/2026.10.11-controls-audit/tessera-2026.10.11-controls-audit-full-source.zip.part-002"
+    },
+    {
+      "name": "tessera-2026.10.11-controls-audit-full-source.zip.part-003",
+      "bytes": 33554432,
+      "sha256": "4aa0d27f7f81600495a7207d160d3b33c2c2dbf32b9d7db4c3ff55a99b6fd410",
+      "md5": "6f4092aa58d6ee0e2aef0cee73000e05",
+      "url": "https://github.com/PeterPonyu/tessera-st/releases/download/2026.10.11-controls-audit/tessera-2026.10.11-controls-audit-full-source.zip.part-003"
+    },
+    {
+      "name": "tessera-2026.10.11-controls-audit-full-source.zip.part-004",
+      "bytes": 33554432,
+      "sha256": "a089922f7a4d2b6a541b5fcc4e952b7fbba7d6e7ea295765cc959e84fc09dc68",
+      "md5": "e939a6e3565d5e0af2f1190cd1110e62",
+      "url": "https://github.com/PeterPonyu/tessera-st/releases/download/2026.10.11-controls-audit/tessera-2026.10.11-controls-audit-full-source.zip.part-004"
+    },
+    {
+      "name": "tessera-2026.10.11-controls-audit-full-source.zip.part-005",
+      "bytes": 33554432,
+      "sha256": "27d611d902d8f4039b2bac5a280be78fb3f6974e6c370e3433a947bde9eabfc9",
+      "md5": "80657e438452cc666d4fabbb73b791ee",
+      "url": "https://github.com/PeterPonyu/tessera-st/releases/download/2026.10.11-controls-audit/tessera-2026.10.11-controls-audit-full-source.zip.part-005"
+    },
+    {
+      "name": "tessera-2026.10.11-controls-audit-full-source.zip.part-006",
+      "bytes": 33554432,
+      "sha256": "e788a247ad103587e2b46a021e6dbac9aa163178bbd00162bb2f18291089b1ef",
+      "md5": "3b71c4ab3afa6728f854b79a3c6a7088",
+      "url": "https://github.com/PeterPonyu/tessera-st/releases/download/2026.10.11-controls-audit/tessera-2026.10.11-controls-audit-full-source.zip.part-006"
+    },
+    {
+      "name": "tessera-2026.10.11-controls-audit-full-source.zip.part-007",
+      "bytes": 33554432,
+      "sha256": "2e768e6791c45eb72ca7d0beb0b9e3ebcf85933e0402a856e7021a189ea9707f",
+      "md5": "ef85ba4414fb2c26a9f4ea94250d285d",
+      "url": "https://github.com/PeterPonyu/tessera-st/releases/download/2026.10.11-controls-audit/tessera-2026.10.11-controls-audit-full-source.zip.part-007"
+    },
+    {
+      "name": "tessera-2026.10.11-controls-audit-full-source.zip.part-008",
+      "bytes": 33554432,
+      "sha256": "b4c04f4741e4ec45d335024705d5460a0e86709667981f592187ebf5df1908b2",
+      "md5": "eced79656664487f908a7e0b7ae36659",
+      "url": "https://github.com/PeterPonyu/tessera-st/releases/download/2026.10.11-controls-audit/tessera-2026.10.11-controls-audit-full-source.zip.part-008"
+    },
+    {
+      "name": "tessera-2026.10.11-controls-audit-full-source.zip.part-009",
+      "bytes": 33554432,
+      "sha256": "d8168919b88bde251f060a8daddeb3ee58dc6c9402cb574d22505e930683bf57",
+      "md5": "8ed43b14d683cd1171e7f3035f827cdc",
+      "url": "https://github.com/PeterPonyu/tessera-st/releases/download/2026.10.11-controls-audit/tessera-2026.10.11-controls-audit-full-source.zip.part-009"
+    },
+    {
+      "name": "tessera-2026.10.11-controls-audit-full-source.zip.part-010",
+      "bytes": 33554432,
+      "sha256": "624a91d4477f54485e8899cffcb7cc0402c9afe2ad260811d010a38d2b9d2772",
+      "md5": "82c4acd657197cc3c66d0e1cd9b9e6d8",
+      "url": "https://github.com/PeterPonyu/tessera-st/releases/download/2026.10.11-controls-audit/tessera-2026.10.11-controls-audit-full-source.zip.part-010"
+    },
+    {
+      "name": "tessera-2026.10.11-controls-audit-full-source.zip.part-011",
+      "bytes": 33554432,
+      "sha256": "7cb24e06731511f84163175756d25f74935bc0b9f407c1f38245b4096794f707",
+      "md5": "283860ce7f2847ce5b2239177c2bcad8",
+      "url": "https://github.com/PeterPonyu/tessera-st/releases/download/2026.10.11-controls-audit/tessera-2026.10.11-controls-audit-full-source.zip.part-011"
+    },
+    {
+      "name": "tessera-2026.10.11-controls-audit-full-source.zip.part-012",
+      "bytes": 33554432,
+      "sha256": "112a666889ab389dc8f1efd9be81c4fe951333dc1336ddd1f5b26daec34721fc",
+      "md5": "56584c695c44795ed4b654629a072c51",
+      "url": "https://github.com/PeterPonyu/tessera-st/releases/download/2026.10.11-controls-audit/tessera-2026.10.11-controls-audit-full-source.zip.part-012"
+    },
+    {
+      "name": "tessera-2026.10.11-controls-audit-full-source.zip.part-013",
+      "bytes": 33554432,
+      "sha256": "bd7b2edb262832f782f49487480e5418626bf78d2c618d1737af11eb716255f0",
+      "md5": "aad4d0a80729ace8d959a3c850a50456",
+      "url": "https://github.com/PeterPonyu/tessera-st/releases/download/2026.10.11-controls-audit/tessera-2026.10.11-controls-audit-full-source.zip.part-013"
+    },
+    {
+      "name": "tessera-2026.10.11-controls-audit-full-source.zip.part-014",
+      "bytes": 33554432,
+      "sha256": "ff5264533e575fc272801da197877e25b8dd5771f238150876c9c59402cb3cd1",
+      "md5": "feab45992cc4c63602762e505473f76d",
+      "url": "https://github.com/PeterPonyu/tessera-st/releases/download/2026.10.11-controls-audit/tessera-2026.10.11-controls-audit-full-source.zip.part-014"
+    },
+    {
+      "name": "tessera-2026.10.11-controls-audit-full-source.zip.part-015",
+      "bytes": 33554432,
+      "sha256": "8499e4b2586f2f1e70283cb4fdca3f75f35bc8dc1e604705da51a1d8b57b7b22",
+      "md5": "1a1ee5bdaf4ce895c15d1e53caf97ce5",
+      "url": "https://github.com/PeterPonyu/tessera-st/releases/download/2026.10.11-controls-audit/tessera-2026.10.11-controls-audit-full-source.zip.part-015"
+    },
+    {
+      "name": "tessera-2026.10.11-controls-audit-full-source.zip.part-016",
+      "bytes": 33554432,
+      "sha256": "bebceebd6c7adaf946b792e2077128b7117fc6fb4cfc20907a1781ff19fc8dfe",
+      "md5": "42f88b0829d419944c46c504d22b7154",
+      "url": "https://github.com/PeterPonyu/tessera-st/releases/download/2026.10.11-controls-audit/tessera-2026.10.11-controls-audit-full-source.zip.part-016"
+    },
+    {
+      "name": "tessera-2026.10.11-controls-audit-full-source.zip.part-017",
+      "bytes": 33554432,
+      "sha256": "0cf205ce98ac42384742904d38f23c4e00ee17e17eb5597c1e4505b716662d44",
+      "md5": "a7917433dd81334f2b9db03e81fcc5fa",
+      "url": "https://github.com/PeterPonyu/tessera-st/releases/download/2026.10.11-controls-audit/tessera-2026.10.11-controls-audit-full-source.zip.part-017"
+    },
+    {
+      "name": "tessera-2026.10.11-controls-audit-full-source.zip.part-018",
+      "bytes": 33554432,
+      "sha256": "cf9789672d5600d7b11e7cf5909877b2232ba42d617f6b3e902cd3f9f2348667",
+      "md5": "fb6df447bceaadd20b35ac5792a433e5",
+      "url": "https://github.com/PeterPonyu/tessera-st/releases/download/2026.10.11-controls-audit/tessera-2026.10.11-controls-audit-full-source.zip.part-018"
+    },
+    {
+      "name": "tessera-2026.10.11-controls-audit-full-source.zip.part-019",
+      "bytes": 25145107,
+      "sha256": "3a0d05b87ed9c9722ed9cdc459a919fd8414cf620df2de5ea53684b7551d7883",
+      "md5": "104a7d5b3e669045dcb7dce031dd2d74",
+      "url": "https://github.com/PeterPonyu/tessera-st/releases/download/2026.10.11-controls-audit/tessera-2026.10.11-controls-audit-full-source.zip.part-019"
+    }
+  ]
+}
