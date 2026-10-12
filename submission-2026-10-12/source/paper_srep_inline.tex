@@ -1,0 +1,185 @@
+\documentclass[11pt]{article}
+\usepackage[letterpaper,margin=.8in]{geometry}
+\input{paper_fonts.tex}
+\usepackage{graphicx,booktabs,array,amsmath,microtype,xurl}
+\usepackage{placeins,caption}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[hidelinks]{hyperref}
+\usepackage{orcidlink}
+\captionsetup{font=small,labelfont=normalfont,skip=5pt}
+\setlength{\parskip}{.22em}
+\setlength{\textfloatsep}{15pt plus 2pt minus 2pt}
+\renewcommand{\topfraction}{.92}\renewcommand{\bottomfraction}{.88}\renewcommand{\textfraction}{.06}
+\renewcommand{\floatpagefraction}{.8}
+\makeatletter\setlength{\@fptop}{0pt}\let\tableinput\@@input\makeatother
+\emergencystretch=2em\clubpenalty=10000\widowpenalty=10000
+\graphicspath{{journal-figures/}}
+\input{journal-ledgers/numbers.tex}
+\input{journal-ledgers/followup_numbers.tex}
+\input{journal-ledgers/external_numbers.tex}
+\input{journal-ledgers/crc_numbers.tex}
+\newcommand{\panelref}[2]{Fig.~\ref{#1}(#2)}
+\newcommand{\suppanelref}[2]{Supplementary Fig.~#1(#2)}
+\hypersetup{pdftitle={Neighborhood averaging accounts for spatial gains of Tessera in tumor spatial omics},pdfauthor={Zeyu Fu},pdfsubject={Matched and tuned spatial controls, component ablations and patient-held-out transfer}}
+\title{Neighborhood averaging accounts for spatial gains of Tessera in tumor spatial omics}
+\author{Zeyu~Fu$^{1,*}$\,\orcidlink{0009-0001-8329-0108}\\[3pt]
+\small $^1$State Key Laboratory of Trauma and Chemical Poisoning,\\
+\small Institute of Combined Injury, Chongqing Engineering Research Center for Nanomedicine,\\
+\small College of Preventive Medicine, Army Medical University, Chongqing, China\\
+\small $^*$Correspondence: \texttt{fuzeyu09@gmail.com}; \texttt{fuzeyu99@126.com}}
+\date{}
+\usepackage{float}
+\usepackage[switch]{lineno}
+\begin{document}\raggedbottom\maketitle
+\modulolinenumbers[5]\linenumbers
+\begin{abstract}
+Spatial clustering models combine molecular measurements with tissue position, making it difficult to attribute improved agreement to learned components. We evaluated the released Tessera implementation using matched neighborhood averages, component removals and patient-held-out comparisons. In five lung patients, averages selected using the other patients exceeded Tessera's agreement with the supplied annotations. Removing learned gates did not consistently reduce agreement, whereas removing the neighbor-positive training term removed the gain. In an independently annotated breast cohort, a mean on the same graph exceeded Tessera for the complete annotation in seven of eight patients. The corresponding mean difference was nominally supported for that target, but compartment and tumor-boundary comparisons did not show the same inferential support. Transfer improved region classification while reducing cell-type classification, and a separate three-patient colorectal pilot did not establish an advantage over simple controls. These findings support neighborhood averaging and component ablations when interpreting this implementation. They do not establish a result for all graph encoders or replace comparisons with native implementations of other spatial methods.
+\end{abstract}
+\noindent\textbf{Keywords:} spatial transcriptomics; graph neural networks; spatial domains; baselines; ablation; patient-held-out evaluation.
+
+\section{Introduction}
+Spatial molecular profiling measures molecular state and position in the same tissue, and many methods now use position to cluster cells or capture spots into domains. A recurring question is whether a learned spatial encoder captures tissue organization that a simpler use of position would miss. We ask this question for one released graph encoder, Tessera, by asking how much of its agreement with supplied tissue annotations is explained by averaging each observation with its spatial neighbors at an appropriate scale.
+
+The answer depends on what the annotation measures. Cell identity, neighborhood composition and tissue compartment are related but distinct targets: a molecular cell type can occur in several compartments, and a compartment can contain many cell types \citep{moses2022museum,rao2021architecture}. Spatial smoothing can therefore help recover a compartment while obscuring the cell types inside it. Tumor microenvironments make the distinction concrete because immune, stromal and epithelial populations intermix. Imaging-based panels, registered multi-assay breast measurements and serial-section Open-ST data each support several annotation types \citep{he2022cosmx,janesick2023breast,schott2024openst}. A region computed from neighboring cell types, a molecular category transferred from a reference and a boundary drawn by a pathologist answer different questions, so the origin of the annotation is part of the evaluation.
+
+Spatial methods differ in graph construction, objective and assignment rule. STAGATE uses an adaptive graph-attention autoencoder, SEDR combines expression and spatial representations, GraphST applies graph self-supervised contrastive learning, and SpaGCN and SpaceFlow encode spatial consistency in other ways \citep{dong2022stagate,xu2024sedr,long2023graphst,hu2021spagcn,ren2022spaceflow}. Simpler approaches are competitive. SpatialPCA builds spatial correlation into dimension reduction, BANKSY augments each cell's features with a weighted neighborhood average, and MENDER summarizes multi-scale cellular context \citep{shang2022spatialpca,singhal2024banksy,yuan2024mender}. BANKSY in particular makes the balance between a cell and its neighborhood an explicit, tunable choice that spans cell typing and domain segmentation. Benchmarks compare many methods across technologies and tissues \citep{yuan2024benchmark,kang2025nar,chen2025imeta}, but a comparison of final partitions across methods conflates input processing, graph construction and clustering.
+
+To attribute a gain to an encoder, the molecular input and assignment rule must be held fixed while the use of position is varied. Two further controls are needed. First, a simple spatial baseline must be given the same opportunity to choose its scale as the learned model has to fit its parameters; an untuned six-neighbor average is not that baseline. Second, the reference annotation's own construction must be considered. The lung regions used here were computed from cell-type frequencies among 200 spatial neighbors \citep{he2022cosmx,sun2026consensus}, so averaging at a similar scale is expected to recover them without any learned component.
+
+The author-developed Tessera implementation evaluated here uses the released neural core with the field-aware graph and data adapters described below. Tessera combines learned edge gates, residual message passing, attention over network depths, feature reconstruction and a gate-weighted contrastive objective. Its gates were designed to down-weight edges that cross tissue boundaries. Each component makes a testable prediction: if the gates detect boundaries, they should separate annotation seams better than a trivial edge score and their removal should reduce agreement; if message passing captures structure beyond smoothing, Tessera should exceed a tuned neighbor average; and if the representation generalizes, it should help in patients that did not fit it. Coordinate identity and evaluation units also matter. Imaging fields can have separate local coordinate systems \citep{palla2022squidpy,yan2026alignment}, and thousands of cells from one field do not replace independent patients \citep{zimmerman2021pseudoreplication,roberts2017crossvalidation}.
+
+We evaluated 13 assay objects: five NSCLC patients, four BCC patients, registered breast Visium, colorectal tubulovillous adenoma, an Open-ST lymph-node section and MIBI fields. Nine fixed arms, 29 spatial scale-control configurations per object plus PCA50, whole-section reruns, a corrected geometry null and patient-held-out transfer were scored with the same molecular input and assignment rule (\panelref{fig:workflow}{a--f}). We report every arm and seed, use patients as the unit of inference, and test each component prediction directly.
+
+\begin{figure}[H]\centering\includegraphics[width=\linewidth]{journal-figures/figure01-workflow.pdf}
+\caption{Study design. (a) Assays and independent patients. (b) Molecular matrices and separate coordinate frames enter one common preprocessing. (c) Expression-only, simple spatial and learned representations form matched branches. (d) Component removals change one part of the encoder at a time. (e) In patient transfer, four source patients fit every transformation and weight before the fifth patient is mapped. (f) Partition, transfer and tissue-inspection readouts are reported separately. Icons are conceptual.}\label{fig:workflow}\end{figure}
+\FloatBarrier
+
+Two further sets of data test whether these conclusions travel. An independent cohort of eight HER2-positive breast tumors carries regions drawn by a pathologist on the stained tissue \citep{andersson2021her2st}, a construction that involves no averaging of neighboring expression, and three non-tumor tissues with anatomical labels \citep{maynard2021dlpfc,wang2018starmap,moffitt2018merfish} show whether the ordering depends on tissue. The independent-cohort all-label target and the comparison with patient-excluded tuned controls were fixed in writing before fitting. The untuned same-graph comparator, weighting controls, boundary variants and tissue panel were added after the initial results and are exploratory.
+
+
+
+\section{Results}
+\subsection{Matched averaging accounts for the principal lung comparison}
+The comparison used the same molecular inputs and clustering rule for Tessera and its controls. In all five lung patients, an unweighted neighborhood average selected on the other patients exceeded Tessera's agreement with the supplied region annotation (\panelref{fig:comparison}{a,b}). Whole-section sensitivities and alternative clustering resolutions retained differences between targets and controls (\panelref{fig:comparison}{c,d}). The gain relative to expression-only coordinates therefore did not, on its own, identify an advantage of the learned encoder over matched spatial averaging.
+
+\begin{figure}[H]\centering\includegraphics{journal-figures/figure03-comparison.pdf}
+\caption{Tessera against expression-only, simple and tuned spatial controls. (a) Three-seed mean ARI per object; tuned controls are selected on other lung or BCC patients. (b) Bounded-field patient contrasts: Tessera minus PCA50 (open circles) and the nested control (open diamonds). (c) Uncapped whole-section sensitivity contrasts against PCA50 and fixed cohort-modal controls informed by the bounded analyses of the same patients. (d) Lung embeddings re-clustered at the cell-type cluster number and scored against supplied cell types.}\label{fig:comparison}\end{figure}
+\FloatBarrier
+
+\subsection{The contrastive term contributes more than the learned gates}
+Removing learned gates did not consistently reduce lung agreement, whereas removing the neighbor-positive training term removed the principal gain (\panelref{fig:ablations}{a}). Gate discrimination of supplied seams was weaker than the plain feature difference in the relevant comparisons, and within-region and between-region gate distributions overlapped (\panelref{fig:ablations}{b,c}). Against the self-only encoder, Tessera improved agreement in four of five lung patients; Lung6 was the exception (\panelref{fig:ablations}{d}). These are component-specific results for the evaluated implementation, not a claim that spatial information or edge weights are universally useless.
+
+\begin{figure}[H]\centering\includegraphics{journal-figures/figure04-ablations.pdf}
+\caption{Which components carry the spatial effect. (a) Three-seed mean ARI of each control minus full Tessera; red favors the control. ``Permuted, no contrast'' trains on within-frame permuted coordinates without the contrastive term. (b) Seam discrimination by the last-layer gate versus by the plain PCA-feature difference on the same edges; points below the diagonal mean the gate is the weaker seam detector. (c) Last-layer gate distributions on edges within and across supplied regions in Lung5\_Rep2, seed 1. (d) Full Tessera minus the self-only encoder, the reference for the effect of measured geometry.}\label{fig:ablations}\end{figure}
+\FloatBarrier
+
+The lung maps and complete clustering-resolution and seed analyses are retained in the supplement. Three optimization seeds provide computational sensitivity within a patient. They do not add patients, and PCA seed differences reflect K-means initialization rather than independently fitted molecular representations.
+
+\subsection{Patient transfer trades region accuracy for cell-type accuracy}
+Each lung transfer fold fitted on four source patients and evaluated the excluded fifth patient. Tessera improved region balanced accuracy but reduced cell-type balanced accuracy in all five folds (\panelref{fig:transfer}{a,b}); ordinary accuracy gives the complementary summaries (\panelref{fig:transfer}{c,d}). A representation can therefore help one supplied annotation while harming another. The fixed neighborhood controls are descriptive, and their larger neighborhood setting was informed by the earlier lung analyses rather than selected independently within each fold.
+
+\begin{figure}[H]\centering\includegraphics{journal-figures/figure10-patient-transfer.pdf}
+\caption{Five patient-held-out NSCLC folds. (a, b) Region and cell-type balanced accuracy. (c, d) Accuracy. Four source patients fit scaling, PCA and the encoder; frozen parameters and source-category centroids map the held-out patient. Points are three-seed means for neural arms; fixed neighbor means (\(k=6,200\)) are deterministic descriptive controls, with \(k=200\) informed by earlier lung analyses, not fold-nested tuning. Lines join the same held-out patient; black bars are equal-patient means.}\label{fig:transfer}\end{figure}
+\FloatBarrier
+
+\subsection{The independent breast cohort supports a target-dependent result}
+In eight independently annotated breast patients, the mean on Tessera's graph exceeded Tessera for the complete annotation in \HerAllTessUSixNeg{} patients, with mean Tessera-minus-control adjusted Rand index \HerAllTessUSixMean{} (\panelref{fig:external}{a}). Its descriptive sign-flip probability was \HerAllTessUSixP{}, with patient-bootstrap interval \HerAllTessUSixLo{} to \HerAllTessUSixHi{}. The same comparison was negative in \HerCompTessUSixNeg{} patients for named compartments and \HerBndTessUSixNeg{} for the tumor boundary, but the corresponding probabilities were \HerCompTessUSixP{} and \HerBndTessUSixP{} (\panelref{fig:external}{b,c}). The nominal result for the complete annotation is therefore not shared inferential support across all targets, and these same-graph extensions remain exploratory.
+
+\begin{figure}[H]\centering\includegraphics{journal-figures/figure15-external-cohort.pdf}
+\caption{Independent pathologist-labelled cohort of eight HER2-positive breast tumors; rows A--H are patients. (a, b) Three-seed mean adjusted Rand index for all labels and for the tumor boundary: PCA50, the unweighted mean of neighbors on Tessera's graph, a tuned control selected on the other seven patients, and Tessera. (c) Paired differences for all labels (All), named compartments (Comp.) and the tumor boundary (Tumor); gray dots are patients, diamonds are means with 95\% bootstrap intervals, and the numbers count patients above and below zero. (d) Seam AUROC on tumor-boundary edges for the learned gate, the plain feature difference and the smoothed feature difference; the bottom rows give means with 95\% bootstrap intervals and the dashed line is chance. (e) Tessera's three replicate fits against the same-graph mean and the tuned control, all labels. (f) ARI of the weighted mean minus the unweighted mean, a mean with shuffled weights and a mean with shuffled coordinates, tumor boundary.}\label{fig:external}\end{figure}
+\FloatBarrier
+
+The learned gate's tumor-boundary discrimination was near chance; smoothing the molecular feature difference supplied more seam information (\panelref{fig:external}{d}). Repeated fits changed some comparisons with the tuned control but did not reverse the ordering against the same-graph mean (\panelref{fig:external}{e}). Weighting that mean did not provide a consistent clustering advantage over the unweighted mean, shuffled weights and shuffled-coordinate controls (\panelref{fig:external}{f}). Strong seam discrimination and useful clustering gain are distinct readouts.
+
+\subsection{Further tissues preserve limits on generalization}
+Across the 24 displayed objects, agreement differences depended on the tissue, annotation and neighborhood scale (\panelref{fig:landscape}{a--c}). The test-label-selected control envelope is descriptive rather than a held-out method comparison, and the gate and plain-feature seam scores measure a different target from clustering agreement (\panelref{fig:landscape}{d}). The plots do not establish a universal architecture ordering.
+
+\begin{figure}[H]\centering\includegraphics{journal-figures/figure17-tissue-landscape.pdf}
+\caption{Twenty-four objects grouped by how the annotation was made: the 13 bounded objects, the eight independent patients and three further tissues. (a) Tessera minus the same-graph six-neighbor mean (ARI), which uses no label-based scale selection. (b) Tessera minus the best of 30 simple controls chosen with the test labels (diamonds) and minus PCA50 (circles). (c) Neighborhood size of the best uniform mean for each object; dot area is that mean's ARI. (d) Seam AUROC of the learned gate (filled) and the plain feature difference (open); the dashed line is chance.}\label{fig:landscape}\end{figure}
+\FloatBarrier
+
+In the separate three-patient colorectal pilot, the same-graph mean exceeded Tessera in all three patients, with mean difference \CrcTessMeanDelta{} and descriptive interval \CrcTessMeanLow{} to \CrcTessMeanHigh{}. Removing gates changed agreement by \CrcNoGateDelta{} on average, with interval \CrcNoGateLow{} to \CrcNoGateHigh{}. This interval does not demonstrate equivalence or a useful gating benefit. The gate had some above-chance seam information but did not demonstrate superiority to the plain feature difference. The pilot also did not establish advantage over raw features. Complete results are supplied in the Supplementary Results and pathology tables.
+
+The study supports matched neighborhood averages and component removals when attributing Tessera's spatial gains. Native BANKSY and MENDER comparisons were not performed, some extension outputs do not support unrestricted fresh refitting, and small resource-selected cohorts limit population inference. These limits remain part of the conclusion.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Discussion}
+
+Tessera's gains over expression-only clustering in lung tissue are real but are not evidence for its distinctive components. A neighbor mean whose scale was chosen on other patients outperformed it in every bounded lung input. Whole-section sensitivity analyses retained this ordering with a fixed 200-neighbor control informed by the same cohort; they test the sampling budget, not independent generalization. The lung regions were constructed from cell-type frequencies among 200 neighbors, and averaging at that scale recovers them without learning. An independent cohort whose regions a pathologist drew on the stained tissue, and which therefore was not built by neighborhood averaging, gave the same ordering: an untuned mean on Tessera's own graph exceeded the encoder in most patients, and so did a control tuned on the other patients. Spatial encoders should face neighborhood baselines with a comparable opportunity to choose their scale, and an unweighted same-graph mean, which needs neither labels nor tuning, is the cheapest informative comparator.
+
+The component tests did not show a useful contribution from learned gating to lung agreement. The gates had small magnitudes, separated seams less well than a plain expression difference, and replacing them by uniform weights caused no systematic loss across these patients. Their relative weights were still heterogeneous after normalization, so small magnitude does not make the operator an unweighted mean. The ablation provides the mechanistic evidence: message passing with reconstruction alone reproduced the self-only encoder, while the neighbor-positive contrastive objective supplied the average lung gain. This finding concerns this released implementation, not gated graph networks in general; different gate objectives would need their own evaluation on untouched patients. In breast, gates gave near-chance tumor-seam AUROC; three anatomical tissues gave below-chance values, within the earlier 24-object median of \LandGateMedian{}. In colorectal tissue they carried weak seam information without demonstrated added value. Smoothing the feature difference over a neighborhood gave a better seam score, whereas reweighting a six-neighbor average by feature similarity showed no consistent advantage, so expression change at the seams carries information that neither the learned gate nor this simple reweighting turned into better domains at this resolution.
+
+Target and clustering resolution both matter. At the primary cluster number, molecular or dominant-category targets favored expression-only clustering on BCC, breast, Open-ST and MIBI. Reducing the cluster number made BCC mixed, so that negative ordering is not universal. Within lung, the same embeddings that gained on regions lost on cell types, and transfer reproduced this trade-off with a different assignment rule. The 200-neighbor transfer control was informed by within-object analyses and is descriptive, although its transforms remain source-only. BANKSY explicitly weights the cell and its neighborhood \citep{singhal2024banksy}; our lightly weighted BANKSY-style control, not a native BANKSY run, was best in the bounded BCC selection. Multi-scale and composition representations address the region side of this trade-off \citep{yuan2024mender,liang2026cellniche}. Tessera's advantage was not uniform across annotations. It exceeded the same-graph mean in smooth anatomical tissue and in most computed lung regions but rarely in the pathologist-labelled patients, and it exceeded the best simple control chosen with the labels only in the cortex section used in its development and in colorectal TVA. Those exceptions show where a learned component could add structure beyond a neighborhood average, but one development section cannot establish it.
+
+These results bear on how spatial methods are benchmarked. Comparisons with expression-only baselines reward any smoothing on spatially constructed targets, and untuned simple baselines understate what position alone can achieve. Benchmarks that already compare many native methods across platforms \citep{yuan2024benchmark,kang2025nar,chen2025imeta} would gain from including tuned and same-graph neighborhood averages and from reporting cell-type and domain targets separately. Seed variation also deserves attention: Tessera's partitions changed between seeds far more than PCA's, and repeated fits of identical code changed per-patient scores by up to \RepMaxRange{} ARI, so a single fitted partition is a weak basis for interpreting domain boundaries or for ranking methods whose scores differ by less than that.
+
+Several limits apply. The study evaluates one released encoder at fixed hyperparameters; tuning it could change the findings, and fine-tuned or other spatial encoders were not tested. Five lung, four BCC and eight breast patients give coarse sign-flip summaries, and overlapping selection folds limit their inferential interpretation. The independent cohort has one pathologist, no second annotator and image registration that we inherited, and its weighting controls, boundary variants and tissue panel were chosen after the first comparison, so they are exploratory. The three non-tumor tissues are single sections that the encoder was benchmarked on earlier. Other annotations are computational or transferred labels, and the cluster number is label-informed. The Open-ST analysis remains a thinned subset, not a whole-section validation, and registered histology and protein channels support inspection only (Supplementary Fig.~S3). The three-patient colorectal pilot adds an untouched source, but cost selection, mixed labels and its disclosed QC sensitivity limit confirmation. Author H\&E overlays are not independent registration review. Stronger validation needs blinded adjudicated annotations and a patient sample designed for an effect margin. Calibration and selective abstention would require a separate protocol if uncertainty were claimed. A decisive test would use boundaries annotated independently by at least two readers in patients that informed neither method nor scale selection, together with a calibrated uncertainty readout.
+
+In the tested lung and independent breast cohorts, simple neighborhood averaging accounts for much of the apparent gain over expression-only clustering. Component ablations identify the neighbor-positive contrastive objective as the source of the lung gain, while learned gates were dispensable there. Matched and tuned neighborhood averages should accompany architectural comparisons, with target construction, patient separation and computational variation reported explicitly.
+
+
+\section{Methods}
+\subsection{Implementation, data and matched comparisons}
+We evaluated the released Tessera implementation, which constructs a spatial neighbor graph, weights edges with learned gates and fits a molecular representation with a neighbor-positive contrastive term. The primary panel contained 13 tumor-associated assay objects, including five independent lung patients. All compared methods used the same molecular inputs and clustering rule for an object. Shared preprocessing, annotation targets and patient identities are specified in the Supplementary Methods and input table.
+
+Expression-only principal components and unweighted neighborhood means were the principal controls. Means were evaluated on Tessera's graph and across the recorded neighborhood-size grid. Tuned controls selected their setting using other patients; test-label-selected envelopes were displayed separately as descriptive bounds. Component removals tested learned gates, the contrastive term and other specified components. An edge gate was interpreted as an optimization weight, not an established tumor-boundary detector.
+
+\subsection{Patient-level evaluation and external cohorts}
+Clustering agreement used adjusted Rand index and normalized mutual information against each supplied annotation. Patient-paired contrasts retained all patients, and repeated optimization seeds quantified computational variability within a patient. Sign-flip probabilities and patient intervals were descriptive for the declared contrast; alternative targets and exploratory comparator extensions did not acquire confirmatory status from a nominal result. Five lung transfer folds fitted scaling, principal components and the encoder on the four source patients before mapping the held patient to source-category centroids.
+
+An independently annotated breast cohort contained eight patients and separate complete-annotation, named-compartment and tumor-boundary targets. Same-graph weighting and boundary extensions were exploratory. Three further tissue sections and a separate three-patient colorectal pathology pilot tested additional contexts. The colorectal pilot did not establish advantage over raw features. Native BANKSY and MENDER implementations were not run, so the study does not provide a method-wide ranking of spatial approaches.
+
+\subsection{Reproducibility and image provenance}
+The Supplementary Methods preserve the encoder, graph, training, clustering, held-out selection, statistical and supplied-output procedures. Recorded saved outputs support the stated checks; a complete new fit of every extension is not claimed. Breast displays use author-generated coordinate maps and annotations. The colorectal images retain the source-specific attribution and open license documented in the image provenance record. No numeric result was changed by replacing the breast background or revising the document.
+
+\subsection{Ethics and computational assistance}
+The study reanalyzes measurements and annotations made public by the cited source studies. No new participants were recruited and no biological specimens were collected. Ethics approvals and consent arrangements for the original data collection are described in the source publications.
+
+OpenAI Codex (OpenAI) assisted with code development, execution and checking of computational analyses, suggestions for analytical and methodological checks, manuscript drafting and restructuring, extensive language editing, and LaTeX and figure preparation. Reported numerical results were checked against saved outputs, and scripts and document builds were verified using the procedures described in this article and its Supplementary Information. AI-assisted critique and verification are preparation aids and do not constitute independent human peer review. The author directed the work and retains responsibility for the study design, data provenance, choice of analyses, scientific interpretation and final manuscript. No generative images were used as research data.
+
+
+
+
+
+\section*{Data Availability}
+No new biological measurements were collected. Data and annotations are available from the cited source studies under their original terms. The accompanying source package contains the evaluation code, written protocols, numerical result tables and editable manuscript and figure sources, including all reported independent-cohort replicate summaries. Large raw assays are acquired separately; included derived inputs, saved predictions and weights are enumerated in the manifest, and data-access instructions and the distinction between document reconstruction and full analysis reproduction are supplied with the package. The evaluated Tessera implementation is available at \url{https://github.com/PeterPonyu/tessera-st}, with an earlier public manuscript and implementation archive at DOI \url{https://doi.org/10.5281/zenodo.23101191}. That archive identifies the evaluated implementation; it does not archive the additional analyses reported here.
+
+
+\section*{Code availability}
+The analysis code, written protocols, numerical tables and supplied saved predictions are available at \url{https://github.com/PeterPonyu/tessera-st} and archived at software DOI \url{https://doi.org/10.5281/zenodo.23308077}. The archive defines which scores can be reconstructed from saved predictions and which require fresh fitting on separately acquired public assays. The earlier implementation archive remains the identifier of the evaluated release.
+The software archive is the frozen computational evidence. The present submission revision and its editable document sources are separately versioned in the same repository.
+
+
+\section*{Additional Information}
+The author developed and maintains the Tessera implementation evaluated in this study. This developer role is disclosed as a relevant non-financial interest. The author declares no competing financial interests and no other competing interests. This research received no external funding.
+{\small\setlength{\bibsep}{2pt}\bibliographystyle{naturemag}\bibliography{base_refs,new_refs}\par}
+
+\section*{Author contributions}
+Z.F. conceived the study, implemented the methods and evaluation, performed the analyses and wrote the manuscript.
+
+\end{document}

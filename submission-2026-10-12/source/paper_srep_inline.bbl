@@ -1,0 +1,209 @@
+\begin{thebibliography}{10}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\providecommand{\bibinfo}[2]{#2}
+\providecommand{\eprint}[2][]{\url{#2}}
+
+\bibitem{moses2022museum}
+\bibinfo{author}{Moses, L.} \& \bibinfo{author}{Pachter, L.}
+\newblock \bibinfo{title}{{Museum of spatial transcriptomics}}.
+\newblock \emph{\bibinfo{journal}{Nature Methods}}
+  \textbf{\bibinfo{volume}{19}}, \bibinfo{pages}{534--546}
+  (\bibinfo{year}{2022}).
+
+\bibitem{rao2021architecture}
+\bibinfo{author}{Rao, A.}, \bibinfo{author}{Barkley, D.},
+  \bibinfo{author}{França, G.~S.} \& \bibinfo{author}{Yanai, I.}
+\newblock \bibinfo{title}{{Exploring tissue architecture using spatial
+  transcriptomics}}.
+\newblock \emph{\bibinfo{journal}{Nature}} \textbf{\bibinfo{volume}{596}},
+  \bibinfo{pages}{211--220} (\bibinfo{year}{2021}).
+
+\bibitem{he2022cosmx}
+\bibinfo{author}{He, S.} \emph{et~al.}
+\newblock \bibinfo{title}{{High-plex imaging of RNA and proteins at subcellular
+  resolution in fixed tissue by spatial molecular imaging}}.
+\newblock \emph{\bibinfo{journal}{Nature Biotechnology}}
+  \textbf{\bibinfo{volume}{40}}, \bibinfo{pages}{1794--1806}
+  (\bibinfo{year}{2022}).
+
+\bibitem{janesick2023breast}
+\bibinfo{author}{Janesick, A.} \emph{et~al.}
+\newblock \bibinfo{title}{{High resolution mapping of the tumor
+  microenvironment using integrated single-cell, spatial and in situ
+  analysis}}.
+\newblock \emph{\bibinfo{journal}{Nature Communications}}
+  \textbf{\bibinfo{volume}{14}}, \bibinfo{pages}{8353} (\bibinfo{year}{2023}).
+
+\bibitem{schott2024openst}
+\bibinfo{author}{Schott, M.} \emph{et~al.}
+\newblock \bibinfo{title}{{Open-ST: High-resolution spatial transcriptomics in
+  3D}}.
+\newblock \emph{\bibinfo{journal}{Cell}} \textbf{\bibinfo{volume}{187}},
+  \bibinfo{pages}{3953--3972.e26} (\bibinfo{year}{2024}).
+
+\bibitem{dong2022stagate}
+\bibinfo{author}{Dong, K.} \& \bibinfo{author}{Zhang, S.}
+\newblock \bibinfo{title}{{Deciphering spatial domains from spatially resolved
+  transcriptomics with an adaptive graph attention auto-encoder}}.
+\newblock \emph{\bibinfo{journal}{Nature Communications}}
+  \textbf{\bibinfo{volume}{13}}, \bibinfo{pages}{1739} (\bibinfo{year}{2022}).
+
+\bibitem{xu2024sedr}
+\bibinfo{author}{Xu, H.} \emph{et~al.}
+\newblock \bibinfo{title}{{Unsupervised spatially embedded deep representation
+  of spatial transcriptomics}}.
+\newblock \emph{\bibinfo{journal}{Genome Medicine}}
+  \textbf{\bibinfo{volume}{16}}, \bibinfo{pages}{12} (\bibinfo{year}{2024}).
+
+\bibitem{long2023graphst}
+\bibinfo{author}{Long, Y.} \emph{et~al.}
+\newblock \bibinfo{title}{{Spatially informed clustering, integration, and
+  deconvolution of spatial transcriptomics with GraphST}}.
+\newblock \emph{\bibinfo{journal}{Nature Communications}}
+  \textbf{\bibinfo{volume}{14}}, \bibinfo{pages}{1155} (\bibinfo{year}{2023}).
+
+\bibitem{hu2021spagcn}
+\bibinfo{author}{Hu, J.} \emph{et~al.}
+\newblock \bibinfo{title}{{SpaGCN: Integrating gene expression, spatial
+  location and histology to identify spatial domains and spatially variable
+  genes by graph convolutional network}}.
+\newblock \emph{\bibinfo{journal}{Nature Methods}}
+  \textbf{\bibinfo{volume}{18}}, \bibinfo{pages}{1342--1351}
+  (\bibinfo{year}{2021}).
+
+\bibitem{ren2022spaceflow}
+\bibinfo{author}{Ren, H.}, \bibinfo{author}{Walker, B.~L.},
+  \bibinfo{author}{Cang, Z.} \& \bibinfo{author}{Nie, Q.}
+\newblock \bibinfo{title}{{Identifying multicellular spatiotemporal
+  organization of cells with SpaceFlow}}.
+\newblock \emph{\bibinfo{journal}{Nature Communications}}
+  \textbf{\bibinfo{volume}{13}}, \bibinfo{pages}{4076} (\bibinfo{year}{2022}).
+
+\bibitem{shang2022spatialpca}
+\bibinfo{author}{Shang, L.} \& \bibinfo{author}{Zhou, X.}
+\newblock \bibinfo{title}{{Spatially aware dimension reduction for spatial
+  transcriptomics}}.
+\newblock \emph{\bibinfo{journal}{Nature Communications}}
+  \textbf{\bibinfo{volume}{13}}, \bibinfo{pages}{7203} (\bibinfo{year}{2022}).
+
+\bibitem{singhal2024banksy}
+\bibinfo{author}{Singhal, V.} \emph{et~al.}
+\newblock \bibinfo{title}{{BANKSY unifies cell typing and tissue domain
+  segmentation for scalable spatial omics data analysis}}.
+\newblock \emph{\bibinfo{journal}{Nature Genetics}}
+  \textbf{\bibinfo{volume}{56}}, \bibinfo{pages}{431--441}
+  (\bibinfo{year}{2024}).
+
+\bibitem{yuan2024mender}
+\bibinfo{author}{Yuan, Z.}
+\newblock \bibinfo{title}{{MENDER: fast and scalable tissue structure
+  identification in spatial omics data}}.
+\newblock \emph{\bibinfo{journal}{Nature Communications}}
+  \textbf{\bibinfo{volume}{15}}, \bibinfo{pages}{207} (\bibinfo{year}{2024}).
+
+\bibitem{yuan2024benchmark}
+\bibinfo{author}{Yuan, Z.} \emph{et~al.}
+\newblock \bibinfo{title}{{Benchmarking spatial clustering methods with
+  spatially resolved transcriptomics data}}.
+\newblock \emph{\bibinfo{journal}{Nature Methods}}
+  \textbf{\bibinfo{volume}{21}}, \bibinfo{pages}{712--722}
+  (\bibinfo{year}{2024}).
+
+\bibitem{kang2025nar}
+\bibinfo{author}{Kang, L.}, \bibinfo{author}{Zhang, Q.}, \bibinfo{author}{Qian,
+  F.}, \bibinfo{author}{Liang, J.} \& \bibinfo{author}{Wu, X.}
+\newblock \bibinfo{title}{{Benchmarking computational methods for detecting
+  spatial domains and domain-specific spatially variable genes from spatial
+  transcriptomics data}}.
+\newblock \emph{\bibinfo{journal}{Nucleic Acids Research}}
+  \textbf{\bibinfo{volume}{53}}, \bibinfo{pages}{gkaf303}
+  (\bibinfo{year}{2025}).
+
+\bibitem{chen2025imeta}
+\bibinfo{author}{Chen, R.} \emph{et~al.}
+\newblock \bibinfo{title}{{A comprehensive benchmarking for spatially resolved
+  transcriptomics clustering methods across variable technologies, organs, and
+  replicates}}.
+\newblock \emph{\bibinfo{journal}{iMeta}} \textbf{\bibinfo{volume}{4}},
+  \bibinfo{pages}{e70084} (\bibinfo{year}{2025}).
+
+\bibitem{sun2026consensus}
+\bibinfo{author}{Sun, J.} \emph{et~al.}
+\newblock \bibinfo{title}{{Beyond benchmarking: an expert-guided consensus
+  approach to spatially aware clustering}}.
+\newblock \emph{\bibinfo{journal}{Nature Methods}}
+  \textbf{\bibinfo{volume}{23}}, \bibinfo{pages}{1814--1826}
+  (\bibinfo{year}{2026}).
+
+\bibitem{palla2022squidpy}
+\bibinfo{author}{Palla, G.} \emph{et~al.}
+\newblock \bibinfo{title}{{Squidpy: a scalable framework for spatial omics
+  analysis}}.
+\newblock \emph{\bibinfo{journal}{Nature Methods}}
+  \textbf{\bibinfo{volume}{19}}, \bibinfo{pages}{171--178}
+  (\bibinfo{year}{2022}).
+
+\bibitem{yan2026alignment}
+\bibinfo{author}{Yan, Y.} \emph{et~al.}
+\newblock \bibinfo{title}{{Benchmarking alignment methods for spatial
+  transcriptomics data}}.
+\newblock \emph{\bibinfo{journal}{Nature Computational Science}}
+  \textbf{\bibinfo{volume}{6}}, \bibinfo{pages}{524--541}
+  (\bibinfo{year}{2026}).
+
+\bibitem{zimmerman2021pseudoreplication}
+\bibinfo{author}{Zimmerman, K.~D.}, \bibinfo{author}{Espeland, M.~A.} \&
+  \bibinfo{author}{Langefeld, C.~D.}
+\newblock \bibinfo{title}{{A practical solution to pseudoreplication bias in
+  single-cell studies}}.
+\newblock \emph{\bibinfo{journal}{Nature Communications}}
+  \textbf{\bibinfo{volume}{12}}, \bibinfo{pages}{738} (\bibinfo{year}{2021}).
+
+\bibitem{roberts2017crossvalidation}
+\bibinfo{author}{Roberts, D.~R.} \emph{et~al.}
+\newblock \bibinfo{title}{{Cross-validation strategies for data with temporal,
+  spatial, hierarchical, or phylogenetic structure}}.
+\newblock \emph{\bibinfo{journal}{Ecography}} \textbf{\bibinfo{volume}{40}},
+  \bibinfo{pages}{913--929} (\bibinfo{year}{2017}).
+
+\bibitem{andersson2021her2st}
+\bibinfo{author}{Andersson, A.} \emph{et~al.}
+\newblock \bibinfo{title}{{Spatial deconvolution of HER2-positive breast cancer
+  delineates tumor-associated cell type interactions}}.
+\newblock \emph{\bibinfo{journal}{Nature Communications}}
+  \textbf{\bibinfo{volume}{12}}, \bibinfo{pages}{6012} (\bibinfo{year}{2021}).
+
+\bibitem{maynard2021dlpfc}
+\bibinfo{author}{Maynard, K.~R.} \emph{et~al.}
+\newblock \bibinfo{title}{{Transcriptome-scale spatial gene expression in the
+  human dorsolateral prefrontal cortex}}.
+\newblock \emph{\bibinfo{journal}{Nature Neuroscience}}
+  \textbf{\bibinfo{volume}{24}}, \bibinfo{pages}{425--436}
+  (\bibinfo{year}{2021}).
+
+\bibitem{wang2018starmap}
+\bibinfo{author}{Wang, X.} \emph{et~al.}
+\newblock \bibinfo{title}{{Three-dimensional intact-tissue sequencing of
+  single-cell transcriptional states}}.
+\newblock \emph{\bibinfo{journal}{Science}} \textbf{\bibinfo{volume}{361}},
+  \bibinfo{pages}{eaat5691} (\bibinfo{year}{2018}).
+
+\bibitem{moffitt2018merfish}
+\bibinfo{author}{Moffitt, J.~R.} \emph{et~al.}
+\newblock \bibinfo{title}{{Molecular, spatial, and functional single-cell
+  profiling of the hypothalamic preoptic region}}.
+\newblock \emph{\bibinfo{journal}{Science}} \textbf{\bibinfo{volume}{362}},
+  \bibinfo{pages}{eaau5324} (\bibinfo{year}{2018}).
+
+\bibitem{liang2026cellniche}
+\bibinfo{author}{Liang, Z.}, \bibinfo{author}{Zhong, B.},
+  \bibinfo{author}{Jiao, M.}, \bibinfo{author}{Wang, Y.} \&
+  \bibinfo{author}{Liu, S.}
+\newblock \bibinfo{title}{{CellNiche represents cellular microenvironments in
+  atlas-scale spatial omics data with contrastive learning}}.
+\newblock \emph{\bibinfo{journal}{Nature Communications}}
+  \textbf{\bibinfo{volume}{17}}, \bibinfo{pages}{5547} (\bibinfo{year}{2026}).
+
+\end{thebibliography}

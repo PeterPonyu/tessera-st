@@ -1,0 +1,114 @@
+\begin{thebibliography}{10}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\providecommand{\bibinfo}[2]{#2}
+\providecommand{\eprint}[2][]{\url{#2}}
+
+\bibitem{he2022cosmx}
+\bibinfo{author}{He, S.} \emph{et~al.}
+\newblock \bibinfo{title}{{High-plex imaging of RNA and proteins at subcellular
+  resolution in fixed tissue by spatial molecular imaging}}.
+\newblock \emph{\bibinfo{journal}{Nature Biotechnology}}
+  \textbf{\bibinfo{volume}{40}}, \bibinfo{pages}{1794--1806}
+  (\bibinfo{year}{2022}).
+
+\bibitem{sun2026consensus}
+\bibinfo{author}{Sun, J.} \emph{et~al.}
+\newblock \bibinfo{title}{{Beyond benchmarking: an expert-guided consensus
+  approach to spatially aware clustering}}.
+\newblock \emph{\bibinfo{journal}{Nature Methods}}
+  \textbf{\bibinfo{volume}{23}}, \bibinfo{pages}{1814--1826}
+  (\bibinfo{year}{2026}).
+
+\bibitem{yerly2024wound}
+\bibinfo{author}{Yerly, L.} \emph{et~al.}
+\newblock \bibinfo{title}{{Wounding triggers invasive progression in human
+  basal cell carcinoma}}.
+\newblock \bibinfo{howpublished}{bioRxiv} (\bibinfo{year}{2024}).
+\newblock \bibinfo{note}{Preprint; cited for source study, not independent
+  validation. DOI: 10.1101/2024.05.31.596823}.
+
+\bibitem{janesick2023breast}
+\bibinfo{author}{Janesick, A.} \emph{et~al.}
+\newblock \bibinfo{title}{{High resolution mapping of the tumor
+  microenvironment using integrated single-cell, spatial and in situ
+  analysis}}.
+\newblock \emph{\bibinfo{journal}{Nature Communications}}
+  \textbf{\bibinfo{volume}{14}}, \bibinfo{pages}{8353} (\bibinfo{year}{2023}).
+
+\bibitem{crowell2025tva}
+\bibinfo{author}{Crowell, H.~L.} \emph{et~al.}
+\newblock \bibinfo{title}{{Tracing colorectal malignancy transformation from
+  cell to tissue scale}}.
+\newblock \bibinfo{howpublished}{bioRxiv} (\bibinfo{year}{2025}).
+\newblock \bibinfo{note}{Preprint; cited for source study, not independent
+  validation. DOI: 10.1101/2025.06.23.660674}.
+
+\bibitem{schott2024openst}
+\bibinfo{author}{Schott, M.} \emph{et~al.}
+\newblock \bibinfo{title}{{Open-ST: High-resolution spatial transcriptomics in
+  3D}}.
+\newblock \emph{\bibinfo{journal}{Cell}} \textbf{\bibinfo{volume}{187}},
+  \bibinfo{pages}{3953--3972.e26} (\bibinfo{year}{2024}).
+
+\bibitem{hartmann2021scmep}
+\bibinfo{author}{Hartmann, F.~J.} \emph{et~al.}
+\newblock \bibinfo{title}{{Single-cell metabolic profiling of human cytotoxic T
+  cells}}.
+\newblock \emph{\bibinfo{journal}{Nature Biotechnology}}
+  \textbf{\bibinfo{volume}{39}}, \bibinfo{pages}{186--197}
+  (\bibinfo{year}{2021}).
+
+\bibitem{palla2022squidpy}
+\bibinfo{author}{Palla, G.} \emph{et~al.}
+\newblock \bibinfo{title}{{Squidpy: a scalable framework for spatial omics
+  analysis}}.
+\newblock \emph{\bibinfo{journal}{Nature Methods}}
+  \textbf{\bibinfo{volume}{19}}, \bibinfo{pages}{171--178}
+  (\bibinfo{year}{2022}).
+
+\bibitem{andersson2021her2st}
+\bibinfo{author}{Andersson, A.} \emph{et~al.}
+\newblock \bibinfo{title}{{Spatial deconvolution of HER2-positive breast cancer
+  delineates tumor-associated cell type interactions}}.
+\newblock \emph{\bibinfo{journal}{Nature Communications}}
+  \textbf{\bibinfo{volume}{12}}, \bibinfo{pages}{6012} (\bibinfo{year}{2021}).
+
+\bibitem{maynard2021dlpfc}
+\bibinfo{author}{Maynard, K.~R.} \emph{et~al.}
+\newblock \bibinfo{title}{{Transcriptome-scale spatial gene expression in the
+  human dorsolateral prefrontal cortex}}.
+\newblock \emph{\bibinfo{journal}{Nature Neuroscience}}
+  \textbf{\bibinfo{volume}{24}}, \bibinfo{pages}{425--436}
+  (\bibinfo{year}{2021}).
+
+\bibitem{wang2018starmap}
+\bibinfo{author}{Wang, X.} \emph{et~al.}
+\newblock \bibinfo{title}{{Three-dimensional intact-tissue sequencing of
+  single-cell transcriptional states}}.
+\newblock \emph{\bibinfo{journal}{Science}} \textbf{\bibinfo{volume}{361}},
+  \bibinfo{pages}{eaat5691} (\bibinfo{year}{2018}).
+
+\bibitem{moffitt2018merfish}
+\bibinfo{author}{Moffitt, J.~R.} \emph{et~al.}
+\newblock \bibinfo{title}{{Molecular, spatial, and functional single-cell
+  profiling of the hypothalamic preoptic region}}.
+\newblock \emph{\bibinfo{journal}{Science}} \textbf{\bibinfo{volume}{362}},
+  \bibinfo{pages}{eaau5324} (\bibinfo{year}{2018}).
+
+\bibitem{valdeolivas2024crc}
+\bibinfo{author}{Valdeolivas, A.} \emph{et~al.}
+\newblock \bibinfo{title}{{Profiling the heterogeneity of colorectal cancer
+  consensus molecular subtypes using spatial transcriptomics}}.
+\newblock \emph{\bibinfo{journal}{npj Precision Oncology}}
+  \textbf{\bibinfo{volume}{8}}, \bibinfo{pages}{10} (\bibinfo{year}{2024}).
+
+\bibitem{hubert1985ari}
+\bibinfo{author}{Hubert, L.} \& \bibinfo{author}{Arabie, P.}
+\newblock \bibinfo{title}{{Comparing partitions}}.
+\newblock \emph{\bibinfo{journal}{Journal of Classification}}
+  \textbf{\bibinfo{volume}{2}}, \bibinfo{pages}{193--218}
+  (\bibinfo{year}{1985}).
+
+\end{thebibliography}

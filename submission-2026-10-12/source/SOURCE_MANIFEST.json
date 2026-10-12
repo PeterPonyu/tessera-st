@@ -1,0 +1,281 @@
+{
+  "title": "Neighborhood averaging accounts for spatial gains of Tessera in tumor spatial omics",
+  "document_version": "submission-2026-10-12",
+  "software_doi": "10.5281/zenodo.23308077",
+  "software_version": "2026.10.11-controls-audit",
+  "numeric_research_outputs_changed": false,
+  "documents": {
+    "manuscript": {
+      "sha256": "8a1aefde9ff357374db48ac443494afe23fa6a0b0dd22b189c0390670cfb6d7c",
+      "bytes": 500812,
+      "pages": 14
+    },
+    "supplement": {
+      "sha256": "95d2baa14f09b2ff468c8e43ad27f705fb3f0bf55a77ade369b46f8c8a299720",
+      "bytes": 10305595,
+      "pages": 30
+    }
+  },
+  "files": [
+    {
+      "path": "LICENSE",
+      "bytes": 1301,
+      "sha256": "2556762add12c62093aaa88bed24f70a58c539abdeac92878e81a4d6b08e7fc2"
+    },
+    {
+      "path": "base_refs.bib",
+      "bytes": 5830,
+      "sha256": "909df9db2925db321fc607e86ba19f986093e36d7894b7fa39d64b2939deca52"
+    },
+    {
+      "path": "journal-figures/figure01-workflow.pdf",
+      "bytes": 112937,
+      "sha256": "49a0373b83a14f09a639b6bb0ec7a6b645a3269bbdd255c245c4594f66d0e1c5"
+    },
+    {
+      "path": "journal-figures/figure02-cohort.pdf",
+      "bytes": 100813,
+      "sha256": "d0ab1b5222921a1e192f1ec96595a85178015d1bfc5f2de3db6d892c5c762d7c"
+    },
+    {
+      "path": "journal-figures/figure03-comparison.pdf",
+      "bytes": 123423,
+      "sha256": "64a62a52ee6b2c82f000314be6415bd8363a8d58cd269e90debba390bba8e7fa"
+    },
+    {
+      "path": "journal-figures/figure04-ablations.pdf",
+      "bytes": 124728,
+      "sha256": "988f390381d554f037e39df6f1a147125a0d40ce6d1d21bb6f82e4016a46c2d8"
+    },
+    {
+      "path": "journal-figures/figure05-nsclc-maps.pdf",
+      "bytes": 2064639,
+      "sha256": "a5d465af7c95e70b2d39d73d82f2f4cb504f12c4895993def8cbf0725a2a0948"
+    },
+    {
+      "path": "journal-figures/figure06-bcc-maps.pdf",
+      "bytes": 1716447,
+      "sha256": "5ed621f955474094f79cb88138827dcd94d6bc11afd6bfac6a635899f6b2ef12"
+    },
+    {
+      "path": "journal-figures/figure07-breast-histology.pdf",
+      "bytes": 1856877,
+      "sha256": "9283e91ae423e9fe6010c73b846bdb10f59fbe9f77adea01e8d79f5c43aa3365"
+    },
+    {
+      "path": "journal-figures/figure08-breast-mixtures.pdf",
+      "bytes": 371792,
+      "sha256": "97f164b7abc1041f6eab42afe4600162297a52a84fb706080edd1806cda48d0e"
+    },
+    {
+      "path": "journal-figures/figure09-colorectal-proteins.pdf",
+      "bytes": 934830,
+      "sha256": "1e5da11c1b05487ee537eec3f4b19ec5eb9eef5f31db5f81be2821af5cbc6261"
+    },
+    {
+      "path": "journal-figures/figure10-patient-transfer.pdf",
+      "bytes": 115008,
+      "sha256": "16b0e57cedba3c8112067b25b8e212c3931017a8826d96b66d3e46afb7c22f9a"
+    },
+    {
+      "path": "journal-figures/figure11-stability.pdf",
+      "bytes": 97785,
+      "sha256": "7191f8b111edc3e95be14f278a4d0e4b812a8517170201ce1d9d97ea915d4afb"
+    },
+    {
+      "path": "journal-figures/figure12-efficiency-mechanism.pdf",
+      "bytes": 111230,
+      "sha256": "7fc5493b677eba7cb36729bc1e698ea595d2bbb9d816f39b1c0b44412de2613b"
+    },
+    {
+      "path": "journal-figures/figure13-architecture.pdf",
+      "bytes": 132396,
+      "sha256": "a6e04dc8e38a735f6dc03f02380d69d030e8eb63badbb4885bb68559b7749879"
+    },
+    {
+      "path": "journal-figures/figure14-target-lineage.pdf",
+      "bytes": 76913,
+      "sha256": "b937104dc1c373a0828a6a0971fa2837a7883f5e9dfcbe1f08feb717775bebc6"
+    },
+    {
+      "path": "journal-figures/figure15-external-cohort.pdf",
+      "bytes": 125511,
+      "sha256": "9715e3a9ba10271f4dada9ff60115c4712bf156c025ec61773c31301c795e09e"
+    },
+    {
+      "path": "journal-figures/figure16-external-maps.pdf",
+      "bytes": 884819,
+      "sha256": "fa3814b833e90cf2ea562fc2736314e763acc8ef9a4252736b06e328d17ecbe0"
+    },
+    {
+      "path": "journal-figures/figure17-tissue-landscape.pdf",
+      "bytes": 118919,
+      "sha256": "715b1c303994d905180e91b717d4e6d290eabeca112562c2481321a1577e9763"
+    },
+    {
+      "path": "journal-figures/supplement01-hnscc.pdf",
+      "bytes": 607692,
+      "sha256": "3f105637194469f92886d7206d0fe7844b9a0db94a26033456eb6cdb9c088268"
+    },
+    {
+      "path": "journal-figures/supplement02-mibi.pdf",
+      "bytes": 1006288,
+      "sha256": "7e24139f0c98370dce5468060cb95cbf47b07a68a1828e0f3e8191187dbda6a6"
+    },
+    {
+      "path": "journal-figures/supplement03-rna-markers.pdf",
+      "bytes": 878576,
+      "sha256": "e85ee9162ce1a8170812cf2dd3899d725beb417b43e61c63525621ae9d126e17"
+    },
+    {
+      "path": "journal-figures/supplement05-scale-controls.pdf",
+      "bytes": 115903,
+      "sha256": "8802f49a9e20f5da2b09c9fc442d6095c354fa447bf198dcf7e31c496b67c2f4"
+    },
+    {
+      "path": "journal-ledgers/crc_numbers.tex",
+      "bytes": 797,
+      "sha256": "ae5c152394301d2ff491a1ea244bc8240bc233990b2bec33cbef206103e24d5e"
+    },
+    {
+      "path": "journal-ledgers/external_numbers.tex",
+      "bytes": 17931,
+      "sha256": "f8c2020b6757db4286ac0b99a9d8353688c496de82e9a94c9fa2f586bcf00079"
+    },
+    {
+      "path": "journal-ledgers/followup_numbers.tex",
+      "bytes": 2707,
+      "sha256": "94e75a21f5169c6b05e203a4515f73187b7065d1565ecae6481f838732e33475"
+    },
+    {
+      "path": "journal-ledgers/numbers.tex",
+      "bytes": 2282,
+      "sha256": "dca314caf802cf30b1c9ef06aee907d2f9dff34753f8f5d4b00aa7672953e90b"
+    },
+    {
+      "path": "ledgers/ari_rows_1.tex",
+      "bytes": 1435,
+      "sha256": "6973bf33034a9284de03f30bae94d48fe968daeb4d514057d4eb453504cea134"
+    },
+    {
+      "path": "ledgers/ari_rows_2.tex",
+      "bytes": 1175,
+      "sha256": "71f9b8694b45b5303af67707c0855c7314efba030d73681140127ca6f446771c"
+    },
+    {
+      "path": "ledgers/breadth_rows.tex",
+      "bytes": 299,
+      "sha256": "7579e0f1a27a72f333269d7d1566f29e9c7f2624a0343dc95f40b5d0ab9b34f4"
+    },
+    {
+      "path": "ledgers/common_k_rows.tex",
+      "bytes": 684,
+      "sha256": "128b5ec7dd3d704255b0c142914133e836c6797185492313d17b4bc5633e20bb"
+    },
+    {
+      "path": "ledgers/crc_raw_rows.tex",
+      "bytes": 129,
+      "sha256": "3c2f5dfe6b546eb82fa325a2a3b8a3061a1bb9f5385734b205650059c0fdfcbd"
+    },
+    {
+      "path": "ledgers/crc_rows.tex",
+      "bytes": 239,
+      "sha256": "a7edb7d88436faa18863b4f0ad7f95b5d906e7acb4ac22cb2fc4a47cbff0d3d8"
+    },
+    {
+      "path": "ledgers/external_composition_rows.tex",
+      "bytes": 420,
+      "sha256": "a7f09c7633d4ff507b0cc3516829aea23770eeac5afb912d8ff890102ac4a54e"
+    },
+    {
+      "path": "ledgers/external_contrast_rows.tex",
+      "bytes": 2486,
+      "sha256": "69bd6eeae9be0f1d8015db2657db443e2d6d464bfcb75dde0461b80f613d58a5"
+    },
+    {
+      "path": "ledgers/external_rows.tex",
+      "bytes": 601,
+      "sha256": "2444bd269448b502a83379fc89126eb936c353803cabe5ecdea2dff36924039b"
+    },
+    {
+      "path": "ledgers/external_seam_rows.tex",
+      "bytes": 552,
+      "sha256": "1a1270e5aced2636497988bac4b99c10e63bd2c578b2eff57f1eaacdc5b449f2"
+    },
+    {
+      "path": "ledgers/followup_rows.tex",
+      "bytes": 886,
+      "sha256": "0835491ed907ad5385d052726e388186fe78cfafb0c5b44266e836401de69b1c"
+    },
+    {
+      "path": "ledgers/gate_rows.tex",
+      "bytes": 519,
+      "sha256": "cd493cead60c250da23e832dba78bed60bedf6294e6877883740b191c4f12a88"
+    },
+    {
+      "path": "ledgers/gate_weight_rows.tex",
+      "bytes": 584,
+      "sha256": "320e5a4b057b50f1c8f620656a22bec7397019885e1cb32da557528c179967ed"
+    },
+    {
+      "path": "ledgers/input_rows.tex",
+      "bytes": 537,
+      "sha256": "6c221883f5dd79ed9af5b3f488a1b955b337e0426656b71cd8739f76055efe14"
+    },
+    {
+      "path": "ledgers/nmi_rows_1.tex",
+      "bytes": 1435,
+      "sha256": "3df1f678055e45032642975fb44a08f3fc3c4996af5f0675794270f7f07ad7a3"
+    },
+    {
+      "path": "ledgers/nmi_rows_2.tex",
+      "bytes": 1175,
+      "sha256": "1e7ab3286be23933bb817b21256798d486c02edaecddf6e0999c7046ff5ef0ca"
+    },
+    {
+      "path": "ledgers/replicate_rows.tex",
+      "bytes": 1423,
+      "sha256": "2cc741e2fae2ab6c26f7067fda48924291d587c3457f23c146461de55bfdd30d"
+    },
+    {
+      "path": "ledgers/result_rows.tex",
+      "bytes": 668,
+      "sha256": "6155d071d1d5347ed3df5e19bd844a5930bc7aa9869668b3649034379792b520"
+    },
+    {
+      "path": "ledgers/transfer_rows.tex",
+      "bytes": 693,
+      "sha256": "e84865b79220e8079dcb0c20a727ae07fa612728d6904e25e8be53fa0e0ad1de"
+    },
+    {
+      "path": "new_refs.bib",
+      "bytes": 5382,
+      "sha256": "0a8fc1b3b2e2220e7c6535eb1b6361a4884e4ef65ed3fc445514579e4f11c51f"
+    },
+    {
+      "path": "paper_fonts.tex",
+      "bytes": 234,
+      "sha256": "8e4a94cd3e43fe9238ccae24195ee2bd71141d3d7d0fa728f3a8c2863c08540a"
+    },
+    {
+      "path": "paper_srep_inline.bbl",
+      "bytes": 9303,
+      "sha256": "fcdf41bda2518eba22c1e52f59ce615684d647eb94627290319c79179164c2cc"
+    },
+    {
+      "path": "paper_srep_inline.tex",
+      "bytes": 31769,
+      "sha256": "3a63e10bb4660db5cd3b20ef94024e2ec53a42dd3aa3e08a0304a61333597c63"
+    },
+    {
+      "path": "supporting_srep.bbl",
+      "bytes": 4877,
+      "sha256": "8f41065ccebe53385ca8b731e4ca056b68abca29dc6d194afdb5570cefb9a966"
+    },
+    {
+      "path": "supporting_srep.tex",
+      "bytes": 67779,
+      "sha256": "0ebf4627aae124785e9a35d087305e8b0769100e6e912e9e10f9a56121cde512"
+    }
+  ]
+}

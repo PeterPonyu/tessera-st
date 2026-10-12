@@ -1,0 +1,496 @@
+\documentclass[11pt]{article}
+\usepackage[letterpaper,margin=.8in]{geometry}
+\input{paper_fonts.tex}
+\usepackage{graphicx,booktabs,array,amsmath,microtype,xurl,caption,float}
+\usepackage[hidelinks]{hyperref}
+\captionsetup{font=small,labelfont=normalfont,skip=5pt}
+\makeatletter
+\let\tableinput\@@input
+\setlength{\@fptop}{0pt}
+\setlength{\@fpsep}{12pt}
+\makeatother
+\graphicspath{{journal-figures/}}
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\renewcommand{\theequation}{S\arabic{equation}}
+\setlength{\parskip}{.3em}
+\emergencystretch=2em\clubpenalty=10000\widowpenalty=10000
+\hypersetup{pdftitle={Neighborhood averaging accounts for spatial gains of Tessera in tumor spatial omics},pdfauthor={Zeyu Fu}}
+\title{Neighborhood averaging accounts for spatial gains of Tessera in tumor spatial omics}
+\author{Zeyu Fu}\date{}
+\usepackage[numbers,sort&compress]{natbib}
+\input{journal-ledgers/numbers.tex}
+\input{journal-ledgers/followup_numbers.tex}
+\input{journal-ledgers/external_numbers.tex}
+\input{journal-ledgers/crc_numbers.tex}
+\usepackage{placeins}
+\usepackage[switch]{lineno}
+\begin{document}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\raggedbottom\maketitle
+\modulolinenumbers[5]\linenumbers
+\section*{Supplementary methods}
+\paragraph{Display definitions.} Maps show the predetermined display field (the largest retained field). Only reference classes with at least 1\% prevalence over all valid observations of an object are eligible for cluster-color matching. With \(n_{ab}=\sum_{i\in\mathcal V}\mathbf1(y_i=a,\widehat y_i=b)\) and \(\mathcal A_{\mathcal C_{\rm common}}\) the one-to-one partial matchings restricted to those classes, the rectangular Hungarian assignment selects
+\begin{equation}
+\mathcal C_{\rm common}=\{a:n_{a\cdot}/|\mathcal V|\geq0.01\},\qquad
+\mathcal M^*=\arg\max_{\mathcal M\in\mathcal A_{\mathcal C_{\rm common}}}\sum_{(a,b)\in\mathcal M}n_{ab}.\label{eq:display-match}
+\end{equation}
+Rare reference classes, unmatched clusters and unknown reference labels are gray; all scores retain the original predictions and all valid classes. Class prevalence and matching use the complete object, not the display field. The colorectal overview keeps supplied broad compartments and maps eligible matched \texttt{lv2} labels to their modal supplied compartment. Category colors keep their original class index even when rare classes are removed from the legend.
+
+\paragraph{Breast registration and region of interest.} Spot centers are scaled to the high-resolution image and checked against the source tissue-position table. The fixed region of interest is centered at the median spot position:
+\begin{equation}\begin{aligned}
+r_i^{\rm hires}&=s_{\rm hires}r_i,\qquad
+\ell_{\rm pixels}(L)=L\,s_{\rm hires}/u_{\rm pixel},\\
+\mathcal R&=\prod_{d=1}^2[m_d-0.22a_d,\,m_d+0.22a_d],\quad
+m_d=\operatorname{median}_i r_{id}^{\rm hires},\quad
+a_d=\max_i r_{id}^{\rm hires}-\min_i r_{id}^{\rm hires},
+\end{aligned}\label{eq:registration}\end{equation}
+where \(L\) is a physical length in micrometers and \(u_{\rm pixel}\) the source calibration. Colorectal local-millimeter coordinates are multiplied by 1,000 for the 100-micrometer bars; no physical scale is assigned to lung, BCC, Open-ST or MIBI maps.
+
+\paragraph{Breast composition descriptors.} With supplied composition fractions \(p_{ic}\) over \(C\) categories and the tumor set \(\mathcal T\) (invasive, proliferating invasive and the two DCIS categories),
+\begin{equation}\begin{aligned}
+\eta_i&=\max_c p_{ic},\qquad
+h_i=-\frac{\sum_c p_{ic}\log(p_{ic}+10^{-12})}{\log C},\qquad
+v_i=\sum_{c\in\mathcal T}p_{ic},\\
+M_{a,s}(\tau)&=\operatorname{ARI}(y_{I_\tau},\widehat y_{a,s,I_\tau}),\qquad I_\tau=\{i:\eta_i\geq\tau\}.
+\end{aligned}\label{eq:composition}\end{equation}
+The seam-score association is the Spearman correlation of \(h_i\) and the node seam score \(b_i\) with average ranks for ties.
+
+\paragraph{Histograms, color scales and execution records.} Gate densities use 30 equal-width bins on \([0,1]\), normalized separately per group, \(f_k=N_k/(|A|w_k)\). For a measured channel \(v_i\) in display field \(D\), colors use
+\begin{equation}
+w_i=\begin{cases}\log[1+\max(v_i,0)],&\text{protein intensity},\\
+v_i,&\text{saved RNA marker values},\end{cases}\qquad
+c_i=\operatorname{clip}_{[0,1]}\frac{w_i-Q_\alpha(w_D)}{Q_{0.98}(w_D)-Q_\alpha(w_D)},\label{eq:display-normalization}
+\end{equation}
+with \(\alpha=0.02\) for proteins and \(\alpha=0\) for RNA. Run time is the recorded per-arm timer (fitting, K-means, export and scoring), and memory is the peak allocated GPU memory over seeds.
+
+\paragraph{Scope.} All 351 primary method--seed records and 45 transfer records were fitted once with the released hyperparameters and are unchanged. The follow-up analyses (tuned controls, re-scoring, corrected nulls, whole sections and transfer controls) import the frozen estimator code without modifying it. Three optimization seeds are not independent specimens; the five lung and four BCC patients support patient-level summaries in the primary panel.
+Whole-section controls and the 200-neighbor transfer control were informed by bounded analyses of the same patients; they are sensitivity or descriptive comparisons, not independently selected validation. The accompanying source package documents the numerical provenance and the distinction between document reconstruction and analysis reproduction.
+
+\paragraph{Independent cohort and further tissues.} The all-label comparison in the independent cohort was fixed in a written protocol before any fit. The boundary targets, weighting controls, smoothed seam scores and tissue panel followed the first results and are exploratory. The frozen estimator, graph rule and preprocessing were imported unchanged, every fit ran on CPU, and three repetitions of the unchanged protocol were retained because optimization is not bit-reproducible. Each repetition averages three seeds and fits one encoder per patient, distinct target class count and seed; targets with the same class count share that fit. Repetitions add no patients, and the same seeded control procedure is used in every repetition. Section identity for the one patient with differing image and label names was checked by array-coordinate joins to both public sections.
+
+\section*{Complete primary partition scores}
+\begin{table}[ht]\centering\scriptsize\setlength{\tabcolsep}{4pt}
+\caption{ARI means $\pm$ seed SD: expression-only, simple spatial and gated arms.}
+\begin{tabular}{lrrrrr}\toprule
+Object & PCA50 & PCA30 & Neighbor mean & Tessera & No gate\\\midrule
+\tableinput ledgers/ari_rows_1.tex
+\bottomrule\end{tabular}\end{table}
+\begin{table}[ht]\centering\scriptsize\setlength{\tabcolsep}{5pt}
+\caption{ARI means $\pm$ seed SD: remaining component and geometry controls.}
+\begin{tabular}{lrrrr}\toprule
+Object & No fusion & No contrast & Self-only & Permuted XY\\\midrule
+\tableinput ledgers/ari_rows_2.tex
+\bottomrule\end{tabular}\end{table}
+\begin{table}[ht]\centering\scriptsize\setlength{\tabcolsep}{4pt}
+\caption{NMI means $\pm$ seed SD: expression-only, simple spatial and gated arms.}
+\begin{tabular}{lrrrrr}\toprule
+Object & PCA50 & PCA30 & Neighbor mean & Tessera & No gate\\\midrule
+\tableinput ledgers/nmi_rows_1.tex
+\bottomrule\end{tabular}\end{table}
+\begin{table}[ht]\centering\scriptsize\setlength{\tabcolsep}{5pt}
+\caption{NMI means $\pm$ seed SD: remaining component and geometry controls.}
+\begin{tabular}{lrrrr}\toprule
+Object & No fusion & No contrast & Self-only & Permuted XY\\\midrule
+\tableinput ledgers/nmi_rows_2.tex
+\bottomrule\end{tabular}\end{table}
+\clearpage
+\begin{table}[ht]\centering\small\setlength{\tabcolsep}{7pt}
+\caption{Patient-held-out transfer: accuracy / balanced accuracy, three-seed means for each held-out patient.}
+\begin{tabular}{llrrr}\toprule
+Target patient & Target & PCA50 & Self-only & Tessera\\\midrule
+\tableinput ledgers/transfer_rows.tex
+\bottomrule\end{tabular}\end{table}
+\begin{table}[ht]\centering\small\setlength{\tabcolsep}{7pt}
+\caption{Last-layer gate diagnostics, mean over three seeds. AUROCs measure discrimination of edges whose endpoints carry different supplied labels, with ties counted as one half. ``Expression difference'' scores each edge by the Euclidean distance between its endpoints' PCA features.}
+\begin{tabular}{lrrrr}\toprule
+Object & Gate AUROC & Expression-difference AUROC & Median gate & Gates $<0.05$ (\%)\\\midrule
+\tableinput ledgers/gate_rows.tex
+\bottomrule\end{tabular}\end{table}
+\clearpage
+\section*{Cluster-number and relative-weight sensitivity}
+\begin{table}[ht]\centering\small\setlength{\tabcolsep}{5pt}
+\caption{Saved embeddings re-clustered with \(K_{\rm common}\), the number of supplied classes with at least 1\% object-level prevalence. ARI retains all valid labels, including rare classes. Values are three-seed means; \(\Delta\) is Tessera minus PCA50. This does not tune neighborhood scales or change the primary predictions.}\label{tab:common-k}
+\begin{tabular}{lrrrrrr}\toprule
+Object & Primary $K$ & $K_{\rm common}$ & PCA50 & Mean $k=6$ & Tessera & $\Delta$\\\midrule
+\tableinput ledgers/common_k_rows.tex
+\bottomrule\end{tabular}\end{table}
+\begin{table}[ht]\centering\small\setlength{\tabcolsep}{6pt}
+\caption{Relative last-layer gate weights over directed multiset edge entries. \(D\) is total-variation distance from uniform incident weights; \(R\) is effective neighbor count divided by multiset degree. Node medians and 90th percentiles are averaged over seeds; attenuation is the maximum \(10^{-8}/(G_i+10^{-8})\) over all nodes and seeds. All 39 saved object--seed records have zero isolated and zero zero-mass nodes. Small gates do not imply uniform weighting.}\label{tab:gate-weights}
+\begin{tabular}{lrrrr}\toprule
+Object & Median $D$ & 90th percentile $D$ & Median $R$ & Max. attenuation\\\midrule
+\tableinput ledgers/gate_weight_rows.tex
+\bottomrule\end{tabular}\end{table}
+\clearpage
+\section*{Independent cohort and further tissues}
+\begin{table}[H]\centering\scriptsize\setlength{\tabcolsep}{4pt}
+\caption{Pathologist annotation of the eight independent sections. Matched is the percentage of labeled spots found in the section's own count matrix by array coordinate. Unassigned spots (undetermined) stay in the graph and the principal components; they are a class for the all-label target and missing for the other targets.}\label{tab:external-composition}
+\begin{tabular}{lrrrrrrrrr}\toprule
+Section & Labeled rows & Matched (\%) & Invasive & In situ & Connective & Adipose & Immune & Glands & Undetermined\\\midrule
+\tableinput ledgers/external_composition_rows.tex
+\bottomrule\end{tabular}\end{table}
+\begin{table}[H]\centering\scriptsize\setlength{\tabcolsep}{4pt}
+\caption{Paired contrasts over the eight patients for each target and for the weighting controls. Counts give patients above and below zero; intervals are 95\% percentile bootstrap intervals over patients, conditional on the selected controls and without repeating configuration selection; \(p\) is the exact two-sided sign-flip value (smallest attainable 0.0078). Mean is the unweighted neighbor mean on Tessera's graph and weighted uses expression-similarity weights. The two variants restrict the tumor class to invasive cancer or drop breast glands.}\label{tab:external-contrasts}
+\begin{tabular}{llrrrr}\toprule
+Target & Contrast & Above/below & Mean & 95\% interval & \(p\)\\\midrule
+\tableinput ledgers/external_contrast_rows.tex
+\bottomrule\end{tabular}\end{table}
+\begin{table}[H]\centering\scriptsize\setlength{\tabcolsep}{4pt}
+\caption{Edge-level seam AUROC per patient, mean over three seeds for the learned gate. A seam is a graph edge whose two valid endpoints carry different labels. Diff. is the plain feature difference; Smooth and Wtd. are the distance between neighborhood means of the two endpoints, unweighted or weighted by expression similarity.}\label{tab:external-seams}
+\begin{tabular}{lrrrrrrrr}\toprule
+& \multicolumn{4}{c}{Tumor boundary} & \multicolumn{4}{c}{Named compartments}\\\cmidrule(lr){2-5}\cmidrule(lr){6-9}
+Patient & Gate & Diff. & Smooth & Wtd. & Gate & Diff. & Smooth & Wtd.\\\midrule
+\tableinput ledgers/external_seam_rows.tex
+\bottomrule\end{tabular}\end{table}
+\begin{table}[H]\centering\scriptsize\setlength{\tabcolsep}{2.6pt}
+\caption{Three further tissues, three-seed mean ARI. Contig. is the fraction of valid six-neighbor edges whose endpoints share a label; Mean is the same-graph mean. The tuned control was selected on the other two tissues; Best 30 is the best of 30 configurations chosen with the test labels, a descriptive maximum within the tested grid. Gate and Smooth are seam AUROCs of the learned gate and of the smoothed feature difference. Each tissue was also used when the encoder was first benchmarked.}\label{tab:breadth}
+\begin{tabular}{lrrrrrrrrrr}\toprule
+Tissue & Obs. & Classes & Contig. & PCA50 & Mean & Tuned & Best 30 & Tessera & Gate & Smooth\\\midrule
+\tableinput ledgers/breadth_rows.tex
+\bottomrule\end{tabular}\end{table}
+\begin{table}[H]\centering\scriptsize\setlength{\tabcolsep}{5pt}
+\caption{Three repetitions of the unchanged encoder fitting protocol, each averaging the same three seeds; the third supplies the reported values. Repetitions add no patients. Range is the largest minus the smallest replicate. The same-graph mean and the tuned control are deterministic.}\label{tab:replicates}
+\begin{tabular}{llrrrrrr}\toprule
+Target & Patient & Run 1 & Run 2 & Run 3 & Range & Same-graph mean & Tuned control\\\midrule
+\tableinput ledgers/replicate_rows.tex
+\bottomrule\end{tabular}\end{table}
+\clearpage
+\section*{Untouched colorectal pathology pilot}
+The protocol preceded download and label inspection. The explicit \texttt{exclude} category triggered the disclosed sensitivity after the first PCA/mean scores, before any seam AUROC. Tissue spots remain in the graph; \texttt{exclude} and missing labels are omitted only from sensitivity scores. Mixed tumor/stroma and immune-infiltration classes remain distinct. The three-patient percentile bootstrap is descriptive and unstable, and the minimum two-sided sign-flip value is 0.25. The fixed two-class auxiliary fitting head is not part of the training loss. ARI uses a target-class-informed cluster number after fitting. Seam AUROC uses unique undirected edges, so this pilot is not pooled with the earlier 24-object landscape.
+\begin{table}[H]\centering\scriptsize\setlength{\tabcolsep}{3.5pt}
+\caption{QC-filtered colorectal pilot, three-seed mean ARI and seam AUROC. Tissue is the retained graph size; Scored excludes the explicit QC category and missing labels. Mean is the untuned mean on Tessera's graph; Raw and Smooth are distances between PCA features and same-graph means. The section for A120838 is replicate 1; A595688 and A551763 use replicate 2. Every annotated tissue barcode matched exactly.}\label{tab:crc-pilot}
+\begin{tabular}{lrrrrrrrrr}\toprule
+& & & \multicolumn{4}{c}{ARI} & \multicolumn{3}{c}{Seam AUROC}\\\cmidrule(lr){4-7}\cmidrule(lr){8-10}
+Patient & Tissue & Scored & PCA50 & Mean & Tessera & NoGate & Gate & Raw & Smooth\\\midrule
+\tableinput ledgers/crc_rows.tex
+\bottomrule\end{tabular}\end{table}
+\begin{table}[H]\centering\small\setlength{\tabcolsep}{6pt}
+\caption{Original locked colorectal target, retaining the released \texttt{exclude} class. These scores preserve the original protocol but do not interpret QC seams as biological boundaries. The model fits are identical to those used for the sensitivity in Table~\ref{tab:crc-pilot}; only the scored target and clustering resolution change.}\label{tab:crc-original}
+\begin{tabular}{lrrrr}\toprule
+Patient & Tessera ARI & Mean ARI & Gate AUROC & Raw AUROC\\\midrule
+\tableinput ledgers/crc_raw_rows.tex
+\bottomrule\end{tabular}\end{table}
+The 1,000 label-shuffle iterations per patient and target give null median AUROCs between 0.45 and 0.55 for every score. Their edge-level distributions are negative controls, not patient confidence intervals. Public Space Ranger H\&E overlays were inspected for gross position, orientation and image bounds. This author check neither adjudicates compartment diagnoses nor establishes blinded inter-reader agreement. Complete tables, nulls, fit receipts and registration overlays are retained in the separate pilot directory.
+
+\clearpage
+\begin{figure}[p]\centering\includegraphics{journal-figures/figure02-cohort.pdf}
+\caption{Scope of the bounded inputs. (a) Source and modeled observations on a logarithmic axis. (b) Retained coordinate frames. (c) Observed reference classes. (d) Fraction of total variance of the standardized, clipped input retained by the common 50-component PCA.}\end{figure}
+\begin{figure}[p]\centering\includegraphics[width=\linewidth]{journal-figures/figure14-target-lineage.pdf}
+\caption{Targets and information access, conceptual. (a) Molecular cell categories, neighborhood-derived regions and mixed-spot compositions come from different constructions. (b) Within-object clustering uses the reference class count but no reference labels. (c) Patient transfer freezes all fitted quantities before the held-out patient is mapped. (d) Registered images and protein channels support inspection only. (e) Patient contrasts, seed variation and gate readouts answer different questions.}\end{figure}
+\begin{figure}[p]\centering\includegraphics{journal-figures/figure09-colorectal-proteins.pdf}
+\caption{Colorectal TVA section 232, display field. (a) Supplied compartments and display-matched PCA50 and Tessera assignments; only \texttt{lv2} classes with at least 1\% object prevalence are eligible for matching before modal compartment mapping, and unmatched clusters are gray. (b) Measured PanCK, CD45 and DAPI mean intensities, shown as \(\log(1+x)\) with field-wise 2nd--98th percentile color limits.}\end{figure}
+\begin{figure}[p]\centering\includegraphics{journal-figures/figure12-efficiency-mechanism.pdf}
+\caption{Execution and training records. (a) Recorded run time against modeled observations and peak GPU allocation. (b) Reconstruction and gate-weighted contrastive losses for Lung5\_Rep2, seed 1, at the saved epochs.}\end{figure}
+\begin{figure}[p]\centering\includegraphics{journal-figures/supplement01-hnscc.pdf}
+\caption{Open-ST section 26, complete selected 6,000-observation subset. (a) Supplied annotations, PCA50, the six-neighbor mean and Tessera on identical coordinates (seed 1). Matching excludes classes below 1\% object prevalence; rare reference labels, unknowns and unmatched clusters are gray. ARI badges retain original predictions and all valid classes, averaged over three seeds.}\end{figure}
+\begin{figure}[p]\centering\includegraphics{journal-figures/supplement02-mibi.pdf}
+\caption{Three MIBI fields in rows (a--c). Columns show supplied molecular categories, PCA50, the six-neighbor mean and Tessera (seed 1). Matching excludes reference classes below 1\% object prevalence; rare reference labels, unknowns and unmatched clusters are gray. Fields are not independent patients.}\end{figure}
+\begin{figure}[p]\centering\includegraphics{journal-figures/supplement03-rna-markers.pdf}
+\caption{Measured RNA markers in the display fields. (a) Lung EPCAM, COL1A1 and PTPRC. (b) BCC KRT14, COL1A1 and PTPRC. Values are the saved log-normalized expression with 0--98th percentile color limits; high-expressing cells are drawn on top.}\end{figure}
+\begin{figure}[p]\centering\includegraphics{journal-figures/supplement05-scale-controls.pdf}
+\caption{Agreement of simple spatial controls as a function of neighborhood size. (a) Lung region ARI of the neighbor mean. (b) BCC cell-type ARI of the BANKSY-style representation with \(\lambda=0.2\). Each line is one patient (three-seed mean); open circles at the left mark PCA50 and diamonds at the right mark full Tessera for the same patient.}\end{figure}
+\begin{figure}[p]\centering\includegraphics{journal-figures/figure16-external-maps.pdf}
+\caption{Tumor boundary in four of the eight independent patients: rows (a--d) are the two patients with the highest (B, H) and the two with the lowest (C, E) same-graph mean agreement. Columns show the pathologist's regions, PCA50, the unweighted mean of neighbors on Tessera's graph, a tuned control selected on the other seven patients, and Tessera (seed 1). Clusters are matched to the two classes for display only; gray marks spots the pathologist left unassigned and unmatched clusters. Badges give the three-seed mean ARI against tumor versus other tissue.}\label{fig:externalmaps}\end{figure}
+
+\clearpage\section*{Additional supporting displays}
+\begin{table}[htbp]\centering\small
+\caption{Three-seed mean ARI on the 13 objects with the primary cluster number. \(\Delta\) is Tessera minus PCA50.}\label{tab:results}
+\begin{tabular}{lrrrrr}\toprule Object & PCA50 & Neighbor mean & Tessera & Self-only & $\Delta$\\\midrule
+\tableinput ledgers/result_rows.tex
+\bottomrule\end{tabular}\end{table}
+
+\begin{table}[htbp]\centering\scriptsize\setlength{\tabcolsep}{4pt}
+\caption{Tuned spatial controls and whole sections. Bounded-field controls maximize mean ARI over the other patients; values are three-seed means. Whole sections use all eligible cells and fixed cohort-modal controls (200-neighbor mean for NSCLC; BANKSY-style, \(k=100\), \(\lambda=0.2\) for BCC), informed by the bounded analysis of the same patients. Whole-section values are sensitivity results, not independently nested selections.}\label{tab:nested}
+\begin{tabular}{llrrrrrrr}\toprule
+& & \multicolumn{3}{c}{Bounded fields} & \multicolumn{4}{c}{Whole sections}\\\cmidrule(lr){3-5}\cmidrule(lr){6-9}
+Patient & Selected control & PCA50 & Control & Tessera & Cells & PCA50 & Control & Tessera\\\midrule
+\tableinput ledgers/followup_rows.tex
+\bottomrule\end{tabular}\end{table}
+
+\begin{figure}[htbp]\centering\includegraphics{journal-figures/figure05-nsclc-maps.pdf}
+\caption{Lung display fields. Rows (a--e) show Lung5\_Rep2, Lung6, Lung9\_Rep1, Lung12 and Lung13; columns show supplied regions, PCA50, the six-neighbor mean and Tessera. Seed-1 clusters are color-matched only to reference classes with at least 1\% object-level prevalence; rare reference classes, unknown labels and unmatched clusters are gray. ARI badges use original predictions and all valid labels, averaged over three seeds and all retained fields. Lung6's display field is nearly one region.}\label{fig:lung}\end{figure}
+
+\begin{figure}[htbp]\centering\includegraphics{journal-figures/figure06-bcc-maps.pdf}
+\caption{BCC display fields. Rows (a--d) show Patients A--D; columns show supplied cell types, PCA50, the six-neighbor mean and Tessera. Seed-1 clusters are matched only to reference classes with at least 1\% object-level prevalence; rare reference classes, unknown labels and unmatched clusters are gray. ARI badges retain original predictions and all valid labels, averaged over three seeds and all retained fields.}\label{fig:bcc}\end{figure}
+
+\begin{figure}[htbp]\centering\includegraphics{journal-figures/figure07-breast-histology.pdf}
+\caption{Breast spatial coordinates and matched representations. Row (a) shows full tissue and row (b) a median-centered ROI with fixed 22\% half-extent, chosen without labels or scores. Columns show measured spot locations, the dominant Xenium-derived reference, PCA50 and Tessera (seed 1). All panels are author-generated coordinate maps; no source histology image is reproduced. Matching excludes reference categories below 1\% object prevalence; rare reference labels, unknowns and unmatched clusters are gray. ARI badges retain all valid classes and are three-seed means. Scale bars use source calibration.}\label{fig:histology}\end{figure}
+
+\begin{figure}[htbp]\centering\includegraphics{journal-figures/figure08-breast-mixtures.pdf}
+\caption{Breast mixed spots. (a) ARI of the fitted partitions when evaluation is restricted to spots whose dominant category exceeds 0.50 or 0.75; error bars are seed SD and the spot counts are under the axis. (b) Distribution of the dominant-category proportion. (c) Gate-derived seam score against source composition entropy (seed 1); a boundary-sensitive score would rise with mixing. (d) Supplied tumor and DCIS fraction per spot.}\label{fig:mixtures}\end{figure}
+
+\begin{figure}[htbp]\centering\includegraphics{journal-figures/figure11-stability.pdf}
+\caption{Optimization stability and target structure. (a) Mean ARI between the three seed partitions on identical inputs. (b) Reference edge homogeneity, the fraction of spatial edges whose endpoints share a supplied label, against the Tessera minus PCA50 contrast. Lung6 is labelled because its high homogeneity reflects a display field dominated by one region.}\label{fig:stability}\end{figure}
+
+\begin{table}[htbp]\centering\scriptsize\setlength{\tabcolsep}{3.6pt}
+\caption{Independent pathologist cohort, three-seed mean ARI. The tuned control for each patient was selected on the other seven patients; the same-graph mean averages neighbors on Tessera's graph without tuning. Section identifiers are in parentheses; Classes counts the annotation classes scored for all labels.}\label{tab:external}
+\begin{tabular}{lrrrrrrrrr}\toprule
+& & & \multicolumn{4}{c}{All labels} & \multicolumn{3}{c}{Tumor boundary}\\\cmidrule(lr){4-7}\cmidrule(lr){8-10}
+Patient & Spots & Classes & PCA50 & Same-graph mean & Tuned control & Tessera & Same-graph mean & Tuned control & Tessera\\\midrule
+\tableinput ledgers/external_rows.tex
+\bottomrule\end{tabular}\end{table}
+
+\begin{table}[htbp]\centering\small
+\caption{Datasets analyzed. Counts refer to retained observations in the bounded inputs of at most 6,000 observations. Frames are coordinate identities, not patients. Class counts exclude missing labels.}\label{tab:inputs}
+\begin{tabular}{lrrrrr}\toprule Object & Modeled & Labeled & Frames & Classes & Features\\\midrule
+\tableinput ledgers/input_rows.tex
+\bottomrule\end{tabular}\end{table}
+
+\begin{figure}[htbp]\centering\includegraphics[width=\linewidth]{journal-figures/figure13-architecture.pdf}
+\caption{The Tessera computation as released. (a) Common PCA features and frame-restricted neighborhoods. (b) Edge differences and distances determine gates; gated messages are normalized before a residual update. (c) Three depths feed attention and a 32-dimensional projection. (d) A decoder reconstructs the PCA features; neighbor-positive contrast is weighted by detached gates. (e) K-means returns the within-object partition, and source-category centroids return transfer labels. Glyphs are conceptual; dimensions are those implemented.}\label{fig:architecture}\end{figure}
+
+\section*{Supplementary Methods}
+
+\subsection{Assays, patients and reference targets}
+The NSCLC archive contains eight sections from five source patients \citep{he2022cosmx,sun2026consensus}. We retain one predetermined section per patient: Lung5\_Rep2, Lung6, Lung9\_Rep1, Lung12 and Lung13. The archive's \texttt{label} field gives regions such as tumor interior, stroma and tumor--stroma boundary, computed by Mclust on cell-type frequencies among 200 spatial neighbors; it therefore contains a spatial prior. The supplied \texttt{cell\_type} field is evaluated as a separate target.
+
+The BCC source contains four patients \citep{yerly2024wound}. Patients A and B have ulcerated nodular samples; C and D have baseline, wounded and unwounded conditions. \texttt{Patient\_ID}, not the run name, defines replication. Reference cell types were assigned through InSituType against a molecular reference and are kept as supplied. No wound-response effect is inferred.
+
+The breast object contains measured Visium counts from the registered multi-assay breast dataset \citep{janesick2023breast}; its target is the dominant Xenium-derived category under each spot. The colorectal section 232 is source-coded tubulovillous adenoma (TVA) \citep{crowell2025tva}; its \texttt{lv2} subpopulations are the target, and broad compartments and protein intensities are recorded separately. Open-ST section 26 comes from a metastatic lymph-node stack \citep{schott2024openst}. The MIBI object contains three fields with molecular cluster labels \citep{hartmann2021scmep,palla2022squidpy}. Only the lung and BCC panels support five- and four-patient summaries. Supplementary Table~S19 reports the retained input sizes and coordinate frames. Supplementary Figs.~S1 and S2 describe sampling coverage and the distinct constructions of the reference targets.
+
+
+
+\subsection{Selection and preprocessing}
+Selection is fixed before fitting and never uses labels or scores. Multiframe objects visit whole fields in a fixed hash order and admit a field if it fits a 6,000-observation budget; BCC conditions are visited round-robin first. A single oversized frame is subsampled with a fixed seed. The largest retained field is the predetermined display field. Because the budget limits patient coverage, the lung and BCC analyses were repeated on whole sections without any cap (Section~\ref{sec:robustness}).
+
+QC uses the source selected/filtered flag where available, excludes BCC low-quality cells and requires finite coordinates and values. One of 2,864 registered breast spots has zero counts in the shared panel and is excluded. MIBI values are signed and centered in the source and are used as supplied. Count matrices are library-size normalized to \(10^4\) and log-transformed; named negative-control features are removed; up to 3,000 features are kept by variance. Write the retained measurements as \(C\in\mathbb{R}^{n\times p}\), coordinates as \(r_i\in\mathbb{R}^2\), frame identities as \(f_i\) and the valid reference-label set as \(\mathcal V\). The common molecular input is
+\begin{align}
+u_{ig}&=\begin{cases}\log(1+10^4 C_{ig}/\sum_h C_{ih}),&\text{count-like input},\\ C_{ig},&\text{noninteger or signed source input},\end{cases}\label{eq:normalization}\\
+\widetilde u_{ig}&=\operatorname{clip}_{[-10,10]}[(u_{ig}-\mu_g)/s_g],\qquad
+X=(\widetilde U-\mathbf{1}\mu_{\rm PCA}^{\mathsf T})V_q,\quad q\leq50,\label{eq:pca}
+\end{align}
+with \(s_g=1\) for zero-variance features and \(V_q\) the retained PCA loadings. The retained-variance summary is
+\begin{equation}
+v_{\rm PCA}=\frac{\sum_{k=1}^{q}\widehat\lambda_k}{\operatorname{tr}[\operatorname{Cov}(\widetilde U)]}.\label{eq:variance}
+\end{equation}
+Scaling and PCA are fitted within each object for within-object clustering; in transfer, every fitted quantity comes from source patients only.
+
+\subsection{Spatial graph and the Tessera encoder}
+Each observation queries its six nearest other observations within its own frame; unrelated frames are never connected. The directed multiset union and distance standardization are
+\begin{align}
+E&=\{\!\{(j,i):j\in N_i^{(6)}\}\!\}\uplus\{\!\{(i,j):j\in N_i^{(6)}\}\!\},\qquad f_i=f_j,\ i\ne j,\label{eq:graph}\\
+\delta_{ji}&=\frac{\lVert r_j-r_i\rVert_2-\mu_E}{\sigma_E+10^{-8}},\qquad
+h_i^{(0)}=\operatorname{ReLU}(W_0x_i+b_0).\label{eq:input}
+\end{align}
+Reverse edges are concatenated without deduplication, so mutual neighbors contribute two entries and six is a query budget rather than a degree cap. At layer \(\ell\) Tessera assigns a gate and aggregates with a gate-normalized mean:
+\begin{equation}
+g_{ji}^{(\ell)}=\operatorname{sigmoid}\!\left(\operatorname{MLP}_{\ell}\left[|h_j^{(\ell-1)}-h_i^{(\ell-1)}|,\delta_{ji}\right]\right),\quad\ell=1,2,3,\label{eq:gate}
+\end{equation}
+\begin{equation}\begin{aligned}
+a_i^{(\ell)}&=\frac{\sum_{(j,i)\in E}g_{ji}^{(\ell)}(W_{\ell}h_j^{(\ell-1)}+b_{\ell})}{\sum_{(j,i)\in E}g_{ji}^{(\ell)}+10^{-8}},\\
+h_i^{(\ell)}&=\operatorname{LayerNorm}\left(h_i^{(\ell-1)}+\operatorname{Dropout}[\operatorname{ReLU}(a_i^{(\ell)})]\right).
+\end{aligned}
+\label{eq:aggregate}
+\end{equation}
+Scaling all incident gates by a common factor approximately cancels when their sum is large relative to \(10^{-8}\); the gates can still change relative neighbor weights. Small gate magnitudes alone therefore do not imply an unweighted mean. Depth attention combines the three 64-dimensional hidden states into a 32-dimensional embedding,
+\begin{equation}
+\alpha_i^{(\ell)}=\frac{\exp(w_a^{\mathsf T}h_i^{(\ell)}+b_a)}{\sum_{t=1}^3\exp(w_a^{\mathsf T}h_i^{(t)}+b_a)},\qquad
+z_i=W_z\sum_{\ell=1}^3\alpha_i^{(\ell)}h_i^{(\ell)}+b_z.\label{eq:fusion}
+\end{equation}
+A two-layer decoder reconstructs the input. For each directed edge, with \(\bar z=z/\max(\lVert z\rVert_2,10^{-12})\), temperature \(\tau=0.2\) and ten sampled node indices \(v_{ji,k}\), the contrastive term treats the spatial neighbor as the positive:
+\begin{equation}
+\mathcal L_{\rm rec}=\frac{1}{nq}\sum_{i=1}^n\lVert\widehat x_i-x_i\rVert_2^2,\label{eq:reconstruction}
+\end{equation}
+\begin{align}
+\ell_{ji}&=-\log\frac{\exp(\bar z_j^{\mathsf T}\bar z_i/\tau)}{\exp(\bar z_j^{\mathsf T}\bar z_i/\tau)+\sum_{k=1}^{10}\exp(\bar z_j^{\mathsf T}\bar z_{v_{ji,k}}/\tau)},\label{eq:contrast}\\
+\mathcal L_{\rm con}&=\frac{\sum_{(j,i)\in E}\operatorname{stopgrad}(g_{ji}^{(3)})\ell_{ji}}{\sum_{(j,i)\in E}\operatorname{stopgrad}(g_{ji}^{(3)})+10^{-8}},\qquad
+\mathcal L=\mathcal L_{\rm rec}+0.5\mathcal L_{\rm con}.\label{eq:loss}
+\end{align}
+The gate is detached only in the contrastive weighting. Negatives are sampled uniformly from all modeled observations, including other coordinate frames, and can coincide with neighbors or the anchor; the sampler is used as released. The node seam readout, one minus the mean incident last-layer gate, is
+\begin{equation}
+b_i=1-\frac{\sum_{(j,i)\in E}g_{ji}^{(3)}}{|E_i|+10^{-8}}.\label{eq:seam}
+\end{equation}
+It is an uncalibrated computational readout; the released soft-assignment head is untrained and is not used (Supplementary Fig.~S15).
+
+
+
+\subsection{Matched controls and component removals}
+Nine arms were fitted with seeds 1, 2 and 3: PCA50, PCA30, a six-neighbor mean, full Tessera, no edge gating (\(g\equiv1\)), no depth fusion, no contrastive term, a self-only encoder (self edges, reconstruction only), and full Tessera with coordinates permuted within each frame. Neural arms use hidden width 64, embedding width 32, three layers, dropout 0.1, Adam with learning rate 0.001 and weight decay 0.0001, and 120 epochs, exactly as released. Every embedding is clustered by K-means with ten initializations, and the number of reference classes supplies \(K\):
+\begin{align}
+z_i^{\rm PCA50}&=x_i,\quad z_i^{\rm PCA30}=x_{i,1:\min(30,q)},\quad
+z_i^{\rm mean}=\frac{\sum_{(j,i)\in E}x_j}{\max(1,|E_i|)},\label{eq:controls}\\
+(\widehat y,\widehat c)&=\arg\min_{y,c}\sum_i\lVert z_i-c_{y_i}\rVert_2^2,
+\qquad K=|\{y_i^{\rm ref}:i\in\mathcal V\}|.\label{eq:kmeans}
+\end{align}
+No spatial label refinement, checkpoint selection or favorable seed or field selection is performed.
+
+\subsection{Tuned spatial controls, corrected nulls and robustness}\label{sec:robustness}
+\emph{Tuned controls.} For \(k\in\{6,10,15,30,50,100,200\}\), let \(\mathcal N_k(i)\) be the \(k\) nearest other observations in the same frame. We evaluated the neighbor mean \(m_i^{(k)}\), a BANKSY-style concatenation of the cell's own features with a weighted neighbor mean, and a composition representation that summarizes the frequencies of 15 expression clusters among the 200 nearest neighbors (\(\pi_i\)):
+\begin{equation}
+m_i^{(k)}=\frac1k\sum_{j\in\mathcal N_k(i)}x_j,\qquad
+z_i^{\rm B}(k,\lambda)=\bigl[x_i,\ \sqrt\lambda\,m_i^{(k)}\bigr],\qquad
+z_i^{\rm comp}=\pi_i,\label{eq:tuned}
+\end{equation}
+with \(\lambda\in\{0.2,0.5,0.8\}\), giving 29 spatial configurations per object, each clustered at the same \(K\) with three K-means seeds. These tuned means use directed nearest-other lists; the untuned same-graph mean uses the symmetrized multiset in equation~\eqref{eq:graph}, so their six-neighbor variants need not coincide. \emph{Nested selection.} Within each cohort, the configuration for held-out patient \(p\) is the one with the highest mean ARI over the other patients,
+\begin{equation}
+\widehat\theta_{-p}=\arg\max_{\theta\in\Theta}\frac{1}{P-1}\sum_{p'\ne p}\overline{\operatorname{ARI}}_{p'}(\theta),\qquad
+\Delta^{\rm tuned}_p=\overline{\operatorname{ARI}}_p^{\rm Tessera}-\overline{\operatorname{ARI}}_p(\widehat\theta_{-p}),\label{eq:nested}
+\end{equation}
+so configuration selection excludes the held patient's scores. The selected representation still uses that patient's molecular measurements and coordinates, and the clustering resolution uses the target class count. This is within-patient transductive clustering with patient-excluded scale selection; source-only prediction is evaluated separately in transfer.
+
+\emph{Corrected geometry null.} Permuting coordinates while keeping the contrastive term turns random cells into positives and is therefore not a neutral null. We additionally trained Tessera on the permuted graph without the contrastive term, and we use the self-only encoder as the reference for the effect of measured geometry.
+
+\emph{Gate diagnostics.} For edges whose endpoints both carry valid labels, an edge is a seam if the labels differ. Gate discrimination of seams is the AUROC of \(1-g^{(3)}\), compared with the AUROC of the plain PCA-feature difference \(\lVert x_j-x_i\rVert_2\) on the same edges; ties count one half:
+\begin{equation}
+\operatorname{AUROC}(q)=\frac{\sum_{e\in E_+}\sum_{e'\in E_-}
+[\mathbf1(q_e>q_{e'})+\tfrac12\mathbf1(q_e=q_{e'})]}{|E_+|\,|E_-|}.\label{eq:auroc}
+\end{equation}
+To quantify nonuniform weighting independently of gate magnitude, for each node with positive incoming gate mass \(G_i=\sum_{(j,i)\in E}g_{ji}^{(3)}\) and degree \(d_i=|E_i|\), we compute
+\begin{equation}
+w_{ji}=g_{ji}^{(3)}/G_i,\qquad D_i=\frac12\sum_{(j,i)\in E}|w_{ji}-1/d_i|,\qquad
+R_i=\frac{1}{d_i\sum_{(j,i)\in E}w_{ji}^2}.\label{eq:gate-weights}
+\end{equation}
+Here \(D_i=0\) and \(R_i=1\) for uniform weights over multiset edge entries. We report node quantiles per seed, then seed means, and the maximum normalization attenuation \(10^{-8}/(G_i+10^{-8})\) separately; isolated or zero-mass nodes are excluded and counted.
+
+\emph{Target swap and cluster number.} Saved embeddings were re-clustered against supplied lung cell types at the cell-type \(K\) (21 or 22 classes). In a separate sensitivity analysis, \(K\) is the number of primary-target classes with at least 1\% prevalence among valid observations. ARI still includes \emph{all} valid reference labels, including rare classes; only the clustering resolution changes. \emph{Whole sections.} The lung and BCC inputs were rebuilt without the 6,000-cell budget, using the same preprocessing. PCA50, the six-neighbor mean, fixed cohort-modal controls (NSCLC: \(k=200\) mean; BCC: BANKSY-style \(k=100,\lambda=0.2\)) and Tessera were rescored at three seeds. These controls were informed by bounded analyses of the same patients, not selected independently for each whole-section patient; the comparison is a sampling sensitivity analysis, not untouched validation.
+
+\subsection{Patient-held-out transfer}
+Five NSCLC leave-one-patient-out folds were run. The four source patients alone fit gene scaling, PCA50, graph-distance scaling and the encoder; the encoder is then frozen. Predictions are nearest source-category centroids in the frozen representation, separately for regions and cell types:
+\begin{align}
+z_i^{S_t}&=F_{\theta_{S_t}}(T_{S_t}(u_i),E_{S_t}),\quad
+z_i^t=F_{\theta_{S_t}}(T_{S_t}(u_i),E_t),\label{eq:transfer}\\
+m_c^{S_t}&=\frac{1}{|S_{t,c}|}\sum_{i\in S_{t,c}}z_i^{S_t},\qquad
+\widehat y_i^t=\arg\min_{c\in\mathcal C_{S_t}}\lVert z_i^t-m_c^{S_t}\rVert_2^2.\label{eq:centroid}
+\end{align}
+PCA50, the self-only encoder and full Tessera were evaluated at three seeds. Neighbor means with \(k=6\) and \(k=200\), computed on the same source-fitted PCA within each patient's own frames, were added as deterministic spatial controls. The \(k=200\) choice was informed by the earlier bounded lung analyses, not tuned separately within each transfer fold; both fixed scales are reported as descriptive controls. Target categories absent from the sources would remain errors.
+
+\subsection{Independent pathologist cohort, further tissues and weighting controls}
+The independent cohort contains eight HER2-positive breast tumors, one section per patient, each with a pathologist's regional annotation of the stained image and spatial transcriptomics counts \citep{andersson2021her2st}. Labels were joined to counts by array coordinate, at least 90\% of labeled spots had to match the count matrix of their own section, and a ninth annotated section without public counts was excluded before any fit. For the one patient whose annotated image and label table carry different section names, the labels matched \HerGOwn\% of their own section's spots and \HerGOther\% of the neighboring section's, so the label table was used as supplied. Preprocessing, graph construction and fitting were those of the bounded objects, with one frame per section, three seeds and \(K\) equal to the number of valid classes of the target. Spots the pathologist left unassigned stayed in the graph and in the principal components and were excluded from scores where stated. Within each patient, a separate encoder was fitted for each distinct target class count and reused by targets sharing that count. The lung target-swap analysis instead re-clusters saved primary embeddings.
+
+Three targets were scored. \emph{All labels} keeps every annotation string, including unassigned spots as a class, and was the comparison fixed in advance. \emph{Named compartments} treats unassigned spots as missing. \emph{Tumor boundary} contrasts invasive cancer and cancer in situ with adipose tissue, connective tissue, immune infiltrate and breast glands (\(K=2\)); two variants restrict the tumor class to invasive cancer or drop breast glands. For each patient the tuned control was selected on the other seven patients with the grid above. Let \(d_*\) be the median PCA-feature distance over the graph's directed edge entries. The untuned control replaces each observation by the mean of its neighbors on the Tessera graph,
+\begin{align}
+\tilde x_i&=\frac{\sum_{(j,i)\in E}w_{ji}\,x_j}{\sum_{(j,i)\in E}w_{ji}},\qquad w_{ji}=1\ \ (\text{same-graph mean}),\nonumber\\
+w_{ji}&=\exp\!\Bigl(-\frac{\lVert x_j-x_i\rVert_2}{d_*+10^{-8}}\Bigr)\ \ (\text{weighted mean}),\label{eq:neighborhood}
+\end{align}
+with no self term, no tuning and no learned parameter; the denominator of the weighted mean is floored at \(10^{-8}\), returning zero for a node with no incoming mass. Two controls tested the weighted mean: its weights permuted across edges, and coordinates permuted within the section before the graph and weights were built. Edge-level seam discrimination is the AUROC of equation~\eqref{eq:auroc} for the learned gate, the plain feature difference \(\lVert x_j-x_i\rVert_2\) and the smoothed difference \(\lVert\tilde x_j-\tilde x_i\rVert_2\). With eight patients we report exact sign-flip values (smallest attainable \(2/256\)) and 95\% percentile bootstrap intervals over patients, which remain approximate. The encoder's optimization is not bit-reproducible, so the unchanged fitting protocol was repeated three times. Each repetition averages the same three seeds; the third repetition scores every arm together and supplies the reported values. Repetition ranges describe computational variation, not additional patients.
+
+Three further tissues were scored with the same pipeline: a human dorsolateral prefrontal cortex Visium section with layer labels \citep{maynard2021dlpfc}, a mouse visual-cortex STARmap section \citep{wang2018starmap} and a mouse hypothalamic MERFISH section \citep{moffitt2018merfish}, each with its supplied anatomical labels, one frame and fewer than 6,000 observations. All three had also been used when the encoder was first benchmarked, so they test breadth, not independence. The tuned control for each tissue was selected on the other two. The best of the 30 configurations on the test labels is reported as a label-selected maximum within the tested grid and is never used for inference. The weighting controls, boundary variants, smoothed seam scores and tissue panel were specified in writing before they were run but after the first cohort comparison had been seen, and are exploratory.
+
+\subsection{An untouched colorectal pathology pilot}
+After the breast comparison, we specified a separate pilot in writing on the three smallest patient-distinct archives in the colorectal Visium study~\citep{valdeolivas2024crc}. This selection used published archive sizes before count matrices or labels were opened. The patients were absent from the recorded Tessera development and evaluation cohorts. Their \CrcTissueSpots{} tissue spots had \CrcLabeledSpots{} released pathologist labels, assigned from H\&E using QuPath and Loupe; exact barcode joins matched all annotated tissue spots. Every tissue spot stayed in preprocessing and the graph. The same fixed preprocessing, graph and encoder settings were used, with three seeds, 120 epochs and a fixed two-class auxiliary head, absent from the training loss, so neither the labels nor their class count entered fitting. All fits ran on one CPU thread; a slower four-thread partial pass was retained separately and excluded from this pilot's reported results.
+
+PCA50, the untuned same-graph mean, Tessera and NoGate were compared without scale selection. The original target retained every released label. Opening the schema revealed \CrcQcExcluded{} spots explicitly marked \texttt{exclude}. A disclosed sensitivity invalidated that QC category for scoring, leaving \CrcQcSpots{} spots and preserving mixed tumor/stroma and immune-infiltration categories. It was specified in writing after the first PCA/mean scores, before any seam AUROC was calculated. Each saved embedding was clustered at the valid target's class count; this ARI resolution is label-informed. Boundary AUROC uses one copy of each undirected six-neighbor edge with valid endpoints, with directed gate duplicates and the three seeds averaged. We report raw and QC-filtered targets, 1,000 complete-label shuffles per section and 10,000 patient-bootstrap resamples. The pilot checks a positive gate-minus-feature AUROC interval and a Tessera-minus-mean ARI interval above an author-chosen 0.02 relevance margin; it does not establish a biological effect margin. Three patients give unstable bootstrap intervals and a minimum attainable two-sided sign-flip value of 0.25. Archive H\&E overlays were inspected for gross registration; a second blinded annotation and independent registration assessment were unavailable. This pilot remains separate from the 24-object landscape because its auxiliary-head setting and unique-edge readout differ.
+
+
+\subsection{Readouts and statistics}
+Partition agreement is the adjusted Rand index (ARI) \citep{hubert1985ari}; NMI is secondary. With \(n_{ab}\) the valid-label contingency table,
+\begin{align}
+A&=\sum_{a,b}\binom{n_{ab}}{2},\quad R=\sum_a\binom{n_{a\cdot}}{2},\quad
+C'=\sum_b\binom{n_{\cdot b}}{2},\quad T=\binom{|\mathcal V|}{2},\nonumber\\
+\operatorname{ARI}&=\frac{A-RC'/T}{(R+C')/2-RC'/T},\qquad
+\operatorname{NMI}=\frac{2I(y;\widehat y)}{H(y)+H(\widehat y)}.\label{eq:partition}
+\end{align}
+Seed summaries and patient contrasts are
+\begin{equation}
+\overline M_{o,a}=\frac13\sum_{s=1}^3 M_{o,a,s},\qquad
+\operatorname{SD}_{o,a}=\sqrt{\frac12\sum_{s=1}^3(M_{o,a,s}-\overline M_{o,a})^2},\qquad
+\Delta_p=\overline{\operatorname{ARI}}_p^{\,a}-\overline{\operatorname{ARI}}_p^{\,b}.\label{eq:seed-summary}
+\end{equation}
+Patients are the unit of inference. For a cohort of \(P\) patients, the exact two-sided sign-flip test enumerates all \(2^P\) sign assignments,
+\begin{equation}
+p_{\rm flip}=2^{-P}\sum_{\sigma\in\{-1,1\}^P}\mathbf1\Bigl(\bigl|\tfrac1P\textstyle\sum_p\sigma_p\Delta_p\bigr|\geq\bigl|\tfrac1P\sum_p\Delta_p\bigr|\Bigr),\label{eq:patient}
+\end{equation}
+so the smallest attainable \(p\) is 0.0625 for five patients and 0.125 for four. Exact enumeration assumes sign symmetry; it does not overcome the small cohort or dependence from overlapping configuration-selection folds. Follow-up \(p\)-values are descriptive sign-flip summaries, not confirmatory significance tests. No multiplicity adjustment was applied. The independent-cohort all-label target and tuned-control contrast were fixed before fitting; the same-graph comparator, boundary variants, weighting and tissue analyses are exploratory. For the eight-patient cohort, percentile intervals use 10,000 patient resamples with a fixed random seed. They resample saved patient contrasts conditional on the selected controls, without repeating cross-patient configuration selection, and therefore omit selection uncertainty. We report sign counts rather than percentile intervals, which are unreliable with four or five patients. Between-seed stability is the mean ARI over the three seed pairs on identical inputs,
+\begin{equation}
+S_{o,a}=\frac13\sum_{1\leq s<t\leq3}\operatorname{ARI}(\widehat y_{o,a,s},\widehat y_{o,a,t}).\label{eq:stability}
+\end{equation}
+Transfer accuracy, balanced accuracy over all observed target classes, macro F1 and the unsupported-category fraction are
+\begin{equation}
+\operatorname{Acc}=\frac{\sum_{i\in\mathcal V}\mathbf1(\widehat y_i=y_i)}{|\mathcal V|},\qquad
+\operatorname{BAcc}=\frac{1}{|\mathcal C_t|}\sum_{c\in\mathcal C_t}
+\frac{\sum_{i\in\mathcal V}\mathbf1(y_i=c,\widehat y_i=c)}{\sum_{i\in\mathcal V}\mathbf1(y_i=c)},\label{eq:accuracy}
+\end{equation}
+\begin{equation}
+\operatorname{macroF1}=\frac{1}{|\mathcal C_t|}\sum_{c\in\mathcal C_t}
+\frac{2\mathrm{TP}_c}{2\mathrm{TP}_c+\mathrm{FP}_c+\mathrm{FN}_c},\qquad
+u_t=\frac{1}{|\mathcal V|}\sum_{i\in\mathcal V}\mathbf1(y_i\notin\mathcal C_{S_t}).\label{eq:f1}
+\end{equation}
+Reference and predicted edge homogeneity are the fractions of valid-label and all edges whose endpoints share a label,
+\begin{equation}
+H_{\rm ref}=\frac{\sum_{(j,i)\in E_{\mathcal V}}\mathbf1(y_j=y_i)}{|E_{\mathcal V}|},\qquad
+H_{\rm pred}=\frac{\sum_{(j,i)\in E}\mathbf1(\widehat y_j=\widehat y_i)}{|E|}.\label{eq:homogeneity}
+\end{equation}
+Display-only quantities (map color matching, image registration, histogram densities and color scaling) are defined in the Supporting Information.
+
+
+OpenAI Codex (OpenAI) assisted with code development, execution and checking of computational analyses, suggestions for analytical and methodological checks, manuscript drafting and restructuring, extensive language editing, and LaTeX and figure preparation. Reported numerical results were checked against saved outputs, and scripts and document builds were verified using the procedures described in this article and its Supplementary Information. AI-assisted critique and verification are preparation aids and do not constitute independent human peer review. The author directed the work and retains responsibility for the study design, data provenance, choice of analyses, scientific interpretation and final manuscript. No generative images were used as research data.
+
+\section*{Supplementary Results: Detailed comparisons and sensitivities}
+
+\subsection{Tessera's lung gain is matched by averaging at the scale of the annotation}
+Supplementary Table~S19 records observation and coordinate-frame coverage (Supplementary Fig.~S1); reference-class counts and retained PCA variance describe target and molecular-input complexity (Supplementary Fig.~S1). Across the five NSCLC patients, mean ARI was \NsclcPca{} for PCA50 and \NsclcFull{} for Tessera; Tessera was higher in \LungVsPcaPositive{} of 5 patients (mean difference \NsclcDelta{}, exact \(p=\LungVsPcaP{}\); Figure~2a--b, Supplementary Table~S16). The untuned six-neighbor mean reached \NsclcMean{}, within \NsclcVsMean{} of Tessera. When the neighborhood scale was selected on the other four patients, the selected control was a neighbor mean over 100 or 200 neighbors in every fold and reached mean ARI \LungNestedControlMean{}. It exceeded Tessera in all five patients (mean \LungNestedDelta{}, range \LungNestedMin{} to \LungNestedMax{}; exact \(p=\LungNestedP{}\); Figure~2b, Supplementary Table~S17). Agreement rose steadily with neighborhood size up to the 200-neighbor scale at which the regions were constructed (Supplementary Fig.~S8). Complete ARI and NMI seed summaries are reported in Supplementary Tables S1--S4.
+
+Whole-section sensitivity analyses of \WholeCellsMin{} to \WholeCellsMax{} cells reproduced this ordering with the fixed cohort-modal controls. Tessera exceeded PCA50 in \LungWholeVsPcaPositive{} of 5 lung sections (mean \LungWholeVsPcaMean{}), and the 200-neighbor mean exceeded Tessera in all five (mean \LungWholeVsControlMean{}; descriptive \(p=\LungWholeVsControlP{}\); Figure~2c). This ordering persists without the 6,000-cell budget, but the same patients informed the control choice.
+
+
+
+
+
+
+
+\subsection{Removing gates does not reduce lung agreement; contrast carries the gain}
+If the gates detected tissue boundaries, removing them should reduce agreement and they should separate annotation seams. Neither prediction held consistently. Removing the gates increased lung agreement in four of five patients; Lung6 decreased by less than 0.001 ARI (mean change \NoGateMean{}; Figure~3a). Gate seam AUROC ranged from \GateAurocMin{} to \GateAurocMax{} (median \GateAurocMedian{}), and a plain PCA-feature difference on the same edges separated seams better in \GateBeaten{} of \GateObjects{} objects (median AUROC \GateExprAurocMedian{}; Figure~3b). Most last-layer lung gates were near zero (median \LungGateMedianMin{}--\LungGateMedianMax{}; \LungGateLowMin{}--\LungGateLowMax{}\% below 0.05), with strongly overlapping within- and across-region distributions (Figure~3c; Supplementary Table S6). Nevertheless, their normalized relative weights were not uniform: patient-level seed means of median node total-variation distance from uniform ranged from \LungWeightTvdMin{} to \LungWeightTvdMax{} (Supplementary Table S8). The evidence for dispensable gating is the ablation, not an algebraic equivalence between small gates and an unweighted mean.
+
+Message passing without the contrastive term added nothing: the no-contrast encoder matched the self-only encoder within \NoContrastSelfMaxGap{} ARI in every lung patient, and training on permuted coordinates without the contrastive term matched it within \PermNoContrastMaxGap{}. The lung gain therefore comes from the contrastive objective, which pulls spatial neighbors together in the embedding (Figure~3a). Measured against the self-only encoder, which is the appropriate reference for the effect of geometry, full Tessera was better in four of five lung patients and TVA, lower in Lung6, and worse in \BelowSelfOnly{} of 13 objects, including all four BCC patients (Figure~3d). The earlier comparison with permuted coordinates overstated the benefit of geometry, because permutation with the contrastive term retained makes random cells positives and degrades the embedding.
+
+
+
+The lung display fields show consolidation of the supplied regions in Lung5, Lung9, Lung12 and Lung13 (Supplementary Fig.~S10). Lung6's nearly single-region display field highlights why field identity can dominate that patient's target (Supplementary Fig.~S10).
+
+
+
+\subsection{Cell-type targets and clustering resolution change the comparison}
+BCC references are molecular cell types. PCA50 reached mean ARI \BccPca{} and Tessera \BccFull{}; Tessera was lower in all four patients (mean \BccDelta{}; exact \(p=\BccVsPcaP{}\)), although the difference in Patient A was within seed variation (Supplementary Table~S16). The tuned control selected on the other BCC patients was a BANKSY-style representation that keeps each cell's own features and adds a lightly weighted 100-neighbor mean (\(\lambda=0.2\)). It exceeded Tessera in all four patients on the bounded fields (mean \BccNestedDelta{}) and on whole sections (mean \BccWholeVsControlMean{}; Figure~2b--c). Increasing the neighborhood scale did not help BCC (Supplementary Fig.~S8), and the BCC display fields show intermingled categories for Patients A and B (Supplementary Fig.~S11) and C and D (Supplementary Fig.~S11).
+
+The lung data allow the same comparison without changing dataset. Re-clustering the saved lung embeddings at the cell-type \(K\) and scoring them against supplied cell types, mean ARI was \CellTypePca{} for PCA50, \CellTypeTessera{} for Tessera and \CellTypeMean{} for the neighbor mean; Tessera was below PCA50 in \CellTypeTesseraLower{} of 5 patients (Figure~2d). The same embeddings that gain on regions therefore lose on cell types, linking the direction of the effect to the target within one platform. With \(K\) set by classes of at least 1\% prevalence, but ARI still scored on all valid labels, Tessera exceeded PCA50 in \LungCommonKBetter{} of 5 lung patients (mean \LungCommonKDelta{}) and \BccCommonKBetter{} of 4 BCC patients (mean \BccCommonKDelta{}; Supplementary Table S7). The BCC ordering is thus sensitive to clustering resolution, not uniformly unfavorable across \(K\). At the primary \(K\), breast Visium, Open-ST and MIBI favored PCA50, and colorectal TVA favored Tessera (Figure~2a). Colorectal assignments and measured protein intensities provide context for that comparison (Supplementary Fig.~S3), without independent validation labels. The breast ROI shows Tessera consolidating mixed spots into larger domains than the dominant-category reference (Supplementary Fig.~S12). Restricting evaluation to purer spots raised every arm's agreement but did not change their order (Supplementary Fig.~S13). The seam-score scatter against composition entropy and the supplied tumor/DCIS fractions retain the spot-level context (Supplementary Fig.~S13); they are inspection readouts, not independently validated boundaries. Open-ST and MIBI comparisons retain identical coordinates across arms (Supplementary Fig.~S5, Supplementary Fig.~S6). Measured lung and BCC RNA markers provide tissue context (Supplementary Fig.~S7) without supplying independent validation labels.
+
+
+
+
+
+
+
+
+
+\subsection{Patient transfer trades cell-type accuracy for region accuracy}
+In leave-one-patient-out transfer, Tessera raised region balanced accuracy from \TransferRegionPca{} with PCA50 to \TransferRegionFull{}, but lowered cell-type balanced accuracy from \TransferCellPca{} to \TransferCellFull{}, in all five folds (Figure~4a--b). Spatial neighbor means showed the same trade-off more strongly: the 200-neighbor mean reached \TransferRegionMeanTwoHundred{} for regions and \TransferCellMeanTwoHundred{} for cell types. Accuracy followed the same pattern (Figure~4c--d). Tessera therefore sits between expression-only and smoothed representations, and the transfer setting reproduces the target dependence seen within objects. No supplied target category was absent from the sources in these folds. Supplementary Table S5 reports the complete patient-held-out accuracy and balanced-accuracy values.
+
+
+
+
+
+\subsection{Tessera partitions vary between seeds}
+For PCA50, the three seeds varied only the K-means initialization; the minimum seed-pair ARI was \StabilityPcaMin{}. Tessera's seed-pair ARI ranged from \StabilityTesseraMin{} to \StabilityTesseraMax{} (Supplementary Fig.~S14), so its partitions changed substantially between seeds even when mean agreement with the reference was similar. Agreement gains over PCA50 were confined to objects in which neighboring cells usually share a label, the lung regions and TVA (Supplementary Fig.~S14). Lung6 is the exception: its display field is almost entirely one region, and the region task there reduces to separating two fields. Execution summaries and saved loss curves document the observation budgets and fitting records (Supplementary Fig.~S4).
+
+\subsection{An independent pathologist-labelled cohort reproduces the ordering}
+Supplementary Table S9 reports annotation coverage and class composition. In the independent cohort (\HerPatients{} patients, \HerSpotsMin{} to \HerSpotsMax{} spots, \HerClassesMin{} to \HerClassesMax{} annotation classes), Tessera was below PCA50 in \HerAllTessPcaNeg{} patients (mean \HerAllTessPcaMean{}) and below the tuned control in \HerAllTessNestedNeg{} (mean \HerAllTessNestedMean{}; exact \(p=\HerAllTessNestedP{}\); Figure~5a, Supplementary Table~S18). The untuned same-graph mean was higher than Tessera in \HerAllTessUSixNeg{} of \HerPatients{} patients (Tessera minus mean, \HerAllTessUSixMean{}; exact \(p=\HerAllTessUSixP{}\), bootstrap interval \HerAllTessUSixLo{} to \HerAllTessUSixHi{}) and higher than the tuned control in \HerAllUSixNestedPos{}.
+
+Scored only on the tumor boundary, the same-graph mean exceeded the tuned control in all \HerPatients{} patients (mean \HerBndUSixNestedMean{}, exact \(p=\HerBndUSixNestedP{}\), interval \HerBndUSixNestedLo{} to \HerBndUSixNestedHi{}), whereas Tessera and the control split \HerBndTessNestedPos{} to \HerBndTessNestedNeg{} (mean \HerBndTessNestedMean{}) and Tessera was below the same-graph mean in \HerBndTessUSixNeg{} patients (Figure~5b,c). The highest Tessera scores were in patients B, G and H, where the same-graph mean was also high; in patients C, E and F every method stayed below 0.14. The direction held for named compartments (same-graph mean above the tuned control in \HerCompUSixNestedPos{} of \HerPatients{}; Tessera below the mean in \HerCompTessUSixNeg{}) and for both variants of the boundary definition (Supplementary Table S10).
+
+The maps show the two patients with the highest and the two with the lowest same-graph agreement (Supplementary Fig.~S9): in B and H the methods recover the main tumor masses with differing border roughness, and in C and E none recovers the annotated region closely.
+
+The learned gate had tumor-boundary seam AUROC near chance (AUROC \HerBndSeamGate{}, 95\% bootstrap interval \HerBndSeamGateLo{} to \HerBndSeamGateHi{}; above 0.5 in \HerBndGateAboveChance{} of \HerPatients{} patients), and the plain feature difference was barely better (\HerBndSeamRaw{}). The exploratory protocol prediction that the gate would exceed the feature difference in at most three patients \HerHTwoVerdict{} (it did in \HerBndGateOverRaw{}), although both mean AUROCs were close to 0.5. Smoothing the feature difference over each neighborhood did separate it (AUROC \HerBndSeamSmooth{}, interval \HerBndSeamSmoothLo{} to \HerBndSeamSmoothHi{}) and exceeded the gate in \HerBndSeamSmoothGatePos{} of \HerPatients{} patients (mean \HerBndSeamSmoothGateMean{}, interval \HerBndSeamSmoothGateLo{} to \HerBndSeamSmoothGateHi{}; Figure~5d); weighting the smoothed difference added \HerBndSeamSmoothPlainMean{}, a small edge-level gain that did not carry through to partitions (Supplementary Table S11). Repeated fits of the frozen encoder changed per-patient scores by up to \RepMaxRange{} ARI (median \RepMedianRange{}) over the \RepPairs{} patient-target pairs and moved Tessera to the other side of the tuned control in \RepSignChangesControl{} of them; no comparison with the same-graph mean changed sign (Figure~5e, Supplementary Table S13), and the same-graph mean and tuned controls are deterministic.
+
+Reweighting neighbors by expression similarity, which we tried to test whether an informed local rule could help, did not. The weighted mean was above the unweighted mean in \HerBndEUSixPos{} patients and below it in \HerBndEUSixNeg{} (mean \HerBndEUSixMean{}); permuting its weights across edges gave no consistent partition advantage (above the shuffled-weight version in \HerBndEShufPos{} of \HerPatients{}), whereas the weighted mean exceeded the coordinate-permuted version in \HerBndECoordPos{} of \HerPatients{} (mean \HerBndECoordMean{}; Figure~5f). The 13 bounded objects agreed (weighted mean above the unweighted mean in \DevAllThirteenEMeanPos{} and below it in \DevAllThirteenEMeanNeg{}; mean \DevAllThirteenEMeanMean{}). These contrasts support the measured-neighborhood contribution; they do not establish equivalence between weighted and unweighted means.
+
+
+
+
+
+\subsection{Tessera's advantage depends on the tissue and the annotation}
+Three non-tumor tissues with anatomical labels behaved differently (Supplementary Table S12). Tessera exceeded PCA50 in all three, by \BrPcaGainMin{} to \BrPcaGainMax{}. It exceeded the tuned control in the human cortex section (\BrCortexTessNested{}) but not in mouse visual cortex (\BrStarmapTessNested{}) or hypothalamus (\BrMerfishTessNested{}), and only the cortex section exceeded the best of the 30 configurations chosen with the test labels (\BrCortexTessOracle{}, against \BrStarmapTessOracle{} and \BrMerfishTessOracle{}). The cortex section was used when the encoder was developed and first benchmarked, so it does not show that the learned component generalizes. Gate seam AUROC was below chance in all three (\BrGateMin{} to \BrGateMax{}).
+
+Across all \LandN{} objects (Figure~6a--b), Tessera exceeded the same-graph six-neighbor mean in \LandTessSamePos{} and the best configuration chosen with the labels in \LandTessOraclePos{}, the cortex section and colorectal TVA. Its advantage over the same-graph mean was positive in \LandComputedSamePos{} of \LandComputedN{} computed lung regions, \LandAnatSamePos{} of \LandAnatN{} anatomical tissues, \LandCellSamePos{} of \LandCellN{} cell-type labels and \LandPathSamePos{} of \LandPathN{} pathologist-labelled patients. The neighborhood size at which a uniform mean peaked depended on the annotation: \LandComputedKMin{} to \LandComputedKMax{} neighbors for the computed lung regions, \LandAnatKMin{} to \LandAnatKMax{} for anatomical tissues, \LandCellKMin{} to \LandCellKMax{} for cell-type labels, and \LandPathKMin{} to \LandPathKMax{} for the pathologist-labelled patients, whose best sizes split between local and large (Figure~6c), so a scale selected on other patients is a compromise. Gate seam AUROC had median \LandGateMedian{} across the objects and exceeded 0.5 in \LandGateAbove{} of \LandN{}; the plain feature difference exceeded the gate in \LandRawOverGate{} (Figure~6d).
+
+
+
+\subsection{Untouched colorectal pathology supports the control, with weak gate discrimination}
+In the QC-filtered colorectal pilot, the same-graph mean exceeded Tessera in \CrcTessMeanNeg{} of \CrcPatients{} patients (Tessera minus mean \CrcTessMeanDelta{} ARI; descriptive patient-bootstrap interval \CrcTessMeanLow{} to \CrcTessMeanHigh{}; Supplementary Table S14). The original target including the QC class gave the same ordering in \CrcRawTessMeanNeg{} of \CrcPatients{} patients (Supplementary Table S15). Removing gates changed agreement by \CrcNoGateDelta{} ARI on average (interval \CrcNoGateLow{} to \CrcNoGateHigh{}), which does not establish equivalence or a useful gating gain. The 18 complete model fits took \CrcFitSeconds{} CPU seconds; the neighborhood control required no model fitting.
+
+The gate's mean seam AUROC was \CrcGate{} (interval \CrcGateLow{} to \CrcGateHigh{}), against \CrcRaw{} for the raw feature difference. It passed the pilot's above-chance bootstrap rule but did not demonstrate superiority over that simple score (gate minus raw \CrcGateRawDelta{}; interval \CrcGateRawLow{} to \CrcGateRawHigh{}). Thus, gates are not universally devoid of seam information. The new patients support the narrower finding that this information did not yield an advantage over a trivial edge score or a same-graph neighborhood mean. These are broad pathologist compartment seams, including mixed regions, not a validated binary tumor-boundary detector. The small, resource-selected pilot and its schema-triggered sensitivity provide additional external evidence rather than a decisive population-level confirmation.
+
+
+
+
+\bibliographystyle{naturemag}\bibliography{base_refs,new_refs}
+\end{document}
