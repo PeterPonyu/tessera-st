@@ -1,0 +1,87 @@
+{
+  "object": "BCC_PatientD",
+  "cohort": "BCC",
+  "seed": 1,
+  "arm": "NoContrast",
+  "n_cells": 5656,
+  "K": 11,
+  "input_sha256": "c08f6b11cb008eee8f8fefc761192885d8e49873096c6a7e7857bc99e0daaf32",
+  "prediction_sha256": "66afbec48f98395e4bf723b1940dad6fe55f2750ae01cada10df0d89985fdbda",
+  "fit_seconds": 0.570059539997601,
+  "total_seconds": 0.7137903819966596,
+  "gpu_peak_allocated_bytes": 302487040,
+  "trainable_parameters": 27207,
+  "history": [
+    {
+      "epoch": 0,
+      "loss": 5.53302526473999,
+      "recon": 5.53302526473999
+    },
+    {
+      "epoch": 12,
+      "loss": 5.225037097930908,
+      "recon": 5.225037097930908
+    },
+    {
+      "epoch": 24,
+      "loss": 4.75318717956543,
+      "recon": 4.75318717956543
+    },
+    {
+      "epoch": 36,
+      "loss": 4.094429016113281,
+      "recon": 4.094429016113281
+    },
+    {
+      "epoch": 48,
+      "loss": 3.4432148933410645,
+      "recon": 3.4432148933410645
+    },
+    {
+      "epoch": 60,
+      "loss": 3.05900239944458,
+      "recon": 3.05900239944458
+    },
+    {
+      "epoch": 72,
+      "loss": 2.7978034019470215,
+      "recon": 2.7978034019470215
+    },
+    {
+      "epoch": 84,
+      "loss": 2.588240385055542,
+      "recon": 2.588240385055542
+    },
+    {
+      "epoch": 96,
+      "loss": 2.406308889389038,
+      "recon": 2.406308889389038
+    },
+    {
+      "epoch": 108,
+      "loss": 2.246613025665283,
+      "recon": 2.246613025665283
+    },
+    {
+      "epoch": 119,
+      "loss": 2.117673635482788,
+      "recon": 2.117673635482788
+    }
+  ],
+  "ablation": {
+    "edge_gating": true,
+    "multi_scale": true,
+    "boundary_contrastive": false,
+    "calibrated_uncertainty": false
+  },
+  "n_edges": 67872,
+  "cross_field_edges": 0,
+  "self_edges": 0,
+  "scores": {
+    "ari": 0.1490874056090484,
+    "nmi": 0.35402906742241663,
+    "reference_edge_homogeneity": 0.745049504950495,
+    "predicted_edge_homogeneity": 0.486533474776049,
+    "gate_seam_auroc": 0.47981194837921837
+  }
+}

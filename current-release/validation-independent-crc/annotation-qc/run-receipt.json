@@ -1,0 +1,139 @@
+{
+  "protocol_sha256": "6663bb4f9a1b00098f2b9769b83f0bf5ff480d332562a92aead5cb8425daa1a5",
+  "script_sha256": "fca2b3f5b5157167c7b92106236789ba2269a0f270721688f8d51000215acb24",
+  "primary_receipt_sha256": "88e1411f662e17854ed9285a4731db34b3d64203b67f7b4dead7f70ad6cfe499",
+  "primary_bindings": {
+    "protocol_sha256": "453342e09ff8b04addeed1d23f1b731f5c1a5427004b587e7d2457ceb5544f95",
+    "script_sha256": "ca19044a207d5a375c9b3a7ec0d994eb3dbcc1a574560e8e16e9ffd3c0c11e08",
+    "frozen_sha256": {
+      "source/scripts/run_experiments.py": "c5689f09056a5ef0e986e83b72854bfd4d295130182f14f8bd7bb1bacbaa1b4c",
+      "source/scripts/common.py": "d483c3d9f099ca37adb57b7b5b79c970d08376536ebe412c541ecde998420152",
+      "validation-external/run_her2st_validation.py": "4858a8f88753b7ef859c8435102268246809fc76ba4d051fe0117d24e4a5e8af",
+      "source/src/tessera_st/__init__.py": "9ab15619d82cb0282d3cd0568526f1fbc5dffda490d0c45b1a392f0b45e7b2f3",
+      "source/src/tessera_st/ablation.py": "40d3f5324a6f05b1de42317b09c27b60bcc12bbd369ac40c9661a08e177a49cb",
+      "source/src/tessera_st/cli.py": "bc9c7816f337e6c83a40637ba02088fcc62f6a3b2cc4899ed284bcb964fe2ed6",
+      "source/src/tessera_st/config.py": "0ef79d4eca86b5306b7802daa2a635099f14a774d1d5fc53898f8a871e0428ce",
+      "source/src/tessera_st/data/__init__.py": "89a0799ac53eae1f6df95e0272db0cf2dc3925ef370b04f2fb85c01a01d84fea",
+      "source/src/tessera_st/data/dlpfc.py": "4a787de388a222b422da6f653f8108c914c17f0df8ba79f3b0fb6195d0d2e19e",
+      "source/src/tessera_st/data/synthetic.py": "d061ee6938fea2712b6861f1854775729abf79ed5742fd94fd4e5bf3b194c7e0",
+      "source/src/tessera_st/eval/__init__.py": "5d950582652c648be799ce0b7801375ed9996b6b5728e2337b3f7efccd8ab887",
+      "source/src/tessera_st/eval/baselines.py": "8fef94320fd61c8bf8d2049e8bb3d095d4c27aa2be0c283894b5c7b672ecad51",
+      "source/src/tessera_st/eval/markers.py": "10ad51515cb325961fa937dde942e992721322fa703255f58554645afe7bf2bb",
+      "source/src/tessera_st/eval/metrics.py": "22ba43d70ad7ce33a2a415e5074ad5e9f5f5e01fcc4274634e5091205f9f4e6c",
+      "source/src/tessera_st/eval/refine.py": "d79c20c013b4c97d4dacfacb20de87082be3359c67c2717bc4757dbdd1380cbd",
+      "source/src/tessera_st/losses.py": "f2bd9a990de26f588139d67fb6685779ea3125ecc1136390764956f79f6ccb2f",
+      "source/src/tessera_st/model/__init__.py": "1c49146ee48e0ccbecdf01ca321239c934dfd94652749dbda9e4b729f139a8ef",
+      "source/src/tessera_st/model/encoder.py": "f537e4b7d153271a3440c04f7719c740766e3f0b2cbe6038c298cc12e3774f5c",
+      "source/src/tessera_st/model/gating.py": "8f628b9884086783fd74c10d1f77c2a84435f1ccc2d9c26a565ae8a910314ef3",
+      "source/src/tessera_st/model/graph.py": "4a9e3e175603aa7b24242d485df90f48fbc9222cb47db8c83662357f3e48ba08",
+      "source/src/tessera_st/model/heads.py": "9d5e6104b68e13cc3ee5297a3c65af1d41f7a41c41eb3a8b8cfcd7c40739bbba",
+      "source/src/tessera_st/model/tessera.py": "28a6673ba632228a88adeda63335ca922c9a64f30f540c0024aa1920c2166ba2",
+      "source/src/tessera_st/spatial.py": "434a289946b23869b3a0cbee99f8cf4c8295c14fbda99fa149c4916444836ee6",
+      "source/src/tessera_st/train.py": "21ac9c746a3776e6cf6413526b5fa8673903f032f1f56dbcce9bcfc41d499a01"
+    }
+  },
+  "new_model_fits": 0,
+  "patients": 3,
+  "statistics": {
+    "Gate": {
+      "mean": 0.5669125514565718,
+      "lower": 0.5065466516647914,
+      "upper": 0.6481785840597499,
+      "n_independent_patients": 3,
+      "bootstrap_resamples": 10000
+    },
+    "RawFeature": {
+      "mean": 0.5731161727274582,
+      "lower": 0.4990040421719382,
+      "upper": 0.6457583511903524,
+      "n_independent_patients": 3,
+      "bootstrap_resamples": 10000
+    },
+    "UniformMeanFeature": {
+      "mean": 0.5545418938169906,
+      "lower": 0.5277159644955619,
+      "upper": 0.588979965464872,
+      "n_independent_patients": 3,
+      "bootstrap_resamples": 10000
+    },
+    "Gate_minus_RawFeature": {
+      "mean": -0.00620362127088638,
+      "lower": -0.02857370617490984,
+      "upper": 0.007542609492853181,
+      "n_independent_patients": 3,
+      "bootstrap_resamples": 10000
+    },
+    "Gate_minus_UniformMeanFeature": {
+      "mean": 0.012370657639581265,
+      "lower": -0.021169312830770504,
+      "upper": 0.05919861859487796,
+      "n_independent_patients": 3,
+      "bootstrap_resamples": 10000
+    },
+    "Tessera_minus_UniformSameGraph": {
+      "mean": -0.02598298780467569,
+      "lower": -0.03715120004083816,
+      "upper": -0.017218318867530474,
+      "n_independent_patients": 3,
+      "bootstrap_resamples": 10000
+    },
+    "NoGate_minus_Tessera": {
+      "mean": 0.0018251452822330837,
+      "lower": -0.0013030260621191153,
+      "upper": 0.004948407724195691,
+      "n_independent_patients": 3,
+      "bootstrap_resamples": 10000
+    }
+  },
+  "pilot_criteria": {
+    "gate_discrimination": true,
+    "gate_advantage_over_raw": false,
+    "learned_ari_gain_over_mean_margin_0_02": false
+  },
+  "output_sha256": {
+    "annotation-qc/SN124_A551763_Rep2/NoGate-seed1.npz": "aa58c7060f05c47fcc454bd8be867134c0768ccc442967fdfbe63515390140f4",
+    "annotation-qc/SN124_A551763_Rep2/NoGate-seed2.npz": "b73ce63e8a54315b6a8791dc0bb885766af26e430446c70c297eec70175ba738",
+    "annotation-qc/SN124_A551763_Rep2/NoGate-seed3.npz": "8770c6c35f93e020f10e1d1352a917e8412649747284fa00ce7284008f1788bf",
+    "annotation-qc/SN124_A551763_Rep2/PCA50-seed1.npz": "49fa1cdfc6c1c59b3a278b60f1b10e0b1f92ca2cb77b2fd2e50439403e26dc8c",
+    "annotation-qc/SN124_A551763_Rep2/PCA50-seed2.npz": "a39265cd83ce06eab0147c147a73f56b8a43b6049c9be536a6c2c3f6ea4c24f3",
+    "annotation-qc/SN124_A551763_Rep2/PCA50-seed3.npz": "43835e6fff1a58a4ee70791f1eba3d0bee0d49dd77eca2ba10206c6301e44399",
+    "annotation-qc/SN124_A551763_Rep2/Tessera-seed1.npz": "17ac882c9bf5977da5619f8683925ea42876c07125f2c6824229dbcd60cbb96e",
+    "annotation-qc/SN124_A551763_Rep2/Tessera-seed2.npz": "ae4283bcac8e6186711a27db0bb7dc1064d4a45f5b155acf9259cc4546def862",
+    "annotation-qc/SN124_A551763_Rep2/Tessera-seed3.npz": "da2baab537c81c9286366b936497a372846fef3b5a41a0dff394c12a68b75a78",
+    "annotation-qc/SN124_A551763_Rep2/UniformSameGraph-seed1.npz": "afa5281ac69fc95d04659ddc2f5d25fda8c795b79131b68b4d3a2aa329e3c33d",
+    "annotation-qc/SN124_A551763_Rep2/UniformSameGraph-seed2.npz": "afa5281ac69fc95d04659ddc2f5d25fda8c795b79131b68b4d3a2aa329e3c33d",
+    "annotation-qc/SN124_A551763_Rep2/UniformSameGraph-seed3.npz": "b397055bfbad73ce6d78bbaae3fa1eb95198bf205ef218e5d4ddb55feaa72962",
+    "annotation-qc/SN124_A551763_Rep2/target.npz": "29d085a8cf13bb4cf184bb25989b9be74960df8523a4f3c56929f633fa7dfb12",
+    "annotation-qc/SN124_A595688_Rep2/NoGate-seed1.npz": "345d328edb2c29bd0ae4d9b97c566a08b6759aa8eac738b9dd41e489a5eef64f",
+    "annotation-qc/SN124_A595688_Rep2/NoGate-seed2.npz": "3b36c757f4d11de199cadcaf66581ccd743461133f0f479cdb729bb1ec143860",
+    "annotation-qc/SN124_A595688_Rep2/NoGate-seed3.npz": "75e0855c38444bfcbc4b7875ebf7d1e13f040246917f65285ef5c3d35641ed87",
+    "annotation-qc/SN124_A595688_Rep2/PCA50-seed1.npz": "f683a1a36256881e0976f3574b57128222a0cbe87cdf087ec418c9f84d2715b9",
+    "annotation-qc/SN124_A595688_Rep2/PCA50-seed2.npz": "8966f70a19cdf921b757581ac676ae918df6b06cf23baaed3acb444fb536dfe8",
+    "annotation-qc/SN124_A595688_Rep2/PCA50-seed3.npz": "189edcda4c16072091440993dcca2162be5c4fca5f6a400f49daf4069a2ecd44",
+    "annotation-qc/SN124_A595688_Rep2/Tessera-seed1.npz": "540ce7b6df93ae412ada5e5f5281d487a279070b8fa8f2a402d29b2e70631c30",
+    "annotation-qc/SN124_A595688_Rep2/Tessera-seed2.npz": "27f09ed6332a380bbf4bc52beee476661fe1172b659fbb1f733cb5d3bcef9b19",
+    "annotation-qc/SN124_A595688_Rep2/Tessera-seed3.npz": "eec3c16bb2e59d6a92d2d6b1ae1dbf1ef77fcc0b6be53ef7972eaeb3d8dd3010",
+    "annotation-qc/SN124_A595688_Rep2/UniformSameGraph-seed1.npz": "ade595fec29eb97b3c700f19fdb24548fd3be67d589ea31c42481cba3a1dda90",
+    "annotation-qc/SN124_A595688_Rep2/UniformSameGraph-seed2.npz": "afabe3b8b9cc700bdcc20bb5eaeaf1ca60f5842415d1e68df4e5d946b4040afb",
+    "annotation-qc/SN124_A595688_Rep2/UniformSameGraph-seed3.npz": "f146e8fb5c1e8fe5932a2f6a7deb50342a1e162762776aa09f83fef109000b4c",
+    "annotation-qc/SN124_A595688_Rep2/target.npz": "6c99eb7046af4251fb3d78278cebff8e6c1e90d4a6e5639bd233a5fbd8bcd5a8",
+    "annotation-qc/SN84_A120838_Rep1/NoGate-seed1.npz": "c01784ffcdb69fed1cf5be28806fb53ab5ef0e9366a89980169e79776d65a990",
+    "annotation-qc/SN84_A120838_Rep1/NoGate-seed2.npz": "81771c5bae182b9a319d0cd99b7b1bc47dad36918bcb5112fc4ca8facbe4d3ad",
+    "annotation-qc/SN84_A120838_Rep1/NoGate-seed3.npz": "e4d09d723962052bef5c3f67be36186858bee236110fa754d728bae86f556a1e",
+    "annotation-qc/SN84_A120838_Rep1/PCA50-seed1.npz": "8d3b5c5a8c8ef19e79668ce736e5cba8132482f99d382f794c33b46efc96cd07",
+    "annotation-qc/SN84_A120838_Rep1/PCA50-seed2.npz": "a201839704326a4004ceefa026e3714fd56ca44b16769c33af7984d4478511e1",
+    "annotation-qc/SN84_A120838_Rep1/PCA50-seed3.npz": "27e0e8eb6e0162452d36c9a1d7187f06dbd7cc5759ab2fe2271c02854772d1c8",
+    "annotation-qc/SN84_A120838_Rep1/Tessera-seed1.npz": "05c9cfd9ce915d415f09a83422e9bf749017138126e5c20db926bf450b8b30a4",
+    "annotation-qc/SN84_A120838_Rep1/Tessera-seed2.npz": "b8659392b58fac4d666a26faa7d8e196ba3547c98dcf8e6bb7132fba4b428c60",
+    "annotation-qc/SN84_A120838_Rep1/Tessera-seed3.npz": "4e12e1590ff3d18e17fea74edd63cbec02e99c38a27b7e53f31547d4573e7d35",
+    "annotation-qc/SN84_A120838_Rep1/UniformSameGraph-seed1.npz": "f0469cbabb01fe77c4fa93b6a4248aef2c4831fb99997a39b9783e4b8ac287fc",
+    "annotation-qc/SN84_A120838_Rep1/UniformSameGraph-seed2.npz": "2e0536ae04b4c20eff4c0b3702829ce33b2b8287ea1f0f76091fd4cc8008aa17",
+    "annotation-qc/SN84_A120838_Rep1/UniformSameGraph-seed3.npz": "d6f4b2b9fa13902d453ffd88f35be0a22a841d0e2c3093950c1037ffa13fc9ff",
+    "annotation-qc/SN84_A120838_Rep1/target.npz": "92a6fb830aff911c111c5bb9ba26200bb049f4d5193e9a2fd94be832bb280fa9",
+    "annotation-qc/arms.csv": "a77d638e7b21d7a6f12d44d2e8755c0a5cbd98a81b9fad15232701f5a926f06f",
+    "annotation-qc/label_shuffle.csv": "043b7f52eea31ed9e8c53bdcd3300fc373adecf9ca13e2a35a17a4d9d8778059",
+    "annotation-qc/patient_seams.csv": "7fba638b40c58730291928828d9b9e1bb45c8d317b76f4a2ce80bcb7ce3e6e0f",
+    "annotation-qc/patients.csv": "2a8d1a2c31f0a981dfcc63bbf2edb56323b782ad15a6e25cc409d16d99379b76",
+    "annotation-qc/seams.csv": "ea71d97284c42c744c4cc381fb5007e1d0e6c6c2b1f4806e784ca35be17f1c4d"
+  }
+}

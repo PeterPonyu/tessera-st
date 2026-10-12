@@ -1,0 +1,474 @@
+{
+  "review_date": "2026-10-11",
+  "verification_date": "2026-10-11",
+  "status": "completed",
+  "review_type": "Operator visual inspection of the current reconciled source build: all pages of the three PDFs viewed on contact sheets; the CRC result/table pages and independent-breast figure viewed at full size. All 21 atlas pages were viewed on current contact sheets. The current source has 12 main and 9 supplementary figures. This is layout verification, not author approval or independent scientific peer review.",
+  "render_manifest": "qa/document_qa_manifest.json",
+  "render_manifest_sha256": "8351ec7f6d529056b6bcb71f94c07efaf0edf980c4340be14dc2230688bff9e4",
+  "documents": {
+    "tessera-figure-atlas.pdf": {
+      "sha256": "85732d38e4f4381ebaf228c8a0d30eab2a2b7f8d20180b9d3fbb56feb839d4f2",
+      "pages": 21,
+      "pages_inspected": 21,
+      "all_pages_inspected": true,
+      "individual_figures_inspected": 21,
+      "inspection": "Every page viewed on the rendered contact sheets of this build or of an earlier build whose page image has an identical SHA256; the listed pages opened at full size.",
+      "inspected_image_records": [
+        {
+          "path": "qa/final-pages/tessera-figure-atlas-85732d38e4f4/tessera-figure-atlas-01.jpg",
+          "sha256": "ad9bd387275addc0e90c21afc81c7282332a2bc987fdfe5dfc1a42f6b21dd795"
+        },
+        {
+          "path": "qa/final-pages/tessera-figure-atlas-85732d38e4f4/tessera-figure-atlas-02.jpg",
+          "sha256": "ecf7c976987d43f58b8570553f155bef66902a4e716542e23a8f8cdea76023a7"
+        },
+        {
+          "path": "qa/final-pages/tessera-figure-atlas-85732d38e4f4/tessera-figure-atlas-03.jpg",
+          "sha256": "7c2f09ea167eecd9e765d7c690c12b44fcd0ee6ee2e691060d87cde469612568"
+        },
+        {
+          "path": "qa/final-pages/tessera-figure-atlas-85732d38e4f4/tessera-figure-atlas-04.jpg",
+          "sha256": "8b29e53842af7a760ed792a2dc088ccf7c80818a28de9f4f68a1345cab4868dc"
+        },
+        {
+          "path": "qa/final-pages/tessera-figure-atlas-85732d38e4f4/tessera-figure-atlas-05.jpg",
+          "sha256": "82e8a4f30d5a354e6376da5524099dc9b6937452f6cf88bff67c5c1f2af862d6"
+        },
+        {
+          "path": "qa/final-pages/tessera-figure-atlas-85732d38e4f4/tessera-figure-atlas-06.jpg",
+          "sha256": "ef555069906bf705718c738e8abb71b58c6376fc9cb83744c6dd7fc8c0d52073"
+        },
+        {
+          "path": "qa/final-pages/tessera-figure-atlas-85732d38e4f4/tessera-figure-atlas-07.jpg",
+          "sha256": "ed5c1280a5896abba6c6477c5a9af1e72dc7f475dd5eeb2ad6615a57652a88e2"
+        },
+        {
+          "path": "qa/final-pages/tessera-figure-atlas-85732d38e4f4/tessera-figure-atlas-08.jpg",
+          "sha256": "0f458cfef8b0fa4c31e0d2bf10ca8a73f449a2f680ad87ba3642576c681c7f3a"
+        },
+        {
+          "path": "qa/final-pages/tessera-figure-atlas-85732d38e4f4/tessera-figure-atlas-09.jpg",
+          "sha256": "7f83c13a21484697505219c034cd6c28d4d08595f36d40634f61db3ea7d64c19"
+        },
+        {
+          "path": "qa/final-pages/tessera-figure-atlas-85732d38e4f4/tessera-figure-atlas-10.jpg",
+          "sha256": "9ae274446ae29446e9e44bdfbee169176b25b36f8af47b1547a105cc39ab8f93"
+        },
+        {
+          "path": "qa/final-pages/tessera-figure-atlas-85732d38e4f4/tessera-figure-atlas-11.jpg",
+          "sha256": "aba68ac70002467f17d671c31a9ebffcd804e360a82b285ebe82412188053c13"
+        },
+        {
+          "path": "qa/final-pages/tessera-figure-atlas-85732d38e4f4/tessera-figure-atlas-12.jpg",
+          "sha256": "dbf7b25dd8cf4ab62bae4bf27764cd78a5e53f8bc13360eada832690f38b67cf"
+        },
+        {
+          "path": "qa/final-pages/tessera-figure-atlas-85732d38e4f4/tessera-figure-atlas-13.jpg",
+          "sha256": "ae89fe9365886b7ae735d53984b26cb822c91fe280d6d825eeebf499232206ca"
+        },
+        {
+          "path": "qa/final-pages/tessera-figure-atlas-85732d38e4f4/tessera-figure-atlas-14.jpg",
+          "sha256": "fff1390e7eaaa076db19ef05828ae79d067bd10e26c79d006585206137be06de"
+        },
+        {
+          "path": "qa/final-pages/tessera-figure-atlas-85732d38e4f4/tessera-figure-atlas-15.jpg",
+          "sha256": "e244a86a34687315b30b0edf6aee6478e2074d71e12975b6f3aec8a95701e2dd"
+        },
+        {
+          "path": "qa/final-pages/tessera-figure-atlas-85732d38e4f4/tessera-figure-atlas-16.jpg",
+          "sha256": "a358aa60d64d26571d590753bab2cdb1a1fdd62da4bd737efe0d1e91cdcf106a"
+        },
+        {
+          "path": "qa/final-pages/tessera-figure-atlas-85732d38e4f4/tessera-figure-atlas-17.jpg",
+          "sha256": "a068621407f1077d93da2c616e0a5e0545bcd4b8c095318907dcd576d949d8dd"
+        },
+        {
+          "path": "qa/final-pages/tessera-figure-atlas-85732d38e4f4/tessera-figure-atlas-18.jpg",
+          "sha256": "cb7b7f01ac89864e8444513863ff2c0f883e6514682e9e618c4f0344a39d8e76"
+        },
+        {
+          "path": "qa/final-pages/tessera-figure-atlas-85732d38e4f4/tessera-figure-atlas-19.jpg",
+          "sha256": "6dd383e84e59ef71d31c162804dd72cb1bffc43430b025572c8873afdbe25677"
+        },
+        {
+          "path": "qa/final-pages/tessera-figure-atlas-85732d38e4f4/tessera-figure-atlas-20.jpg",
+          "sha256": "d4ced4caf210167f1bcef76a5ee94e197e11b8629a8c116602f7c951f015ade3"
+        },
+        {
+          "path": "qa/final-pages/tessera-figure-atlas-85732d38e4f4/tessera-figure-atlas-21.jpg",
+          "sha256": "81f4f359d00545cd22dcca02d979ed8669646c7619be07d204bcbd03c67429c3"
+        }
+      ],
+      "newly_inspected_image_records": [
+        {
+          "path": "qa/final-pages/tessera-figure-atlas-85732d38e4f4/tessera-figure-atlas-11.jpg",
+          "sha256": "aba68ac70002467f17d671c31a9ebffcd804e360a82b285ebe82412188053c13"
+        }
+      ]
+    },
+    "tessera-revised-manuscript.pdf": {
+      "sha256": "719b41ede7f1cf1b5f0a6190fcec3901e2397d37e920f300ef7615c467eca18d",
+      "pages": 25,
+      "pages_inspected": 25,
+      "all_pages_inspected": true,
+      "individual_figures_inspected": 12,
+      "inspection": "Every page viewed on the rendered contact sheets of this build or of an earlier build whose page image has an identical SHA256; the listed pages opened at full size.",
+      "inspected_image_records": [
+        {
+          "path": "qa/final-pages/tessera-revised-manuscript-719b41ede7f1/tessera-revised-manuscript-01.jpg",
+          "sha256": "c5c50aea480ac1db64eeaac0dd20775f11fe130c8929c1c923004b0b2064ed33"
+        },
+        {
+          "path": "qa/final-pages/tessera-revised-manuscript-719b41ede7f1/tessera-revised-manuscript-02.jpg",
+          "sha256": "5515ea1b244c68631d41470626190efc5d5b444e43871dad402eb276d4b99884"
+        },
+        {
+          "path": "qa/final-pages/tessera-revised-manuscript-719b41ede7f1/tessera-revised-manuscript-03.jpg",
+          "sha256": "c9cdbd99bb3b82ab0fe9d6620c3902bb2889d740af094dd7b9c49eb19f24c66c"
+        },
+        {
+          "path": "qa/final-pages/tessera-revised-manuscript-719b41ede7f1/tessera-revised-manuscript-04.jpg",
+          "sha256": "fc71fd562db0cf3316d81a699afc6da63959f4e3084f50d9e23bd3b0ac41271f"
+        },
+        {
+          "path": "qa/final-pages/tessera-revised-manuscript-719b41ede7f1/tessera-revised-manuscript-05.jpg",
+          "sha256": "d80f0c580818b25e3eec95e1a85cbed429785e47e35707730d14cf13e157785a"
+        },
+        {
+          "path": "qa/final-pages/tessera-revised-manuscript-719b41ede7f1/tessera-revised-manuscript-06.jpg",
+          "sha256": "1b32262db400f4eb5fb05aa99527145a9ab1e25aed58c27138bf1fda922b3354"
+        },
+        {
+          "path": "qa/final-pages/tessera-revised-manuscript-719b41ede7f1/tessera-revised-manuscript-07.jpg",
+          "sha256": "cabf757e60dedd9df7e3b39ed55224ae121e29439653481951ac959e4b5c8a79"
+        },
+        {
+          "path": "qa/final-pages/tessera-revised-manuscript-719b41ede7f1/tessera-revised-manuscript-08.jpg",
+          "sha256": "de64debb550a82143e3089eb09ab11611cd025d31b5adc15cc697d848c73a9a4"
+        },
+        {
+          "path": "qa/final-pages/tessera-revised-manuscript-719b41ede7f1/tessera-revised-manuscript-09.jpg",
+          "sha256": "d99b8203d7a24cc769996aed28f2d2d13cdc65a61104fdb1a3c7024a87547e5f"
+        },
+        {
+          "path": "qa/final-pages/tessera-revised-manuscript-719b41ede7f1/tessera-revised-manuscript-10.jpg",
+          "sha256": "e156903733e81819d0e0521c6f0d9e3fc5fea0f2d38ebd477ae8f56eb6617804"
+        },
+        {
+          "path": "qa/final-pages/tessera-revised-manuscript-719b41ede7f1/tessera-revised-manuscript-11.jpg",
+          "sha256": "210c639057a6e99937901d2d453933ce6e32e71bc31f4251aa7143b67920d81e"
+        },
+        {
+          "path": "qa/final-pages/tessera-revised-manuscript-719b41ede7f1/tessera-revised-manuscript-12.jpg",
+          "sha256": "7921fb9a2e4480526c81715f100f6ff044a168e6db0ab5e9732f9819e398239c"
+        },
+        {
+          "path": "qa/final-pages/tessera-revised-manuscript-719b41ede7f1/tessera-revised-manuscript-13.jpg",
+          "sha256": "d001724eac0081b38b75ead77f394aab2a9b374d19e20548de124e9521b23703"
+        },
+        {
+          "path": "qa/final-pages/tessera-revised-manuscript-719b41ede7f1/tessera-revised-manuscript-14.jpg",
+          "sha256": "05b6a0b47b1ba24f6ec7e1c82c1729f44b9824a1b57e5823edd2877af523aba1"
+        },
+        {
+          "path": "qa/final-pages/tessera-revised-manuscript-719b41ede7f1/tessera-revised-manuscript-15.jpg",
+          "sha256": "ad17186d4c934c54c6b154f02f06f025f1c0f50b95584fefe950279661ae234e"
+        },
+        {
+          "path": "qa/final-pages/tessera-revised-manuscript-719b41ede7f1/tessera-revised-manuscript-16.jpg",
+          "sha256": "96d689e884572bf69c5b57882b321060b2c473c13eb673ad0708d22c20a2501d"
+        },
+        {
+          "path": "qa/final-pages/tessera-revised-manuscript-719b41ede7f1/tessera-revised-manuscript-17.jpg",
+          "sha256": "0478f3fe5259d27411ff596748c9ffc191de518aa64fc3a951800429a3831e44"
+        },
+        {
+          "path": "qa/final-pages/tessera-revised-manuscript-719b41ede7f1/tessera-revised-manuscript-18.jpg",
+          "sha256": "e666be2aca1336134bd0d576bd3f8f7c08219caa60ce5ad78b5cc11b53a2fcfb"
+        },
+        {
+          "path": "qa/final-pages/tessera-revised-manuscript-719b41ede7f1/tessera-revised-manuscript-19.jpg",
+          "sha256": "0b3f98d79c9bf9c205f4f403b58a0373d8f730f9b53bc0dad41f7525b7f302a8"
+        },
+        {
+          "path": "qa/final-pages/tessera-revised-manuscript-719b41ede7f1/tessera-revised-manuscript-20.jpg",
+          "sha256": "f81692b5b92d49ab3bd770c3afc4a2420fdfd3488b2cb56bfb75dba8badf0473"
+        },
+        {
+          "path": "qa/final-pages/tessera-revised-manuscript-719b41ede7f1/tessera-revised-manuscript-21.jpg",
+          "sha256": "814e3663efb54cb26f7298777c070aa42137506744832425ae6dd9d168dd5033"
+        },
+        {
+          "path": "qa/final-pages/tessera-revised-manuscript-719b41ede7f1/tessera-revised-manuscript-22.jpg",
+          "sha256": "fca3f4ebf175fdd5fa538ded26b5e50dcc99abd18a49c19f86ae7c6447b5d7c9"
+        },
+        {
+          "path": "qa/final-pages/tessera-revised-manuscript-719b41ede7f1/tessera-revised-manuscript-23.jpg",
+          "sha256": "9f7e346da61a6442b25b31138926b31ccbd7ae087019222dc2ff809d11741b56"
+        },
+        {
+          "path": "qa/final-pages/tessera-revised-manuscript-719b41ede7f1/tessera-revised-manuscript-24.jpg",
+          "sha256": "85afc44b24f5b7b06c74292722c018a31fdd62cbaafe6e90ecefc7b8f784f369"
+        },
+        {
+          "path": "qa/final-pages/tessera-revised-manuscript-719b41ede7f1/tessera-revised-manuscript-25.jpg",
+          "sha256": "0ad727c08a2db4cf7b4050f39e285ede7f70de9a0d953c4ae322d0f45863ed08"
+        }
+      ],
+      "newly_inspected_image_records": [
+        {
+          "path": "qa/final-pages/tessera-revised-manuscript-719b41ede7f1/tessera-revised-manuscript-19.jpg",
+          "sha256": "0b3f98d79c9bf9c205f4f403b58a0373d8f730f9b53bc0dad41f7525b7f302a8"
+        }
+      ]
+    },
+    "tessera-supporting-information.pdf": {
+      "sha256": "96c8cacb73e4d6459995a777c2e5c9658a671ad7c21f1e427af001e402204cdc",
+      "pages": 14,
+      "pages_inspected": 14,
+      "all_pages_inspected": true,
+      "individual_figures_inspected": 9,
+      "inspection": "Every page viewed on the rendered contact sheets of this build or of an earlier build whose page image has an identical SHA256; the listed pages opened at full size.",
+      "inspected_image_records": [
+        {
+          "path": "qa/final-pages/tessera-supporting-information-96c8cacb73e4/tessera-supporting-information-01.jpg",
+          "sha256": "e344beb388342d9d94288d92f8f89716512cd1994b4f1e6fb8d4f8938aa0161b"
+        },
+        {
+          "path": "qa/final-pages/tessera-supporting-information-96c8cacb73e4/tessera-supporting-information-02.jpg",
+          "sha256": "4084ac3592ffe7f2a3ba4fb43222780996950c0ef78ed36c6c222515f8dab908"
+        },
+        {
+          "path": "qa/final-pages/tessera-supporting-information-96c8cacb73e4/tessera-supporting-information-03.jpg",
+          "sha256": "e743b56c9acca9ea9a646d5dd27dad6beef696c74edfb93c656c7c2d1b20b75b"
+        },
+        {
+          "path": "qa/final-pages/tessera-supporting-information-96c8cacb73e4/tessera-supporting-information-04.jpg",
+          "sha256": "d53816cf4eb704dc282595f61971af93d99905cbafe718f9d03dd5b936bc5ce8"
+        },
+        {
+          "path": "qa/final-pages/tessera-supporting-information-96c8cacb73e4/tessera-supporting-information-05.jpg",
+          "sha256": "3bfe6b8cf2f1469b122bc0576bf35caa8d3b33d5b2bf29900cf7fdcea8abd2ed"
+        },
+        {
+          "path": "qa/final-pages/tessera-supporting-information-96c8cacb73e4/tessera-supporting-information-06.jpg",
+          "sha256": "2a2d4c4681261a1263b4b8dde5743b7ce66b659e95b76ca762da0a64ba75243d"
+        },
+        {
+          "path": "qa/final-pages/tessera-supporting-information-96c8cacb73e4/tessera-supporting-information-07.jpg",
+          "sha256": "6457e748afd7b3bb6a31de6c6722c14d8b25e87d77a35748304b0d9a5a27893f"
+        },
+        {
+          "path": "qa/final-pages/tessera-supporting-information-96c8cacb73e4/tessera-supporting-information-08.jpg",
+          "sha256": "c95aa5a467318228391f52ea55173365fed27844c90310a15b548357e2ceba2b"
+        },
+        {
+          "path": "qa/final-pages/tessera-supporting-information-96c8cacb73e4/tessera-supporting-information-09.jpg",
+          "sha256": "480e1aae14d72724c8b627919c6682a1ffdf453dd55b2597a0e10b29d509a6d4"
+        },
+        {
+          "path": "qa/final-pages/tessera-supporting-information-96c8cacb73e4/tessera-supporting-information-10.jpg",
+          "sha256": "9ab018671990dcba76e653049dc3c9ed7de6b74edd192cf274450c7f7b97ae41"
+        },
+        {
+          "path": "qa/final-pages/tessera-supporting-information-96c8cacb73e4/tessera-supporting-information-11.jpg",
+          "sha256": "93a56cab91eab52c7fc9be0fc080d5fe6bc88629d713d1c5c60814094af21b21"
+        },
+        {
+          "path": "qa/final-pages/tessera-supporting-information-96c8cacb73e4/tessera-supporting-information-12.jpg",
+          "sha256": "3b3ad83e54ae146329e8828a4a8ce8966cb1166391f7e08334da89c87a0fdab9"
+        },
+        {
+          "path": "qa/final-pages/tessera-supporting-information-96c8cacb73e4/tessera-supporting-information-13.jpg",
+          "sha256": "c4ff34d435a8c325f715d6358ee567046b0420e24fc3c06f214805d7e4164392"
+        },
+        {
+          "path": "qa/final-pages/tessera-supporting-information-96c8cacb73e4/tessera-supporting-information-14.jpg",
+          "sha256": "3c2764372d678a496d50c4b02b1510ef07258df9a4f61a2b888c5a8c239bc266"
+        }
+      ],
+      "newly_inspected_image_records": [
+        {
+          "path": "qa/final-pages/tessera-supporting-information-96c8cacb73e4/tessera-supporting-information-08.jpg",
+          "sha256": "c95aa5a467318228391f52ea55173365fed27844c90310a15b548357e2ceba2b"
+        }
+      ]
+    }
+  },
+  "individual_figures_inspected": 21,
+  "figure_set": {
+    "main": 12,
+    "supplementary": 9,
+    "semantic_panel_markers": 75,
+    "statistical_text_markers": 59
+  },
+  "minimum_statistical_marker_points": 13.449599999999975,
+  "automated_checks": [
+    "76 regression tests passed, zero failures/errors/skips",
+    "21 figures and 75 semantic sections mapped to 32 Methods equation identities",
+    "Exact 496.8-point width and 100% placement for statistical figures; text-overlap and canvas checks at save time",
+    "Protocol, runner, frozen-code and receipt hash bindings for the independent-cohort, tissue and weighting analyses",
+    "No overfull boxes, undefined references or oversized floats in any compile log"
+  ],
+  "fixes_found_during_review": [
+    "Displayed weighted-mean equation was 30 pt too wide: set on two lines",
+    "Independent-cohort figure plus caption exceeded the page by 1.8 pt: canvas shortened to 552 pt",
+    "Two supplementary tables overfull: headers abbreviated and defined in the captions",
+    "Maps figure moved to the supplement because it left 40% of a main page empty",
+    "Supplementary tables set sequentially: removed a nearly empty page",
+    "Landscape group headers touched the axis: offset by 2% of the axis width",
+    "Duplicate bibliography keys removed",
+    "Expression-weighting claim and its figure withdrawn after the same-graph control"
+  ],
+  "scope": "Author-side review; not independent scientific review. Statistical content is bound to saved receipts and tests, not to this visual record.",
+  "figures": [
+    {
+      "number": "1",
+      "filename": "figure01-workflow.pdf",
+      "sha256": "0a65dd1b93c471129e3e26c9a50f797620e5a2b2ef6778ca595b1191c9afb9d3",
+      "atlas_page": 1,
+      "status": "inspected; no layout defect observed"
+    },
+    {
+      "number": "2",
+      "filename": "figure13-architecture.pdf",
+      "sha256": "3c90b13523283dc6c346845883587ea90677aac293b2dcb3e853b3eb8f40e793",
+      "atlas_page": 2,
+      "status": "inspected; no layout defect observed"
+    },
+    {
+      "number": "3",
+      "filename": "figure03-comparison.pdf",
+      "sha256": "77094edef7b8ec46a0865af785528ba3b23b58d5e73709a0d432a02a2cb1c9c4",
+      "atlas_page": 3,
+      "status": "inspected; no layout defect observed"
+    },
+    {
+      "number": "4",
+      "filename": "figure04-ablations.pdf",
+      "sha256": "204fbf67bbed6fb50404ee7f6da6d801ca00f39bcba46218556db4adcd899098",
+      "atlas_page": 4,
+      "status": "inspected; no layout defect observed"
+    },
+    {
+      "number": "5",
+      "filename": "figure05-nsclc-maps.pdf",
+      "sha256": "290c947c4029160a3c8d491c9554ea0137872e5644cd07c0293c4644c4be7d57",
+      "atlas_page": 5,
+      "status": "inspected; no layout defect observed"
+    },
+    {
+      "number": "6",
+      "filename": "figure06-bcc-maps.pdf",
+      "sha256": "31bfe89221d02a4ad5e5f844673ee808de439a8902118c0ce0aeefa39400f61d",
+      "atlas_page": 6,
+      "status": "inspected; no layout defect observed"
+    },
+    {
+      "number": "7",
+      "filename": "figure07-breast-histology.pdf",
+      "sha256": "7c4876f46fcc19ed231007ba0cbc97817e5bb75753ac139fa653ab4fb449e95c",
+      "atlas_page": 7,
+      "status": "inspected; no layout defect observed"
+    },
+    {
+      "number": "8",
+      "filename": "figure08-breast-mixtures.pdf",
+      "sha256": "2c118d2305d092b8618579b06d20e194f98224c43aefd79c64a73a55b140fb95",
+      "atlas_page": 8,
+      "status": "inspected; no layout defect observed"
+    },
+    {
+      "number": "9",
+      "filename": "figure10-patient-transfer.pdf",
+      "sha256": "ec52fe8fd6f0a6928125a0a8bdb320a04be49d5d32976291f82e596380aeb6ed",
+      "atlas_page": 9,
+      "status": "inspected; no layout defect observed"
+    },
+    {
+      "number": "10",
+      "filename": "figure11-stability.pdf",
+      "sha256": "3a17d897b57395bd4a8dc6b2e49b5ec1f6bc8166cb4a93e789ec439201d62af5",
+      "atlas_page": 10,
+      "status": "inspected; no layout defect observed"
+    },
+    {
+      "number": "11",
+      "filename": "figure15-external-cohort.pdf",
+      "sha256": "daff2d916c4181b7de48a4bd13f1aa17ff80a9ea7b75107919a0d2ea79ca76e0",
+      "atlas_page": 11,
+      "status": "inspected; no layout defect observed"
+    },
+    {
+      "number": "12",
+      "filename": "figure17-tissue-landscape.pdf",
+      "sha256": "8626d7e69dd1f9d141797f6e39ddf64e43836ffd04e52b614b3d29c7bec31a0f",
+      "atlas_page": 12,
+      "status": "inspected; no layout defect observed"
+    },
+    {
+      "number": "S1",
+      "filename": "figure02-cohort.pdf",
+      "sha256": "175b545c36d2b9c1a03b03449af9383103c3e94d3eff9d99a000b460ed830595",
+      "atlas_page": 13,
+      "status": "inspected; no layout defect observed"
+    },
+    {
+      "number": "S2",
+      "filename": "figure14-target-lineage.pdf",
+      "sha256": "08c1d525ce93e2fb1d21d48b77bd2fd0217c58b5850dec3c4a327b8b8e508bc7",
+      "atlas_page": 14,
+      "status": "inspected; no layout defect observed"
+    },
+    {
+      "number": "S3",
+      "filename": "figure09-colorectal-proteins.pdf",
+      "sha256": "45917efca7710420b9eadf43469cb20c37ce472640ffc2ad00d4f71d6a392cd6",
+      "atlas_page": 15,
+      "status": "inspected; no layout defect observed"
+    },
+    {
+      "number": "S4",
+      "filename": "figure12-efficiency-mechanism.pdf",
+      "sha256": "2ec52b5404c51e624b635443bc08eb1669195632ea3f0c6791cb90f60f6d4d67",
+      "atlas_page": 16,
+      "status": "inspected; no layout defect observed"
+    },
+    {
+      "number": "S5",
+      "filename": "supplement01-hnscc.pdf",
+      "sha256": "d63fd8a5fe94cd178dad41b2b44767776aee5eceaf7294c2228111529fd412aa",
+      "atlas_page": 17,
+      "status": "inspected; no layout defect observed"
+    },
+    {
+      "number": "S6",
+      "filename": "supplement02-mibi.pdf",
+      "sha256": "74661bf57be6de0fb6b4e3b69d98e8bc3c19faaec6f569b5ad746f4ae665293d",
+      "atlas_page": 18,
+      "status": "inspected; no layout defect observed"
+    },
+    {
+      "number": "S7",
+      "filename": "supplement03-rna-markers.pdf",
+      "sha256": "d47bcefe268bb930ce99a19cdde6724803f55f19ee47d4293c39674093e25748",
+      "atlas_page": 19,
+      "status": "inspected; no layout defect observed"
+    },
+    {
+      "number": "S8",
+      "filename": "supplement05-scale-controls.pdf",
+      "sha256": "e90e9d11d4d0c5c1d24ac8665aa3d4ac188f1866ea8a954419de9d39a12e44e4",
+      "atlas_page": 20,
+      "status": "inspected; no layout defect observed"
+    },
+    {
+      "number": "S9",
+      "filename": "figure16-external-maps.pdf",
+      "sha256": "0eeba3b610d07f9a7926ec60fd01cb98c2ca420c222fab94bf678d5974c8239e",
+      "atlas_page": 21,
+      "status": "inspected; no layout defect observed"
+    }
+  ],
+  "historical_record_notice": "Superseded original/source-build visual record retained as historical provenance only. Current journal PDF hashes and visual evidence are qa/resumed-document-review/visual-review.json and qa/heading-refinement/heading-check.json; no superseded compiled PDF/image payload is included."
+}

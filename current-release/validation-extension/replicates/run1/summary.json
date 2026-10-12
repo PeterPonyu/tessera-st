@@ -1,0 +1,650 @@
+{
+  "protocol_sha256": "05da063182b08e4564afeee7482a97ce535abd5b480141d247e83ef3062806a4",
+  "script_sha256": "bbfd1039b8c895641b06a24fab688690d1b828440eab58c4e1164734e17c38d5",
+  "frozen_estimator_sha256": {
+    "run_experiments.py": "c5689f09056a5ef0e986e83b72854bfd4d295130182f14f8bd7bb1bacbaa1b4c",
+    "run_followup.py": "c96d933da9b71ec039df0c7dbfe1eaf5c7f5ec1c9d07918858300590b19aa538",
+    "prepare_data.py": "801dc6a98a2a314801c6ea24a1c7bc61f1e15e5c80aeb6070a8bb840d3268497"
+  },
+  "device": "cpu",
+  "included": [
+    {
+      "section": "A1",
+      "patient": "A",
+      "n_label_rows": 348,
+      "n_finite_coordinates": 348,
+      "n_matched": 346,
+      "match_fraction": 0.9942528735632183,
+      "n_analysis": 346,
+      "n_valid": 346,
+      "n_classes": 6,
+      "classes": [
+        "adipose tissue",
+        "cancer in situ",
+        "connective tissue",
+        "immune infiltrate",
+        "invasive cancer",
+        "undetermined"
+      ],
+      "status": "included",
+      "count_normalization": true,
+      "control_features_removed": 0,
+      "n_pc": 50,
+      "pca_explained_variance": 0.2812513668907701
+    },
+    {
+      "section": "B1",
+      "patient": "B",
+      "n_label_rows": 295,
+      "n_finite_coordinates": 295,
+      "n_matched": 295,
+      "match_fraction": 1.0,
+      "n_analysis": 295,
+      "n_valid": 295,
+      "n_classes": 5,
+      "classes": [
+        "adipose tissue",
+        "breast glands",
+        "connective tissue",
+        "invasive cancer",
+        "undetermined"
+      ],
+      "status": "included",
+      "count_normalization": true,
+      "control_features_removed": 0,
+      "n_pc": 50,
+      "pca_explained_variance": 0.3471083034976813
+    },
+    {
+      "section": "C1",
+      "patient": "C",
+      "n_label_rows": 177,
+      "n_finite_coordinates": 177,
+      "n_matched": 176,
+      "match_fraction": 0.9943502824858758,
+      "n_analysis": 176,
+      "n_valid": 176,
+      "n_classes": 4,
+      "classes": [
+        "adipose tissue",
+        "connective tissue",
+        "invasive cancer",
+        "undetermined"
+      ],
+      "status": "included",
+      "count_normalization": true,
+      "control_features_removed": 0,
+      "n_pc": 50,
+      "pca_explained_variance": 0.5423873850628177
+    },
+    {
+      "section": "D1",
+      "patient": "D",
+      "n_label_rows": 309,
+      "n_finite_coordinates": 309,
+      "n_matched": 306,
+      "match_fraction": 0.9902912621359223,
+      "n_analysis": 306,
+      "n_valid": 306,
+      "n_classes": 4,
+      "classes": [
+        "connective tissue",
+        "immune infiltrate",
+        "invasive cancer",
+        "undetermined"
+      ],
+      "status": "included",
+      "count_normalization": true,
+      "control_features_removed": 0,
+      "n_pc": 50,
+      "pca_explained_variance": 0.34566642366140976
+    },
+    {
+      "section": "E1",
+      "patient": "E",
+      "n_label_rows": 587,
+      "n_finite_coordinates": 587,
+      "n_matched": 587,
+      "match_fraction": 1.0,
+      "n_analysis": 587,
+      "n_valid": 587,
+      "n_classes": 4,
+      "classes": [
+        "connective tissue",
+        "immune infiltrate",
+        "invasive cancer",
+        "undetermined"
+      ],
+      "status": "included",
+      "count_normalization": true,
+      "control_features_removed": 0,
+      "n_pc": 50,
+      "pca_explained_variance": 0.18385276621036292
+    },
+    {
+      "section": "F1",
+      "patient": "F",
+      "n_label_rows": 692,
+      "n_finite_coordinates": 691,
+      "n_matched": 691,
+      "match_fraction": 1.0,
+      "n_analysis": 691,
+      "n_valid": 691,
+      "n_classes": 4,
+      "classes": [
+        "connective tissue",
+        "immune infiltrate",
+        "invasive cancer",
+        "undetermined"
+      ],
+      "status": "included",
+      "count_normalization": true,
+      "control_features_removed": 0,
+      "n_pc": 50,
+      "pca_explained_variance": 0.1632750078527742
+    },
+    {
+      "section": "G2",
+      "patient": "G",
+      "n_label_rows": 475,
+      "n_finite_coordinates": 467,
+      "n_matched": 467,
+      "match_fraction": 1.0,
+      "n_analysis": 467,
+      "n_valid": 467,
+      "n_classes": 7,
+      "classes": [
+        "adipose tissue",
+        "breast glands",
+        "cancer in situ",
+        "connective tissue",
+        "immune infiltrate",
+        "invasive cancer",
+        "undetermined"
+      ],
+      "status": "included",
+      "count_normalization": true,
+      "control_features_removed": 0,
+      "n_pc": 50,
+      "pca_explained_variance": 0.2314786079486074
+    },
+    {
+      "section": "H1",
+      "patient": "H",
+      "n_label_rows": 613,
+      "n_finite_coordinates": 613,
+      "n_matched": 613,
+      "match_fraction": 1.0,
+      "n_analysis": 613,
+      "n_valid": 613,
+      "n_classes": 7,
+      "classes": [
+        "adipose tissue",
+        "breast glands",
+        "cancer in situ",
+        "connective tissue",
+        "immune infiltrate",
+        "invasive cancer",
+        "undetermined"
+      ],
+      "status": "included",
+      "count_normalization": true,
+      "control_features_removed": 0,
+      "n_pc": 50,
+      "pca_explained_variance": 0.19110400093569235
+    }
+  ],
+  "exclusions": [
+    {
+      "section": "J1",
+      "patient": "J",
+      "status": "excluded_missing_counts"
+    }
+  ],
+  "primary_tessera_minus_nested": {
+    "deltas": [
+      -0.07981407232402879,
+      -0.013776984529053515,
+      -0.03926101480298547,
+      -0.03960078520817348,
+      0.010009969634879169,
+      -0.006143891633878393,
+      -0.05099827314016617,
+      0.03502824541054217
+    ],
+    "mean": -0.02306960082410806,
+    "n_positive": 2,
+    "n_negative": 6,
+    "n_zero": 0,
+    "exact_sign_flip_p": 0.1015625
+  },
+  "primary_tessera_minus_pca50": {
+    "deltas": [
+      -0.11271223552660883,
+      0.023003862483249427,
+      -0.0038293916388381644,
+      -0.04136113174281911,
+      -0.04015987477601736,
+      -0.02405427427637908,
+      -0.008327606105352825,
+      0.08008833735062579
+    ],
+    "mean": -0.01591903927901752,
+    "n_positive": 2,
+    "n_negative": 6,
+    "n_zero": 0,
+    "exact_sign_flip_p": 0.4453125
+  },
+  "patients": [
+    {
+      "patient": "A",
+      "section": "A1",
+      "selected_control": "NeighborMean|6|None",
+      "tessera_ari": 0.10358410766941983,
+      "nested_control_ari": 0.18339817999344862,
+      "pca50_ari": 0.21629634319602867,
+      "tessera_minus_nested": -0.07981407232402879,
+      "tessera_minus_pca50": -0.11271223552660883
+    },
+    {
+      "patient": "B",
+      "section": "B1",
+      "selected_control": "NeighborMean|6|None",
+      "tessera_ari": 0.2675326882589329,
+      "nested_control_ari": 0.2813096727879864,
+      "pca50_ari": 0.24452882577568347,
+      "tessera_minus_nested": -0.013776984529053515,
+      "tessera_minus_pca50": 0.023003862483249427
+    },
+    {
+      "patient": "C",
+      "section": "C1",
+      "selected_control": "BANKSY-style|10|0.8",
+      "tessera_ari": 0.14079460717555628,
+      "nested_control_ari": 0.18005562197854175,
+      "pca50_ari": 0.14462399881439444,
+      "tessera_minus_nested": -0.03926101480298547,
+      "tessera_minus_pca50": -0.0038293916388381644
+    },
+    {
+      "patient": "D",
+      "section": "D1",
+      "selected_control": "NeighborMean|10|None",
+      "tessera_ari": 0.18127497067936127,
+      "nested_control_ari": 0.22087575588753475,
+      "pca50_ari": 0.22263610242218038,
+      "tessera_minus_nested": -0.03960078520817348,
+      "tessera_minus_pca50": -0.04136113174281911
+    },
+    {
+      "patient": "E",
+      "section": "E1",
+      "selected_control": "BANKSY-style|10|0.8",
+      "tessera_ari": 0.018020369822114888,
+      "nested_control_ari": 0.008010400187235719,
+      "pca50_ari": 0.05818024459813225,
+      "tessera_minus_nested": 0.010009969634879169,
+      "tessera_minus_pca50": -0.04015987477601736
+    },
+    {
+      "patient": "F",
+      "section": "F1",
+      "selected_control": "NeighborMean|6|None",
+      "tessera_ari": 0.04694936818468227,
+      "nested_control_ari": 0.05309325981856066,
+      "pca50_ari": 0.07100364246106135,
+      "tessera_minus_nested": -0.006143891633878393,
+      "tessera_minus_pca50": -0.02405427427637908
+    },
+    {
+      "patient": "G",
+      "section": "G2",
+      "selected_control": "NeighborMean|6|None",
+      "tessera_ari": 0.16812974214631513,
+      "nested_control_ari": 0.2191280152864813,
+      "pca50_ari": 0.17645734825166795,
+      "tessera_minus_nested": -0.05099827314016617,
+      "tessera_minus_pca50": -0.008327606105352825
+    },
+    {
+      "patient": "H",
+      "section": "H1",
+      "selected_control": "BANKSY-style|6|0.8",
+      "tessera_ari": 0.29906920088544037,
+      "nested_control_ari": 0.2640409554748982,
+      "pca50_ari": 0.21898086353481458,
+      "tessera_minus_nested": 0.03502824541054217,
+      "tessera_minus_pca50": 0.08008833735062579
+    }
+  ],
+  "sensitivity_without_patient_G": {
+    "patients": [
+      {
+        "patient": "A",
+        "selected_control": "NeighborMean|10|None",
+        "tessera_ari": 0.10358410766941983,
+        "nested_control_ari": 0.1744330583324771,
+        "tessera_minus_nested": -0.07084895066305727
+      },
+      {
+        "patient": "B",
+        "selected_control": "NeighborMean|6|None",
+        "tessera_ari": 0.2675326882589329,
+        "nested_control_ari": 0.2813096727879864,
+        "tessera_minus_nested": -0.013776984529053515
+      },
+      {
+        "patient": "C",
+        "selected_control": "BANKSY-style|10|0.8",
+        "tessera_ari": 0.14079460717555628,
+        "nested_control_ari": 0.18005562197854175,
+        "tessera_minus_nested": -0.03926101480298547
+      },
+      {
+        "patient": "D",
+        "selected_control": "NeighborMean|10|None",
+        "tessera_ari": 0.18127497067936127,
+        "nested_control_ari": 0.22087575588753475,
+        "tessera_minus_nested": -0.03960078520817348
+      },
+      {
+        "patient": "E",
+        "selected_control": "NeighborMean|6|None",
+        "tessera_ari": 0.018020369822114888,
+        "nested_control_ari": 0.01617077570519049,
+        "tessera_minus_nested": 0.0018495941169243968
+      },
+      {
+        "patient": "F",
+        "selected_control": "NeighborMean|6|None",
+        "tessera_ari": 0.04694936818468227,
+        "nested_control_ari": 0.05309325981856066,
+        "tessera_minus_nested": -0.006143891633878393
+      },
+      {
+        "patient": "H",
+        "selected_control": "BANKSY-style|30|0.5",
+        "tessera_ari": 0.29906920088544037,
+        "nested_control_ari": 0.24808518679835204,
+        "tessera_minus_nested": 0.05098401408708833
+      }
+    ],
+    "tessera_minus_nested": {
+      "deltas": [
+        -0.07084895066305727,
+        -0.013776984529053515,
+        -0.03926101480298547,
+        -0.03960078520817348,
+        0.0018495941169243968,
+        -0.006143891633878393,
+        0.05098401408708833
+      ],
+      "mean": -0.01668543123330506,
+      "n_positive": 2,
+      "n_negative": 5,
+      "n_zero": 0,
+      "exact_sign_flip_p": 0.28125
+    }
+  },
+  "boundary": {
+    "patients": {
+      "A": {
+        "gate_auroc": 0.5903177525815378,
+        "expression_difference_auroc": 0.650429089812751,
+        "gate_minus_expression": -0.0601113372312132
+      },
+      "B": {
+        "gate_auroc": 0.5531159844054581,
+        "expression_difference_auroc": 0.6021403508771931,
+        "gate_minus_expression": -0.049024366471735026
+      },
+      "C": {
+        "gate_auroc": 0.5820856649601143,
+        "expression_difference_auroc": 0.6651833551613288,
+        "gate_minus_expression": -0.08309769020121449
+      },
+      "D": {
+        "gate_auroc": 0.501809517676605,
+        "expression_difference_auroc": 0.5268907021885321,
+        "gate_minus_expression": -0.02508118451192709
+      },
+      "E": {
+        "gate_auroc": 0.40927346330030895,
+        "expression_difference_auroc": 0.3449278257164163,
+        "gate_minus_expression": 0.06434563758389267
+      },
+      "F": {
+        "gate_auroc": 0.5067165183858814,
+        "expression_difference_auroc": 0.4358375110427606,
+        "gate_minus_expression": 0.0708790073431208
+      },
+      "G": {
+        "gate_auroc": 0.5262713186356073,
+        "expression_difference_auroc": 0.6111772046589019,
+        "gate_minus_expression": -0.08490588602329463
+      },
+      "H": {
+        "gate_auroc": 0.5421113104880794,
+        "expression_difference_auroc": 0.5223335386545609,
+        "gate_minus_expression": 0.019777771833518476
+      }
+    },
+    "gate_higher_than_expression_difference": 3,
+    "n_patients": 8
+  },
+  "oracle_not_for_inference": [
+    {
+      "patient": "A",
+      "oracle_config": "BANKSY-style|30|0.5",
+      "oracle_ari": 0.26157999900624707,
+      "use": "not_for_inference"
+    },
+    {
+      "patient": "B",
+      "oracle_config": "BANKSY-style|100|0.8",
+      "oracle_ari": 0.3229139753672882,
+      "use": "not_for_inference"
+    },
+    {
+      "patient": "C",
+      "oracle_config": "NeighborMean|200|None",
+      "oracle_ari": 0.2936857071680856,
+      "use": "not_for_inference"
+    },
+    {
+      "patient": "D",
+      "oracle_config": "NeighborMean|6|None",
+      "oracle_ari": 0.2740744917176765,
+      "use": "not_for_inference"
+    },
+    {
+      "patient": "E",
+      "oracle_config": "NeighborMean|100|None",
+      "oracle_ari": 0.13578839441398435,
+      "use": "not_for_inference"
+    },
+    {
+      "patient": "F",
+      "oracle_config": "BANKSY-style|15|0.5",
+      "oracle_ari": 0.09887375337913946,
+      "use": "not_for_inference"
+    },
+    {
+      "patient": "G",
+      "oracle_config": "BANKSY-style|6|0.8",
+      "oracle_ari": 0.24168657243179972,
+      "use": "not_for_inference"
+    },
+    {
+      "patient": "H",
+      "oracle_config": "NeighborMean|10|None",
+      "oracle_ari": 0.346087107443839,
+      "use": "not_for_inference"
+    }
+  ],
+  "submission": "HOLD",
+  "downloads": [
+    {
+      "url": "https://raw.githubusercontent.com/almaan/her2st/master/data/ST-pat/lbl/A1_labeled_coordinates.tsv",
+      "path": "/home/zeyufu/Desktop/singlecell-genomics-research/research/revisions/tessera-20261008-expanded/validation-external/raw/A1_labeled_coordinates.tsv",
+      "bytes": 22117,
+      "sha256": "23a0a68dccd54a8397ea4066994edb7110e88373d5b3bc6e35254dda9253fa5f",
+      "ok": true,
+      "cached": true,
+      "error": null
+    },
+    {
+      "url": "https://raw.githubusercontent.com/almaan/her2st/master/data/ST-cnts/A1.tsv.gz",
+      "path": "/home/zeyufu/Desktop/singlecell-genomics-research/research/revisions/tessera-20261008-expanded/validation-external/raw/A1.tsv.gz",
+      "bytes": 1033376,
+      "sha256": "d91035e5d8a9c4ce7865e4c61446deec1a7318602d41b3220e9fcb3ce7e41fe3",
+      "ok": true,
+      "cached": true,
+      "error": null
+    },
+    {
+      "url": "https://raw.githubusercontent.com/almaan/her2st/master/data/ST-pat/lbl/B1_labeled_coordinates.tsv",
+      "path": "/home/zeyufu/Desktop/singlecell-genomics-research/research/revisions/tessera-20261008-expanded/validation-external/raw/B1_labeled_coordinates.tsv",
+      "bytes": 18510,
+      "sha256": "f7050caa71c47a4c95fcca2a7f29560d387310877b1c9e4a54f841059db837ee",
+      "ok": true,
+      "cached": true,
+      "error": null
+    },
+    {
+      "url": "https://raw.githubusercontent.com/almaan/her2st/master/data/ST-cnts/B1.tsv.gz",
+      "path": "/home/zeyufu/Desktop/singlecell-genomics-research/research/revisions/tessera-20261008-expanded/validation-external/raw/B1.tsv.gz",
+      "bytes": 657516,
+      "sha256": "97b3abf2676c596ac7dd53829780005724cab62a6f676697516006481a443f74",
+      "ok": true,
+      "cached": true,
+      "error": null
+    },
+    {
+      "url": "https://raw.githubusercontent.com/almaan/her2st/master/data/ST-pat/lbl/C1_labeled_coordinates.tsv",
+      "path": "/home/zeyufu/Desktop/singlecell-genomics-research/research/revisions/tessera-20261008-expanded/validation-external/raw/C1_labeled_coordinates.tsv",
+      "bytes": 11396,
+      "sha256": "41b6e1bbb1031480d969e725e739971cb39dbdb6e2b6d662d585bebacf093040",
+      "ok": true,
+      "cached": true,
+      "error": null
+    },
+    {
+      "url": "https://raw.githubusercontent.com/almaan/her2st/master/data/ST-cnts/C1.tsv.gz",
+      "path": "/home/zeyufu/Desktop/singlecell-genomics-research/research/revisions/tessera-20261008-expanded/validation-external/raw/C1.tsv.gz",
+      "bytes": 752999,
+      "sha256": "8383130eebf0f9f8186f006ed6b704149ba62303605a312a9080fa9901be9c20",
+      "ok": true,
+      "cached": true,
+      "error": null
+    },
+    {
+      "url": "https://raw.githubusercontent.com/almaan/her2st/master/data/ST-pat/lbl/D1_labeled_coordinates.tsv",
+      "path": "/home/zeyufu/Desktop/singlecell-genomics-research/research/revisions/tessera-20261008-expanded/validation-external/raw/D1_labeled_coordinates.tsv",
+      "bytes": 19707,
+      "sha256": "c8bf26103d1aac42611d9c85ba3db9c596b9a80ec045ca9b246b8d14d8b3c20f",
+      "ok": true,
+      "cached": true,
+      "error": null
+    },
+    {
+      "url": "https://raw.githubusercontent.com/almaan/her2st/master/data/ST-cnts/D1.tsv.gz",
+      "path": "/home/zeyufu/Desktop/singlecell-genomics-research/research/revisions/tessera-20261008-expanded/validation-external/raw/D1.tsv.gz",
+      "bytes": 1251370,
+      "sha256": "8fe13d29763b3f6a9e85322dae97e05c4ca42b57cef4b1077c88b9b7b6a980ac",
+      "ok": true,
+      "cached": true,
+      "error": null
+    },
+    {
+      "url": "https://raw.githubusercontent.com/almaan/her2st/master/data/ST-pat/lbl/E1_labeled_coordinates.tsv",
+      "path": "/home/zeyufu/Desktop/singlecell-genomics-research/research/revisions/tessera-20261008-expanded/validation-external/raw/E1_labeled_coordinates.tsv",
+      "bytes": 37579,
+      "sha256": "29db60fe5b306bb982fbd2bbdd1f9c60eedf90c6ac1d56bedd3c18ed5a369829",
+      "ok": true,
+      "cached": true,
+      "error": null
+    },
+    {
+      "url": "https://raw.githubusercontent.com/almaan/her2st/master/data/ST-cnts/E1.tsv.gz",
+      "path": "/home/zeyufu/Desktop/singlecell-genomics-research/research/revisions/tessera-20261008-expanded/validation-external/raw/E1.tsv.gz",
+      "bytes": 1017499,
+      "sha256": "b2f572ea0a95d256cb172a9284e96b6d2ff236398d4934a992df85c96d11c4cc",
+      "ok": true,
+      "cached": true,
+      "error": null
+    },
+    {
+      "url": "https://raw.githubusercontent.com/almaan/her2st/master/data/ST-pat/lbl/F1_labeled_coordinates.tsv",
+      "path": "/home/zeyufu/Desktop/singlecell-genomics-research/research/revisions/tessera-20261008-expanded/validation-external/raw/F1_labeled_coordinates.tsv",
+      "bytes": 43854,
+      "sha256": "3b59970f0c6ba09d8e0fc9286ace2a295bf06d36c59684162b7a8aca0e021ec5",
+      "ok": true,
+      "cached": true,
+      "error": null
+    },
+    {
+      "url": "https://raw.githubusercontent.com/almaan/her2st/master/data/ST-cnts/F1.tsv.gz",
+      "path": "/home/zeyufu/Desktop/singlecell-genomics-research/research/revisions/tessera-20261008-expanded/validation-external/raw/F1.tsv.gz",
+      "bytes": 1778749,
+      "sha256": "187aa13f204d514851d3674dfa09b4a8d7f2676f1d40d2ef63e9e368c7cf672a",
+      "ok": true,
+      "cached": true,
+      "error": null
+    },
+    {
+      "url": "https://raw.githubusercontent.com/almaan/her2st/master/data/ST-pat/lbl/G2_labeled_coordinates.tsv",
+      "path": "/home/zeyufu/Desktop/singlecell-genomics-research/research/revisions/tessera-20261008-expanded/validation-external/raw/G2_labeled_coordinates.tsv",
+      "bytes": 29799,
+      "sha256": "8466275647ad125569ee94d099cc7b78c15028968ba1dd267a85a81c001a16ff",
+      "ok": true,
+      "cached": true,
+      "error": null
+    },
+    {
+      "url": "https://raw.githubusercontent.com/almaan/her2st/master/data/ST-cnts/G2.tsv.gz",
+      "path": "/home/zeyufu/Desktop/singlecell-genomics-research/research/revisions/tessera-20261008-expanded/validation-external/raw/G2.tsv.gz",
+      "bytes": 954118,
+      "sha256": "9d51a5ed85bdf60069dcf51beeffba4e90e35e8630ec3b707a2453ffdd608e3b",
+      "ok": true,
+      "cached": true,
+      "error": null
+    },
+    {
+      "url": "https://raw.githubusercontent.com/almaan/her2st/master/data/ST-pat/lbl/H1_labeled_coordinates.tsv",
+      "path": "/home/zeyufu/Desktop/singlecell-genomics-research/research/revisions/tessera-20261008-expanded/validation-external/raw/H1_labeled_coordinates.tsv",
+      "bytes": 38594,
+      "sha256": "b65cbc99ed7a01281bc2eb87be87b902312e47ca91bc1f00ff351489b78434c3",
+      "ok": true,
+      "cached": true,
+      "error": null
+    },
+    {
+      "url": "https://raw.githubusercontent.com/almaan/her2st/master/data/ST-cnts/H1.tsv.gz",
+      "path": "/home/zeyufu/Desktop/singlecell-genomics-research/research/revisions/tessera-20261008-expanded/validation-external/raw/H1.tsv.gz",
+      "bytes": 972770,
+      "sha256": "90b391782535f38c9ab20fe8b38f44ebbfdad2201075a677a198cbef12c29b07",
+      "ok": true,
+      "cached": true,
+      "error": null
+    },
+    {
+      "url": "https://raw.githubusercontent.com/almaan/her2st/master/data/ST-pat/lbl/J1_labeled_coordinates.tsv",
+      "path": "/home/zeyufu/Desktop/singlecell-genomics-research/research/revisions/tessera-20261008-expanded/validation-external/raw/J1_labeled_coordinates.tsv",
+      "bytes": 16280,
+      "sha256": "36fa0cdccfd07ca4f77940481f893a6a8b92762bc27abd891cc246fdf2beece1",
+      "ok": true,
+      "cached": true,
+      "error": null
+    },
+    {
+      "url": null,
+      "path": null,
+      "bytes": 0,
+      "sha256": null,
+      "ok": false,
+      "cached": null,
+      "error": "HTTPError: HTTP Error 404: Not Found"
+    }
+  ]
+}

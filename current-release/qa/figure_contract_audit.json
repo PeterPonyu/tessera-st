@@ -1,0 +1,498 @@
+{
+  "figures": {
+    "figure02-cohort": {
+      "pdf_sha256": "175b545c36d2b9c1a03b03449af9383103c3e94d3eff9d99a000b460ed830595",
+      "panel_count": 4,
+      "only_panel_labels_bold": true,
+      "fonts": [
+        "NVXYZC+TeXGyreTermesX-Regular",
+        "UYKKUC+TeXGyreTermesX-Bold"
+      ],
+      "all_text_black": true,
+      "labels_larger_than_regular_text": true,
+      "bold_pdf_runs": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "width_height_points": [
+        496.8,
+        300
+      ],
+      "svg_text_outlined": false,
+      "fully_offpage_glyphs": 1,
+      "partial_page_edge_clipping": false
+    },
+    "figure03-comparison": {
+      "pdf_sha256": "77094edef7b8ec46a0865af785528ba3b23b58d5e73709a0d432a02a2cb1c9c4",
+      "panel_count": 4,
+      "only_panel_labels_bold": true,
+      "fonts": [
+        "NNTZHW+TeXGyreTermesX-Regular",
+        "OGYQFN+txmiaX",
+        "UYKKUC+TeXGyreTermesX-Bold",
+        "VWOPCU+NewTXMI7",
+        "YQAKVC+NewTXMI"
+      ],
+      "all_text_black": true,
+      "labels_larger_than_regular_text": true,
+      "bold_pdf_runs": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "width_height_points": [
+        496.8,
+        470
+      ],
+      "svg_text_outlined": false,
+      "fully_offpage_glyphs": 1,
+      "partial_page_edge_clipping": false
+    },
+    "figure04-ablations": {
+      "pdf_sha256": "1a0aa8a102147b01b00eba8654ebbd4e49442660f6d65eebfdd62ca840183583",
+      "panel_count": 4,
+      "only_panel_labels_bold": true,
+      "fonts": [
+        "GUHSKP+txmiaX",
+        "LPDEEC+TeXGyreTermesX-Regular",
+        "UYKKUC+TeXGyreTermesX-Bold"
+      ],
+      "all_text_black": true,
+      "labels_larger_than_regular_text": true,
+      "bold_pdf_runs": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "width_height_points": [
+        496.8,
+        452
+      ],
+      "svg_text_outlined": false,
+      "fully_offpage_glyphs": 1,
+      "partial_page_edge_clipping": false
+    },
+    "figure05-nsclc-maps": {
+      "pdf_sha256": "290c947c4029160a3c8d491c9554ea0137872e5644cd07c0293c4644c4be7d57",
+      "panel_count": 5,
+      "only_panel_labels_bold": true,
+      "fonts": [
+        "GMYKEQ+TeXGyreTermesX-Bold",
+        "KYHXAR+TeXGyreTermesX-Regular"
+      ],
+      "all_text_black": true,
+      "labels_larger_than_regular_text": true,
+      "bold_pdf_runs": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e"
+      ],
+      "width_height_points": [
+        496.8,
+        512.498
+      ],
+      "svg_text_outlined": false,
+      "fully_offpage_glyphs": 1,
+      "partial_page_edge_clipping": false
+    },
+    "figure06-bcc-maps": {
+      "pdf_sha256": "31bfe89221d02a4ad5e5f844673ee808de439a8902118c0ce0aeefa39400f61d",
+      "panel_count": 4,
+      "only_panel_labels_bold": true,
+      "fonts": [
+        "ANHUGR+TeXGyreTermesX-Regular",
+        "UYKKUC+TeXGyreTermesX-Bold"
+      ],
+      "all_text_black": true,
+      "labels_larger_than_regular_text": true,
+      "bold_pdf_runs": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "width_height_points": [
+        496.8,
+        514.497
+      ],
+      "svg_text_outlined": false,
+      "fully_offpage_glyphs": 1,
+      "partial_page_edge_clipping": false
+    },
+    "figure07-breast-histology": {
+      "pdf_sha256": "4527c45ba7fe609f44db2853ed7e113289b37643af805a2019c88912b5498465",
+      "panel_count": 2,
+      "only_panel_labels_bold": true,
+      "fonts": [
+        "TJAWUA+TeXGyreTermesX-Bold",
+        "ZUKCXR+TeXGyreTermesX-Regular"
+      ],
+      "all_text_black": true,
+      "labels_larger_than_regular_text": true,
+      "bold_pdf_runs": [
+        "a",
+        "b"
+      ],
+      "width_height_points": [
+        496.8,
+        354.132
+      ],
+      "svg_text_outlined": false,
+      "fully_offpage_glyphs": 1,
+      "partial_page_edge_clipping": false
+    },
+    "figure08-breast-mixtures": {
+      "pdf_sha256": "2c118d2305d092b8618579b06d20e194f98224c43aefd79c64a73a55b140fb95",
+      "panel_count": 4,
+      "only_panel_labels_bold": true,
+      "fonts": [
+        "OGYQFN+txmiaX",
+        "PWYYBE+TeXGyreTermesX-Regular",
+        "UKLOTI+NewTXMI7",
+        "UYKKUC+TeXGyreTermesX-Bold",
+        "VMTOHH+txsys"
+      ],
+      "all_text_black": true,
+      "labels_larger_than_regular_text": true,
+      "bold_pdf_runs": [
+        "a",
+        "b",
+        "d",
+        "c"
+      ],
+      "width_height_points": [
+        496.8,
+        372
+      ],
+      "svg_text_outlined": false,
+      "fully_offpage_glyphs": 1,
+      "partial_page_edge_clipping": false
+    },
+    "figure09-colorectal-proteins": {
+      "pdf_sha256": "45917efca7710420b9eadf43469cb20c37ce472640ffc2ad00d4f71d6a392cd6",
+      "panel_count": 2,
+      "only_panel_labels_bold": true,
+      "fonts": [
+        "ETHDHQ+TeXGyreTermesX-Regular",
+        "HICDEG+SFRM0700",
+        "TJAWUA+TeXGyreTermesX-Bold"
+      ],
+      "all_text_black": true,
+      "labels_larger_than_regular_text": true,
+      "bold_pdf_runs": [
+        "a",
+        "b"
+      ],
+      "width_height_points": [
+        496.8,
+        279.74
+      ],
+      "svg_text_outlined": false,
+      "fully_offpage_glyphs": 1,
+      "partial_page_edge_clipping": false
+    },
+    "figure10-patient-transfer": {
+      "pdf_sha256": "ec52fe8fd6f0a6928125a0a8bdb320a04be49d5d32976291f82e596380aeb6ed",
+      "panel_count": 4,
+      "only_panel_labels_bold": true,
+      "fonts": [
+        "OGYQFN+txmiaX",
+        "OXSNGN+TeXGyreTermesX-Regular",
+        "UYKKUC+TeXGyreTermesX-Bold",
+        "VWOPCU+NewTXMI7"
+      ],
+      "all_text_black": true,
+      "labels_larger_than_regular_text": true,
+      "bold_pdf_runs": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "width_height_points": [
+        496.8,
+        378
+      ],
+      "svg_text_outlined": false,
+      "fully_offpage_glyphs": 1,
+      "partial_page_edge_clipping": false
+    },
+    "figure11-stability": {
+      "pdf_sha256": "3a17d897b57395bd4a8dc6b2e49b5ec1f6bc8166cb4a93e789ec439201d62af5",
+      "panel_count": 2,
+      "only_panel_labels_bold": true,
+      "fonts": [
+        "TJAWUA+TeXGyreTermesX-Bold",
+        "XUFVPK+TeXGyreTermesX-Regular"
+      ],
+      "all_text_black": true,
+      "labels_larger_than_regular_text": true,
+      "bold_pdf_runs": [
+        "a",
+        "b"
+      ],
+      "width_height_points": [
+        496.8,
+        276
+      ],
+      "svg_text_outlined": false,
+      "fully_offpage_glyphs": 1,
+      "partial_page_edge_clipping": false
+    },
+    "figure12-efficiency-mechanism": {
+      "pdf_sha256": "2ec52b5404c51e624b635443bc08eb1669195632ea3f0c6791cb90f60f6d4d67",
+      "panel_count": 2,
+      "only_panel_labels_bold": true,
+      "fonts": [
+        "TJAWUA+TeXGyreTermesX-Bold",
+        "UTCPBW+TeXGyreTermesX-Regular",
+        "YVWMHO+txsys"
+      ],
+      "all_text_black": true,
+      "labels_larger_than_regular_text": true,
+      "bold_pdf_runs": [
+        "a",
+        "b"
+      ],
+      "width_height_points": [
+        496.8,
+        300
+      ],
+      "svg_text_outlined": false,
+      "fully_offpage_glyphs": 1,
+      "partial_page_edge_clipping": false
+    },
+    "supplement01-hnscc": {
+      "pdf_sha256": "d63fd8a5fe94cd178dad41b2b44767776aee5eceaf7294c2228111529fd412aa",
+      "panel_count": 1,
+      "only_panel_labels_bold": true,
+      "fonts": [
+        "NVIJAV+TeXGyreTermesX-Regular",
+        "UFOBHJ+TeXGyreTermesX-Bold"
+      ],
+      "all_text_black": true,
+      "labels_larger_than_regular_text": true,
+      "bold_pdf_runs": [
+        "a"
+      ],
+      "width_height_points": [
+        496.8,
+        135.789
+      ],
+      "svg_text_outlined": false,
+      "fully_offpage_glyphs": 1,
+      "partial_page_edge_clipping": false
+    },
+    "supplement02-mibi": {
+      "pdf_sha256": "74661bf57be6de0fb6b4e3b69d98e8bc3c19faaec6f569b5ad746f4ae665293d",
+      "panel_count": 3,
+      "only_panel_labels_bold": true,
+      "fonts": [
+        "GPRRQQ+TeXGyreTermesX-Regular",
+        "ZYVERG+TeXGyreTermesX-Bold"
+      ],
+      "all_text_black": true,
+      "labels_larger_than_regular_text": true,
+      "bold_pdf_runs": [
+        "a",
+        "b",
+        "c"
+      ],
+      "width_height_points": [
+        496.8,
+        413.637
+      ],
+      "svg_text_outlined": false,
+      "fully_offpage_glyphs": 1,
+      "partial_page_edge_clipping": false
+    },
+    "supplement03-rna-markers": {
+      "pdf_sha256": "d47bcefe268bb930ce99a19cdde6724803f55f19ee47d4293c39674093e25748",
+      "panel_count": 2,
+      "only_panel_labels_bold": true,
+      "fonts": [
+        "PAEXEX+TeXGyreTermesX-Regular",
+        "TJAWUA+TeXGyreTermesX-Bold"
+      ],
+      "all_text_black": true,
+      "labels_larger_than_regular_text": true,
+      "bold_pdf_runs": [
+        "a",
+        "b"
+      ],
+      "width_height_points": [
+        496.8,
+        236.852
+      ],
+      "svg_text_outlined": false,
+      "fully_offpage_glyphs": 1,
+      "partial_page_edge_clipping": false
+    },
+    "supplement05-scale-controls": {
+      "pdf_sha256": "e90e9d11d4d0c5c1d24ac8665aa3d4ac188f1866ea8a954419de9d39a12e44e4",
+      "panel_count": 2,
+      "only_panel_labels_bold": true,
+      "fonts": [
+        "NDBRNR+NewTXMI",
+        "OGYQFN+txmiaX",
+        "TJAWUA+TeXGyreTermesX-Bold",
+        "UWOWBA+TeXGyreTermesX-Regular"
+      ],
+      "all_text_black": true,
+      "labels_larger_than_regular_text": true,
+      "bold_pdf_runs": [
+        "a",
+        "b"
+      ],
+      "width_height_points": [
+        496.8,
+        214
+      ],
+      "svg_text_outlined": false,
+      "fully_offpage_glyphs": 1,
+      "partial_page_edge_clipping": false
+    },
+    "figure15-external-cohort": {
+      "pdf_sha256": "861df967c7d0f6a317979de87d923f6d0603a379c8860660fe20f26f389482d6",
+      "panel_count": 6,
+      "only_panel_labels_bold": true,
+      "fonts": [
+        "CHMZKO+TeXGyreTermesX-Regular",
+        "PRBGPL+TeXGyreTermesX-Bold",
+        "YVWMHO+txsys"
+      ],
+      "all_text_black": true,
+      "labels_larger_than_regular_text": true,
+      "bold_pdf_runs": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f"
+      ],
+      "width_height_points": [
+        496.8,
+        552
+      ],
+      "svg_text_outlined": false,
+      "fully_offpage_glyphs": 1,
+      "partial_page_edge_clipping": false
+    },
+    "figure16-external-maps": {
+      "pdf_sha256": "0eeba3b610d07f9a7926ec60fd01cb98c2ca420c222fab94bf678d5974c8239e",
+      "panel_count": 4,
+      "only_panel_labels_bold": true,
+      "fonts": [
+        "UYKKUC+TeXGyreTermesX-Bold",
+        "ZVYUKG+TeXGyreTermesX-Regular"
+      ],
+      "all_text_black": true,
+      "labels_larger_than_regular_text": true,
+      "bold_pdf_runs": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "width_height_points": [
+        496.8,
+        418.326
+      ],
+      "svg_text_outlined": false,
+      "fully_offpage_glyphs": 1,
+      "partial_page_edge_clipping": false
+    },
+    "figure17-tissue-landscape": {
+      "pdf_sha256": "8626d7e69dd1f9d141797f6e39ddf64e43836ffd04e52b614b3d29c7bec31a0f",
+      "panel_count": 4,
+      "only_panel_labels_bold": true,
+      "fonts": [
+        "BDVLZJ+TeXGyreTermesX-Regular",
+        "UYKKUC+TeXGyreTermesX-Bold",
+        "YVWMHO+txsys"
+      ],
+      "all_text_black": true,
+      "labels_larger_than_regular_text": true,
+      "bold_pdf_runs": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "width_height_points": [
+        496.8,
+        496
+      ],
+      "svg_text_outlined": false,
+      "fully_offpage_glyphs": 1,
+      "partial_page_edge_clipping": false
+    },
+    "figure01-workflow": {
+      "pdf_sha256": "0a65dd1b93c471129e3e26c9a50f797620e5a2b2ef6778ca595b1191c9afb9d3",
+      "panel_count": 6,
+      "only_panel_labels_bold": true,
+      "fonts": [],
+      "all_text_black": true,
+      "labels_larger_than_regular_text": true,
+      "bold_pdf_runs": [],
+      "width_height_points": [
+        1017,
+        504
+      ],
+      "svg_text_outlined": true,
+      "arrow_count": 13,
+      "arrow_head_length_at_manuscript_width_points": 4.39646017699115,
+      "arrow_head_width_at_manuscript_width_points": 3.2973451327433625,
+      "panel_label_at_manuscript_width_points": 13.92212389380531
+    },
+    "figure13-architecture": {
+      "pdf_sha256": "3c90b13523283dc6c346845883587ea90677aac293b2dcb3e853b3eb8f40e793",
+      "panel_count": 5,
+      "only_panel_labels_bold": true,
+      "fonts": [],
+      "all_text_black": true,
+      "labels_larger_than_regular_text": true,
+      "bold_pdf_runs": [],
+      "width_height_points": [
+        1017,
+        640.5
+      ],
+      "svg_text_outlined": true,
+      "arrow_count": 16,
+      "arrow_head_length_at_manuscript_width_points": 4.39646017699115,
+      "arrow_head_width_at_manuscript_width_points": 3.2973451327433625,
+      "panel_label_at_manuscript_width_points": 13.92212389380531
+    },
+    "figure14-target-lineage": {
+      "pdf_sha256": "08c1d525ce93e2fb1d21d48b77bd2fd0217c58b5850dec3c4a327b8b8e508bc7",
+      "panel_count": 5,
+      "only_panel_labels_bold": true,
+      "fonts": [],
+      "all_text_black": true,
+      "labels_larger_than_regular_text": true,
+      "bold_pdf_runs": [],
+      "width_height_points": [
+        1017,
+        560.25
+      ],
+      "svg_text_outlined": true,
+      "arrow_count": 4,
+      "arrow_head_length_at_manuscript_width_points": 4.39646017699115,
+      "arrow_head_width_at_manuscript_width_points": 3.2973451327433625,
+      "panel_label_at_manuscript_width_points": 13.92212389380531
+    }
+  },
+  "figure_count": 21,
+  "panel_count": 75,
+  "all_only_panel_labels_bold": true,
+  "all_text_black": true,
+  "all_labels_larger_than_regular_text": true,
+  "scope": "Exported statistical PDFs plus source SVG text before outlining; no manuscript prose font audit."
+}

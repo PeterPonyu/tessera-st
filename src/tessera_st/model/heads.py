@@ -1,4 +1,4 @@
-"""Output heads: feature decoder, soft cluster assignment, calibrated boundary confidence."""
+"""Feature decoder and legacy untrained soft-assignment head (not confidence)."""
 
 from __future__ import annotations
 
@@ -20,9 +20,11 @@ class FeatureDecoder(nn.Module):
 
 
 class ClusterHead(nn.Module):
-    """Student-t soft assignment to learnable domain centroids (DEC-style), temperature-scaled.
+    """Distance-softmax head retained for archived model compatibility.
 
-    The temperature is the knob Component 4 (calibration) tunes on a held-out split.
+    Its parameters have no term in the current training objective. There is no
+    held-out temperature or conformal calibration in fit_predict, and these
+    centroids are not the KMeans centroids that produce the reported labels.
     """
 
     def __init__(self, embed_dim: int, n_clusters: int):

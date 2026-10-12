@@ -1,0 +1,2653 @@
+{
+  "created_utc": "2026-10-12T03:29:20.616074+00:00",
+  "candidate": "tessera",
+  "scope": "Journal-only typography derivatives; native figure/source PDFs immutable; no scientific recalculation",
+  "author_runtime": {
+    "requested_model": "gpt-6.1-sol",
+    "requested_effort": "max",
+    "runtime_reported_model": "gpt-6.1-sol",
+    "runtime_reported_effort": "max",
+    "evidence": "rollout-2026-10-11T20-14-20-01a12e1a-a4d3-7d82-be7b-5a8a76c61177.jsonl / turn_context",
+    "scope": "Authoring agent at initial creation, not a claim about later script reruns"
+  },
+  "libraries": {
+    "PyMuPDF": "1.27.1",
+    "pikepdf": "10.11.0"
+  },
+  "original_directory": "/home/zeyufu/Desktop/ortho-diabetic-wound-insilico/output/scientific-reports-readiness-20261011-r2/final-documents/tessera/source/manuscript/figures",
+  "journal_directory": "/home/zeyufu/Desktop/ortho-diabetic-wound-insilico/output/scientific-reports-readiness-20261011-r2/final-documents/tessera/source/manuscript/journal-figures",
+  "rerun_command": "python /home/zeyufu/Desktop/ortho-diabetic-wound-insilico/output/scientific-reports-readiness-20261011-r2/final-documents/tessera/source/scripts/style_journal_figures.py",
+  "font_files": {
+    "Arial.ttf": "c3044bcf00753e423e2afb40260b867a02038ddfc24db05b6c273d00ee680169",
+    "Arial Bold.ttf": "c2a7bcbcfadf8b06698f334da0e4b888217fe61a2ad8c7b009899aa18d6abe96"
+  },
+  "normalization": "NFKC (including ligatures), whitespace, minus/en-dash typography and micro/mu; independent wound bold panel markers are intentionally lowercase",
+  "figure_count": 21,
+  "figures": {
+    "figure01-workflow.pdf": {
+      "source_sha256": "0a65dd1b93c471129e3e26c9a50f797620e5a2b2ef6778ca595b1191c9afb9d3",
+      "derivative_sha256": "49a0373b83a14f09a639b6bb0ec7a6b645a3269bbdd255c245c4594f66d0e1c5",
+      "native_source_immutable": true,
+      "page_bounds_preserved": true,
+      "all_text_tokens_preserved_after_intended_normalization": true,
+      "all_number_tokens_preserved": true,
+      "all_graphics_preserved": true,
+      "all_image_streams_preserved": true,
+      "native_math_glyphs_and_origins_preserved": true,
+      "visible_fonts": [
+        "Arial-BoldMT",
+        "ArialMT"
+      ],
+      "sans_serif_lettering": true,
+      "font_audit": {
+        "all_embedded": true,
+        "pdffonts": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nVFQQFJ+Arial-BoldMT                  TrueType          WinAnsi          yes yes yes      7  0\nFGYFJY+ArialMT                       TrueType          WinAnsi          yes yes yes      8  0\nOUHZRJ+ArialMT                       CID TrueType      Identity-H       yes yes yes    130  0\n"
+      },
+      "inherited_fully_off_page_text_runs": [],
+      "off_page_text_runs": [],
+      "partially_clipped_text_runs": [],
+      "unresolved": [],
+      "status": "PASS",
+      "method": "Existing SVG re-export with Arial; horizontal fit preserves original text advance",
+      "source_svg_sha256": "8c796c2f03d6a092651715a18f2266e14a85fd5eba0471e04a35b48b7f22087f",
+      "derivative_svg_sha256": "61d7392df8967dece4f1c0fb28a17f4c2a73353f7ed23bb32eb00411c9521c2a",
+      "all_source_svg_nontext_elements_unchanged": true,
+      "all_source_svg_text_and_anchor_coordinates_unchanged": true,
+      "changed_text_runs": 32,
+      "horizontal_scale_range": [
+        0.7983424159075944,
+        0.9999765524766312
+      ],
+      "source_svg_text_tokens": [
+        [
+          "a",
+          {
+            "x": "23",
+            "y": "116",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "38",
+            "fill": "#000000",
+            "font-weight": "bold",
+            "text-anchor": "start",
+            "data-role": "panel-label"
+          }
+        ],
+        [
+          "Assays and patients",
+          {
+            "x": "69",
+            "y": "116",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "25",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "start",
+            "data-role": "panel-title"
+          }
+        ],
+        [
+          "b",
+          {
+            "x": "483",
+            "y": "116",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "38",
+            "fill": "#000000",
+            "font-weight": "bold",
+            "text-anchor": "start",
+            "data-role": "panel-label"
+          }
+        ],
+        [
+          "Identity before geometry",
+          {
+            "x": "529",
+            "y": "116",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "25",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "start",
+            "data-role": "panel-title"
+          }
+        ],
+        [
+          "c",
+          {
+            "x": "943",
+            "y": "116",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "38",
+            "fill": "#000000",
+            "font-weight": "bold",
+            "text-anchor": "start",
+            "data-role": "panel-label"
+          }
+        ],
+        [
+          "Matched representations",
+          {
+            "x": "989",
+            "y": "116",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "25",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "start",
+            "data-role": "panel-title"
+          }
+        ],
+        [
+          "Cells",
+          {
+            "x": "145",
+            "y": "280",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "24",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ],
+        [
+          "Mixed spots",
+          {
+            "x": "326",
+            "y": "280",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "24",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ],
+        [
+          "5 lung + 4 BCC patients",
+          {
+            "x": "245",
+            "y": "386",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "24",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ],
+        [
+          "Molecular matrix",
+          {
+            "x": "595",
+            "y": "311",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "24",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ],
+        [
+          "Separate FOVs",
+          {
+            "x": "811",
+            "y": "342",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "24",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ],
+        [
+          "Shared PCA; no cross-frame edges",
+          {
+            "x": "690",
+            "y": "386",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "23",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ],
+        [
+          "PCA50 / PCA30",
+          {
+            "x": "1100",
+            "y": "183",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "23",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "start"
+          }
+        ],
+        [
+          "Spatial controls",
+          {
+            "x": "1100",
+            "y": "273",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "23",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "start"
+          }
+        ],
+        [
+          "Tessera encoder",
+          {
+            "x": "1100",
+            "y": "363",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "23",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "start"
+          }
+        ],
+        [
+          "d",
+          {
+            "x": "23",
+            "y": "490",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "38",
+            "fill": "#000000",
+            "font-weight": "bold",
+            "text-anchor": "start",
+            "data-role": "panel-label"
+          }
+        ],
+        [
+          "Specified interventions",
+          {
+            "x": "69",
+            "y": "490",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "25",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "start",
+            "data-role": "panel-title"
+          }
+        ],
+        [
+          "e",
+          {
+            "x": "483",
+            "y": "490",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "38",
+            "fill": "#000000",
+            "font-weight": "bold",
+            "text-anchor": "start",
+            "data-role": "panel-label"
+          }
+        ],
+        [
+          "Source-only transfer",
+          {
+            "x": "529",
+            "y": "490",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "25",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "start",
+            "data-role": "panel-title"
+          }
+        ],
+        [
+          "f",
+          {
+            "x": "943",
+            "y": "490",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "38",
+            "fill": "#000000",
+            "font-weight": "bold",
+            "text-anchor": "start",
+            "data-role": "panel-label"
+          }
+        ],
+        [
+          "Distinct evidence channels",
+          {
+            "x": "989",
+            "y": "490",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "25",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "start",
+            "data-role": "panel-title"
+          }
+        ],
+        [
+          "Gate",
+          {
+            "x": "94",
+            "y": "654",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "24",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ],
+        [
+          "Depth",
+          {
+            "x": "206",
+            "y": "654",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "24",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ],
+        [
+          "Contrast",
+          {
+            "x": "318",
+            "y": "654",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "24",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ],
+        [
+          "Self only",
+          {
+            "x": "241",
+            "y": "716",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "23",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "start"
+          }
+        ],
+        [
+          "Permute XY",
+          {
+            "x": "241",
+            "y": "751",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "23",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "start"
+          }
+        ],
+        [
+          "Four source patients",
+          {
+            "x": "620",
+            "y": "637",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "23",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ],
+        [
+          "Held out",
+          {
+            "x": "844",
+            "y": "637",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "23",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ],
+        [
+          "Fit \u2192 freeze \u2192 predict",
+          {
+            "x": "703",
+            "y": "751",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "24",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ],
+        [
+          "Partition scores",
+          {
+            "x": "1060",
+            "y": "648",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "23",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ],
+        [
+          "Patient transfer",
+          {
+            "x": "1253",
+            "y": "648",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "23",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ],
+        [
+          "Registered tissue inspection",
+          {
+            "x": "1155",
+            "y": "781",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "24",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ]
+      ],
+      "raster_content_check": {
+        "resolution_dpi": 144,
+        "changed_pixels_total": 86061,
+        "changed_pixels_outside_lettering_regions": 0,
+        "outside_difference_bbox": null,
+        "lettering_mask_padding_points": 3,
+        "scope": "Rendering comparison; source/replacement lettering bounding boxes plus padding masked; copy mode masks nothing"
+      },
+      "math_origin_maximum_delta_points": 0,
+      "math_origin_tolerance_points": 0.001,
+      "visual_review": {
+        "status": "PASS",
+        "scope": "Changed/representative/dense figures inspected; all figures also passed token, geometry and outside-lettering pixel checks"
+      }
+    },
+    "figure02-cohort.pdf": {
+      "source_sha256": "175b545c36d2b9c1a03b03449af9383103c3e94d3eff9d99a000b460ed830595",
+      "derivative_sha256": "d0ab1b5222921a1e192f1ec96595a85178015d1bfc5f2de3db6d892c5c762d7c",
+      "native_source_immutable": true,
+      "page_bounds_preserved": true,
+      "all_text_tokens_preserved_after_intended_normalization": true,
+      "all_number_tokens_preserved": true,
+      "all_graphics_preserved": true,
+      "all_image_streams_preserved": true,
+      "native_math_glyphs_and_origins_preserved": true,
+      "visible_fonts": [
+        "Arial-BoldMT",
+        "ArialMT"
+      ],
+      "sans_serif_lettering": true,
+      "font_audit": {
+        "all_embedded": true,
+        "pdffonts": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nNVXYZC+TeXGyreTermesX-Regular        Type 1            Custom           yes yes yes     14  0\nUYKKUC+TeXGyreTermesX-Bold           Type 1            Custom           yes yes yes     15  0\nNVXYZC+TeXGyreTermesX-Regular        Type 1            Custom           yes yes yes     16  0\nArial Regular                        CID TrueType      Identity-H       yes no  yes     17  0\nArial Bold                           CID TrueType      Identity-H       yes no  yes     18  0\n"
+      },
+      "inherited_fully_off_page_text_runs": [
+        {
+          "text": "1",
+          "bbox": [
+            246.1580047607422,
+            323.09283447265625,
+            250.64120483398438,
+            332.0592346191406
+          ]
+        }
+      ],
+      "off_page_text_runs": [
+        {
+          "text": "1",
+          "bbox": [
+            246.1580047607422,
+            323.3492126464844,
+            250.64244079589844,
+            331.4125061035156
+          ]
+        }
+      ],
+      "partially_clipped_text_runs": [],
+      "unresolved": [],
+      "status": "PASS",
+      "method": "PDF text-show font replacement; original run advance preserved for serif runs",
+      "changed_text_runs": 41,
+      "panel_changes": [],
+      "horizontal_scale_range": [
+        0.7985611510791367,
+        1.0823185582075012
+      ],
+      "all_original_drawing_operations_preserved": true,
+      "raster_content_check": {
+        "resolution_dpi": 144,
+        "changed_pixels_total": 21450,
+        "changed_pixels_outside_lettering_regions": 0,
+        "outside_difference_bbox": null,
+        "lettering_mask_padding_points": 3,
+        "scope": "Rendering comparison; source/replacement lettering bounding boxes plus padding masked; copy mode masks nothing"
+      },
+      "math_origin_maximum_delta_points": 0,
+      "math_origin_tolerance_points": 0.001,
+      "visual_review": {
+        "status": "NOT_INDIVIDUALLY_INSPECTED",
+        "scope": "Changed/representative/dense figures inspected; all figures also passed token, geometry and outside-lettering pixel checks"
+      }
+    },
+    "figure03-comparison.pdf": {
+      "source_sha256": "77094edef7b8ec46a0865af785528ba3b23b58d5e73709a0d432a02a2cb1c9c4",
+      "derivative_sha256": "64a62a52ee6b2c82f000314be6415bd8363a8d58cd269e90debba390bba8e7fa",
+      "native_source_immutable": true,
+      "page_bounds_preserved": true,
+      "all_text_tokens_preserved_after_intended_normalization": true,
+      "all_number_tokens_preserved": true,
+      "all_graphics_preserved": true,
+      "all_image_streams_preserved": true,
+      "native_math_glyphs_and_origins_preserved": true,
+      "visible_fonts": [
+        "Arial-BoldMT",
+        "ArialMT",
+        "NewTXMI",
+        "NewTXMI7",
+        "txmiaX"
+      ],
+      "sans_serif_lettering": true,
+      "font_audit": {
+        "all_embedded": true,
+        "pdffonts": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nNNTZHW+TeXGyreTermesX-Regular        Type 1            Custom           yes yes yes     14  0\nNNTZHW+TeXGyreTermesX-Regular        Type 1            Custom           yes yes yes     15  0\nUYKKUC+TeXGyreTermesX-Bold           Type 1            Custom           yes yes yes     16  0\nYQAKVC+NewTXMI                       Type 1            Builtin          yes yes yes     17  0\nVWOPCU+NewTXMI7                      Type 1            Builtin          yes yes yes     18  0\nOGYQFN+txmiaX                        Type 1            Builtin          yes yes yes     19  0\nArial Regular                        CID TrueType      Identity-H       yes no  yes     20  0\nArial Bold                           CID TrueType      Identity-H       yes no  yes     21  0\n"
+      },
+      "inherited_fully_off_page_text_runs": [
+        {
+          "text": "1",
+          "bbox": [
+            246.1580047607422,
+            493.0838623046875,
+            250.64120483398438,
+            502.0502624511719
+          ]
+        }
+      ],
+      "off_page_text_runs": [
+        {
+          "text": "1",
+          "bbox": [
+            246.1580047607422,
+            493.3492126464844,
+            250.64244079589844,
+            501.4125061035156
+          ]
+        }
+      ],
+      "partially_clipped_text_runs": [],
+      "unresolved": [],
+      "status": "PASS",
+      "method": "PDF text-show font replacement; original run advance preserved for serif runs",
+      "changed_text_runs": 78,
+      "panel_changes": [],
+      "horizontal_scale_range": [
+        0.7985611510791367,
+        1.0823185582075012
+      ],
+      "all_original_drawing_operations_preserved": true,
+      "raster_content_check": {
+        "resolution_dpi": 144,
+        "changed_pixels_total": 36835,
+        "changed_pixels_outside_lettering_regions": 0,
+        "outside_difference_bbox": null,
+        "lettering_mask_padding_points": 3,
+        "scope": "Rendering comparison; source/replacement lettering bounding boxes plus padding masked; copy mode masks nothing"
+      },
+      "math_origin_maximum_delta_points": 9.1552734375e-05,
+      "math_origin_tolerance_points": 0.001,
+      "visual_review": {
+        "status": "NOT_INDIVIDUALLY_INSPECTED",
+        "scope": "Changed/representative/dense figures inspected; all figures also passed token, geometry and outside-lettering pixel checks"
+      }
+    },
+    "figure04-ablations.pdf": {
+      "source_sha256": "1a0aa8a102147b01b00eba8654ebbd4e49442660f6d65eebfdd62ca840183583",
+      "derivative_sha256": "988f390381d554f037e39df6f1a147125a0d40ce6d1d21bb6f82e4016a46c2d8",
+      "native_source_immutable": true,
+      "page_bounds_preserved": true,
+      "all_text_tokens_preserved_after_intended_normalization": true,
+      "all_number_tokens_preserved": true,
+      "all_graphics_preserved": true,
+      "all_image_streams_preserved": true,
+      "native_math_glyphs_and_origins_preserved": true,
+      "math_origin_maximum_delta_points": 0.0,
+      "math_origin_tolerance_points": 0.001,
+      "visible_fonts": [
+        "Arial-BoldMT",
+        "ArialMT",
+        "txmiaX"
+      ],
+      "sans_serif_lettering": true,
+      "font_audit": {
+        "all_embedded": true,
+        "pdffonts": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nLPDEEC+TeXGyreTermesX-Regular        Type 1            Custom           yes yes yes     15  0\nUYKKUC+TeXGyreTermesX-Bold           Type 1            Custom           yes yes yes     16  0\nGUHSKP+txmiaX                        Type 1            Builtin          yes yes yes     17  0\nArial Regular                        CID TrueType      Identity-H       yes no  yes     18  0\nArial Bold                           CID TrueType      Identity-H       yes no  yes     19  0\n"
+      },
+      "inherited_fully_off_page_text_runs": [
+        {
+          "text": "1",
+          "bbox": [
+            246.1580047607422,
+            475.09283447265625,
+            250.64120483398438,
+            484.0592346191406
+          ]
+        }
+      ],
+      "off_page_text_runs": [
+        {
+          "text": "1",
+          "bbox": [
+            246.1580047607422,
+            475.3492126464844,
+            250.64244079589844,
+            483.4125061035156
+          ]
+        }
+      ],
+      "partially_clipped_text_runs": [],
+      "unresolved": [],
+      "status": "PASS",
+      "method": "PDF text-show font replacement; original run advance preserved for serif runs",
+      "changed_text_runs": 164,
+      "panel_changes": [],
+      "horizontal_scale_range": [
+        0.7985611510791367,
+        1.0823185582075012
+      ],
+      "all_original_drawing_operations_preserved": true,
+      "raster_content_check": {
+        "resolution_dpi": 144,
+        "changed_pixels_total": 51581,
+        "changed_pixels_outside_lettering_regions": 0,
+        "outside_difference_bbox": null,
+        "lettering_mask_padding_points": 3,
+        "scope": "Rendering comparison; source/replacement lettering bounding boxes plus padding masked; copy mode masks nothing"
+      }
+    },
+    "figure05-nsclc-maps.pdf": {
+      "source_sha256": "290c947c4029160a3c8d491c9554ea0137872e5644cd07c0293c4644c4be7d57",
+      "derivative_sha256": "a5d465af7c95e70b2d39d73d82f2f4cb504f12c4895993def8cbf0725a2a0948",
+      "native_source_immutable": true,
+      "page_bounds_preserved": true,
+      "all_text_tokens_preserved_after_intended_normalization": true,
+      "all_number_tokens_preserved": true,
+      "all_graphics_preserved": true,
+      "all_image_streams_preserved": true,
+      "native_math_glyphs_and_origins_preserved": true,
+      "visible_fonts": [
+        "Arial-BoldMT",
+        "ArialMT"
+      ],
+      "sans_serif_lettering": true,
+      "font_audit": {
+        "all_embedded": true,
+        "pdffonts": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nKYHXAR+TeXGyreTermesX-Regular        Type 1            Custom           yes yes yes     15  0\nGMYKEQ+TeXGyreTermesX-Bold           Type 1            Custom           yes yes yes     16  0\nArial Regular                        CID TrueType      Identity-H       yes no  yes     17  0\nArial Bold                           CID TrueType      Identity-H       yes no  yes     18  0\n"
+      },
+      "inherited_fully_off_page_text_runs": [
+        {
+          "text": "1",
+          "bbox": [
+            246.1580047607422,
+            535.5908203125,
+            250.64120483398438,
+            544.5572509765625
+          ]
+        }
+      ],
+      "off_page_text_runs": [
+        {
+          "text": "1",
+          "bbox": [
+            246.1580047607422,
+            535.84716796875,
+            250.64244079589844,
+            543.9105224609375
+          ]
+        }
+      ],
+      "partially_clipped_text_runs": [],
+      "unresolved": [],
+      "status": "PASS",
+      "method": "PDF text-show font replacement; original run advance preserved for serif runs",
+      "changed_text_runs": 61,
+      "panel_changes": [],
+      "horizontal_scale_range": [
+        0.7985611510791367,
+        0.9642487046632124
+      ],
+      "all_original_drawing_operations_preserved": true,
+      "raster_content_check": {
+        "resolution_dpi": 144,
+        "changed_pixels_total": 32904,
+        "changed_pixels_outside_lettering_regions": 0,
+        "outside_difference_bbox": null,
+        "lettering_mask_padding_points": 3,
+        "scope": "Rendering comparison; source/replacement lettering bounding boxes plus padding masked; copy mode masks nothing"
+      },
+      "math_origin_maximum_delta_points": 0,
+      "math_origin_tolerance_points": 0.001,
+      "visual_review": {
+        "status": "NOT_INDIVIDUALLY_INSPECTED",
+        "scope": "Changed/representative/dense figures inspected; all figures also passed token, geometry and outside-lettering pixel checks"
+      }
+    },
+    "figure06-bcc-maps.pdf": {
+      "source_sha256": "31bfe89221d02a4ad5e5f844673ee808de439a8902118c0ce0aeefa39400f61d",
+      "derivative_sha256": "5ed621f955474094f79cb88138827dcd94d6bc11afd6bfac6a635899f6b2ef12",
+      "native_source_immutable": true,
+      "page_bounds_preserved": true,
+      "all_text_tokens_preserved_after_intended_normalization": true,
+      "all_number_tokens_preserved": true,
+      "all_graphics_preserved": true,
+      "all_image_streams_preserved": true,
+      "native_math_glyphs_and_origins_preserved": true,
+      "visible_fonts": [
+        "Arial-BoldMT",
+        "ArialMT"
+      ],
+      "sans_serif_lettering": true,
+      "font_audit": {
+        "all_embedded": true,
+        "pdffonts": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nANHUGR+TeXGyreTermesX-Regular        Type 1            Custom           yes yes yes     15  0\nUYKKUC+TeXGyreTermesX-Bold           Type 1            Custom           yes yes yes     16  0\nArial Regular                        CID TrueType      Identity-H       yes no  yes     17  0\nArial Bold                           CID TrueType      Identity-H       yes no  yes     18  0\n"
+      },
+      "inherited_fully_off_page_text_runs": [
+        {
+          "text": "1",
+          "bbox": [
+            246.1580047607422,
+            537.58984375,
+            250.64120483398438,
+            546.5562744140625
+          ]
+        }
+      ],
+      "off_page_text_runs": [
+        {
+          "text": "1",
+          "bbox": [
+            246.1580047607422,
+            537.84619140625,
+            250.64244079589844,
+            545.9095458984375
+          ]
+        }
+      ],
+      "partially_clipped_text_runs": [],
+      "unresolved": [],
+      "status": "PASS",
+      "method": "PDF text-show font replacement; original run advance preserved for serif runs",
+      "changed_text_runs": 52,
+      "panel_changes": [],
+      "horizontal_scale_range": [
+        0.7985611510791367,
+        0.9824851288830139
+      ],
+      "all_original_drawing_operations_preserved": true,
+      "raster_content_check": {
+        "resolution_dpi": 144,
+        "changed_pixels_total": 25869,
+        "changed_pixels_outside_lettering_regions": 0,
+        "outside_difference_bbox": null,
+        "lettering_mask_padding_points": 3,
+        "scope": "Rendering comparison; source/replacement lettering bounding boxes plus padding masked; copy mode masks nothing"
+      },
+      "math_origin_maximum_delta_points": 0,
+      "math_origin_tolerance_points": 0.001,
+      "visual_review": {
+        "status": "NOT_INDIVIDUALLY_INSPECTED",
+        "scope": "Changed/representative/dense figures inspected; all figures also passed token, geometry and outside-lettering pixel checks"
+      }
+    },
+    "figure07-breast-histology.pdf": {
+      "source_sha256": "4527c45ba7fe609f44db2853ed7e113289b37643af805a2019c88912b5498465",
+      "derivative_sha256": "9283e91ae423e9fe6010c73b846bdb10f59fbe9f77adea01e8d79f5c43aa3365",
+      "native_source_immutable": true,
+      "page_bounds_preserved": true,
+      "all_text_tokens_preserved_after_intended_normalization": true,
+      "all_number_tokens_preserved": true,
+      "all_graphics_preserved": true,
+      "all_image_streams_preserved": true,
+      "native_math_glyphs_and_origins_preserved": true,
+      "visible_fonts": [
+        "Arial-BoldMT",
+        "ArialMT"
+      ],
+      "sans_serif_lettering": true,
+      "font_audit": {
+        "all_embedded": true,
+        "pdffonts": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nZUKCXR+TeXGyreTermesX-Regular        Type 1            Custom           yes yes yes     15  0\nTJAWUA+TeXGyreTermesX-Bold           Type 1            Custom           yes yes yes     16  0\nArial Regular                        CID TrueType      Identity-H       yes no  yes     17  0\nArial Bold                           CID TrueType      Identity-H       yes no  yes     18  0\n"
+      },
+      "inherited_fully_off_page_text_runs": [
+        {
+          "text": "1",
+          "bbox": [
+            246.1580047607422,
+            377.2248229980469,
+            250.64120483398438,
+            386.19122314453125
+          ]
+        }
+      ],
+      "off_page_text_runs": [
+        {
+          "text": "1",
+          "bbox": [
+            246.1580047607422,
+            377.481201171875,
+            250.64244079589844,
+            385.54449462890625
+          ]
+        }
+      ],
+      "partially_clipped_text_runs": [],
+      "unresolved": [],
+      "status": "PASS",
+      "method": "PDF text-show font replacement; original run advance preserved for serif runs",
+      "changed_text_runs": 29,
+      "panel_changes": [],
+      "horizontal_scale_range": [
+        0.8420306296086216,
+        0.9818972775750772
+      ],
+      "all_original_drawing_operations_preserved": true,
+      "raster_content_check": {
+        "resolution_dpi": 144,
+        "changed_pixels_total": 13437,
+        "changed_pixels_outside_lettering_regions": 0,
+        "outside_difference_bbox": null,
+        "lettering_mask_padding_points": 3,
+        "scope": "Rendering comparison; source/replacement lettering bounding boxes plus padding masked; copy mode masks nothing"
+      },
+      "math_origin_maximum_delta_points": 0,
+      "math_origin_tolerance_points": 0.001,
+      "visual_review": {
+        "status": "PASS",
+        "scope": "Changed/representative/dense figures inspected; all figures also passed token, geometry and outside-lettering pixel checks"
+      }
+    },
+    "figure08-breast-mixtures.pdf": {
+      "source_sha256": "2c118d2305d092b8618579b06d20e194f98224c43aefd79c64a73a55b140fb95",
+      "derivative_sha256": "97f164b7abc1041f6eab42afe4600162297a52a84fb706080edd1806cda48d0e",
+      "native_source_immutable": true,
+      "page_bounds_preserved": true,
+      "all_text_tokens_preserved_after_intended_normalization": true,
+      "all_number_tokens_preserved": true,
+      "all_graphics_preserved": true,
+      "all_image_streams_preserved": true,
+      "native_math_glyphs_and_origins_preserved": true,
+      "visible_fonts": [
+        "Arial-BoldMT",
+        "ArialMT",
+        "NewTXMI7",
+        "txmiaX",
+        "txsys"
+      ],
+      "sans_serif_lettering": true,
+      "font_audit": {
+        "all_embedded": true,
+        "pdffonts": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nOGYQFN+txmiaX                        Type 1            Builtin          yes yes yes     15  0\nPWYYBE+TeXGyreTermesX-Regular        Type 1            Custom           yes yes yes     16  0\nPWYYBE+TeXGyreTermesX-Regular        Type 1            Custom           yes yes yes     17  0\nUYKKUC+TeXGyreTermesX-Bold           Type 1            Custom           yes yes yes     18  0\nVMTOHH+txsys                         Type 1            Builtin          yes yes yes     19  0\nUKLOTI+NewTXMI7                      Type 1            Builtin          yes yes yes     20  0\nArial Regular                        CID TrueType      Identity-H       yes no  yes     21  0\nArial Bold                           CID TrueType      Identity-H       yes no  yes     22  0\n"
+      },
+      "inherited_fully_off_page_text_runs": [
+        {
+          "text": "1",
+          "bbox": [
+            246.1580047607422,
+            395.0838623046875,
+            250.64120483398438,
+            404.0502624511719
+          ]
+        }
+      ],
+      "off_page_text_runs": [
+        {
+          "text": "1",
+          "bbox": [
+            246.1580047607422,
+            395.3492126464844,
+            250.64244079589844,
+            403.4125061035156
+          ]
+        }
+      ],
+      "partially_clipped_text_runs": [],
+      "unresolved": [],
+      "status": "PASS",
+      "method": "PDF text-show font replacement; original run advance preserved for serif runs",
+      "changed_text_runs": 63,
+      "panel_changes": [],
+      "horizontal_scale_range": [
+        0.7985611510791367,
+        1.1513513513513514
+      ],
+      "all_original_drawing_operations_preserved": true,
+      "raster_content_check": {
+        "resolution_dpi": 144,
+        "changed_pixels_total": 24218,
+        "changed_pixels_outside_lettering_regions": 0,
+        "outside_difference_bbox": null,
+        "lettering_mask_padding_points": 3,
+        "scope": "Rendering comparison; source/replacement lettering bounding boxes plus padding masked; copy mode masks nothing"
+      },
+      "math_origin_maximum_delta_points": 7.62939453125e-06,
+      "math_origin_tolerance_points": 0.001,
+      "visual_review": {
+        "status": "PASS",
+        "scope": "Changed/representative/dense figures inspected; all figures also passed token, geometry and outside-lettering pixel checks"
+      }
+    },
+    "figure09-colorectal-proteins.pdf": {
+      "source_sha256": "45917efca7710420b9eadf43469cb20c37ce472640ffc2ad00d4f71d6a392cd6",
+      "derivative_sha256": "1e5da11c1b05487ee537eec3f4b19ec5eb9eef5f31db5f81be2821af5cbc6261",
+      "native_source_immutable": true,
+      "page_bounds_preserved": true,
+      "all_text_tokens_preserved_after_intended_normalization": true,
+      "all_number_tokens_preserved": true,
+      "all_graphics_preserved": true,
+      "all_image_streams_preserved": true,
+      "native_math_glyphs_and_origins_preserved": true,
+      "visible_fonts": [
+        "Arial-BoldMT",
+        "ArialMT",
+        "SFRM0700"
+      ],
+      "sans_serif_lettering": true,
+      "font_audit": {
+        "all_embedded": true,
+        "pdffonts": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nETHDHQ+TeXGyreTermesX-Regular        Type 1            Custom           yes yes yes     15  0\nHICDEG+SFRM0700                      Type 1            Custom           yes yes yes     16  0\nTJAWUA+TeXGyreTermesX-Bold           Type 1            Custom           yes yes yes     17  0\nArial Regular                        CID TrueType      Identity-H       yes no  yes     18  0\nArial Bold                           CID TrueType      Identity-H       yes no  yes     19  0\n"
+      },
+      "inherited_fully_off_page_text_runs": [
+        {
+          "text": "1",
+          "bbox": [
+            246.1580047607422,
+            302.83282470703125,
+            250.64120483398438,
+            311.7992248535156
+          ]
+        }
+      ],
+      "off_page_text_runs": [
+        {
+          "text": "1",
+          "bbox": [
+            246.1580047607422,
+            303.0892028808594,
+            250.64244079589844,
+            311.1524963378906
+          ]
+        }
+      ],
+      "partially_clipped_text_runs": [],
+      "unresolved": [],
+      "status": "PASS",
+      "method": "PDF text-show font replacement; original run advance preserved for serif runs",
+      "changed_text_runs": 46,
+      "panel_changes": [],
+      "horizontal_scale_range": [
+        0.8792184724689165,
+        0.9590628853267571
+      ],
+      "all_original_drawing_operations_preserved": true,
+      "raster_content_check": {
+        "resolution_dpi": 144,
+        "changed_pixels_total": 14618,
+        "changed_pixels_outside_lettering_regions": 0,
+        "outside_difference_bbox": null,
+        "lettering_mask_padding_points": 3,
+        "scope": "Rendering comparison; source/replacement lettering bounding boxes plus padding masked; copy mode masks nothing"
+      },
+      "math_origin_maximum_delta_points": 4.57763671875e-05,
+      "math_origin_tolerance_points": 0.001,
+      "visual_review": {
+        "status": "NOT_INDIVIDUALLY_INSPECTED",
+        "scope": "Changed/representative/dense figures inspected; all figures also passed token, geometry and outside-lettering pixel checks"
+      }
+    },
+    "figure10-patient-transfer.pdf": {
+      "source_sha256": "ec52fe8fd6f0a6928125a0a8bdb320a04be49d5d32976291f82e596380aeb6ed",
+      "derivative_sha256": "16b0e57cedba3c8112067b25b8e212c3931017a8826d96b66d3e46afb7c22f9a",
+      "native_source_immutable": true,
+      "page_bounds_preserved": true,
+      "all_text_tokens_preserved_after_intended_normalization": true,
+      "all_number_tokens_preserved": true,
+      "all_graphics_preserved": true,
+      "all_image_streams_preserved": true,
+      "native_math_glyphs_and_origins_preserved": true,
+      "visible_fonts": [
+        "Arial-BoldMT",
+        "ArialMT",
+        "NewTXMI7",
+        "txmiaX"
+      ],
+      "sans_serif_lettering": true,
+      "font_audit": {
+        "all_embedded": true,
+        "pdffonts": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nOXSNGN+TeXGyreTermesX-Regular        Type 1            Custom           yes yes yes     14  0\nUYKKUC+TeXGyreTermesX-Bold           Type 1            Custom           yes yes yes     15  0\nVWOPCU+NewTXMI7                      Type 1            Builtin          yes yes yes     16  0\nOGYQFN+txmiaX                        Type 1            Builtin          yes yes yes     17  0\nOXSNGN+TeXGyreTermesX-Regular        Type 1            Custom           yes yes yes     18  0\nArial Regular                        CID TrueType      Identity-H       yes no  yes     19  0\nArial Bold                           CID TrueType      Identity-H       yes no  yes     20  0\n"
+      },
+      "inherited_fully_off_page_text_runs": [
+        {
+          "text": "1",
+          "bbox": [
+            246.1580047607422,
+            401.0838623046875,
+            250.64120483398438,
+            410.0502624511719
+          ]
+        }
+      ],
+      "off_page_text_runs": [
+        {
+          "text": "1",
+          "bbox": [
+            246.1580047607422,
+            401.3492126464844,
+            250.64244079589844,
+            409.4125061035156
+          ]
+        }
+      ],
+      "partially_clipped_text_runs": [],
+      "unresolved": [],
+      "status": "PASS",
+      "method": "PDF text-show font replacement; original run advance preserved for serif runs",
+      "changed_text_runs": 62,
+      "panel_changes": [],
+      "horizontal_scale_range": [
+        0.7985611510791367,
+        0.9570282164121149
+      ],
+      "all_original_drawing_operations_preserved": true,
+      "raster_content_check": {
+        "resolution_dpi": 144,
+        "changed_pixels_total": 26867,
+        "changed_pixels_outside_lettering_regions": 0,
+        "outside_difference_bbox": null,
+        "lettering_mask_padding_points": 3,
+        "scope": "Rendering comparison; source/replacement lettering bounding boxes plus padding masked; copy mode masks nothing"
+      },
+      "math_origin_maximum_delta_points": 0,
+      "math_origin_tolerance_points": 0.001,
+      "visual_review": {
+        "status": "NOT_INDIVIDUALLY_INSPECTED",
+        "scope": "Changed/representative/dense figures inspected; all figures also passed token, geometry and outside-lettering pixel checks"
+      }
+    },
+    "figure11-stability.pdf": {
+      "source_sha256": "3a17d897b57395bd4a8dc6b2e49b5ec1f6bc8166cb4a93e789ec439201d62af5",
+      "derivative_sha256": "7191f8b111edc3e95be14f278a4d0e4b812a8517170201ce1d9d97ea915d4afb",
+      "native_source_immutable": true,
+      "page_bounds_preserved": true,
+      "all_text_tokens_preserved_after_intended_normalization": true,
+      "all_number_tokens_preserved": true,
+      "all_graphics_preserved": true,
+      "all_image_streams_preserved": true,
+      "native_math_glyphs_and_origins_preserved": true,
+      "visible_fonts": [
+        "Arial-BoldMT",
+        "ArialMT"
+      ],
+      "sans_serif_lettering": true,
+      "font_audit": {
+        "all_embedded": true,
+        "pdffonts": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nXUFVPK+TeXGyreTermesX-Regular        Type 1            Custom           yes yes yes     14  0\nTJAWUA+TeXGyreTermesX-Bold           Type 1            Custom           yes yes yes     15  0\nArial Regular                        CID TrueType      Identity-H       yes no  yes     16  0\nArial Bold                           CID TrueType      Identity-H       yes no  yes     17  0\n"
+      },
+      "inherited_fully_off_page_text_runs": [
+        {
+          "text": "1",
+          "bbox": [
+            246.1580047607422,
+            299.09283447265625,
+            250.64120483398438,
+            308.0592346191406
+          ]
+        }
+      ],
+      "off_page_text_runs": [
+        {
+          "text": "1",
+          "bbox": [
+            246.1580047607422,
+            299.3492126464844,
+            250.64244079589844,
+            307.4125061035156
+          ]
+        }
+      ],
+      "partially_clipped_text_runs": [],
+      "unresolved": [],
+      "status": "PASS",
+      "method": "PDF text-show font replacement; original run advance preserved for serif runs",
+      "changed_text_runs": 43,
+      "panel_changes": [],
+      "horizontal_scale_range": [
+        0.8420306296086216,
+        1.0823185582075012
+      ],
+      "all_original_drawing_operations_preserved": true,
+      "raster_content_check": {
+        "resolution_dpi": 144,
+        "changed_pixels_total": 20588,
+        "changed_pixels_outside_lettering_regions": 0,
+        "outside_difference_bbox": null,
+        "lettering_mask_padding_points": 3,
+        "scope": "Rendering comparison; source/replacement lettering bounding boxes plus padding masked; copy mode masks nothing"
+      },
+      "math_origin_maximum_delta_points": 0,
+      "math_origin_tolerance_points": 0.001,
+      "visual_review": {
+        "status": "NOT_INDIVIDUALLY_INSPECTED",
+        "scope": "Changed/representative/dense figures inspected; all figures also passed token, geometry and outside-lettering pixel checks"
+      }
+    },
+    "figure12-efficiency-mechanism.pdf": {
+      "source_sha256": "2ec52b5404c51e624b635443bc08eb1669195632ea3f0c6791cb90f60f6d4d67",
+      "derivative_sha256": "7fc5493b677eba7cb36729bc1e698ea595d2bbb9d816f39b1c0b44412de2613b",
+      "native_source_immutable": true,
+      "page_bounds_preserved": true,
+      "all_text_tokens_preserved_after_intended_normalization": true,
+      "all_number_tokens_preserved": true,
+      "all_graphics_preserved": true,
+      "all_image_streams_preserved": true,
+      "native_math_glyphs_and_origins_preserved": true,
+      "visible_fonts": [
+        "Arial-BoldMT",
+        "ArialMT",
+        "txsys"
+      ],
+      "sans_serif_lettering": true,
+      "font_audit": {
+        "all_embedded": true,
+        "pdffonts": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nUTCPBW+TeXGyreTermesX-Regular        Type 1            Custom           yes yes yes     14  0\nTJAWUA+TeXGyreTermesX-Bold           Type 1            Custom           yes yes yes     15  0\nUTCPBW+TeXGyreTermesX-Regular        Type 1            Custom           yes yes yes     16  0\nYVWMHO+txsys                         Type 1            Builtin          yes yes yes     17  0\nArial Regular                        CID TrueType      Identity-H       yes no  yes     18  0\nArial Bold                           CID TrueType      Identity-H       yes no  yes     19  0\n"
+      },
+      "inherited_fully_off_page_text_runs": [
+        {
+          "text": "1",
+          "bbox": [
+            246.1580047607422,
+            323.0838623046875,
+            250.64120483398438,
+            332.0502624511719
+          ]
+        }
+      ],
+      "off_page_text_runs": [
+        {
+          "text": "1",
+          "bbox": [
+            246.1580047607422,
+            323.3492126464844,
+            250.64244079589844,
+            331.4125061035156
+          ]
+        }
+      ],
+      "partially_clipped_text_runs": [],
+      "unresolved": [],
+      "status": "PASS",
+      "method": "PDF text-show font replacement; original run advance preserved for serif runs",
+      "changed_text_runs": 74,
+      "panel_changes": [],
+      "horizontal_scale_range": [
+        0.8420306296086216,
+        1.0012012012012013
+      ],
+      "all_original_drawing_operations_preserved": true,
+      "raster_content_check": {
+        "resolution_dpi": 144,
+        "changed_pixels_total": 23877,
+        "changed_pixels_outside_lettering_regions": 0,
+        "outside_difference_bbox": null,
+        "lettering_mask_padding_points": 3,
+        "scope": "Rendering comparison; source/replacement lettering bounding boxes plus padding masked; copy mode masks nothing"
+      },
+      "math_origin_maximum_delta_points": 0,
+      "math_origin_tolerance_points": 0.001,
+      "visual_review": {
+        "status": "NOT_INDIVIDUALLY_INSPECTED",
+        "scope": "Changed/representative/dense figures inspected; all figures also passed token, geometry and outside-lettering pixel checks"
+      }
+    },
+    "figure13-architecture.pdf": {
+      "source_sha256": "3c90b13523283dc6c346845883587ea90677aac293b2dcb3e853b3eb8f40e793",
+      "derivative_sha256": "a6e04dc8e38a735f6dc03f02380d69d030e8eb63badbb4885bb68559b7749879",
+      "native_source_immutable": true,
+      "page_bounds_preserved": true,
+      "all_text_tokens_preserved_after_intended_normalization": true,
+      "all_number_tokens_preserved": true,
+      "all_graphics_preserved": true,
+      "all_image_streams_preserved": true,
+      "native_math_glyphs_and_origins_preserved": true,
+      "visible_fonts": [
+        "Arial-BoldMT",
+        "ArialMT"
+      ],
+      "sans_serif_lettering": true,
+      "font_audit": {
+        "all_embedded": true,
+        "pdffonts": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nGRMKLM+Arial-BoldMT                  TrueType          WinAnsi          yes yes yes      7  0\nYQPGTU+ArialMT                       TrueType          WinAnsi          yes yes yes      8  0\nNBOCRW+ArialMT                       CID TrueType      Identity-H       yes yes yes     39  0\n"
+      },
+      "inherited_fully_off_page_text_runs": [],
+      "off_page_text_runs": [],
+      "partially_clipped_text_runs": [],
+      "unresolved": [],
+      "status": "PASS",
+      "method": "Existing SVG re-export with Arial; horizontal fit preserves original text advance",
+      "source_svg_sha256": "69a786c1007c8ebb3a5bbd2b8de4dcf0c0015e7d1dbf2475301be1205ec9d537",
+      "derivative_svg_sha256": "8644672ff102dedcbefb9888922ee3b1ad9f6065cbef0c87234396ac38f27b1d",
+      "all_source_svg_nontext_elements_unchanged": true,
+      "all_source_svg_text_and_anchor_coordinates_unchanged": true,
+      "changed_text_runs": 36,
+      "horizontal_scale_range": [
+        0.7983424159075944,
+        0.965779282177571
+      ],
+      "source_svg_text_tokens": [
+        [
+          "a",
+          {
+            "x": "23",
+            "y": "114",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "38",
+            "fill": "#000000",
+            "font-weight": "bold",
+            "text-anchor": "start",
+            "data-role": "panel-label"
+          }
+        ],
+        [
+          "Inputs and frame graph",
+          {
+            "x": "69",
+            "y": "114",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "25",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "start",
+            "data-role": "panel-title"
+          }
+        ],
+        [
+          "b",
+          {
+            "x": "528",
+            "y": "114",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "38",
+            "fill": "#000000",
+            "font-weight": "bold",
+            "text-anchor": "start",
+            "data-role": "panel-label"
+          }
+        ],
+        [
+          "Gated residual layer",
+          {
+            "x": "574",
+            "y": "114",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "25",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "start",
+            "data-role": "panel-title"
+          }
+        ],
+        [
+          "x : q \u2264 50",
+          {
+            "x": "105",
+            "y": "259",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "25",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ],
+        [
+          "Within-frame E",
+          {
+            "x": "291",
+            "y": "259",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "25",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ],
+        [
+          "No unrelated-field edges",
+          {
+            "x": "235",
+            "y": "305",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "23",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ],
+        [
+          "h and distance",
+          {
+            "x": "623",
+            "y": "253",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "23",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ],
+        [
+          "Edge MLP",
+          {
+            "x": "868",
+            "y": "177",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "25",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ],
+        [
+          "sigmoid gate",
+          {
+            "x": "868",
+            "y": "212",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "23",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ],
+        [
+          "Weighted mean",
+          {
+            "x": "1081",
+            "y": "254",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "23",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ],
+        [
+          "+",
+          {
+            "x": "1263",
+            "y": "188",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "30",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ],
+        [
+          "Residual",
+          {
+            "x": "1262",
+            "y": "254",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "23",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ],
+        [
+          "Normalize by gate sum \u2192 ReLU \u2192 dropout \u2192 LayerNorm",
+          {
+            "x": "975",
+            "y": "305",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "23",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ],
+        [
+          "c",
+          {
+            "x": "23",
+            "y": "375",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "38",
+            "fill": "#000000",
+            "font-weight": "bold",
+            "text-anchor": "start",
+            "data-role": "panel-label"
+          }
+        ],
+        [
+          "Three depths \u2192 attention \u2192 embedding",
+          {
+            "x": "69",
+            "y": "375",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "25",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "start",
+            "data-role": "panel-title"
+          }
+        ],
+        [
+          "Input",
+          {
+            "x": "94",
+            "y": "585",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "24",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ],
+        [
+          "Depth 1",
+          {
+            "x": "296",
+            "y": "585",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "24",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ],
+        [
+          "Depth 2",
+          {
+            "x": "498",
+            "y": "585",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "24",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ],
+        [
+          "Depth 3",
+          {
+            "x": "700",
+            "y": "585",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "24",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ],
+        [
+          "Depth attention",
+          {
+            "x": "990",
+            "y": "452",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "25",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ],
+        [
+          "z : 32",
+          {
+            "x": "1203",
+            "y": "541",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "25",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ],
+        [
+          "Three 64-dimensional hidden states",
+          {
+            "x": "455",
+            "y": "611",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "23",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ],
+        [
+          "d",
+          {
+            "x": "23",
+            "y": "682",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "38",
+            "fill": "#000000",
+            "font-weight": "bold",
+            "text-anchor": "start",
+            "data-role": "panel-label"
+          }
+        ],
+        [
+          "Two training objectives",
+          {
+            "x": "69",
+            "y": "682",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "25",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "start",
+            "data-role": "panel-title"
+          }
+        ],
+        [
+          "e",
+          {
+            "x": "915",
+            "y": "682",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "38",
+            "fill": "#000000",
+            "font-weight": "bold",
+            "text-anchor": "start",
+            "data-role": "panel-label"
+          }
+        ],
+        [
+          "Separate predictions",
+          {
+            "x": "961",
+            "y": "682",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "25",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "start",
+            "data-role": "panel-title"
+          }
+        ],
+        [
+          "Decoder",
+          {
+            "x": "268",
+            "y": "754",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "25",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ],
+        [
+          "32 \u2192 64 \u2192 q",
+          {
+            "x": "268",
+            "y": "790",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "23",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ],
+        [
+          "Reconstruction MSE",
+          {
+            "x": "272",
+            "y": "848",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "24",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ],
+        [
+          "10 random negative draws",
+          {
+            "x": "704",
+            "y": "883",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "23",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ],
+        [
+          "L = reconstruction + 0.5 \u00d7 contrast",
+          {
+            "x": "445",
+            "y": "967",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "26",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ],
+        [
+          "Detached gate weights; \u03c4 = 0.2",
+          {
+            "x": "704",
+            "y": "919",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "22",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ],
+        [
+          "KMeans",
+          {
+            "x": "1200",
+            "y": "756",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "24",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ],
+        [
+          "Source centroids",
+          {
+            "x": "1200",
+            "y": "854",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "24",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ],
+        [
+          "Seam score \u2260 calibrated error",
+          {
+            "x": "1146",
+            "y": "916",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "23",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ]
+      ],
+      "raster_content_check": {
+        "resolution_dpi": 144,
+        "changed_pixels_total": 108284,
+        "changed_pixels_outside_lettering_regions": 0,
+        "outside_difference_bbox": null,
+        "lettering_mask_padding_points": 3,
+        "scope": "Rendering comparison; source/replacement lettering bounding boxes plus padding masked; copy mode masks nothing"
+      },
+      "math_origin_maximum_delta_points": 0,
+      "math_origin_tolerance_points": 0.001,
+      "visual_review": {
+        "status": "PASS",
+        "scope": "Changed/representative/dense figures inspected; all figures also passed token, geometry and outside-lettering pixel checks"
+      }
+    },
+    "figure14-target-lineage.pdf": {
+      "source_sha256": "08c1d525ce93e2fb1d21d48b77bd2fd0217c58b5850dec3c4a327b8b8e508bc7",
+      "derivative_sha256": "b937104dc1c373a0828a6a0971fa2837a7883f5e9dfcbe1f08feb717775bebc6",
+      "native_source_immutable": true,
+      "page_bounds_preserved": true,
+      "all_text_tokens_preserved_after_intended_normalization": true,
+      "all_number_tokens_preserved": true,
+      "all_graphics_preserved": true,
+      "all_image_streams_preserved": true,
+      "native_math_glyphs_and_origins_preserved": true,
+      "visible_fonts": [
+        "Arial-BoldMT",
+        "ArialMT"
+      ],
+      "sans_serif_lettering": true,
+      "font_audit": {
+        "all_embedded": true,
+        "pdffonts": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nGRMKLM+Arial-BoldMT                  TrueType          WinAnsi          yes yes yes      7  0\nHAOUYV+ArialMT                       TrueType          WinAnsi          yes yes yes      8  0\n"
+      },
+      "inherited_fully_off_page_text_runs": [],
+      "off_page_text_runs": [],
+      "partially_clipped_text_runs": [],
+      "unresolved": [],
+      "status": "PASS",
+      "method": "Existing SVG re-export with Arial; horizontal fit preserves original text advance",
+      "source_svg_sha256": "33c50b9d93347342add2ad40d4d27e36b52a12326b1ed34204e6b416a0d68bfc",
+      "derivative_svg_sha256": "202113a3f168b51d31604e7edc7e85ca8b1e31093bdfbb9f72281a8be059df14",
+      "all_source_svg_nontext_elements_unchanged": true,
+      "all_source_svg_text_and_anchor_coordinates_unchanged": true,
+      "changed_text_runs": 30,
+      "horizontal_scale_range": [
+        0.7983424159075944,
+        0.9793065227315344
+      ],
+      "source_svg_text_tokens": [
+        [
+          "a",
+          {
+            "x": "23",
+            "y": "114",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "38",
+            "fill": "#000000",
+            "font-weight": "bold",
+            "text-anchor": "start",
+            "data-role": "panel-label"
+          }
+        ],
+        [
+          "Reference construction",
+          {
+            "x": "69",
+            "y": "114",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "25",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "start",
+            "data-role": "panel-title"
+          }
+        ],
+        [
+          "b",
+          {
+            "x": "490",
+            "y": "114",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "38",
+            "fill": "#000000",
+            "font-weight": "bold",
+            "text-anchor": "start",
+            "data-role": "panel-label"
+          }
+        ],
+        [
+          "Within-object fit",
+          {
+            "x": "536",
+            "y": "114",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "25",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "start",
+            "data-role": "panel-title"
+          }
+        ],
+        [
+          "c",
+          {
+            "x": "958",
+            "y": "114",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "38",
+            "fill": "#000000",
+            "font-weight": "bold",
+            "text-anchor": "start",
+            "data-role": "panel-label"
+          }
+        ],
+        [
+          "Patient-disjoint fit",
+          {
+            "x": "1004",
+            "y": "114",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "25",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "start",
+            "data-role": "panel-title"
+          }
+        ],
+        [
+          "Cell identity",
+          {
+            "x": "221",
+            "y": "166",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "25",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "start"
+          }
+        ],
+        [
+          "Spatial region",
+          {
+            "x": "221",
+            "y": "247",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "25",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "start"
+          }
+        ],
+        [
+          "Spot mixture",
+          {
+            "x": "221",
+            "y": "328",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "25",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "start"
+          }
+        ],
+        [
+          "Different targets; no pooled truth",
+          {
+            "x": "236",
+            "y": "437",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "23",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ],
+        [
+          "Encoder uses X and E",
+          {
+            "x": "652",
+            "y": "283",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "24",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ],
+        [
+          "Reference",
+          {
+            "x": "534",
+            "y": "352",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "23",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "start"
+          }
+        ],
+        [
+          "K = class count",
+          {
+            "x": "712",
+            "y": "352",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "23",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "start"
+          }
+        ],
+        [
+          "Labels score the partition",
+          {
+            "x": "652",
+            "y": "404",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "23",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ],
+        [
+          "Source transforms and weights",
+          {
+            "x": "1179",
+            "y": "348",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "23",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ],
+        [
+          "Target geometry is observed",
+          {
+            "x": "1179",
+            "y": "399",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "23",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ],
+        [
+          "d",
+          {
+            "x": "23",
+            "y": "526",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "38",
+            "fill": "#000000",
+            "font-weight": "bold",
+            "text-anchor": "start",
+            "data-role": "panel-label"
+          }
+        ],
+        [
+          "Inspection, not independent truth",
+          {
+            "x": "69",
+            "y": "526",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "25",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "start",
+            "data-role": "panel-title"
+          }
+        ],
+        [
+          "e",
+          {
+            "x": "723",
+            "y": "526",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "38",
+            "fill": "#000000",
+            "font-weight": "bold",
+            "text-anchor": "start",
+            "data-role": "panel-label"
+          }
+        ],
+        [
+          "Units of variability",
+          {
+            "x": "769",
+            "y": "526",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "25",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "start",
+            "data-role": "panel-title"
+          }
+        ],
+        [
+          "Registered image",
+          {
+            "x": "149",
+            "y": "735",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "25",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ],
+        [
+          "Measured proteins",
+          {
+            "x": "384",
+            "y": "735",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "25",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ],
+        [
+          "No new pathology labels",
+          {
+            "x": "294",
+            "y": "789",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "24",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ],
+        [
+          "No invented tissue texture",
+          {
+            "x": "294",
+            "y": "829",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "23",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "middle"
+          }
+        ],
+        [
+          "Patient contrasts",
+          {
+            "x": "1020",
+            "y": "615",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "25",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "start"
+          }
+        ],
+        [
+          "1",
+          {
+            "x": "783",
+            "y": "713",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "27",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "start"
+          }
+        ],
+        [
+          "2",
+          {
+            "x": "838",
+            "y": "713",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "27",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "start"
+          }
+        ],
+        [
+          "3",
+          {
+            "x": "893",
+            "y": "713",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "27",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "start"
+          }
+        ],
+        [
+          "Seed variability",
+          {
+            "x": "1020",
+            "y": "715",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "25",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "start"
+          }
+        ],
+        [
+          "Descriptive gate",
+          {
+            "x": "1020",
+            "y": "815",
+            "font-family": "TeX Gyre Termes, Times New Roman, serif",
+            "font-size": "25",
+            "fill": "#000000",
+            "font-weight": "normal",
+            "text-anchor": "start"
+          }
+        ]
+      ],
+      "raster_content_check": {
+        "resolution_dpi": 144,
+        "changed_pixels_total": 88045,
+        "changed_pixels_outside_lettering_regions": 0,
+        "outside_difference_bbox": null,
+        "lettering_mask_padding_points": 3,
+        "scope": "Rendering comparison; source/replacement lettering bounding boxes plus padding masked; copy mode masks nothing"
+      },
+      "math_origin_maximum_delta_points": 0,
+      "math_origin_tolerance_points": 0.001,
+      "visual_review": {
+        "status": "PASS",
+        "scope": "Changed/representative/dense figures inspected; all figures also passed token, geometry and outside-lettering pixel checks"
+      }
+    },
+    "figure15-external-cohort.pdf": {
+      "source_sha256": "861df967c7d0f6a317979de87d923f6d0603a379c8860660fe20f26f389482d6",
+      "derivative_sha256": "9715e3a9ba10271f4dada9ff60115c4712bf156c025ec61773c31301c795e09e",
+      "native_source_immutable": true,
+      "page_bounds_preserved": true,
+      "all_text_tokens_preserved_after_intended_normalization": true,
+      "all_number_tokens_preserved": true,
+      "all_graphics_preserved": true,
+      "all_image_streams_preserved": true,
+      "native_math_glyphs_and_origins_preserved": true,
+      "math_origin_maximum_delta_points": 1.52587890625e-05,
+      "math_origin_tolerance_points": 0.001,
+      "visible_fonts": [
+        "Arial-BoldMT",
+        "ArialMT",
+        "txsys"
+      ],
+      "sans_serif_lettering": true,
+      "font_audit": {
+        "all_embedded": true,
+        "pdffonts": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nCHMZKO+TeXGyreTermesX-Regular        Type 1            Custom           yes yes yes     14  0\nPRBGPL+TeXGyreTermesX-Bold           Type 1            Custom           yes yes yes     15  0\nYVWMHO+txsys                         Type 1            Builtin          yes yes yes     16  0\nArial Regular                        CID TrueType      Identity-H       yes no  yes     17  0\nArial Bold                           CID TrueType      Identity-H       yes no  yes     18  0\n"
+      },
+      "inherited_fully_off_page_text_runs": [
+        {
+          "text": "1",
+          "bbox": [
+            246.1580047607422,
+            575.0928344726562,
+            250.64120483398438,
+            584.0592651367188
+          ]
+        }
+      ],
+      "off_page_text_runs": [
+        {
+          "text": "1",
+          "bbox": [
+            246.1580047607422,
+            575.3491821289062,
+            250.64244079589844,
+            583.4125366210938
+          ]
+        }
+      ],
+      "partially_clipped_text_runs": [],
+      "unresolved": [],
+      "status": "PASS",
+      "method": "PDF text-show font replacement; original run advance preserved for serif runs",
+      "changed_text_runs": 136,
+      "panel_changes": [],
+      "horizontal_scale_range": [
+        0.7985611510791367,
+        1.0840840840840842
+      ],
+      "all_original_drawing_operations_preserved": true,
+      "raster_content_check": {
+        "resolution_dpi": 144,
+        "changed_pixels_total": 45878,
+        "changed_pixels_outside_lettering_regions": 0,
+        "outside_difference_bbox": null,
+        "lettering_mask_padding_points": 3,
+        "scope": "Rendering comparison; source/replacement lettering bounding boxes plus padding masked; copy mode masks nothing"
+      }
+    },
+    "figure16-external-maps.pdf": {
+      "source_sha256": "0eeba3b610d07f9a7926ec60fd01cb98c2ca420c222fab94bf678d5974c8239e",
+      "derivative_sha256": "fa3814b833e90cf2ea562fc2736314e763acc8ef9a4252736b06e328d17ecbe0",
+      "native_source_immutable": true,
+      "page_bounds_preserved": true,
+      "all_text_tokens_preserved_after_intended_normalization": true,
+      "all_number_tokens_preserved": true,
+      "all_graphics_preserved": true,
+      "all_image_streams_preserved": true,
+      "native_math_glyphs_and_origins_preserved": true,
+      "visible_fonts": [
+        "Arial-BoldMT",
+        "ArialMT"
+      ],
+      "sans_serif_lettering": true,
+      "font_audit": {
+        "all_embedded": true,
+        "pdffonts": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nZVYUKG+TeXGyreTermesX-Regular        Type 1            Custom           yes yes yes     15  0\nUYKKUC+TeXGyreTermesX-Bold           Type 1            Custom           yes yes yes     16  0\nArial Regular                        CID TrueType      Identity-H       yes no  yes     17  0\nArial Bold                           CID TrueType      Identity-H       yes no  yes     18  0\n"
+      },
+      "inherited_fully_off_page_text_runs": [
+        {
+          "text": "1",
+          "bbox": [
+            246.1580047607422,
+            441.4188232421875,
+            250.64120483398438,
+            450.3852233886719
+          ]
+        }
+      ],
+      "off_page_text_runs": [
+        {
+          "text": "1",
+          "bbox": [
+            246.1580047607422,
+            441.6752014160156,
+            250.64244079589844,
+            449.7384948730469
+          ]
+        }
+      ],
+      "partially_clipped_text_runs": [],
+      "unresolved": [],
+      "status": "PASS",
+      "method": "PDF text-show font replacement; original run advance preserved for serif runs",
+      "changed_text_runs": 48,
+      "panel_changes": [],
+      "horizontal_scale_range": [
+        0.7985611510791367,
+        0.9405656999641963
+      ],
+      "all_original_drawing_operations_preserved": true,
+      "raster_content_check": {
+        "resolution_dpi": 144,
+        "changed_pixels_total": 19823,
+        "changed_pixels_outside_lettering_regions": 0,
+        "outside_difference_bbox": null,
+        "lettering_mask_padding_points": 3,
+        "scope": "Rendering comparison; source/replacement lettering bounding boxes plus padding masked; copy mode masks nothing"
+      },
+      "math_origin_maximum_delta_points": 0,
+      "math_origin_tolerance_points": 0.001,
+      "visual_review": {
+        "status": "PASS",
+        "scope": "Changed/representative/dense figures inspected; all figures also passed token, geometry and outside-lettering pixel checks"
+      }
+    },
+    "figure17-tissue-landscape.pdf": {
+      "source_sha256": "8626d7e69dd1f9d141797f6e39ddf64e43836ffd04e52b614b3d29c7bec31a0f",
+      "derivative_sha256": "715b1c303994d905180e91b717d4e6d290eabeca112562c2481321a1577e9763",
+      "native_source_immutable": true,
+      "page_bounds_preserved": true,
+      "all_text_tokens_preserved_after_intended_normalization": true,
+      "all_number_tokens_preserved": true,
+      "all_graphics_preserved": true,
+      "all_image_streams_preserved": true,
+      "native_math_glyphs_and_origins_preserved": true,
+      "visible_fonts": [
+        "Arial-BoldMT",
+        "ArialMT",
+        "txsys"
+      ],
+      "sans_serif_lettering": true,
+      "font_audit": {
+        "all_embedded": true,
+        "pdffonts": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nBDVLZJ+TeXGyreTermesX-Regular        Type 1            Custom           yes yes yes     14  0\nUYKKUC+TeXGyreTermesX-Bold           Type 1            Custom           yes yes yes     15  0\nYVWMHO+txsys                         Type 1            Builtin          yes yes yes     16  0\nArial Regular                        CID TrueType      Identity-H       yes no  yes     17  0\nArial Bold                           CID TrueType      Identity-H       yes no  yes     18  0\n"
+      },
+      "inherited_fully_off_page_text_runs": [
+        {
+          "text": "1",
+          "bbox": [
+            246.1580047607422,
+            519.0928344726562,
+            250.64120483398438,
+            528.0592651367188
+          ]
+        }
+      ],
+      "off_page_text_runs": [
+        {
+          "text": "1",
+          "bbox": [
+            246.1580047607422,
+            519.3491821289062,
+            250.64244079589844,
+            527.4125366210938
+          ]
+        }
+      ],
+      "partially_clipped_text_runs": [],
+      "unresolved": [],
+      "status": "PASS",
+      "method": "PDF text-show font replacement; original run advance preserved for serif runs",
+      "changed_text_runs": 69,
+      "panel_changes": [],
+      "horizontal_scale_range": [
+        0.7985611510791367,
+        1.0823185582075012
+      ],
+      "all_original_drawing_operations_preserved": true,
+      "raster_content_check": {
+        "resolution_dpi": 144,
+        "changed_pixels_total": 39453,
+        "changed_pixels_outside_lettering_regions": 0,
+        "outside_difference_bbox": null,
+        "lettering_mask_padding_points": 3,
+        "scope": "Rendering comparison; source/replacement lettering bounding boxes plus padding masked; copy mode masks nothing"
+      },
+      "math_origin_maximum_delta_points": 3.0517578125e-05,
+      "math_origin_tolerance_points": 0.001,
+      "visual_review": {
+        "status": "NOT_INDIVIDUALLY_INSPECTED",
+        "scope": "Changed/representative/dense figures inspected; all figures also passed token, geometry and outside-lettering pixel checks"
+      }
+    },
+    "supplement01-hnscc.pdf": {
+      "source_sha256": "d63fd8a5fe94cd178dad41b2b44767776aee5eceaf7294c2228111529fd412aa",
+      "derivative_sha256": "3f105637194469f92886d7206d0fe7844b9a0db94a26033456eb6cdb9c088268",
+      "native_source_immutable": true,
+      "page_bounds_preserved": true,
+      "all_text_tokens_preserved_after_intended_normalization": true,
+      "all_number_tokens_preserved": true,
+      "all_graphics_preserved": true,
+      "all_image_streams_preserved": true,
+      "native_math_glyphs_and_origins_preserved": true,
+      "visible_fonts": [
+        "Arial-BoldMT",
+        "ArialMT"
+      ],
+      "sans_serif_lettering": true,
+      "font_audit": {
+        "all_embedded": true,
+        "pdffonts": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nNVIJAV+TeXGyreTermesX-Regular        Type 1            Custom           yes yes yes     15  0\nUFOBHJ+TeXGyreTermesX-Bold           Type 1            Custom           yes yes yes     16  0\nArial Regular                        CID TrueType      Identity-H       yes no  yes     17  0\nArial Bold                           CID TrueType      Identity-H       yes no  yes     18  0\n"
+      },
+      "inherited_fully_off_page_text_runs": [
+        {
+          "text": "1",
+          "bbox": [
+            246.1580047607422,
+            158.8818359375,
+            250.64120483398438,
+            167.84823608398438
+          ]
+        }
+      ],
+      "off_page_text_runs": [
+        {
+          "text": "1",
+          "bbox": [
+            246.1580047607422,
+            159.13821411132812,
+            250.64244079589844,
+            167.20152282714844
+          ]
+        }
+      ],
+      "partially_clipped_text_runs": [],
+      "unresolved": [],
+      "status": "PASS",
+      "method": "PDF text-show font replacement; original run advance preserved for serif runs",
+      "changed_text_runs": 23,
+      "panel_changes": [],
+      "horizontal_scale_range": [
+        0.8420306296086216,
+        1.0259562841530054
+      ],
+      "all_original_drawing_operations_preserved": true,
+      "raster_content_check": {
+        "resolution_dpi": 144,
+        "changed_pixels_total": 13631,
+        "changed_pixels_outside_lettering_regions": 0,
+        "outside_difference_bbox": null,
+        "lettering_mask_padding_points": 3,
+        "scope": "Rendering comparison; source/replacement lettering bounding boxes plus padding masked; copy mode masks nothing"
+      },
+      "math_origin_maximum_delta_points": 0,
+      "math_origin_tolerance_points": 0.001,
+      "visual_review": {
+        "status": "NOT_INDIVIDUALLY_INSPECTED",
+        "scope": "Changed/representative/dense figures inspected; all figures also passed token, geometry and outside-lettering pixel checks"
+      }
+    },
+    "supplement02-mibi.pdf": {
+      "source_sha256": "74661bf57be6de0fb6b4e3b69d98e8bc3c19faaec6f569b5ad746f4ae665293d",
+      "derivative_sha256": "7e24139f0c98370dce5468060cb95cbf47b07a68a1828e0f3e8191187dbda6a6",
+      "native_source_immutable": true,
+      "page_bounds_preserved": true,
+      "all_text_tokens_preserved_after_intended_normalization": true,
+      "all_number_tokens_preserved": true,
+      "all_graphics_preserved": true,
+      "all_image_streams_preserved": true,
+      "native_math_glyphs_and_origins_preserved": true,
+      "visible_fonts": [
+        "Arial-BoldMT",
+        "ArialMT"
+      ],
+      "sans_serif_lettering": true,
+      "font_audit": {
+        "all_embedded": true,
+        "pdffonts": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nGPRRQQ+TeXGyreTermesX-Regular        Type 1            Custom           yes yes yes     15  0\nZYVERG+TeXGyreTermesX-Bold           Type 1            Custom           yes yes yes     16  0\nArial Regular                        CID TrueType      Identity-H       yes no  yes     17  0\nArial Bold                           CID TrueType      Identity-H       yes no  yes     18  0\n"
+      },
+      "inherited_fully_off_page_text_runs": [
+        {
+          "text": "1",
+          "bbox": [
+            246.1580047607422,
+            436.7298278808594,
+            250.64120483398438,
+            445.69622802734375
+          ]
+        }
+      ],
+      "off_page_text_runs": [
+        {
+          "text": "1",
+          "bbox": [
+            246.1580047607422,
+            436.9862060546875,
+            250.64244079589844,
+            445.04949951171875
+          ]
+        }
+      ],
+      "partially_clipped_text_runs": [],
+      "unresolved": [],
+      "status": "PASS",
+      "method": "PDF text-show font replacement; original run advance preserved for serif runs",
+      "changed_text_runs": 28,
+      "panel_changes": [],
+      "horizontal_scale_range": [
+        0.7985611510791367,
+        0.9641248391248392
+      ],
+      "all_original_drawing_operations_preserved": true,
+      "raster_content_check": {
+        "resolution_dpi": 144,
+        "changed_pixels_total": 13464,
+        "changed_pixels_outside_lettering_regions": 0,
+        "outside_difference_bbox": null,
+        "lettering_mask_padding_points": 3,
+        "scope": "Rendering comparison; source/replacement lettering bounding boxes plus padding masked; copy mode masks nothing"
+      },
+      "math_origin_maximum_delta_points": 0,
+      "math_origin_tolerance_points": 0.001,
+      "visual_review": {
+        "status": "NOT_INDIVIDUALLY_INSPECTED",
+        "scope": "Changed/representative/dense figures inspected; all figures also passed token, geometry and outside-lettering pixel checks"
+      }
+    },
+    "supplement03-rna-markers.pdf": {
+      "source_sha256": "d47bcefe268bb930ce99a19cdde6724803f55f19ee47d4293c39674093e25748",
+      "derivative_sha256": "e85ee9162ce1a8170812cf2dd3899d725beb417b43e61c63525621ae9d126e17",
+      "native_source_immutable": true,
+      "page_bounds_preserved": true,
+      "all_text_tokens_preserved_after_intended_normalization": true,
+      "all_number_tokens_preserved": true,
+      "all_graphics_preserved": true,
+      "all_image_streams_preserved": true,
+      "native_math_glyphs_and_origins_preserved": true,
+      "visible_fonts": [
+        "Arial-BoldMT",
+        "ArialMT"
+      ],
+      "sans_serif_lettering": true,
+      "font_audit": {
+        "all_embedded": true,
+        "pdffonts": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nPAEXEX+TeXGyreTermesX-Regular        Type 1            Custom           yes yes yes     15  0\nTJAWUA+TeXGyreTermesX-Bold           Type 1            Custom           yes yes yes     16  0\nArial Regular                        CID TrueType      Identity-H       yes no  yes     17  0\nArial Bold                           CID TrueType      Identity-H       yes no  yes     18  0\n"
+      },
+      "inherited_fully_off_page_text_runs": [
+        {
+          "text": "1",
+          "bbox": [
+            246.1580047607422,
+            259.94482421875,
+            250.64120483398438,
+            268.9112243652344
+          ]
+        }
+      ],
+      "off_page_text_runs": [
+        {
+          "text": "1",
+          "bbox": [
+            246.1580047607422,
+            260.2012023925781,
+            250.64244079589844,
+            268.2644958496094
+          ]
+        }
+      ],
+      "partially_clipped_text_runs": [],
+      "unresolved": [],
+      "status": "PASS",
+      "method": "PDF text-show font replacement; original run advance preserved for serif runs",
+      "changed_text_runs": 50,
+      "panel_changes": [],
+      "horizontal_scale_range": [
+        0.8992805755395683,
+        0.9709652105676171
+      ],
+      "all_original_drawing_operations_preserved": true,
+      "raster_content_check": {
+        "resolution_dpi": 144,
+        "changed_pixels_total": 9016,
+        "changed_pixels_outside_lettering_regions": 0,
+        "outside_difference_bbox": null,
+        "lettering_mask_padding_points": 3,
+        "scope": "Rendering comparison; source/replacement lettering bounding boxes plus padding masked; copy mode masks nothing"
+      },
+      "math_origin_maximum_delta_points": 0,
+      "math_origin_tolerance_points": 0.001,
+      "visual_review": {
+        "status": "NOT_INDIVIDUALLY_INSPECTED",
+        "scope": "Changed/representative/dense figures inspected; all figures also passed token, geometry and outside-lettering pixel checks"
+      }
+    },
+    "supplement05-scale-controls.pdf": {
+      "source_sha256": "e90e9d11d4d0c5c1d24ac8665aa3d4ac188f1866ea8a954419de9d39a12e44e4",
+      "derivative_sha256": "8802f49a9e20f5da2b09c9fc442d6095c354fa447bf198dcf7e31c496b67c2f4",
+      "native_source_immutable": true,
+      "page_bounds_preserved": true,
+      "all_text_tokens_preserved_after_intended_normalization": true,
+      "all_number_tokens_preserved": true,
+      "all_graphics_preserved": true,
+      "all_image_streams_preserved": true,
+      "native_math_glyphs_and_origins_preserved": true,
+      "visible_fonts": [
+        "Arial-BoldMT",
+        "ArialMT",
+        "NewTXMI",
+        "txmiaX"
+      ],
+      "sans_serif_lettering": true,
+      "font_audit": {
+        "all_embedded": true,
+        "pdffonts": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nUWOWBA+TeXGyreTermesX-Regular        Type 1            Custom           yes yes yes     14  0\nTJAWUA+TeXGyreTermesX-Bold           Type 1            Custom           yes yes yes     15  0\nNDBRNR+NewTXMI                       Type 1            Builtin          yes yes yes     16  0\nOGYQFN+txmiaX                        Type 1            Builtin          yes yes yes     17  0\nUWOWBA+TeXGyreTermesX-Regular        Type 1            Custom           yes yes yes     18  0\nArial Regular                        CID TrueType      Identity-H       yes no  yes     19  0\nArial Bold                           CID TrueType      Identity-H       yes no  yes     20  0\n"
+      },
+      "inherited_fully_off_page_text_runs": [
+        {
+          "text": "1",
+          "bbox": [
+            246.1580047607422,
+            237.08384704589844,
+            250.64120483398438,
+            246.0502471923828
+          ]
+        }
+      ],
+      "off_page_text_runs": [
+        {
+          "text": "1",
+          "bbox": [
+            246.1580047607422,
+            237.34921264648438,
+            250.64244079589844,
+            245.4125213623047
+          ]
+        }
+      ],
+      "partially_clipped_text_runs": [],
+      "unresolved": [],
+      "status": "PASS",
+      "method": "PDF text-show font replacement; original run advance preserved for serif runs",
+      "changed_text_runs": 51,
+      "panel_changes": [],
+      "horizontal_scale_range": [
+        0.8992805755395683,
+        0.9716859716859717
+      ],
+      "all_original_drawing_operations_preserved": true,
+      "raster_content_check": {
+        "resolution_dpi": 144,
+        "changed_pixels_total": 19265,
+        "changed_pixels_outside_lettering_regions": 0,
+        "outside_difference_bbox": null,
+        "lettering_mask_padding_points": 3,
+        "scope": "Rendering comparison; source/replacement lettering bounding boxes plus padding masked; copy mode masks nothing"
+      },
+      "math_origin_maximum_delta_points": 0.0001220703125,
+      "math_origin_tolerance_points": 0.001,
+      "visual_review": {
+        "status": "NOT_INDIVIDUALLY_INSPECTED",
+        "scope": "Changed/representative/dense figures inspected; all figures also passed token, geometry and outside-lettering pixel checks"
+      }
+    }
+  },
+  "visual_review": {
+    "status": "PASS_REPRESENTATIVE",
+    "inspected_figures": [
+      "figure01-workflow.pdf",
+      "figure04-ablations.pdf",
+      "figure07-breast-histology.pdf",
+      "figure08-breast-mixtures.pdf",
+      "figure13-architecture.pdf",
+      "figure14-target-lineage.pdf",
+      "figure15-external-cohort.pdf",
+      "figure16-external-maps.pdf"
+    ],
+    "comparison_directory": "/home/zeyufu/Desktop/ortho-diabetic-wound-insilico/output/scientific-reports-readiness-20261011-r2/final-documents/tessera/source/manuscript/journal-figures/qa",
+    "observed_new_collisions": false,
+    "observed_new_clipping": false,
+    "scope": "Side-by-side native/journal rendered comparisons inspected for representative workflows, dense plots, image maps and all three converted SVG schematics. This does not claim individual visual inspection of every figure.",
+    "heading_refresh_utc": "2026-10-12T04:08:15.767626+00:00",
+    "heading_refresh_evidence": "qa/heading-refinement/heading-check.json"
+  },
+  "status": "MECHANICAL_PASS_REPRESENTATIVE_VISUAL_PASS",
+  "unresolved_font_or_layout_issues": [],
+  "verification_summary": {
+    "figures_passed": 21,
+    "panels_intentionally_lowercased": 0,
+    "outside_lettering_changed_pixels_at_144dpi": 0,
+    "native_math_origin_maximum_delta_points": 0.0001220703125,
+    "all_source_and_derivative_hashes_rechecked": true
+  },
+  "authorized_input_refresh": {
+    "figure": "figure07-breast-histology.pdf",
+    "scope": "Parent supplied fresh candidate source PDF with author-generated spot-coordinate maps. Derivative preserves this refreshed input; original protected source was not edited by the typography script.",
+    "label": "Spot locations",
+    "source_sha256": "4527c45ba7fe609f44db2853ed7e113289b37643af805a2019c88912b5498465"
+  },
+  "script_sha256": "bc83a67cbcb37059b85e34f0c14280dbc94e4b881143e1a74577c355cdf50513",
+  "rerun_behavior": "Recreates derivatives and mechanical/raster checks; visual review resets to pending and must be repeated after any new input or typography change.",
+  "authorized_heading_refresh": {
+    "utc": "2026-10-12T04:07:30.180023+00:00",
+    "figures": [
+      "figure04-ablations.pdf",
+      "figure15-external-cohort.pdf"
+    ],
+    "scope": "Two authorized categorical panel-heading replacements; retained numerical inputs, plot coordinates, captions and prose unchanged; no fitting or download",
+    "evidence": "qa/heading-refinement/heading-check.json",
+    "native_originals_preserved_in": "qa/heading-refinement/superseded (local historical QA, excluded from public package)",
+    "visual_status": "PASS",
+    "reviewed_figures": [
+      "figure04-ablations.pdf",
+      "figure15-external-cohort.pdf"
+    ]
+  }
+}

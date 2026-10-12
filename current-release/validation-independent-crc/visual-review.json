@@ -1,0 +1,13 @@
+{
+  "status": "completed",
+  "review_date": "2026-10-11",
+  "figure_receipt_sha256": "923498ecb1826f19137a57bc9810cc7753b04c334e37ed750d332ecf9c847a1f",
+  "images_inspected": [
+    "SN124_A551763_Rep2-registration.png",
+    "SN124_A595688_Rep2-registration.png",
+    "SN84_A120838_Rep1-registration.png",
+    "pilot-summary.png"
+  ],
+  "scope": "Author inspection of three H&E overlays for gross orientation/bounds and the pilot summary for readable labels. Not independent registration or pathology adjudication.",
+  "corrected_defect": "The rightmost summary tick label was clipped; increased categorical x margins and re-viewed the corrected PNG."
+}

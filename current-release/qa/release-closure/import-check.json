@@ -1,0 +1,38 @@
+{
+  "status": "passed",
+  "python": "3.13.7 | packaged by Anaconda, Inc. | (main, Sep  9 2025, 19:59:03) [GCC 11.2.0]",
+  "imported_modules": [
+    "tessera_st.config",
+    "tessera_st.model.tessera",
+    "tessera_st.losses",
+    "tessera_st.train",
+    "tessera_st.cli",
+    "prepare_data",
+    "run_experiments",
+    "run_transfer",
+    "run_followup",
+    "run_her2st_validation",
+    "run_enhanced_targets",
+    "run_extension",
+    "fetch_pilot",
+    "run_pilot",
+    "analyze_annotation_qc",
+    "render_pilot",
+    "fetch_adapter"
+  ],
+  "packages": {
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "scipy": "1.16.2",
+    "scikit-learn": "1.6.1",
+    "torch": "2.12.1+cu130",
+    "anndata": "0.12.3",
+    "h5py": "3.15.1",
+    "matplotlib": "3.10.7",
+    "Pillow": "11.3.0"
+  },
+  "python_sources_compiled_without_writes": 75,
+  "model_or_clustering_fits": 0,
+  "portable_acquisition_helper_resolves_within_package": true,
+  "network_requests": 0
+}

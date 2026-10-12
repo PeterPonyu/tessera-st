@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "rejected": [
+    "size-or-sha256-mismatch",
+    "publisher-md5-mismatch",
+    "unrecorded-upstream-url"
+  ],
+  "historical_J1_exclusion_preserved": true,
+  "network_requests": 0
+}

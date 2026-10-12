@@ -1,0 +1,87 @@
+{
+  "object": "BCC_PatientA",
+  "cohort": "BCC",
+  "seed": 3,
+  "arm": "NoContrast",
+  "n_cells": 5666,
+  "K": 12,
+  "input_sha256": "c3a8aff77b78898ea67d6dfd618ccdef8a5772c8ed63656443a26a5d140e67cf",
+  "prediction_sha256": "9ef350de208f4331ddef526773ed15a0f85e42e8666abc0a27c8f12d05f0e0e3",
+  "fit_seconds": 0.5687343780009542,
+  "total_seconds": 0.7084034880099352,
+  "gpu_peak_allocated_bytes": 302814208,
+  "trainable_parameters": 27239,
+  "history": [
+    {
+      "epoch": 0,
+      "loss": 6.629327297210693,
+      "recon": 6.629327297210693
+    },
+    {
+      "epoch": 12,
+      "loss": 6.26053524017334,
+      "recon": 6.26053524017334
+    },
+    {
+      "epoch": 24,
+      "loss": 5.651933193206787,
+      "recon": 5.651933193206787
+    },
+    {
+      "epoch": 36,
+      "loss": 4.771058082580566,
+      "recon": 4.771058082580566
+    },
+    {
+      "epoch": 48,
+      "loss": 4.028035640716553,
+      "recon": 4.028035640716553
+    },
+    {
+      "epoch": 60,
+      "loss": 3.523557662963867,
+      "recon": 3.523557662963867
+    },
+    {
+      "epoch": 72,
+      "loss": 3.1657042503356934,
+      "recon": 3.1657042503356934
+    },
+    {
+      "epoch": 84,
+      "loss": 2.8903298377990723,
+      "recon": 2.8903298377990723
+    },
+    {
+      "epoch": 96,
+      "loss": 2.669999361038208,
+      "recon": 2.669999361038208
+    },
+    {
+      "epoch": 108,
+      "loss": 2.495661735534668,
+      "recon": 2.495661735534668
+    },
+    {
+      "epoch": 119,
+      "loss": 2.363443613052368,
+      "recon": 2.363443613052368
+    }
+  ],
+  "ablation": {
+    "edge_gating": true,
+    "multi_scale": true,
+    "boundary_contrastive": false,
+    "calibrated_uncertainty": false
+  },
+  "n_edges": 67992,
+  "cross_field_edges": 0,
+  "self_edges": 0,
+  "scores": {
+    "ari": 0.3054114663500725,
+    "nmi": 0.5046756241221834,
+    "reference_edge_homogeneity": 0.6216907871514296,
+    "predicted_edge_homogeneity": 0.39939992940345925,
+    "gate_seam_auroc": 0.6627200957290291
+  }
+}

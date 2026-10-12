@@ -1,0 +1,8 @@
+# Optional document/typography auditing; independent of the Python 3.13 analysis runtime.
+# Observed document runtime recorded in provenance/document-qa-environment.json.
+# No new environment installation was tested. Standalone font binaries excluded.
+PyMuPDF==1.27.1
+pikepdf==10.11.0
+pypdf==6.14.2
+pdfplumber==0.11.9
+Pillow==12.1.1

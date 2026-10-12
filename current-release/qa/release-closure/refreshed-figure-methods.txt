@@ -1,0 +1,1 @@
+VERIFIED: 21 figures / 75 semantic sections mapped to Methods; 32 equation identities

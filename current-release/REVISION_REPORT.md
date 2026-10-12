@@ -1,0 +1,11 @@
+# Current submission closeout
+
+The interrupted structural audit is implemented and now reports zero blocking, major or minor findings. It checks citation coverage, panel identity, reference order and supplementary lists. Eight added tests catch the observed defects; all 76 workspace tests pass. This is mechanical verification rather than independent scientific peer review.
+
+The numerical audit independently implements patient-held-out control selection, exhaustive paired sign flips and the specified conditional patient bootstrap. It reproduces 40 selections, 58 contrasts and all 24 landscape rows. The equations now state the implemented distance epsilon and mass floor, the directed control neighborhoods and the symmetrized multiset of the same-graph control. Transductive evaluation and source-only patient transfer are distinguished.
+
+The Scientific Reports derivative has a 186-word abstract, a 14-word title and eight main displays. Extended evidence is retained in the separate supplement; the full canonical manuscript remains available. Main references to supplementary displays name the whole item as required by the journal, while the full-source audit retains detailed panel coverage. AI-assisted editing and computational checking are disclosed. No author approval or completed independent agent review is claimed.
+
+Expression weighting is reported as having no consistent advantage. Near-chance discrimination and unchanged partitions are not described as equivalence tests. Exact p values are descriptive and unadjusted across exploratory contrasts. Bootstrap intervals do not repeat scale selection. The strongest label-selected result is a descriptive maximum inside the tested grid, not a universal upper bound.
+
+Recovered byte-exact runners resolve the historical-source gap without changing research outputs. The original archive was extracted and successfully rebuilt before editing. This candidate reconciles the completed three-patient colorectal pilot in a separate Methods/Results section and two tables, with its unresolved validation limits. Author declarations, data/figure rights and submission choices still require human confirmation; no submission or publication occurred.

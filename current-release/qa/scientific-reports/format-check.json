@@ -1,0 +1,139 @@
+{
+  "status": "PASS",
+  "title": "Neighborhood averaging accounts for spatial gains of a graph encoder in tumor spatial omics",
+  "title_words": 14,
+  "abstract_words": 192,
+  "main_figures": 7,
+  "main_tables": 1,
+  "supplementary_figures": 14,
+  "supplementary_tables": 18,
+  "moved_displays": {
+    "fig:architecture": [
+      "figure",
+      10
+    ],
+    "tab:results": [
+      "table",
+      16
+    ],
+    "tab:nested": [
+      "table",
+      17
+    ],
+    "fig:bcc": [
+      "figure",
+      11
+    ],
+    "fig:histology": [
+      "figure",
+      12
+    ],
+    "fig:mixtures": [
+      "figure",
+      13
+    ],
+    "fig:stability": [
+      "figure",
+      14
+    ],
+    "tab:external": [
+      "table",
+      18
+    ]
+  },
+  "main_text_words": 3523,
+  "main_text_section_words": {
+    "introduction": 702,
+    "results": 1906,
+    "discussion": 915
+  },
+  "main_text_count_method": "TeXcount prose words in Introduction, Results and Discussion; excludes Abstract, Methods, references, headings, equations and figure legends.",
+  "main_text_recommendation_met": true,
+  "title_recommendation_met": true,
+  "title_page_and_declaration_order": "PASS",
+  "supplement_title_matches": true,
+  "canonical_source_sha256": "87073a3e54fcfbfc5d1ebc09a077be8691d1c1225bbad451296cc47966c57849",
+  "canonical_supplement_sha256": "94af5855130b5aafde71db351678b1ca22b08eb110f0a2436a2e0ad81c166564",
+  "configuration_sha256": "b282233dc2c6aec56f08cab8ced048e53d9b00e78fd7639d4a4d364d17093887",
+  "generator_sha256": "bafc55ca78fd56e6f16274f15661d22250094095d0fd73ae2a6498401cfc378a",
+  "documents": {
+    "manuscript": {
+      "path": "/home/zeyufu/Desktop/ortho-diabetic-wound-insilico/output/scientific-reports-readiness-20261011-r2/final-documents/tessera/output/scientific-reports/scientific-reports-manuscript.pdf",
+      "sha256": "b380dedf46740a46dab8957fe732e19f4644234a26f24af1b697cd2918136846",
+      "pages": 22,
+      "source_sha256": "f71b275ef07753a7dd2c078cfccc919b4ad13c9c6853a765b5faf4c81c551b76",
+      "bytes": 2582568
+    },
+    "supplement": {
+      "path": "/home/zeyufu/Desktop/ortho-diabetic-wound-insilico/output/scientific-reports-readiness-20261011-r2/final-documents/tessera/output/scientific-reports/scientific-reports-supplement.pdf",
+      "sha256": "15a15e3738733668eb36ea4fded6a73ad95b403a59cf229f62341add5e24bb0a",
+      "pages": 20,
+      "source_sha256": "18ca32c211f89b2d7fb968e9708761fefe11e62e23a6bd7e98ab7767d080189a",
+      "bytes": 8180109
+    },
+    "manuscript-inline": {
+      "path": "/home/zeyufu/Desktop/ortho-diabetic-wound-insilico/output/scientific-reports-readiness-20261011-r2/final-documents/tessera/output/scientific-reports/scientific-reports-manuscript-inline.pdf",
+      "sha256": "44ab40a066eeecf23ab03dc597810a4920b428bd7cba22fe90638a6d0219d409",
+      "pages": 21,
+      "source_sha256": "99815edb0db30873072dfbc85cc9588ef004df389622b78a6c5a259bc80e1674",
+      "bytes": 2583972
+    }
+  },
+  "inline_layout": {
+    "fig:workflow": {
+      "display": "Figure 1",
+      "first_citation_page": 2,
+      "display_page": 3,
+      "pages_after_first_citation": 1
+    },
+    "tab:inputs": {
+      "display": "Table 1",
+      "first_citation_page": 3,
+      "display_page": 3,
+      "pages_after_first_citation": 0
+    },
+    "fig:comparison": {
+      "display": "Figure 2",
+      "first_citation_page": 9,
+      "display_page": 10,
+      "pages_after_first_citation": 1
+    },
+    "fig:ablations": {
+      "display": "Figure 3",
+      "first_citation_page": 9,
+      "display_page": 11,
+      "pages_after_first_citation": 2
+    },
+    "fig:lung": {
+      "display": "Figure 4",
+      "first_citation_page": 11,
+      "display_page": 12,
+      "pages_after_first_citation": 1
+    },
+    "fig:transfer": {
+      "display": "Figure 5",
+      "first_citation_page": 13,
+      "display_page": 14,
+      "pages_after_first_citation": 1
+    },
+    "fig:external": {
+      "display": "Figure 6",
+      "first_citation_page": 13,
+      "display_page": 15,
+      "pages_after_first_citation": 2
+    },
+    "fig:landscape": {
+      "display": "Figure 7",
+      "first_citation_page": 16,
+      "display_page": 17,
+      "pages_after_first_citation": 1
+    }
+  },
+  "layouts": {
+    "manuscript": "journal-checklist layout: legends, figures and the table follow the references",
+    "manuscript-inline": "reading layout: each figure and table floats after the paragraph that first cites it"
+  },
+  "scope": "Journal document conversion and mechanical checks; no new experiments or independent peer review.",
+  "guidelines": "https://www.nature.com/srep/author-instructions/submission-guidelines",
+  "checklist": "https://www.nature.com/documents/srep-checklist-for-initial-submissions.pdf"
+}

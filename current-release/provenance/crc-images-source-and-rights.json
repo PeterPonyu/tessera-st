@@ -1,0 +1,48 @@
+{
+  "source_record_file": "validation-independent-crc/source-record.json",
+  "source_record_sha256": "f3c0d477545396086a2f636018a5ebd6c5f72e439bb587ead581ce966cdbf69d",
+  "record_url": "https://zenodo.org/records/7760264",
+  "api_evidence_url": "https://zenodo.org/api/records/7760264",
+  "doi": "10.5281/zenodo.7760264",
+  "license_id": "cc-by-4.0",
+  "resource_type": {
+    "title": "Dataset",
+    "type": "dataset"
+  },
+  "evidence_scope": "License is recorded on the Dataset record itself, not inferred from the associated article. Its description explicitly identifies the sample ZIP files as Space Ranger outputs containing processed count matrices and histological images.",
+  "files": [
+    {
+      "source_archive": "SN84_A120838_Rep1.zip",
+      "source_url": "https://zenodo.org/records/7760264/files/SN84_A120838_Rep1.zip?download=1",
+      "publisher_md5": "md5:4a185c5e1bf88995ee0c03dbb4e8b63c",
+      "raw_archive_sha256": "d982693f971b6eda7fa8c4c3b49afe487a8cd009cfcf5d0900db8c4d93770b10",
+      "source_image_member": "spatial/tissue_hires_image.png (member identified by the preserved CRC loader)",
+      "included_image": "validation-independent-crc/inputs/SN84_A120838_Rep1/tissue_hires_image.png",
+      "image_sha256": "5f0522f8f9c7790f45e12c458d0d296530eddeca9bc9b74f00b24256065581f7",
+      "registration_derivative": "validation-independent-crc/figures/SN84_A120838_Rep1-registration.png"
+    },
+    {
+      "source_archive": "SN124_A595688_Rep2.zip",
+      "source_url": "https://zenodo.org/records/7760264/files/SN124_A595688_Rep2.zip?download=1",
+      "publisher_md5": "md5:808ed49a24eea7d41c575d8c238caa76",
+      "raw_archive_sha256": "2510c1e854126ca227dc1dee8ab8a5763658867deb0f0f1abb9354f78aefd552",
+      "source_image_member": "spatial/tissue_hires_image.png (member identified by the preserved CRC loader)",
+      "included_image": "validation-independent-crc/inputs/SN124_A595688_Rep2/tissue_hires_image.png",
+      "image_sha256": "a998cd45bb3639351562132a34b095ea5d7fad4a445326a0e6dc8433a09c58db",
+      "registration_derivative": "validation-independent-crc/figures/SN124_A595688_Rep2-registration.png"
+    },
+    {
+      "source_archive": "SN124_A551763_Rep2.zip",
+      "source_url": "https://zenodo.org/records/7760264/files/SN124_A551763_Rep2.zip?download=1",
+      "publisher_md5": "md5:adf0ea575a09f473fa4ceb465a6ec66e",
+      "raw_archive_sha256": "b884bc451ee05645e7777a1239c1a64d5416ae79dbc7010b58b843a8c4186e5e",
+      "source_image_member": "spatial/tissue_hires_image.png (member identified by the preserved CRC loader)",
+      "included_image": "validation-independent-crc/inputs/SN124_A551763_Rep2/tissue_hires_image.png",
+      "image_sha256": "a0caaee255a7d4a5d64a9ce119ac81067d3351f99c3a1c774ddb3d4507bcdcc7",
+      "registration_derivative": "validation-independent-crc/figures/SN124_A551763_Rep2-registration.png"
+    }
+  ],
+  "attribution": "Dataset creator Alberto Valdeolivas; Profiling the Heterogeneity of Colorectal Cancer Consensus Molecular Subtypes using Spatial Transcriptomics: datasets; DOI 10.5281/zenodo.7760264. Associated study: Valdeolivas, Amberg, Giroud et al.",
+  "changes": "Source tissue_hires_image PNGs retained unchanged; author-generated registration derivatives retained with the source attribution.",
+  "dataset_creator": "Alberto Valdeolivas"
+}

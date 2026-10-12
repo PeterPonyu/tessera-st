@@ -1,0 +1,97 @@
+{
+  "figure01-workflow": {
+    "labels": [
+      "a",
+      "b",
+      "c",
+      "d",
+      "e",
+      "f"
+    ],
+    "titles": [
+      "Assays and patients",
+      "Identity before geometry",
+      "Matched representations",
+      "Specified interventions",
+      "Source-only transfer",
+      "Distinct evidence channels"
+    ],
+    "separate_svg_text_elements": true,
+    "only_panel_labels_bold": true,
+    "font_family": "TeX Gyre Termes, Times New Roman, serif",
+    "all_text_black": true,
+    "panel_label_size_svg_units": 38.0,
+    "maximum_regular_text_size_svg_units": 25.0,
+    "arrow_length_svg_units": 12,
+    "arrow_width_svg_units": 9.0,
+    "arrow_stroke_svg_units": 2.8,
+    "shaft_ends_at_head_base": true,
+    "arrow_rendering": "explicit filled polygon plus orthogonal shaft; no SVG markers",
+    "title_alignment": "left; bare marker shifted left of regular title",
+    "viewBox": "20 83 1356 672",
+    "svg_sha256": "8c796c2f03d6a092651715a18f2266e14a85fd5eba0471e04a35b48b7f22087f",
+    "pdf_sha256": "0a65dd1b93c471129e3e26c9a50f797620e5a2b2ef6778ca595b1191c9afb9d3"
+  },
+  "figure13-architecture": {
+    "labels": [
+      "a",
+      "b",
+      "c",
+      "d",
+      "e"
+    ],
+    "titles": [
+      "Inputs and frame graph",
+      "Gated residual layer",
+      "Three depths \u2192 attention \u2192 embedding",
+      "Two training objectives",
+      "Separate predictions"
+    ],
+    "separate_svg_text_elements": true,
+    "only_panel_labels_bold": true,
+    "font_family": "TeX Gyre Termes, Times New Roman, serif",
+    "all_text_black": true,
+    "panel_label_size_svg_units": 38.0,
+    "maximum_regular_text_size_svg_units": 30.0,
+    "arrow_length_svg_units": 12,
+    "arrow_width_svg_units": 9.0,
+    "arrow_stroke_svg_units": 2.8,
+    "shaft_ends_at_head_base": true,
+    "arrow_rendering": "explicit filled polygon plus orthogonal shaft; no SVG markers",
+    "title_alignment": "left; bare marker shifted left of regular title",
+    "viewBox": "20 83 1356 854",
+    "svg_sha256": "69a786c1007c8ebb3a5bbd2b8de4dcf0c0015e7d1dbf2475301be1205ec9d537",
+    "pdf_sha256": "3c90b13523283dc6c346845883587ea90677aac293b2dcb3e853b3eb8f40e793"
+  },
+  "figure14-target-lineage": {
+    "labels": [
+      "a",
+      "b",
+      "c",
+      "d",
+      "e"
+    ],
+    "titles": [
+      "Reference construction",
+      "Within-object fit",
+      "Patient-disjoint fit",
+      "Inspection, not independent truth",
+      "Units of variability"
+    ],
+    "separate_svg_text_elements": true,
+    "only_panel_labels_bold": true,
+    "font_family": "TeX Gyre Termes, Times New Roman, serif",
+    "all_text_black": true,
+    "panel_label_size_svg_units": 38.0,
+    "maximum_regular_text_size_svg_units": 27.0,
+    "arrow_length_svg_units": 12,
+    "arrow_width_svg_units": 9.0,
+    "arrow_stroke_svg_units": 2.8,
+    "shaft_ends_at_head_base": true,
+    "arrow_rendering": "explicit filled polygon plus orthogonal shaft; no SVG markers",
+    "title_alignment": "left; bare marker shifted left of regular title",
+    "viewBox": "20 83 1356 747",
+    "svg_sha256": "33c50b9d93347342add2ad40d4d27e36b52a12326b1ed34204e6b416a0d68bfc",
+    "pdf_sha256": "08c1d525ce93e2fb1d21d48b77bd2fd0217c58b5850dec3c4a327b8b8e508bc7"
+  }
+}

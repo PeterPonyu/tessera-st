@@ -1,0 +1,189 @@
+.......F......................................................F...FF.... [ 87%]
+.......FF.                                                               [100%]
+=================================== FAILURES ===================================
+____________ test_rendered_abstract_fits_the_journal_200_word_limit ____________
+
+    def test_rendered_abstract_fits_the_journal_200_word_limit():
+>       text = subprocess.run(["pdftotext", "-nopgbrk",
+                               str(ROOT / "output/pdf/tessera-revised-manuscript.pdf"), "-"],
+                              check=True, capture_output=True, text=True).stdout
+
+source/tests/test_closeout.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = None, capture_output = True, timeout = None, check = True
+popenargs = (['pdftotext', '-nopgbrk', '/home/zeyufu/Desktop/ortho-diabetic-wound-insilico/output/scientific-reports-readiness-20261011-r2/tessera/analysis-release/package/output/pdf/tessera-revised-manuscript.pdf', '-'],)
+kwargs = {'stderr': -1, 'stdout': -1, 'text': True}
+process = <Popen: returncode: 1 args: ['pdftotext', '-nopgbrk', '/home/zeyufu/Desktop/...>
+stdout = ''
+stderr = "I/O Error: Couldn't open file '/home/zeyufu/Desktop/ortho-diabetic-wound-insilico/output/scientific-reports-readiness-20261011-r2/tessera/analysis-release/package/output/pdf/tessera-revised-manuscript.pdf': No such file or directory.\n"
+retcode = 1
+
+    def run(*popenargs,
+            input=None, capture_output=False, timeout=None, check=False, **kwargs):
+        """Run command with arguments and return a CompletedProcess instance.
+    
+        The returned instance will have attributes args, returncode, stdout and
+        stderr. By default, stdout and stderr are not captured, and those attributes
+        will be None. Pass stdout=PIPE and/or stderr=PIPE in order to capture them,
+        or pass capture_output=True to capture both.
+    
+        If check is True and the exit code was non-zero, it raises a
+        CalledProcessError. The CalledProcessError object will have the return code
+        in the returncode attribute, and output & stderr attributes if those streams
+        were captured.
+    
+        If timeout (seconds) is given and the process takes too long,
+         a TimeoutExpired exception will be raised.
+    
+        There is an optional argument "input", allowing you to
+        pass bytes or a string to the subprocess's stdin.  If you use this argument
+        you may not also use the Popen constructor's "stdin" argument, as
+        it will be used internally.
+    
+        By default, all communication is in bytes, and therefore any "input" should
+        be bytes, and the stdout and stderr will be bytes. If in text mode, any
+        "input" should be a string, and stdout and stderr will be strings decoded
+        according to locale encoding, or by "encoding" if set. Text mode is
+        triggered by setting any of text, encoding, errors or universal_newlines.
+    
+        The other arguments are the same as for the Popen constructor.
+        """
+        if input is not None:
+            if kwargs.get('stdin') is not None:
+                raise ValueError('stdin and input arguments may not both be used.')
+            kwargs['stdin'] = PIPE
+    
+        if capture_output:
+            if kwargs.get('stdout') is not None or kwargs.get('stderr') is not None:
+                raise ValueError('stdout and stderr arguments may not be used '
+                                 'with capture_output.')
+            kwargs['stdout'] = PIPE
+            kwargs['stderr'] = PIPE
+    
+        with Popen(*popenargs, **kwargs) as process:
+            try:
+                stdout, stderr = process.communicate(input, timeout=timeout)
+            except TimeoutExpired as exc:
+                process.kill()
+                if _mswindows:
+                    # Windows accumulates the output in a single blocking
+                    # read() call run on child threads, with the timeout
+                    # being done in a join() on those threads.  communicate()
+                    # _after_ kill() is required to collect that and add it
+                    # to the exception.
+                    exc.stdout, exc.stderr = process.communicate()
+                else:
+                    # POSIX _communicate already populated the output so
+                    # far into the TimeoutExpired exception.
+                    process.wait()
+                raise
+            except:  # Including KeyboardInterrupt, communicate handled that.
+                process.kill()
+                # We don't call process.wait() as .__exit__ does that for us.
+                raise
+            retcode = process.poll()
+            if check and retcode:
+>               raise CalledProcessError(retcode, process.args,
+                                         output=stdout, stderr=stderr)
+E               subprocess.CalledProcessError: Command '['pdftotext', '-nopgbrk', '/home/zeyufu/Desktop/ortho-diabetic-wound-insilico/output/scientific-reports-readiness-20261011-r2/tessera/analysis-release/package/output/pdf/tessera-revised-manuscript.pdf', '-']' returned non-zero exit status 1.
+
+/home/zeyufu/miniconda3/envs/dl/lib/python3.13/subprocess.py:577: CalledProcessError
+__________ test_every_figure_has_a_complete_caption_and_verified_pdf ___________
+
+    def test_every_figure_has_a_complete_caption_and_verified_pdf():
+        entries = figure_blocks(MAN / 'paper.tex') + figure_blocks(MAN / 'supporting.tex')
+        assert len(entries) == 21 and len({f for f, _ in entries}) == 21
+        manifest = read(MAN / 'ledgers/figure_manifest.json')['figures']
+        for filename, caption in entries:
+            assert len(caption.split()) >= 25
+>           assert sha(MAN / 'figures' / filename) == manifest[filename]
+E           AssertionError: assert '4527c45ba7fe...88912b5498465' == '7c4876f46fcc...3ab4fb449e95c'
+E             
+E             - 7c4876f46fcc19ed231007ba0cbc97817e5bb75753ac139fa653ab4fb449e95c
+E             + 4527c45ba7fe609f44db2853ed7e113289b37643af805a2019c88912b5498465
+
+source/tests/test_presentation.py:109: AssertionError
+________ test_rendered_statistical_figures_use_separate_regular_titles _________
+
+    def test_rendered_statistical_figures_use_separate_regular_titles():
+        audit=read(ROOT/'qa/statistical_figure_style_audit.json')
+        assert len(audit)==18
+        for name,record in audit.items():
+            assert record['only_panel_labels_bold'] and record['separate_text_artists']
+            assert record['labels']==[chr(97+i) for i in range(len(record['labels']))]
+            assert len(record['labels'])==len(record['titles'])
+>           assert record['pdf_sha256']==sha(MAN/'figures'/(name+'.pdf'))
+E           AssertionError: assert '7c4876f46fcc...3ab4fb449e95c' == '4527c45ba7fe...88912b5498465'
+E             
+E             - 4527c45ba7fe609f44db2853ed7e113289b37643af805a2019c88912b5498465
+E             + 7c4876f46fcc19ed231007ba0cbc97817e5bb75753ac139fa653ab4fb449e95c
+
+source/tests/test_presentation.py:166: AssertionError
+________ test_exported_figure_font_audit_is_bound_to_all_final_figures _________
+
+    def test_exported_figure_font_audit_is_bound_to_all_final_figures():
+        audit=read(ROOT/'qa/figure_contract_audit.json')
+        assert audit['figure_count']==21 and audit['panel_count']==75
+        assert audit['all_only_panel_labels_bold']
+        assert audit['all_text_black'] and audit['all_labels_larger_than_regular_text']
+        for name,record in audit['figures'].items():
+>           assert record['pdf_sha256']==sha(MAN/'figures'/(name+'.pdf'))
+E           AssertionError: assert '7c4876f46fcc...3ab4fb449e95c' == '4527c45ba7fe...88912b5498465'
+E             
+E             - 4527c45ba7fe609f44db2853ed7e113289b37643af805a2019c88912b5498465
+E             + 7c4876f46fcc19ed231007ba0cbc97817e5bb75753ac139fa653ab4fb449e95c
+
+source/tests/test_presentation.py:178: AssertionError
+___ test_figure_methods_map_covers_every_semantic_section_and_is_hash_bound ____
+
+    def test_figure_methods_map_covers_every_semantic_section_and_is_hash_bound():
+        audit=read(ROOT/'qa/figure_methods_audit.json')
+>       assert audit['manuscript_sha256']==sha(MAN/'paper.tex')
+E       AssertionError: assert '6f1d8231d308...c85f879f01630' == '010deef1aec7...ab21d8c3c22e1'
+E         
+E         - 010deef1aec723171a68e16721a4ab470914f2490a39daaa57eab21d8c3c22e1
+E         + 6f1d8231d3088b8eee629978422ef8922d3e0c62328cd8c1346c85f879f01630
+
+source/tests/test_presentation.py:290: AssertionError
+____ test_statistical_markers_remain_readable_in_final_document_placements _____
+
+    def test_statistical_markers_remain_readable_in_final_document_placements():
+        audit=read(ROOT/'qa/document_qa_manifest.json')['documents']
+        markers=[]
+        for name,document in audit.items():
+>           assert document['sha256']==sha(ROOT/'output/pdf'/name)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+source/tests/test_presentation.py:307: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+source/scripts/common.py:21: in sha
+    with Path(path).open('rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/zeyufu/Desktop/ortho-diabetic-wound-insilico/output/scientific-reports-readiness-20261011-r2/tessera/analysis-release/package/output/pdf/tessera-figure-atlas.pdf')
+mode = 'rb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/zeyufu/Desktop/ortho-diabetic-wound-insilico/output/scientific-reports-readiness-20261011-r2/tessera/analysis-release/package/output/pdf/tessera-figure-atlas.pdf'
+
+/home/zeyufu/miniconda3/envs/dl/lib/python3.13/pathlib/_local.py:537: FileNotFoundError
+- generated xml file: /home/zeyufu/Desktop/ortho-diabetic-wound-insilico/output/scientific-reports-readiness-20261011-r2/tessera/analysis-release/package/qa/release-closure/current-tests.xml -
+=========================== short test summary info ============================
+FAILED source/tests/test_closeout.py::test_rendered_abstract_fits_the_journal_200_word_limit
+FAILED source/tests/test_presentation.py::test_every_figure_has_a_complete_caption_and_verified_pdf
+FAILED source/tests/test_presentation.py::test_rendered_statistical_figures_use_separate_regular_titles
+FAILED source/tests/test_presentation.py::test_exported_figure_font_audit_is_bound_to_all_final_figures
+FAILED source/tests/test_presentation.py::test_figure_methods_map_covers_every_semantic_section_and_is_hash_bound
+FAILED source/tests/test_presentation.py::test_statistical_markers_remain_readable_in_final_document_placements
+6 failed, 76 passed in 4.25s

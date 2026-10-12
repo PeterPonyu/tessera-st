@@ -1,0 +1,113 @@
+{
+  "scope": "Frozen primary analysis sources versus the local checkout of the historical public software. Matching neural core bytes does not imply matching adapters, preprocessing, configuration or complete training pipeline.",
+  "public_checkout_commit": "d009cb24c8f13bdd9258a73f3933b4c0eb199723",
+  "comparisons": {
+    "tessera_st/__init__.py": {
+      "frozen_analysis_sha256": "9ab15619d82cb0282d3cd0568526f1fbc5dffda490d0c45b1a392f0b45e7b2f3",
+      "public_implementation_sha256": "9ab15619d82cb0282d3cd0568526f1fbc5dffda490d0c45b1a392f0b45e7b2f3",
+      "byte_identical": true
+    },
+    "tessera_st/ablation.py": {
+      "frozen_analysis_sha256": "40d3f5324a6f05b1de42317b09c27b60bcc12bbd369ac40c9661a08e177a49cb",
+      "public_implementation_sha256": "1e767a94fc86d16878ecd631dba9083feb781e5f2f4526aadf99053718770edc",
+      "byte_identical": false
+    },
+    "tessera_st/cli.py": {
+      "frozen_analysis_sha256": "bc9c7816f337e6c83a40637ba02088fcc62f6a3b2cc4899ed284bcb964fe2ed6",
+      "public_implementation_sha256": "bc9c7816f337e6c83a40637ba02088fcc62f6a3b2cc4899ed284bcb964fe2ed6",
+      "byte_identical": true
+    },
+    "tessera_st/config.py": {
+      "frozen_analysis_sha256": "0ef79d4eca86b5306b7802daa2a635099f14a774d1d5fc53898f8a871e0428ce",
+      "public_implementation_sha256": "307f639d86a42629bacd53da9f2bcf8d455962120f8469c9ecf3303e9ec75ac2",
+      "byte_identical": false
+    },
+    "tessera_st/data/__init__.py": {
+      "frozen_analysis_sha256": "89a0799ac53eae1f6df95e0272db0cf2dc3925ef370b04f2fb85c01a01d84fea",
+      "public_implementation_sha256": null,
+      "byte_identical": false
+    },
+    "tessera_st/data/dlpfc.py": {
+      "frozen_analysis_sha256": "4a787de388a222b422da6f653f8108c914c17f0df8ba79f3b0fb6195d0d2e19e",
+      "public_implementation_sha256": null,
+      "byte_identical": false
+    },
+    "tessera_st/data/synthetic.py": {
+      "frozen_analysis_sha256": "d061ee6938fea2712b6861f1854775729abf79ed5742fd94fd4e5bf3b194c7e0",
+      "public_implementation_sha256": null,
+      "byte_identical": false
+    },
+    "tessera_st/eval/__init__.py": {
+      "frozen_analysis_sha256": "5d950582652c648be799ce0b7801375ed9996b6b5728e2337b3f7efccd8ab887",
+      "public_implementation_sha256": "5d950582652c648be799ce0b7801375ed9996b6b5728e2337b3f7efccd8ab887",
+      "byte_identical": true
+    },
+    "tessera_st/eval/baselines.py": {
+      "frozen_analysis_sha256": "8fef94320fd61c8bf8d2049e8bb3d095d4c27aa2be0c283894b5c7b672ecad51",
+      "public_implementation_sha256": "8fef94320fd61c8bf8d2049e8bb3d095d4c27aa2be0c283894b5c7b672ecad51",
+      "byte_identical": true
+    },
+    "tessera_st/eval/markers.py": {
+      "frozen_analysis_sha256": "10ad51515cb325961fa937dde942e992721322fa703255f58554645afe7bf2bb",
+      "public_implementation_sha256": "10ad51515cb325961fa937dde942e992721322fa703255f58554645afe7bf2bb",
+      "byte_identical": true
+    },
+    "tessera_st/eval/metrics.py": {
+      "frozen_analysis_sha256": "22ba43d70ad7ce33a2a415e5074ad5e9f5f5e01fcc4274634e5091205f9f4e6c",
+      "public_implementation_sha256": "22ba43d70ad7ce33a2a415e5074ad5e9f5f5e01fcc4274634e5091205f9f4e6c",
+      "byte_identical": true
+    },
+    "tessera_st/eval/refine.py": {
+      "frozen_analysis_sha256": "d79c20c013b4c97d4dacfacb20de87082be3359c67c2717bc4757dbdd1380cbd",
+      "public_implementation_sha256": "605c12ca7924b1e97e867d6cd3d2be871244294240f38923fb82147a367b7d5b",
+      "byte_identical": false
+    },
+    "tessera_st/losses.py": {
+      "frozen_analysis_sha256": "f2bd9a990de26f588139d67fb6685779ea3125ecc1136390764956f79f6ccb2f",
+      "public_implementation_sha256": "f2bd9a990de26f588139d67fb6685779ea3125ecc1136390764956f79f6ccb2f",
+      "byte_identical": true
+    },
+    "tessera_st/model/__init__.py": {
+      "frozen_analysis_sha256": "1c49146ee48e0ccbecdf01ca321239c934dfd94652749dbda9e4b729f139a8ef",
+      "public_implementation_sha256": "1c49146ee48e0ccbecdf01ca321239c934dfd94652749dbda9e4b729f139a8ef",
+      "byte_identical": true
+    },
+    "tessera_st/model/encoder.py": {
+      "frozen_analysis_sha256": "f537e4b7d153271a3440c04f7719c740766e3f0b2cbe6038c298cc12e3774f5c",
+      "public_implementation_sha256": "f537e4b7d153271a3440c04f7719c740766e3f0b2cbe6038c298cc12e3774f5c",
+      "byte_identical": true
+    },
+    "tessera_st/model/gating.py": {
+      "frozen_analysis_sha256": "8f628b9884086783fd74c10d1f77c2a84435f1ccc2d9c26a565ae8a910314ef3",
+      "public_implementation_sha256": "8f628b9884086783fd74c10d1f77c2a84435f1ccc2d9c26a565ae8a910314ef3",
+      "byte_identical": true
+    },
+    "tessera_st/model/graph.py": {
+      "frozen_analysis_sha256": "4a9e3e175603aa7b24242d485df90f48fbc9222cb47db8c83662357f3e48ba08",
+      "public_implementation_sha256": "b227229e9549b3723b7aea7eff65bc812274db5844d3daa8c93a4995ba571e0b",
+      "byte_identical": false
+    },
+    "tessera_st/model/heads.py": {
+      "frozen_analysis_sha256": "9d5e6104b68e13cc3ee5297a3c65af1d41f7a41c41eb3a8b8cfcd7c40739bbba",
+      "public_implementation_sha256": "3246b3d22188263d63e1726e4841b3d8f58f4b218145ca66dceeef5dd97625d5",
+      "byte_identical": false
+    },
+    "tessera_st/model/tessera.py": {
+      "frozen_analysis_sha256": "28a6673ba632228a88adeda63335ca922c9a64f30f540c0024aa1920c2166ba2",
+      "public_implementation_sha256": "28a6673ba632228a88adeda63335ca922c9a64f30f540c0024aa1920c2166ba2",
+      "byte_identical": true
+    },
+    "tessera_st/spatial.py": {
+      "frozen_analysis_sha256": "434a289946b23869b3a0cbee99f8cf4c8295c14fbda99fa149c4916444836ee6",
+      "public_implementation_sha256": null,
+      "byte_identical": false
+    },
+    "tessera_st/train.py": {
+      "frozen_analysis_sha256": "21ac9c746a3776e6cf6413526b5fa8673903f032f1f56dbcce9bcfc41d499a01",
+      "public_implementation_sha256": "3199c5488152d10433281ba13f345fff5b88ef90ccee1ff0e0e4e864732af1cd",
+      "byte_identical": false
+    }
+  },
+  "source_identity_claim": "Primary and transfer scientific receipts bind the included expanded-analysis implementation, not every byte of the historical public archive.",
+  "developer_provenance": "Author/developer analysis; same-graph HER2ST comparisons are exploratory. This source packaging and replay audit are not independent biological validation."
+}

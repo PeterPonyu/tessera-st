@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "Cite this software/source release when using its author-owned analysis code or retained controls audit. The software DOI is reserved until publication by the record owner; it is distinct from a manuscript DOI and the evaluated original software DOI."
+type: software
+title: "Tessera controls audit: analysis and editable sources"
+authors:
+  - family-names: Fu
+    given-names: Zeyu
+    orcid: "https://orcid.org/0009-0001-8329-0108"
+version: "2026.10.11-controls-audit"
+doi: "10.5281/zenodo.23308077"
+license: MIT
+abstract: "Standalone source and saved-evidence archive for matched neighborhood controls, component ablations, patient-held-out transfer, exploratory HER2ST comparator extensions and a separate colorectal pilot. Includes corrected manuscript sources and author-generated breast coordinate maps. Software licensing applies to author-owned code; third-party measurements, annotations and CRC images retain their source-specific rights."
+references:
+  - type: software
+    title: "Tessera-ST evaluated original implementation"
+    doi: "10.5281/zenodo.23101191"

@@ -1,0 +1,20 @@
+{
+  "documents": {
+    "tessera-figure-atlas.pdf": "85732d38e4f4381ebaf228c8a0d30eab2a2b7f8d20180b9d3fbb56feb839d4f2",
+    "tessera-revised-manuscript.pdf": "719b41ede7f1cf1b5f0a6190fcec3901e2397d37e920f300ef7615c467eca18d",
+    "tessera-supporting-information.pdf": "96c8cacb73e4d6459995a777c2e5c9658a671ad7c21f1e427af001e402204cdc"
+  },
+  "compiler": "installed TeX Live via LaTeX skill compiler",
+  "rendered_figures": false,
+  "tests_executed": true,
+  "regression_xml_sha256": "f79d07499f9340f639508d3ba24ea929f0d4a93a3112628ad4db7e3347b52946",
+  "test_source_sha256": {
+    "source/tests/test_closeout.py": "c3a28d6437a0c63820f813258c877eebb08e09f836ac282f99d41570276b8f11",
+    "source/tests/test_crc_pilot.py": "ad60028602955b9534118c6a57fe55773766716248877701d83841ab9499c599",
+    "source/tests/test_expansion.py": "e4b8ef84791ff28fbe6b4c048ef2fe357f1e7f81aacf3f369440637fef567e0a",
+    "source/tests/test_external.py": "27735d87be8ce7de08addae364af97fece34718aede0656282255f281dcb915b",
+    "source/tests/test_followup.py": "c5d7a71a71da45d8c64d93c796b3a70e9fad6c61927a592e8a111e586b676fc4",
+    "source/tests/test_presentation.py": "3b43fd3e4e90e9cfd52b7005588e35ce5cfbd5ab3c0403910c0b6d45e8fb973a"
+  },
+  "visual_review": "required separately; compilation does not certify visual quality"
+}

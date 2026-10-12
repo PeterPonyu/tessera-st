@@ -1,0 +1,104 @@
+{
+  "status": "passed",
+  "scope": "saved-result verification",
+  "checks": {
+    "frozen_source_hash_bindings": 49,
+    "primary": {
+      "saved_score_rows_recomputed": 351,
+      "saved_prediction_and_embedding_files": 351,
+      "derived_inputs_bound": 13,
+      "scope": "ARI/NMI/secondary labels/edge and gate metrics from saved labels and gates; no clustering or training"
+    },
+    "transfer": {
+      "saved_target_score_rows_recomputed": 90,
+      "saved_embedding_files": 45,
+      "source_only_transform_files": 5,
+      "saved_weight_files_bound": 30,
+      "scope": "Metrics and source-label centroid predictions from retained source/target embeddings; no encoder fitting or PCA fitting"
+    },
+    "followup": {
+      "counts": {
+        "scale_records": 1170,
+        "spatial_configurations_per_object": 29,
+        "rescore_records": 234,
+        "null_records": 39,
+        "whole_records": 108,
+        "transfer_records": 20
+      },
+      "saved_gate_profiles_recomputed": 39,
+      "historical_sources_available": true,
+      "scope": "Score/summary arithmetic, nested selection and saved gate weights; whole/null prediction files were not retained by producers"
+    },
+    "external": {
+      "her2st_patients": 8,
+      "her2st_grid_rows": 720,
+      "her2st_fit_score_rows": 24,
+      "extension_arm_score_rows": 801,
+      "patient_or_object_excluded_selections_recomputed": 43,
+      "hardening_seed1_partition_ari_rows_recomputed": 120,
+      "scope": "Receipts, patient-excluded controls, table means/contrasts and retained seed-1 partitions; remaining learned embeddings were not retained"
+    },
+    "crc": {
+      "independent_patients": 3,
+      "saved_embedding_files_bound": 36,
+      "saved_ari_rows_recomputed": 72,
+      "unique_edge_auroc_rows_recomputed": 18,
+      "saved_shuffle_table_rows": 18000,
+      "shuffle_rows_independently_recomputed": 180,
+      "new_model_or_clustering_fits": 0,
+      "scope": "Immutable protocols/amendment, saved PCA inputs/predictions/gates, independent edge scoring and patient bootstrap; raw acquisition and historical backup integration are outside this command"
+    }
+  },
+  "model_or_clustering_fits": 0,
+  "network_requests": 0,
+  "runtime": {
+    "python": "3.13.7 | packaged by Anaconda, Inc. | (main, Sep  9 2025, 19:59:03) [GCC 11.2.0]",
+    "packages": {
+      "numpy": "2.2.6",
+      "pandas": "2.3.3",
+      "scipy": "1.16.2",
+      "scikit-learn": "1.6.1",
+      "torch": "2.12.1+cu130"
+    }
+  },
+  "limitations": {
+    "primary": {
+      "status": "saved_predictions_available",
+      "evidence": "13 checksum-bound derived inputs, 351 saved prediction/embedding NPZs and score receipts, primary numerical ledger",
+      "verified_scope": "Direct ARI, NMI, secondary-label and gate/edge metrics; no retraining or reclustering"
+    },
+    "transfer": {
+      "status": "saved_predictions_available",
+      "evidence": "45 retained source/target embedding files, 5 source-only transforms, 30 weight files, 90 target score rows",
+      "verified_scope": "Source/target disjointness, frozen transforms and weights, nearest-source-centroid predictions and metrics; no encoder or PCA fitting"
+    },
+    "scale_controls": {
+      "status": "partially_addressed",
+      "evidence": "1170 original score rows, receipts, recovered exact producer, checksum-bound primary PCA inputs",
+      "verified_scope": "All score and summary arithmetic and patient-excluded nested configuration selection",
+      "unverified_scope": "Historical control partitions were not saved; direct per-configuration ARI replay would require new clustering fits"
+    },
+    "her2st_and_extension": {
+      "status": "partially_addressed",
+      "evidence": "Original protocols, producers, receipts, 720 HER2 primary grid scores, external and extension result tables, retained hardening seed-1 partitions for 3 target definitions",
+      "verified_scope": "Hash/source/receipt bindings, patient-excluded selections, means and contrasts; 120 seed-1 partition ARIs reconstructed directly",
+      "missing_central_inputs": "Learned embeddings/gates and remaining seed partitions were not retained by historical HER2ST/extension producers. Direct ARI/AUROC reconstruction for those blocks is unavailable without a new fit; raw sources are checksum-bound and excluded from the archive"
+    },
+    "whole_section_and_geometry_null": {
+      "status": "partially_addressed",
+      "evidence": "Original 108 whole-section and 39 geometry-null score rows, summaries, receipts, recovered exact producers and whole-input metadata/selection records",
+      "verified_scope": "Saved table/summary arithmetic and exact producer availability",
+      "missing_central_inputs": "Historical fitted embeddings/predictions were not retained. The large whole-section expression-derived input NPZs are intentionally excluded; their exact hashes and source records remain available"
+    },
+    "crc_pilot": {
+      "status": "saved_predictions_available",
+      "evidence": "Immutable protocol and pre-data lock, QC annotation amendment and lock, 3 compact PCA inputs and images, 36 saved fitted embeddings/gates and receipts, primary and sensitivity partitions, unique-edge scores and shuffle tables",
+      "verified_scope": "72 ARIs, 18 unique-edge AUROCs, patient bootstrap, and 180 independently recomputed shuffled-label AUROCs from saved evidence; no new model or clustering fit",
+      "unverified_scope": "The package verification does not claim to check excluded raw archive contents or author-specific historical backup/integration directories"
+    },
+    "full_refit": {
+      "status": "not_executed",
+      "scope": "Distinct from saved-result verification; fresh outputs and exact source manifests required. Current and historical runtime versions differ. CUDA fitting was not bitwise deterministic. No download, fit, new experiment, or manuscript number was generated during closure"
+    }
+  }
+}

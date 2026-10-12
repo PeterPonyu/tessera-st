@@ -1,0 +1,87 @@
+{
+  "object": "OpenST_HNSCC26",
+  "cohort": "Open-ST HNSCC",
+  "seed": 1,
+  "arm": "SelfOnly",
+  "n_cells": 6000,
+  "K": 14,
+  "input_sha256": "c42116ee6b492d60a521f721248a10aee34157d37bf895afad148fec415dbc4f",
+  "prediction_sha256": "4397d61064a705517c76796ea7bf0c466c22874992c3ef50391a25d86814f1fe",
+  "fit_seconds": 0.22699282599205617,
+  "total_seconds": 0.35456052800873294,
+  "gpu_peak_allocated_bytes": 59371520,
+  "trainable_parameters": 27303,
+  "history": [
+    {
+      "epoch": 0,
+      "loss": 4.507815837860107,
+      "recon": 4.507815837860107
+    },
+    {
+      "epoch": 12,
+      "loss": 4.210402488708496,
+      "recon": 4.210402488708496
+    },
+    {
+      "epoch": 24,
+      "loss": 3.722651720046997,
+      "recon": 3.722651720046997
+    },
+    {
+      "epoch": 36,
+      "loss": 3.1240744590759277,
+      "recon": 3.1240744590759277
+    },
+    {
+      "epoch": 48,
+      "loss": 2.771926164627075,
+      "recon": 2.771926164627075
+    },
+    {
+      "epoch": 60,
+      "loss": 2.577989339828491,
+      "recon": 2.577989339828491
+    },
+    {
+      "epoch": 72,
+      "loss": 2.4274239540100098,
+      "recon": 2.4274239540100098
+    },
+    {
+      "epoch": 84,
+      "loss": 2.293187379837036,
+      "recon": 2.293187379837036
+    },
+    {
+      "epoch": 96,
+      "loss": 2.175999879837036,
+      "recon": 2.175999879837036
+    },
+    {
+      "epoch": 108,
+      "loss": 2.0685033798217773,
+      "recon": 2.0685033798217773
+    },
+    {
+      "epoch": 119,
+      "loss": 1.9771554470062256,
+      "recon": 1.9771554470062256
+    }
+  ],
+  "ablation": {
+    "edge_gating": false,
+    "multi_scale": true,
+    "boundary_contrastive": false,
+    "calibrated_uncertainty": false
+  },
+  "n_edges": 6000,
+  "cross_field_edges": 0,
+  "self_edges": 6000,
+  "scores": {
+    "ari": 0.22910478990596328,
+    "nmi": 0.40138762362641345,
+    "reference_edge_homogeneity": 1.0,
+    "predicted_edge_homogeneity": 1.0,
+    "gate_seam_auroc": null
+  }
+}

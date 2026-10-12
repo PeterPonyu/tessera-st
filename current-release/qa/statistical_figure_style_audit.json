@@ -1,0 +1,985 @@
+{
+  "figure02-cohort": {
+    "labels": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "titles": [
+      "Analysis scope",
+      "Frame IDs",
+      "Classes",
+      "Shared input"
+    ],
+    "separate_text_artists": true,
+    "only_panel_labels_bold": true,
+    "font_family": "serif / newtxtext (Times-compatible)",
+    "all_text_black": true,
+    "panel_label_size_points": 13.5,
+    "maximum_regular_text_size_points": 9.0,
+    "minimum_regular_text_size_points": 7.5,
+    "title_alignment": "marker at the block edge, regular title 16 pt to its right on a shared baseline",
+    "outer_padding_inches": 0,
+    "canvas_width_points": 496.8,
+    "placement": "100% of manuscript text width",
+    "method_color_contract": {
+      "PCA50": "#176b93",
+      "Tessera": "#bd5b30",
+      "SelfOnly": "#527762",
+      "NeighborMean": "#657780",
+      "Tuned": "#5d3f8f",
+      "NoContrast": "#82618e",
+      "NoGate": "#4f8fae",
+      "NoScale": "#a37b3c",
+      "PermutedXY": "#8a8f93"
+    },
+    "layout": {
+      "canvas_points": [
+        496.8,
+        300.0
+      ],
+      "placement": "explicit points from the upper-left corner",
+      "tight_bbox_cropping": false,
+      "text_layout_check": {
+        "text_runs_checked": 38,
+        "overlapping_text_runs": 0,
+        "text_outside_canvas": 0,
+        "canvas_points": [
+          496.8,
+          300.0
+        ]
+      }
+    },
+    "pdf_sha256": "175b545c36d2b9c1a03b03449af9383103c3e94d3eff9d99a000b460ed830595"
+  },
+  "figure03-comparison": {
+    "labels": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "titles": [
+      "Tuned control leads",
+      "Tessera trails the tuned control",
+      "Whole sections keep the order",
+      "Cell types reverse the gain"
+    ],
+    "separate_text_artists": true,
+    "only_panel_labels_bold": true,
+    "font_family": "serif / newtxtext (Times-compatible)",
+    "all_text_black": true,
+    "panel_label_size_points": 13.5,
+    "maximum_regular_text_size_points": 9.0,
+    "minimum_regular_text_size_points": 7.5,
+    "title_alignment": "marker at the block edge, regular title 16 pt to its right on a shared baseline",
+    "outer_padding_inches": 0,
+    "canvas_width_points": 496.8,
+    "placement": "100% of manuscript text width",
+    "method_color_contract": {
+      "PCA50": "#176b93",
+      "Tessera": "#bd5b30",
+      "SelfOnly": "#527762",
+      "NeighborMean": "#657780",
+      "Tuned": "#5d3f8f",
+      "NoContrast": "#82618e",
+      "NoGate": "#4f8fae",
+      "NoScale": "#a37b3c",
+      "PermutedXY": "#8a8f93"
+    },
+    "layout": {
+      "canvas_points": [
+        496.8,
+        470.0
+      ],
+      "placement": "explicit points from the upper-left corner",
+      "tight_bbox_cropping": false,
+      "text_layout_check": {
+        "text_runs_checked": 75,
+        "overlapping_text_runs": 0,
+        "text_outside_canvas": 0,
+        "canvas_points": [
+          496.8,
+          470.0
+        ]
+      }
+    },
+    "pdf_sha256": "77094edef7b8ec46a0865af785528ba3b23b58d5e73709a0d432a02a2cb1c9c4"
+  },
+  "figure04-ablations": {
+    "labels": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "titles": [
+      "Removing the gate does not hurt",
+      "Difference beats the gate",
+      "Gate weights by seam",
+      "Contrast carries the gain"
+    ],
+    "separate_text_artists": true,
+    "only_panel_labels_bold": true,
+    "font_family": "serif / newtxtext (Times-compatible)",
+    "all_text_black": true,
+    "panel_label_size_points": 13.5,
+    "maximum_regular_text_size_points": 9.0,
+    "minimum_regular_text_size_points": 7.0,
+    "title_alignment": "marker at the block edge, regular title 16 pt to its right on a shared baseline",
+    "outer_padding_inches": 0,
+    "canvas_width_points": 496.8,
+    "placement": "100% of manuscript text width",
+    "method_color_contract": {
+      "PCA50": "#176b93",
+      "Tessera": "#bd5b30",
+      "SelfOnly": "#527762",
+      "NeighborMean": "#657780",
+      "Tuned": "#5d3f8f",
+      "NoContrast": "#82618e",
+      "NoGate": "#4f8fae",
+      "NoScale": "#a37b3c",
+      "PermutedXY": "#8a8f93"
+    },
+    "layout": {
+      "canvas_points": [
+        496.8,
+        452.0
+      ],
+      "placement": "explicit points from the upper-left corner",
+      "tight_bbox_cropping": false,
+      "text_layout_check": {
+        "text_runs_checked": 162,
+        "overlapping_text_runs": 0,
+        "text_outside_canvas": 0,
+        "canvas_points": [
+          496.8,
+          452.0
+        ]
+      }
+    },
+    "pdf_sha256": "1a0aa8a102147b01b00eba8654ebbd4e49442660f6d65eebfdd62ca840183583"
+  },
+  "figure05-nsclc-maps": {
+    "labels": [
+      "a",
+      "b",
+      "c",
+      "d",
+      "e"
+    ],
+    "titles": [
+      "Lung5_Rep2",
+      "Lung6",
+      "Lung9_Rep1",
+      "Lung12",
+      "Lung13"
+    ],
+    "separate_text_artists": true,
+    "only_panel_labels_bold": true,
+    "font_family": "serif / newtxtext (Times-compatible)",
+    "all_text_black": true,
+    "panel_label_size_points": 13.5,
+    "maximum_regular_text_size_points": 8.5,
+    "minimum_regular_text_size_points": 7.0,
+    "title_alignment": "marker at the block edge, regular title 16 pt to its right on a shared baseline",
+    "outer_padding_inches": 0,
+    "canvas_width_points": 496.8,
+    "placement": "100% of manuscript text width",
+    "method_color_contract": {
+      "PCA50": "#176b93",
+      "Tessera": "#bd5b30",
+      "SelfOnly": "#527762",
+      "NeighborMean": "#657780",
+      "Tuned": "#5d3f8f",
+      "NoContrast": "#82618e",
+      "NoGate": "#4f8fae",
+      "NoScale": "#a37b3c",
+      "PermutedXY": "#8a8f93"
+    },
+    "layout": {
+      "canvas_points": [
+        496.8,
+        512.4974999999987
+      ],
+      "placement": "explicit points from the upper-left corner",
+      "tight_bbox_cropping": false,
+      "category_legend": {
+        "columns": 5,
+        "rows": 2,
+        "top_points": 491.99999999999875
+      },
+      "text_layout_check": {
+        "text_runs_checked": 60,
+        "overlapping_text_runs": 0,
+        "text_outside_canvas": 0,
+        "canvas_points": [
+          496.8,
+          512.5
+        ]
+      }
+    },
+    "pdf_sha256": "290c947c4029160a3c8d491c9554ea0137872e5644cd07c0293c4644c4be7d57"
+  },
+  "figure06-bcc-maps": {
+    "labels": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "titles": [
+      "BCC A",
+      "BCC B",
+      "BCC C",
+      "BCC D"
+    ],
+    "separate_text_artists": true,
+    "only_panel_labels_bold": true,
+    "font_family": "serif / newtxtext (Times-compatible)",
+    "all_text_black": true,
+    "panel_label_size_points": 13.5,
+    "maximum_regular_text_size_points": 8.5,
+    "minimum_regular_text_size_points": 7.0,
+    "title_alignment": "marker at the block edge, regular title 16 pt to its right on a shared baseline",
+    "outer_padding_inches": 0,
+    "canvas_width_points": 496.8,
+    "placement": "100% of manuscript text width",
+    "method_color_contract": {
+      "PCA50": "#176b93",
+      "Tessera": "#bd5b30",
+      "SelfOnly": "#527762",
+      "NeighborMean": "#657780",
+      "Tuned": "#5d3f8f",
+      "NoContrast": "#82618e",
+      "NoGate": "#4f8fae",
+      "NoScale": "#a37b3c",
+      "PermutedXY": "#8a8f93"
+    },
+    "layout": {
+      "canvas_points": [
+        496.8,
+        514.4974999999993
+      ],
+      "placement": "explicit points from the upper-left corner",
+      "tight_bbox_cropping": false,
+      "category_legend": {
+        "columns": 6,
+        "rows": 2,
+        "top_points": 493.99999999999926
+      },
+      "text_layout_check": {
+        "text_runs_checked": 51,
+        "overlapping_text_runs": 0,
+        "text_outside_canvas": 0,
+        "canvas_points": [
+          496.8,
+          514.5
+        ]
+      }
+    },
+    "pdf_sha256": "31bfe89221d02a4ad5e5f844673ee808de439a8902118c0ce0aeefa39400f61d"
+  },
+  "figure07-breast-histology": {
+    "labels": [
+      "a",
+      "b"
+    ],
+    "titles": [
+      "Full tissue",
+      "Fixed ROI"
+    ],
+    "separate_text_artists": true,
+    "only_panel_labels_bold": true,
+    "font_family": "serif / newtxtext (Times-compatible)",
+    "all_text_black": true,
+    "panel_label_size_points": 13.5,
+    "maximum_regular_text_size_points": 8.5,
+    "minimum_regular_text_size_points": 7.0,
+    "title_alignment": "marker at the block edge, regular title 16 pt to its right on a shared baseline",
+    "outer_padding_inches": 0,
+    "canvas_width_points": 496.8,
+    "placement": "100% of manuscript text width",
+    "method_color_contract": {
+      "PCA50": "#176b93",
+      "Tessera": "#bd5b30",
+      "SelfOnly": "#527762",
+      "NeighborMean": "#657780",
+      "Tuned": "#5d3f8f",
+      "NoContrast": "#82618e",
+      "NoGate": "#4f8fae",
+      "NoScale": "#a37b3c",
+      "PermutedXY": "#8a8f93"
+    },
+    "layout": {
+      "canvas_points": [
+        496.8,
+        354.1323955579603
+      ],
+      "placement": "explicit points from the upper-left corner",
+      "tight_bbox_cropping": false,
+      "category_legend": {
+        "columns": 5,
+        "rows": 2,
+        "top_points": 333.63489555796036
+      },
+      "text_layout_check": {
+        "text_runs_checked": 28,
+        "overlapping_text_runs": 0,
+        "text_outside_canvas": 0,
+        "canvas_points": [
+          496.8,
+          354.13
+        ]
+      }
+    },
+    "pdf_sha256": "4527c45ba7fe609f44db2853ed7e113289b37643af805a2019c88912b5498465"
+  },
+  "figure08-breast-mixtures": {
+    "labels": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "titles": [
+      "Agreement by spot purity",
+      "Mixed-spot composition",
+      "Seam score and spot mixing",
+      "Tumor and DCIS fraction"
+    ],
+    "separate_text_artists": true,
+    "only_panel_labels_bold": true,
+    "font_family": "serif / newtxtext (Times-compatible)",
+    "all_text_black": true,
+    "panel_label_size_points": 13.5,
+    "maximum_regular_text_size_points": 9.0,
+    "minimum_regular_text_size_points": 7.0,
+    "title_alignment": "marker at the block edge, regular title 16 pt to its right on a shared baseline",
+    "outer_padding_inches": 0,
+    "canvas_width_points": 496.8,
+    "placement": "100% of manuscript text width",
+    "method_color_contract": {
+      "PCA50": "#176b93",
+      "Tessera": "#bd5b30",
+      "SelfOnly": "#527762",
+      "NeighborMean": "#657780",
+      "Tuned": "#5d3f8f",
+      "NoContrast": "#82618e",
+      "NoGate": "#4f8fae",
+      "NoScale": "#a37b3c",
+      "PermutedXY": "#8a8f93"
+    },
+    "layout": {
+      "canvas_points": [
+        496.8,
+        372.0
+      ],
+      "placement": "explicit points from the upper-left corner",
+      "tight_bbox_cropping": false,
+      "seam_and_source_map": {
+        "c_d_gap_points": 16,
+        "map_colorbar_gap_points": 6,
+        "colorbar_width_points": 5,
+        "measured_coordinate_aspect_preserved": true,
+        "automatic_colorbar_shrink": false
+      },
+      "text_layout_check": {
+        "text_runs_checked": 57,
+        "overlapping_text_runs": 0,
+        "text_outside_canvas": 0,
+        "canvas_points": [
+          496.8,
+          372.0
+        ]
+      }
+    },
+    "pdf_sha256": "2c118d2305d092b8618579b06d20e194f98224c43aefd79c64a73a55b140fb95"
+  },
+  "figure09-colorectal-proteins": {
+    "labels": [
+      "a",
+      "b"
+    ],
+    "titles": [
+      "Assignments",
+      "Measured channels"
+    ],
+    "separate_text_artists": true,
+    "only_panel_labels_bold": true,
+    "font_family": "serif / newtxtext (Times-compatible)",
+    "all_text_black": true,
+    "panel_label_size_points": 13.5,
+    "maximum_regular_text_size_points": 8.5,
+    "minimum_regular_text_size_points": 7.0,
+    "title_alignment": "marker at the block edge, regular title 16 pt to its right on a shared baseline",
+    "outer_padding_inches": 0,
+    "canvas_width_points": 496.8,
+    "placement": "100% of manuscript text width",
+    "method_color_contract": {
+      "PCA50": "#176b93",
+      "Tessera": "#bd5b30",
+      "SelfOnly": "#527762",
+      "NeighborMean": "#657780",
+      "Tuned": "#5d3f8f",
+      "NoContrast": "#82618e",
+      "NoGate": "#4f8fae",
+      "NoScale": "#a37b3c",
+      "PermutedXY": "#8a8f93"
+    },
+    "layout": {
+      "canvas_points": [
+        496.8,
+        279.74041666666665
+      ],
+      "placement": "explicit points from the upper-left corner",
+      "tight_bbox_cropping": false,
+      "category_legend": {
+        "columns": 4,
+        "rows": 1,
+        "top_points": 269.8666666666667
+      },
+      "text_layout_check": {
+        "text_runs_checked": 39,
+        "overlapping_text_runs": 0,
+        "text_outside_canvas": 0,
+        "canvas_points": [
+          496.8,
+          279.74
+        ]
+      }
+    },
+    "pdf_sha256": "45917efca7710420b9eadf43469cb20c37ce472640ffc2ad00d4f71d6a392cd6"
+  },
+  "figure10-patient-transfer": {
+    "labels": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "titles": [
+      "Regions, balanced accuracy",
+      "Cell types, balanced accuracy",
+      "Regions, accuracy",
+      "Cell types, accuracy"
+    ],
+    "separate_text_artists": true,
+    "only_panel_labels_bold": true,
+    "font_family": "serif / newtxtext (Times-compatible)",
+    "all_text_black": true,
+    "panel_label_size_points": 13.5,
+    "maximum_regular_text_size_points": 9.0,
+    "minimum_regular_text_size_points": 7.5,
+    "title_alignment": "marker at the block edge, regular title 16 pt to its right on a shared baseline",
+    "outer_padding_inches": 0,
+    "canvas_width_points": 496.8,
+    "placement": "100% of manuscript text width",
+    "method_color_contract": {
+      "PCA50": "#176b93",
+      "Tessera": "#bd5b30",
+      "SelfOnly": "#527762",
+      "NeighborMean": "#657780",
+      "Tuned": "#5d3f8f",
+      "NoContrast": "#82618e",
+      "NoGate": "#4f8fae",
+      "NoScale": "#a37b3c",
+      "PermutedXY": "#8a8f93"
+    },
+    "layout": {
+      "canvas_points": [
+        496.8,
+        378.0
+      ],
+      "placement": "explicit points from the upper-left corner",
+      "tight_bbox_cropping": false,
+      "text_layout_check": {
+        "text_runs_checked": 53,
+        "overlapping_text_runs": 0,
+        "text_outside_canvas": 0,
+        "canvas_points": [
+          496.8,
+          378.0
+        ]
+      }
+    },
+    "pdf_sha256": "ec52fe8fd6f0a6928125a0a8bdb320a04be49d5d32976291f82e596380aeb6ed"
+  },
+  "figure11-stability": {
+    "labels": [
+      "a",
+      "b"
+    ],
+    "titles": [
+      "Partition stability across seeds",
+      "Target smoothness and contrast"
+    ],
+    "separate_text_artists": true,
+    "only_panel_labels_bold": true,
+    "font_family": "serif / newtxtext (Times-compatible)",
+    "all_text_black": true,
+    "panel_label_size_points": 13.5,
+    "maximum_regular_text_size_points": 9.0,
+    "minimum_regular_text_size_points": 7.0,
+    "title_alignment": "marker at the block edge, regular title 16 pt to its right on a shared baseline",
+    "outer_padding_inches": 0,
+    "canvas_width_points": 496.8,
+    "placement": "100% of manuscript text width",
+    "method_color_contract": {
+      "PCA50": "#176b93",
+      "Tessera": "#bd5b30",
+      "SelfOnly": "#527762",
+      "NeighborMean": "#657780",
+      "Tuned": "#5d3f8f",
+      "NoContrast": "#82618e",
+      "NoGate": "#4f8fae",
+      "NoScale": "#a37b3c",
+      "PermutedXY": "#8a8f93"
+    },
+    "layout": {
+      "canvas_points": [
+        496.8,
+        276.0
+      ],
+      "placement": "explicit points from the upper-left corner",
+      "tight_bbox_cropping": false,
+      "text_layout_check": {
+        "text_runs_checked": 42,
+        "overlapping_text_runs": 0,
+        "text_outside_canvas": 0,
+        "canvas_points": [
+          496.8,
+          276.0
+        ]
+      }
+    },
+    "pdf_sha256": "3a17d897b57395bd4a8dc6b2e49b5ec1f6bc8166cb4a93e789ec439201d62af5"
+  },
+  "figure12-efficiency-mechanism": {
+    "labels": [
+      "a",
+      "b"
+    ],
+    "titles": [
+      "Cost + memory",
+      "Training"
+    ],
+    "separate_text_artists": true,
+    "only_panel_labels_bold": true,
+    "font_family": "serif / newtxtext (Times-compatible)",
+    "all_text_black": true,
+    "panel_label_size_points": 13.5,
+    "maximum_regular_text_size_points": 9.0,
+    "minimum_regular_text_size_points": 7.0,
+    "title_alignment": "marker at the block edge, regular title 16 pt to its right on a shared baseline",
+    "outer_padding_inches": 0,
+    "canvas_width_points": 496.8,
+    "placement": "100% of manuscript text width",
+    "method_color_contract": {
+      "PCA50": "#176b93",
+      "Tessera": "#bd5b30",
+      "SelfOnly": "#527762",
+      "NeighborMean": "#657780",
+      "Tuned": "#5d3f8f",
+      "NoContrast": "#82618e",
+      "NoGate": "#4f8fae",
+      "NoScale": "#a37b3c",
+      "PermutedXY": "#8a8f93"
+    },
+    "layout": {
+      "canvas_points": [
+        496.8,
+        300.0
+      ],
+      "placement": "explicit points from the upper-left corner",
+      "tight_bbox_cropping": false,
+      "text_layout_check": {
+        "text_runs_checked": 71,
+        "overlapping_text_runs": 0,
+        "text_outside_canvas": 0,
+        "canvas_points": [
+          496.8,
+          300.0
+        ]
+      }
+    },
+    "pdf_sha256": "2ec52b5404c51e624b635443bc08eb1669195632ea3f0c6791cb90f60f6d4d67"
+  },
+  "supplement01-hnscc": {
+    "labels": [
+      "a"
+    ],
+    "titles": [
+      "Open-ST HNSCC"
+    ],
+    "separate_text_artists": true,
+    "only_panel_labels_bold": true,
+    "font_family": "serif / newtxtext (Times-compatible)",
+    "all_text_black": true,
+    "panel_label_size_points": 13.5,
+    "maximum_regular_text_size_points": 8.5,
+    "minimum_regular_text_size_points": 7.0,
+    "title_alignment": "marker at the block edge, regular title 16 pt to its right on a shared baseline",
+    "outer_padding_inches": 0,
+    "canvas_width_points": 496.8,
+    "placement": "100% of manuscript text width",
+    "method_color_contract": {
+      "PCA50": "#176b93",
+      "Tessera": "#bd5b30",
+      "SelfOnly": "#527762",
+      "NeighborMean": "#657780",
+      "Tuned": "#5d3f8f",
+      "NoContrast": "#82618e",
+      "NoGate": "#4f8fae",
+      "NoScale": "#a37b3c",
+      "PermutedXY": "#8a8f93"
+    },
+    "layout": {
+      "canvas_points": [
+        496.8,
+        135.78930449754014
+      ],
+      "placement": "explicit points from the upper-left corner",
+      "tight_bbox_cropping": false,
+      "category_legend": {
+        "columns": 6,
+        "rows": 2,
+        "top_points": 115.29180449754004
+      },
+      "text_layout_check": {
+        "text_runs_checked": 22,
+        "overlapping_text_runs": 0,
+        "text_outside_canvas": 0,
+        "canvas_points": [
+          496.8,
+          135.79
+        ]
+      }
+    },
+    "pdf_sha256": "d63fd8a5fe94cd178dad41b2b44767776aee5eceaf7294c2228111529fd412aa"
+  },
+  "supplement02-mibi": {
+    "labels": [
+      "a",
+      "b",
+      "c"
+    ],
+    "titles": [
+      "P16",
+      "P23",
+      "P8"
+    ],
+    "separate_text_artists": true,
+    "only_panel_labels_bold": true,
+    "font_family": "serif / newtxtext (Times-compatible)",
+    "all_text_black": true,
+    "panel_label_size_points": 13.5,
+    "maximum_regular_text_size_points": 8.5,
+    "minimum_regular_text_size_points": 7.5,
+    "title_alignment": "marker at the block edge, regular title 16 pt to its right on a shared baseline",
+    "outer_padding_inches": 0,
+    "canvas_width_points": 496.8,
+    "placement": "100% of manuscript text width",
+    "method_color_contract": {
+      "PCA50": "#176b93",
+      "Tessera": "#bd5b30",
+      "SelfOnly": "#527762",
+      "NeighborMean": "#657780",
+      "Tuned": "#5d3f8f",
+      "NoContrast": "#82618e",
+      "NoGate": "#4f8fae",
+      "NoScale": "#a37b3c",
+      "PermutedXY": "#8a8f93"
+    },
+    "layout": {
+      "canvas_points": [
+        496.8,
+        413.6372049192958
+      ],
+      "placement": "explicit points from the upper-left corner",
+      "tight_bbox_cropping": false,
+      "category_legend": {
+        "columns": 5,
+        "rows": 2,
+        "top_points": 393.13970491929587
+      },
+      "text_layout_check": {
+        "text_runs_checked": 27,
+        "overlapping_text_runs": 0,
+        "text_outside_canvas": 0,
+        "canvas_points": [
+          496.8,
+          413.64
+        ]
+      }
+    },
+    "pdf_sha256": "74661bf57be6de0fb6b4e3b69d98e8bc3c19faaec6f569b5ad746f4ae665293d"
+  },
+  "supplement03-rna-markers": {
+    "labels": [
+      "a",
+      "b"
+    ],
+    "titles": [
+      "Lung",
+      "BCC"
+    ],
+    "separate_text_artists": true,
+    "only_panel_labels_bold": true,
+    "font_family": "serif / newtxtext (Times-compatible)",
+    "all_text_black": true,
+    "panel_label_size_points": 13.5,
+    "maximum_regular_text_size_points": 8.5,
+    "minimum_regular_text_size_points": 7.0,
+    "title_alignment": "marker at the block edge, regular title 16 pt to its right on a shared baseline",
+    "outer_padding_inches": 0,
+    "canvas_width_points": 496.8,
+    "placement": "100% of manuscript text width",
+    "method_color_contract": {
+      "PCA50": "#176b93",
+      "Tessera": "#bd5b30",
+      "SelfOnly": "#527762",
+      "NeighborMean": "#657780",
+      "Tuned": "#5d3f8f",
+      "NoContrast": "#82618e",
+      "NoGate": "#4f8fae",
+      "NoScale": "#a37b3c",
+      "PermutedXY": "#8a8f93"
+    },
+    "layout": {
+      "canvas_points": [
+        496.8,
+        236.85170176569414
+      ],
+      "placement": "explicit points from the upper-left corner",
+      "tight_bbox_cropping": false,
+      "text_layout_check": {
+        "text_runs_checked": 49,
+        "overlapping_text_runs": 0,
+        "text_outside_canvas": 0,
+        "canvas_points": [
+          496.8,
+          236.85
+        ]
+      }
+    },
+    "pdf_sha256": "d47bcefe268bb930ce99a19cdde6724803f55f19ee47d4293c39674093e25748"
+  },
+  "supplement05-scale-controls": {
+    "labels": [
+      "a",
+      "b"
+    ],
+    "titles": [
+      "Lung regions: neighbour mean",
+      "BCC cell types: BANKSY-style, $\\lambda=0.2$"
+    ],
+    "separate_text_artists": true,
+    "only_panel_labels_bold": true,
+    "font_family": "serif / newtxtext (Times-compatible)",
+    "all_text_black": true,
+    "panel_label_size_points": 13.5,
+    "maximum_regular_text_size_points": 9.0,
+    "minimum_regular_text_size_points": 7.0,
+    "title_alignment": "marker at the block edge, regular title 16 pt to its right on a shared baseline",
+    "outer_padding_inches": 0,
+    "canvas_width_points": 496.8,
+    "placement": "100% of manuscript text width",
+    "method_color_contract": {
+      "PCA50": "#176b93",
+      "Tessera": "#bd5b30",
+      "SelfOnly": "#527762",
+      "NeighborMean": "#657780",
+      "Tuned": "#5d3f8f",
+      "NoContrast": "#82618e",
+      "NoGate": "#4f8fae",
+      "NoScale": "#a37b3c",
+      "PermutedXY": "#8a8f93"
+    },
+    "layout": {
+      "canvas_points": [
+        496.8,
+        214.0
+      ],
+      "placement": "explicit points from the upper-left corner",
+      "tight_bbox_cropping": false,
+      "text_layout_check": {
+        "text_runs_checked": 48,
+        "overlapping_text_runs": 0,
+        "text_outside_canvas": 0,
+        "canvas_points": [
+          496.8,
+          214.0
+        ]
+      }
+    },
+    "pdf_sha256": "e90e9d11d4d0c5c1d24ac8665aa3d4ac188f1866ea8a954419de9d39a12e44e4"
+  },
+  "figure15-external-cohort": {
+    "labels": [
+      "a",
+      "b",
+      "c",
+      "d",
+      "e",
+      "f"
+    ],
+    "titles": [
+      "All labels: mean leads",
+      "Boundary: mean beats tuned control",
+      "Paired contrasts",
+      "Gate at chance on seams",
+      "Refits move Tessera only",
+      "Geometry and weighting"
+    ],
+    "separate_text_artists": true,
+    "only_panel_labels_bold": true,
+    "font_family": "serif / newtxtext (Times-compatible)",
+    "all_text_black": true,
+    "panel_label_size_points": 13.5,
+    "maximum_regular_text_size_points": 9.0,
+    "minimum_regular_text_size_points": 7.0,
+    "title_alignment": "marker at the block edge, regular title 16 pt to its right on a shared baseline",
+    "outer_padding_inches": 0,
+    "canvas_width_points": 496.8,
+    "placement": "100% of manuscript text width",
+    "method_color_contract": {
+      "PCA50": "#176b93",
+      "Tessera": "#bd5b30",
+      "SelfOnly": "#527762",
+      "NeighborMean": "#657780",
+      "Tuned": "#5d3f8f",
+      "NoContrast": "#82618e",
+      "NoGate": "#4f8fae",
+      "NoScale": "#a37b3c",
+      "PermutedXY": "#8a8f93"
+    },
+    "layout": {
+      "canvas_points": [
+        496.8,
+        552.0
+      ],
+      "placement": "explicit points from the upper-left corner",
+      "tight_bbox_cropping": false,
+      "text_layout_check": {
+        "text_runs_checked": 117,
+        "overlapping_text_runs": 0,
+        "text_outside_canvas": 0,
+        "canvas_points": [
+          496.8,
+          552.0
+        ]
+      }
+    },
+    "pdf_sha256": "861df967c7d0f6a317979de87d923f6d0603a379c8860660fe20f26f389482d6"
+  },
+  "figure16-external-maps": {
+    "labels": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "titles": [
+      "Patient B",
+      "Patient H",
+      "Patient C",
+      "Patient E"
+    ],
+    "separate_text_artists": true,
+    "only_panel_labels_bold": true,
+    "font_family": "serif / newtxtext (Times-compatible)",
+    "all_text_black": true,
+    "panel_label_size_points": 13.5,
+    "maximum_regular_text_size_points": 8.5,
+    "minimum_regular_text_size_points": 7.0,
+    "title_alignment": "marker at the block edge, regular title 16 pt to its right on a shared baseline",
+    "outer_padding_inches": 0,
+    "canvas_width_points": 496.8,
+    "placement": "100% of manuscript text width",
+    "method_color_contract": {
+      "PCA50": "#176b93",
+      "Tessera": "#bd5b30",
+      "SelfOnly": "#527762",
+      "NeighborMean": "#657780",
+      "Tuned": "#5d3f8f",
+      "NoContrast": "#82618e",
+      "NoGate": "#4f8fae",
+      "NoScale": "#a37b3c",
+      "PermutedXY": "#8a8f93"
+    },
+    "layout": {
+      "canvas_points": [
+        496.8,
+        418.32656040750294
+      ],
+      "placement": "explicit points from the upper-left corner",
+      "tight_bbox_cropping": false,
+      "text_layout_check": {
+        "text_runs_checked": 47,
+        "overlapping_text_runs": 0,
+        "text_outside_canvas": 0,
+        "canvas_points": [
+          496.8,
+          418.33
+        ]
+      }
+    },
+    "pdf_sha256": "0eeba3b610d07f9a7926ec60fd01cb98c2ca420c222fab94bf678d5974c8239e"
+  },
+  "figure17-tissue-landscape": {
+    "labels": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "titles": [
+      "Advantage depends on the label",
+      "Best control beats Tessera",
+      "Best scale differs by label type",
+      "Gate AUROC centers on chance"
+    ],
+    "separate_text_artists": true,
+    "only_panel_labels_bold": true,
+    "font_family": "serif / newtxtext (Times-compatible)",
+    "all_text_black": true,
+    "panel_label_size_points": 13.5,
+    "maximum_regular_text_size_points": 9.0,
+    "minimum_regular_text_size_points": 7.0,
+    "title_alignment": "marker at the block edge, regular title 16 pt to its right on a shared baseline",
+    "outer_padding_inches": 0,
+    "canvas_width_points": 496.8,
+    "placement": "100% of manuscript text width",
+    "method_color_contract": {
+      "PCA50": "#176b93",
+      "Tessera": "#bd5b30",
+      "SelfOnly": "#527762",
+      "NeighborMean": "#657780",
+      "Tuned": "#5d3f8f",
+      "NoContrast": "#82618e",
+      "NoGate": "#4f8fae",
+      "NoScale": "#a37b3c",
+      "PermutedXY": "#8a8f93"
+    },
+    "layout": {
+      "canvas_points": [
+        496.8,
+        496
+      ],
+      "placement": "explicit points from the upper-left corner",
+      "tight_bbox_cropping": false,
+      "text_layout_check": {
+        "text_runs_checked": 66,
+        "overlapping_text_runs": 0,
+        "text_outside_canvas": 0,
+        "canvas_points": [
+          496.8,
+          496.0
+        ]
+      }
+    },
+    "pdf_sha256": "8626d7e69dd1f9d141797f6e39ddf64e43836ffd04e52b614b3d29c7bec31a0f"
+  }
+}

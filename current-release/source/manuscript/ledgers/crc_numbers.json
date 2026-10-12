@@ -1,0 +1,29 @@
+{
+  "numbers": {
+    "CrcPatients": "3",
+    "CrcTissueSpots": "1934",
+    "CrcLabeledSpots": "1931",
+    "CrcQcExcluded": "173",
+    "CrcQcSpots": "1758",
+    "CrcTessMeanNeg": "3",
+    "CrcRawTessMeanNeg": "3",
+    "CrcTessMeanDelta": "-0.026",
+    "CrcTessMeanLow": "-0.037",
+    "CrcTessMeanHigh": "-0.017",
+    "CrcGate": "0.567",
+    "CrcGateLow": "0.507",
+    "CrcGateHigh": "0.648",
+    "CrcRaw": "0.573",
+    "CrcGateRawDelta": "-0.006",
+    "CrcGateRawLow": "-0.029",
+    "CrcGateRawHigh": "+0.008",
+    "CrcNoGateDelta": "+0.002",
+    "CrcNoGateLow": "-0.001",
+    "CrcNoGateHigh": "+0.005",
+    "CrcFitSeconds": "220"
+  },
+  "source_receipt_sha256": "168dc0db7c1a610578963a8894097dad3a744a797b4cde307a33da77845e1b9d",
+  "primary_receipt_sha256": "88e1411f662e17854ed9285a4731db34b3d64203b67f7b4dead7f70ad6cfe499",
+  "script_sha256": "3c2858d7409ea8c500c420a9e626740ab6010c18bd7d73f0fe9b4c8fc2a01683",
+  "n_independent_patients": 3
+}

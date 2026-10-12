@@ -1,0 +1,13 @@
+# Supported audit/import runtime snapshot: CPython 3.13.7.
+# These are the versions observed during relocation checks, not a claim that
+# a new installation or GPU refit was tested. PyTorch's local CUDA build is
+# recorded exactly in provenance/environment-observed.json.
+numpy==2.2.6
+pandas==2.3.3
+scipy==1.16.2
+scikit-learn==1.6.1
+torch==2.12.1
+anndata==0.12.3
+h5py==3.15.1
+matplotlib==3.10.7
+Pillow==11.3.0

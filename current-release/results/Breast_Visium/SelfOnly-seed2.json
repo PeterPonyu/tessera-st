@@ -1,0 +1,101 @@
+{
+  "object": "Breast_Visium",
+  "cohort": "Breast",
+  "seed": 2,
+  "arm": "SelfOnly",
+  "n_cells": 2863,
+  "K": 14,
+  "input_sha256": "838f90d40bc60e7bd75b34234a8285357ce3d92c7b7f9673b6ce211e5d7e29ae",
+  "prediction_sha256": "89a0157d57d4677f76eb212de85f40e7277b6708a1626f5852a779850e470f80",
+  "fit_seconds": 0.23212512300233357,
+  "total_seconds": 0.3014987229980761,
+  "gpu_peak_allocated_bytes": 36182016,
+  "trainable_parameters": 27303,
+  "history": [
+    {
+      "epoch": 0,
+      "loss": 3.064366102218628,
+      "recon": 3.064366102218628
+    },
+    {
+      "epoch": 12,
+      "loss": 2.829364776611328,
+      "recon": 2.829364776611328
+    },
+    {
+      "epoch": 24,
+      "loss": 2.455587148666382,
+      "recon": 2.455587148666382
+    },
+    {
+      "epoch": 36,
+      "loss": 1.9374958276748657,
+      "recon": 1.9374958276748657
+    },
+    {
+      "epoch": 48,
+      "loss": 1.5834840536117554,
+      "recon": 1.5834840536117554
+    },
+    {
+      "epoch": 60,
+      "loss": 1.3817353248596191,
+      "recon": 1.3817353248596191
+    },
+    {
+      "epoch": 72,
+      "loss": 1.2644214630126953,
+      "recon": 1.2644214630126953
+    },
+    {
+      "epoch": 84,
+      "loss": 1.1762433052062988,
+      "recon": 1.1762433052062988
+    },
+    {
+      "epoch": 96,
+      "loss": 1.1018348932266235,
+      "recon": 1.1018348932266235
+    },
+    {
+      "epoch": 108,
+      "loss": 1.036916971206665,
+      "recon": 1.036916971206665
+    },
+    {
+      "epoch": 119,
+      "loss": 0.9857383966445923,
+      "recon": 0.9857383966445923
+    }
+  ],
+  "ablation": {
+    "edge_gating": false,
+    "multi_scale": true,
+    "boundary_contrastive": false,
+    "calibrated_uncertainty": false
+  },
+  "n_edges": 2863,
+  "cross_field_edges": 0,
+  "self_edges": 2863,
+  "scores": {
+    "ari": 0.2035087880936125,
+    "nmi": 0.41369324271193436,
+    "reference_edge_homogeneity": 1.0,
+    "predicted_edge_homogeneity": 1.0,
+    "gate_seam_auroc": null,
+    "purity_strata": {
+      "0": {
+        "n": 2863,
+        "ari": 0.2035087880936125
+      },
+      "0.5": {
+        "n": 2009,
+        "ari": 0.25385905518945057
+      },
+      "0.75": {
+        "n": 1006,
+        "ari": 0.30249023831683486
+      }
+    }
+  }
+}

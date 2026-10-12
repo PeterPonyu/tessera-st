@@ -1,0 +1,87 @@
+{
+  "object": "BCC_PatientD",
+  "cohort": "BCC",
+  "seed": 2,
+  "arm": "NoContrast",
+  "n_cells": 5656,
+  "K": 11,
+  "input_sha256": "c08f6b11cb008eee8f8fefc761192885d8e49873096c6a7e7857bc99e0daaf32",
+  "prediction_sha256": "2b8111f0c9d03dd855d9ec15e6ff2b6edbb982d40ff937d5c979e8fc529cdcfa",
+  "fit_seconds": 0.571047526987968,
+  "total_seconds": 0.7154000890004681,
+  "gpu_peak_allocated_bytes": 302487040,
+  "trainable_parameters": 27207,
+  "history": [
+    {
+      "epoch": 0,
+      "loss": 5.557994842529297,
+      "recon": 5.557994842529297
+    },
+    {
+      "epoch": 12,
+      "loss": 5.29510498046875,
+      "recon": 5.29510498046875
+    },
+    {
+      "epoch": 24,
+      "loss": 4.886898994445801,
+      "recon": 4.886898994445801
+    },
+    {
+      "epoch": 36,
+      "loss": 4.243280410766602,
+      "recon": 4.243280410766602
+    },
+    {
+      "epoch": 48,
+      "loss": 3.529362678527832,
+      "recon": 3.529362678527832
+    },
+    {
+      "epoch": 60,
+      "loss": 3.101971387863159,
+      "recon": 3.101971387863159
+    },
+    {
+      "epoch": 72,
+      "loss": 2.8311665058135986,
+      "recon": 2.8311665058135986
+    },
+    {
+      "epoch": 84,
+      "loss": 2.623366355895996,
+      "recon": 2.623366355895996
+    },
+    {
+      "epoch": 96,
+      "loss": 2.451207160949707,
+      "recon": 2.451207160949707
+    },
+    {
+      "epoch": 108,
+      "loss": 2.297341823577881,
+      "recon": 2.297341823577881
+    },
+    {
+      "epoch": 119,
+      "loss": 2.162855625152588,
+      "recon": 2.162855625152588
+    }
+  ],
+  "ablation": {
+    "edge_gating": true,
+    "multi_scale": true,
+    "boundary_contrastive": false,
+    "calibrated_uncertainty": false
+  },
+  "n_edges": 67872,
+  "cross_field_edges": 0,
+  "self_edges": 0,
+  "scores": {
+    "ari": 0.1500669724700532,
+    "nmi": 0.3534444040764192,
+    "reference_edge_homogeneity": 0.745049504950495,
+    "predicted_edge_homogeneity": 0.4682932578972183,
+    "gate_seam_auroc": 0.5044343392669994
+  }
+}

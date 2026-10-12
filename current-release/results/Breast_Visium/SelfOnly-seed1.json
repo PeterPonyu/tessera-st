@@ -1,0 +1,101 @@
+{
+  "object": "Breast_Visium",
+  "cohort": "Breast",
+  "seed": 1,
+  "arm": "SelfOnly",
+  "n_cells": 2863,
+  "K": 14,
+  "input_sha256": "838f90d40bc60e7bd75b34234a8285357ce3d92c7b7f9673b6ce211e5d7e29ae",
+  "prediction_sha256": "52fded3fff5a3d53487ee17c8bd8b37da4cd571a0c66b50d3115e848758c50cc",
+  "fit_seconds": 0.22532470599981025,
+  "total_seconds": 0.2960778359993128,
+  "gpu_peak_allocated_bytes": 36182016,
+  "trainable_parameters": 27303,
+  "history": [
+    {
+      "epoch": 0,
+      "loss": 3.0472865104675293,
+      "recon": 3.0472865104675293
+    },
+    {
+      "epoch": 12,
+      "loss": 2.7743797302246094,
+      "recon": 2.7743797302246094
+    },
+    {
+      "epoch": 24,
+      "loss": 2.356041669845581,
+      "recon": 2.356041669845581
+    },
+    {
+      "epoch": 36,
+      "loss": 1.8887706995010376,
+      "recon": 1.8887706995010376
+    },
+    {
+      "epoch": 48,
+      "loss": 1.546880841255188,
+      "recon": 1.546880841255188
+    },
+    {
+      "epoch": 60,
+      "loss": 1.3696022033691406,
+      "recon": 1.3696022033691406
+    },
+    {
+      "epoch": 72,
+      "loss": 1.260538101196289,
+      "recon": 1.260538101196289
+    },
+    {
+      "epoch": 84,
+      "loss": 1.1784733533859253,
+      "recon": 1.1784733533859253
+    },
+    {
+      "epoch": 96,
+      "loss": 1.1099486351013184,
+      "recon": 1.1099486351013184
+    },
+    {
+      "epoch": 108,
+      "loss": 1.0478479862213135,
+      "recon": 1.0478479862213135
+    },
+    {
+      "epoch": 119,
+      "loss": 0.9970517754554749,
+      "recon": 0.9970517754554749
+    }
+  ],
+  "ablation": {
+    "edge_gating": false,
+    "multi_scale": true,
+    "boundary_contrastive": false,
+    "calibrated_uncertainty": false
+  },
+  "n_edges": 2863,
+  "cross_field_edges": 0,
+  "self_edges": 2863,
+  "scores": {
+    "ari": 0.1878325582841637,
+    "nmi": 0.3955634459184717,
+    "reference_edge_homogeneity": 1.0,
+    "predicted_edge_homogeneity": 1.0,
+    "gate_seam_auroc": null,
+    "purity_strata": {
+      "0": {
+        "n": 2863,
+        "ari": 0.1878325582841637
+      },
+      "0.5": {
+        "n": 2009,
+        "ari": 0.23376088371030956
+      },
+      "0.75": {
+        "n": 1006,
+        "ari": 0.2915043311344681
+      }
+    }
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "object": "NSCLC_Lung9_Rep1",
+  "cohort": "NSCLC",
+  "seed": 2,
+  "arm": "NoScale",
+  "n_cells": 4313,
+  "K": 5,
+  "input_sha256": "7b89ab0e1fbf21986f01aa95a80967ad1e26135dae12956e4cacf78df2bfce74",
+  "prediction_sha256": "32354b33fdec74458138d16beb0873cc4e7f9a37bfd3844f247059a8c3fc7a48",
+  "fit_seconds": 1.133610172997578,
+  "total_seconds": 1.2228982449887553,
+  "gpu_peak_allocated_bytes": 657883136,
+  "trainable_parameters": 27015,
+  "history": [
+    {
+      "epoch": 0,
+      "loss": 4.6467790603637695,
+      "recon": 3.6362552642822266,
+      "contrastive": 2.021047353744507
+    },
+    {
+      "epoch": 12,
+      "loss": 4.13363790512085,
+      "recon": 3.454983711242676,
+      "contrastive": 1.3573086261749268
+    },
+    {
+      "epoch": 24,
+      "loss": 3.7758448123931885,
+      "recon": 3.2347755432128906,
+      "contrastive": 1.0821386575698853
+    },
+    {
+      "epoch": 36,
+      "loss": 3.3193674087524414,
+      "recon": 2.7992873191833496,
+      "contrastive": 1.0401604175567627
+    },
+    {
+      "epoch": 48,
+      "loss": 2.846353054046631,
+      "recon": 2.3249711990356445,
+      "contrastive": 1.042763590812683
+    },
+    {
+      "epoch": 60,
+      "loss": 2.557931900024414,
+      "recon": 2.0962870121002197,
+      "contrastive": 0.923289954662323
+    },
+    {
+      "epoch": 72,
+      "loss": 2.409693717956543,
+      "recon": 1.9730509519577026,
+      "contrastive": 0.8732853531837463
+    },
+    {
+      "epoch": 84,
+      "loss": 2.3065807819366455,
+      "recon": 1.8888713121414185,
+      "contrastive": 0.8354191184043884
+    },
+    {
+      "epoch": 96,
+      "loss": 2.214569568634033,
+      "recon": 1.8113539218902588,
+      "contrastive": 0.806431233882904
+    },
+    {
+      "epoch": 108,
+      "loss": 2.137143850326538,
+      "recon": 1.743914008140564,
+      "contrastive": 0.7864596247673035
+    },
+    {
+      "epoch": 119,
+      "loss": 2.068319797515869,
+      "recon": 1.6837116479873657,
+      "contrastive": 0.7692161202430725
+    }
+  ],
+  "ablation": {
+    "edge_gating": true,
+    "multi_scale": false,
+    "boundary_contrastive": true,
+    "calibrated_uncertainty": false
+  },
+  "n_edges": 51756,
+  "cross_field_edges": 0,
+  "self_edges": 0,
+  "scores": {
+    "ari": 0.20369606610233632,
+    "nmi": 0.28441483127512857,
+    "reference_edge_homogeneity": 0.9118169874024268,
+    "predicted_edge_homogeneity": 0.8118865445552207,
+    "gate_seam_auroc": 0.4702295740346668,
+    "secondary_ari": 0.20811182268122863,
+    "secondary_nmi": 0.33309632546926565,
+    "secondary_n_classes": 22
+  }
+}

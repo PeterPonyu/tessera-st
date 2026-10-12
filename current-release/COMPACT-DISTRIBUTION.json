@@ -1,0 +1,2703 @@
+{
+  "version": "2026.10.11-controls-audit",
+  "software_doi": "10.5281/zenodo.23308077",
+  "doi_state": "Reserved until record owner publishes; consult public record",
+  "full_archive_sha256": "09c75b7a7927755e60d4097fbb85b3120ee792bc2f1372b0f2d1a14a5cdde680",
+  "full_manifest_sha256": "80a9a93572717e036ff669ecbe32cd07aba820cb3041689412d4d6049dbfef1c",
+  "selection_rule": "Finalized full-package files except retained array/model-state/assay extensions and original full MANIFEST; no historical repository-tree enumeration",
+  "omitted_files": {
+    "validation-independent-crc/results/SN124_A551763_Rep2/PCA50-seed3.npz": {
+      "sha256": "e5750d6d541d514bf3f87f9e1f598df15aeeb6101fe341f8a77e4eaf09852542",
+      "bytes": 263264,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/results/SN124_A551763_Rep2/NoGate-seed1.npz": {
+      "sha256": "6c75d37cd16019ba54e868cd3bc6679c35e11437e80ba3486b822c16ef6097d3",
+      "bytes": 181730,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/results/SN124_A551763_Rep2/Tessera-seed1.npz": {
+      "sha256": "47bb6411ed036ecd2217bf24a1cfe31b0e07eae717af6f3f7c26298048d4c5b2",
+      "bytes": 203499,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/results/SN124_A551763_Rep2/UniformSameGraph-seed3.npz": {
+      "sha256": "ad65dcc8e98a9d7177cca7509dc1ec7b17914b7371e337050350a6bf24450930",
+      "bytes": 262891,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/results/SN124_A551763_Rep2/Tessera-seed2.npz": {
+      "sha256": "14aee5adf91b795463a6a6c3519fa80d694df0ad7822f30263e9e8c4f4bbf63c",
+      "bytes": 203454,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/results/SN124_A551763_Rep2/NoGate-seed3.npz": {
+      "sha256": "7ae30568a3efbf157516b184f956c1106f6144dc1ae4c0600203f040892e62d8",
+      "bytes": 181672,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/results/SN124_A551763_Rep2/NoGate-seed2.npz": {
+      "sha256": "1d04eb9897ab322d0ce380b5337481497df1d9ebec3472d1076d4a9390721b4c",
+      "bytes": 181748,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/results/SN124_A551763_Rep2/UniformSameGraph-seed2.npz": {
+      "sha256": "12ba2299de2fe72cda9d540b560e064b6c9cbff4394d69f5ffc494c939c11b69",
+      "bytes": 262893,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/results/SN124_A551763_Rep2/boundary_scores.npz": {
+      "sha256": "151037e687ba7e09ea0bc955b4cb7b8a0788550076c493a01a498e5b646df20f",
+      "bytes": 71762,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/results/SN124_A551763_Rep2/UniformSameGraph-seed1.npz": {
+      "sha256": "09659ac50c80224f0855eb152dad778a144d812097f5969dbc337d5837f23dbc",
+      "bytes": 262892,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/results/SN124_A551763_Rep2/PCA50-seed1.npz": {
+      "sha256": "9f058f2765eb403e99ecaaf0ca25a8459898dc18d688448c5b46d33059b980c5",
+      "bytes": 263255,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/results/SN124_A551763_Rep2/Tessera-seed3.npz": {
+      "sha256": "06097e9e5fa0b3fdff83a705e00fa343f4e2814cc59dbedb818a6b36c9feb33f",
+      "bytes": 203794,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/results/SN124_A551763_Rep2/PCA50-seed2.npz": {
+      "sha256": "0f065ad590203a0ab8ddba5c0384d897e0d0c63f2263236e615a394857015564",
+      "bytes": 263259,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/results/SN124_A595688_Rep2/PCA50-seed3.npz": {
+      "sha256": "1cba2c76ea5e9d38ca9ca64b7674aee28ed0249ff30a5cdc088fdc1ece7d7269",
+      "bytes": 83155,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/results/SN124_A595688_Rep2/NoGate-seed1.npz": {
+      "sha256": "6f92eb3f9ea3b38f5c6ce344dfb5d68ad1d759fc8a8bb70ad2afc8f2f4e7436f",
+      "bytes": 56512,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/results/SN124_A595688_Rep2/Tessera-seed1.npz": {
+      "sha256": "2003d0d35595e9c6effcf65b8cb57ba292da457435ca2c0e6de8a51fefb36c09",
+      "bytes": 63396,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/results/SN124_A595688_Rep2/UniformSameGraph-seed3.npz": {
+      "sha256": "08ed284e0dbff33da65df743ca8d9a63978d8be9b06e7a07c9101161f60f11a8",
+      "bytes": 83053,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/results/SN124_A595688_Rep2/Tessera-seed2.npz": {
+      "sha256": "f13b01479c7b819a4eb59aa4844966f2ca8c70b74ee1ff8ebcedd45525e81712",
+      "bytes": 63310,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/results/SN124_A595688_Rep2/NoGate-seed3.npz": {
+      "sha256": "162e45594492c38c8399983d1d7336ee2d2e4d4c0231b13787a32c4ad68a4d19",
+      "bytes": 56554,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/results/SN124_A595688_Rep2/NoGate-seed2.npz": {
+      "sha256": "395da7f05df8579a0e903f0fc4fae68d79fa71b1606a3feeb909c86636e2894c",
+      "bytes": 56494,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/results/SN124_A595688_Rep2/UniformSameGraph-seed2.npz": {
+      "sha256": "59cfa734c6eefa3949936deb37b07e8193ad07dd5bd23c04bcce70df97315d2b",
+      "bytes": 83055,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/results/SN124_A595688_Rep2/boundary_scores.npz": {
+      "sha256": "7da547bd3e3a491856c23c1ebcb33415172e6fbe70c6db433c86db1c6e83fd5d",
+      "bytes": 24190,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/results/SN124_A595688_Rep2/UniformSameGraph-seed1.npz": {
+      "sha256": "6eb846694733fea4b71196378aec6569c2d8c03257d0fe45303c4eeafe8868c4",
+      "bytes": 83050,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/results/SN124_A595688_Rep2/PCA50-seed1.npz": {
+      "sha256": "bdf0594dec2a636f1e815e7878321595ae3282b28387a00ea3b9479d538ced22",
+      "bytes": 83171,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/results/SN124_A595688_Rep2/Tessera-seed3.npz": {
+      "sha256": "e39ded941a7eed70e4cb5029ea5c3a137964cdd401c6f8162f8add6d3ba90dd9",
+      "bytes": 63566,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/results/SN124_A595688_Rep2/PCA50-seed2.npz": {
+      "sha256": "382ea73fa5c3d64394336bfc1c10cdcccfdec633bed8e822787651be00da4700",
+      "bytes": 83182,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/results/SN84_A120838_Rep1/PCA50-seed3.npz": {
+      "sha256": "a031feb17a78a5680eea14536ae29234da6fbd97ec0b7410b86e81175bbfd16f",
+      "bytes": 70601,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/results/SN84_A120838_Rep1/NoGate-seed1.npz": {
+      "sha256": "baf1e7cbd238d9d6b49239e845219ad947636ed5172af15f71a7d8ebf9a7f086",
+      "bytes": 48103,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/results/SN84_A120838_Rep1/Tessera-seed1.npz": {
+      "sha256": "5e871bc05de8f3bd6a880a395b4e2b4f25ee7e0e072126adad99340677805d85",
+      "bytes": 53926,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/results/SN84_A120838_Rep1/UniformSameGraph-seed3.npz": {
+      "sha256": "da21790de7bf091e2bfc1cbff79265dafe91c948082cafd269c0141f9e61388b",
+      "bytes": 70403,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/results/SN84_A120838_Rep1/Tessera-seed2.npz": {
+      "sha256": "677e95c7d558fa93ec25263d06710703b419739f8410eea29b69e65b61a56386",
+      "bytes": 53929,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/results/SN84_A120838_Rep1/NoGate-seed3.npz": {
+      "sha256": "2a9268e2ef1784b2d3d53f8e90f8d7742567374bccc64b24b24a001c825f016c",
+      "bytes": 48163,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/results/SN84_A120838_Rep1/NoGate-seed2.npz": {
+      "sha256": "e1da1c193ce61c9b059a1746fa5ef3de39931da264cfdb8473c26bdcb15468ba",
+      "bytes": 48090,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/results/SN84_A120838_Rep1/UniformSameGraph-seed2.npz": {
+      "sha256": "d8c4a2a41dbc9c55a9e8549873fffcb9574e6fb6438c1755fbc7953ef60e24a4",
+      "bytes": 70403,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/results/SN84_A120838_Rep1/boundary_scores.npz": {
+      "sha256": "9f877d5ad32f0eb8f00b5d5a7a84769e5fb3e118ba73bf51f236d9d982dc796f",
+      "bytes": 20609,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/results/SN84_A120838_Rep1/UniformSameGraph-seed1.npz": {
+      "sha256": "4b60e2a40cbbcf2666574d791b2007b19f2f885264db0cde4cf92b4bd519f06b",
+      "bytes": 70401,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/results/SN84_A120838_Rep1/PCA50-seed1.npz": {
+      "sha256": "2901cc652adc66ef13ea9b9be897afa3330f70ca6f7c2d6642dcd14dfac9d19f",
+      "bytes": 70593,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/results/SN84_A120838_Rep1/Tessera-seed3.npz": {
+      "sha256": "9cf8ba7c77a40bb29832b4b8f5c504e1e7001af2f6a104ced3aca186a06acf96",
+      "bytes": 53872,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/results/SN84_A120838_Rep1/PCA50-seed2.npz": {
+      "sha256": "15c788691cbbf7b62ccb6fcf553bd48ba9f70a6c161f3daaf34ec5b3951f11ad",
+      "bytes": 70581,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/annotation-qc/SN124_A551763_Rep2/PCA50-seed3.npz": {
+      "sha256": "43835e6fff1a58a4ee70791f1eba3d0bee0d49dd77eca2ba10206c6301e44399",
+      "bytes": 806,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/annotation-qc/SN124_A551763_Rep2/NoGate-seed1.npz": {
+      "sha256": "aa58c7060f05c47fcc454bd8be867134c0768ccc442967fdfbe63515390140f4",
+      "bytes": 823,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/annotation-qc/SN124_A551763_Rep2/Tessera-seed1.npz": {
+      "sha256": "17ac882c9bf5977da5619f8683925ea42876c07125f2c6824229dbcd60cbb96e",
+      "bytes": 824,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/annotation-qc/SN124_A551763_Rep2/UniformSameGraph-seed3.npz": {
+      "sha256": "b397055bfbad73ce6d78bbaae3fa1eb95198bf205ef218e5d4ddb55feaa72962",
+      "bytes": 813,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/annotation-qc/SN124_A551763_Rep2/Tessera-seed2.npz": {
+      "sha256": "ae4283bcac8e6186711a27db0bb7dc1064d4a45f5b155acf9259cc4546def862",
+      "bytes": 821,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/annotation-qc/SN124_A551763_Rep2/NoGate-seed3.npz": {
+      "sha256": "8770c6c35f93e020f10e1d1352a917e8412649747284fa00ce7284008f1788bf",
+      "bytes": 815,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/annotation-qc/SN124_A551763_Rep2/NoGate-seed2.npz": {
+      "sha256": "b73ce63e8a54315b6a8791dc0bb885766af26e430446c70c297eec70175ba738",
+      "bytes": 816,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/annotation-qc/SN124_A551763_Rep2/UniformSameGraph-seed2.npz": {
+      "sha256": "afa5281ac69fc95d04659ddc2f5d25fda8c795b79131b68b4d3a2aa329e3c33d",
+      "bytes": 821,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/annotation-qc/SN124_A551763_Rep2/UniformSameGraph-seed1.npz": {
+      "sha256": "afa5281ac69fc95d04659ddc2f5d25fda8c795b79131b68b4d3a2aa329e3c33d",
+      "bytes": 821,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/annotation-qc/SN124_A551763_Rep2/PCA50-seed1.npz": {
+      "sha256": "49fa1cdfc6c1c59b3a278b60f1b10e0b1f92ca2cb77b2fd2e50439403e26dc8c",
+      "bytes": 825,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/annotation-qc/SN124_A551763_Rep2/Tessera-seed3.npz": {
+      "sha256": "da2baab537c81c9286366b936497a372846fef3b5a41a0dff394c12a68b75a78",
+      "bytes": 814,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/annotation-qc/SN124_A551763_Rep2/PCA50-seed2.npz": {
+      "sha256": "a39265cd83ce06eab0147c147a73f56b8a43b6049c9be536a6c2c3f6ea4c24f3",
+      "bytes": 804,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/annotation-qc/SN124_A551763_Rep2/target.npz": {
+      "sha256": "29d085a8cf13bb4cf184bb25989b9be74960df8523a4f3c56929f633fa7dfb12",
+      "bytes": 2084,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/annotation-qc/SN124_A595688_Rep2/PCA50-seed3.npz": {
+      "sha256": "189edcda4c16072091440993dcca2162be5c4fca5f6a400f49daf4069a2ecd44",
+      "bytes": 495,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/annotation-qc/SN124_A595688_Rep2/NoGate-seed1.npz": {
+      "sha256": "345d328edb2c29bd0ae4d9b97c566a08b6759aa8eac738b9dd41e489a5eef64f",
+      "bytes": 523,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/annotation-qc/SN124_A595688_Rep2/Tessera-seed1.npz": {
+      "sha256": "540ce7b6df93ae412ada5e5f5281d487a279070b8fa8f2a402d29b2e70631c30",
+      "bytes": 519,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/annotation-qc/SN124_A595688_Rep2/UniformSameGraph-seed3.npz": {
+      "sha256": "f146e8fb5c1e8fe5932a2f6a7deb50342a1e162762776aa09f83fef109000b4c",
+      "bytes": 523,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/annotation-qc/SN124_A595688_Rep2/Tessera-seed2.npz": {
+      "sha256": "27f09ed6332a380bbf4bc52beee476661fe1172b659fbb1f733cb5d3bcef9b19",
+      "bytes": 526,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/annotation-qc/SN124_A595688_Rep2/NoGate-seed3.npz": {
+      "sha256": "75e0855c38444bfcbc4b7875ebf7d1e13f040246917f65285ef5c3d35641ed87",
+      "bytes": 526,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/annotation-qc/SN124_A595688_Rep2/NoGate-seed2.npz": {
+      "sha256": "3b36c757f4d11de199cadcaf66581ccd743461133f0f479cdb729bb1ec143860",
+      "bytes": 520,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/annotation-qc/SN124_A595688_Rep2/UniformSameGraph-seed2.npz": {
+      "sha256": "afabe3b8b9cc700bdcc20bb5eaeaf1ca60f5842415d1e68df4e5d946b4040afb",
+      "bytes": 511,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/annotation-qc/SN124_A595688_Rep2/UniformSameGraph-seed1.npz": {
+      "sha256": "ade595fec29eb97b3c700f19fdb24548fd3be67d589ea31c42481cba3a1dda90",
+      "bytes": 519,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/annotation-qc/SN124_A595688_Rep2/PCA50-seed1.npz": {
+      "sha256": "f683a1a36256881e0976f3574b57128222a0cbe87cdf087ec418c9f84d2715b9",
+      "bytes": 503,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/annotation-qc/SN124_A595688_Rep2/Tessera-seed3.npz": {
+      "sha256": "eec3c16bb2e59d6a92d2d6b1ae1dbf1ef77fcc0b6be53ef7972eaeb3d8dd3010",
+      "bytes": 524,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/annotation-qc/SN124_A595688_Rep2/PCA50-seed2.npz": {
+      "sha256": "8966f70a19cdf921b757581ac676ae918df6b06cf23baaed3acb444fb536dfe8",
+      "bytes": 479,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/annotation-qc/SN124_A595688_Rep2/target.npz": {
+      "sha256": "6c99eb7046af4251fb3d78278cebff8e6c1e90d4a6e5639bd233a5fbd8bcd5a8",
+      "bytes": 1282,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/annotation-qc/SN84_A120838_Rep1/PCA50-seed3.npz": {
+      "sha256": "27e0e8eb6e0162452d36c9a1d7187f06dbd7cc5759ab2fe2271c02854772d1c8",
+      "bytes": 443,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/annotation-qc/SN84_A120838_Rep1/NoGate-seed1.npz": {
+      "sha256": "c01784ffcdb69fed1cf5be28806fb53ab5ef0e9366a89980169e79776d65a990",
+      "bytes": 457,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/annotation-qc/SN84_A120838_Rep1/Tessera-seed1.npz": {
+      "sha256": "05c9cfd9ce915d415f09a83422e9bf749017138126e5c20db926bf450b8b30a4",
+      "bytes": 454,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/annotation-qc/SN84_A120838_Rep1/UniformSameGraph-seed3.npz": {
+      "sha256": "d6f4b2b9fa13902d453ffd88f35be0a22a841d0e2c3093950c1037ffa13fc9ff",
+      "bytes": 446,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/annotation-qc/SN84_A120838_Rep1/Tessera-seed2.npz": {
+      "sha256": "b8659392b58fac4d666a26faa7d8e196ba3547c98dcf8e6bb7132fba4b428c60",
+      "bytes": 455,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/annotation-qc/SN84_A120838_Rep1/NoGate-seed3.npz": {
+      "sha256": "e4d09d723962052bef5c3f67be36186858bee236110fa754d728bae86f556a1e",
+      "bytes": 458,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/annotation-qc/SN84_A120838_Rep1/NoGate-seed2.npz": {
+      "sha256": "81771c5bae182b9a319d0cd99b7b1bc47dad36918bcb5112fc4ca8facbe4d3ad",
+      "bytes": 455,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/annotation-qc/SN84_A120838_Rep1/UniformSameGraph-seed2.npz": {
+      "sha256": "2e0536ae04b4c20eff4c0b3702829ce33b2b8287ea1f0f76091fd4cc8008aa17",
+      "bytes": 448,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/annotation-qc/SN84_A120838_Rep1/UniformSameGraph-seed1.npz": {
+      "sha256": "f0469cbabb01fe77c4fa93b6a4248aef2c4831fb99997a39b9783e4b8ac287fc",
+      "bytes": 454,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/annotation-qc/SN84_A120838_Rep1/PCA50-seed1.npz": {
+      "sha256": "8d3b5c5a8c8ef19e79668ce736e5cba8132482f99d382f794c33b46efc96cd07",
+      "bytes": 444,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/annotation-qc/SN84_A120838_Rep1/Tessera-seed3.npz": {
+      "sha256": "4e12e1590ff3d18e17fea74edd63cbec02e99c38a27b7e53f31547d4573e7d35",
+      "bytes": 464,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/annotation-qc/SN84_A120838_Rep1/PCA50-seed2.npz": {
+      "sha256": "a201839704326a4004ceefa026e3714fd56ca44b16769c33af7984d4478511e1",
+      "bytes": 442,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/annotation-qc/SN84_A120838_Rep1/target.npz": {
+      "sha256": "92a6fb830aff911c111c5bb9ba26200bb049f4d5193e9a2fd94be832bb280fa9",
+      "bytes": 1166,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/inputs/SN124_A551763_Rep2/input.npz": {
+      "sha256": "e8d4612ff1696e2f5543f6b95629d7465d4e3d869d03abbbb8d739925bd61060",
+      "bytes": 278320,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/inputs/SN124_A595688_Rep2/input.npz": {
+      "sha256": "398e10ec6b78ec2c9da5748e1abdbd582c2a3cdf16f9c100e369d696ef2f227c",
+      "bytes": 89168,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "validation-independent-crc/inputs/SN84_A120838_Rep1/input.npz": {
+      "sha256": "eb0a8e077c5429a15517540a346562bd8d4eac477feeb6ba988af92e6199e26c",
+      "bytes": 75606,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "data/NSCLC_Lung9_Rep1/input.npz": {
+      "sha256": "7b89ab0e1fbf21986f01aa95a80967ad1e26135dae12956e4cacf78df2bfce74",
+      "bytes": 3068197,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "data/NSCLC_Lung6/input.npz": {
+      "sha256": "c24ff3fe10af4d044965a36229951de13e16f829afbc36006c2af4cec28e589a",
+      "bytes": 3680866,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "data/NSCLC_Lung5_Rep2/input.npz": {
+      "sha256": "d710de0e3470385f2dcf110516ad22d668992a521c2b9bd7e8084753c5a3902b",
+      "bytes": 4263063,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "data/BCC_PatientB/input.npz": {
+      "sha256": "13d32838479450a3c9ea9d88c5e04bc3ca880c070903cf717009f2b300de1786",
+      "bytes": 9439585,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "data/BCC_PatientD/input.npz": {
+      "sha256": "c08f6b11cb008eee8f8fefc761192885d8e49873096c6a7e7857bc99e0daaf32",
+      "bytes": 8649649,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "data/NSCLC_Lung13/input.npz": {
+      "sha256": "562c6711278c95e67030b7819cb3c1f2ce622fddaaf2cd32bdb5676c2f0f5365",
+      "bytes": 2747372,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "data/OpenST_HNSCC26/input.npz": {
+      "sha256": "c42116ee6b492d60a521f721248a10aee34157d37bf895afad148fec415dbc4f",
+      "bytes": 9748067,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "data/BCC_PatientA/input.npz": {
+      "sha256": "c3a8aff77b78898ea67d6dfd618ccdef8a5772c8ed63656443a26a5d140e67cf",
+      "bytes": 10541616,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "data/Breast_Visium/input.npz": {
+      "sha256": "838f90d40bc60e7bd75b34234a8285357ce3d92c7b7f9673b6ce211e5d7e29ae",
+      "bytes": 2295647,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "data/Colorectal_TVA232/input.npz": {
+      "sha256": "c5d143da23df042954e1c15ddb05eca1ca21f3e796d6dceff67a1f14e9a0dcf7",
+      "bytes": 6728620,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "data/MIBI/input.npz": {
+      "sha256": "d3d3d19935a6f0d9a8ff97f3bd6ffa7e95e5f2ec1ab8d8794c886ad187e34102",
+      "bytes": 932014,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "data/NSCLC_Lung12/input.npz": {
+      "sha256": "e8788802554295a4af14b639b3c093c19cabf3c89662c8ac5bd3a487493bac8b",
+      "bytes": 3928221,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "data/BCC_PatientC/input.npz": {
+      "sha256": "80dff4b454ee9aa0654787c4be55c2f376f5c87472f0b14ebe84861423dced70",
+      "bytes": 9159085,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung9_Rep1/PCA50-seed3.npz": {
+      "sha256": "e2765288599e1bb3117061cf473ca6f8b502cb4dce23d20c7490acfbc61faba5",
+      "bytes": 916061,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung9_Rep1/NeighborMean-seed3.npz": {
+      "sha256": "2ed4ccb4f742fabbb4c81390bd57270c0cd8db469daaa499ffbe05d89b0d5567",
+      "bytes": 917014,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung9_Rep1/NoGate-seed1.npz": {
+      "sha256": "b9ea26cd558e660e478c23e5c2d97135995ab161628c085f3f846a1470cad540",
+      "bytes": 626109,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung9_Rep1/PCA30-seed1.npz": {
+      "sha256": "6cf1b5a8e6e30117ec3dcc8da299fdca2c8ae20ca9a28ab425f52b02c325fb60",
+      "bytes": 594949,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung9_Rep1/NoContrast-seed1.npz": {
+      "sha256": "46988eab3e52d11665c98066f229bf5ec37dfdc7b667842339c1779b4d61ee38",
+      "bytes": 790922,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung9_Rep1/PermutedXY-seed1.npz": {
+      "sha256": "dfd749af5d263a20caa20471db3a86ecf7bc52ca34c74f5f26621fcaf9e655ea",
+      "bytes": 842082,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung9_Rep1/PCA30-seed2.npz": {
+      "sha256": "fbc6d1b749200f7464a8201cacfbcbb8232303ae69dc55369aaf3ce7264d9503",
+      "bytes": 594939,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung9_Rep1/Tessera-seed1.npz": {
+      "sha256": "62e19b5ed7e79f44516b2012d15c1911b147ed98630e114a1aea7e2a97dd9b6f",
+      "bytes": 797656,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung9_Rep1/PCA30-seed3.npz": {
+      "sha256": "3fd80c1c2efb09c4aa273daaa45dfedebba83082e0fb6822ca3af0890e4f24e1",
+      "bytes": 594961,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung9_Rep1/SelfOnly-seed2.npz": {
+      "sha256": "71e2774d8c7f9daa06948ad86aa0dd4d36e34870998ed4ecdac6c949eb183002",
+      "bytes": 529131,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung9_Rep1/PermutedXY-seed3.npz": {
+      "sha256": "ef2cae93ee752f9bfdb8543d429aa4e0935d38ee070d438df6269b11492b31dd",
+      "bytes": 842878,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung9_Rep1/SelfOnly-seed3.npz": {
+      "sha256": "422e4078f5bb9ebf6dec9acc55d95d92a9c75421838c55ddfea3ea1f6f630fdf",
+      "bytes": 529192,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung9_Rep1/Tessera-seed2.npz": {
+      "sha256": "013db8c66668bbfacfb406213c1899cd9df32a27046b9cc8511cf38ab18cdaaf",
+      "bytes": 799152,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung9_Rep1/NoGate-seed3.npz": {
+      "sha256": "df4f4fa6a11b48676851e9bea49406109fa404c39f664b7882ee4853f130693f",
+      "bytes": 625892,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung9_Rep1/NoGate-seed2.npz": {
+      "sha256": "d4c4d660cfa00b58a5d0a956ff618e529497ca9dd7b15f3093c3a96f101d6529",
+      "bytes": 625891,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung9_Rep1/NoContrast-seed2.npz": {
+      "sha256": "e9ab4d4522dac243f9c75bbd6518c39c269c8825e7261be1d313cab1b20cb3d8",
+      "bytes": 790425,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung9_Rep1/NoScale-seed3.npz": {
+      "sha256": "ae2012ebb35e990a171e86d9a34672377848eeaae2f06ad2a43fa7cc954838a7",
+      "bytes": 797688,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung9_Rep1/graph.npz": {
+      "sha256": "1bbe67cf4b031751f2d9551faf37a73de0f262ffcb2fef837efefaaccdafff96",
+      "bytes": 109457,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung9_Rep1/NoScale-seed1.npz": {
+      "sha256": "04b9cab0ce40f81d20ccff43d205041999f56146eb6266caa987fec7c28103ac",
+      "bytes": 796269,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung9_Rep1/NoContrast-seed3.npz": {
+      "sha256": "ff93a84d91d4f45288eeb7ce088d10e467c1cdb4be3d25da4b7cc29f8d585d8a",
+      "bytes": 791452,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung9_Rep1/SelfOnly-seed1.npz": {
+      "sha256": "3e7f3a3631f3b8843bd1f0f8f80586a743d94f202a41406a67cb614369e07b68",
+      "bytes": 528899,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung9_Rep1/NoScale-seed2.npz": {
+      "sha256": "32354b33fdec74458138d16beb0873cc4e7f9a37bfd3844f247059a8c3fc7a48",
+      "bytes": 795763,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung9_Rep1/NeighborMean-seed1.npz": {
+      "sha256": "a100f11769b843c0c5cc209393cb0dabcc6de91f37bdfe3d485c7611b44bcd92",
+      "bytes": 917006,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung9_Rep1/PCA50-seed1.npz": {
+      "sha256": "4f4cd2ceaa63e3345b00aa782831780d5a92665b2bb55f0d01e313b639f3507b",
+      "bytes": 916055,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung9_Rep1/Tessera-seed3.npz": {
+      "sha256": "8db4b35f13cb18e7195feede774f21b0e43b6c355e7f1101ba7cec8043fa5d2e",
+      "bytes": 799766,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung9_Rep1/NeighborMean-seed2.npz": {
+      "sha256": "330ab56b8cb94b05a2b8137c3a3a4e898878b57e401a3d8be8424a637e4bf89e",
+      "bytes": 916971,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung9_Rep1/PCA50-seed2.npz": {
+      "sha256": "3bcce306470445f088c6f4a0abb4207951d4ad6ab57a695ec67f3dbe9a606fbe",
+      "bytes": 916061,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung9_Rep1/PermutedXY-seed2.npz": {
+      "sha256": "ec2407ce396c4e9a02c3620b730e8e8fa1fef55eb4412205d082473ef5d927a4",
+      "bytes": 843999,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung6/PCA50-seed3.npz": {
+      "sha256": "e1cae417c680e28936b281c58aafa34dfdc9988b186e649eb38987246110187d",
+      "bytes": 1180414,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung6/NeighborMean-seed3.npz": {
+      "sha256": "dea04369d6510458d8d92208a8c6906320555fe136b7712a85f524ca0dbf8782",
+      "bytes": 1182382,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung6/NoGate-seed1.npz": {
+      "sha256": "2cbb91de570cbb57227117c7cb0ecf2e78f646b401712a3a35891dd857257616",
+      "bytes": 805479,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung6/PCA30-seed1.npz": {
+      "sha256": "19e3776cbb7dc6bc1411ce195b9e7b33ec6f998d3a892636d8c81b3a99418754",
+      "bytes": 765964,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung6/NoContrast-seed1.npz": {
+      "sha256": "f539369a858332367ae1cde908da0c011276cce46a2f2a2a7248c2c775ee7861",
+      "bytes": 1025772,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung6/PermutedXY-seed1.npz": {
+      "sha256": "400bc1912df78a1a11b800e5d0f44a347292bee01556637152ab72966b8b7370",
+      "bytes": 1065287,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung6/PCA30-seed2.npz": {
+      "sha256": "fab08517d73b6beaa583fc9c6793199a29d66f404f793ab67c73074fad8bb143",
+      "bytes": 765974,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung6/Tessera-seed1.npz": {
+      "sha256": "fd39bddf9dc619a9c292c2dd5b428ac3778319d399e99007f6a8b76ba01c7e71",
+      "bytes": 1031771,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung6/PCA30-seed3.npz": {
+      "sha256": "449afe5ebe845d7afd3d69c38729d250c7558b45e5e1112417054ef7833fff64",
+      "bytes": 765974,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung6/SelfOnly-seed2.npz": {
+      "sha256": "28f15c9decb595929c9f10cc2cc22eb3d19a0d1583c64ee7a35dd55cee77faeb",
+      "bytes": 681536,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung6/PermutedXY-seed3.npz": {
+      "sha256": "36373e0aece013382e394cecb967b3e939ea9e9fc84969d5722533d6b84953d6",
+      "bytes": 1071414,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung6/SelfOnly-seed3.npz": {
+      "sha256": "d3387ad97d3c958eaaa17aeddd0cdba79fb495e5a4921f356a0a04c4107cbea2",
+      "bytes": 681545,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung6/Tessera-seed2.npz": {
+      "sha256": "7e417e7c8492148f4ed090afc594afe2bc90e29cec49a0b87f87641dea59b805",
+      "bytes": 1032543,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung6/NoGate-seed3.npz": {
+      "sha256": "1f29592c455fdc964918e88598341ac899c1d8beb7fa62ea3f9239470668ed5f",
+      "bytes": 805978,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung6/NoGate-seed2.npz": {
+      "sha256": "b973cbae67dfc98795dfd4065b0fc210804d170a1565d83f197932a052349773",
+      "bytes": 805774,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung6/NoContrast-seed2.npz": {
+      "sha256": "6e799554116e75f3508f37221aa87500471b759c524d4dc9b044c20192572252",
+      "bytes": 1026911,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung6/NoScale-seed3.npz": {
+      "sha256": "c5d1eff478c8f25679b91cb8f383500e12a6729126e170ae01a71209f88bbf89",
+      "bytes": 1030968,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung6/graph.npz": {
+      "sha256": "a3c0688e3448d4faf68fe8e6f5185d0d39cd7cafb6bafbb8e4ce98d52c2eab84",
+      "bytes": 140312,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung6/NoScale-seed1.npz": {
+      "sha256": "929587540cb9109ccfe8b815043a3790e574365c6ece079c508000e0ddfbfc8f",
+      "bytes": 1028713,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung6/NoContrast-seed3.npz": {
+      "sha256": "af78429093e0ff1f8faff214d19f3e8fe240e50ebaaa3f30376b5095835f9089",
+      "bytes": 1026806,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung6/SelfOnly-seed1.npz": {
+      "sha256": "b1f0613cf8ceabd2669290bc5f309a9e68c84e01056c4a9a356cc07fbfc598c7",
+      "bytes": 681105,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung6/NoScale-seed2.npz": {
+      "sha256": "ef2f3b224251da5fc916515742dcac234d62605cac186cb270e9977863b73c8a",
+      "bytes": 1029835,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung6/NeighborMean-seed1.npz": {
+      "sha256": "37db0099d4d75d1e2bae3561ff6778199f98575837b559f605861bb7cef49d9e",
+      "bytes": 1182401,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung6/PCA50-seed1.npz": {
+      "sha256": "4479204d282e6a7fc1e6cbf2fe764fdcf759a8ac662ec3d5424b6ec92d904fec",
+      "bytes": 1180383,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung6/Tessera-seed3.npz": {
+      "sha256": "abf32cf23cd3311b7c492925859c01d033c5bf29d3b72c8125f0b9118c665341",
+      "bytes": 1033660,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung6/NeighborMean-seed2.npz": {
+      "sha256": "7107c2abeab0f587b5c2105ce5aea3357a0ca23a4bc2c6574ef69e41c86cda5f",
+      "bytes": 1182381,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung6/PCA50-seed2.npz": {
+      "sha256": "e6ded69361524acca3e0f5e0628b16e43a593a34a57a98989eaa95a4d1eb8be4",
+      "bytes": 1180414,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung6/PermutedXY-seed2.npz": {
+      "sha256": "c532e0f3b818a0a015e89b11aeab5d7be363fe74b75689bdc4451e30aebda5f8",
+      "bytes": 1072075,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung5_Rep2/PCA50-seed3.npz": {
+      "sha256": "4cd7cad06d75838765528a7960e15c90c92b0912da4dcf80da42fae4acc81d1e",
+      "bytes": 1258810,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung5_Rep2/NeighborMean-seed3.npz": {
+      "sha256": "8a0377b7183a63b5e92097f5b31dd5ce5d0d66f6bde0fabd66173a0298df6baa",
+      "bytes": 1260581,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung5_Rep2/NoGate-seed1.npz": {
+      "sha256": "334c70b6a66d4602b0cb09ae2bf2f4d73257479a6e9c1b37f497404bb8a1782a",
+      "bytes": 859255,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung5_Rep2/PCA30-seed1.npz": {
+      "sha256": "63d836a67d7155b4efdc50b089c4b047d40a079f3e60ca6fc00154ee81485130",
+      "bytes": 816359,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung5_Rep2/NoContrast-seed1.npz": {
+      "sha256": "e3b6b98693fefa0ec69dfd726c91c9cd17728a4d9b53f17f6fe20b96ed74f144",
+      "bytes": 1092430,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung5_Rep2/PermutedXY-seed1.npz": {
+      "sha256": "09baba2a46a128bef526065d8da2db2832f23c0920c34c44a62b0db47eb00a42",
+      "bytes": 1150829,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung5_Rep2/PCA30-seed2.npz": {
+      "sha256": "b791ff7f1384e24d5916f4b43b1a9d2ab22b6b1108b12d71aa5c1095df393589",
+      "bytes": 816349,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung5_Rep2/Tessera-seed1.npz": {
+      "sha256": "8c0b7f1b67862ff4380e5889205346ab2d38a8ffcdc0410cbf24859d79a31fd6",
+      "bytes": 1098996,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung5_Rep2/PCA30-seed3.npz": {
+      "sha256": "c426a71d45238164fb4a2efa3572d6794c1f1b7b797b9613812f4c97d7223671",
+      "bytes": 816359,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung5_Rep2/SelfOnly-seed2.npz": {
+      "sha256": "59e4bf43deacb3aaaa7bc8aea75864b8c7608a2c0202902a14332658033f5548",
+      "bytes": 730034,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung5_Rep2/PermutedXY-seed3.npz": {
+      "sha256": "dd85aaea531b3b90eda2c0aa37997b700f429dcfe67e364dea305fab1d1bdfb2",
+      "bytes": 1149959,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung5_Rep2/SelfOnly-seed3.npz": {
+      "sha256": "8dbd61276b38f879d5cac10efc9ecb0a9d49955437527418e2a50993e28c6727",
+      "bytes": 729175,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung5_Rep2/Tessera-seed2.npz": {
+      "sha256": "a978d17d9f0692f31f3e182c391466d72252c61cfe6be3dd5cd276be413e90e6",
+      "bytes": 1098439,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung5_Rep2/NoGate-seed3.npz": {
+      "sha256": "8814decec3d2dfe6090092bd4b47899a89f179a27949d574d1cdcf559e99dbba",
+      "bytes": 859026,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung5_Rep2/NoGate-seed2.npz": {
+      "sha256": "93ad88cdbf9db06c5796e8cf6159386d730567fa94895f959d3bc1ef5583c812",
+      "bytes": 859014,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung5_Rep2/NoContrast-seed2.npz": {
+      "sha256": "8d169fb3fa9be9a8065a7752fb7be750347bc12f17dd081a07a55a2d99f47ad3",
+      "bytes": 1093979,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung5_Rep2/NoScale-seed3.npz": {
+      "sha256": "da2049667afe78667b9e1a521b0bbbfe3d93ecbd63b6dbcf246f2591d52858d8",
+      "bytes": 1096513,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung5_Rep2/graph.npz": {
+      "sha256": "6406ddef986e69b3e0318b329a78cfce70e47e3191b4252414f23c9b4b946365",
+      "bytes": 147735,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung5_Rep2/NoScale-seed1.npz": {
+      "sha256": "bd64c6f23965334a06577606bac18abacc787f20a57324a76748b14619b012bc",
+      "bytes": 1095193,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung5_Rep2/NoContrast-seed3.npz": {
+      "sha256": "5f184ca5786180b307b95f9c62f1589589117bcbcd058128078d091145acd98e",
+      "bytes": 1091974,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung5_Rep2/SelfOnly-seed1.npz": {
+      "sha256": "04e882ab984b4683e4ee59ad6a8f8f5359d1aff80172e5917225acad2fcdff62",
+      "bytes": 729557,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung5_Rep2/NoScale-seed2.npz": {
+      "sha256": "adf564912856b3391b6052dfc74a9d77d8b04b7f11bb73761c0cbdd35c406c92",
+      "bytes": 1093645,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung5_Rep2/NeighborMean-seed1.npz": {
+      "sha256": "4afe1d585160e9562651462a9eec0109845b76c4d18aa1d664ab43a14e1f3798",
+      "bytes": 1260596,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung5_Rep2/PCA50-seed1.npz": {
+      "sha256": "7c53e323cab3f8da250d421508e7b2b860c85887a736dbede3cf2559bf770751",
+      "bytes": 1258761,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung5_Rep2/Tessera-seed3.npz": {
+      "sha256": "1f5b1338e28f366692a4367859a7f926ad6f401faa1d2134230bdf1814ee441c",
+      "bytes": 1099080,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung5_Rep2/NeighborMean-seed2.npz": {
+      "sha256": "59e7fc9967e364ddf66007b2fc085c67e3258958986b396a4e9f7b224ce1a462",
+      "bytes": 1260630,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung5_Rep2/PCA50-seed2.npz": {
+      "sha256": "02625134578130f9fb3ec968ee6bcf5e30cfe11bb10b36dde24da33eb22d0706",
+      "bytes": 1258802,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung5_Rep2/PermutedXY-seed2.npz": {
+      "sha256": "7eaf71dc6a73a6210c6ec838c3e67828a7b1771ecee8dab39ad3d9342c75186d",
+      "bytes": 1149936,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientB/PCA50-seed3.npz": {
+      "sha256": "2182c0ca79d7c921a6114e801681b84ad37e94455634cec6f61fbc6df1f8a611",
+      "bytes": 1097887,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientB/NeighborMean-seed3.npz": {
+      "sha256": "3ae7f6bd57e6605c906971f334b00d56fd0e855a864c1fbfe11fdbadf15f1eb9",
+      "bytes": 1097393,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientB/NoGate-seed1.npz": {
+      "sha256": "eb282cd2c95b9eea6defe41292849f87dd8f6cbd41ee6dbd74f1a5f43daf5699",
+      "bytes": 746613,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientB/PCA30-seed1.npz": {
+      "sha256": "97c427ada83199238b46b9310e382a0001307ac9bd83732fcd153d782135ad1a",
+      "bytes": 709779,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientB/NoContrast-seed1.npz": {
+      "sha256": "84d2fd22a1f9263b747c070056d2f100354f5dc1c1c820ba6c3124e55711f24e",
+      "bytes": 940644,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientB/PermutedXY-seed1.npz": {
+      "sha256": "30b5ebd3e7304634d105f29d54110c667bb5fc2dd4962d431a25c2f2734c0312",
+      "bytes": 1003852,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientB/PCA30-seed2.npz": {
+      "sha256": "05b2b247b20a4488d162caf68b4426700133f9e1f2222a03453f6af7200d46af",
+      "bytes": 709936,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientB/Tessera-seed1.npz": {
+      "sha256": "f1af4da568f034a6cd18147737cc022109793c4e1ca1ae3a15bb8bb40b9274b1",
+      "bytes": 942207,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientB/PCA30-seed3.npz": {
+      "sha256": "ee96b0c5e4eb399c789dbcb50f6c5dc1475ce40baf287f98e24ffaa85231b482",
+      "bytes": 709822,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientB/SelfOnly-seed2.npz": {
+      "sha256": "66f1613fe91137932927cb919cbf28d271fa6c31cdb75db1751a583b5d6ff570",
+      "bytes": 640755,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientB/PermutedXY-seed3.npz": {
+      "sha256": "a28d0e076f5fc252ff3cff86293a69a4a4d47899d26e21a475dd8d994ab16e72",
+      "bytes": 1002922,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientB/SelfOnly-seed3.npz": {
+      "sha256": "8b0b60465ab08f06596fcdf0d30893d9ab1ad1ae4e3e9239a652522a24e128de",
+      "bytes": 639148,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientB/Tessera-seed2.npz": {
+      "sha256": "64a95db3848e862fba6651716f8a84fb1876671da484807f39ace0ccd1711d8a",
+      "bytes": 942301,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientB/NoGate-seed3.npz": {
+      "sha256": "823c1b6ca5cb41803294cce20dfe5166bb7dd3df065ef0886c3b2595d79cafc2",
+      "bytes": 746593,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientB/NoGate-seed2.npz": {
+      "sha256": "662f5ea92593ce71f7e89a33dd2d6bca59b1e942dca999bb0ef758f0ba367088",
+      "bytes": 746625,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientB/NoContrast-seed2.npz": {
+      "sha256": "3bb55f53966fa440446f0d1b68c7b6d4c603f63f7a8e893cd9fb311fc4aac1ef",
+      "bytes": 940792,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientB/NoScale-seed3.npz": {
+      "sha256": "172cc4e331cedb5ff13ed77e20072347ff97f4cb4657a142247a0d4e0ca78deb",
+      "bytes": 939575,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientB/graph.npz": {
+      "sha256": "9fc94696a665adbabca6f10275fe432c8dda7b95b9430e93a7bd9f8c35b618e8",
+      "bytes": 122844,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientB/NoScale-seed1.npz": {
+      "sha256": "2954b1b04331916a0d07de7d3124ad305dde4e2416a7f5e30ec75c26046d64ba",
+      "bytes": 938625,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientB/NoContrast-seed3.npz": {
+      "sha256": "09475561ecb2d5ea2e7ae9a7c5b60d5e5d1e030ab4eb40bc10e162716bbf132f",
+      "bytes": 939386,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientB/SelfOnly-seed1.npz": {
+      "sha256": "f8a18898e0f621ebbc00c2ee0b4f4996ea8a9325c7923fb8a272120b144ed339",
+      "bytes": 640228,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientB/NoScale-seed2.npz": {
+      "sha256": "68acdfea81559c8abb260ca76060d5168f4f8d0e3dc230d9fc3e78a237c8e780",
+      "bytes": 940185,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientB/NeighborMean-seed1.npz": {
+      "sha256": "925b8f038e04b5718660faf41e60c44843076d33f14e54a4e77c99ae8a243906",
+      "bytes": 1097507,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientB/PCA50-seed1.npz": {
+      "sha256": "ed9b3f74e89f08a278f28913cc0c95f68d3c7dee70059fd9a1c0a8915c6b3497",
+      "bytes": 1098038,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientB/Tessera-seed3.npz": {
+      "sha256": "607ef1ae1d93508601790396c6acc9f3f733e5b9c9c4e196684630c254be9d10",
+      "bytes": 942624,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientB/NeighborMean-seed2.npz": {
+      "sha256": "156c23c9b6c2d5daeecefeae636001050de4cd72a7365a8abe1076b5c42ab6bc",
+      "bytes": 1097411,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientB/PCA50-seed2.npz": {
+      "sha256": "b2407042c5365fe6bcbcca64671e2b94a6543e5b261429eb156e2c164bd2cf22",
+      "bytes": 1098027,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientB/PermutedXY-seed2.npz": {
+      "sha256": "e85650fcbb863acd15f5af31301f453e25a0dbfe9912a7ed6223a82e1cfd152a",
+      "bytes": 1004077,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientD/PCA50-seed3.npz": {
+      "sha256": "5455c60622a99b3a2adf6960d416b79bcd98c637354ec979f58058f4a6d72bc9",
+      "bytes": 1188563,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientD/NeighborMean-seed3.npz": {
+      "sha256": "cf99b8b76e3ac3c5e3cf2a03b9da612d379ad38716c9f3b1ca247c46aba385e7",
+      "bytes": 1189507,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientD/NoGate-seed1.npz": {
+      "sha256": "445bd42b542edc941cb09c51011ba88c032f330d557536a5702aed59020ad135",
+      "bytes": 805992,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientD/PCA30-seed1.npz": {
+      "sha256": "23b6aa16a23024d0f862225280a847e4a12d0633c5cf58f6343913ca4af98d58",
+      "bytes": 767008,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientD/NoContrast-seed1.npz": {
+      "sha256": "66afbec48f98395e4bf723b1940dad6fe55f2750ae01cada10df0d89985fdbda",
+      "bytes": 1017302,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientD/PermutedXY-seed1.npz": {
+      "sha256": "a54dbaf031c15ddb882bb8e7899fce441914013ff3175789e787a8b8fd5edaa2",
+      "bytes": 1068759,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientD/PCA30-seed2.npz": {
+      "sha256": "703a76f4ff5203979e9107cd4e434ad18ef014ad77f74da318f6b87e9a2c4366",
+      "bytes": 767040,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientD/Tessera-seed1.npz": {
+      "sha256": "f1caa0d35229578a6dc6feca1d91a4e76f5bd22f5c25ea6b3cc84723046c8b28",
+      "bytes": 1020440,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientD/PCA30-seed3.npz": {
+      "sha256": "33d2dda1d80691e0a7ea4b2daf44c65854718df6c4c9b01766602d5204ee4b74",
+      "bytes": 767021,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientD/SelfOnly-seed2.npz": {
+      "sha256": "cd8c6bd32d5683eb2667e8e5524735b73e3fc74aa819b523bf8f456c590d749c",
+      "bytes": 694928,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientD/PermutedXY-seed3.npz": {
+      "sha256": "b94ca98bcae152c97fdfc822bc789f276ba0072f2271f835734843847bd2d62f",
+      "bytes": 1067947,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientD/SelfOnly-seed3.npz": {
+      "sha256": "f1b303d20ef9b82fe21e9a2b3427c469376c1e69e4d0dbfe2c56394f03b7249d",
+      "bytes": 693532,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientD/Tessera-seed2.npz": {
+      "sha256": "964f2eff4fdb056e50341e91d57318cf93d0b70a6399d2c70994c4e329770751",
+      "bytes": 1020445,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientD/NoGate-seed3.npz": {
+      "sha256": "1ef030a3692453d86e31fb62de4acdc54482014e9eae447b31a119ed02821313",
+      "bytes": 806765,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientD/NoGate-seed2.npz": {
+      "sha256": "d521fd76834b30772c1739b5ffaad692799b3dbf92315911df70944102e0914b",
+      "bytes": 806342,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientD/NoContrast-seed2.npz": {
+      "sha256": "2b8111f0c9d03dd855d9ec15e6ff2b6edbb982d40ff937d5c979e8fc529cdcfa",
+      "bytes": 1020426,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientD/NoScale-seed3.npz": {
+      "sha256": "dbda067dee376ef607f64e9fc6d6482ff3d196d322d98aa158d228640b2d373c",
+      "bytes": 1017590,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientD/graph.npz": {
+      "sha256": "b92d12560f49b11e8a3b333128163b2bab80e175264d4917e729c9508dcb7453",
+      "bytes": 129754,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientD/NoScale-seed1.npz": {
+      "sha256": "50d654060d3fb1da19296ae86a7166a1bf70b629d1b7f82962f8e96ff177b28a",
+      "bytes": 1017799,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientD/NoContrast-seed3.npz": {
+      "sha256": "443eac00414078388e9bd51595264aec83bce544ae9e60d58a1f5b061ed60333",
+      "bytes": 1018048,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientD/SelfOnly-seed1.npz": {
+      "sha256": "8716f081f7f60eb77edc0be703b99bd3941e57294c4a1538c46baf8a779df7a5",
+      "bytes": 693821,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientD/NoScale-seed2.npz": {
+      "sha256": "cb92432b9521d934b1e4c6be942fb58e7259639f5f105068d74dcfe62a63993f",
+      "bytes": 1017813,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientD/NeighborMean-seed1.npz": {
+      "sha256": "78ab8c8e24e12824546d7276b4593d5cb476d6396947dd47b61026fdd9393097",
+      "bytes": 1189482,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientD/PCA50-seed1.npz": {
+      "sha256": "712cc86339fa13f64f07ee65a6afdabae3609f7b8c8374db054c0527f7dbbed9",
+      "bytes": 1188558,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientD/Tessera-seed3.npz": {
+      "sha256": "5786fa26a0fa33c7a8a9a14025bdead9e9f091b4fa70258e1464eadd33ccc0a8",
+      "bytes": 1020732,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientD/NeighborMean-seed2.npz": {
+      "sha256": "64cd2fc37b06b749efa12bb551e495026abdacaa5ef92997de0f14c22262db32",
+      "bytes": 1189446,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientD/PCA50-seed2.npz": {
+      "sha256": "4fdb49b9328f76839288ee9e1f269b78171cd6e896f1b64bda9e38bb0f5b16ec",
+      "bytes": 1188537,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientD/PermutedXY-seed2.npz": {
+      "sha256": "844f85405f7624ff74be54d6f81022a2c89493a9b46756585ac4a7193244ffa8",
+      "bytes": 1070324,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung13/PCA50-seed3.npz": {
+      "sha256": "fa87c1119d69e75d2502c91f78564170ae529b0c21e87f9ae6dd7a8bf028cfd0",
+      "bytes": 818874,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung13/NeighborMean-seed3.npz": {
+      "sha256": "4717a9fb204ecf8c67c99fa53f562600b5f997bfd1daaee8f7cf2151b0d39d2c",
+      "bytes": 820549,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung13/NoGate-seed1.npz": {
+      "sha256": "459e122f1474f029786c8fcfb4938b21bc663059ef1c8fee9c55196f6082d93a",
+      "bytes": 560206,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung13/PCA30-seed1.npz": {
+      "sha256": "35b753a830da2bceb196486571a6f6017462969fc1024576c64a28e797394bc6",
+      "bytes": 532086,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung13/NoContrast-seed1.npz": {
+      "sha256": "79c9c6aa1553dc8e604dd679e6078b5b6c27d31b3ee39e10b015d5a8f63bf71a",
+      "bytes": 710625,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung13/PermutedXY-seed1.npz": {
+      "sha256": "090802e293998ed0a9c98514d0ecfb2069d57805bb3c1b4f772b14faaf07013a",
+      "bytes": 751314,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung13/PCA30-seed2.npz": {
+      "sha256": "5e5489b97997ad3cd6b4e3f7053e222b6fd0bab219616fbf0ba81568019e6f89",
+      "bytes": 532104,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung13/Tessera-seed1.npz": {
+      "sha256": "3dd1f9adb5f04246f351e92cf307034de045a42f3cc9e88f5b4f6565cd7598c8",
+      "bytes": 714348,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung13/PCA30-seed3.npz": {
+      "sha256": "5d8f6e0555b42e6fa4e18961e8b4cae4813fbc4d40ef66593f29be0e5fe9cdbc",
+      "bytes": 532086,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung13/SelfOnly-seed2.npz": {
+      "sha256": "e9aa053b03784eeaf008405140e50c7b8cc2f027af8f5cd7a3180694bcea90c3",
+      "bytes": 467822,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung13/PermutedXY-seed3.npz": {
+      "sha256": "f7db77af463e4dc32052f2e1b854c40fac06eec00a51ea219ef741939edd82f4",
+      "bytes": 751429,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung13/SelfOnly-seed3.npz": {
+      "sha256": "598a3a6b9e55ccaf297c5c8d2aacc48af66c135547a709395b3a9281ec6c2a9a",
+      "bytes": 467963,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung13/Tessera-seed2.npz": {
+      "sha256": "3d30a4e20b930f697151cc482b3a7cc04a73f4630175487c3d0651629aaefda0",
+      "bytes": 714649,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung13/NoGate-seed3.npz": {
+      "sha256": "ce37d44a27e83eb95b208d9ac111493be67146b35fbd36a346c777ade3f33bc2",
+      "bytes": 560076,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung13/NoGate-seed2.npz": {
+      "sha256": "d300eb69af86dc9c71845c7c3a319bad537db004111ccce83dc898e5dd79f65f",
+      "bytes": 559911,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung13/NoContrast-seed2.npz": {
+      "sha256": "c2d2ce5461e941b2aa1c402258899cf0001e239a102560ad3421023f047703bb",
+      "bytes": 711516,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung13/NoScale-seed3.npz": {
+      "sha256": "5db82e1fd9ed8d0c9f37ea82cda8d7726961ace4b42201bac045ef819d8f2759",
+      "bytes": 713033,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung13/graph.npz": {
+      "sha256": "a1859ce1370b208ecc52aadc62339df93f5c9d4604386aec56131d943d661d59",
+      "bytes": 98429,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung13/NoScale-seed1.npz": {
+      "sha256": "2538afc33b8368256e235aa9eb0131bc167469ae815f92ad6b3ce4ecde7872d2",
+      "bytes": 712196,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung13/NoContrast-seed3.npz": {
+      "sha256": "85ba9e6a406f211edaa90f747dc5d69709ae5037a80681dd42af80ff4c6426ac",
+      "bytes": 710721,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung13/SelfOnly-seed1.npz": {
+      "sha256": "e08477b6180f9200d534ee67a6332c3f027eff6f3360b984aa6013300425cf12",
+      "bytes": 467887,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung13/NoScale-seed2.npz": {
+      "sha256": "3d9817c48e716b7cd743a1cf8b6a5edeae7a88358befce31963ab7c7ab314212",
+      "bytes": 710111,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung13/NeighborMean-seed1.npz": {
+      "sha256": "b02052e69cac25c30e213e4f25fa85d0371daa6c0485c07d3f9d4ed6078457e2",
+      "bytes": 820550,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung13/PCA50-seed1.npz": {
+      "sha256": "028fc21a09b08f1a4eb8747040425bc0b5faa7af39e8cfb409ab6f87fd8fca5c",
+      "bytes": 818834,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung13/Tessera-seed3.npz": {
+      "sha256": "3b72d97e987e19dce7a91296c14adc8ae25b4ebf222c1e62c159101ca611f6a5",
+      "bytes": 715304,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung13/NeighborMean-seed2.npz": {
+      "sha256": "186efe93c2581d3a339b61016c5f053cfc8ec9d0244aae0165c457a9b2a3b12c",
+      "bytes": 820535,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung13/PCA50-seed2.npz": {
+      "sha256": "ab2922746516dfd8342ecb3b65a8be6c176def1542fba9f6a9199d55ca37c9ad",
+      "bytes": 818849,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung13/PermutedXY-seed2.npz": {
+      "sha256": "9c50d6202380d24ac0d126090598321bbe203ec7dc0f974ad207115eb968276c",
+      "bytes": 749940,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/OpenST_HNSCC26/PCA50-seed3.npz": {
+      "sha256": "e2990824b6a652579a132e7a40e5dee1ee0abf63f09f7418447cf8f1619700d4",
+      "bytes": 1318512,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/OpenST_HNSCC26/NeighborMean-seed3.npz": {
+      "sha256": "fad6b22bf00802519e90a93108e7b6ca3ba5ac4cf8565dece8cd1372f998680e",
+      "bytes": 1320078,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/OpenST_HNSCC26/NoGate-seed1.npz": {
+      "sha256": "677fabdfa7b809e005fc33a546f38292c7a194d2a5c8b6939249d8ee76a91403",
+      "bytes": 914037,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/OpenST_HNSCC26/PCA30-seed1.npz": {
+      "sha256": "d12f77706b96b884acb38d8d4cc7a850bc495cceeb1cdeb2799d72a0ae774b80",
+      "bytes": 871152,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/OpenST_HNSCC26/NoContrast-seed1.npz": {
+      "sha256": "b0ea8ffae2c2d15ce165add10a64969319167e641a0e379d850bf97baeb5f887",
+      "bytes": 1175540,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/OpenST_HNSCC26/PermutedXY-seed1.npz": {
+      "sha256": "f2b13ccd0b7d11d8a1efc652b63e451747588fb54cb37a01224914dbda2e7d01",
+      "bytes": 1183250,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/OpenST_HNSCC26/PCA30-seed2.npz": {
+      "sha256": "bfa5c1f5c071876cb6baf71f37f7ada9c29dac4c78c9c4b05f91cb2bdfbd11fb",
+      "bytes": 871187,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/OpenST_HNSCC26/Tessera-seed1.npz": {
+      "sha256": "35090023107dc263f6cbe6f720bbd8cdcbe9e4e4b33175543effe0e707590e32",
+      "bytes": 1183648,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/OpenST_HNSCC26/PCA30-seed3.npz": {
+      "sha256": "ed30b0ec0d970614fb142bc65be5f93bc2a722c831a3ee71e609e311ac521cd4",
+      "bytes": 871142,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/OpenST_HNSCC26/SelfOnly-seed2.npz": {
+      "sha256": "c0e4b67dc26d6d36dd06647f27947fdaf66733200f3a4b16758d50a51748bca4",
+      "bytes": 737336,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/OpenST_HNSCC26/PermutedXY-seed3.npz": {
+      "sha256": "56ba3e3cffb16166057afe3172e46a6362da5c4e8f62544036e2d1f0941228f4",
+      "bytes": 1185265,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/OpenST_HNSCC26/SelfOnly-seed3.npz": {
+      "sha256": "50ff0cf18c073526cc88c6c299cba91cb28dfb4c761e39e395785d094ee0e31d",
+      "bytes": 738456,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/OpenST_HNSCC26/Tessera-seed2.npz": {
+      "sha256": "cb2cd05865b862faac605252c89f72b37b27307393f2a84a2401318505f1a373",
+      "bytes": 1180630,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/OpenST_HNSCC26/NoGate-seed3.npz": {
+      "sha256": "9be11cef94d7db849c26954c76eda634a759c2dfed917d63db83081102b9bb8e",
+      "bytes": 913692,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/OpenST_HNSCC26/NoGate-seed2.npz": {
+      "sha256": "0575e4616877598ec85160de8706ec5a1b37b69fcfa46cbfee9e96f13d9d20ce",
+      "bytes": 914151,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/OpenST_HNSCC26/NoContrast-seed2.npz": {
+      "sha256": "b3b3cb7143766c4ae74904ea450f4199a66f53169d48e5fbf9cfdcb946a00978",
+      "bytes": 1175943,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/OpenST_HNSCC26/NoScale-seed3.npz": {
+      "sha256": "68d91f350a8bbad2c31e1fcebf9750592e7e19e1328c9e7be28bbd65ea1c9b0b",
+      "bytes": 1182511,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/OpenST_HNSCC26/graph.npz": {
+      "sha256": "296783e403c8de6b1a394a9fa9bb4a0f1f6c25c8262cf01dd20b0689aa635592",
+      "bytes": 193509,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/OpenST_HNSCC26/NoScale-seed1.npz": {
+      "sha256": "31a970a3356855b02fcbb5d04f1eac72a3e8c13a6e004c967011a1876154aa02",
+      "bytes": 1178046,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/OpenST_HNSCC26/NoContrast-seed3.npz": {
+      "sha256": "57f8506bc6058000eeb6c6f7842bffe3a5571f62016626aa3f62a12e713439bc",
+      "bytes": 1169955,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/OpenST_HNSCC26/SelfOnly-seed1.npz": {
+      "sha256": "4397d61064a705517c76796ea7bf0c466c22874992c3ef50391a25d86814f1fe",
+      "bytes": 737998,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/OpenST_HNSCC26/NoScale-seed2.npz": {
+      "sha256": "5da9051b85bc45bb117c79bb3015cdd3932e11a71dd687fee327afc15f63def4",
+      "bytes": 1177981,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/OpenST_HNSCC26/NeighborMean-seed1.npz": {
+      "sha256": "6a6e23bfc73d1868685762f8f3a008002097dee80b8e6963629b4bc990dcc7d6",
+      "bytes": 1320048,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/OpenST_HNSCC26/PCA50-seed1.npz": {
+      "sha256": "df9db356cb4b46a4b00a15a03158eea392f2b3e0a05c0984269070b5bd0629fe",
+      "bytes": 1318456,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/OpenST_HNSCC26/Tessera-seed3.npz": {
+      "sha256": "33e8144b2758114a7abbdc2c867fc6b7bb479cd88b337c56a64cdeb49e12b670",
+      "bytes": 1184353,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/OpenST_HNSCC26/NeighborMean-seed2.npz": {
+      "sha256": "51d802a0bf6bdd03cf0612af4a8ccb610c6ea05649da7dd35c4ef2c950fa226a",
+      "bytes": 1320108,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/OpenST_HNSCC26/PCA50-seed2.npz": {
+      "sha256": "068b8ca9c457527c7706d4e7d82cfb939b00cf0709198e61df47b6b8f080eb48",
+      "bytes": 1318552,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/OpenST_HNSCC26/PermutedXY-seed2.npz": {
+      "sha256": "fa44df236b5423346a1c16436322da1394a48bf6478dc67b9615fc316602eaa5",
+      "bytes": 1184003,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientA/PCA50-seed3.npz": {
+      "sha256": "c6631c7a20359601f6cef78ffcc81de7531222154dd1a1dda0fe11069317202a",
+      "bytes": 1194412,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientA/NeighborMean-seed3.npz": {
+      "sha256": "563f40cdda11911974b0e59ed39be3839adca91bbd48461f81d14a9f4b1c484b",
+      "bytes": 1195161,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientA/NoGate-seed1.npz": {
+      "sha256": "a942bb271adb82cabe74a3681387cd9d95dccc1a79604643ec72dd6c1417f70d",
+      "bytes": 811037,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientA/PCA30-seed1.npz": {
+      "sha256": "37d4969facc4ed86c44679e494dd4ce47f39f9a96ff1883368f3b4e2d11702bf",
+      "bytes": 771870,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientA/NoContrast-seed1.npz": {
+      "sha256": "7d0fc157b1f4d165bda9c34d8f604e40e7e6448d13bdf172005e12859e2d82d0",
+      "bytes": 1022462,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientA/PermutedXY-seed1.npz": {
+      "sha256": "6e64068327bb7b540b6ad08969a95f1e587170a3792bf840dcf3c1278d0964d5",
+      "bytes": 1074598,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientA/PCA30-seed2.npz": {
+      "sha256": "44bbcfb15b620f2facf595a87aa5bdaeff5c313262bf7410b5f3f2361c00bd01",
+      "bytes": 771877,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientA/Tessera-seed1.npz": {
+      "sha256": "11f61a2ffeac1a55dc6f1555a0bdee1bd0016cedd3ac1fcac02d9bcbbc6b72df",
+      "bytes": 1023076,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientA/PCA30-seed3.npz": {
+      "sha256": "d53406fd3b72f18748fae64f85c37bb59cb0213a25f56b7e2b1eebbfe757dc6a",
+      "bytes": 771841,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientA/SelfOnly-seed2.npz": {
+      "sha256": "8acb9fe5731e0fa9bed74f7099c24c294a6c0af98051af080baf429a4deeba2d",
+      "bytes": 696226,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientA/PermutedXY-seed3.npz": {
+      "sha256": "acca34f3579d2b3946879d6cfae82260b6336d5fe5e07c71599b9f8b8d25c272",
+      "bytes": 1076191,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientA/SelfOnly-seed3.npz": {
+      "sha256": "222b7699e9f84dcef95fd01fa3a08236bcbc6c2e4c9b4d010c56c65755e36a83",
+      "bytes": 695506,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientA/Tessera-seed2.npz": {
+      "sha256": "fadeb9e92b17f2ff6e0ec68e2f1535b60fcd7d2deb0e9a3ca7ef67b3e4a69f38",
+      "bytes": 1023142,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientA/NoGate-seed3.npz": {
+      "sha256": "f274ad18a76c7a95bdf55d020f292bcf5ff378b549140687735288417183dc9a",
+      "bytes": 810985,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientA/NoGate-seed2.npz": {
+      "sha256": "f87f4bc0ba57eb98a81aebfb1739b613a8d697458a6dc0338d7fd5b7e36e9553",
+      "bytes": 810975,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientA/NoContrast-seed2.npz": {
+      "sha256": "a515ad8d6940920d2b44324c29abfd11034a41090723cbcc4fb4aba64b7b85b6",
+      "bytes": 1023602,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientA/NoScale-seed3.npz": {
+      "sha256": "be9c96af1eab9ffe738ab4b17dbd65f53ea6d2ddd360595f56b8abd185429102",
+      "bytes": 1023563,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientA/graph.npz": {
+      "sha256": "a7ae96c7e98fb90eeae4b36d86988c9bdd81c8b7a33a859583dd84023063b32f",
+      "bytes": 131973,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientA/NoScale-seed1.npz": {
+      "sha256": "e2e8c2795ebd8cce7d6f702e2bce094920d0465387357a86e1ba8f80c81df9b5",
+      "bytes": 1020630,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientA/NoContrast-seed3.npz": {
+      "sha256": "9ef350de208f4331ddef526773ed15a0f85e42e8666abc0a27c8f12d05f0e0e3",
+      "bytes": 1021910,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientA/SelfOnly-seed1.npz": {
+      "sha256": "eec96a68a318e6612376948a5d53a548954978124cedfba187f1cdefa927d1fb",
+      "bytes": 696499,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientA/NoScale-seed2.npz": {
+      "sha256": "48917a31bb2d61d39b2452c1bee7552ba2270152542a290502a06f0e99109b79",
+      "bytes": 1015112,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientA/NeighborMean-seed1.npz": {
+      "sha256": "852424dd9852d7883843496c54fe91dd2511684b298bf523b99c7164b78c3861",
+      "bytes": 1195160,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientA/PCA50-seed1.npz": {
+      "sha256": "a93fd1a65610d67de02626a004e1c324f3290fa71288eac91905d7ce80b4841c",
+      "bytes": 1194374,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientA/Tessera-seed3.npz": {
+      "sha256": "25ae4a74c825c54dbcae8eec5aabd6a79aaf2671ce8b3663e5fd0c4580bed8fa",
+      "bytes": 1025017,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientA/NeighborMean-seed2.npz": {
+      "sha256": "8a6d995aab22c27b4ab5b9d79d54c73b912be9a0a7e43fe24357323cb1867cbc",
+      "bytes": 1195152,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientA/PCA50-seed2.npz": {
+      "sha256": "eae20bcbd94da88231e7d5501a3365be42660f5d9108d5ad5b81856c5f060a40",
+      "bytes": 1194328,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientA/PermutedXY-seed2.npz": {
+      "sha256": "1b20e878be31b3645227af969ee20e4c40908e01a957d91c00c444e8bc84c27a",
+      "bytes": 1079416,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Breast_Visium/PCA50-seed3.npz": {
+      "sha256": "979d2eb6303fec8bbe5d9e9a621f95f0e4c24f982e7b5b095381a0ac84a12361",
+      "bytes": 628099,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Breast_Visium/NeighborMean-seed3.npz": {
+      "sha256": "5442f6d4326f217aa64f9611ecdb3f8cee916fb584d4eafb2763715084eb42de",
+      "bytes": 629561,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Breast_Visium/NoGate-seed1.npz": {
+      "sha256": "856c17a3249bdb52af3a659b6328e3dad59746c4408e007e0769503985774cf6",
+      "bytes": 434874,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Breast_Visium/PCA30-seed1.npz": {
+      "sha256": "6c468a8b6d95d1d22ef3cdcdf850d7e85d9a268f90de315e43d9e635f001c7b7",
+      "bytes": 414162,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Breast_Visium/NoContrast-seed1.npz": {
+      "sha256": "350b790ffb165166dfafabe12a724c74953264ecbe3eaef9d6ae2ec0a1d805ca",
+      "bytes": 550423,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Breast_Visium/PermutedXY-seed1.npz": {
+      "sha256": "a844511a7964e1d5dae0f1377cc90ea81790c278da1b63af4937b0f536f91b0b",
+      "bytes": 552689,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Breast_Visium/PCA30-seed2.npz": {
+      "sha256": "abc3fe30918b8c3a6ba569dc90ff43193098f3e394ccbb6bcd3eba96873b231d",
+      "bytes": 414219,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Breast_Visium/Tessera-seed1.npz": {
+      "sha256": "41672941571c131ecb800e85d6ada51fdc926bd9bc01502e88f72e8e96a68eb8",
+      "bytes": 550501,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Breast_Visium/PCA30-seed3.npz": {
+      "sha256": "feb941272dd77eb3e8524284e07bd45d793a24e9996dc6823965cafc4cfeeb4d",
+      "bytes": 414196,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Breast_Visium/SelfOnly-seed2.npz": {
+      "sha256": "89a0157d57d4677f76eb212de85f40e7277b6708a1626f5852a779850e470f80",
+      "bytes": 350258,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Breast_Visium/PermutedXY-seed3.npz": {
+      "sha256": "e057ec3d2262b009e3c727ef7c64650705cbdf42c776e9eddb316fecae64ff4d",
+      "bytes": 553224,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Breast_Visium/SelfOnly-seed3.npz": {
+      "sha256": "6b74d923c78b82d911690230637c79eaed0854585ea458bcc26c39a967a83a41",
+      "bytes": 349907,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Breast_Visium/Tessera-seed2.npz": {
+      "sha256": "8af9e0eadca01626e2499af60e04e87dc2db6fbb7a30467d83d57e1eb5aac986",
+      "bytes": 550375,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Breast_Visium/NoGate-seed3.npz": {
+      "sha256": "05154b2a327975c18198a98e847a5db01d1fd4e79b280b687ba9b53dce27932d",
+      "bytes": 434513,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Breast_Visium/NoGate-seed2.npz": {
+      "sha256": "ad5f00d6ccc003094add367a1dd5bd4fc1df9351c8f785baf0c4d6e790916a84",
+      "bytes": 434624,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Breast_Visium/NoContrast-seed2.npz": {
+      "sha256": "41f7c2f7cc3b4ee3e931391a0e8fed94cd4e1c2d88f78b9b4b0a94fc2c96c294",
+      "bytes": 550372,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Breast_Visium/NoScale-seed3.npz": {
+      "sha256": "ac3fd09a665318ee7d2eac5e2727c6c05c589a2d2c18957664d875df1d067f17",
+      "bytes": 551675,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Breast_Visium/graph.npz": {
+      "sha256": "2e15943398d10c71df1f4988ff3013efe5a4c113e01939cbdd02209f9bc96f68",
+      "bytes": 89293,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Breast_Visium/NoScale-seed1.npz": {
+      "sha256": "8f93599b4fb65c95f7a99117f177d68f7c1b70338f1daa2a8f7f369f3cdfff99",
+      "bytes": 550398,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Breast_Visium/NoContrast-seed3.npz": {
+      "sha256": "874523f0fa50e1dd03e21de630f6cd5cb82793797cac240c0ac7a72cbb868fca",
+      "bytes": 548482,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Breast_Visium/SelfOnly-seed1.npz": {
+      "sha256": "52fded3fff5a3d53487ee17c8bd8b37da4cd571a0c66b50d3115e848758c50cc",
+      "bytes": 350129,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Breast_Visium/NoScale-seed2.npz": {
+      "sha256": "fb78f65406a04d23226382c8b7d88a6a046c54bcae719f41a026d7ae88868060",
+      "bytes": 550636,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Breast_Visium/NeighborMean-seed1.npz": {
+      "sha256": "4e4a613b2d140c82f74311aa5789611aab83b06a26803f558733fc258613d71f",
+      "bytes": 629607,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Breast_Visium/PCA50-seed1.npz": {
+      "sha256": "10c309552a6c8f6387a636db3c00ad975f2731adb03defc44d3066da91e1701b",
+      "bytes": 628103,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Breast_Visium/Tessera-seed3.npz": {
+      "sha256": "083fefa5bacde36fcce3f44bc16ca8cc0ec315648dfef721b6b28c57ba31bfe4",
+      "bytes": 552716,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Breast_Visium/NeighborMean-seed2.npz": {
+      "sha256": "a0834c71e162ace35b30eec1b71a408395d1f8765d77f18475ba4db1b85b6e7f",
+      "bytes": 629566,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Breast_Visium/PCA50-seed2.npz": {
+      "sha256": "936d82469517175b58d2d1cbda79ea49a2de10c77467a8a5309be0cc842f4b0d",
+      "bytes": 628094,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Breast_Visium/PermutedXY-seed2.npz": {
+      "sha256": "1f1087d202f16a9ad1a5fb0f2f0b7d9f7ee4ff78fb8b11a943e4563ff2eeb28c",
+      "bytes": 552429,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung5_Rep2-SelfOnly-seed2.npz": {
+      "sha256": "c0633513185ccc31b6176f9ba15885636ac7c960563f5abf7c553c5179c51b14",
+      "bytes": 3074565,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung6-SelfOnly-seed1.pt": {
+      "sha256": "f4692597234f6f7045afac3c153495a3ad6ad815bc891790c7053bba67afcb4a",
+      "bytes": 122594,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung12-Tessera-seed2.pt": {
+      "sha256": "613b5dd9a8cbc776d0eab7b22741c86bcd1dce3e7c499157159f41df8300ff85",
+      "bytes": 122594,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung12-transform.npz": {
+      "sha256": "c5bca40b0d9f0fcc01c730b8ed4fe5b2d6e224ee7a1d0f39c07c1ee32f788b1b",
+      "bytes": 267046,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung13-SelfOnly-seed2.pt": {
+      "sha256": "a9e17e8cf6488c10c856a4bf1a555939733244b2822bea1def4b03fa636ff89b",
+      "bytes": 122634,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung12-SelfOnly-seed1.npz": {
+      "sha256": "0082abcab94fba9b6deb46d45d113d36164ab279eae4f0f6450f8ecc9a2d5696",
+      "bytes": 3068539,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung13-Tessera-seed1.npz": {
+      "sha256": "e3c3630a3251ab25722e9b0c780e2321835bb240d16cae1c276a07b6ce518dd7",
+      "bytes": 3055737,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung13-Tessera-seed1.pt": {
+      "sha256": "f793cd3f87c7aec7274d9f12a85b56925d450fce5d02efba8ba39a28ccc88065",
+      "bytes": 122594,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung9_Rep1-transform.npz": {
+      "sha256": "2e91a6ae11afe24b2e7cf652fa85373acef848e850c54a0db7e6d858424ad01c",
+      "bytes": 267396,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung5_Rep2-Tessera-seed2.npz": {
+      "sha256": "b985a432424a0685559c8f9acf0d05b953b7b2e3d55e3d3ecbae4abe308a1497",
+      "bytes": 3073956,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung9_Rep1-PCA50-seed1.npz": {
+      "sha256": "b0b4708030985b79f824bbdb40811412ea7c31333f864d4ab15784eae1247366",
+      "bytes": 4767450,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung9_Rep1-SelfOnly-seed2.pt": {
+      "sha256": "881b4907c56c9c1dfd6f0c2f04ea96c580f6fe93eadf743ebb9ba6f13299d384",
+      "bytes": 122794,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung5_Rep2-SelfOnly-seed3.pt": {
+      "sha256": "ad93fb640f5fe1b22377cb93fe09f87a8c917af2540971363b99265098fa69d1",
+      "bytes": 122794,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung12-Tessera-seed2.npz": {
+      "sha256": "1334fc3916e602251c4166a0f140955b080e7667ea4745cf6d1e4d76e303cce6",
+      "bytes": 3070072,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung12-PCA50-seed1.npz": {
+      "sha256": "c8b3094f5132f31b6fcaa10d77dbd7fc29ed743f5eab059487a9880740959ac0",
+      "bytes": 4779535,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung13-SelfOnly-seed1.npz": {
+      "sha256": "f01fe755ebc0e9451fabb968c783acd6f957a0b9b0c21fbfc39159512e1ac833",
+      "bytes": 3051124,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung6-transform.npz": {
+      "sha256": "f738dd6078b3539c9c3e10a473ff456e8c21b2df081feca47d83bb975c6f54d6",
+      "bytes": 266531,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung5_Rep2-PCA50-seed3.npz": {
+      "sha256": "ff49d90d41306613b6dbc524d582b5a4692392ed36fab2a65ecf21544cbf35ab",
+      "bytes": 4785464,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung6-Tessera-seed3.npz": {
+      "sha256": "97290d3b20fc16a5e3e5591e9f1804d4259351e96584b8cd9352b4184324fcfd",
+      "bytes": 3066719,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung12-SelfOnly-seed2.pt": {
+      "sha256": "9d31818e37fc45664d340732aeeb7c25287a3bd4789824d043c5c7d7b125ca07",
+      "bytes": 122634,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung12-SelfOnly-seed3.pt": {
+      "sha256": "98352506073ed009ea92b7dfa50c81e13313439a99faa20ace43231685ec11d5",
+      "bytes": 122634,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung6-SelfOnly-seed3.npz": {
+      "sha256": "49a9970be594e00e485c1e83b05a7eb35c8f59b371e66a048c7322cb0c5a4fc2",
+      "bytes": 3067835,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung12-Tessera-seed3.npz": {
+      "sha256": "98a90d0d96589b00b3dd4c8c2532584d5fa1f9e4c026513d44ac25b6a90cdc86",
+      "bytes": 3069783,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung9_Rep1-SelfOnly-seed3.npz": {
+      "sha256": "da6ff8aeb1ad7cc7022e0caad83fb0d8aba85ba98ba98676cea98529efe0c440",
+      "bytes": 3055064,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung5_Rep2-SelfOnly-seed2.pt": {
+      "sha256": "e56c17d6d1623b4cc757e1fbe8f1572abf89bc6b74e0201162ae38eb5e532f0a",
+      "bytes": 122794,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung9_Rep1-Tessera-seed3.pt": {
+      "sha256": "03f9d4be8501d9589495d907e0686021451e00d625164559d428056fa5dce81f",
+      "bytes": 122754,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung6-SelfOnly-seed1.npz": {
+      "sha256": "401f8a782fe1aee2718051a8707b24d15c106bd1bfcead784b6fdc1bbe9e4d88",
+      "bytes": 3068071,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung9_Rep1-SelfOnly-seed1.pt": {
+      "sha256": "c9c4a1f25a85ca33dd036c4fbc32edf3912fa2484e993147e53c9d874d984256",
+      "bytes": 122794,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung5_Rep2-Tessera-seed2.pt": {
+      "sha256": "25764bae39eaeeaf2eee883e35135af0b93f82d57c2bd82e871caa08daac4749",
+      "bytes": 122754,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung13-PCA50-seed3.npz": {
+      "sha256": "ab8db6df1a086565a6313552bf734402c4e453c5fb58e31201c16bda8678c548",
+      "bytes": 4764178,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung5_Rep2-Tessera-seed1.npz": {
+      "sha256": "f710871aaba1e26e5182a39ec2bac5e0c0e5ea7f00f2abdb96648221a47c3a63",
+      "bytes": 3075464,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung9_Rep1-PCA50-seed2.npz": {
+      "sha256": "b0b4708030985b79f824bbdb40811412ea7c31333f864d4ab15784eae1247366",
+      "bytes": 4767450,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung13-transform.npz": {
+      "sha256": "9fcaa997f93b5de8ceb37e7f543105827fb5ba64c097042d643d209e22e2ff03",
+      "bytes": 266707,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung6-SelfOnly-seed2.pt": {
+      "sha256": "17c6414508c89b00eab5bd340e2ac4c199adb507cab86c689606ef02e0f22b3c",
+      "bytes": 122594,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung12-Tessera-seed1.npz": {
+      "sha256": "c63fc3fe12bdc074c0c670c808d90802c2a61269ca22078e846f5c55b8409b21",
+      "bytes": 3070441,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung5_Rep2-Tessera-seed1.pt": {
+      "sha256": "f7baea88ead0049db9198283e93ac944d6592e876aab1f0c255664825cbd8f31",
+      "bytes": 122754,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung13-SelfOnly-seed3.pt": {
+      "sha256": "2de87bd9abdef776604e4d3eb878dc5f0b31256b6f17aed67d312e741791ac2e",
+      "bytes": 122634,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung5_Rep2-SelfOnly-seed1.npz": {
+      "sha256": "c43d03edc1a9cb9cc0136172290beb69a48992ca5956372610f8dc68253791d5",
+      "bytes": 3070487,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung12-SelfOnly-seed1.pt": {
+      "sha256": "9ae23c9bdb6670466a4dfbf22644812e0b5d9e643dfe2ebc4a44835839c2bc31",
+      "bytes": 122634,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung13-SelfOnly-seed2.npz": {
+      "sha256": "ac4a64e26a3e8dd427b1a102ae4914c332c353ffe0ec810c4e19e9f2267173c4",
+      "bytes": 3053433,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung13-Tessera-seed2.pt": {
+      "sha256": "f74437393a9683279eb98ca4f814844d1fce7000c3aceeeec93c0259820c1088",
+      "bytes": 122594,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung13-Tessera-seed3.npz": {
+      "sha256": "3d5036cc79637bbe0c66a8445142f0d76a5c2a5b805317ab6802d538d4742782",
+      "bytes": 3053329,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung12-SelfOnly-seed2.npz": {
+      "sha256": "77c3e06b209412d74bbffe92b71d057f1c5c5173e9ea363c75353fd75009162b",
+      "bytes": 3068797,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung13-PCA50-seed2.npz": {
+      "sha256": "ab8db6df1a086565a6313552bf734402c4e453c5fb58e31201c16bda8678c548",
+      "bytes": 4764178,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung6-SelfOnly-seed2.npz": {
+      "sha256": "028c5de90b7e1b49c054da7674230d6e22c376e7d2dc47d03633da667ed3daa1",
+      "bytes": 3067711,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung5_Rep2-Tessera-seed3.pt": {
+      "sha256": "1d51803ff2ee39a995fd35181bd9a604110ca3f33b7db67843e850ccc3c1b20c",
+      "bytes": 122754,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung12-PCA50-seed3.npz": {
+      "sha256": "c8b3094f5132f31b6fcaa10d77dbd7fc29ed743f5eab059487a9880740959ac0",
+      "bytes": 4779535,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung6-Tessera-seed2.npz": {
+      "sha256": "ef84705915ae03bd65358ade36f8445b32d6060d21576cf460f695e2a4c130eb",
+      "bytes": 3068223,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung6-Tessera-seed3.pt": {
+      "sha256": "fcbf0346279adab5215b13a6a3507a2d580935929fd850e1c409ef034bb5d1fe",
+      "bytes": 122554,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung6-Tessera-seed2.pt": {
+      "sha256": "cdd0c08b8b2ade089674ad24ebc3f022d53b0e3c58c90eb1df959b267499fcec",
+      "bytes": 122554,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung13-SelfOnly-seed3.npz": {
+      "sha256": "da675f562143fb386e9481713b5553c448a1e7cdebcd420bd763afde749fa667",
+      "bytes": 3049333,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung5_Rep2-Tessera-seed3.npz": {
+      "sha256": "b288d60fda4fdd84d07d4d44fc86a236e391c23651581b1505fa0cf354630736",
+      "bytes": 3076166,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung6-PCA50-seed2.npz": {
+      "sha256": "5de672b4a85d150c694c5372780afed78355b8cd8eee4eb78f2dbce6db36ee42",
+      "bytes": 4777837,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung6-Tessera-seed1.pt": {
+      "sha256": "723fc4699c4c69eacd64df6884a6c2705fd3e3365631374f76331de9c29ea1ac",
+      "bytes": 122554,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung12-Tessera-seed3.pt": {
+      "sha256": "4891c4c83970c1676ce54b86d4f9de0261e4e43e85d074c137bc9c7ec58f5835",
+      "bytes": 122594,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung12-Tessera-seed1.pt": {
+      "sha256": "db4e88192444c1ceef372f823c30b8785579f208f0585aa5c32408c03ea24dcf",
+      "bytes": 122594,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung6-PCA50-seed1.npz": {
+      "sha256": "5de672b4a85d150c694c5372780afed78355b8cd8eee4eb78f2dbce6db36ee42",
+      "bytes": 4777837,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung5_Rep2-SelfOnly-seed1.pt": {
+      "sha256": "e68f04b2be142ee061f10ba920018a1655c785d4daafaa287f5633a3527d4cac",
+      "bytes": 122794,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung6-PCA50-seed3.npz": {
+      "sha256": "5de672b4a85d150c694c5372780afed78355b8cd8eee4eb78f2dbce6db36ee42",
+      "bytes": 4777837,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung6-Tessera-seed1.npz": {
+      "sha256": "0a1be3e10a297eff1b1688ee3f118f9c4ae2bccf2561e996bac24a4a47fc8f4e",
+      "bytes": 3066634,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung5_Rep2-SelfOnly-seed3.npz": {
+      "sha256": "e95f3b828f16e8d10c05bba777bb613bbf75cd66389f95ef3c840f3d10acec9e",
+      "bytes": 3073417,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung13-Tessera-seed2.npz": {
+      "sha256": "570fc819cf25e7c39ab9d36e1c6494ac9a311778f05757e1ce5d1991ff1fff4e",
+      "bytes": 3052802,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung5_Rep2-transform.npz": {
+      "sha256": "25d067dc3d1d1386fe573f4fbc802007ddaf753fa03af1fc1c5466778effbf3f",
+      "bytes": 267502,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung13-PCA50-seed1.npz": {
+      "sha256": "ab8db6df1a086565a6313552bf734402c4e453c5fb58e31201c16bda8678c548",
+      "bytes": 4764178,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung9_Rep1-PCA50-seed3.npz": {
+      "sha256": "b0b4708030985b79f824bbdb40811412ea7c31333f864d4ab15784eae1247366",
+      "bytes": 4767450,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung9_Rep1-SelfOnly-seed1.npz": {
+      "sha256": "3b1bdd311dbc62580ce701c72dd9cb5519b98b65d312f3b4215911ca34d133e0",
+      "bytes": 3054982,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung12-SelfOnly-seed3.npz": {
+      "sha256": "22f64d4ed67a933be58ff84ff4cf78d068e71c19828a3981a8b6638dc4ec67b3",
+      "bytes": 3067807,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung9_Rep1-Tessera-seed3.npz": {
+      "sha256": "11da53e8681cb6af6af47aba029e02d43600d9d9a19da49f3d9abfd12836567a",
+      "bytes": 3059865,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung5_Rep2-PCA50-seed2.npz": {
+      "sha256": "ff49d90d41306613b6dbc524d582b5a4692392ed36fab2a65ecf21544cbf35ab",
+      "bytes": 4785464,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung13-Tessera-seed3.pt": {
+      "sha256": "192a4b09e8fa7f12cacb2828403b817a071f9969a7290ea8d68966ad6ef6c604",
+      "bytes": 122594,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung9_Rep1-Tessera-seed2.npz": {
+      "sha256": "892317f2b0c7bd1880569cfed73620cd3cc60b8bf7f91894cde14bec3cc082b8",
+      "bytes": 3056902,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung9_Rep1-Tessera-seed2.pt": {
+      "sha256": "8bb7b3cda60f4fc257dcadd22cc91c6daa34760ff25e1b11704e198fe72be7b8",
+      "bytes": 122754,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung9_Rep1-Tessera-seed1.pt": {
+      "sha256": "047fb9e84604e37dcc3c77aeedd573c084867987ffa099ec70773279ba2ce63f",
+      "bytes": 122754,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung5_Rep2-PCA50-seed1.npz": {
+      "sha256": "ff49d90d41306613b6dbc524d582b5a4692392ed36fab2a65ecf21544cbf35ab",
+      "bytes": 4785464,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung6-SelfOnly-seed3.pt": {
+      "sha256": "7ae36e1a566dd807437df1ce914100aaa759e5a3dbf30091dbd9a75d4a2594f5",
+      "bytes": 122594,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung13-SelfOnly-seed1.pt": {
+      "sha256": "5354a84e865795471209afa1e407fb36bf3ae142a9802f6f4531983fd5eb32cc",
+      "bytes": 122634,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung9_Rep1-SelfOnly-seed3.pt": {
+      "sha256": "39c7b868b93c267b2a5c2a396f9de21e0c60eeac7da1d2cf9ee1432f0ee7f3bd",
+      "bytes": 122794,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung9_Rep1-Tessera-seed1.npz": {
+      "sha256": "c6eb97f4162841d45ee8ee14a097c0b845234a2b8dedf59555ffbd56d15a0e07",
+      "bytes": 3059467,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung9_Rep1-SelfOnly-seed2.npz": {
+      "sha256": "8c1c94484692d301ff073fd40d11de90efb74cc5ad0a43f037bf57191496f262",
+      "bytes": 3056921,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/transfer/NSCLC_Lung12-PCA50-seed2.npz": {
+      "sha256": "c8b3094f5132f31b6fcaa10d77dbd7fc29ed743f5eab059487a9880740959ac0",
+      "bytes": 4779535,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Colorectal_TVA232/PCA50-seed3.npz": {
+      "sha256": "480d9ca7c65fcfdad3ed92bf2821db2933e46391ed447e8bb5dc6259e9acf3b2",
+      "bytes": 1248270,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Colorectal_TVA232/NeighborMean-seed3.npz": {
+      "sha256": "2bac1eec2650af28787dce783312ff6b4eb6a127d4d3add6054e55a54a7e2887",
+      "bytes": 1247318,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Colorectal_TVA232/NoGate-seed1.npz": {
+      "sha256": "4f249b3bcc33e4dc83a4996757fff793fb75ae580109194b3ae1f53c4756207a",
+      "bytes": 847215,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Colorectal_TVA232/PCA30-seed1.npz": {
+      "sha256": "89d5fe164c7c6ee577158b6e3c0a24d3137e3cf9d33dc0114ef5575c31d1aafd",
+      "bytes": 806031,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Colorectal_TVA232/NoContrast-seed1.npz": {
+      "sha256": "435175aef6cb7f40a6b9b5cc107c8561e94252a08df779297e2b84eb4dec9b8b",
+      "bytes": 1067290,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Colorectal_TVA232/PermutedXY-seed1.npz": {
+      "sha256": "bf7fe1d38df26d3964eaee7fbe0f3e376e0cd97fbbc60472db66e3cf6f60bd0e",
+      "bytes": 1123600,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Colorectal_TVA232/PCA30-seed2.npz": {
+      "sha256": "24e85806effb50ac772f4b06138cc8b1642c58ff97652f490daba9728e9a9818",
+      "bytes": 806077,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Colorectal_TVA232/Tessera-seed1.npz": {
+      "sha256": "5364cd990b72fb2aa138b986788dc84afeba820496ae0101ae19a4e63ea3af2e",
+      "bytes": 1069054,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Colorectal_TVA232/PCA30-seed3.npz": {
+      "sha256": "137b4b392bffa0d1b2fd11e5afbab6c31c78698017f2c4f4de691dde69e7d3e0",
+      "bytes": 806072,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Colorectal_TVA232/SelfOnly-seed2.npz": {
+      "sha256": "7389f5e6a10067dc859a90564d1ce4f9a5218447c9473478af01f0b7380788d5",
+      "bytes": 730244,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Colorectal_TVA232/PermutedXY-seed3.npz": {
+      "sha256": "5b9553c5272188975873729647a29e352ebaffbb8822c236991aa35c9c984b39",
+      "bytes": 1120006,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Colorectal_TVA232/SelfOnly-seed3.npz": {
+      "sha256": "fa2a07d070cd075b08905a2ded7aebc96d13b6c6bd0ef77c32a523abd93f0865",
+      "bytes": 729351,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Colorectal_TVA232/Tessera-seed2.npz": {
+      "sha256": "6670871fa5171a6e1be8a9ddcf99b9877deeb798209eb35d0711df37ccc3b1bd",
+      "bytes": 1070381,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Colorectal_TVA232/NoGate-seed3.npz": {
+      "sha256": "acb68897e6d9accd1bc33fd92484ae7d981949b2232c362cf48665e1b393af8a",
+      "bytes": 847404,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Colorectal_TVA232/NoGate-seed2.npz": {
+      "sha256": "eae49c10a5635f9e262807fddf1b00cbead3fc74bc5fd1ba23fb7da189f9fb68",
+      "bytes": 847043,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Colorectal_TVA232/NoContrast-seed2.npz": {
+      "sha256": "983a7fd7cdf243b92cb0d34604238f23b2907c465275feab18df466ec78d64e3",
+      "bytes": 1069116,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Colorectal_TVA232/NoScale-seed3.npz": {
+      "sha256": "49c464063f4f8d6fc4a5eaadfe193ad0a8cc1ad1b1a8bf60a0296318eea32b24",
+      "bytes": 1066792,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Colorectal_TVA232/graph.npz": {
+      "sha256": "37c318bc45d8d422f8600733baf75f86e1610bef4f1cf859b44b726827f5e19e",
+      "bytes": 136056,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Colorectal_TVA232/NoScale-seed1.npz": {
+      "sha256": "a3469f833c711bd5f9b29f8b3d1085f6f2499ba05bfdaac624167a71c0123060",
+      "bytes": 1064433,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Colorectal_TVA232/NoContrast-seed3.npz": {
+      "sha256": "ea77ce125339f7341262b0a7d428fa86f9c7960313d7adc70e009554f62d9d28",
+      "bytes": 1066972,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Colorectal_TVA232/SelfOnly-seed1.npz": {
+      "sha256": "a6636f249c2c391d6a48fbc4c99dbb595b39b308b23098433da1240396399df9",
+      "bytes": 729423,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Colorectal_TVA232/NoScale-seed2.npz": {
+      "sha256": "49e804761f339a3843b11f5c076b20005ae6b46688b6bd7e3e777a8b3f07945c",
+      "bytes": 1068641,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Colorectal_TVA232/NeighborMean-seed1.npz": {
+      "sha256": "3a4a08c2c53774a1a2f65b2ed988cc25ccdb78e00eb04091f8669ac031c83397",
+      "bytes": 1247320,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Colorectal_TVA232/PCA50-seed1.npz": {
+      "sha256": "c71d88734ad59b2802cdb2c2307dafd8022c93697d0662ef7f58de84214fa506",
+      "bytes": 1248257,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Colorectal_TVA232/Tessera-seed3.npz": {
+      "sha256": "531e12a2287776755c2124f5538b2277580dff07eba9776a65be5ebfe235a8f2",
+      "bytes": 1066946,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Colorectal_TVA232/NeighborMean-seed2.npz": {
+      "sha256": "242f6c056d1649f37f521b89ed5843b547ad2da74c1ae9bd34c3a7ac680c2357",
+      "bytes": 1247347,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Colorectal_TVA232/PCA50-seed2.npz": {
+      "sha256": "578eecb50ea5ff7d75280897ad8645c4f964c580762ac5fdd24ddd90f45bfab2",
+      "bytes": 1248291,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/Colorectal_TVA232/PermutedXY-seed2.npz": {
+      "sha256": "f680acf91d32978e8d77e6f003b6cd823b04f1f36dec478b5e3c920ce19bec4e",
+      "bytes": 1122540,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/MIBI/PCA50-seed3.npz": {
+      "sha256": "2b423c75bb639a7392143a17492c6821a29acaa918580d40b6cc6741151c5955",
+      "bytes": 524567,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/MIBI/NeighborMean-seed3.npz": {
+      "sha256": "61ec39c5f4c74670da3d5d2a9846b07c376ffd9f1b4ef37e3931efdec996689c",
+      "bytes": 524419,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/MIBI/NoGate-seed1.npz": {
+      "sha256": "2be675268f3ccdae8b78d1589e44953baadae56148f8738d4ce99396293d2860",
+      "bytes": 472288,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/MIBI/PCA30-seed1.npz": {
+      "sha256": "9d102475fb737cbcee711ee6532ccabbe872a521e11c46646a49c33c95e4c25b",
+      "bytes": 449829,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/MIBI/NoContrast-seed1.npz": {
+      "sha256": "786aef35e10b76cbe6b0a94af15c6e4675432c02cfe049d6678889a60a1451ee",
+      "bytes": 592223,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/MIBI/PermutedXY-seed1.npz": {
+      "sha256": "5f99b7b5537dc1cd4a6d4f8f69bc1b25b8a8ab36f06e6bce4897074f6f6a0118",
+      "bytes": 622087,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/MIBI/PCA30-seed2.npz": {
+      "sha256": "050d096134fe44f7a07bbcd18da7cc79853c5e91e8c237ec0274ba752a0f1e82",
+      "bytes": 449841,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/MIBI/Tessera-seed1.npz": {
+      "sha256": "b1e7f8a3d70de15dbd3b01188d0d933b8077850e1ec7d1e4adb46e4e91f37bed",
+      "bytes": 596837,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/MIBI/PCA30-seed3.npz": {
+      "sha256": "133ce29f16c3f86aa73aa544f2fed57637e1fce534ba73fc7b2e6d67a4da33ef",
+      "bytes": 449840,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/MIBI/SelfOnly-seed2.npz": {
+      "sha256": "caeb29ce587e8b665fc0fd6e1f8586cdf176b4b5c622ac35de2780d0d0a6e878",
+      "bytes": 402724,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/MIBI/PermutedXY-seed3.npz": {
+      "sha256": "08d6f213224ceecf4ae8a2cec146a5600f68abb3f76caffddbd1af39f1d8a950",
+      "bytes": 622763,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/MIBI/SelfOnly-seed3.npz": {
+      "sha256": "e0e51f60bc4dbfb18272f824f31589a5310357f430a21ea00864799d610511be",
+      "bytes": 402681,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/MIBI/Tessera-seed2.npz": {
+      "sha256": "f1dc6fac87ed2ffb577ce616cf35504cff87e732fa624337ec4665ed11790155",
+      "bytes": 593447,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/MIBI/NoGate-seed3.npz": {
+      "sha256": "06252bdb67cd86cd73802f995ecd4f8de2ed141ae8a75917ee545da547c92457",
+      "bytes": 472087,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/MIBI/NoGate-seed2.npz": {
+      "sha256": "e45f34aa37ed2db06aed4451f56da102a0aace12dca4bf2662401c89ee03d9aa",
+      "bytes": 471868,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/MIBI/NoContrast-seed2.npz": {
+      "sha256": "d992795abf85423a1726bfce0b27a735895ccaa7e420a33fe338be95c3bf153e",
+      "bytes": 593296,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/MIBI/NoScale-seed3.npz": {
+      "sha256": "858398086e1e60695cb2f33728c1fac267f1a19bb7777f391997e76b3b57236d",
+      "bytes": 593354,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/MIBI/graph.npz": {
+      "sha256": "b0264ef8ddd29f126d415e6f60a08e7a2293fc907788125a622ce2ec4a727e5f",
+      "bytes": 75176,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/MIBI/NoScale-seed1.npz": {
+      "sha256": "6ed9d00ce9676395283e0207f6fc5b369a525e4fd0fdc1102b60268bb40f02ae",
+      "bytes": 594332,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/MIBI/NoContrast-seed3.npz": {
+      "sha256": "3f5ee5abb88a6fdc8f301da52588eadd209367838f69d8d4e65ed0ed35f39f77",
+      "bytes": 593634,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/MIBI/SelfOnly-seed1.npz": {
+      "sha256": "b823cca1b2366d4f5d6d09bf382e4edbf86192e1fc8aef901e1afca1302d5388",
+      "bytes": 402959,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/MIBI/NoScale-seed2.npz": {
+      "sha256": "150555ef01ba07b045301f5ee14f3048a1ce7712385d661de6c03c880f97a31a",
+      "bytes": 592489,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/MIBI/NeighborMean-seed1.npz": {
+      "sha256": "eeea9364492afdaf49db4785a5d90a06cd94590ba77839bd908dc454657643ec",
+      "bytes": 524404,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/MIBI/PCA50-seed1.npz": {
+      "sha256": "9970e84f7bce88acb78e38e6c769557ec9d24b27aa6d58dfd97633c3949f4b54",
+      "bytes": 524555,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/MIBI/Tessera-seed3.npz": {
+      "sha256": "04a4e212e0aecbb6f0ef3f49d578ce005ca7363d0ae71dfd84f0db4c75add993",
+      "bytes": 595554,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/MIBI/NeighborMean-seed2.npz": {
+      "sha256": "cbd27db3a1b072a060904cfe4e92d19f26602c97ee9a3abb5db287f88a422c0f",
+      "bytes": 524414,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/MIBI/PCA50-seed2.npz": {
+      "sha256": "66e88a56bdbb2c67447a107a22d5fd854decfe83c6c79d8f89b9b1b947cec764",
+      "bytes": 524579,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/MIBI/PermutedXY-seed2.npz": {
+      "sha256": "705a11cfd90ff35257a519e5f826b935fd23f361af9aa7658d406380d87dbcaf",
+      "bytes": 621799,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung12/PCA50-seed3.npz": {
+      "sha256": "6d5b4d5ce02ef839685fd14e409bff9b12f47b314150d0c8ae95fbb557189af1",
+      "bytes": 1199486,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung12/NeighborMean-seed3.npz": {
+      "sha256": "07831f90cd9904fbc37587b565a5e3bafc405b6292d1d82c76e127cf48c78216",
+      "bytes": 1201933,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung12/NoGate-seed1.npz": {
+      "sha256": "6adc080e944753d188d38cef008e200269a4dfa7f8dfaa772d918909693a4faf",
+      "bytes": 819087,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung12/PCA30-seed1.npz": {
+      "sha256": "86d0f5261bfc6e8906e7d64215f107e4706f64e06a7bb87cbbb9b080ade524e4",
+      "bytes": 778351,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung12/NoContrast-seed1.npz": {
+      "sha256": "4f90b449154ba5a4193bb367d412b8a2354fdb45d42cf05b87969d253c7ae895",
+      "bytes": 1043629,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung12/PermutedXY-seed1.npz": {
+      "sha256": "b8de1714100d6335694d789667beead609631dc15738b98397d070298e2592de",
+      "bytes": 1090901,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung12/PCA30-seed2.npz": {
+      "sha256": "652e6df9ef089347fecb2e1260b4c3969818adfad83f52d7de7fd922f2c9b961",
+      "bytes": 778337,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung12/Tessera-seed1.npz": {
+      "sha256": "52b695472c6172740519974f795b1bda5bb5cc3e612128eafc79f18798f082d4",
+      "bytes": 1050140,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung12/PCA30-seed3.npz": {
+      "sha256": "aac1f06c1f4038f2b117249f1fa89376c75006cd8e305f42b0c33eb8ea1010f1",
+      "bytes": 778315,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung12/SelfOnly-seed2.npz": {
+      "sha256": "6d330c3eeb0b4036afe8326016ac236306ca81dcc85dd9f8740b2823d17401f9",
+      "bytes": 695203,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung12/PermutedXY-seed3.npz": {
+      "sha256": "4f1f05364b6d6ff7a37c4c1f3426990351399042248e3cb216cfa7b0cea5749e",
+      "bytes": 1091844,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung12/SelfOnly-seed3.npz": {
+      "sha256": "5260f5c8bf7c30b937cdca885389ac9c46712d1a4736ab225f3bee72893ff09f",
+      "bytes": 694828,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung12/Tessera-seed2.npz": {
+      "sha256": "975dbc3b38f324421215f16cc22575b22206e743c7cf64580780665c87ebd8a3",
+      "bytes": 1049456,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung12/NoGate-seed3.npz": {
+      "sha256": "1b2ff6ccbc260cc9f2bf5f0c87e50b90fa19b2885a6eed387a8357a6ee35854a",
+      "bytes": 819169,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung12/NoGate-seed2.npz": {
+      "sha256": "ece8f33f3ce9b38e0dbbcaf49aef380469968832e1d559b58189268297bf0c6b",
+      "bytes": 819194,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung12/NoContrast-seed2.npz": {
+      "sha256": "82f15f686c16f2cd04ce1149725ad5aeabf8341fbead43cf37a86126a26cf253",
+      "bytes": 1047114,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung12/NoScale-seed3.npz": {
+      "sha256": "bc4157ec550ad57b1c80a9f07fa6786e03edfffc82449d8669c8949351a17f8b",
+      "bytes": 1046500,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung12/graph.npz": {
+      "sha256": "86ab6cb96ee63b38b42b00628f7aeea414c3cfbe87392728023827b3b6142a71",
+      "bytes": 141748,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung12/NoScale-seed1.npz": {
+      "sha256": "4793550cbf0894a6615b4e53a349970f2ea0abdce1475a2919e1cd0e64c72b9a",
+      "bytes": 1045535,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung12/NoContrast-seed3.npz": {
+      "sha256": "d594140ac76c2e922418f8b2274dd9577d29b7a3b8b4e78b36cbbf08b034d3b6",
+      "bytes": 1044555,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung12/SelfOnly-seed1.npz": {
+      "sha256": "eaaccb7c2a2527a05d7d1d798cf0ea4c45eec4a72e67c1f72476b7d592ea8cbd",
+      "bytes": 695235,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung12/NoScale-seed2.npz": {
+      "sha256": "710abbf1869e2af84ecf1bb0e790e162d644b135e96d52e665c2012ba6f987f4",
+      "bytes": 1044441,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung12/NeighborMean-seed1.npz": {
+      "sha256": "1e7a02baaaed3a54e136143f68869c0dfafd2477205fe05763eecdca9944f225",
+      "bytes": 1201925,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung12/PCA50-seed1.npz": {
+      "sha256": "bc0739129b17e33dafd5c041c5cf1a8fc70e6d93094572c66cda78d33a52fc10",
+      "bytes": 1199520,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung12/Tessera-seed3.npz": {
+      "sha256": "7ae6b51440711a3c3634fab89c8a0c11a52106a844593970927de97e57b7af7d",
+      "bytes": 1050994,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung12/NeighborMean-seed2.npz": {
+      "sha256": "908d3adff751ba533a9113367359eb9f4ebe568aede5843025e5d9af0ba38e12",
+      "bytes": 1201943,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung12/PCA50-seed2.npz": {
+      "sha256": "ba9e8b38bfeda6e6eff035f97e36c935825e2f0e65da2e6da530ca992e198095",
+      "bytes": 1199524,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/NSCLC_Lung12/PermutedXY-seed2.npz": {
+      "sha256": "615a56b18f3a9af5bd0d5fe4d2c8af60030ef551e91731616cdda11f3622c3a5",
+      "bytes": 1091879,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientC/PCA50-seed3.npz": {
+      "sha256": "1a87578d11d3fa55328c08cdbe146b00f1d442f49262401f718ca6391b250888",
+      "bytes": 1063486,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientC/NeighborMean-seed3.npz": {
+      "sha256": "83ee3ab67e86fe84cc4bd5b3f1a33e91ff0ba06ea93b9e375b2df73afeab3e16",
+      "bytes": 1062842,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientC/NoGate-seed1.npz": {
+      "sha256": "983abb9283c765f41c22bc05e4d8e941d036492275d5d9672d82a86ff08e9615",
+      "bytes": 723826,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientC/PCA30-seed1.npz": {
+      "sha256": "50037668b9dc6ab160605bff502901283169689e9065dff311794b45eb841d41",
+      "bytes": 687630,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientC/NoContrast-seed1.npz": {
+      "sha256": "cf91e5becdc6bd1526e4067f56514e3ca2afedde02f3a861cc41e1aa373891f8",
+      "bytes": 911187,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientC/PermutedXY-seed1.npz": {
+      "sha256": "122117a213076dd58d225e28d39f43cab74f22bb8f82eaee0b7770e8e95d2ac1",
+      "bytes": 971275,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientC/PCA30-seed2.npz": {
+      "sha256": "cfe5ee3d42d749e3f5a37a939349e0c1135318af69b1f5e2b38423038e8122bc",
+      "bytes": 687654,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientC/Tessera-seed1.npz": {
+      "sha256": "a31fc9eab58a7e37b11391b70d961e86671306d9909211e4c9a859f3bfde3c3f",
+      "bytes": 913360,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientC/PCA30-seed3.npz": {
+      "sha256": "fa227d28ada967e846d3961525595326a4795f5e236357fc09e61d155ed59d01",
+      "bytes": 687658,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientC/SelfOnly-seed2.npz": {
+      "sha256": "b9370a4958425a7d342391a5bbe384de89d249c040c78d2613693d2028e32372",
+      "bytes": 620303,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientC/PermutedXY-seed3.npz": {
+      "sha256": "bc6ec332addbce8d150ffd1fc8f8bff7ed1d624a985220ef07846e29dc50424f",
+      "bytes": 971648,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientC/SelfOnly-seed3.npz": {
+      "sha256": "38df46d4ea5ff53cb8ab5a0c19585f5a353cfbd67b1f6280f21b73de6e5ca8b5",
+      "bytes": 619133,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientC/Tessera-seed2.npz": {
+      "sha256": "a6d7f6a150bca8408c622d180407bc97b6491d4c73fadbb831faeb650df9bb17",
+      "bytes": 913464,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientC/NoGate-seed3.npz": {
+      "sha256": "f0207339da670890bfb83fb7d7c354a8f74512f93be27a5785b1df99e8613faf",
+      "bytes": 723814,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientC/NoGate-seed2.npz": {
+      "sha256": "bc3d9c3b23bbeaf19ab01de5130adfe79f7b998637f464e59333741bc2f27740",
+      "bytes": 723564,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientC/NoContrast-seed2.npz": {
+      "sha256": "86d924180c7db49a6b0850218605ab8d38d8947f123d4ba8c951f0c4b1f0bc26",
+      "bytes": 911462,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientC/NoScale-seed3.npz": {
+      "sha256": "bd40b0c229b74b19e58f006ab9d3999e5eb9466fa79175b64e59b756b6f72370",
+      "bytes": 911128,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientC/graph.npz": {
+      "sha256": "d2febd56e47337dc4012bc4d3c18641e8008e4814c6bcf8a077ffd9f4a413d35",
+      "bytes": 118934,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientC/NoScale-seed1.npz": {
+      "sha256": "250c2043816d6d7f136dc0620b3e444da8c3798bc8c6b179b4bf76f06964c55a",
+      "bytes": 910482,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientC/NoContrast-seed3.npz": {
+      "sha256": "8bdb83af31cb87ce31a963b9c2d851cc777329408d0f98d0f2c29f25550bd739",
+      "bytes": 911213,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientC/SelfOnly-seed1.npz": {
+      "sha256": "4cc830602061217825f6999d55c9f6bc9cde7a3e782c2af7da25a6235ffe6462",
+      "bytes": 620246,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientC/NoScale-seed2.npz": {
+      "sha256": "ccb5d2437031b9f66cc9cfdae0a42574dd8eec6b8fe9f50a9bba1617ccb685c8",
+      "bytes": 911931,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientC/NeighborMean-seed1.npz": {
+      "sha256": "483f9837d743dffde066a6fcd3b9bb3d6efe6032943843d934460ea541bb72d0",
+      "bytes": 1062780,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientC/PCA50-seed1.npz": {
+      "sha256": "5d921ef91d5de45af89308efcf4d339c0cdec3dfaddad302219aef10bd3a4893",
+      "bytes": 1063504,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientC/Tessera-seed3.npz": {
+      "sha256": "f3ed2a57bd0898b27ac11fb77ad1933e8bf121491fb052551985668bf04f508f",
+      "bytes": 912625,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientC/NeighborMean-seed2.npz": {
+      "sha256": "cae47be7832c528986aeba929d7a19952c19d10ebd1ff6124c46f72255138d78",
+      "bytes": 1062801,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientC/PCA50-seed2.npz": {
+      "sha256": "500148b7f34d56aecb8537f92789b08955fabec8fccd02e36ea4b589cac71b82",
+      "bytes": 1063529,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    },
+    "results/BCC_PatientC/PermutedXY-seed2.npz": {
+      "sha256": "7a34bb314f840c58265b8fc2aa89688ff5665649df47ae6063dab7ac7f30f89f",
+      "bytes": 973042,
+      "reason": "Retained numerical array/model state distributed in the complete version archive"
+    }
+  },
+  "omitted_file_count": 538,
+  "omitted_bytes": 556445507,
+  "verification_scope": "Compact manifest and import checks can run here; saved-result replay and82 scientific tests require the complete archive with the omitted files. No refit performed."
+}

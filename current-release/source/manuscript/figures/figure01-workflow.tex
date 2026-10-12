@@ -1,0 +1,58 @@
+\documentclass[border=3pt]{standalone}
+\input{../paper_fonts.tex}
+\usepackage{graphicx,tikz}
+\usetikzlibrary{arrows.meta,calc}
+\begin{document}
+\definecolor{ink}{HTML}{303943}\definecolor{line}{HTML}{B8C2C9}
+\begin{tikzpicture}[x=1cm,y=1cm,font=\fontsize{8.5}{11}\selectfont,text=ink]
+\tikzset{card/.style={draw=line,fill=black!2,rounded corners=3pt,minimum width=7.55cm,minimum height=2.93cm,anchor=north west},arr/.style={-{Latex[length=3pt]},draw=ink,line width=.7pt}}
+\node[card] (pA) at (0.0,0.0) {};
+\node[anchor=north west,font=\bfseries\fontsize{11}{13}\selectfont] at ([xshift=4pt,yshift=-4pt]pA.north west) {A};
+\node[anchor=north west,font=\bfseries\fontsize{9.5}{12}\selectfont] at ([xshift=.78cm,yshift=-6pt]pA.north west) {Tumor-associated assays};
+\node[anchor=west] at ([xshift=.14cm,yshift=-1.68cm]pA.north west) {\includegraphics[width=1.18cm]{../assets/slide.pdf}};
+\node[anchor=west] at ([xshift=1.55cm,yshift=-1.04cm]pA.north west) {Five NSCLC patients; four BCC patients};
+\node[anchor=west] at ([xshift=1.55cm,yshift=-1.58cm]pA.north west) {Registered breast Visium; colorectal TVA};
+\node[anchor=west] at ([xshift=1.55cm,yshift=-2.12cm]pA.north west) {Open-ST HNSCC; ancillary MIBI fields};
+\node[card] (pB) at (7.95,0.0) {};
+\node[anchor=north west,font=\bfseries\fontsize{11}{13}\selectfont] at ([xshift=4pt,yshift=-4pt]pB.north west) {B};
+\node[anchor=north west,font=\bfseries\fontsize{9.5}{12}\selectfont] at ([xshift=.78cm,yshift=-6pt]pB.north west) {Identity before geometry};
+\node[anchor=west] at ([xshift=.14cm,yshift=-1.68cm]pB.north west) {\includegraphics[width=1.18cm]{../assets/graph.pdf}};
+\node[anchor=west] at ([xshift=1.55cm,yshift=-1.04cm]pB.north west) {Source IDs and patient/FOV provenance};
+\node[anchor=west] at ([xshift=1.55cm,yshift=-1.58cm]pB.north west) {Whole-field selection; fixed cell budget};
+\node[anchor=west] at ([xshift=1.55cm,yshift=-2.12cm]pB.north west) {$k=6$ inside each coordinate frame};
+\node[card] (pC) at (0.0,-3.27) {};
+\node[anchor=north west,font=\bfseries\fontsize{11}{13}\selectfont] at ([xshift=4pt,yshift=-4pt]pC.north west) {C};
+\node[anchor=north west,font=\bfseries\fontsize{9.5}{12}\selectfont] at ([xshift=.78cm,yshift=-6pt]pC.north west) {Tessera representation};
+\node[anchor=west] at ([xshift=.14cm,yshift=-1.68cm]pC.north west) {\includegraphics[width=1.18cm]{../assets/encoder.pdf}};
+\node[anchor=west] at ([xshift=1.55cm,yshift=-1.04cm]pC.north west) {Edge-gated residual message passing};
+\node[anchor=west] at ([xshift=1.55cm,yshift=-1.58cm]pC.north west) {Three-depth attention and reconstruction};
+\node[anchor=west] at ([xshift=1.55cm,yshift=-2.12cm]pC.north west) {Gate-weighted contrastive objective};
+\node[card] (pD) at (7.95,-3.27) {};
+\node[anchor=north west,font=\bfseries\fontsize{11}{13}\selectfont] at ([xshift=4pt,yshift=-4pt]pD.north west) {D};
+\node[anchor=north west,font=\bfseries\fontsize{9.5}{12}\selectfont] at ([xshift=.78cm,yshift=-6pt]pD.north west) {Matched experimental controls};
+\node[anchor=west] at ([xshift=.14cm,yshift=-1.68cm]pD.north west) {\includegraphics[width=1.18cm]{../assets/control.pdf}};
+\node[anchor=west] at ([xshift=1.55cm,yshift=-1.04cm]pD.north west) {PCA50, PCA30 and neighbor mean};
+\node[anchor=west] at ([xshift=1.55cm,yshift=-1.58cm]pD.north west) {Remove gating, fusion or contrastive loss};
+\node[anchor=west] at ([xshift=1.55cm,yshift=-2.12cm]pD.north west) {Self-only encoder; permuted coordinates};
+\node[card] (pE) at (0.0,-6.54) {};
+\node[anchor=north west,font=\bfseries\fontsize{11}{13}\selectfont] at ([xshift=4pt,yshift=-4pt]pE.north west) {E};
+\node[anchor=north west,font=\bfseries\fontsize{9.5}{12}\selectfont] at ([xshift=.78cm,yshift=-6pt]pE.north west) {Patient-held-out evaluation};
+\node[anchor=west] at ([xshift=.14cm,yshift=-1.68cm]pE.north west) {\includegraphics[width=1.18cm]{../assets/patients.pdf}};
+\node[anchor=west] at ([xshift=1.55cm,yshift=-1.04cm]pE.north west) {Source-only scaling and PCA};
+\node[anchor=west] at ([xshift=1.55cm,yshift=-1.58cm]pE.north west) {Train on four; freeze; test the fifth};
+\node[anchor=west] at ([xshift=1.55cm,yshift=-2.12cm]pE.north west) {No target labels or target-fitted transform};
+\node[card] (pF) at (7.95,-6.54) {};
+\node[anchor=north west,font=\bfseries\fontsize{11}{13}\selectfont] at ([xshift=4pt,yshift=-4pt]pF.north west) {F};
+\node[anchor=north west,font=\bfseries\fontsize{9.5}{12}\selectfont] at ([xshift=.78cm,yshift=-6pt]pF.north west) {Evidence and its limits};
+\node[anchor=west] at ([xshift=.14cm,yshift=-1.68cm]pF.north west) {\includegraphics[width=1.18cm]{../assets/report.pdf}};
+\node[anchor=west] at ([xshift=1.55cm,yshift=-1.04cm]pF.north west) {Raw ARI, NMI, stability and resource use};
+\node[anchor=west] at ([xshift=1.55cm,yshift=-1.58cm]pF.north west) {Genuine H\&E plus registered spot maps};
+\node[anchor=west] at ([xshift=1.55cm,yshift=-2.12cm]pF.north west) {Annotations and gate scores are not truth};
+\draw[arr] (pA.east) -- (pB.west);
+\draw[arr] (pC.east) -- (pD.west);
+\draw[arr] (pE.east) -- (pF.west);
+\draw[arr] (pB.south) -- ++(0,-.17cm) -| (pC.north);
+\draw[arr] (pD.south) -- ++(0,-.17cm) -| (pE.north);
+\node[anchor=north,font=\fontsize{7.8}{9}\selectfont] at (7.75,-9.65) {Schematic symbols only; no generated tissue or fabricated biological measurements.};
+\end{tikzpicture}
+\end{document}

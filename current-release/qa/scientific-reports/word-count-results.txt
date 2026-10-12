@@ -1,0 +1,2 @@
+1906: File: /home/zeyufu/Desktop/ortho-diabetic-wound-insilico/output/scientific-reports-readiness-20261011-r2/final-documents/tessera/qa/scientific-reports/word-count-results.tex
+SUMWEIGHTS: 0, 1, 0, 0, 0, 0, 0, 0

@@ -1,0 +1,980 @@
+{
+  "status": "passed",
+  "pdf_files_checked": 52,
+  "embedded_pdf_images_checked": 340,
+  "raster_files_checked": 82,
+  "historical_breast_content_matches": [],
+  "pdfs": [
+    {
+      "path": "output/scientific-reports/scientific-reports-manuscript-inline.pdf",
+      "sha256": "44ab40a066eeecf23ab03dc597810a4920b428bd7cba22fe90638a6d0219d409",
+      "pages": 21,
+      "embedded_images_checked": 22
+    },
+    {
+      "path": "output/scientific-reports/scientific-reports-manuscript.pdf",
+      "sha256": "b380dedf46740a46dab8957fe732e19f4644234a26f24af1b697cd2918136846",
+      "pages": 22,
+      "embedded_images_checked": 22
+    },
+    {
+      "path": "output/scientific-reports/scientific-reports-supplement.pdf",
+      "sha256": "15a15e3738733668eb36ea4fded6a73ad95b403a59cf229f62341add5e24bb0a",
+      "pages": 20,
+      "embedded_images_checked": 84
+    },
+    {
+      "path": "source/manuscript/assets/control.pdf",
+      "sha256": "67c3da0e25fb3cd71e80b01a4be37371db26ec593871f814fb475cd3c4dd0771",
+      "pages": 1,
+      "embedded_images_checked": 0
+    },
+    {
+      "path": "source/manuscript/assets/encoder.pdf",
+      "sha256": "bd99870343f407026de20acff19396516c798558cbac7f0cdc2df06637d14e5b",
+      "pages": 1,
+      "embedded_images_checked": 0
+    },
+    {
+      "path": "source/manuscript/assets/graph.pdf",
+      "sha256": "888ebe7dc85357b3180522fa6097ca2188693d9cd1c20444004393200b89c5de",
+      "pages": 1,
+      "embedded_images_checked": 0
+    },
+    {
+      "path": "source/manuscript/assets/patients.pdf",
+      "sha256": "e768308408366c7e14544b65cbc9b2f1cd1a15f8b6b960098a0500f1acb96155",
+      "pages": 1,
+      "embedded_images_checked": 0
+    },
+    {
+      "path": "source/manuscript/assets/report.pdf",
+      "sha256": "f95dcd05b6c162ca17fe4d2035b764c819c1b2273cd5e58be5751cb37e5247fa",
+      "pages": 1,
+      "embedded_images_checked": 0
+    },
+    {
+      "path": "source/manuscript/assets/slide.pdf",
+      "sha256": "b8feee52f528e87e161e838955cd36b0067758d7eb88a5a61a6002b656b59ef9",
+      "pages": 1,
+      "embedded_images_checked": 0
+    },
+    {
+      "path": "source/manuscript/figures/figure01-workflow.pdf",
+      "sha256": "0a65dd1b93c471129e3e26c9a50f797620e5a2b2ef6778ca595b1191c9afb9d3",
+      "pages": 1,
+      "embedded_images_checked": 0
+    },
+    {
+      "path": "source/manuscript/figures/figure02-cohort.pdf",
+      "sha256": "175b545c36d2b9c1a03b03449af9383103c3e94d3eff9d99a000b460ed830595",
+      "pages": 1,
+      "embedded_images_checked": 0
+    },
+    {
+      "path": "source/manuscript/figures/figure03-comparison.pdf",
+      "sha256": "77094edef7b8ec46a0865af785528ba3b23b58d5e73709a0d432a02a2cb1c9c4",
+      "pages": 1,
+      "embedded_images_checked": 0
+    },
+    {
+      "path": "source/manuscript/figures/figure04-ablations.pdf",
+      "sha256": "1a0aa8a102147b01b00eba8654ebbd4e49442660f6d65eebfdd62ca840183583",
+      "pages": 1,
+      "embedded_images_checked": 2
+    },
+    {
+      "path": "source/manuscript/figures/figure05-nsclc-maps.pdf",
+      "sha256": "290c947c4029160a3c8d491c9554ea0137872e5644cd07c0293c4644c4be7d57",
+      "pages": 1,
+      "embedded_images_checked": 20
+    },
+    {
+      "path": "source/manuscript/figures/figure06-bcc-maps.pdf",
+      "sha256": "31bfe89221d02a4ad5e5f844673ee808de439a8902118c0ce0aeefa39400f61d",
+      "pages": 1,
+      "embedded_images_checked": 16
+    },
+    {
+      "path": "source/manuscript/figures/figure07-breast-histology.pdf",
+      "sha256": "4527c45ba7fe609f44db2853ed7e113289b37643af805a2019c88912b5498465",
+      "pages": 1,
+      "embedded_images_checked": 8
+    },
+    {
+      "path": "source/manuscript/figures/figure08-breast-mixtures.pdf",
+      "sha256": "2c118d2305d092b8618579b06d20e194f98224c43aefd79c64a73a55b140fb95",
+      "pages": 1,
+      "embedded_images_checked": 3
+    },
+    {
+      "path": "source/manuscript/figures/figure09-colorectal-proteins.pdf",
+      "sha256": "45917efca7710420b9eadf43469cb20c37ce472640ffc2ad00d4f71d6a392cd6",
+      "pages": 1,
+      "embedded_images_checked": 9
+    },
+    {
+      "path": "source/manuscript/figures/figure10-patient-transfer.pdf",
+      "sha256": "ec52fe8fd6f0a6928125a0a8bdb320a04be49d5d32976291f82e596380aeb6ed",
+      "pages": 1,
+      "embedded_images_checked": 0
+    },
+    {
+      "path": "source/manuscript/figures/figure11-stability.pdf",
+      "sha256": "3a17d897b57395bd4a8dc6b2e49b5ec1f6bc8166cb4a93e789ec439201d62af5",
+      "pages": 1,
+      "embedded_images_checked": 0
+    },
+    {
+      "path": "source/manuscript/figures/figure12-efficiency-mechanism.pdf",
+      "sha256": "2ec52b5404c51e624b635443bc08eb1669195632ea3f0c6791cb90f60f6d4d67",
+      "pages": 1,
+      "embedded_images_checked": 0
+    },
+    {
+      "path": "source/manuscript/figures/figure13-architecture.pdf",
+      "sha256": "3c90b13523283dc6c346845883587ea90677aac293b2dcb3e853b3eb8f40e793",
+      "pages": 1,
+      "embedded_images_checked": 0
+    },
+    {
+      "path": "source/manuscript/figures/figure14-target-lineage.pdf",
+      "sha256": "08c1d525ce93e2fb1d21d48b77bd2fd0217c58b5850dec3c4a327b8b8e508bc7",
+      "pages": 1,
+      "embedded_images_checked": 0
+    },
+    {
+      "path": "source/manuscript/figures/figure15-external-cohort.pdf",
+      "sha256": "861df967c7d0f6a317979de87d923f6d0603a379c8860660fe20f26f389482d6",
+      "pages": 1,
+      "embedded_images_checked": 0
+    },
+    {
+      "path": "source/manuscript/figures/figure16-external-maps.pdf",
+      "sha256": "0eeba3b610d07f9a7926ec60fd01cb98c2ca420c222fab94bf678d5974c8239e",
+      "pages": 1,
+      "embedded_images_checked": 20
+    },
+    {
+      "path": "source/manuscript/figures/figure17-tissue-landscape.pdf",
+      "sha256": "8626d7e69dd1f9d141797f6e39ddf64e43836ffd04e52b614b3d29c7bec31a0f",
+      "pages": 1,
+      "embedded_images_checked": 0
+    },
+    {
+      "path": "source/manuscript/figures/supplement01-hnscc.pdf",
+      "sha256": "d63fd8a5fe94cd178dad41b2b44767776aee5eceaf7294c2228111529fd412aa",
+      "pages": 1,
+      "embedded_images_checked": 4
+    },
+    {
+      "path": "source/manuscript/figures/supplement02-mibi.pdf",
+      "sha256": "74661bf57be6de0fb6b4e3b69d98e8bc3c19faaec6f569b5ad746f4ae665293d",
+      "pages": 1,
+      "embedded_images_checked": 12
+    },
+    {
+      "path": "source/manuscript/figures/supplement03-rna-markers.pdf",
+      "sha256": "d47bcefe268bb930ce99a19cdde6724803f55f19ee47d4293c39674093e25748",
+      "pages": 1,
+      "embedded_images_checked": 12
+    },
+    {
+      "path": "source/manuscript/figures/supplement05-scale-controls.pdf",
+      "sha256": "e90e9d11d4d0c5c1d24ac8665aa3d4ac188f1866ea8a954419de9d39a12e44e4",
+      "pages": 1,
+      "embedded_images_checked": 0
+    },
+    {
+      "path": "source/manuscript/journal-figures/figure01-workflow.pdf",
+      "sha256": "49a0373b83a14f09a639b6bb0ec7a6b645a3269bbdd255c245c4594f66d0e1c5",
+      "pages": 1,
+      "embedded_images_checked": 0
+    },
+    {
+      "path": "source/manuscript/journal-figures/figure02-cohort.pdf",
+      "sha256": "d0ab1b5222921a1e192f1ec96595a85178015d1bfc5f2de3db6d892c5c762d7c",
+      "pages": 1,
+      "embedded_images_checked": 0
+    },
+    {
+      "path": "source/manuscript/journal-figures/figure03-comparison.pdf",
+      "sha256": "64a62a52ee6b2c82f000314be6415bd8363a8d58cd269e90debba390bba8e7fa",
+      "pages": 1,
+      "embedded_images_checked": 0
+    },
+    {
+      "path": "source/manuscript/journal-figures/figure04-ablations.pdf",
+      "sha256": "988f390381d554f037e39df6f1a147125a0d40ce6d1d21bb6f82e4016a46c2d8",
+      "pages": 1,
+      "embedded_images_checked": 2
+    },
+    {
+      "path": "source/manuscript/journal-figures/figure05-nsclc-maps.pdf",
+      "sha256": "a5d465af7c95e70b2d39d73d82f2f4cb504f12c4895993def8cbf0725a2a0948",
+      "pages": 1,
+      "embedded_images_checked": 20
+    },
+    {
+      "path": "source/manuscript/journal-figures/figure06-bcc-maps.pdf",
+      "sha256": "5ed621f955474094f79cb88138827dcd94d6bc11afd6bfac6a635899f6b2ef12",
+      "pages": 1,
+      "embedded_images_checked": 16
+    },
+    {
+      "path": "source/manuscript/journal-figures/figure07-breast-histology.pdf",
+      "sha256": "9283e91ae423e9fe6010c73b846bdb10f59fbe9f77adea01e8d79f5c43aa3365",
+      "pages": 1,
+      "embedded_images_checked": 8
+    },
+    {
+      "path": "source/manuscript/journal-figures/figure08-breast-mixtures.pdf",
+      "sha256": "97f164b7abc1041f6eab42afe4600162297a52a84fb706080edd1806cda48d0e",
+      "pages": 1,
+      "embedded_images_checked": 3
+    },
+    {
+      "path": "source/manuscript/journal-figures/figure09-colorectal-proteins.pdf",
+      "sha256": "1e5da11c1b05487ee537eec3f4b19ec5eb9eef5f31db5f81be2821af5cbc6261",
+      "pages": 1,
+      "embedded_images_checked": 9
+    },
+    {
+      "path": "source/manuscript/journal-figures/figure10-patient-transfer.pdf",
+      "sha256": "16b0e57cedba3c8112067b25b8e212c3931017a8826d96b66d3e46afb7c22f9a",
+      "pages": 1,
+      "embedded_images_checked": 0
+    },
+    {
+      "path": "source/manuscript/journal-figures/figure11-stability.pdf",
+      "sha256": "7191f8b111edc3e95be14f278a4d0e4b812a8517170201ce1d9d97ea915d4afb",
+      "pages": 1,
+      "embedded_images_checked": 0
+    },
+    {
+      "path": "source/manuscript/journal-figures/figure12-efficiency-mechanism.pdf",
+      "sha256": "7fc5493b677eba7cb36729bc1e698ea595d2bbb9d816f39b1c0b44412de2613b",
+      "pages": 1,
+      "embedded_images_checked": 0
+    },
+    {
+      "path": "source/manuscript/journal-figures/figure13-architecture.pdf",
+      "sha256": "a6e04dc8e38a735f6dc03f02380d69d030e8eb63badbb4885bb68559b7749879",
+      "pages": 1,
+      "embedded_images_checked": 0
+    },
+    {
+      "path": "source/manuscript/journal-figures/figure14-target-lineage.pdf",
+      "sha256": "b937104dc1c373a0828a6a0971fa2837a7883f5e9dfcbe1f08feb717775bebc6",
+      "pages": 1,
+      "embedded_images_checked": 0
+    },
+    {
+      "path": "source/manuscript/journal-figures/figure15-external-cohort.pdf",
+      "sha256": "9715e3a9ba10271f4dada9ff60115c4712bf156c025ec61773c31301c795e09e",
+      "pages": 1,
+      "embedded_images_checked": 0
+    },
+    {
+      "path": "source/manuscript/journal-figures/figure16-external-maps.pdf",
+      "sha256": "fa3814b833e90cf2ea562fc2736314e763acc8ef9a4252736b06e328d17ecbe0",
+      "pages": 1,
+      "embedded_images_checked": 20
+    },
+    {
+      "path": "source/manuscript/journal-figures/figure17-tissue-landscape.pdf",
+      "sha256": "715b1c303994d905180e91b717d4e6d290eabeca112562c2481321a1577e9763",
+      "pages": 1,
+      "embedded_images_checked": 0
+    },
+    {
+      "path": "source/manuscript/journal-figures/supplement01-hnscc.pdf",
+      "sha256": "3f105637194469f92886d7206d0fe7844b9a0db94a26033456eb6cdb9c088268",
+      "pages": 1,
+      "embedded_images_checked": 4
+    },
+    {
+      "path": "source/manuscript/journal-figures/supplement02-mibi.pdf",
+      "sha256": "7e24139f0c98370dce5468060cb95cbf47b07a68a1828e0f3e8191187dbda6a6",
+      "pages": 1,
+      "embedded_images_checked": 12
+    },
+    {
+      "path": "source/manuscript/journal-figures/supplement03-rna-markers.pdf",
+      "sha256": "e85ee9162ce1a8170812cf2dd3899d725beb417b43e61c63525621ae9d126e17",
+      "pages": 1,
+      "embedded_images_checked": 12
+    },
+    {
+      "path": "source/manuscript/journal-figures/supplement05-scale-controls.pdf",
+      "sha256": "8802f49a9e20f5da2b09c9fc442d6095c354fa447bf198dcf7e31c496b67c2f4",
+      "pages": 1,
+      "embedded_images_checked": 0
+    },
+    {
+      "path": "validation-independent-crc/figures/pilot-summary.pdf",
+      "sha256": "067b0bc7f9e5995a3a030b62be3c25ec3031409d52f2bb974c30fb6ac4c5b503",
+      "pages": 1,
+      "embedded_images_checked": 0
+    }
+  ],
+  "rasters": [
+    {
+      "path": "qa/release-closure/current-breast-coordinate-map.png",
+      "sha256": "ee783012c7b09fdba1d2eda7361b2288ea0c59f1e0b4aead5a1c36f4a695343e",
+      "dimensions": [
+        1600,
+        1141
+      ]
+    },
+    {
+      "path": "qa/resumed-document-review/manuscript-b380dedf4674/overview-01.jpg",
+      "sha256": "ad1492050a3bee8ae2bf6cb74396b6c657fc966629c0948f2f6022c25a11c5d5",
+      "dimensions": [
+        1500,
+        1100
+      ]
+    },
+    {
+      "path": "qa/resumed-document-review/manuscript-b380dedf4674/overview-02.jpg",
+      "sha256": "7a21f6006996c2904c8dc664300b4733c73c79ff2ec7845bca358a3db1937ca3",
+      "dimensions": [
+        1500,
+        1100
+      ]
+    },
+    {
+      "path": "qa/resumed-document-review/manuscript-b380dedf4674/overview-03.jpg",
+      "sha256": "8599a11f50296061b49c24fc748f7669a5014a1aad090e6e08dae37229a2816d",
+      "dimensions": [
+        1500,
+        1100
+      ]
+    },
+    {
+      "path": "qa/resumed-document-review/manuscript-b380dedf4674/page-010.png",
+      "sha256": "b64440eb12e94909c0a8081a61f6ca3b723222c54d80bea9fc0fcff954b892b4",
+      "dimensions": [
+        765,
+        990
+      ]
+    },
+    {
+      "path": "qa/resumed-document-review/manuscript-inline-44ab40a066ee/overview-01.jpg",
+      "sha256": "5dbb9497fc3b28bd9fe1ab1acad51c44258387daec84789055b496b9f50ece12",
+      "dimensions": [
+        1500,
+        1100
+      ]
+    },
+    {
+      "path": "qa/resumed-document-review/manuscript-inline-44ab40a066ee/overview-02.jpg",
+      "sha256": "f7a06206e85cfe5e11b85f1f420c2c0a2eb2640a7cafeaf2db7ee7161febc816",
+      "dimensions": [
+        1500,
+        1100
+      ]
+    },
+    {
+      "path": "qa/resumed-document-review/manuscript-inline-44ab40a066ee/overview-03.jpg",
+      "sha256": "29416c1096ddabe7fee8b235f27839bf7db824edb16f1d128d4998552388fae0",
+      "dimensions": [
+        1500,
+        1100
+      ]
+    },
+    {
+      "path": "qa/resumed-document-review/manuscript-inline-44ab40a066ee/page-013.png",
+      "sha256": "b26457b34bbb1d0676e9dd313d16af0218db80fbdfb9ca936e5a817e94ebb438",
+      "dimensions": [
+        765,
+        990
+      ]
+    },
+    {
+      "path": "qa/resumed-document-review/supplement-15a15e373873/overview-01.jpg",
+      "sha256": "15d22b1f2bd9387758b6cb58a36da5598257be08f37b9f63d2fef809df6a3d90",
+      "dimensions": [
+        1500,
+        1100
+      ]
+    },
+    {
+      "path": "qa/resumed-document-review/supplement-15a15e373873/overview-02.jpg",
+      "sha256": "b6474ebb4825a0102baf2519941b8b7dbfa056b95d691f20aa917ce376667ada",
+      "dimensions": [
+        1500,
+        1100
+      ]
+    },
+    {
+      "path": "qa/resumed-document-review/supplement-15a15e373873/overview-03.jpg",
+      "sha256": "471569b3206db57d2c27559fe56c5eba8d6528bc74e561a63b537acc700be331",
+      "dimensions": [
+        1500,
+        1100
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure01-workflow-comparison.png",
+      "sha256": "f5eeb13952d5246a41f0c3a4326bd3b0f5ad2bdc3dc3dbffbbfb6bbf4c0fb3fa",
+      "dimensions": [
+        2024,
+        536
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure01-workflow-journal.png",
+      "sha256": "ce01a06d5f4aec9b8663f92aa28a3c54aea3065d39f26391f83e7cce991b931d",
+      "dimensions": [
+        2034,
+        1008
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure01-workflow-native.png",
+      "sha256": "07286dcd1f35a4b00cc50e53d02faa659058a516f5f7472fd3768cd1755dfb16",
+      "dimensions": [
+        2034,
+        1008
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure02-cohort-comparison.png",
+      "sha256": "deeef81716c37e6b4e9e158bb3d01033d905c0b62996da8a2bba4eb3a2c143cd",
+      "dimensions": [
+        2012,
+        640
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure02-cohort-journal.png",
+      "sha256": "9d0aff33b8af0991c345382f6454be9fdc01918d9e2a378b6f2a121d5569039e",
+      "dimensions": [
+        994,
+        600
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure02-cohort-native.png",
+      "sha256": "2e9cd7d74a9e05ba42d688fd873d3c92239cd8ac8ddffd098e5cfd35f5f64eb7",
+      "dimensions": [
+        994,
+        600
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure03-comparison-comparison.png",
+      "sha256": "7750dbb6f6d15148cc78ba2c2cf09488a632478017cdd15154fba82de8e4236b",
+      "dimensions": [
+        2012,
+        980
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure03-comparison-journal.png",
+      "sha256": "377bf8ee6f2e76290f02e0ae9a483de8d2fb6998d039efd3ccbac447a617ec7a",
+      "dimensions": [
+        994,
+        940
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure03-comparison-native.png",
+      "sha256": "7d43bd5e3cc9b23b367f60da6a53c7ac4f68878b3ce4b35e2438f39d7773d67a",
+      "dimensions": [
+        994,
+        940
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure04-ablations-comparison.png",
+      "sha256": "a165ebb75fca7fca9341788563296bc8f897c0ce0d35f0f2ea96462a1202acf8",
+      "dimensions": [
+        2012,
+        944
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure04-ablations-journal.png",
+      "sha256": "5cec9969c4751cbc5c78eb51c3241a50bf26592e7516e2412cfa24238a28973c",
+      "dimensions": [
+        994,
+        904
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure04-ablations-native.png",
+      "sha256": "2f95f257a6b79c5ae94304391686706436aa72210420fad3225de915d275dfe5",
+      "dimensions": [
+        994,
+        904
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure05-nsclc-maps-comparison.png",
+      "sha256": "38371dadb9468f6f3db9f851b8f44f436dcabfe9f332090efbfc5e8c6ad43b4d",
+      "dimensions": [
+        2012,
+        1065
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure05-nsclc-maps-journal.png",
+      "sha256": "c63b2ae46ebf2b38b3322ea22612b6180f1a3d6b83b795ab9fdbacad87088908",
+      "dimensions": [
+        994,
+        1025
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure05-nsclc-maps-native.png",
+      "sha256": "56a8b165e5126b127d3647f90a4fe3f53677a5e681f0752625456d27cad62930",
+      "dimensions": [
+        994,
+        1025
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure06-bcc-maps-comparison.png",
+      "sha256": "4a1d723ef9a8310a70ef992d2918aeb877c460d95c181a63848cfc7267b822b2",
+      "dimensions": [
+        2012,
+        1069
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure06-bcc-maps-journal.png",
+      "sha256": "f9e55402ddc82d149dbb9137c261b71e43e1b86db51ccd281c50bb83fe125230",
+      "dimensions": [
+        994,
+        1029
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure06-bcc-maps-native.png",
+      "sha256": "8cae7c9cac55a6328474cafee9aaf5d02ab5315fa5783e4833cd273b60218682",
+      "dimensions": [
+        994,
+        1029
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure07-breast-histology-comparison.png",
+      "sha256": "89b992b31c902453cd04485ea926744abb381211515cb7f4a44049b664cf3327",
+      "dimensions": [
+        2012,
+        749
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure07-breast-histology-journal.png",
+      "sha256": "2b54034eaf73249bea1de0d24cf6680bbe73354c83c9264a15a47104aff31c2a",
+      "dimensions": [
+        994,
+        709
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure07-breast-histology-native.png",
+      "sha256": "cefc20fd5652a198fd52cd90824db39de7fbe0eed7e65642e9c8044e4ad9fbd8",
+      "dimensions": [
+        994,
+        709
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure08-breast-mixtures-comparison.png",
+      "sha256": "f49a1e7355fa3743f281c5ec91fdcfd591a544bedbc1080db1d5068ec5796d3b",
+      "dimensions": [
+        2012,
+        784
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure08-breast-mixtures-journal.png",
+      "sha256": "b1ab13b54e21eec1550a51b77ef628d1e98cc7ff3506002b399af6b56d009f2b",
+      "dimensions": [
+        994,
+        744
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure08-breast-mixtures-native.png",
+      "sha256": "8670d8196bec4d94a09024a59a79e8fc0a07ef3310e63180f72947b6c577ae4e",
+      "dimensions": [
+        994,
+        744
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure09-colorectal-proteins-comparison.png",
+      "sha256": "f91714e2f91a1461549220e4d670d405c922feea5390e690898d458d50f0cfda",
+      "dimensions": [
+        2012,
+        600
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure09-colorectal-proteins-journal.png",
+      "sha256": "a1dcf90a314c35ba804eba09d9a6599a9c7cfaadda0d4dfb779249bd3036e1db",
+      "dimensions": [
+        994,
+        560
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure09-colorectal-proteins-native.png",
+      "sha256": "050885332c36ce1f8307dae1f4463e7cc7f1278ad32b0ac8e47427c7f2cb0a76",
+      "dimensions": [
+        994,
+        560
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure10-patient-transfer-comparison.png",
+      "sha256": "d6217ba1d5ba2b596b0595163c55619fc68071f1fa389a7fad8328158ed30131",
+      "dimensions": [
+        2012,
+        796
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure10-patient-transfer-journal.png",
+      "sha256": "f16c4b073290906e55a4642031f4732d138c3cb3d5a12c50d2ffff51b09e357e",
+      "dimensions": [
+        994,
+        756
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure10-patient-transfer-native.png",
+      "sha256": "06fb7076c89f2f7e665d466bc9fc697a8782ebe8815c755ef8c6578d71b11c45",
+      "dimensions": [
+        994,
+        756
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure11-stability-comparison.png",
+      "sha256": "e9dfafe53a1a5bc5d280c54a7134622d11292cf94d69ed295dded08bfd24526e",
+      "dimensions": [
+        2012,
+        592
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure11-stability-journal.png",
+      "sha256": "83fffb7e46bd72166bb14516573f6784fbcfeaa21212e9a3d95bfa2cb3ecf15b",
+      "dimensions": [
+        994,
+        552
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure11-stability-native.png",
+      "sha256": "34febc65c958cd85fa609ed1a58aecb1f3f2daabd28e70dcb47efb892314d0d6",
+      "dimensions": [
+        994,
+        552
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure12-efficiency-mechanism-comparison.png",
+      "sha256": "1f411362e8994bc990d9c2a57d25d5d761e302217c4a63c33b540f245b273573",
+      "dimensions": [
+        2012,
+        640
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure12-efficiency-mechanism-journal.png",
+      "sha256": "5d0b35ec77bdfd991ab409c9f8a9781751cc437485e088bc0e74bec4795317d1",
+      "dimensions": [
+        994,
+        600
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure12-efficiency-mechanism-native.png",
+      "sha256": "e7e80e19bec53883bf0068413575020d014bd71063a6c10d8d0fb51a69c695e3",
+      "dimensions": [
+        994,
+        600
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure13-architecture-comparison.png",
+      "sha256": "109d90de49e4187efe5cef45a4c60c7c59cc29cee59bced31487cabad3db8a09",
+      "dimensions": [
+        2024,
+        670
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure13-architecture-journal.png",
+      "sha256": "bcc772df740aeac70cad6a78a3fce38bf737810b8f6165bd68b0c71b15cc0943",
+      "dimensions": [
+        2034,
+        1281
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure13-architecture-native.png",
+      "sha256": "1db11e48eb961f20350f3587307df942b7a6ed7d772bd3ce03dccf3c2756e6a3",
+      "dimensions": [
+        2034,
+        1281
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure14-target-lineage-comparison.png",
+      "sha256": "f9e95fa731acf94579f5677ce9d3fc3db971874d1019c1c9c36d546983d2da79",
+      "dimensions": [
+        2024,
+        591
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure14-target-lineage-journal.png",
+      "sha256": "8c39272fc97e66bc3cf3545ee834f1365989d782621b5e3f1424258f8afb0943",
+      "dimensions": [
+        2034,
+        1121
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure14-target-lineage-native.png",
+      "sha256": "884ab73474a09051596112b3fc23140142d37d22cb763b34659affdc87264678",
+      "dimensions": [
+        2034,
+        1121
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure15-external-cohort-comparison.png",
+      "sha256": "060e0009415ab6de1ba46f1d333c01cb089131168f7dabba2dac6d3c5fe2ba75",
+      "dimensions": [
+        2012,
+        1144
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure15-external-cohort-journal.png",
+      "sha256": "d1c2859271f774cbcfedadd83c9e4e4430ba847da7c95e17965727892d8d7a61",
+      "dimensions": [
+        994,
+        1104
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure15-external-cohort-native.png",
+      "sha256": "bb9477192551c8f73ec3b053936a3594d38012332a237c4173e48a75e25b8de8",
+      "dimensions": [
+        994,
+        1104
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure16-external-maps-comparison.png",
+      "sha256": "319a61e55fffb49d15225ef7a66373923ff1deb0be3105de2eb463e531a0cd7e",
+      "dimensions": [
+        2012,
+        877
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure16-external-maps-journal.png",
+      "sha256": "59d067b308eb9e2ab443a4d13ad6abab3aea211ecbc51e4c02192d90dbc9b8d3",
+      "dimensions": [
+        994,
+        837
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure16-external-maps-native.png",
+      "sha256": "0db2baf5ba15ba442b8d0fb9abb516d2a946be61b1d64a70913b802557f591ed",
+      "dimensions": [
+        994,
+        837
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure17-tissue-landscape-comparison.png",
+      "sha256": "fb99db8a6340e0a6b36f29db28470e9ffedfb3086cc20665d6fd30100d48799b",
+      "dimensions": [
+        2012,
+        1032
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure17-tissue-landscape-journal.png",
+      "sha256": "a8ebbc7653277ded4c5a0d507f20db1c604d137983b266d8bfc48c3df92af7da",
+      "dimensions": [
+        994,
+        992
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/figure17-tissue-landscape-native.png",
+      "sha256": "fe0a4a30e7cb692f3547ebecf5b41fe6b8c3c9f29be700cac587034e7e19c8c2",
+      "dimensions": [
+        994,
+        992
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/supplement01-hnscc-comparison.png",
+      "sha256": "2beaeb03bb40ad34ba8d7dbf801c56906079ccda2feb2520fa15c5064271aed7",
+      "dimensions": [
+        2012,
+        312
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/supplement01-hnscc-journal.png",
+      "sha256": "a7bf1e1e77c4fee6f1bb696a24c1b94cbc09e95ec3fbd72c3a66d3699f61ad27",
+      "dimensions": [
+        994,
+        272
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/supplement01-hnscc-native.png",
+      "sha256": "7c15e90080d49af3489993d93b45e20ad3db309afb90a116e1f0e3b8480dc1c3",
+      "dimensions": [
+        994,
+        272
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/supplement02-mibi-comparison.png",
+      "sha256": "c3b6c1a1da7abdfe909019cb083ca3a3b63324a0f166045c95ffc200cb43a810",
+      "dimensions": [
+        2012,
+        868
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/supplement02-mibi-journal.png",
+      "sha256": "d5cd9afbc705a6bdde4ac3aaabe12ce714d16cec21dc2aea281a88ed3431abc4",
+      "dimensions": [
+        994,
+        828
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/supplement02-mibi-native.png",
+      "sha256": "42be87a631ccd092345f4d0a0e110bbd292c970f9d125c58de4dff430a83a6b3",
+      "dimensions": [
+        994,
+        828
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/supplement03-rna-markers-comparison.png",
+      "sha256": "4a11dff49069f22a141cf64cce25db9978b429a71cc7e592cb7f81cca23599ab",
+      "dimensions": [
+        2012,
+        514
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/supplement03-rna-markers-journal.png",
+      "sha256": "ccee6782f1fcf5716de5399a38701b7960eac26272262b0130ff191a204e1985",
+      "dimensions": [
+        994,
+        474
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/supplement03-rna-markers-native.png",
+      "sha256": "f07d910287dee17b6e6d8971e6edc7a8db8cbdf694e43cd7256c817a47b9b510",
+      "dimensions": [
+        994,
+        474
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/supplement05-scale-controls-comparison.png",
+      "sha256": "7cefe6b906e7a0d247008f6bda2c5b4ac5ff39b24f2d13257bf06f8f70ef9936",
+      "dimensions": [
+        2012,
+        468
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/supplement05-scale-controls-journal.png",
+      "sha256": "7b065a1147afbeb1f931d81dde651ea70eceb290dac41c0a0e91de7abfb06908",
+      "dimensions": [
+        994,
+        428
+      ]
+    },
+    {
+      "path": "source/manuscript/journal-figures/qa/supplement05-scale-controls-native.png",
+      "sha256": "f18ca48d502d0180c067d1c5506b94291a65624cca0a702fcda018056c5b1ace",
+      "dimensions": [
+        994,
+        428
+      ]
+    },
+    {
+      "path": "validation-independent-crc/figures/SN124_A551763_Rep2-registration.png",
+      "sha256": "27064912eb9fd1f495449feb2e9aa1a9a3132e473ded01ea82eee4411b4e1042",
+      "dimensions": [
+        1760,
+        1056
+      ]
+    },
+    {
+      "path": "validation-independent-crc/figures/SN124_A595688_Rep2-registration.png",
+      "sha256": "019762751f1b3efa5526765ed86462f171da45c9b4d86a81bdcb9944651595dc",
+      "dimensions": [
+        1760,
+        1056
+      ]
+    },
+    {
+      "path": "validation-independent-crc/figures/SN84_A120838_Rep1-registration.png",
+      "sha256": "5a1e58a09d0921e28ace63907d089e49d32d59af2e8380cb8b5d8c6f8a3c58b1",
+      "dimensions": [
+        1760,
+        1056
+      ]
+    },
+    {
+      "path": "validation-independent-crc/figures/pilot-summary.png",
+      "sha256": "9d97ce41a01f146a15eea937ed958e748c9bf4f0d28727a62c1b33ecdb87d56e",
+      "dimensions": [
+        1800,
+        792
+      ]
+    },
+    {
+      "path": "validation-independent-crc/inputs/SN124_A551763_Rep2/tissue_hires_image.png",
+      "sha256": "a0caaee255a7d4a5d64a9ce119ac81067d3351f99c3a1c774ddb3d4507bcdcc7",
+      "dimensions": [
+        1950,
+        2000
+      ]
+    },
+    {
+      "path": "validation-independent-crc/inputs/SN124_A595688_Rep2/tissue_hires_image.png",
+      "sha256": "a998cd45bb3639351562132a34b095ea5d7fad4a445326a0e6dc8433a09c58db",
+      "dimensions": [
+        1944,
+        2000
+      ]
+    },
+    {
+      "path": "validation-independent-crc/inputs/SN84_A120838_Rep1/tissue_hires_image.png",
+      "sha256": "5f0522f8f9c7790f45e12c458d0d296530eddeca9bc9b74f00b24256065581f7",
+      "dimensions": [
+        1930,
+        2000
+      ]
+    }
+  ],
+  "scope": "Exact byte/pixel fingerprints of the excluded historical breast content plus current source/visual evidence; CRC images are distinct dataset-licensed assets retained intentionally."
+}

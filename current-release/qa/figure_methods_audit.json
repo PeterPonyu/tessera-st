@@ -1,0 +1,770 @@
+{
+  "manuscript_sha256": "87073a3e54fcfbfc5d1ebc09a077be8691d1c1225bbad451296cc47966c57849",
+  "supporting_sha256": "94af5855130b5aafde71db351678b1ca22b08eb110f0a2436a2e0ad81c166564",
+  "equation_count": 32,
+  "equation_labels": [
+    "normalization",
+    "pca",
+    "variance",
+    "graph",
+    "input",
+    "gate",
+    "aggregate",
+    "fusion",
+    "reconstruction",
+    "contrast",
+    "loss",
+    "seam",
+    "controls",
+    "kmeans",
+    "tuned",
+    "nested",
+    "auroc",
+    "gate-weights",
+    "transfer",
+    "centroid",
+    "neighborhood",
+    "partition",
+    "seed-summary",
+    "patient",
+    "stability",
+    "accuracy",
+    "f1",
+    "homogeneity",
+    "display-match",
+    "registration",
+    "composition",
+    "display-normalization"
+  ],
+  "figures": [
+    {
+      "figure": "1",
+      "filename": "figure01-workflow.pdf",
+      "pdf_sha256": "0a65dd1b93c471129e3e26c9a50f797620e5a2b2ef6778ca595b1191c9afb9d3",
+      "panel_methods": {
+        "a": {
+          "definition": "Recorded assays, frames and patient identities; conceptual glyphs",
+          "equations": []
+        },
+        "b": {
+          "definition": "Common molecular input and frame-restricted graph",
+          "equations": [
+            "normalization",
+            "pca",
+            "graph"
+          ]
+        },
+        "c": {
+          "definition": "Matched representation branches",
+          "equations": [
+            "controls",
+            "input",
+            "fusion"
+          ]
+        },
+        "d": {
+          "definition": "Specified component interventions",
+          "equations": [
+            "gate",
+            "fusion",
+            "loss",
+            "controls"
+          ]
+        },
+        "e": {
+          "definition": "Source-only transform, frozen encoder and source centroids",
+          "equations": [
+            "transfer",
+            "centroid"
+          ]
+        },
+        "f": {
+          "definition": "Distinct partition, transfer and registered-image readouts",
+          "equations": [
+            "partition",
+            "accuracy",
+            "registration"
+          ]
+        }
+      }
+    },
+    {
+      "figure": "2",
+      "filename": "figure13-architecture.pdf",
+      "pdf_sha256": "3c90b13523283dc6c346845883587ea90677aac293b2dcb3e853b3eb8f40e793",
+      "panel_methods": {
+        "a": {
+          "definition": "Common PCA and directed frame graph",
+          "equations": [
+            "normalization",
+            "pca",
+            "graph"
+          ]
+        },
+        "b": {
+          "definition": "Input projection, edge MLP and normalized residual update",
+          "equations": [
+            "input",
+            "gate",
+            "aggregate"
+          ]
+        },
+        "c": {
+          "definition": "Depth attention and embedding projection",
+          "equations": [
+            "fusion"
+          ]
+        },
+        "d": {
+          "definition": "Reconstruction and detached per-edge contrastive weighting",
+          "equations": [
+            "reconstruction",
+            "contrast",
+            "loss"
+          ]
+        },
+        "e": {
+          "definition": "KMeans versus source centroids; uncalibrated seam",
+          "equations": [
+            "kmeans",
+            "centroid",
+            "seam"
+          ]
+        }
+      }
+    },
+    {
+      "figure": "3",
+      "filename": "figure03-comparison.pdf",
+      "pdf_sha256": "77094edef7b8ec46a0865af785528ba3b23b58d5e73709a0d432a02a2cb1c9c4",
+      "panel_methods": {
+        "a": {
+          "definition": "Seed-mean ARI of PCA50, six-neighbor mean, nested tuned control and Tessera",
+          "equations": [
+            "controls",
+            "tuned",
+            "nested",
+            "partition",
+            "seed-summary"
+          ]
+        },
+        "b": {
+          "definition": "Patient contrasts against PCA50 and the nested tuned control, bounded fields",
+          "equations": [
+            "nested",
+            "seed-summary",
+            "patient"
+          ]
+        },
+        "c": {
+          "definition": "Uncapped same-patient sensitivity contrasts; fixed cohort-modal, not nested controls",
+          "equations": [
+            "tuned",
+            "seed-summary",
+            "patient"
+          ]
+        },
+        "d": {
+          "definition": "Saved lung embeddings re-clustered at the cell-type K",
+          "equations": [
+            "kmeans",
+            "partition"
+          ]
+        }
+      }
+    },
+    {
+      "figure": "4",
+      "filename": "figure04-ablations.pdf",
+      "pdf_sha256": "1a0aa8a102147b01b00eba8654ebbd4e49442660f6d65eebfdd62ca840183583",
+      "panel_methods": {
+        "a": {
+          "definition": "Control minus full seed-mean ARI, including the no-contrast permuted-graph null",
+          "equations": [
+            "controls",
+            "loss",
+            "partition",
+            "seed-summary"
+          ]
+        },
+        "b": {
+          "definition": "Gate versus PCA-feature-difference seam AUROC on identical edges",
+          "equations": [
+            "gate",
+            "auroc"
+          ]
+        },
+        "c": {
+          "definition": "Fixed-anchor last-layer gate densities on valid same/different-label edges",
+          "equations": [
+            "gate",
+            "aggregate"
+          ]
+        },
+        "d": {
+          "definition": "Full Tessera minus self-only seed-mean ARI",
+          "equations": [
+            "controls",
+            "partition",
+            "seed-summary"
+          ]
+        }
+      }
+    },
+    {
+      "figure": "5",
+      "filename": "figure05-nsclc-maps.pdf",
+      "pdf_sha256": "290c947c4029160a3c8d491c9554ea0137872e5644cd07c0293c4644c4be7d57",
+      "panel_methods": {
+        "a": {
+          "definition": "Fixed largest field, seed 1; display-only matching; three-seed object ARI",
+          "equations": [
+            "graph",
+            "display-match",
+            "partition",
+            "seed-summary"
+          ]
+        },
+        "b": {
+          "definition": "Fixed largest field, seed 1; display-only matching; three-seed object ARI",
+          "equations": [
+            "graph",
+            "display-match",
+            "partition",
+            "seed-summary"
+          ]
+        },
+        "c": {
+          "definition": "Fixed largest field, seed 1; display-only matching; three-seed object ARI",
+          "equations": [
+            "graph",
+            "display-match",
+            "partition",
+            "seed-summary"
+          ]
+        },
+        "d": {
+          "definition": "Fixed largest field, seed 1; display-only matching; three-seed object ARI",
+          "equations": [
+            "graph",
+            "display-match",
+            "partition",
+            "seed-summary"
+          ]
+        },
+        "e": {
+          "definition": "Fixed largest field, seed 1; display-only matching; three-seed object ARI",
+          "equations": [
+            "graph",
+            "display-match",
+            "partition",
+            "seed-summary"
+          ]
+        }
+      }
+    },
+    {
+      "figure": "6",
+      "filename": "figure06-bcc-maps.pdf",
+      "pdf_sha256": "31bfe89221d02a4ad5e5f844673ee808de439a8902118c0ce0aeefa39400f61d",
+      "panel_methods": {
+        "a": {
+          "definition": "Fixed largest field per patient, seed 1; display-only matching; three-seed object ARI",
+          "equations": [
+            "graph",
+            "display-match",
+            "partition",
+            "seed-summary"
+          ]
+        },
+        "b": {
+          "definition": "Fixed largest field per patient, seed 1; display-only matching; three-seed object ARI",
+          "equations": [
+            "graph",
+            "display-match",
+            "partition",
+            "seed-summary"
+          ]
+        },
+        "c": {
+          "definition": "Fixed largest field per patient, seed 1; display-only matching; three-seed object ARI",
+          "equations": [
+            "graph",
+            "display-match",
+            "partition",
+            "seed-summary"
+          ]
+        },
+        "d": {
+          "definition": "Fixed largest field per patient, seed 1; display-only matching; three-seed object ARI",
+          "equations": [
+            "graph",
+            "display-match",
+            "partition",
+            "seed-summary"
+          ]
+        }
+      }
+    },
+    {
+      "figure": "7",
+      "filename": "figure07-breast-histology.pdf",
+      "pdf_sha256": "4527c45ba7fe609f44db2853ed7e113289b37643af805a2019c88912b5498465",
+      "panel_methods": {
+        "a": {
+          "definition": "Author-generated full-tissue spot-location and annotation maps using recorded coordinate calibration; no 10x breast H&E background",
+          "equations": [
+            "registration",
+            "display-match"
+          ]
+        },
+        "b": {
+          "definition": "Median-centered fixed coordinate-map ROI and source-calibrated bars; no image background",
+          "equations": [
+            "registration",
+            "display-match"
+          ]
+        }
+      }
+    },
+    {
+      "figure": "8",
+      "filename": "figure08-breast-mixtures.pdf",
+      "pdf_sha256": "2c118d2305d092b8618579b06d20e194f98224c43aefd79c64a73a55b140fb95",
+      "panel_methods": {
+        "a": {
+          "definition": "Same fitted predictions at purity thresholds; sample seed SD",
+          "equations": [
+            "composition",
+            "seed-summary"
+          ]
+        },
+        "b": {
+          "definition": "Source dominant-category proportion histogram",
+          "equations": [
+            "composition"
+          ]
+        },
+        "c": {
+          "definition": "Source entropy and fixed-seed node seam; tied-rank Spearman",
+          "equations": [
+            "composition",
+            "seam"
+          ]
+        },
+        "d": {
+          "definition": "Named source tumor/DCIS columns; fixed fraction color scale",
+          "equations": [
+            "composition"
+          ]
+        }
+      }
+    },
+    {
+      "figure": "9",
+      "filename": "figure10-patient-transfer.pdf",
+      "pdf_sha256": "ec52fe8fd6f0a6928125a0a8bdb320a04be49d5d32976291f82e596380aeb6ed",
+      "panel_methods": {
+        "a": {
+          "definition": "Region balanced recall; three-seed means and deterministic neighbor means",
+          "equations": [
+            "transfer",
+            "centroid",
+            "accuracy",
+            "tuned"
+          ]
+        },
+        "b": {
+          "definition": "Cell-type balanced recall",
+          "equations": [
+            "transfer",
+            "centroid",
+            "accuracy"
+          ]
+        },
+        "c": {
+          "definition": "Region accuracy",
+          "equations": [
+            "accuracy"
+          ]
+        },
+        "d": {
+          "definition": "Cell-type accuracy",
+          "equations": [
+            "accuracy"
+          ]
+        }
+      }
+    },
+    {
+      "figure": "10",
+      "filename": "figure11-stability.pdf",
+      "pdf_sha256": "3a17d897b57395bd4a8dc6b2e49b5ec1f6bc8166cb4a93e789ec439201d62af5",
+      "panel_methods": {
+        "a": {
+          "definition": "Mean ARI over all three seed pairs on complete identical rows",
+          "equations": [
+            "stability"
+          ]
+        },
+        "b": {
+          "definition": "Valid-reference-edge homogeneity versus method contrast",
+          "equations": [
+            "homogeneity",
+            "seed-summary"
+          ]
+        }
+      }
+    },
+    {
+      "figure": "11",
+      "filename": "figure15-external-cohort.pdf",
+      "pdf_sha256": "861df967c7d0f6a317979de87d923f6d0603a379c8860660fe20f26f389482d6",
+      "panel_methods": {
+        "a": {
+          "definition": "Three-seed ARI of PCA50, same-graph mean, nested tuned control and Tessera on all labels",
+          "equations": [
+            "neighborhood",
+            "controls",
+            "nested",
+            "partition",
+            "seed-summary"
+          ]
+        },
+        "b": {
+          "definition": "The same four arms on the tumor-boundary target",
+          "equations": [
+            "neighborhood",
+            "nested",
+            "partition",
+            "seed-summary"
+          ]
+        },
+        "c": {
+          "definition": "Patient contrasts with sign counts and patient-level bootstrap intervals",
+          "equations": [
+            "neighborhood",
+            "patient",
+            "seed-summary"
+          ]
+        },
+        "d": {
+          "definition": "Edge-level seam AUROC of gate, feature difference and smoothed difference with patient bootstrap",
+          "equations": [
+            "neighborhood",
+            "auroc"
+          ]
+        },
+        "e": {
+          "definition": "Three replicate fits of the frozen encoder against the deterministic controls",
+          "equations": [
+            "partition",
+            "seed-summary"
+          ]
+        },
+        "f": {
+          "definition": "Weighted mean minus unweighted, shuffled-weight and shuffled-coordinate means",
+          "equations": [
+            "neighborhood",
+            "partition"
+          ]
+        }
+      }
+    },
+    {
+      "figure": "12",
+      "filename": "figure17-tissue-landscape.pdf",
+      "pdf_sha256": "8626d7e69dd1f9d141797f6e39ddf64e43836ffd04e52b614b3d29c7bec31a0f",
+      "panel_methods": {
+        "a": {
+          "definition": "Tessera minus the same-graph six-neighbor mean for every object",
+          "equations": [
+            "neighborhood",
+            "partition",
+            "seed-summary"
+          ]
+        },
+        "b": {
+          "definition": "Tessera minus the label-chosen best simple control and minus PCA50",
+          "equations": [
+            "tuned",
+            "partition",
+            "seed-summary"
+          ]
+        },
+        "c": {
+          "definition": "Neighborhood size of the best uniform mean with its ARI",
+          "equations": [
+            "tuned",
+            "partition"
+          ]
+        },
+        "d": {
+          "definition": "Gate and feature-difference seam AUROC for every object",
+          "equations": [
+            "auroc"
+          ]
+        }
+      }
+    },
+    {
+      "figure": "S1",
+      "filename": "figure02-cohort.pdf",
+      "pdf_sha256": "175b545c36d2b9c1a03b03449af9383103c3e94d3eff9d99a000b460ed830595",
+      "panel_methods": {
+        "a": {
+          "definition": "Source and retained cardinalities from input.json; no fitted-score selection",
+          "equations": []
+        },
+        "b": {
+          "definition": "Distinct retained frame identities",
+          "equations": [
+            "graph"
+          ]
+        },
+        "c": {
+          "definition": "Valid reference-class cardinality",
+          "equations": [
+            "kmeans"
+          ]
+        },
+        "d": {
+          "definition": "Returned PCA explained-variance ratio sum",
+          "equations": [
+            "variance"
+          ]
+        }
+      }
+    },
+    {
+      "figure": "S2",
+      "filename": "figure14-target-lineage.pdf",
+      "pdf_sha256": "08c1d525ce93e2fb1d21d48b77bd2fd0217c58b5850dec3c4a327b8b8e508bc7",
+      "panel_methods": {
+        "a": {
+          "definition": "Source annotation constructions are distinct",
+          "equations": [
+            "composition"
+          ]
+        },
+        "b": {
+          "definition": "Within-object reference class count and label-free encoder fit",
+          "equations": [
+            "kmeans",
+            "loss"
+          ]
+        },
+        "c": {
+          "definition": "Patient-disjoint fitted parameters; observed target geometry",
+          "equations": [
+            "transfer",
+            "centroid"
+          ]
+        },
+        "d": {
+          "definition": "Registered image and measured-channel inspection",
+          "equations": [
+            "registration",
+            "display-normalization"
+          ]
+        },
+        "e": {
+          "definition": "Patient contrasts, optimization spread and gate readouts",
+          "equations": [
+            "patient",
+            "seed-summary",
+            "seam"
+          ]
+        }
+      }
+    },
+    {
+      "figure": "S3",
+      "filename": "figure09-colorectal-proteins.pdf",
+      "pdf_sha256": "45917efca7710420b9eadf43469cb20c37ce472640ffc2ad00d4f71d6a392cd6",
+      "panel_methods": {
+        "a": {
+          "definition": "Display-matched lv2 labels mapped to modal supplied compartments",
+          "equations": [
+            "display-match",
+            "partition"
+          ]
+        },
+        "b": {
+          "definition": "Actual intensities; nonnegative log1p; field 2nd/98th percentiles; millimeters x1000",
+          "equations": [
+            "display-normalization",
+            "registration"
+          ]
+        }
+      }
+    },
+    {
+      "figure": "S4",
+      "filename": "figure12-efficiency-mechanism.pdf",
+      "pdf_sha256": "2ec52b5404c51e624b635443bc08eb1669195632ea3f0c6791cb90f60f6d4d67",
+      "panel_methods": {
+        "a": {
+          "definition": "Mean saved total elapsed time; max peak allocated GiB",
+          "equations": []
+        },
+        "b": {
+          "definition": "Fixed anchor reconstruction and contrastive loss histories",
+          "equations": [
+            "reconstruction",
+            "contrast",
+            "loss"
+          ]
+        }
+      }
+    },
+    {
+      "figure": "S5",
+      "filename": "supplement01-hnscc.pdf",
+      "pdf_sha256": "d63fd8a5fe94cd178dad41b2b44767776aee5eceaf7294c2228111529fd412aa",
+      "panel_methods": {
+        "a": {
+          "definition": "Complete selected 6000 rows; rare/unknown/unmatched gray; original-score labels preserved; seed 1",
+          "equations": [
+            "display-match",
+            "partition"
+          ]
+        }
+      }
+    },
+    {
+      "figure": "S6",
+      "filename": "supplement02-mibi.pdf",
+      "pdf_sha256": "74661bf57be6de0fb6b4e3b69d98e8bc3c19faaec6f569b5ad746f4ae665293d",
+      "panel_methods": {
+        "a": {
+          "definition": "Three measured fields; signed source exception; display-only matching",
+          "equations": [
+            "normalization",
+            "display-match",
+            "partition"
+          ]
+        },
+        "b": {
+          "definition": "Three measured fields; signed source exception; display-only matching",
+          "equations": [
+            "normalization",
+            "display-match",
+            "partition"
+          ]
+        },
+        "c": {
+          "definition": "Three measured fields; signed source exception; display-only matching",
+          "equations": [
+            "normalization",
+            "display-match",
+            "partition"
+          ]
+        }
+      }
+    },
+    {
+      "figure": "S7",
+      "filename": "supplement03-rna-markers.pdf",
+      "pdf_sha256": "d47bcefe268bb930ce99a19cdde6724803f55f19ee47d4293c39674093e25748",
+      "panel_methods": {
+        "a": {
+          "definition": "Saved marker expression, not re-logged; field 0th/98th percentiles",
+          "equations": [
+            "normalization",
+            "display-normalization"
+          ]
+        },
+        "b": {
+          "definition": "Saved marker expression, not re-logged; field 0th/98th percentiles",
+          "equations": [
+            "normalization",
+            "display-normalization"
+          ]
+        }
+      }
+    },
+    {
+      "figure": "S8",
+      "filename": "supplement05-scale-controls.pdf",
+      "pdf_sha256": "e90e9d11d4d0c5c1d24ac8665aa3d4ac188f1866ea8a954419de9d39a12e44e4",
+      "panel_methods": {
+        "a": {
+          "definition": "Neighbor-mean ARI across neighborhood sizes per lung patient",
+          "equations": [
+            "tuned",
+            "partition",
+            "seed-summary"
+          ]
+        },
+        "b": {
+          "definition": "BANKSY-style ARI across neighborhood sizes per BCC patient",
+          "equations": [
+            "tuned",
+            "partition",
+            "seed-summary"
+          ]
+        }
+      }
+    },
+    {
+      "figure": "S9",
+      "filename": "figure16-external-maps.pdf",
+      "pdf_sha256": "0eeba3b610d07f9a7926ec60fd01cb98c2ca420c222fab94bf678d5974c8239e",
+      "panel_methods": {
+        "a": {
+          "definition": "Seed 1 partitions on one frame per patient; display-only matching; three-seed ARI badges",
+          "equations": [
+            "neighborhood",
+            "display-match",
+            "partition",
+            "seed-summary"
+          ]
+        },
+        "b": {
+          "definition": "Seed 1 partitions on one frame per patient; display-only matching; three-seed ARI badges",
+          "equations": [
+            "neighborhood",
+            "display-match",
+            "partition",
+            "seed-summary"
+          ]
+        },
+        "c": {
+          "definition": "Seed 1 partitions on one frame per patient; display-only matching; three-seed ARI badges",
+          "equations": [
+            "neighborhood",
+            "display-match",
+            "partition",
+            "seed-summary"
+          ]
+        },
+        "d": {
+          "definition": "Seed 1 partitions on one frame per patient; display-only matching; three-seed ARI badges",
+          "equations": [
+            "neighborhood",
+            "display-match",
+            "partition",
+            "seed-summary"
+          ]
+        }
+      }
+    }
+  ],
+  "computation_source_sha256": {
+    "source/scripts/prepare_data.py": "801dc6a98a2a314801c6ea24a1c7bc61f1e15e5c80aeb6070a8bb840d3268497",
+    "source/scripts/run_experiments.py": "c5689f09056a5ef0e986e83b72854bfd4d295130182f14f8bd7bb1bacbaa1b4c",
+    "source/scripts/run_transfer.py": "8bb7e59f2921fb7729ed3e1f1b67e88f0ad93d03c3f307d384c2a2185f136cf2",
+    "source/scripts/run_followup.py": "c96d933da9b71ec039df0c7dbfe1eaf5c7f5ec1c9d07918858300590b19aa538",
+    "source/scripts/render_figures.py": "a3b26bcee6466b10c150eb090a58d88c541921a6ea28edb0a2f6362e36a7e059",
+    "source/scripts/figure_layout.py": "cdff198b7acdc1a8ce599d77c110ad8584c14926609ddf46388da53ebd2b2e1c",
+    "source/scripts/artwork.py": "09f66bfe028c7af43ead82ba5bbe6f0b92411f3e6bf164b7346c29055c61a2a7",
+    "source/scripts/audit_followup.py": "e2eeb622188ce6aa1272d746d9a405046862d267d8a842ee3ac47499d7b83e2b",
+    "source/scripts/render_external_figures.py": "8f817b1b0393ae7520841426bf51c08c50b1468f12a4145b6cf0f7b604bb8395",
+    "source/scripts/make_external_tables.py": "d66de35c68c9d7ee056184fae6453c1526f1d4cdc342e2fcfaaedb3c0c21d5ca",
+    "validation-extension/run_extension.py": "e91285dc28d1db469c8555ac61ba6cc677f7f646ffc822e2b615f89e9829c1e0",
+    "validation-external/run_her2st_validation.py": "4858a8f88753b7ef859c8435102268246809fc76ba4d051fe0117d24e4a5e8af",
+    "validation-external/run_enhanced_targets.py": "b6cbf137a23f7ba5f2cf019485d4956e5a61eab3709ddc85845a575e60b5cfad"
+  },
+  "scope": "Manual implementation comparison plus automated figure/equation/hash coverage; not independent scientific validation."
+}

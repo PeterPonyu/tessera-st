@@ -1,0 +1,40 @@
+{
+  "primary": {
+    "status": "saved_predictions_available",
+    "evidence": "13 checksum-bound derived inputs, 351 saved prediction/embedding NPZs and score receipts, primary numerical ledger",
+    "verified_scope": "Direct ARI, NMI, secondary-label and gate/edge metrics; no retraining or reclustering"
+  },
+  "transfer": {
+    "status": "saved_predictions_available",
+    "evidence": "45 retained source/target embedding files, 5 source-only transforms, 30 weight files, 90 target score rows",
+    "verified_scope": "Source/target disjointness, frozen transforms and weights, nearest-source-centroid predictions and metrics; no encoder or PCA fitting"
+  },
+  "scale_controls": {
+    "status": "partially_addressed",
+    "evidence": "1170 original score rows, receipts, recovered exact producer, checksum-bound primary PCA inputs",
+    "verified_scope": "All score and summary arithmetic and patient-excluded nested configuration selection",
+    "unverified_scope": "Historical control partitions were not saved; direct per-configuration ARI replay would require new clustering fits"
+  },
+  "her2st_and_extension": {
+    "status": "partially_addressed",
+    "evidence": "Original protocols, producers, receipts, 720 HER2 primary grid scores, external and extension result tables, retained hardening seed-1 partitions for 3 target definitions",
+    "verified_scope": "Hash/source/receipt bindings, patient-excluded selections, means and contrasts; 120 seed-1 partition ARIs reconstructed directly",
+    "missing_central_inputs": "Learned embeddings/gates and remaining seed partitions were not retained by historical HER2ST/extension producers. Direct ARI/AUROC reconstruction for those blocks is unavailable without a new fit; raw sources are checksum-bound and excluded from the archive"
+  },
+  "whole_section_and_geometry_null": {
+    "status": "partially_addressed",
+    "evidence": "Original 108 whole-section and 39 geometry-null score rows, summaries, receipts, recovered exact producers and whole-input metadata/selection records",
+    "verified_scope": "Saved table/summary arithmetic and exact producer availability",
+    "missing_central_inputs": "Historical fitted embeddings/predictions were not retained. The large whole-section expression-derived input NPZs are intentionally excluded; their exact hashes and source records remain available"
+  },
+  "crc_pilot": {
+    "status": "saved_predictions_available",
+    "evidence": "Immutable protocol and pre-data lock, QC annotation amendment and lock, 3 compact PCA inputs and images, 36 saved fitted embeddings/gates and receipts, primary and sensitivity partitions, unique-edge scores and shuffle tables",
+    "verified_scope": "72 ARIs, 18 unique-edge AUROCs, patient bootstrap, and 180 independently recomputed shuffled-label AUROCs from saved evidence; no new model or clustering fit",
+    "unverified_scope": "The package verification does not claim to check excluded raw archive contents or author-specific historical backup/integration directories"
+  },
+  "full_refit": {
+    "status": "not_executed",
+    "scope": "Distinct from saved-result verification; fresh outputs and exact source manifests required. Current and historical runtime versions differ. CUDA fitting was not bitwise deterministic. No download, research fit, new scientific experiment or manuscript number was generated during closure. The unchanged encoder-equivalence unit test fits only synthetic in-memory inputs."
+  }
+}

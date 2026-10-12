@@ -1,0 +1,12 @@
+{
+  "at_utc": "2026-10-11T15:50:42.845477+00:00",
+  "stopped_partial_fit_pids": [
+    440857,
+    442012
+  ],
+  "reason": "runtime only: 4-thread first fits 238.7/258.4 sec vs 1-thread probe 11.15 sec; remote dl4080 SSH unreachable",
+  "new_cpu_threads": 1,
+  "same_estimator": true,
+  "probe_outputs_saved": false,
+  "no_choice_based_on_scores": true
+}

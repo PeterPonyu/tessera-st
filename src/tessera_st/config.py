@@ -26,8 +26,10 @@ class AblationConfig:
     boundary_contrastive:
         Component 3. Add the InfoNCE boundary-contrastive term. OFF -> reconstruction only.
     calibrated_uncertainty:
-        Component 4. Temperature + split-conformal calibration of boundary confidence.
-        OFF -> raw softmax entropy.
+        Legacy flag retained for archived configuration identity. The soft head
+        is neither trained by the objective nor calibrated on held-out data.
+        This flag is not a validated uncertainty component; fit_predict returns
+        confidence=None until an explicit calibration protocol is implemented.
     """
 
     edge_gating: bool = True

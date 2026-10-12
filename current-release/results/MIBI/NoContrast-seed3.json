@@ -1,0 +1,87 @@
+{
+  "object": "MIBI",
+  "cohort": "MIBI",
+  "seed": 3,
+  "arm": "NoContrast",
+  "n_cells": 3309,
+  "K": 8,
+  "input_sha256": "d3d3d19935a6f0d9a8ff97f3bd6ffa7e95e5f2ec1ab8d8794c886ad187e34102",
+  "prediction_sha256": "3f5ee5abb88a6fdc8f301da52588eadd209367838f69d8d4e65ed0ed35f39f77",
+  "fit_seconds": 0.3684645719913533,
+  "total_seconds": 0.45715117000509053,
+  "gpu_peak_allocated_bytes": 186552832,
+  "trainable_parameters": 25305,
+  "history": [
+    {
+      "epoch": 0,
+      "loss": 1.0445598363876343,
+      "recon": 1.0445598363876343
+    },
+    {
+      "epoch": 12,
+      "loss": 0.8874977827072144,
+      "recon": 0.8874977827072144
+    },
+    {
+      "epoch": 24,
+      "loss": 0.687332272529602,
+      "recon": 0.687332272529602
+    },
+    {
+      "epoch": 36,
+      "loss": 0.4777771830558777,
+      "recon": 0.4777771830558777
+    },
+    {
+      "epoch": 48,
+      "loss": 0.3752286434173584,
+      "recon": 0.3752286434173584
+    },
+    {
+      "epoch": 60,
+      "loss": 0.3151565492153168,
+      "recon": 0.3151565492153168
+    },
+    {
+      "epoch": 72,
+      "loss": 0.27069205045700073,
+      "recon": 0.27069205045700073
+    },
+    {
+      "epoch": 84,
+      "loss": 0.23768502473831177,
+      "recon": 0.23768502473831177
+    },
+    {
+      "epoch": 96,
+      "loss": 0.21028627455234528,
+      "recon": 0.21028627455234528
+    },
+    {
+      "epoch": 108,
+      "loss": 0.18696628510951996,
+      "recon": 0.18696628510951996
+    },
+    {
+      "epoch": 119,
+      "loss": 0.16894058883190155,
+      "recon": 0.16894058883190155
+    }
+  ],
+  "ablation": {
+    "edge_gating": true,
+    "multi_scale": true,
+    "boundary_contrastive": false,
+    "calibrated_uncertainty": false
+  },
+  "n_edges": 39708,
+  "cross_field_edges": 0,
+  "self_edges": 0,
+  "scores": {
+    "ari": 0.19943618449613276,
+    "nmi": 0.3202837910464412,
+    "reference_edge_homogeneity": 0.48635035761055706,
+    "predicted_edge_homogeneity": 0.42883046237534,
+    "gate_seam_auroc": 0.7169060067173689
+  }
+}

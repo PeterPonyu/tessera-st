@@ -160,3 +160,37 @@ id_rsa
 spermdata/
 harmonized_donor_samples.csv
 donor_exposure*.csv
+
+# Current compact release receipts and reports are publication sources.
+!current-release/data/
+!current-release/data/**/
+!current-release/data/**/*.json
+!current-release/data/**/*.csv
+!current-release/results/
+!current-release/results/**/
+!current-release/results/**/*.json
+!current-release/results/**/*.csv
+!current-release/**/results/
+!current-release/**/results/**/
+!current-release/**/results/**/*.json
+!current-release/**/results/**/*.csv
+!current-release/qa/**/*.log
+/.compact-preparation-backup/
+# Retained arrays/model states belong in the complete version archive.
+*.npz
+*.npy
+*.pt
+*.pth
+*.h5
+*.h5ad
+*.hdf5
+*.rds
+*.loom
+*.zarr
+
+# Python data adapters and historical producer logs are compact sources.
+!src/tessera_st/data/
+!src/tessera_st/data/*.py
+!current-release/source/src/tessera_st/data/
+!current-release/source/src/tessera_st/data/*.py
+!current-release/results/**/*.log

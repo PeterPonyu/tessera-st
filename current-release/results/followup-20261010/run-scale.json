@@ -1,0 +1,162 @@
+{
+  "protocol": "tessera-followup-20261010",
+  "script_sha256": "9261ceb03afebf4735769bd28bd5672f4093e278e724505a9c2bcf48e41a2915",
+  "frozen_run_lock_sha256": "f6784787c12ed4c87b43d35de60488cd73a9969e4319f11dfcd50ed8ec3d6002",
+  "scale": {
+    "NSCLC": {
+      "per_patient": [
+        {
+          "patient": "NSCLC_Lung5_Rep2",
+          "selected": "NeighborMean|200.0|nan",
+          "nested_control_ari": 0.4774634326221472,
+          "tessera_ari": 0.23078833293609388,
+          "pca50_ari": 0.05901660347242168,
+          "neighbor_mean_k6_ari": 0.2075224085895613
+        },
+        {
+          "patient": "NSCLC_Lung6",
+          "selected": "NeighborMean|200.0|nan",
+          "nested_control_ari": 0.5035732274708952,
+          "tessera_ari": 0.32247200785699703,
+          "pca50_ari": 0.3766439448070053,
+          "neighbor_mean_k6_ari": 0.4170084793966189
+        },
+        {
+          "patient": "NSCLC_Lung9_Rep1",
+          "selected": "NeighborMean|200.0|nan",
+          "nested_control_ari": 0.3722426134463295,
+          "tessera_ari": 0.19775416163292384,
+          "pca50_ari": 0.125738072748337,
+          "neighbor_mean_k6_ari": 0.18533421726273225
+        },
+        {
+          "patient": "NSCLC_Lung12",
+          "selected": "NeighborMean|200.0|nan",
+          "nested_control_ari": 0.29980905113795564,
+          "tessera_ari": 0.19026246171079111,
+          "pca50_ari": 0.049113499363889736,
+          "neighbor_mean_k6_ari": 0.18063794967366972
+        },
+        {
+          "patient": "NSCLC_Lung13",
+          "selected": "NeighborMean|100.0|nan",
+          "nested_control_ari": 0.3090240385077664,
+          "tessera_ari": 0.1905701522954434,
+          "pca50_ari": 0.03879594785672701,
+          "neighbor_mean_k6_ari": 0.1323190098152189
+        }
+      ],
+      "tessera_minus_nested_mean": -0.16605304935056892,
+      "tessera_better": 0,
+      "patients": 5,
+      "exact_sign_flip_p": 0.0625
+    },
+    "BCC": {
+      "per_patient": [
+        {
+          "patient": "BCC_PatientA",
+          "selected": "BANKSY-style|100.0|0.2",
+          "nested_control_ari": 0.30433407290898407,
+          "tessera_ari": 0.28874068094962424,
+          "pca50_ari": 0.2899863211174601,
+          "neighbor_mean_k6_ari": 0.24372517216367395
+        },
+        {
+          "patient": "BCC_PatientB",
+          "selected": "BANKSY-style|100.0|0.2",
+          "nested_control_ari": 0.09599834581366555,
+          "tessera_ari": 0.07300525814064095,
+          "pca50_ari": 0.09671446831368291,
+          "neighbor_mean_k6_ari": 0.07677118500759945
+        },
+        {
+          "patient": "BCC_PatientC",
+          "selected": "BANKSY-style|100.0|0.2",
+          "nested_control_ari": 0.13365272138132137,
+          "tessera_ari": 0.09905591560529599,
+          "pca50_ari": 0.12800502189860996,
+          "neighbor_mean_k6_ari": 0.12301221810303765
+        },
+        {
+          "patient": "BCC_PatientD",
+          "selected": "BANKSY-style|100.0|0.2",
+          "nested_control_ari": 0.17208651851867585,
+          "tessera_ari": 0.1046168826754455,
+          "pca50_ari": 0.15592502451625967,
+          "neighbor_mean_k6_ari": 0.1524229726115008
+        }
+      ],
+      "tessera_minus_nested_mean": -0.035163230312910035,
+      "tessera_better": 0,
+      "patients": 4,
+      "exact_sign_flip_p": 0.125
+    },
+    "oracle_best_control_by_object": {
+      "BCC_PatientA": {
+        "config": "BANKSY-style|100.0|0.2",
+        "ari": 0.30433407290898407,
+        "tessera_ari": 0.28874068094962424
+      },
+      "BCC_PatientB": {
+        "config": "BANKSY-style|10.0|0.5",
+        "ari": 0.09946832580471232,
+        "tessera_ari": 0.07300525814064095
+      },
+      "BCC_PatientC": {
+        "config": "BANKSY-style|100.0|0.2",
+        "ari": 0.13365272138132137,
+        "tessera_ari": 0.09905591560529599
+      },
+      "BCC_PatientD": {
+        "config": "BANKSY-style|15.0|0.2",
+        "ari": 0.17724882690873237,
+        "tessera_ari": 0.1046168826754455
+      },
+      "Breast_Visium": {
+        "config": "BANKSY-style|10.0|0.8",
+        "ari": 0.2282883018930515,
+        "tessera_ari": 0.15402086461247144
+      },
+      "Colorectal_TVA232": {
+        "config": "BANKSY-style|15.0|0.8",
+        "ari": 0.1287772598844185,
+        "tessera_ari": 0.14933381584992947
+      },
+      "MIBI": {
+        "config": "BANKSY-style|50.0|0.5",
+        "ari": 0.2181277799425575,
+        "tessera_ari": 0.18539924185510223
+      },
+      "NSCLC_Lung12": {
+        "config": "NeighborMean|100.0|nan",
+        "ari": 0.3306772416852884,
+        "tessera_ari": 0.19026246171079111
+      },
+      "NSCLC_Lung13": {
+        "config": "NeighborMean|200.0|nan",
+        "ari": 0.37709886498895034,
+        "tessera_ari": 0.1905701522954434
+      },
+      "NSCLC_Lung5_Rep2": {
+        "config": "NeighborMean|200.0|nan",
+        "ari": 0.4774634326221472,
+        "tessera_ari": 0.23078833293609388
+      },
+      "NSCLC_Lung6": {
+        "config": "NeighborMean|50.0|nan",
+        "ari": 0.5470304494538886,
+        "tessera_ari": 0.32247200785699703
+      },
+      "NSCLC_Lung9_Rep1": {
+        "config": "NeighborMean|200.0|nan",
+        "ari": 0.3722426134463295,
+        "tessera_ari": 0.19775416163292384
+      },
+      "OpenST_HNSCC26": {
+        "config": "BANKSY-style|6.0|0.2",
+        "ari": 0.3008138967756135,
+        "tessera_ari": 0.21898597310698284
+      }
+    }
+  }
+}

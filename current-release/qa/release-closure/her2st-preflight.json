@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "analysis": "her2st",
+  "fresh_output": "/tmp/tessera-release-smoke/new-her2st",
+  "checks": "source hashes, dependency imports and input hashes",
+  "fits": 0,
+  "network_requests": 0,
+  "outputs_created": 0
+}

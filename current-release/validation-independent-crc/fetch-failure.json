@@ -1,0 +1,15 @@
+{
+  "ok": false,
+  "truncated": true,
+  "reason": "got 51941440 bytes, expected 61982650",
+  "bytes": 51941440,
+  "head": {
+    "url": "https://zenodo.org/records/7760264/files/SN124_A551763_Rep2.zip?download=1",
+    "ok": true,
+    "status": 200,
+    "content_length": 61982650,
+    "content_type": "application/octet-stream",
+    "error": null,
+    "final_url": "https://zenodo.org/records/7760264/files/SN124_A551763_Rep2.zip?download=1"
+  }
+}

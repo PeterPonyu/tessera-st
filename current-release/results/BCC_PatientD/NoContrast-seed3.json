@@ -1,0 +1,87 @@
+{
+  "object": "BCC_PatientD",
+  "cohort": "BCC",
+  "seed": 3,
+  "arm": "NoContrast",
+  "n_cells": 5656,
+  "K": 11,
+  "input_sha256": "c08f6b11cb008eee8f8fefc761192885d8e49873096c6a7e7857bc99e0daaf32",
+  "prediction_sha256": "443eac00414078388e9bd51595264aec83bce544ae9e60d58a1f5b061ed60333",
+  "fit_seconds": 0.5737951539922506,
+  "total_seconds": 0.7162248639942845,
+  "gpu_peak_allocated_bytes": 302487040,
+  "trainable_parameters": 27207,
+  "history": [
+    {
+      "epoch": 0,
+      "loss": 5.521464824676514,
+      "recon": 5.521464824676514
+    },
+    {
+      "epoch": 12,
+      "loss": 5.21332311630249,
+      "recon": 5.21332311630249
+    },
+    {
+      "epoch": 24,
+      "loss": 4.733333587646484,
+      "recon": 4.733333587646484
+    },
+    {
+      "epoch": 36,
+      "loss": 4.067845821380615,
+      "recon": 4.067845821380615
+    },
+    {
+      "epoch": 48,
+      "loss": 3.4678432941436768,
+      "recon": 3.4678432941436768
+    },
+    {
+      "epoch": 60,
+      "loss": 3.05413818359375,
+      "recon": 3.05413818359375
+    },
+    {
+      "epoch": 72,
+      "loss": 2.7810606956481934,
+      "recon": 2.7810606956481934
+    },
+    {
+      "epoch": 84,
+      "loss": 2.5644795894622803,
+      "recon": 2.5644795894622803
+    },
+    {
+      "epoch": 96,
+      "loss": 2.3755781650543213,
+      "recon": 2.3755781650543213
+    },
+    {
+      "epoch": 108,
+      "loss": 2.2155065536499023,
+      "recon": 2.2155065536499023
+    },
+    {
+      "epoch": 119,
+      "loss": 2.088043212890625,
+      "recon": 2.088043212890625
+    }
+  ],
+  "ablation": {
+    "edge_gating": true,
+    "multi_scale": true,
+    "boundary_contrastive": false,
+    "calibrated_uncertainty": false
+  },
+  "n_edges": 67872,
+  "cross_field_edges": 0,
+  "self_edges": 0,
+  "scores": {
+    "ari": 0.14493969076052787,
+    "nmi": 0.353506457365268,
+    "reference_edge_homogeneity": 0.745049504950495,
+    "predicted_edge_homogeneity": 0.48665134370579916,
+    "gate_seam_auroc": 0.47933548170636403
+  }
+}

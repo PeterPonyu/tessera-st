@@ -1,0 +1,28 @@
+{
+  "figures": {
+    "figure01-workflow.pdf": "0a65dd1b93c471129e3e26c9a50f797620e5a2b2ef6778ca595b1191c9afb9d3",
+    "figure02-cohort.pdf": "175b545c36d2b9c1a03b03449af9383103c3e94d3eff9d99a000b460ed830595",
+    "figure03-comparison.pdf": "77094edef7b8ec46a0865af785528ba3b23b58d5e73709a0d432a02a2cb1c9c4",
+    "figure04-ablations.pdf": "1a0aa8a102147b01b00eba8654ebbd4e49442660f6d65eebfdd62ca840183583",
+    "figure05-nsclc-maps.pdf": "290c947c4029160a3c8d491c9554ea0137872e5644cd07c0293c4644c4be7d57",
+    "figure06-bcc-maps.pdf": "31bfe89221d02a4ad5e5f844673ee808de439a8902118c0ce0aeefa39400f61d",
+    "figure07-breast-histology.pdf": "4527c45ba7fe609f44db2853ed7e113289b37643af805a2019c88912b5498465",
+    "figure08-breast-mixtures.pdf": "2c118d2305d092b8618579b06d20e194f98224c43aefd79c64a73a55b140fb95",
+    "figure09-colorectal-proteins.pdf": "45917efca7710420b9eadf43469cb20c37ce472640ffc2ad00d4f71d6a392cd6",
+    "figure10-patient-transfer.pdf": "ec52fe8fd6f0a6928125a0a8bdb320a04be49d5d32976291f82e596380aeb6ed",
+    "figure11-stability.pdf": "3a17d897b57395bd4a8dc6b2e49b5ec1f6bc8166cb4a93e789ec439201d62af5",
+    "figure12-efficiency-mechanism.pdf": "2ec52b5404c51e624b635443bc08eb1669195632ea3f0c6791cb90f60f6d4d67",
+    "figure13-architecture.pdf": "3c90b13523283dc6c346845883587ea90677aac293b2dcb3e853b3eb8f40e793",
+    "figure14-target-lineage.pdf": "08c1d525ce93e2fb1d21d48b77bd2fd0217c58b5850dec3c4a327b8b8e508bc7",
+    "figure15-external-cohort.pdf": "861df967c7d0f6a317979de87d923f6d0603a379c8860660fe20f26f389482d6",
+    "figure16-external-maps.pdf": "0eeba3b610d07f9a7926ec60fd01cb98c2ca420c222fab94bf678d5974c8239e",
+    "figure17-tissue-landscape.pdf": "8626d7e69dd1f9d141797f6e39ddf64e43836ffd04e52b614b3d29c7bec31a0f",
+    "supplement01-hnscc.pdf": "d63fd8a5fe94cd178dad41b2b44767776aee5eceaf7294c2228111529fd412aa",
+    "supplement02-mibi.pdf": "74661bf57be6de0fb6b4e3b69d98e8bc3c19faaec6f569b5ad746f4ae665293d",
+    "supplement03-rna-markers.pdf": "d47bcefe268bb930ce99a19cdde6724803f55f19ee47d4293c39674093e25748",
+    "supplement05-scale-controls.pdf": "e90e9d11d4d0c5c1d24ac8665aa3d4ac188f1866ea8a954419de9d39a12e44e4"
+  },
+  "primary_score_table_sha256": "711c6e17a84c201b06aaed6d4abf5689b9dc8282d6d45a8153e63dfc10d94b01",
+  "transfer_score_table_sha256": "9379b8448968d4d1929a05f19de2c4c4d750a73b121c46b552fc1a1ce0f44046",
+  "font_contract_sha256": "8e4a94cd3e43fe9238ccae24195ee2bd71141d3d7d0fa728f3a8c2863c08540a"
+}

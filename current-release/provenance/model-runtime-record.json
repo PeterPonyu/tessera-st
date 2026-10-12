@@ -1,0 +1,18 @@
+{
+  "requested": {
+    "model": "inherited from full-history leader fork",
+    "reasoning_effort": "inherited from full-history leader fork",
+    "explicit_override": false
+  },
+  "runtime_reported": {
+    "member": {
+      "model": "gpt-6.1-sol",
+      "reasoning_effort": "max"
+    },
+    "leader": {
+      "model": "gpt-6.1-sol",
+      "reasoning_effort": "max"
+    }
+  },
+  "source": "local session turn_context metadata; requested settings are not runtime proof"
+}

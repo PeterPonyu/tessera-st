@@ -1,0 +1,87 @@
+{
+  "object": "MIBI",
+  "cohort": "MIBI",
+  "seed": 1,
+  "arm": "SelfOnly",
+  "n_cells": 3309,
+  "K": 8,
+  "input_sha256": "d3d3d19935a6f0d9a8ff97f3bd6ffa7e95e5f2ec1ab8d8794c886ad187e34102",
+  "prediction_sha256": "b823cca1b2366d4f5d6d09bf382e4edbf86192e1fc8aef901e1afca1302d5388",
+  "fit_seconds": 0.2214128229970811,
+  "total_seconds": 0.2788236060005147,
+  "gpu_peak_allocated_bytes": 39326720,
+  "trainable_parameters": 25305,
+  "history": [
+    {
+      "epoch": 0,
+      "loss": 1.0421042442321777,
+      "recon": 1.0421042442321777
+    },
+    {
+      "epoch": 12,
+      "loss": 0.8675152063369751,
+      "recon": 0.8675152063369751
+    },
+    {
+      "epoch": 24,
+      "loss": 0.6648275256156921,
+      "recon": 0.6648275256156921
+    },
+    {
+      "epoch": 36,
+      "loss": 0.4625003933906555,
+      "recon": 0.4625003933906555
+    },
+    {
+      "epoch": 48,
+      "loss": 0.36553531885147095,
+      "recon": 0.36553531885147095
+    },
+    {
+      "epoch": 60,
+      "loss": 0.30687373876571655,
+      "recon": 0.30687373876571655
+    },
+    {
+      "epoch": 72,
+      "loss": 0.2652939260005951,
+      "recon": 0.2652939260005951
+    },
+    {
+      "epoch": 84,
+      "loss": 0.23084887862205505,
+      "recon": 0.23084887862205505
+    },
+    {
+      "epoch": 96,
+      "loss": 0.20441682636737823,
+      "recon": 0.20441682636737823
+    },
+    {
+      "epoch": 108,
+      "loss": 0.18381893634796143,
+      "recon": 0.18381893634796143
+    },
+    {
+      "epoch": 119,
+      "loss": 0.16838227212429047,
+      "recon": 0.16838227212429047
+    }
+  ],
+  "ablation": {
+    "edge_gating": false,
+    "multi_scale": true,
+    "boundary_contrastive": false,
+    "calibrated_uncertainty": false
+  },
+  "n_edges": 3309,
+  "cross_field_edges": 0,
+  "self_edges": 3309,
+  "scores": {
+    "ari": 0.20943551018491915,
+    "nmi": 0.3245374252295871,
+    "reference_edge_homogeneity": 1.0,
+    "predicted_edge_homogeneity": 1.0,
+    "gate_seam_auroc": null
+  }
+}

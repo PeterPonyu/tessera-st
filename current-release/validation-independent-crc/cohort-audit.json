@@ -1,0 +1,18 @@
+{
+  "audited_at_utc": "2026-10-11T15:40:38.798915+00:00",
+  "scope": "current Tessera source, protocols, historical run receipts and input metadata; excludes backups and unrelated projects",
+  "identifiers": [
+    "7760264",
+    "ST_CRC_CMS",
+    "A120838",
+    "A595688",
+    "A551763",
+    "A121573",
+    "A416371",
+    "A798015",
+    "A938797"
+  ],
+  "hits": [],
+  "files_hash_bound": 618,
+  "untouched_within_audited_scope": true
+}

@@ -1,0 +1,42 @@
+{
+  "cohort": "NSCLC",
+  "patient": "2",
+  "source_path": "/home/zeyufu/Desktop/labs/active/spgd-tme/data/external/he_nsclc/cosmx_lung.zip",
+  "source_sha256": "04567d69367b6cebae509412f17cc0dbef45efeaa80ad2288708823747b727fd",
+  "source_section": "Lung9_Rep1",
+  "n_source": 87606,
+  "n_eligible": 87606,
+  "label_key": "label",
+  "secondary_key": "cell_type",
+  "target": "computational spatial-region annotation: Mclust of 200-neighbor cell-type frequencies",
+  "frame_key": "FOV prefix of archived observation ID",
+  "units": "archived coordinate units; no physical scale asserted",
+  "source_doi": "10.1038/s41587-022-01483-z",
+  "processed_doi": "10.5281/zenodo.15487520",
+  "object": "NSCLC_Lung9_Rep1",
+  "input_adapter_sha256": "801dc6a98a2a314801c6ea24a1c7bc61f1e15e5c80aeb6070a8bb840d3268497",
+  "n_selected": 4313,
+  "n_labelled": 4313,
+  "n_classes": 5,
+  "classes": [
+    "immune",
+    "plasmablast-enriched stroma",
+    "stroma",
+    "tumor interior",
+    "tumor-stroma boundary"
+  ],
+  "n_features": 960,
+  "n_pc": 50,
+  "n_fields": 1,
+  "field_counts": {
+    "Lung9_Rep1|FOV10": 4313
+  },
+  "display_field": "Lung9_Rep1|FOV10",
+  "count_normalization": true,
+  "control_features_removed": [],
+  "pca_explained_variance": 0.1863306611776352,
+  "zero_count_selected_excluded": 0,
+  "selection": "protocol SHA256 whole-field packing; cap6000; no label/result selection",
+  "selected_id_sha256": "27e0e087a7f79ca602db698d73519645e5a2d39cbca4c3d20ceebdb1a7b38f2b",
+  "matrix_sha256": "7b89ab0e1fbf21986f01aa95a80967ad1e26135dae12956e4cacf78df2bfce74"
+}

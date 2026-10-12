@@ -1,0 +1,101 @@
+{
+  "object": "Breast_Visium",
+  "cohort": "Breast",
+  "seed": 3,
+  "arm": "NoContrast",
+  "n_cells": 2863,
+  "K": 14,
+  "input_sha256": "838f90d40bc60e7bd75b34234a8285357ce3d92c7b7f9673b6ce211e5d7e29ae",
+  "prediction_sha256": "874523f0fa50e1dd03e21de630f6cd5cb82793797cac240c0ac7a72cbb868fca",
+  "fit_seconds": 0.36183177899511065,
+  "total_seconds": 0.45935902099881787,
+  "gpu_peak_allocated_bytes": 162015232,
+  "trainable_parameters": 27303,
+  "history": [
+    {
+      "epoch": 0,
+      "loss": 3.0287892818450928,
+      "recon": 3.0287892818450928
+    },
+    {
+      "epoch": 12,
+      "loss": 2.755880832672119,
+      "recon": 2.755880832672119
+    },
+    {
+      "epoch": 24,
+      "loss": 2.30252742767334,
+      "recon": 2.30252742767334
+    },
+    {
+      "epoch": 36,
+      "loss": 1.8257057666778564,
+      "recon": 1.8257057666778564
+    },
+    {
+      "epoch": 48,
+      "loss": 1.5528919696807861,
+      "recon": 1.5528919696807861
+    },
+    {
+      "epoch": 60,
+      "loss": 1.3804116249084473,
+      "recon": 1.3804116249084473
+    },
+    {
+      "epoch": 72,
+      "loss": 1.2699204683303833,
+      "recon": 1.2699204683303833
+    },
+    {
+      "epoch": 84,
+      "loss": 1.1833510398864746,
+      "recon": 1.1833510398864746
+    },
+    {
+      "epoch": 96,
+      "loss": 1.1117464303970337,
+      "recon": 1.1117464303970337
+    },
+    {
+      "epoch": 108,
+      "loss": 1.0475049018859863,
+      "recon": 1.0475049018859863
+    },
+    {
+      "epoch": 119,
+      "loss": 0.9951508045196533,
+      "recon": 0.9951508045196533
+    }
+  ],
+  "ablation": {
+    "edge_gating": true,
+    "multi_scale": true,
+    "boundary_contrastive": false,
+    "calibrated_uncertainty": false
+  },
+  "n_edges": 34356,
+  "cross_field_edges": 0,
+  "self_edges": 0,
+  "scores": {
+    "ari": 0.19748191978746973,
+    "nmi": 0.39419775786441064,
+    "reference_edge_homogeneity": 0.6141576434974968,
+    "predicted_edge_homogeneity": 0.4445220631039702,
+    "gate_seam_auroc": 0.5931418626135854,
+    "purity_strata": {
+      "0": {
+        "n": 2863,
+        "ari": 0.19748191978746973
+      },
+      "0.5": {
+        "n": 2009,
+        "ari": 0.25296917435424354
+      },
+      "0.75": {
+        "n": 1006,
+        "ari": 0.32042132165941184
+      }
+    }
+  }
+}

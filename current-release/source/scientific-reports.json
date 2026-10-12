@@ -1,0 +1,39 @@
+{
+  "main_source": "manuscript/paper.tex",
+  "supplement_source": "manuscript/supporting.tex",
+  "main_figures": [
+    "fig:workflow",
+    "fig:comparison",
+    "fig:ablations",
+    "fig:lung",
+    "fig:transfer",
+    "fig:external",
+    "fig:landscape"
+  ],
+  "main_tables": [
+    "tab:inputs"
+  ],
+  "title": "Neighborhood averaging accounts for spatial gains of a graph encoder in tumor spatial omics",
+  "output": "../output/scientific-reports",
+  "qa": "../qa/scientific-reports",
+  "inline_float_spec": "tbp",
+  "text_overrides": [
+    {
+      "find": "records observation and coordinate-frame coverage (Supplementary Fig.~S1); reference-class counts",
+      "replace": "records observation and coordinate-frame coverage; reference-class counts"
+    },
+    {
+      "find": "intermingled categories for Patients A and B (Supplementary Fig.~S11) and C and D (Supplementary Fig.~S11).",
+      "replace": "intermingled categories for all four patients (Supplementary Fig.~S11)."
+    },
+    {
+      "find": "(Supplementary Fig.~S5, Supplementary Fig.~S6)",
+      "replace": "(Supplementary Figs.~S5 and S6)"
+    }
+  ],
+  "inline_max_pages_after_citation": 2,
+  "equation_style": true,
+  "journal_figure_directory": true,
+  "journal_lowercase_panels": false,
+  "journal_ledger_directory": true
+}

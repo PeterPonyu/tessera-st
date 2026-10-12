@@ -1,0 +1,29 @@
+{
+  "object": "Colorectal_TVA232",
+  "cohort": "Colorectal TVA",
+  "seed": 2,
+  "arm": "NeighborMean",
+  "n_cells": 5907,
+  "K": 34,
+  "input_sha256": "c5d143da23df042954e1c15ddb05eca1ca21f3e796d6dceff67a1f14e9a0dcf7",
+  "prediction_sha256": "242f6c056d1649f37f521b89ed5843b547ad2da74c1ae9bd34c3a7ac680c2357",
+  "fit_seconds": 0.023528681995230727,
+  "total_seconds": 0.31718903200817294,
+  "gpu_peak_allocated_bytes": null,
+  "trainable_parameters": 0,
+  "history": [],
+  "ablation": null,
+  "n_edges": 70884,
+  "cross_field_edges": 0,
+  "self_edges": 0,
+  "scores": {
+    "ari": 0.11048967503626432,
+    "nmi": 0.31982594819409266,
+    "reference_edge_homogeneity": 0.33340344972654606,
+    "predicted_edge_homogeneity": 0.5448902432142656,
+    "gate_seam_auroc": null,
+    "secondary_ari": 0.031346618060481765,
+    "secondary_nmi": 0.19642485828375353,
+    "secondary_n_classes": 3
+  }
+}

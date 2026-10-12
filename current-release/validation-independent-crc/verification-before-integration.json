@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "historical_files_unchanged": 618,
+  "independent_patients": 3,
+  "model_fits": 18,
+  "saved_ari_rows_recomputed": 72,
+  "unique_edge_auroc_rows_recomputed": 18,
+  "label_shuffle_rows": 18000,
+  "shuffle_rows_independently_recomputed": 180,
+  "raw_archive_crc_md5_sha256": "passed",
+  "receipt_bindings": "passed",
+  "verifier_sha256": "026b874401117f5ee5203c750258933e41d9d7f8dc7d0fb4af8f74c5989fc87e",
+  "scope": "completed read-only verifier before document integration"
+}

@@ -1,0 +1,112 @@
+{
+  "protocol": "tessera-followup-20261010",
+  "script_sha256": "9261ceb03afebf4735769bd28bd5672f4093e278e724505a9c2bcf48e41a2915",
+  "frozen_run_lock_sha256": "f6784787c12ed4c87b43d35de60488cd73a9969e4319f11dfcd50ed8ec3d6002",
+  "nulls": {
+    "NSCLC_Lung5_Rep2": {
+      "permuted_no_contrast": 0.0604979907046432,
+      "self_only": 0.06243257747137266,
+      "no_contrast": 0.059539717298106455,
+      "tessera": 0.23078833293609388,
+      "permuted_with_contrast": 0.1385640185029495,
+      "pca50": 0.05901660347242168
+    },
+    "NSCLC_Lung6": {
+      "permuted_no_contrast": 0.3703422819075836,
+      "self_only": 0.37250771808425814,
+      "no_contrast": 0.37298736320886944,
+      "tessera": 0.32247200785699703,
+      "permuted_with_contrast": 0.3698082079581569,
+      "pca50": 0.3766439448070053
+    },
+    "NSCLC_Lung9_Rep1": {
+      "permuted_no_contrast": 0.13477632101429352,
+      "self_only": 0.13105864979584483,
+      "no_contrast": 0.13266030798236902,
+      "tessera": 0.19775416163292384,
+      "permuted_with_contrast": 0.02161452030900624,
+      "pca50": 0.125738072748337
+    },
+    "NSCLC_Lung12": {
+      "permuted_no_contrast": 0.059634785334856916,
+      "self_only": 0.06332102077729794,
+      "no_contrast": 0.059626297933254434,
+      "tessera": 0.19026246171079111,
+      "permuted_with_contrast": 0.1006446594678758,
+      "pca50": 0.049113499363889736
+    },
+    "NSCLC_Lung13": {
+      "permuted_no_contrast": 0.050574769133559315,
+      "self_only": 0.05185530099991364,
+      "no_contrast": 0.05188008229709653,
+      "tessera": 0.1905701522954434,
+      "permuted_with_contrast": 0.004018609491200573,
+      "pca50": 0.03879594785672701
+    },
+    "BCC_PatientA": {
+      "permuted_no_contrast": 0.2914958223184326,
+      "self_only": 0.29083510806265234,
+      "no_contrast": 0.28989883856245174,
+      "tessera": 0.28874068094962424,
+      "permuted_with_contrast": 0.24007118609621436,
+      "pca50": 0.2899863211174601
+    },
+    "BCC_PatientB": {
+      "permuted_no_contrast": 0.06959077564706172,
+      "self_only": 0.07543412572754861,
+      "no_contrast": 0.07604815844147172,
+      "tessera": 0.07300525814064095,
+      "permuted_with_contrast": 0.05530008250534963,
+      "pca50": 0.09671446831368291
+    },
+    "BCC_PatientC": {
+      "permuted_no_contrast": 0.1033971206194833,
+      "self_only": 0.10964677696165111,
+      "no_contrast": 0.10960295152157307,
+      "tessera": 0.09905591560529599,
+      "permuted_with_contrast": 0.06681409510430715,
+      "pca50": 0.12800502189860996
+    },
+    "BCC_PatientD": {
+      "permuted_no_contrast": 0.14368274632033293,
+      "self_only": 0.1493475528425332,
+      "no_contrast": 0.14803135627987649,
+      "tessera": 0.1046168826754455,
+      "permuted_with_contrast": 0.0939023207045524,
+      "pca50": 0.15592502451625967
+    },
+    "Breast_Visium": {
+      "permuted_no_contrast": 0.2050162049811293,
+      "self_only": 0.19757760052998352,
+      "no_contrast": 0.20196812349403484,
+      "tessera": 0.15402086461247144,
+      "permuted_with_contrast": 0.02477258381670197,
+      "pca50": 0.22145867970771885
+    },
+    "Colorectal_TVA232": {
+      "permuted_no_contrast": 0.09402295740914456,
+      "self_only": 0.10145443891733989,
+      "no_contrast": 0.10265343943852044,
+      "tessera": 0.14933381584992947,
+      "permuted_with_contrast": 0.0985680530694882,
+      "pca50": 0.09363963635454627
+    },
+    "MIBI": {
+      "permuted_no_contrast": 0.2061403847074541,
+      "self_only": 0.20822549087172113,
+      "no_contrast": 0.20872573830674854,
+      "tessera": 0.18539924185510223,
+      "permuted_with_contrast": 0.055735099804057824,
+      "pca50": 0.21039232273808328
+    },
+    "OpenST_HNSCC26": {
+      "permuted_no_contrast": 0.249207055107205,
+      "self_only": 0.23552683835361396,
+      "no_contrast": 0.2331714564834241,
+      "tessera": 0.21898597310698284,
+      "permuted_with_contrast": 0.05221538160596762,
+      "pca50": 0.27126371650351583
+    },
+    "tessera_minus_self_only_negative_objects": 8
+  }
+}

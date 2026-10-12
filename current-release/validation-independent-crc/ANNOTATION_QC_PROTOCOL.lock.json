@@ -1,0 +1,5 @@
+{
+  "locked_at_utc": "2026-10-11T15:45:16.496654+00:00",
+  "sha256": "6663bb4f9a1b00098f2b9769b83f0bf5ff480d332562a92aead5cb8425daa1a5",
+  "trigger": "explicit QC exclude category; first PCA/mean scores seen; no gate AUROC calculated"
+}

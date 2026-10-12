@@ -1,0 +1,87 @@
+{
+  "object": "BCC_PatientC",
+  "cohort": "BCC",
+  "seed": 1,
+  "arm": "SelfOnly",
+  "n_cells": 5042,
+  "K": 12,
+  "input_sha256": "80dff4b454ee9aa0654787c4be55c2f376f5c87472f0b14ebe84861423dced70",
+  "prediction_sha256": "4cc830602061217825f6999d55c9f6bc9cde7a3e782c2af7da25a6235ffe6462",
+  "fit_seconds": 0.2201727650099201,
+  "total_seconds": 0.32111688700388186,
+  "gpu_peak_allocated_bytes": 51983872,
+  "trainable_parameters": 27239,
+  "history": [
+    {
+      "epoch": 0,
+      "loss": 5.001178741455078,
+      "recon": 5.001178741455078
+    },
+    {
+      "epoch": 12,
+      "loss": 4.70457649230957,
+      "recon": 4.70457649230957
+    },
+    {
+      "epoch": 24,
+      "loss": 4.239015579223633,
+      "recon": 4.239015579223633
+    },
+    {
+      "epoch": 36,
+      "loss": 3.656649589538574,
+      "recon": 3.656649589538574
+    },
+    {
+      "epoch": 48,
+      "loss": 3.191225051879883,
+      "recon": 3.191225051879883
+    },
+    {
+      "epoch": 60,
+      "loss": 2.8892769813537598,
+      "recon": 2.8892769813537598
+    },
+    {
+      "epoch": 72,
+      "loss": 2.702509880065918,
+      "recon": 2.702509880065918
+    },
+    {
+      "epoch": 84,
+      "loss": 2.5451812744140625,
+      "recon": 2.5451812744140625
+    },
+    {
+      "epoch": 96,
+      "loss": 2.4054501056671143,
+      "recon": 2.4054501056671143
+    },
+    {
+      "epoch": 108,
+      "loss": 2.2761149406433105,
+      "recon": 2.2761149406433105
+    },
+    {
+      "epoch": 119,
+      "loss": 2.1649787425994873,
+      "recon": 2.1649787425994873
+    }
+  ],
+  "ablation": {
+    "edge_gating": false,
+    "multi_scale": true,
+    "boundary_contrastive": false,
+    "calibrated_uncertainty": false
+  },
+  "n_edges": 5042,
+  "cross_field_edges": 0,
+  "self_edges": 5042,
+  "scores": {
+    "ari": 0.09892419248306106,
+    "nmi": 0.348427731715544,
+    "reference_edge_homogeneity": 1.0,
+    "predicted_edge_homogeneity": 1.0,
+    "gate_seam_auroc": null
+  }
+}

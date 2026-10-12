@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "historical_files_unchanged": 603,
+  "backed_up_document_and_verification_changes": 15,
+  "verifier_sha256": "390a35d1413582d3e3fa33dc4a1b6584df132d64bcf3322c5de380855737eb11",
+  "integration_manifest_sha256": "529069fe6216337e0ea6776d841928e13890c389542eed954296e58122bbd942",
+  "primary_receipt_sha256": "88e1411f662e17854ed9285a4731db34b3d64203b67f7b4dead7f70ad6cfe499",
+  "qc_receipt_sha256": "168dc0db7c1a610578963a8894097dad3a744a797b4cde307a33da77845e1b9d",
+  "figure_receipt_sha256": "923498ecb1826f19137a57bc9810cc7753b04c334e37ed750d332ecf9c847a1f",
+  "independent_patients": 3,
+  "model_fits": 18,
+  "saved_ari_rows_recomputed": 72,
+  "unique_edge_auroc_rows_recomputed": 18,
+  "label_shuffle_rows": 18000,
+  "shuffle_rows_independently_recomputed": 180,
+  "raw_archive_crc_md5_sha256": "passed",
+  "receipt_bindings": "passed",
+  "all_compartment_null_medians_between_0_45_and_0_55": true
+}

@@ -1,0 +1,13 @@
+{
+  "policy": "median observed-coordinate center, +/-22% per-axis extent; no score/label selection",
+  "hires_pixel_bounds": [
+    815.08321489992,
+    1206.14899830008,
+    642.95211267744,
+    1144.81850819056
+  ],
+  "n_spots": 651,
+  "image_sha256": "5337270c72c40739899a4d05b6d4d642d536a2d10a308f644f33930a669837a8",
+  "registration_pixel_error": 0.0,
+  "scale": 0.092717074
+}

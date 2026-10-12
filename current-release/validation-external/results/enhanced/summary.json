@@ -1,0 +1,653 @@
+{
+  "protocol_sha256": "7b1a8679abc3f55a4ab13cb0db21d05a0aab4160a340c61140f92a8cc316e846",
+  "script_sha256": "b6cbf137a23f7ba5f2cf019485d4956e5a61eab3709ddc85845a575e60b5cfad",
+  "targets": {
+    "compartments": {
+      "included": [
+        {
+          "section": "A1",
+          "patient": "A",
+          "n_label_rows": 348,
+          "n_finite_coordinates": 348,
+          "n_matched": 346,
+          "match_fraction": 0.9942528735632183,
+          "n_analysis": 346,
+          "status": "included",
+          "target": "compartments",
+          "n_valid": 341,
+          "n_classes": 5,
+          "classes": [
+            "adipose tissue",
+            "cancer in situ",
+            "connective tissue",
+            "immune infiltrate",
+            "invasive cancer"
+          ],
+          "class_counts": {
+            "adipose tissue": 12,
+            "cancer in situ": 21,
+            "connective tissue": 24,
+            "immune infiltrate": 2,
+            "invasive cancer": 282
+          },
+          "count_normalization": true,
+          "control_features_removed": 0,
+          "n_pc": 50,
+          "pca_explained_variance": 0.2812513668907701
+        },
+        {
+          "section": "B1",
+          "patient": "B",
+          "n_label_rows": 295,
+          "n_finite_coordinates": 295,
+          "n_matched": 295,
+          "match_fraction": 1.0,
+          "n_analysis": 295,
+          "status": "included",
+          "target": "compartments",
+          "n_valid": 269,
+          "n_classes": 4,
+          "classes": [
+            "adipose tissue",
+            "breast glands",
+            "connective tissue",
+            "invasive cancer"
+          ],
+          "class_counts": {
+            "adipose tissue": 70,
+            "breast glands": 41,
+            "connective tissue": 95,
+            "invasive cancer": 63
+          },
+          "count_normalization": true,
+          "control_features_removed": 0,
+          "n_pc": 50,
+          "pca_explained_variance": 0.3471083034976813
+        },
+        {
+          "section": "C1",
+          "patient": "C",
+          "n_label_rows": 177,
+          "n_finite_coordinates": 177,
+          "n_matched": 176,
+          "match_fraction": 0.9943502824858758,
+          "n_analysis": 176,
+          "status": "included",
+          "target": "compartments",
+          "n_valid": 167,
+          "n_classes": 3,
+          "classes": [
+            "adipose tissue",
+            "connective tissue",
+            "invasive cancer"
+          ],
+          "class_counts": {
+            "adipose tissue": 3,
+            "connective tissue": 37,
+            "invasive cancer": 127
+          },
+          "count_normalization": true,
+          "control_features_removed": 0,
+          "n_pc": 50,
+          "pca_explained_variance": 0.5423873850628176
+        },
+        {
+          "section": "D1",
+          "patient": "D",
+          "n_label_rows": 309,
+          "n_finite_coordinates": 309,
+          "n_matched": 306,
+          "match_fraction": 0.9902912621359223,
+          "n_analysis": 306,
+          "status": "included",
+          "target": "compartments",
+          "n_valid": 255,
+          "n_classes": 3,
+          "classes": [
+            "connective tissue",
+            "immune infiltrate",
+            "invasive cancer"
+          ],
+          "class_counts": {
+            "connective tissue": 109,
+            "immune infiltrate": 7,
+            "invasive cancer": 139
+          },
+          "count_normalization": true,
+          "control_features_removed": 0,
+          "n_pc": 50,
+          "pca_explained_variance": 0.34566642366140976
+        },
+        {
+          "section": "E1",
+          "patient": "E",
+          "n_label_rows": 587,
+          "n_finite_coordinates": 587,
+          "n_matched": 587,
+          "match_fraction": 1.0,
+          "n_analysis": 587,
+          "status": "included",
+          "target": "compartments",
+          "n_valid": 534,
+          "n_classes": 3,
+          "classes": [
+            "connective tissue",
+            "immune infiltrate",
+            "invasive cancer"
+          ],
+          "class_counts": {
+            "connective tissue": 17,
+            "immune infiltrate": 177,
+            "invasive cancer": 340
+          },
+          "count_normalization": true,
+          "control_features_removed": 0,
+          "n_pc": 50,
+          "pca_explained_variance": 0.18385276621036292
+        },
+        {
+          "section": "F1",
+          "patient": "F",
+          "n_label_rows": 692,
+          "n_finite_coordinates": 691,
+          "n_matched": 691,
+          "match_fraction": 1.0,
+          "n_analysis": 691,
+          "status": "included",
+          "target": "compartments",
+          "n_valid": 659,
+          "n_classes": 3,
+          "classes": [
+            "connective tissue",
+            "immune infiltrate",
+            "invasive cancer"
+          ],
+          "class_counts": {
+            "connective tissue": 56,
+            "immune infiltrate": 26,
+            "invasive cancer": 577
+          },
+          "count_normalization": true,
+          "control_features_removed": 0,
+          "n_pc": 50,
+          "pca_explained_variance": 0.16327500785277416
+        },
+        {
+          "section": "G2",
+          "patient": "G",
+          "n_label_rows": 475,
+          "n_finite_coordinates": 467,
+          "n_matched": 467,
+          "match_fraction": 1.0,
+          "n_analysis": 467,
+          "status": "included",
+          "target": "compartments",
+          "n_valid": 402,
+          "n_classes": 6,
+          "classes": [
+            "adipose tissue",
+            "breast glands",
+            "cancer in situ",
+            "connective tissue",
+            "immune infiltrate",
+            "invasive cancer"
+          ],
+          "class_counts": {
+            "adipose tissue": 98,
+            "breast glands": 17,
+            "cancer in situ": 20,
+            "connective tissue": 110,
+            "immune infiltrate": 17,
+            "invasive cancer": 140
+          },
+          "count_normalization": true,
+          "control_features_removed": 0,
+          "n_pc": 50,
+          "pca_explained_variance": 0.23147860794860747
+        },
+        {
+          "section": "H1",
+          "patient": "H",
+          "n_label_rows": 613,
+          "n_finite_coordinates": 613,
+          "n_matched": 613,
+          "match_fraction": 1.0,
+          "n_analysis": 613,
+          "status": "included",
+          "target": "compartments",
+          "n_valid": 530,
+          "n_classes": 6,
+          "classes": [
+            "adipose tissue",
+            "breast glands",
+            "cancer in situ",
+            "connective tissue",
+            "immune infiltrate",
+            "invasive cancer"
+          ],
+          "class_counts": {
+            "adipose tissue": 112,
+            "breast glands": 39,
+            "cancer in situ": 97,
+            "connective tissue": 169,
+            "immune infiltrate": 23,
+            "invasive cancer": 90
+          },
+          "count_normalization": true,
+          "control_features_removed": 0,
+          "n_pc": 50,
+          "pca_explained_variance": 0.1911040009356924
+        }
+      ],
+      "exclusions": [],
+      "tessera_minus_nested": {
+        "deltas": [
+          -0.08623375328975846,
+          -0.08641049029053796,
+          3.8979844605629976e-05,
+          -0.06889558063005716,
+          0.1602528809296402,
+          -0.08521399082740072,
+          0.0015522426174778559,
+          0.0020421312775967815
+        ],
+        "mean": -0.020358447546054228,
+        "n_positive": 4,
+        "n_negative": 4,
+        "n_zero": 0,
+        "exact_sign_flip_p": 0.5625
+      },
+      "expression_gate_minus_nested": {
+        "deltas": [
+          0.014133539172036191,
+          0.0546068558885387,
+          0.050368520723793636,
+          -0.020265827934209335,
+          0.016375635157779265,
+          -0.09409895389699711,
+          0.0402017589693357,
+          0.03406617156634939
+        ],
+        "mean": 0.011923462455828303,
+        "n_positive": 6,
+        "n_negative": 2,
+        "n_zero": 0,
+        "exact_sign_flip_p": 0.5234375
+      },
+      "tessera_minus_expression_gate": {
+        "deltas": [
+          -0.10036729246179465,
+          -0.14101734617907666,
+          -0.050329540879188006,
+          -0.04862975269584782,
+          0.14387724577186095,
+          0.008884963069596394,
+          -0.03864951635185784,
+          -0.03202404028875261
+        ],
+        "mean": -0.03228191000188253,
+        "n_positive": 2,
+        "n_negative": 6,
+        "n_zero": 0,
+        "exact_sign_flip_p": 0.328125
+      },
+      "boundary_gate": {
+        "A": {
+          "gate_auroc": 0.5636287744589009,
+          "expression_difference_auroc": 0.5967703422348832
+        },
+        "B": {
+          "gate_auroc": 0.5528849714835938,
+          "expression_difference_auroc": 0.5995666987630546
+        },
+        "C": {
+          "gate_auroc": 0.5568537247313398,
+          "expression_difference_auroc": 0.6627843294753368
+        },
+        "D": {
+          "gate_auroc": 0.5390541002454865,
+          "expression_difference_auroc": 0.5649389391255709
+        },
+        "E": {
+          "gate_auroc": 0.3867194880108232,
+          "expression_difference_auroc": 0.3574735331771682
+        },
+        "F": {
+          "gate_auroc": 0.5022541126106491,
+          "expression_difference_auroc": 0.4530172713534344
+        },
+        "G": {
+          "gate_auroc": 0.5105703495295042,
+          "expression_difference_auroc": 0.6173564997230135
+        },
+        "H": {
+          "gate_auroc": 0.5623851980143678,
+          "expression_difference_auroc": 0.5506263035285222
+        }
+      }
+    },
+    "boundary": {
+      "included": [
+        {
+          "section": "A1",
+          "patient": "A",
+          "n_label_rows": 348,
+          "n_finite_coordinates": 348,
+          "n_matched": 346,
+          "match_fraction": 0.9942528735632183,
+          "n_analysis": 346,
+          "status": "included",
+          "target": "boundary",
+          "n_valid": 341,
+          "n_classes": 2,
+          "classes": [
+            "other tissue",
+            "tumor"
+          ],
+          "class_counts": {
+            "other tissue": 38,
+            "tumor": 303
+          },
+          "side_counts": {
+            "tumor": 303,
+            "other tissue": 38
+          },
+          "count_normalization": true,
+          "control_features_removed": 0,
+          "n_pc": 50,
+          "pca_explained_variance": 0.2812513668907701
+        },
+        {
+          "section": "B1",
+          "patient": "B",
+          "n_label_rows": 295,
+          "n_finite_coordinates": 295,
+          "n_matched": 295,
+          "match_fraction": 1.0,
+          "n_analysis": 295,
+          "status": "included",
+          "target": "boundary",
+          "n_valid": 269,
+          "n_classes": 2,
+          "classes": [
+            "other tissue",
+            "tumor"
+          ],
+          "class_counts": {
+            "other tissue": 206,
+            "tumor": 63
+          },
+          "side_counts": {
+            "tumor": 63,
+            "other tissue": 206
+          },
+          "count_normalization": true,
+          "control_features_removed": 0,
+          "n_pc": 50,
+          "pca_explained_variance": 0.3471083034976813
+        },
+        {
+          "section": "C1",
+          "patient": "C",
+          "n_label_rows": 177,
+          "n_finite_coordinates": 177,
+          "n_matched": 176,
+          "match_fraction": 0.9943502824858758,
+          "n_analysis": 176,
+          "status": "included",
+          "target": "boundary",
+          "n_valid": 167,
+          "n_classes": 2,
+          "classes": [
+            "other tissue",
+            "tumor"
+          ],
+          "class_counts": {
+            "other tissue": 40,
+            "tumor": 127
+          },
+          "side_counts": {
+            "tumor": 127,
+            "other tissue": 40
+          },
+          "count_normalization": true,
+          "control_features_removed": 0,
+          "n_pc": 50,
+          "pca_explained_variance": 0.5423873850628176
+        },
+        {
+          "section": "D1",
+          "patient": "D",
+          "n_label_rows": 309,
+          "n_finite_coordinates": 309,
+          "n_matched": 306,
+          "match_fraction": 0.9902912621359223,
+          "n_analysis": 306,
+          "status": "included",
+          "target": "boundary",
+          "n_valid": 255,
+          "n_classes": 2,
+          "classes": [
+            "other tissue",
+            "tumor"
+          ],
+          "class_counts": {
+            "other tissue": 116,
+            "tumor": 139
+          },
+          "side_counts": {
+            "tumor": 139,
+            "other tissue": 116
+          },
+          "count_normalization": true,
+          "control_features_removed": 0,
+          "n_pc": 50,
+          "pca_explained_variance": 0.34566642366140976
+        },
+        {
+          "section": "E1",
+          "patient": "E",
+          "n_label_rows": 587,
+          "n_finite_coordinates": 587,
+          "n_matched": 587,
+          "match_fraction": 1.0,
+          "n_analysis": 587,
+          "status": "included",
+          "target": "boundary",
+          "n_valid": 534,
+          "n_classes": 2,
+          "classes": [
+            "other tissue",
+            "tumor"
+          ],
+          "class_counts": {
+            "other tissue": 194,
+            "tumor": 340
+          },
+          "side_counts": {
+            "tumor": 340,
+            "other tissue": 194
+          },
+          "count_normalization": true,
+          "control_features_removed": 0,
+          "n_pc": 50,
+          "pca_explained_variance": 0.18385276621036292
+        },
+        {
+          "section": "F1",
+          "patient": "F",
+          "n_label_rows": 692,
+          "n_finite_coordinates": 691,
+          "n_matched": 691,
+          "match_fraction": 1.0,
+          "n_analysis": 691,
+          "status": "included",
+          "target": "boundary",
+          "n_valid": 659,
+          "n_classes": 2,
+          "classes": [
+            "other tissue",
+            "tumor"
+          ],
+          "class_counts": {
+            "other tissue": 82,
+            "tumor": 577
+          },
+          "side_counts": {
+            "tumor": 577,
+            "other tissue": 82
+          },
+          "count_normalization": true,
+          "control_features_removed": 0,
+          "n_pc": 50,
+          "pca_explained_variance": 0.16327500785277416
+        },
+        {
+          "section": "G2",
+          "patient": "G",
+          "n_label_rows": 475,
+          "n_finite_coordinates": 467,
+          "n_matched": 467,
+          "match_fraction": 1.0,
+          "n_analysis": 467,
+          "status": "included",
+          "target": "boundary",
+          "n_valid": 402,
+          "n_classes": 2,
+          "classes": [
+            "other tissue",
+            "tumor"
+          ],
+          "class_counts": {
+            "other tissue": 242,
+            "tumor": 160
+          },
+          "side_counts": {
+            "tumor": 160,
+            "other tissue": 242
+          },
+          "count_normalization": true,
+          "control_features_removed": 0,
+          "n_pc": 50,
+          "pca_explained_variance": 0.23147860794860747
+        },
+        {
+          "section": "H1",
+          "patient": "H",
+          "n_label_rows": 613,
+          "n_finite_coordinates": 613,
+          "n_matched": 613,
+          "match_fraction": 1.0,
+          "n_analysis": 613,
+          "status": "included",
+          "target": "boundary",
+          "n_valid": 530,
+          "n_classes": 2,
+          "classes": [
+            "other tissue",
+            "tumor"
+          ],
+          "class_counts": {
+            "other tissue": 343,
+            "tumor": 187
+          },
+          "side_counts": {
+            "tumor": 187,
+            "other tissue": 343
+          },
+          "count_normalization": true,
+          "control_features_removed": 0,
+          "n_pc": 50,
+          "pca_explained_variance": 0.1911040009356924
+        }
+      ],
+      "exclusions": [],
+      "tessera_minus_nested": {
+        "deltas": [
+          -0.14107249998614038,
+          0.062221977549144714,
+          0.12724396760783527,
+          -0.15664003251213882,
+          -0.02368016413999364,
+          -0.077528578819737,
+          0.06555311095514266,
+          0.0768791479819938
+        ],
+        "mean": -0.008377883920486676,
+        "n_positive": 4,
+        "n_negative": 4,
+        "n_zero": 0,
+        "exact_sign_flip_p": 0.8203125
+      },
+      "expression_gate_minus_nested": {
+        "deltas": [
+          0.11065868457789191,
+          0.001883896082941483,
+          0.0528700723808016,
+          -0.03783718245965806,
+          0.014435696724733757,
+          0.03130979183975667,
+          0.04887440873478033,
+          0.11035672984860145
+        ],
+        "mean": 0.041569012216231147,
+        "n_positive": 7,
+        "n_negative": 1,
+        "n_zero": 0,
+        "exact_sign_flip_p": 0.0546875
+      },
+      "tessera_minus_expression_gate": {
+        "deltas": [
+          -0.2517311845640323,
+          0.06033808146620323,
+          0.07437389522703367,
+          -0.11880285005248076,
+          -0.038115860864727395,
+          -0.10883837065949367,
+          0.01667870222036233,
+          -0.03347758186660765
+        ],
+        "mean": -0.04994689613671782,
+        "n_positive": 3,
+        "n_negative": 5,
+        "n_zero": 0,
+        "exact_sign_flip_p": 0.2421875
+      },
+      "boundary_gate": {
+        "A": {
+          "gate_auroc": 0.5393702435312024,
+          "expression_difference_auroc": 0.5995376712328767
+        },
+        "B": {
+          "gate_auroc": 0.45807307065168706,
+          "expression_difference_auroc": 0.41195506101166474
+        },
+        "C": {
+          "gate_auroc": 0.5755351905266104,
+          "expression_difference_auroc": 0.6627843294753368
+        },
+        "D": {
+          "gate_auroc": 0.4900051286692612,
+          "expression_difference_auroc": 0.5251515974296317
+        },
+        "E": {
+          "gate_auroc": 0.3889643849767568,
+          "expression_difference_auroc": 0.36160644743422615
+        },
+        "F": {
+          "gate_auroc": 0.5042195521502464,
+          "expression_difference_auroc": 0.46388921136134975
+        },
+        "G": {
+          "gate_auroc": 0.49834670736310077,
+          "expression_difference_auroc": 0.5628353763599665
+        },
+        "H": {
+          "gate_auroc": 0.581418484888076,
+          "expression_difference_auroc": 0.5750547099555788
+        }
+      }
+    }
+  },
+  "reading": "Positive direction is the annotation-matched simple control. Tessera exceeding that control is not required."
+}

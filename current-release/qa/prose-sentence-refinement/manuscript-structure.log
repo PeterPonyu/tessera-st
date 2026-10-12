@@ -1,0 +1,14 @@
+
+SUMMARY {'BLOCKER': 0, 'MAJOR': 0, 'MINOR': 0}
+
+Panel citation matrix (letter: n citations in Results)
+  figure03-comparison            a:2 b:3 c:2 d:1
+  figure04-ablations             a:2 b:1 c:1 d:1
+  figure05-nsclc-maps            a:1 b:1 c:1 d:1 e:1
+  figure06-bcc-maps              a:1 b:1 c:1 d:1
+  figure07-breast-histology      a:1 b:1
+  figure08-breast-mixtures       a:1 b:1 c:1 d:1
+  figure10-patient-transfer      a:1 b:1 c:1 d:1
+  figure11-stability             a:1 b:1
+  figure15-external-cohort       a:1 b:1 c:1 d:1 e:1 f:1
+  figure17-tissue-landscape      a:1 b:1 c:1 d:1

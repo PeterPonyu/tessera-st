@@ -1,0 +1,319 @@
+{
+  "created": "2023-03-22T15:11:52.705797+00:00",
+  "modified": "2024-12-20T14:48:33.560918+00:00",
+  "id": 7760264,
+  "conceptrecid": "7551712",
+  "doi": "10.5281/zenodo.7760264",
+  "conceptdoi": "10.5281/zenodo.7551712",
+  "doi_url": "https://doi.org/10.5281/zenodo.7760264",
+  "metadata": {
+    "title": "Profiling the Heterogeneity of Colorectal Cancer Consensus Molecular Subtypes using Spatial Transcriptomics: datasets",
+    "doi": "10.5281/zenodo.7760264",
+    "publication_date": "2023-01-19",
+    "description": "<p>You can find here the datasets used in the publication:&nbsp;</p>\n<p><em><strong>Valdeolivas, A., Amberg, B., Giroud, N.&nbsp;et al.&nbsp;Profiling the heterogeneity of colorectal cancer consensus molecular subtypes using spatial transcriptomics.&nbsp;npj Precis. Onc.&nbsp;8, 10 (2024). https://doi.org/10.1038/s41698-023-00488-4</strong>&nbsp;</em></p>\n<p>This contents the raw Spatial Transcriptomics data, spot categorization made by pathologist, the results of the deconvolution and intermediary files required to run the analysis described in our manuscript and available in Github:&nbsp;</p>\n<p><a href=\"https://github.com/alberto-valdeolivas/ST_CRC_CMS\">https://github.com/alberto-valdeolivas/ST_CRC_CMS</a></p>\n<p>In particular, you will find here several zip compressed files with the following content:&nbsp;</p>\n<p>-&nbsp;<a href=\"https://zenodo.org/api/files/a1d45f27-bec7-4f74-9d49-686dda0f77bf/Intermediary_FileObjects.zip?versionId=989cd48d-45f6-46b9-9f90-1927af392a7e\">Intermediary_FileObjects.zip</a>: The intermediary files generated in the scripts hosted in the github repo and required to run some later scripts.&nbsp;</p>\n<p>-&nbsp;&nbsp;<a href=\"https://zenodo.org/api/files/7b1f17b1-5345-4d29-ab8f-2d51fad58fc4/IntermediaryFiles_ST_CRC_LiverMetastasis.zip\">IntermediaryFiles_ST_CRC_LiverMetastasis.zip</a>: The intermediary files generated in the scripts hosted in the github repo and required to run some of the scripts dealing with the external CRC ST dataset used in our manuscript.&nbsp;</p>\n<p>-&nbsp;<a href=\"https://zenodo.org/api/files/a1d45f27-bec7-4f74-9d49-686dda0f77bf/Pathology_SpotAnnotations.zip?versionId=ce657a54-9fec-4633-9d89-31f1479b93b7\">Pathology_SpotAnnotations.zip</a>: The categories assigned by the pathologists to all the spots across our set ST samples to a different anatomical category (tumor, stroma, non-neoplastic mucosa...)&nbsp;</p>\n<p>-<a href=\"https://zenodo.org/api/files/a1d45f27-bec7-4f74-9d49-686dda0f77bf/SN048_A121573_Rep1.zip?versionId=dbfaad0f-784b-44c9-91d1-713f063d64e3\">SN048_A121573_Rep1.zip</a>,&nbsp;<a href=\"https://zenodo.org/api/files/a1d45f27-bec7-4f74-9d49-686dda0f77bf/SN048_A121573_Rep2.zip?versionId=ae997080-ca69-44c3-86aa-65bc1d5ef120\">SN048_A121573_Rep2.zip</a>,&nbsp;<a href=\"https://zenodo.org/api/files/a1d45f27-bec7-4f74-9d49-686dda0f77bf/SN048_A416371_Rep1.zip?versionId=e453ed45-22d8-4d60-b7f3-4daa9212cc88\">SN048_A416371_Rep1.zip</a>,&nbsp;<a href=\"https://zenodo.org/api/files/a1d45f27-bec7-4f74-9d49-686dda0f77bf/SN048_A416371_Rep2.zip?versionId=be395926-eee8-4670-b355-125e72bf6281\">SN048_A416371_Rep2.zip</a>,&nbsp;<a href=\"https://zenodo.org/api/files/a1d45f27-bec7-4f74-9d49-686dda0f77bf/SN123_A551763_Rep1.zip?versionId=6b7fa01a-a0d9-43e7-8d1d-8c56cb422374\">SN123_A551763_Rep1.zip</a>,&nbsp;<a href=\"https://zenodo.org/api/files/a1d45f27-bec7-4f74-9d49-686dda0f77bf/SN123_A595688_Rep1.zip?versionId=f625a286-fbc7-48f6-a57d-7d0df67a0574\">SN123_A595688_Rep1.zip</a>,&nbsp;<a href=\"https://zenodo.org/api/files/a1d45f27-bec7-4f74-9d49-686dda0f77bf/SN123_A798015_Rep1.zip?versionId=3540f1e5-9cf4-412c-887c-b1d0cc4e03c5\">SN123_A798015_Rep1.zip</a>,&nbsp;<a href=\"https://zenodo.org/api/files/a1d45f27-bec7-4f74-9d49-686dda0f77bf/SN123_A938797_Rep1_X.zip?versionId=de59c354-fea2-4843-a5f9-5e7a8d863e51\">SN123_A938797_Rep1_X.zip</a>,&nbsp;<a href=\"https://zenodo.org/api/files/a1d45f27-bec7-4f74-9d49-686dda0f77bf/SN124_A551763_Rep2.zip?versionId=9da50bec-8ba4-41b0-a29e-4fc778cf12b7\">SN124_A551763_Rep2.zip</a>,&nbsp;<a href=\"https://zenodo.org/api/files/a1d45f27-bec7-4f74-9d49-686dda0f77bf/SN124_A595688_Rep2.zip?versionId=29c3e99e-7db2-4c02-9004-dc9d8abf3c27\">SN124_A595688_Rep2.zip</a>,&nbsp;<a href=\"https://zenodo.org/api/files/a1d45f27-bec7-4f74-9d49-686dda0f77bf/SN124_A798015_Rep2.zip?versionId=a0cf2cca-f3c9-4c45-b311-1ddc81371e35\">SN124_A798015_Rep2.zip</a>,&nbsp;<a href=\"https://zenodo.org/api/files/a1d45f27-bec7-4f74-9d49-686dda0f77bf/SN124_A938797_Rep2.zip?versionId=e6e4e2bc-1593-4c0f-ac37-b00cc2fc1124\">SN124_A938797_Rep2.zip</a>,&nbsp;<a href=\"https://zenodo.org/api/files/a1d45f27-bec7-4f74-9d49-686dda0f77bf/SN84_A120838_Rep1.zip?versionId=ec31a69e-d0ce-4e4c-82dc-e7f2e617631a\">SN84_A120838_Rep1.zip</a>,&nbsp;<a href=\"https://zenodo.org/api/files/a1d45f27-bec7-4f74-9d49-686dda0f77bf/SN84_A120838_Rep2.zip?versionId=89c89532-7bb1-47e4-8900-b5c12a7c4ba0\">SN84_A120838_Rep2.zip</a>:&nbsp;The output of Space Ranger, including processed count data matrices and histological images, for the ST data generated in this study</p>\n<p>-&nbsp;<a href=\"https://zenodo.org/api/files/7b1f17b1-5345-4d29-ab8f-2d51fad58fc4/DeconvolutionResults_ST_CRC_BelgianCohort.zip\">DeconvolutionResults_ST_CRC_BelgianCohort.zip</a>,&nbsp;<a href=\"https://zenodo.org/api/files/7b1f17b1-5345-4d29-ab8f-2d51fad58fc4/DeconvolutionResults_ST_CRC_KoreanCohort.zip\">DeconvolutionResults_ST_CRC_KoreanCohort.zip</a>,&nbsp;<a href=\"https://zenodo.org/api/files/7b1f17b1-5345-4d29-ab8f-2d51fad58fc4/DeconvolutionResults_ST_CRC_LiverMetastasis.zip\">DeconvolutionResults_ST_CRC_LiverMetastasis.zip</a>: These files contain the main results obtained when using the Cell2Location deconvolution approach in our samples (with two different references: Korean and Belgian cohorts) and in the external set of CRC ST samples (only Korean cohort)</p>\n<p>&nbsp;</p>\n<p>- We have also uploaded the whole slide images (WSI). These are the files with an ndpi extension:&nbsp;</p>\n<p><br><a href=\"https://zenodo.org/api/files/76d879db-33b7-46c3-ac12-7026c0e64877/Visium%20Frozen_SN%20V10B01-048_new%20CRC_2021_02_16.ndpi?versionId=d5c8cbd3-40de-43da-8370-329def9e4f14\">Visium Frozen_SN V10B01-048_new CRC_2021_02_16.ndp ...</a>&nbsp;(samples A121573_Rep1, A121573_Rep2, A416371_Rep1 and&nbsp;A416371_Rep2),&nbsp;<a href=\"https://zenodo.org/api/files/76d879db-33b7-46c3-ac12-7026c0e64877/Visium%20Frozen_SN%20V19S23-084.ndpi?versionId=6d91b1f9-56e9-45c3-a2e6-4714975678fb\">Visium Frozen_SN V19S23-084.ndpi</a>&nbsp;(samples A120838_Rep1 and A120838_Rep2),&nbsp;<a href=\"https://zenodo.org/api/files/76d879db-33b7-46c3-ac12-7026c0e64877/Visium%20Frozen_SN%20V19S23-123.ndpi?versionId=c535482c-0a3c-4ba5-a056-f96796c366b0\">Visium Frozen_SN V19S23-123.ndpi</a>&nbsp;(samples A551763_Rep1, A595688_Rep1, A798015_Rep1, A938797_Rep1) and&nbsp;<a href=\"https://zenodo.org/api/files/76d879db-33b7-46c3-ac12-7026c0e64877/Visium%20Frozen_SN%20V19S23-124.ndpi?versionId=49ce857c-47bb-4930-bb0c-09213e4acf28\">Visium Frozen_SN V19S23-124.ndpi</a>&nbsp;(samples A551763_Rep2, A595688_Rep2, A798015_Rep2 and&nbsp;A938797_Rep2)</p>\n<p>- We have now included the fastq and Bam files for the different samples, excluding replicate 1 of the A938797 sample whose fastq files are missing:&nbsp;</p>\n<p><strong>IMPORTANT: Fastq files are in version 1, while bam files are in version 2 of the dashboards reported below:&nbsp;</strong></p>\n<ol>\n<li>Sample <a href=\"https://doi.org/10.5281/zenodo.13991781\">S1_Cec</a> (A551763)</li>\n<li>Sample <a href=\"https://doi.org/10.5281/zenodo.14006187\">S2_Col_R </a>(A595688)</li>\n<li>Sample <a href=\"https://doi.org/10.5281/zenodo.13987002\">S3_Col_R </a>(A416371)&nbsp;</li>\n<li>Sample <a href=\"https://doi.org/10.5281/zenodo.13990328\">S4_Col_Sig </a>(A120838)</li>\n<li>Sample <a href=\"https://doi.org/10.5281/zenodo.13989699\">S5_Rec </a>(A121573)</li>\n<li>Sample <a href=\"https://doi.org/10.5281/zenodo.14008051\">S6_Rec </a>(A938797)</li>\n<li>Sample <a href=\"https://doi.org/10.5281/zenodo.14006810\">S7_Rec/Sig</a> (A798015)</li>\n</ol>\n<p>&nbsp;</p>\n<p>&nbsp;</p>",
+    "access_right": "open",
+    "creators": [
+      {
+        "name": "Valdeolivas, Alberto",
+        "affiliation": "Roche Pharma Research and Early Development, Roche Innovation Center Basel, Basel, Switzerland",
+        "orcid": "0000-0001-5482-9023"
+      }
+    ],
+    "keywords": [
+      "Spatial Transcriptomics, colorectal cancer, CRC, ST, deconvolution, 10x VISIUM, tumor heterogeneity, ligand-receptor interactions, cell communication, CMS, consensus molecular subtypes, deconvolution"
+    ],
+    "language": "eng",
+    "resource_type": {
+      "title": "Dataset",
+      "type": "dataset"
+    },
+    "license": {
+      "id": "cc-by-4.0"
+    },
+    "relations": {
+      "version": [
+        {
+          "index": 3,
+          "is_last": true,
+          "parent": {
+            "pid_type": "recid",
+            "pid_value": "7551712"
+          }
+        }
+      ]
+    }
+  },
+  "title": "Profiling the Heterogeneity of Colorectal Cancer Consensus Molecular Subtypes using Spatial Transcriptomics: datasets",
+  "links": {
+    "self": "https://zenodo.org/api/records/7760264",
+    "self_html": "https://zenodo.org/records/7760264",
+    "preview_html": "https://zenodo.org/records/7760264?preview=1",
+    "doi": "https://doi.org/10.5281/zenodo.7760264",
+    "self_doi": "https://doi.org/10.5281/zenodo.7760264",
+    "self_doi_html": "https://zenodo.org/doi/10.5281/zenodo.7760264",
+    "reserve_doi": "https://zenodo.org/api/records/7760264/draft/pids/doi",
+    "parent": "https://zenodo.org/api/records/7551712",
+    "parent_html": "https://zenodo.org/records/7551712",
+    "parent_doi": "https://doi.org/10.5281/zenodo.7551712",
+    "parent_doi_html": "https://zenodo.org/doi/10.5281/zenodo.7551712",
+    "self_iiif_manifest": "https://zenodo.org/api/iiif/record:7760264/manifest",
+    "self_iiif_sequence": "https://zenodo.org/api/iiif/record:7760264/sequence/default",
+    "files": "https://zenodo.org/api/records/7760264/files",
+    "media_files": "https://zenodo.org/api/records/7760264/media-files",
+    "latest": "https://zenodo.org/api/records/7760264/versions/latest",
+    "latest_html": "https://zenodo.org/records/7760264/latest",
+    "versions": "https://zenodo.org/api/records/7760264/versions",
+    "draft": "https://zenodo.org/api/records/7760264/draft",
+    "access_links": "https://zenodo.org/api/records/7760264/access/links",
+    "access_grants": "https://zenodo.org/api/records/7760264/access/grants",
+    "access_users": "https://zenodo.org/api/records/7760264/access/users",
+    "access_request": "https://zenodo.org/api/records/7760264/access/request",
+    "access": "https://zenodo.org/api/records/7760264/access",
+    "communities": "https://zenodo.org/api/records/7760264/communities",
+    "communities-suggestions": "https://zenodo.org/api/records/7760264/communities-suggestions",
+    "request_deletion": "https://zenodo.org/api/records/7760264/request-deletion",
+    "file_modification": "https://zenodo.org/api/records/7760264/file-modification",
+    "quota_increase": "https://zenodo.org/api/records/7760264/quota-increase",
+    "requests": "https://zenodo.org/api/records/7760264/requests"
+  },
+  "updated": "2024-12-20T14:48:33.560918+00:00",
+  "recid": "7760264",
+  "revision": 9,
+  "files": [
+    {
+      "id": "3d6031f7-1b05-4ab7-92e1-eb5dce5ecf6b",
+      "key": "SN124_A551763_Rep2.zip",
+      "size": 61982650,
+      "checksum": "md5:adf0ea575a09f473fa4ceb465a6ec66e",
+      "links": {
+        "self": "https://zenodo.org/api/records/7760264/files/SN124_A551763_Rep2.zip/content"
+      }
+    },
+    {
+      "id": "13829bc6-1453-47e2-b7f0-e91a32f0d881",
+      "key": "SN123_A938797_Rep1_X.zip",
+      "size": 108570769,
+      "checksum": "md5:08e3c7fe308db62b658cacc6b4be4e1c",
+      "links": {
+        "self": "https://zenodo.org/api/records/7760264/files/SN123_A938797_Rep1_X.zip/content"
+      }
+    },
+    {
+      "id": "678ca95c-f657-4018-9b19-2f26cfa279ba",
+      "key": "SN123_A595688_Rep1.zip",
+      "size": 99165165,
+      "checksum": "md5:b5aa2ee18977b0be67a72ff2b966ab26",
+      "links": {
+        "self": "https://zenodo.org/api/records/7760264/files/SN123_A595688_Rep1.zip/content"
+      }
+    },
+    {
+      "id": "0af94fe5-2eee-4971-b1ad-fb0df9614063",
+      "key": "SN048_A416371_Rep2.zip",
+      "size": 133062616,
+      "checksum": "md5:9a49067a4a6d89521601b562011dc02e",
+      "links": {
+        "self": "https://zenodo.org/api/records/7760264/files/SN048_A416371_Rep2.zip/content"
+      }
+    },
+    {
+      "id": "f048eecc-23e0-4850-bb40-72ae17a91520",
+      "key": "Visium Frozen_SN V19S23-123.ndpi",
+      "size": 1002002711,
+      "checksum": "md5:6eef119ff578d686f22024d96346dc06",
+      "links": {
+        "self": "https://zenodo.org/api/records/7760264/files/Visium%20Frozen_SN%20V19S23-123.ndpi/content"
+      }
+    },
+    {
+      "id": "8aad437e-6fa9-475c-8041-811ae7225e05",
+      "key": "Visium Frozen_SN V19S23-084.ndpi",
+      "size": 944594938,
+      "checksum": "md5:b3b91c567e07df9277a43ad6641c51b1",
+      "links": {
+        "self": "https://zenodo.org/api/records/7760264/files/Visium%20Frozen_SN%20V19S23-084.ndpi/content"
+      }
+    },
+    {
+      "id": "3e1d8e3e-eb3d-4e70-911e-38283ef7e523",
+      "key": "IntermediaryFiles_ST_CRC_LiverMetastasis.zip",
+      "size": 5357854639,
+      "checksum": "md5:884990b3709cbe0137907b8d90509bea",
+      "links": {
+        "self": "https://zenodo.org/api/records/7760264/files/IntermediaryFiles_ST_CRC_LiverMetastasis.zip/content"
+      }
+    },
+    {
+      "id": "64ce7ae8-5848-4de3-affe-13e6ec2f4ccf",
+      "key": "Visium Frozen_SN V10B01-048_new CRC_2021_02_16.ndpi",
+      "size": 1213246926,
+      "checksum": "md5:249621426b10ed200811c88cd8e683fd",
+      "links": {
+        "self": "https://zenodo.org/api/records/7760264/files/Visium%20Frozen_SN%20V10B01-048_new%20CRC_2021_02_16.ndpi/content"
+      }
+    },
+    {
+      "id": "deed1d50-f0cb-4015-938e-05e0bd3d3565",
+      "key": "SN84_A120838_Rep2.zip",
+      "size": 83617743,
+      "checksum": "md5:d59ffee02162ba7b900199786e536a30",
+      "links": {
+        "self": "https://zenodo.org/api/records/7760264/files/SN84_A120838_Rep2.zip/content"
+      }
+    },
+    {
+      "id": "baf579fe-692d-44d1-b1b9-77e9787d2f9e",
+      "key": "SN84_A120838_Rep1.zip",
+      "size": 53827477,
+      "checksum": "md5:4a185c5e1bf88995ee0c03dbb4e8b63c",
+      "links": {
+        "self": "https://zenodo.org/api/records/7760264/files/SN84_A120838_Rep1.zip/content"
+      }
+    },
+    {
+      "id": "6cd04962-cb2b-4eb6-8a7f-488d5ea4a609",
+      "key": "SN123_A798015_Rep1.zip",
+      "size": 81914465,
+      "checksum": "md5:0e589a2c96546fff5ca21cb18d597791",
+      "links": {
+        "self": "https://zenodo.org/api/records/7760264/files/SN123_A798015_Rep1.zip/content"
+      }
+    },
+    {
+      "id": "1aba8857-7d23-4147-abcf-5099d391c9f0",
+      "key": "SN123_A551763_Rep1.zip",
+      "size": 77094190,
+      "checksum": "md5:b26940f8bf3b3e9855b0a116825e638c",
+      "links": {
+        "self": "https://zenodo.org/api/records/7760264/files/SN123_A551763_Rep1.zip/content"
+      }
+    },
+    {
+      "id": "7fb230ca-e4ae-4030-9ff9-c8683b1bb267",
+      "key": "SN048_A416371_Rep1.zip",
+      "size": 155662933,
+      "checksum": "md5:8aec27998074f672fcdaba6faa609da0",
+      "links": {
+        "self": "https://zenodo.org/api/records/7760264/files/SN048_A416371_Rep1.zip/content"
+      }
+    },
+    {
+      "id": "6b9a9593-dde4-4c95-8a15-89648e3dba05",
+      "key": "SN048_A121573_Rep2.zip",
+      "size": 153572136,
+      "checksum": "md5:a9f516ca415ad68be283ef0b431c35ce",
+      "links": {
+        "self": "https://zenodo.org/api/records/7760264/files/SN048_A121573_Rep2.zip/content"
+      }
+    },
+    {
+      "id": "c4f534a6-2983-4aa3-a70b-3ffea8e309d8",
+      "key": "Pathology_SpotAnnotations.zip",
+      "size": 702660,
+      "checksum": "md5:92882eb0db7c2cacc5077cb5fc9578fd",
+      "links": {
+        "self": "https://zenodo.org/api/records/7760264/files/Pathology_SpotAnnotations.zip/content"
+      }
+    },
+    {
+      "id": "e43c687f-61a1-4a97-96b8-425f9e44c6ef",
+      "key": "SN124_A798015_Rep2.zip",
+      "size": 93813784,
+      "checksum": "md5:db421ccd3e1be463573be562c3266aef",
+      "links": {
+        "self": "https://zenodo.org/api/records/7760264/files/SN124_A798015_Rep2.zip/content"
+      }
+    },
+    {
+      "id": "5cd9aa69-b36f-4c8f-8333-3b470e04acba",
+      "key": "Visium Frozen_SN V19S23-124.ndpi",
+      "size": 1003979825,
+      "checksum": "md5:4cbd55af702c6bbe1c12ef4f39a8457b",
+      "links": {
+        "self": "https://zenodo.org/api/records/7760264/files/Visium%20Frozen_SN%20V19S23-124.ndpi/content"
+      }
+    },
+    {
+      "id": "f8bafd53-545b-4063-ac47-0eba2fb81539",
+      "key": "SN124_A938797_Rep2.zip",
+      "size": 141363392,
+      "checksum": "md5:ee145e0f97146586baa8ef95edae05b0",
+      "links": {
+        "self": "https://zenodo.org/api/records/7760264/files/SN124_A938797_Rep2.zip/content"
+      }
+    },
+    {
+      "id": "bb4834e8-d276-49ba-b0bc-6f17434dd841",
+      "key": "SN124_A595688_Rep2.zip",
+      "size": 56124799,
+      "checksum": "md5:808ed49a24eea7d41c575d8c238caa76",
+      "links": {
+        "self": "https://zenodo.org/api/records/7760264/files/SN124_A595688_Rep2.zip/content"
+      }
+    },
+    {
+      "id": "1b177c12-37a4-4a8d-890f-f3020b3dfbef",
+      "key": "SN048_A121573_Rep1.zip",
+      "size": 149798389,
+      "checksum": "md5:608a39f21da059024121407967a76b8a",
+      "links": {
+        "self": "https://zenodo.org/api/records/7760264/files/SN048_A121573_Rep1.zip/content"
+      }
+    },
+    {
+      "id": "ac9c601a-dc4e-40d6-bc51-9e899faaf162",
+      "key": "DeconvolutionResults_ST_CRC_BelgianCohort.zip",
+      "size": 600426627,
+      "checksum": "md5:8a9604e51eff9f46a2d8fa4f56264980",
+      "links": {
+        "self": "https://zenodo.org/api/records/7760264/files/DeconvolutionResults_ST_CRC_BelgianCohort.zip/content"
+      }
+    },
+    {
+      "id": "309b9c01-e1a8-4482-b7c3-4368bbd424ec",
+      "key": "DeconvolutionResults_ST_CRC_KoreanCohort.zip",
+      "size": 589461119,
+      "checksum": "md5:909a79ee0b265e80897eec8612a582c6",
+      "links": {
+        "self": "https://zenodo.org/api/records/7760264/files/DeconvolutionResults_ST_CRC_KoreanCohort.zip/content"
+      }
+    },
+    {
+      "id": "cc9e5be4-8276-44d4-86ef-95a9ef889cee",
+      "key": "DeconvolutionResults_ST_CRC_LiverMetastasis.zip",
+      "size": 800785189,
+      "checksum": "md5:6461372dd74344ddd21ddae7a51ccad0",
+      "links": {
+        "self": "https://zenodo.org/api/records/7760264/files/DeconvolutionResults_ST_CRC_LiverMetastasis.zip/content"
+      }
+    },
+    {
+      "id": "199f34f1-e017-45b0-88ae-09aec776e7dd",
+      "key": "Intermediary_FileObjects.zip",
+      "size": 4033152600,
+      "checksum": "md5:992dc9a643e036c9b011ccba100e2ff4",
+      "links": {
+        "self": "https://zenodo.org/api/records/7760264/files/Intermediary_FileObjects.zip/content"
+      }
+    }
+  ],
+  "swh": {},
+  "owners": [
+    {
+      "id": "460730"
+    }
+  ],
+  "status": "published",
+  "stats": {
+    "downloads": 35477,
+    "unique_downloads": 23650,
+    "views": 8462,
+    "unique_views": 7288,
+    "version_downloads": 32434,
+    "version_unique_downloads": 21345,
+    "version_unique_views": 5818,
+    "version_views": 6896
+  },
+  "state": "done",
+  "submitted": true
+}

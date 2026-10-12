@@ -1,0 +1,90 @@
+{
+  "object": "NSCLC_Lung13",
+  "cohort": "NSCLC",
+  "seed": 1,
+  "arm": "NoContrast",
+  "n_cells": 3853,
+  "K": 5,
+  "input_sha256": "562c6711278c95e67030b7819cb3c1f2ce622fddaaf2cd32bdb5676c2f0f5365",
+  "prediction_sha256": "79c9c6aa1553dc8e604dd679e6078b5b6c27d31b3ee39e10b015d5a8f63bf71a",
+  "fit_seconds": 0.40333362499950454,
+  "total_seconds": 0.4806198940059403,
+  "gpu_peak_allocated_bytes": 220848128,
+  "trainable_parameters": 27015,
+  "history": [
+    {
+      "epoch": 0,
+      "loss": 3.4917447566986084,
+      "recon": 3.4917447566986084
+    },
+    {
+      "epoch": 12,
+      "loss": 3.2730557918548584,
+      "recon": 3.2730557918548584
+    },
+    {
+      "epoch": 24,
+      "loss": 2.95149827003479,
+      "recon": 2.95149827003479
+    },
+    {
+      "epoch": 36,
+      "loss": 2.5179250240325928,
+      "recon": 2.5179250240325928
+    },
+    {
+      "epoch": 48,
+      "loss": 2.1519615650177,
+      "recon": 2.1519615650177
+    },
+    {
+      "epoch": 60,
+      "loss": 1.9363343715667725,
+      "recon": 1.9363343715667725
+    },
+    {
+      "epoch": 72,
+      "loss": 1.768274188041687,
+      "recon": 1.768274188041687
+    },
+    {
+      "epoch": 84,
+      "loss": 1.6338348388671875,
+      "recon": 1.6338348388671875
+    },
+    {
+      "epoch": 96,
+      "loss": 1.5274600982666016,
+      "recon": 1.5274600982666016
+    },
+    {
+      "epoch": 108,
+      "loss": 1.4380061626434326,
+      "recon": 1.4380061626434326
+    },
+    {
+      "epoch": 119,
+      "loss": 1.3657690286636353,
+      "recon": 1.3657690286636353
+    }
+  ],
+  "ablation": {
+    "edge_gating": true,
+    "multi_scale": true,
+    "boundary_contrastive": false,
+    "calibrated_uncertainty": false
+  },
+  "n_edges": 46236,
+  "cross_field_edges": 0,
+  "self_edges": 0,
+  "scores": {
+    "ari": 0.05018853537050469,
+    "nmi": 0.07421444363886981,
+    "reference_edge_homogeneity": 0.9545808460939528,
+    "predicted_edge_homogeneity": 0.4591660178216109,
+    "gate_seam_auroc": 0.535936499305178,
+    "secondary_ari": 0.42656201285178297,
+    "secondary_nmi": 0.46749108307731024,
+    "secondary_n_classes": 21
+  }
+}

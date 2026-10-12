@@ -1,0 +1,13 @@
+scale NSCLC_Lung5_Rep2
+scale NSCLC_Lung6
+scale NSCLC_Lung9_Rep1
+scale NSCLC_Lung12
+scale NSCLC_Lung13
+scale BCC_PatientA
+scale BCC_PatientB
+scale BCC_PatientC
+scale BCC_PatientD
+scale Breast_Visium
+scale Colorectal_TVA232
+scale MIBI
+scale OpenST_HNSCC26

@@ -1,0 +1,108 @@
+{
+  "protocol": "tessera-followup-20261010",
+  "script_sha256": "c96d933da9b71ec039df0c7dbfe1eaf5c7f5ec1c9d07918858300590b19aa538",
+  "frozen_run_lock_sha256": "f6784787c12ed4c87b43d35de60488cd73a9969e4319f11dfcd50ed8ec3d6002",
+  "whole": {
+    "n_cells": {
+      "BCC_PatientA": 21368,
+      "BCC_PatientB": 41758,
+      "BCC_PatientC": 90636,
+      "BCC_PatientD": 65152,
+      "NSCLC_Lung12": 71304,
+      "NSCLC_Lung13": 81236,
+      "NSCLC_Lung5_Rep2": 100335,
+      "NSCLC_Lung6": 89975,
+      "NSCLC_Lung9_Rep1": 87606
+    },
+    "mean_ari": {
+      "BCC_PatientA": {
+        "BANKSY-style|100|0.2": 0.23485442244553936,
+        "NeighborMean|6|None": 0.22401735817994214,
+        "PCA50|None|None": 0.24013440103125117,
+        "Tessera": 0.22704207375730898
+      },
+      "BCC_PatientB": {
+        "BANKSY-style|100|0.2": 0.07056067422493599,
+        "NeighborMean|6|None": 0.07667085478815089,
+        "PCA50|None|None": 0.0732892069786229,
+        "Tessera": 0.053762745597723295
+      },
+      "BCC_PatientC": {
+        "BANKSY-style|100|0.2": 0.1049077564989855,
+        "NeighborMean|6|None": 0.07780405357323232,
+        "PCA50|None|None": 0.09247701601453784,
+        "Tessera": 0.0603615943303051
+      },
+      "BCC_PatientD": {
+        "BANKSY-style|100|0.2": 0.10277291425870082,
+        "NeighborMean|6|None": 0.09610695847946797,
+        "PCA50|None|None": 0.11923185367004745,
+        "Tessera": 0.08242187068144118
+      },
+      "NSCLC_Lung12": {
+        "NeighborMean|200|None": 0.2272683391206222,
+        "NeighborMean|6|None": 0.09529697648927284,
+        "PCA50|None|None": 0.03661646387730152,
+        "Tessera": 0.12547436299844741
+      },
+      "NSCLC_Lung13": {
+        "NeighborMean|200|None": 0.21238844050426164,
+        "NeighborMean|6|None": 0.08104937844119914,
+        "PCA50|None|None": 0.038279861859713236,
+        "Tessera": 0.08969481972745919
+      },
+      "NSCLC_Lung5_Rep2": {
+        "NeighborMean|200|None": 0.5370997147543717,
+        "NeighborMean|6|None": 0.2375977275658099,
+        "PCA50|None|None": 0.12138684785488107,
+        "Tessera": 0.26904877455441367
+      },
+      "NSCLC_Lung6": {
+        "NeighborMean|200|None": 0.20586849556825937,
+        "NeighborMean|6|None": 0.12803694241233932,
+        "PCA50|None|None": 0.130504234483248,
+        "Tessera": 0.05379219470225888
+      },
+      "NSCLC_Lung9_Rep1": {
+        "NeighborMean|200|None": 0.2705819683748907,
+        "NeighborMean|6|None": 0.18240799801521257,
+        "PCA50|None|None": 0.09873967627540577,
+        "Tessera": 0.17927376809408235
+      }
+    },
+    "NSCLC": {
+      "tessera_minus_pca50": [
+        0.1476619266995326,
+        -0.07671203978098912,
+        0.08053409181867659,
+        0.08885789912114589,
+        0.05141495786774595
+      ],
+      "tessera_minus_selected_control": [
+        -0.268050940199958,
+        -0.1520763008660005,
+        -0.09130820028080833,
+        -0.10179397612217478,
+        -0.12269362077680246
+      ],
+      "sign_flip_p_vs_pca50": 0.1875,
+      "sign_flip_p_vs_control": 0.0625
+    },
+    "BCC": {
+      "tessera_minus_pca50": [
+        -0.01309232727394219,
+        -0.019526461380899605,
+        -0.03211542168423274,
+        -0.03680998298860627
+      ],
+      "tessera_minus_selected_control": [
+        -0.007812348688230386,
+        -0.016797928627212695,
+        -0.044546162168680396,
+        -0.020351043577259642
+      ],
+      "sign_flip_p_vs_pca50": 0.125,
+      "sign_flip_p_vs_control": 0.125
+    }
+  }
+}

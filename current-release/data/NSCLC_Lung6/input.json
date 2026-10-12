@@ -1,0 +1,43 @@
+{
+  "cohort": "NSCLC",
+  "patient": "1",
+  "source_path": "/home/zeyufu/Desktop/labs/active/spgd-tme/data/external/he_nsclc/cosmx_lung.zip",
+  "source_sha256": "04567d69367b6cebae509412f17cc0dbef45efeaa80ad2288708823747b727fd",
+  "source_section": "Lung6",
+  "n_source": 89975,
+  "n_eligible": 89975,
+  "label_key": "label",
+  "secondary_key": "cell_type",
+  "target": "computational spatial-region annotation: Mclust of 200-neighbor cell-type frequencies",
+  "frame_key": "FOV prefix of archived observation ID",
+  "units": "archived coordinate units; no physical scale asserted",
+  "source_doi": "10.1038/s41587-022-01483-z",
+  "processed_doi": "10.5281/zenodo.15487520",
+  "object": "NSCLC_Lung6",
+  "input_adapter_sha256": "801dc6a98a2a314801c6ea24a1c7bc61f1e15e5c80aeb6070a8bb840d3268497",
+  "n_selected": 5567,
+  "n_labelled": 5567,
+  "n_classes": 5,
+  "classes": [
+    "immune",
+    "macrophages",
+    "myeloid-enriched stroma",
+    "tumor interior",
+    "tumor-stroma boundary"
+  ],
+  "n_features": 960,
+  "n_pc": 50,
+  "n_fields": 2,
+  "field_counts": {
+    "Lung6|FOV12": 3204,
+    "Lung6|FOV15": 2363
+  },
+  "display_field": "Lung6|FOV12",
+  "count_normalization": true,
+  "control_features_removed": [],
+  "pca_explained_variance": 0.17704999446868896,
+  "zero_count_selected_excluded": 0,
+  "selection": "protocol SHA256 whole-field packing; cap6000; no label/result selection",
+  "selected_id_sha256": "772a957b0dd34dde1841c5049386ade120d56ecd897ee5f4e2bb40f3ea2e909c",
+  "matrix_sha256": "c24ff3fe10af4d044965a36229951de13e16f829afbc36006c2af4cec28e589a"
+}

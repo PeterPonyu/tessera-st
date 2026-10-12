@@ -1,0 +1,660 @@
+{
+  "mechanical_status": "PASS",
+  "review_status": "PASS: current main/inline actual overview and corrected paragraph review; unchanged SI retains same-hash visual evidence",
+  "format_report_sha256": "2faaee8a79ae2dc414dfbe254fe54725b01c74be96f4035656556eb26ad46c42",
+  "verifier_sha256": "d84bbf1d6ff7d7429c8bc4c4a4d0580c97b79130fa3c9fc4fdf5dcdb5e944f53",
+  "supplementary_citation_coverage": {
+    "figure": {
+      "expected": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "cited": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "missing": [],
+      "unknown": []
+    },
+    "table": {
+      "expected": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "cited": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "missing": [],
+      "unknown": []
+    }
+  },
+  "documents": {
+    "manuscript": {
+      "pdf": "output/scientific-reports/scientific-reports-manuscript.pdf",
+      "sha256": "b380dedf46740a46dab8957fe732e19f4644234a26f24af1b697cd2918136846",
+      "pages": 22,
+      "page_images": [
+        {
+          "page": 1,
+          "path": "qa/resumed-document-review/manuscript-b380dedf4674/page-001.png",
+          "sha256": "895a3421091fedf8b4a7a1dea78407fdcd63c7449f41e2967c678aef2536a3bc",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 2,
+          "path": "qa/resumed-document-review/manuscript-b380dedf4674/page-002.png",
+          "sha256": "2de757304cd1e23dd707db69ec8574ef196d02fdd197d32d7e741caf11c57ddc",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 3,
+          "path": "qa/resumed-document-review/manuscript-b380dedf4674/page-003.png",
+          "sha256": "bd48ceb1472c8d229fbe3dc2bd1609b7ce153ea979c59f113728af17da480343",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 4,
+          "path": "qa/resumed-document-review/manuscript-b380dedf4674/page-004.png",
+          "sha256": "3d16a2ece01248639f8c3bb02e80422fd3239f6479049ad3e15e6a3b71057df0",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 5,
+          "path": "qa/resumed-document-review/manuscript-b380dedf4674/page-005.png",
+          "sha256": "351115f5be2bb9e0a44595b88354131f2f29cbfad057b4e96200b9dfe2564bdf",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 6,
+          "path": "qa/resumed-document-review/manuscript-b380dedf4674/page-006.png",
+          "sha256": "4b749860076695e47d4fe2a4a14d469a45e487dccc412cdc7cf09558372242ba",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 7,
+          "path": "qa/resumed-document-review/manuscript-b380dedf4674/page-007.png",
+          "sha256": "7302d38dcd6dd12d7cea58ed67e027acce8dade2b10c2fa89fb753018580f0be",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 8,
+          "path": "qa/resumed-document-review/manuscript-b380dedf4674/page-008.png",
+          "sha256": "764343786c6ad0d032284165a519d4db75aead5853540cf35b5e6f6afc250309",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 9,
+          "path": "qa/resumed-document-review/manuscript-b380dedf4674/page-009.png",
+          "sha256": "38230b0f32fbc6958553fe4b0e1657101c2fd43dd500cec1b427cfcaa54e5307",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 10,
+          "path": "qa/resumed-document-review/manuscript-b380dedf4674/page-010.png",
+          "sha256": "b64440eb12e94909c0a8081a61f6ca3b723222c54d80bea9fc0fcff954b892b4",
+          "included_in_portable_package": true
+        },
+        {
+          "page": 11,
+          "path": "qa/resumed-document-review/manuscript-b380dedf4674/page-011.png",
+          "sha256": "87436494d2486bb5dbceb83c16873e53c5584221a6b4272df702b3c11761e328",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 12,
+          "path": "qa/resumed-document-review/manuscript-b380dedf4674/page-012.png",
+          "sha256": "34c990789c9a5cc2d0ed64f54ed3a1d755ce4bb0b3bdc504c06de8dbdcb848c1",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 13,
+          "path": "qa/resumed-document-review/manuscript-b380dedf4674/page-013.png",
+          "sha256": "a38e53c05e50a66baa9254d1a799d5ed72dc4c95d54d9e01c2f2d160db9b02eb",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 14,
+          "path": "qa/resumed-document-review/manuscript-b380dedf4674/page-014.png",
+          "sha256": "2ed670f155e535e80a55b928ad429fdfcb4051a7393ccad88552bed945303762",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 15,
+          "path": "qa/resumed-document-review/manuscript-b380dedf4674/page-015.png",
+          "sha256": "c23bd02b0503fdea3270898417bca1d9e88370e21582bc5760b2099669617888",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 16,
+          "path": "qa/resumed-document-review/manuscript-b380dedf4674/page-016.png",
+          "sha256": "ad44d5c19795ecb4a00451f1556c1838a0852e4a46b46d60befd2473b441d8c2",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 17,
+          "path": "qa/resumed-document-review/manuscript-b380dedf4674/page-017.png",
+          "sha256": "f7c299ac27fbf8fb35fc1fe3a616aa58e4199ae2204ddf848d4a145f64a164c7",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 18,
+          "path": "qa/resumed-document-review/manuscript-b380dedf4674/page-018.png",
+          "sha256": "0cdcc012ba1ce7c8bab1b1ebc65bff2ecd760cf26286c30e6a16584167e1db88",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 19,
+          "path": "qa/resumed-document-review/manuscript-b380dedf4674/page-019.png",
+          "sha256": "97fa95a1f09087250ca85822fe99c696f0e19a5fecdc784187bd511f06eb944f",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 20,
+          "path": "qa/resumed-document-review/manuscript-b380dedf4674/page-020.png",
+          "sha256": "daed9bcde30a2ef7e72b4519ade0cbc057a389850277dc5d17b815cf0051b22f",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 21,
+          "path": "qa/resumed-document-review/manuscript-b380dedf4674/page-021.png",
+          "sha256": "94b182ca0edc6659ccb02e7f5dc9bfa990936124178f49b26da5434c6b9956d6",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 22,
+          "path": "qa/resumed-document-review/manuscript-b380dedf4674/page-022.png",
+          "sha256": "e25630142584443ec53ebd7ff5c1c52870ae8b6ebcd869d0f9260efee049399d",
+          "included_in_portable_package": false
+        }
+      ],
+      "overview_sheets": [
+        {
+          "path": "qa/resumed-document-review/manuscript-b380dedf4674/overview-01.jpg",
+          "sha256": "ad1492050a3bee8ae2bf6cb74396b6c657fc966629c0948f2f6022c25a11c5d5",
+          "pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ]
+        },
+        {
+          "path": "qa/resumed-document-review/manuscript-b380dedf4674/overview-02.jpg",
+          "sha256": "7a21f6006996c2904c8dc664300b4733c73c79ff2ec7845bca358a3db1937ca3",
+          "pages": [
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ]
+        },
+        {
+          "path": "qa/resumed-document-review/manuscript-b380dedf4674/overview-03.jpg",
+          "sha256": "8599a11f50296061b49c24fc748f7669a5014a1aad090e6e08dae37229a2816d",
+          "pages": [
+            17,
+            18,
+            19,
+            20,
+            21,
+            22
+          ]
+        }
+      ],
+      "figure_caption_pages": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "declaration_pages": [
+        13,
+        15
+      ],
+      "embedded_fonts": true,
+      "text_within_page_bounds": true
+    },
+    "supplement": {
+      "pdf": "output/scientific-reports/scientific-reports-supplement.pdf",
+      "sha256": "15a15e3738733668eb36ea4fded6a73ad95b403a59cf229f62341add5e24bb0a",
+      "pages": 20,
+      "page_images": [
+        {
+          "page": 1,
+          "path": "qa/resumed-document-review/supplement-15a15e373873/page-001.png",
+          "sha256": "b3be489bfc28d58678a9402f92c7f71819906ef99b97b38ab413162999547b9b",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 2,
+          "path": "qa/resumed-document-review/supplement-15a15e373873/page-002.png",
+          "sha256": "59cfa6a6eca00e3f8c6c420b8db500f1aec3e3631e2215add20b7b045d0bf8e4",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 3,
+          "path": "qa/resumed-document-review/supplement-15a15e373873/page-003.png",
+          "sha256": "1dcdbacd8ad347505e7dd6f61136a93d37b6f98f5bb3d5b9bdfc7dbeaf04370b",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 4,
+          "path": "qa/resumed-document-review/supplement-15a15e373873/page-004.png",
+          "sha256": "48169b56f2e2c37337071f8cb09a1b1bacb454d9c643e3e487b3d8d91ad6b45a",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 5,
+          "path": "qa/resumed-document-review/supplement-15a15e373873/page-005.png",
+          "sha256": "1506a1e5df71b7e0bd1a074a3d1729146d6ff3c5f1504f706856f22b5a7a38bd",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 6,
+          "path": "qa/resumed-document-review/supplement-15a15e373873/page-006.png",
+          "sha256": "0c3cead5fb3918e7d99c4abd6d339f95b6f85c18abf661be2808e2111ac796f0",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 7,
+          "path": "qa/resumed-document-review/supplement-15a15e373873/page-007.png",
+          "sha256": "530659a5ed51172ec916130c7475da7a6106e147d336fc998adc2d284746d753",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 8,
+          "path": "qa/resumed-document-review/supplement-15a15e373873/page-008.png",
+          "sha256": "8f831b9ed7895a3fde349f4d0662c589893930a4a931d425e56c4ee146ab40dd",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 9,
+          "path": "qa/resumed-document-review/supplement-15a15e373873/page-009.png",
+          "sha256": "1a2d2236f421e2a78c35299678a3e5933bd477eacf82aaabab4666925cbd6c33",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 10,
+          "path": "qa/resumed-document-review/supplement-15a15e373873/page-010.png",
+          "sha256": "5305df0dfe34718e8c7853b5f7ebf4c5572d6fef428379d41a0e7ff8ff7b242e",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 11,
+          "path": "qa/resumed-document-review/supplement-15a15e373873/page-011.png",
+          "sha256": "9088053064acef8c0085392d097655122fa3208a05963b3c9c238c4103928fe8",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 12,
+          "path": "qa/resumed-document-review/supplement-15a15e373873/page-012.png",
+          "sha256": "eba7f2d8c1beb1eeb6db3772d6711036deaf1228c3e7d15402ad639560d640ce",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 13,
+          "path": "qa/resumed-document-review/supplement-15a15e373873/page-013.png",
+          "sha256": "d8314da31a3282a1399d4e13f60721c1ab0c017b5f604ae6dc912122d470ba19",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 14,
+          "path": "qa/resumed-document-review/supplement-15a15e373873/page-014.png",
+          "sha256": "ae9f77149cd837301099414f9426333ec15ee534beaa3c8690225fb5e1eeb21b",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 15,
+          "path": "qa/resumed-document-review/supplement-15a15e373873/page-015.png",
+          "sha256": "09f56615073135dd5cd89b3498f296ea9e94b2b75bcab8cbb740f7d2d7b20e55",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 16,
+          "path": "qa/resumed-document-review/supplement-15a15e373873/page-016.png",
+          "sha256": "c9d80b99d2bbeb1a0c9816e3e03d4ebf8098ff3df708793e4505e4406769fd72",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 17,
+          "path": "qa/resumed-document-review/supplement-15a15e373873/page-017.png",
+          "sha256": "946308963dbb30bb6fcf7b51d1c49257403a25f7ab4a3b8985c47da6afec25b3",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 18,
+          "path": "qa/resumed-document-review/supplement-15a15e373873/page-018.png",
+          "sha256": "b32cb370a4b3b42e11b3902659d7f9bf4d3c25bdc80ddd5d7645dc7556670d75",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 19,
+          "path": "qa/resumed-document-review/supplement-15a15e373873/page-019.png",
+          "sha256": "55e92d252e5c55fa1bd2f47497e0c54dba02c4abf2befaec6ef3a305ee0775f9",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 20,
+          "path": "qa/resumed-document-review/supplement-15a15e373873/page-020.png",
+          "sha256": "8042fe6402f312b64cc372ca15a6e2cc8a15b6d3cc4ba9914944ff4ec9a23dd6",
+          "included_in_portable_package": false
+        }
+      ],
+      "overview_sheets": [
+        {
+          "path": "qa/resumed-document-review/supplement-15a15e373873/overview-01.jpg",
+          "sha256": "15d22b1f2bd9387758b6cb58a36da5598257be08f37b9f63d2fef809df6a3d90",
+          "pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ]
+        },
+        {
+          "path": "qa/resumed-document-review/supplement-15a15e373873/overview-02.jpg",
+          "sha256": "b6474ebb4825a0102baf2519941b8b7dbfa056b95d691f20aa917ce376667ada",
+          "pages": [
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ]
+        },
+        {
+          "path": "qa/resumed-document-review/supplement-15a15e373873/overview-03.jpg",
+          "sha256": "471569b3206db57d2c27559fe56c5eba8d6528bc74e561a63b537acc700be331",
+          "pages": [
+            17,
+            18,
+            19,
+            20
+          ]
+        }
+      ],
+      "figure_caption_pages": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        17,
+        18,
+        19,
+        20
+      ],
+      "declaration_pages": [],
+      "embedded_fonts": true,
+      "text_within_page_bounds": true
+    },
+    "manuscript-inline": {
+      "pdf": "output/scientific-reports/scientific-reports-manuscript-inline.pdf",
+      "sha256": "44ab40a066eeecf23ab03dc597810a4920b428bd7cba22fe90638a6d0219d409",
+      "pages": 21,
+      "page_images": [
+        {
+          "page": 1,
+          "path": "qa/resumed-document-review/manuscript-inline-44ab40a066ee/page-001.png",
+          "sha256": "895a3421091fedf8b4a7a1dea78407fdcd63c7449f41e2967c678aef2536a3bc",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 2,
+          "path": "qa/resumed-document-review/manuscript-inline-44ab40a066ee/page-002.png",
+          "sha256": "2de757304cd1e23dd707db69ec8574ef196d02fdd197d32d7e741caf11c57ddc",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 3,
+          "path": "qa/resumed-document-review/manuscript-inline-44ab40a066ee/page-003.png",
+          "sha256": "bcc3a570f55706e836d82c7c5a3cdeb04c72d647d25ff89357c88bceaa42bfdc",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 4,
+          "path": "qa/resumed-document-review/manuscript-inline-44ab40a066ee/page-004.png",
+          "sha256": "13a65c537314d5c6d86bcfccc6e5db320e8ae512530fa238e27cad304eaa8210",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 5,
+          "path": "qa/resumed-document-review/manuscript-inline-44ab40a066ee/page-005.png",
+          "sha256": "9602c13cc29a2da5c46f0a3e64a3bf6f98453518d6d7030010ba51427790c072",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 6,
+          "path": "qa/resumed-document-review/manuscript-inline-44ab40a066ee/page-006.png",
+          "sha256": "c0caa3d3822403b9f6bbb04aeab881c013bee81dc8723f906bb68d25018af2db",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 7,
+          "path": "qa/resumed-document-review/manuscript-inline-44ab40a066ee/page-007.png",
+          "sha256": "23fcbce377431d767fb38f1d654936982646e4a74978cd5c9bbfa6d452ebe82a",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 8,
+          "path": "qa/resumed-document-review/manuscript-inline-44ab40a066ee/page-008.png",
+          "sha256": "6b9f3e1fe61b9b13837b99ca757db034466ff8f62be3464ca0f4f4b98c41f77a",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 9,
+          "path": "qa/resumed-document-review/manuscript-inline-44ab40a066ee/page-009.png",
+          "sha256": "0ffe0dd30dad8a65bc6af54424dfa4da26e4432ec11938248b950666f5a3bacb",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 10,
+          "path": "qa/resumed-document-review/manuscript-inline-44ab40a066ee/page-010.png",
+          "sha256": "55e6bd9fae8add427d081bc068e9b87887e39a02459db94e16f0f0a8292f6897",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 11,
+          "path": "qa/resumed-document-review/manuscript-inline-44ab40a066ee/page-011.png",
+          "sha256": "4ea1e38ff60ad4a2db0583f5768ada7862e86fb0a8a44d041539cd0245df7188",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 12,
+          "path": "qa/resumed-document-review/manuscript-inline-44ab40a066ee/page-012.png",
+          "sha256": "986ed8546541047e0f133c2ae35de3e2832e1b4fdd127a11ae83fe0059cc935f",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 13,
+          "path": "qa/resumed-document-review/manuscript-inline-44ab40a066ee/page-013.png",
+          "sha256": "b26457b34bbb1d0676e9dd313d16af0218db80fbdfb9ca936e5a817e94ebb438",
+          "included_in_portable_package": true
+        },
+        {
+          "page": 14,
+          "path": "qa/resumed-document-review/manuscript-inline-44ab40a066ee/page-014.png",
+          "sha256": "05b2cdf23dbf64d5b9aec9208177bafaa62538de83f7b144230a6fb9b50a68c8",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 15,
+          "path": "qa/resumed-document-review/manuscript-inline-44ab40a066ee/page-015.png",
+          "sha256": "71a4034f6bce00f80d1d6d40d6d50395ec88adc7fae1ed2be7224a4b8987f0f7",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 16,
+          "path": "qa/resumed-document-review/manuscript-inline-44ab40a066ee/page-016.png",
+          "sha256": "bb45b213bda14a76eccb4c3580d7db387c6794bcdf96aee03c32ab1b196d6b94",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 17,
+          "path": "qa/resumed-document-review/manuscript-inline-44ab40a066ee/page-017.png",
+          "sha256": "72c55c312ebd615d02f967238a3e53e92fc355e7a393b468c011de2367286f58",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 18,
+          "path": "qa/resumed-document-review/manuscript-inline-44ab40a066ee/page-018.png",
+          "sha256": "4f997578f358a4c84ce19593b8e952b9118e21f9e06f93366c3d16b151ec8a06",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 19,
+          "path": "qa/resumed-document-review/manuscript-inline-44ab40a066ee/page-019.png",
+          "sha256": "46a67f38f35cd8edb077c788218267bbf9ad49316683ca7891753998bcbcf6ed",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 20,
+          "path": "qa/resumed-document-review/manuscript-inline-44ab40a066ee/page-020.png",
+          "sha256": "fea821460da805507a8e2db6e237698782b25cefe115d93a0a3560f7e8723bcb",
+          "included_in_portable_package": false
+        },
+        {
+          "page": 21,
+          "path": "qa/resumed-document-review/manuscript-inline-44ab40a066ee/page-021.png",
+          "sha256": "d5edf865476630f51fd7c5a20007db00a00d7a4517bbfc1f81d43608fde637e1",
+          "included_in_portable_package": false
+        }
+      ],
+      "overview_sheets": [
+        {
+          "path": "qa/resumed-document-review/manuscript-inline-44ab40a066ee/overview-01.jpg",
+          "sha256": "5dbb9497fc3b28bd9fe1ab1acad51c44258387daec84789055b496b9f50ece12",
+          "pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ]
+        },
+        {
+          "path": "qa/resumed-document-review/manuscript-inline-44ab40a066ee/overview-02.jpg",
+          "sha256": "f7a06206e85cfe5e11b85f1f420c2c0a2eb2640a7cafeaf2db7ee7161febc816",
+          "pages": [
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ]
+        },
+        {
+          "path": "qa/resumed-document-review/manuscript-inline-44ab40a066ee/overview-03.jpg",
+          "sha256": "29416c1096ddabe7fee8b235f27839bf7db824edb16f1d128d4998552388fae0",
+          "pages": [
+            17,
+            18,
+            19,
+            20,
+            21
+          ]
+        }
+      ],
+      "figure_caption_pages": [
+        3,
+        10,
+        11,
+        12,
+        14,
+        15,
+        17
+      ],
+      "declaration_pages": [
+        19,
+        21
+      ],
+      "embedded_fonts": true,
+      "text_within_page_bounds": true
+    }
+  },
+  "scope": "Document hashes, references, declaration order, embedded fonts and page bounds; no model fitting or scientific peer review.",
+  "package_render_payload_scope": "Nine current/unchanged compact overview sheets, two inspected full-size corrected paragraph page images and font listings included. Remaining parent page-image hashes recorded; full images retained in author candidate QA."
+}

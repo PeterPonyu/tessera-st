@@ -1,0 +1,26 @@
+{
+  "object": "MIBI",
+  "cohort": "MIBI",
+  "seed": 2,
+  "arm": "PCA30",
+  "n_cells": 3309,
+  "K": 8,
+  "input_sha256": "d3d3d19935a6f0d9a8ff97f3bd6ffa7e95e5f2ec1ab8d8794c886ad187e34102",
+  "prediction_sha256": "050d096134fe44f7a07bbcd18da7cc79853c5e91e8c237ec0274ba752a0f1e82",
+  "fit_seconds": 2.8949871193617582e-06,
+  "total_seconds": 0.0579050629894482,
+  "gpu_peak_allocated_bytes": null,
+  "trainable_parameters": 0,
+  "history": [],
+  "ablation": null,
+  "n_edges": 39708,
+  "cross_field_edges": 0,
+  "self_edges": 0,
+  "scores": {
+    "ari": 0.21145930235516655,
+    "nmi": 0.3254153398222531,
+    "reference_edge_homogeneity": 0.48635035761055706,
+    "predicted_edge_homogeneity": 0.4408179711896847,
+    "gate_seam_auroc": null
+  }
+}

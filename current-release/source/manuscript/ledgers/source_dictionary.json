@@ -1,0 +1,332 @@
+{
+  "NSCLC_Lung5_Rep2": {
+    "classes": [
+      "lymphoid structure",
+      "myeloid-enriched stroma",
+      "neutrophils",
+      "plasmablast-enriched stroma",
+      "stroma",
+      "tumor interior",
+      "tumor-stroma boundary"
+    ],
+    "target": "computational spatial-region annotation: Mclust of 200-neighbor cell-type frequencies",
+    "frame_counts": {
+      "Lung5_Rep2|FOV15": 3176,
+      "Lung5_Rep2|FOV22": 2769
+    },
+    "n_source": 100335,
+    "n_eligible": 100335,
+    "n_selected": 5945,
+    "n_labelled": 5945,
+    "matrix_sha256": "d710de0e3470385f2dcf110516ad22d668992a521c2b9bd7e8084753c5a3902b"
+  },
+  "NSCLC_Lung6": {
+    "classes": [
+      "immune",
+      "macrophages",
+      "myeloid-enriched stroma",
+      "tumor interior",
+      "tumor-stroma boundary"
+    ],
+    "target": "computational spatial-region annotation: Mclust of 200-neighbor cell-type frequencies",
+    "frame_counts": {
+      "Lung6|FOV12": 3204,
+      "Lung6|FOV15": 2363
+    },
+    "n_source": 89975,
+    "n_eligible": 89975,
+    "n_selected": 5567,
+    "n_labelled": 5567,
+    "matrix_sha256": "c24ff3fe10af4d044965a36229951de13e16f829afbc36006c2af4cec28e589a"
+  },
+  "NSCLC_Lung9_Rep1": {
+    "classes": [
+      "immune",
+      "plasmablast-enriched stroma",
+      "stroma",
+      "tumor interior",
+      "tumor-stroma boundary"
+    ],
+    "target": "computational spatial-region annotation: Mclust of 200-neighbor cell-type frequencies",
+    "frame_counts": {
+      "Lung9_Rep1|FOV10": 4313
+    },
+    "n_source": 87606,
+    "n_eligible": 87606,
+    "n_selected": 4313,
+    "n_labelled": 4313,
+    "matrix_sha256": "7b89ab0e1fbf21986f01aa95a80967ad1e26135dae12956e4cacf78df2bfce74"
+  },
+  "NSCLC_Lung12": {
+    "classes": [
+      "lymphoid structure",
+      "myeloid-enriched stroma",
+      "neutrophils",
+      "plasmablast-enriched stroma",
+      "stroma",
+      "tumor interior",
+      "tumor-stroma boundary"
+    ],
+    "target": "computational spatial-region annotation: Mclust of 200-neighbor cell-type frequencies",
+    "frame_counts": {
+      "Lung12|FOV28": 3093,
+      "Lung12|FOV9": 2568
+    },
+    "n_source": 71304,
+    "n_eligible": 71304,
+    "n_selected": 5661,
+    "n_labelled": 5661,
+    "matrix_sha256": "e8788802554295a4af14b639b3c093c19cabf3c89662c8ac5bd3a487493bac8b"
+  },
+  "NSCLC_Lung13": {
+    "classes": [
+      "immune",
+      "macrophages",
+      "stroma",
+      "tumor interior",
+      "tumor-stroma boundary"
+    ],
+    "target": "computational spatial-region annotation: Mclust of 200-neighbor cell-type frequencies",
+    "frame_counts": {
+      "Lung13|FOV8": 3853
+    },
+    "n_source": 81236,
+    "n_eligible": 81236,
+    "n_selected": 3853,
+    "n_labelled": 3853,
+    "matrix_sha256": "562c6711278c95e67030b7819cb3c1f2ce622fddaaf2cd32bdb5676c2f0f5365"
+  },
+  "BCC_PatientA": {
+    "classes": [
+      "Bcell",
+      "Cancer.cells",
+      "Endothelial",
+      "Fibroblast",
+      "Mast",
+      "Melanocyte",
+      "MoMacDC",
+      "Neutrophil",
+      "Normal.Kerat",
+      "Pericyte",
+      "PlasmaCell",
+      "Tcell"
+    ],
+    "target": "source InSituType molecular cell-type annotation",
+    "frame_counts": {
+      "Run6057_Patient1|PatientA|FOV35": 2175,
+      "Run6057_Patient1|PatientA|FOV38": 2228,
+      "Run6057_Patient1|PatientA|FOV42": 1263
+    },
+    "n_source": 22604,
+    "n_eligible": 21368,
+    "n_selected": 5666,
+    "n_labelled": 5666,
+    "matrix_sha256": "c3a8aff77b78898ea67d6dfd618ccdef8a5772c8ed63656443a26a5d140e67cf"
+  },
+  "BCC_PatientB": {
+    "classes": [
+      "Bcell",
+      "Cancer.cells",
+      "Endothelial",
+      "Fibroblast",
+      "Mast",
+      "Melanocyte",
+      "MoMacDC",
+      "Normal.Kerat",
+      "Pericyte",
+      "PlasmaCell",
+      "Tcell"
+    ],
+    "target": "source InSituType molecular cell-type annotation",
+    "frame_counts": {
+      "Run6057_Patient4|PatientB|FOV40": 1765,
+      "Run6057_Patient4|PatientB|FOV45": 3443
+    },
+    "n_source": 45275,
+    "n_eligible": 41758,
+    "n_selected": 5208,
+    "n_labelled": 5208,
+    "matrix_sha256": "13d32838479450a3c9ea9d88c5e04bc3ca880c070903cf717009f2b300de1786"
+  },
+  "BCC_PatientC": {
+    "classes": [
+      "Bcell",
+      "Cancer.cells",
+      "Endothelial",
+      "Fibroblast",
+      "Mast",
+      "Melanocyte",
+      "MoMacDC",
+      "Neutrophil",
+      "Normal.Kerat",
+      "Pericyte",
+      "PlasmaCell",
+      "Tcell"
+    ],
+    "target": "source InSituType molecular cell-type annotation",
+    "frame_counts": {
+      "Run6057_Patient1|PatientC|FOV23": 3486,
+      "Run6057_Patient1|PatientC|FOV9": 1556
+    },
+    "n_source": 94093,
+    "n_eligible": 90636,
+    "n_selected": 5042,
+    "n_labelled": 5042,
+    "matrix_sha256": "80dff4b454ee9aa0654787c4be55c2f376f5c87472f0b14ebe84861423dced70"
+  },
+  "BCC_PatientD": {
+    "classes": [
+      "Bcell",
+      "Cancer.cells",
+      "Endothelial",
+      "Fibroblast",
+      "Mast",
+      "Melanocyte",
+      "MoMacDC",
+      "Normal.Kerat",
+      "Pericyte",
+      "PlasmaCell",
+      "Tcell"
+    ],
+    "target": "source InSituType molecular cell-type annotation",
+    "frame_counts": {
+      "Run6057_Patient4|PatientD|FOV19": 1569,
+      "Run6057_Patient4|PatientD|FOV2": 1773,
+      "Run6057_Patient4|PatientD|FOV21": 541,
+      "Run6057_Patient4|PatientD|FOV27": 1773
+    },
+    "n_source": 70830,
+    "n_eligible": 65152,
+    "n_selected": 5656,
+    "n_labelled": 5656,
+    "matrix_sha256": "c08f6b11cb008eee8f8fefc761192885d8e49873096c6a7e7857bc99e0daaf32"
+  },
+  "Breast_Visium": {
+    "classes": [
+      "B_Cells",
+      "CD4+_T_Cells",
+      "CD8+_T_Cells",
+      "DCIS_1",
+      "DCIS_2",
+      "Endothelial",
+      "Invasive_Tumor",
+      "Macrophages_1",
+      "Macrophages_2",
+      "Myoepi_ACTA2+",
+      "Myoepi_KRT15+",
+      "Perivascular-Like",
+      "Prolif_Invasive_Tumor",
+      "Stromal"
+    ],
+    "target": "dominant co-registered Xenium category; mixed Visium spots",
+    "frame_counts": {
+      "Breast_Visium": 2863
+    },
+    "n_source": 2864,
+    "n_eligible": 2864,
+    "n_selected": 2863,
+    "n_labelled": 2863,
+    "matrix_sha256": "838f90d40bc60e7bd75b34234a8285357ce3d92c7b7f9673b6ce211e5d7e29ae"
+  },
+  "Colorectal_TVA232": {
+    "classes": [
+      "B.activated",
+      "BEC",
+      "CAF",
+      "CAF.myo_FAP",
+      "CAF_F3",
+      "IAF_MMP",
+      "LEC",
+      "PC_IgA1",
+      "PC_IgD",
+      "PC_IgG",
+      "PC_IgM",
+      "SMC/fib.myo",
+      "TAM",
+      "Tc",
+      "Th",
+      "cDC",
+      "epi.EE",
+      "epi.entero",
+      "epi.entero-like_ACSF2",
+      "epi.fetal-like_EMP1",
+      "epi.fetal-like_MMP7",
+      "epi.goblet",
+      "epi.goblet-like_REG4",
+      "epi.prolif",
+      "epi.prolif_H1",
+      "epi.prolif_STMN1",
+      "epi.stem-like_LGR5",
+      "fib.TLS",
+      "fib_ADAMDEC1",
+      "fib_C7",
+      "fib_JUN/FOS",
+      "fib_PI16",
+      "neutrophil",
+      "pericytes"
+    ],
+    "target": "source molecular annotation",
+    "frame_counts": {
+      "Colorectal_TVA232|148": 379,
+      "Colorectal_TVA232|166": 2301,
+      "Colorectal_TVA232|177": 1989,
+      "Colorectal_TVA232|208": 443,
+      "Colorectal_TVA232|209": 795
+    },
+    "n_source": 130814,
+    "n_eligible": 123600,
+    "n_selected": 5907,
+    "n_labelled": 5197,
+    "matrix_sha256": "c5d143da23df042954e1c15ddb05eca1ca21f3e796d6dceff67a1f14e9a0dcf7"
+  },
+  "MIBI": {
+    "classes": [
+      "Endothelial",
+      "Epithelial",
+      "Fibroblast",
+      "Imm_other",
+      "Myeloid_CD11c",
+      "Myeloid_CD68",
+      "Tcell_CD4",
+      "Tcell_CD8"
+    ],
+    "target": "source molecular annotation",
+    "frame_counts": {
+      "MIBI|point16": 1023,
+      "MIBI|point23": 1241,
+      "MIBI|point8": 1045
+    },
+    "n_source": 3309,
+    "n_eligible": 3309,
+    "n_selected": 3309,
+    "n_labelled": 3309,
+    "matrix_sha256": "d3d3d19935a6f0d9a8ff97f3bd6ffa7e95e5f2ec1ab8d8794c886ad187e34102"
+  },
+  "OpenST_HNSCC26": {
+    "classes": [
+      "CAF",
+      "CAM",
+      "Cortex_CCL21",
+      "Cytotoxic_IFN_signaling",
+      "Fibroblasts",
+      "Germinal_Center_Plasma_IgM_B_cell",
+      "High_Endothelial_Venules",
+      "M1_macrophages",
+      "Macrophages",
+      "Plasma_IgA",
+      "Plasma_IgG",
+      "T_cell",
+      "Tumor",
+      "Tumor_Keratin_Pearl"
+    ],
+    "target": "source molecular annotation",
+    "frame_counts": {
+      "OpenST_HNSCC26|26": 6000
+    },
+    "n_source": 15000,
+    "n_eligible": 15000,
+    "n_selected": 6000,
+    "n_labelled": 5405,
+    "matrix_sha256": "c42116ee6b492d60a521f721248a10aee34157d37bf895afad148fec415dbc4f"
+  }
+}

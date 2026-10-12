@@ -1,0 +1,89 @@
+{
+  "status": "passed",
+  "scope": "Standalone saved-result, dependency/import, checksum acquisition and source-recovery audit; original research bytes preserved",
+  "audited_archive_before_rights_metadata_additions": {
+    "sha256": "02527f0f711cdae7d7e8c36da48abdaa73e8846743a1c7d57f417904c82d28ac",
+    "files": 1341,
+    "uncompressed_bytes": 593352650
+  },
+  "metadata_additions_after_numerical_audit": [
+    "Precise breast source/image/rights notice",
+    "Historical public neural-core versus expanded adapter byte-comparison record",
+    "Copies of these verification artifacts"
+  ],
+  "scientific_source_and_verifier_bytes_changed_after_audit": false,
+  "source_guard": "run_with_source_guard.py blocked author Desktop reads and socket connect/name resolution during all default commands",
+  "verification_reports": {
+    "manual-acquisition.json": "a599b9e21164d47621dd78d3474de50f21d311879fdee85cb3ce42b18aafad54",
+    "test_acquisition_rejection.py": "f549ef75606d3e74023dd90ad5f437ba6f5dd2276c6cce89bb84e19eaaa9bd56",
+    "import-check.json": "f3a27f5536d47835eb125eeacea5330239f6217b76e8a6e2d27396122abbce89",
+    "crc-preflight.json": "c063b7f6b537fe87b9c772656da87227515abe7c43399abf58c890c9b3466d4f",
+    "run_with_source_guard.py": "ad049aec1f415527fe6d5cfc17fdd7786e0006ca730bdc5eaec40d8fe1d6b108",
+    "her2st-preflight.json": "28592b625e86d59391eb6ff4b35f11b22ce9d314c79212a15aeac8ee3622bef5",
+    "saved-results.json": "f4ae4be817ee148056678518046c86e3287e7395d63db6d55d2e9fe4ff003f03",
+    "manifest-after.json": "71d192896ae109dc676f7d35f6b6ba8e7b6d0cf8e837b6953ebc1d1259281916",
+    "recovered-sources.txt": "eb57bfc81b10a8fc90cf085b774442a9135c5bfb9a776f3e7c047b1c5d7a0feb",
+    "manifest-before.json": "71d192896ae109dc676f7d35f6b6ba8e7b6d0cf8e837b6953ebc1d1259281916",
+    "acquisition-rejection.json": "7a8d556045738fbdb271667ed3777071baf7c8c7cc0ea4fa5c0b2870e58e586e",
+    "primary-preflight.json": "7ea860e9d6d7ef877ea07809bd089af4439c1e06c67be68b577c9330446de47b"
+  },
+  "verified_claim_counts": {
+    "frozen_source_hash_bindings": 49,
+    "primary": {
+      "saved_score_rows_recomputed": 351,
+      "saved_prediction_and_embedding_files": 351,
+      "derived_inputs_bound": 13,
+      "scope": "ARI/NMI/secondary labels/edge and gate metrics from saved labels and gates; no clustering or training"
+    },
+    "transfer": {
+      "saved_target_score_rows_recomputed": 90,
+      "saved_embedding_files": 45,
+      "source_only_transform_files": 5,
+      "saved_weight_files_bound": 30,
+      "scope": "Metrics and source-label centroid predictions from retained source/target embeddings; no encoder fitting or PCA fitting"
+    },
+    "followup": {
+      "counts": {
+        "scale_records": 1170,
+        "spatial_configurations_per_object": 29,
+        "rescore_records": 234,
+        "null_records": 39,
+        "whole_records": 108,
+        "transfer_records": 20
+      },
+      "saved_gate_profiles_recomputed": 39,
+      "historical_sources_available": true,
+      "scope": "Score/summary arithmetic, nested selection and saved gate weights; whole/null prediction files were not retained by producers"
+    },
+    "external": {
+      "her2st_patients": 8,
+      "her2st_grid_rows": 720,
+      "her2st_fit_score_rows": 24,
+      "extension_arm_score_rows": 801,
+      "patient_or_object_excluded_selections_recomputed": 43,
+      "hardening_seed1_partition_ari_rows_recomputed": 120,
+      "scope": "Receipts, patient-excluded controls, table means/contrasts and retained seed-1 partitions; remaining learned embeddings were not retained"
+    },
+    "crc": {
+      "independent_patients": 3,
+      "saved_embedding_files_bound": 36,
+      "saved_ari_rows_recomputed": 72,
+      "unique_edge_auroc_rows_recomputed": 18,
+      "saved_shuffle_table_rows": 18000,
+      "shuffle_rows_independently_recomputed": 180,
+      "new_model_or_clustering_fits": 0,
+      "scope": "Immutable protocols/amendment, saved PCA inputs/predictions/gates, independent edge scoring and patient bootstrap; raw acquisition and historical backup integration are outside this command"
+    }
+  },
+  "breast_image_hash_verified": "5337270c72c40739899a4d05b6d4d642d536a2d10a308f644f33930a669837a8",
+  "default_commands": [
+    "PYTHONDONTWRITEBYTECODE=1 python portable/verify_manifest.py",
+    "PYTHONDONTWRITEBYTECODE=1 python portable/import_check.py",
+    "PYTHONDONTWRITEBYTECODE=1 python portable/verify_saved_results.py",
+    "PYTHONDONTWRITEBYTECODE=1 python source/scripts/recover_followup_runners.py --verify"
+  ],
+  "new_fits": 0,
+  "new_downloads": 0,
+  "limitations_file": "provenance/verification-scope.json",
+  "final_seal_requirement": "MANIFEST.sha256 and final archive checksums identify final assembled package bytes; dated input audit metadata identifies its explicitly stated earlier payload."
+}

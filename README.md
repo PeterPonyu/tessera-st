@@ -1,47 +1,11 @@
-# Tessera-ST: spatial-evaluation protocol audit
+# Tessera: implementation-specific spatial controls audit
 
-**Current scientific release: [`current-release/`](current-release/).**
-Author-review version, 2 October 2026; scientific submission remains **HOLD**.
-The current contribution is a field-aware evaluation-protocol audit, not a
-universal spatial law, a validated selector or a superior new architecture.
+Current research-source version **2026.10.11-controls-audit** is in [current-release/](current-release/). The [inline manuscript](current-release/output/scientific-reports/scientific-reports-manuscript-inline.pdf), [journal manuscript](current-release/output/scientific-reports/scientific-reports-manuscript.pdf) and [supplement](current-release/output/scientific-reports/scientific-reports-supplement.pdf) report matched neighbourhood controls, component removals, patient-held-out transfer, exploratory HER2ST comparator extensions and the separate colorectal pilot. The author developed and maintains the evaluated implementation.
 
-- Public code and results: https://github.com/PeterPonyu/tessera-st/tree/author-review-2026-10-02/current-release
-- Versioned archive: https://doi.org/10.5281/zenodo.23101191
-- Current default **single-column article**: `current-release/manuscript/paper.pdf`.
-- Matching readable supplement: `current-release/manuscript/SI.pdf`.
-- Scope, source identities and reproduction: `current-release/README.md`,
-  `DATA_SOURCES.md`, `ENVIRONMENT.md` and `THIRD_PARTY_NOTICES.md`.
+The root `src/` implementation is byte-identical to the current archive's implementation. The original neural core and the field-aware graph/data adapters have distinct provenance, documented in [the comparison record](current-release/provenance/historical-core-versus-adapters.json). The evaluated original software archive is [DOI 10.5281/zenodo.23101191](https://doi.org/10.5281/zenodo.23101191); it does not archive later controls or document changes.
 
-The corrected panel contains seven field-identified objects, seven procedures,
-three saved seed identities and 147 completed runs. Saved predictions can be
-rescored offline; full refits require separately acquired upstream assays and
-external method implementations. This does not certify clinical utility,
-independent biological validation, journal acceptance or scientific clearance.
+The complete versioned source and saved-evidence archive is associated with [software DOI 10.5281/zenodo.23308077](https://doi.org/10.5281/zenodo.23308077). Its DOI was reserved for this version; publication status is determined by the public record. The finalized complete ZIP has SHA256 `09c75b7a7927755e60d4097fbb85b3120ee792bc2f1372b0f2d1a14a5cdde680`.
 
-## Verify the current release
+This checkout and the compact source/document ZIP include current code, protocols, documents, score tables and receipts. Retained input/embedding arrays and model states are supplied in the complete archive. [Compact-distribution instructions](current-release/README.md) explain which checks run here and which require the complete archive. Saved-result verification and full refitting have distinct requirements and documented limits.
 
-```bash
-cd current-release
-python verify_release.py
-python -m pytest -q reproducibility/tests/test_rank_ties.py reproducibility/tests/test_supporting_information.py
-bash manuscript/scripts/rebuild_current.sh
-```
-
-Use the current-release environment notes. No command installs packages or
-downloads raw data automatically. Third-party source/weights/fonts retain
-their original terms; author-owned code is MIT and authored text/tables are
-CC BY 4.0. See the detailed rights boundaries inside the versioned package.
-
-## Historical development tree
-
-The older root-level `src/`, `experiments/`, `manuscript/`, `DESIGN.md` and
-development tests are preserved as **historical workbench material**.
-They are not the current scientific package. In particular, the earlier
-11/12/14-object association, independent-contiguity mechanism and calibrated
-confidence/ECE claims have been withdrawn from current inference. The legacy
-soft head has no validated mapping to returned KMeans labels. Historical
-benchmark outputs must not be substituted for the corrected panel.
-
-For current source inspection or installation, operate under `current-release/`;
-do not assume that an old root-level package or August paper is this release.
-The prior IEEE author-review face is retained only as labelled provenance.
+Author-owned code is MIT; author-owned research content is CC BY 4.0. [Licensing](LICENSING.md) and [source notices](NOTICE.md) preserve third-party terms. Breast displays use author-generated coordinate maps; no 10x breast H&E image/background is redistributed in the current release. The separate dataset-licensed CRC images retain their attribution.

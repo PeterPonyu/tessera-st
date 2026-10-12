@@ -1,0 +1,11 @@
+name: tessera-controls-audit
+channels:
+  - conda-forge
+dependencies:
+  - python=3.13.7
+  - pip
+  - pip:
+      - -r requirements-analysis.txt
+# Existing runtime import and saved-result checks were executed. Creating this
+# environment from network package indexes was not tested. Historical training
+# runtime details remain in results/run-lock.json and results/transfer/run-lock.json.

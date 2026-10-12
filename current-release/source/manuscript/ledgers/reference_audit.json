@@ -1,0 +1,346 @@
+{
+  "checked_date": "2026-10-11",
+  "metadata_authority": "Crossref publisher deposits",
+  "doi_count": 34,
+  "new_related_work_references": 11,
+  "limits": "Metadata identity is not scientific validation. Source-study preprints remain preprints; no unsupported journal upgrade.",
+  "identities": {
+    "he2022cosmx": {
+      "doi": "10.1038/s41587-022-01483-z",
+      "title": "High-plex imaging of RNA and proteins at subcellular resolution in fixed tissue by spatial molecular imaging",
+      "published": [
+        2022,
+        10,
+        6
+      ],
+      "type": "journal-article"
+    },
+    "janesick2023breast": {
+      "doi": "10.1038/s41467-023-43458-x",
+      "title": "High resolution mapping of the tumor microenvironment using integrated single-cell, spatial and in situ analysis",
+      "published": [
+        2023,
+        12,
+        19
+      ],
+      "type": "journal-article"
+    },
+    "sun2026consensus": {
+      "doi": "10.1038/s41592-026-03194-8",
+      "title": "Beyond benchmarking: an expert-guided consensus approach to spatially aware clustering",
+      "published": [
+        2026,
+        8,
+        24
+      ],
+      "type": "journal-article"
+    },
+    "crowell2025tva": {
+      "doi": "10.1101/2025.06.23.660674",
+      "title": "Tracing colorectal malignancy transformation from cell to tissue scale",
+      "published": [
+        2025,
+        6,
+        27
+      ],
+      "type": "posted-content"
+    },
+    "yerly2024wound": {
+      "doi": "10.1101/2024.05.31.596823",
+      "title": "Wounding triggers invasive progression in human basal cell carcinoma",
+      "published": [
+        2024,
+        6,
+        3
+      ],
+      "type": "posted-content"
+    },
+    "moses2022museum": {
+      "doi": "10.1038/s41592-022-01409-2",
+      "title": "Museum of spatial transcriptomics",
+      "published": [
+        2022,
+        3,
+        10
+      ],
+      "type": "journal-article"
+    },
+    "rao2021architecture": {
+      "doi": "10.1038/s41586-021-03634-9",
+      "title": "Exploring tissue architecture using spatial transcriptomics",
+      "published": [
+        2021,
+        8,
+        11
+      ],
+      "type": "journal-article"
+    },
+    "hu2021spagcn": {
+      "doi": "10.1038/s41592-021-01255-8",
+      "title": "SpaGCN: Integrating gene expression, spatial location and histology to identify spatial domains and spatially variable genes by graph convolutional network",
+      "published": [
+        2021,
+        10,
+        28
+      ],
+      "type": "journal-article"
+    },
+    "long2023graphst": {
+      "doi": "10.1038/s41467-023-36796-3",
+      "title": "Spatially informed clustering, integration, and deconvolution of spatial transcriptomics with GraphST",
+      "published": [
+        2023,
+        3,
+        1
+      ],
+      "type": "journal-article"
+    },
+    "ren2022spaceflow": {
+      "doi": "10.1038/s41467-022-31739-w",
+      "title": "Identifying multicellular spatiotemporal organization of cells with SpaceFlow",
+      "published": [
+        2022,
+        7,
+        14
+      ],
+      "type": "journal-article"
+    },
+    "shang2022spatialpca": {
+      "doi": "10.1038/s41467-022-34879-1",
+      "title": "Spatially aware dimension reduction for spatial transcriptomics",
+      "published": [
+        2022,
+        11,
+        23
+      ],
+      "type": "journal-article"
+    },
+    "yuan2024mender": {
+      "doi": "10.1038/s41467-023-44367-9",
+      "title": "MENDER: fast and scalable tissue structure identification in spatial omics data",
+      "published": [
+        2024,
+        1,
+        5
+      ],
+      "type": "journal-article"
+    },
+    "yang2025staig": {
+      "doi": "10.1038/s41467-025-56276-0",
+      "title": "STAIG: Spatial transcriptomics analysis via image-aided graph contrastive learning for domain exploration and alignment-free integration",
+      "published": [
+        2025,
+        1,
+        27
+      ],
+      "type": "journal-article"
+    },
+    "liang2026cellniche": {
+      "doi": "10.1038/s41467-026-71759-4",
+      "title": "CellNiche represents cellular microenvironments in atlas-scale spatial omics data with contrastive learning",
+      "published": [
+        2026,
+        4,
+        22
+      ],
+      "type": "journal-article"
+    },
+    "zimmerman2021pseudoreplication": {
+      "doi": "10.1038/s41467-021-21038-1",
+      "title": "A practical solution to pseudoreplication bias in single-cell studies",
+      "published": [
+        2021,
+        2,
+        2
+      ],
+      "type": "journal-article"
+    },
+    "roberts2017crossvalidation": {
+      "doi": "10.1111/ecog.02881",
+      "title": "Cross\u2010validation strategies for data with temporal, spatial, hierarchical, or phylogenetic structure",
+      "published": [
+        2017,
+        3,
+        3
+      ],
+      "type": "journal-article"
+    },
+    "dong2022stagate": {
+      "doi": "10.1038/s41467-022-29439-6",
+      "title": "Deciphering spatial domains from spatially resolved transcriptomics with an adaptive graph attention auto-encoder",
+      "published": [
+        2022,
+        4,
+        1
+      ],
+      "type": "journal-article"
+    },
+    "xu2024sedr": {
+      "doi": "10.1186/s13073-024-01283-x",
+      "title": "Unsupervised spatially embedded deep representation of spatial transcriptomics",
+      "published": [
+        2024,
+        1,
+        12
+      ],
+      "type": "journal-article"
+    },
+    "singhal2024banksy": {
+      "doi": "10.1038/s41588-024-01664-3",
+      "title": "BANKSY unifies cell typing and tissue domain segmentation for scalable spatial omics data analysis",
+      "published": [
+        2024,
+        2,
+        27
+      ],
+      "type": "journal-article"
+    },
+    "yuan2024benchmark": {
+      "doi": "10.1038/s41592-024-02215-8",
+      "title": "Benchmarking spatial clustering methods with spatially resolved transcriptomics data",
+      "published": [
+        2024,
+        3,
+        15
+      ],
+      "type": "journal-article"
+    },
+    "kang2025nar": {
+      "doi": "10.1093/nar/gkaf303",
+      "title": "Benchmarking computational methods for detecting spatial domains and domain-specific spatially variable genes from spatial transcriptomics data",
+      "published": [
+        2025,
+        4,
+        10
+      ],
+      "type": "journal-article"
+    },
+    "chen2025imeta": {
+      "doi": "10.1002/imt2.70084",
+      "title": "A comprehensive benchmarking for spatially resolved transcriptomics clustering methods across variable technologies, organs, and replicates",
+      "published": [
+        2025,
+        10,
+        9
+      ],
+      "type": "journal-article"
+    },
+    "canzar2026biorxiv": {
+      "doi": "10.64898/2026.03.12.710462",
+      "title": "An explanatory benchmark of spatial domain detection reveals key drivers of method performance",
+      "published": [
+        2026,
+        3,
+        16
+      ],
+      "type": "posted-content"
+    },
+    "yan2026alignment": {
+      "doi": "10.1038/s43588-026-00977-z",
+      "title": "Benchmarking alignment methods for spatial transcriptomics data",
+      "published": [
+        2026,
+        4,
+        3
+      ],
+      "type": "journal-article"
+    },
+    "maynard2021dlpfc": {
+      "doi": "10.1038/s41593-020-00787-0",
+      "title": "Transcriptome-scale spatial gene expression in the human dorsolateral prefrontal cortex",
+      "published": [
+        2021,
+        2,
+        8
+      ],
+      "type": "journal-article"
+    },
+    "moffitt2018merfish": {
+      "doi": "10.1126/science.aau5324",
+      "title": "Molecular, spatial, and functional single-cell profiling of the hypothalamic preoptic region",
+      "published": [
+        2018,
+        11,
+        16
+      ],
+      "type": "journal-article"
+    },
+    "wang2018starmap": {
+      "doi": "10.1126/science.aat5691",
+      "title": "Three-dimensional intact-tissue sequencing of single-cell transcriptional states",
+      "published": [
+        2018,
+        7,
+        27
+      ],
+      "type": "journal-article"
+    },
+    "hartmann2021scmep": {
+      "doi": "10.1038/s41587-020-0651-8",
+      "title": "Single-cell metabolic profiling of human cytotoxic T cells",
+      "published": [
+        2020,
+        8,
+        31
+      ],
+      "type": "journal-article"
+    },
+    "schott2024openst": {
+      "doi": "10.1016/j.cell.2024.05.055",
+      "title": "Open-ST: High-resolution spatial transcriptomics in 3D",
+      "published": [
+        2024,
+        7
+      ],
+      "type": "journal-article"
+    },
+    "goltsev2018codex": {
+      "doi": "10.1016/j.cell.2018.07.010",
+      "title": "Deep Profiling of Mouse Splenic Architecture with CODEX Multiplexed Imaging",
+      "published": [
+        2018,
+        8
+      ],
+      "type": "journal-article"
+    },
+    "palla2022squidpy": {
+      "doi": "10.1038/s41592-021-01358-2",
+      "title": "Squidpy: a scalable framework for spatial omics analysis",
+      "published": [
+        2022,
+        1,
+        31
+      ],
+      "type": "journal-article"
+    },
+    "traag2019leiden": {
+      "doi": "10.1038/s41598-019-41695-z",
+      "title": "From Louvain to Leiden: guaranteeing well-connected communities",
+      "published": [
+        2019,
+        3,
+        26
+      ],
+      "type": "journal-article"
+    },
+    "hubert1985ari": {
+      "doi": "10.1007/bf01908075",
+      "title": "Comparing partitions",
+      "published": [
+        1985,
+        12
+      ],
+      "type": "journal-article"
+    },
+    "andersson2021her2st": {
+      "doi": "10.1038/s41467-021-26271-2",
+      "title": "Spatial deconvolution of HER2-positive breast cancer delineates tumor-associated cell type interactions",
+      "published": [
+        2021,
+        10,
+        14
+      ],
+      "type": "journal-article"
+    }
+  }
+}

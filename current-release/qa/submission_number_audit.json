@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "cohort_targets": 5,
+  "patient_excluded_selections": 40,
+  "saved_patient_arm_cells": 280,
+  "exact_sign_flip_and_bootstrap_contrasts": 58,
+  "seam_mean_and_interval_pairs": 8,
+  "landscape_rows": 24,
+  "landscape_arm_cells": 96,
+  "input_sha256": {
+    "validation-extension/results/run-hardening.json": "4f9b84665f96b54cf92714d2e890d4512f2f1eadabe5d6cb1702f2da419087f2",
+    "validation-extension/results/run-breadth.json": "456db1ea4e5ae1628384f6e9d08ba49d6fc802d94adc605334da3b77345f8b52",
+    "source/manuscript/ledgers/landscape.csv": "32255e59a9987a5a73ded48ffadb271da532fe746eccad718183e78ac57fcf12",
+    "source/manuscript/ledgers/all_primary_scores.csv": "711c6e17a84c201b06aaed6d4abf5689b9dc8282d6d45a8153e63dfc10d94b01",
+    "results/followup-20261010/scale_controls.csv": "7aa646b5b7b86fe6acc1d4a535901a11512f8618a11103e0a5b557fc083549e7",
+    "validation-extension/results/breadth/grid.csv": "c489ea1968840fcf9f23127085aa7c23b5b540af7c46d16c91cf4e2f29860478",
+    "validation-extension/results/hardening/arms.csv": "0090b2f8aa9accf15e8f594ea8c43429c042ffa8161d8c4749371af9fd8d1bff",
+    "validation-extension/results/hardening/grid.csv": "be9b569e0cd6296db904bc5b35d97c80535644d8271ad97ad0d8ff7ef436551b",
+    "validation-extension/results/hardening/seams.csv": "ae916dcbcd525fcd85e21af8625fc95dc2fb2d97df030bf47769a1164e479545"
+  },
+  "audit_source_sha256": "a5eb629cd84b61a9c8cc01390cf60291f860c15d94add2225b007d45396143bd",
+  "scope": "Independent numerical implementation over saved score tables; no refitting, new specimens or biological replication.",
+  "bootstrap_scope": "Conditional on selected controls; no nested scale-selection resampling."
+}

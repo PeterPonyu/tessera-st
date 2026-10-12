@@ -1,0 +1,37 @@
+{
+  "recovery_date": "2026-10-11",
+  "retained_runner_sha256": "c96d933da9b71ec039df0c7dbfe1eaf5c7f5ec1c9d07918858300590b19aa538",
+  "recovery_script_sha256": "3beefafcf558f61be0a0e579f0d4496c03cff6ecb3b2cfed5785a05e47dead4b",
+  "snapshots": [
+    {
+      "modes": [
+        "transfer"
+      ],
+      "sha256": "d1d90c72da262b51283ad95f64fbaab1676d452063e68b5e1b8d29acf0d53a6b",
+      "path": "source/provenance/followup-runners/d1d90c72da262b51283ad95f64fbaab1676d452063e68b5e1b8d29acf0d53a6b/run_followup.py",
+      "removed_extensions": [
+        "whole"
+      ],
+      "verification": "exact SHA256 match to original receipts"
+    },
+    {
+      "modes": [
+        "scale",
+        "rescore",
+        "nulls"
+      ],
+      "sha256": "9261ceb03afebf4735769bd28bd5672f4093e278e724505a9c2bcf48e41a2915",
+      "path": "source/provenance/followup-runners/9261ceb03afebf4735769bd28bd5672f4093e278e724505a9c2bcf48e41a2915/run_followup.py",
+      "removed_extensions": [
+        "whole",
+        "transfer"
+      ],
+      "verification": "exact SHA256 match to original receipts"
+    }
+  ],
+  "gate_diagnostic_producer": {
+    "path": "source/provenance/followup-runners/d3c2e7205f7e74fc27ad414cabf4e77ddfdd81d5584b0faef01fca5582c74d42/audit_followup.py",
+    "sha256": "d3c2e7205f7e74fc27ad414cabf4e77ddfdd81d5584b0faef01fca5582c74d42"
+  },
+  "scope": "Byte-exact source recovery; original receipts and numerical outputs unchanged; no rerun."
+}

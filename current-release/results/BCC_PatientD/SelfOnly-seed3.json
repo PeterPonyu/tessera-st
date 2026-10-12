@@ -1,0 +1,87 @@
+{
+  "object": "BCC_PatientD",
+  "cohort": "BCC",
+  "seed": 3,
+  "arm": "SelfOnly",
+  "n_cells": 5656,
+  "K": 11,
+  "input_sha256": "c08f6b11cb008eee8f8fefc761192885d8e49873096c6a7e7857bc99e0daaf32",
+  "prediction_sha256": "f1b303d20ef9b82fe21e9a2b3427c469376c1e69e4d0dbfe2c56394f03b7249d",
+  "fit_seconds": 0.22257447900483385,
+  "total_seconds": 0.3232739249942824,
+  "gpu_peak_allocated_bytes": 56822784,
+  "trainable_parameters": 27207,
+  "history": [
+    {
+      "epoch": 0,
+      "loss": 5.520467758178711,
+      "recon": 5.520467758178711
+    },
+    {
+      "epoch": 12,
+      "loss": 5.202765464782715,
+      "recon": 5.202765464782715
+    },
+    {
+      "epoch": 24,
+      "loss": 4.694692611694336,
+      "recon": 4.694692611694336
+    },
+    {
+      "epoch": 36,
+      "loss": 4.0034027099609375,
+      "recon": 4.0034027099609375
+    },
+    {
+      "epoch": 48,
+      "loss": 3.4574952125549316,
+      "recon": 3.4574952125549316
+    },
+    {
+      "epoch": 60,
+      "loss": 3.0616235733032227,
+      "recon": 3.0616235733032227
+    },
+    {
+      "epoch": 72,
+      "loss": 2.7975759506225586,
+      "recon": 2.7975759506225586
+    },
+    {
+      "epoch": 84,
+      "loss": 2.589416265487671,
+      "recon": 2.589416265487671
+    },
+    {
+      "epoch": 96,
+      "loss": 2.413658857345581,
+      "recon": 2.413658857345581
+    },
+    {
+      "epoch": 108,
+      "loss": 2.261627435684204,
+      "recon": 2.261627435684204
+    },
+    {
+      "epoch": 119,
+      "loss": 2.141819715499878,
+      "recon": 2.141819715499878
+    }
+  ],
+  "ablation": {
+    "edge_gating": false,
+    "multi_scale": true,
+    "boundary_contrastive": false,
+    "calibrated_uncertainty": false
+  },
+  "n_edges": 5656,
+  "cross_field_edges": 0,
+  "self_edges": 5656,
+  "scores": {
+    "ari": 0.15152851628791222,
+    "nmi": 0.335171963989583,
+    "reference_edge_homogeneity": 1.0,
+    "predicted_edge_homogeneity": 1.0,
+    "gate_seam_auroc": null
+  }
+}

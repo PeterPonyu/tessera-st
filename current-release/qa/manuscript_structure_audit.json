@@ -1,0 +1,74 @@
+{
+  "status": "PASS",
+  "counts": {
+    "BLOCKER": 0,
+    "MAJOR": 0,
+    "MINOR": 0
+  },
+  "findings": [],
+  "manuscript_sha256": "87073a3e54fcfbfc5d1ebc09a077be8691d1c1225bbad451296cc47966c57849",
+  "supporting_sha256": "94af5855130b5aafde71db351678b1ca22b08eb110f0a2436a2e0ad81c166564",
+  "audit_source_sha256": "37eeed9a3da115f8ed950569239e57a8b62f266eba12785d8d8911618fe0cf40",
+  "main_panel_citations": {
+    "figure03-comparison": {
+      "a": 2,
+      "b": 3,
+      "c": 2,
+      "d": 1
+    },
+    "figure04-ablations": {
+      "a": 2,
+      "b": 1,
+      "c": 1,
+      "d": 1
+    },
+    "figure05-nsclc-maps": {
+      "a": 1,
+      "d": 1,
+      "e": 1,
+      "c": 1,
+      "b": 1
+    },
+    "figure06-bcc-maps": {
+      "a": 1,
+      "b": 1,
+      "d": 1,
+      "c": 1
+    },
+    "figure07-breast-histology": {
+      "a": 1,
+      "b": 1
+    },
+    "figure08-breast-mixtures": {
+      "a": 1,
+      "b": 1,
+      "d": 1,
+      "c": 1
+    },
+    "figure10-patient-transfer": {
+      "a": 1,
+      "b": 1,
+      "d": 1,
+      "c": 1
+    },
+    "figure11-stability": {
+      "a": 1,
+      "b": 1
+    },
+    "figure15-external-cohort": {
+      "a": 1,
+      "b": 1,
+      "c": 1,
+      "d": 1,
+      "e": 1,
+      "f": 1
+    },
+    "figure17-tissue-landscape": {
+      "a": 1,
+      "b": 1,
+      "c": 1,
+      "d": 1
+    }
+  },
+  "scope": "Mechanical source structure, citation coverage and hygiene. Not scientific peer review."
+}

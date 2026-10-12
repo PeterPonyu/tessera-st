@@ -1,0 +1,87 @@
+{
+  "object": "MIBI",
+  "cohort": "MIBI",
+  "seed": 2,
+  "arm": "SelfOnly",
+  "n_cells": 3309,
+  "K": 8,
+  "input_sha256": "d3d3d19935a6f0d9a8ff97f3bd6ffa7e95e5f2ec1ab8d8794c886ad187e34102",
+  "prediction_sha256": "caeb29ce587e8b665fc0fd6e1f8586cdf176b4b5c622ac35de2780d0d0a6e878",
+  "fit_seconds": 0.22617369100044016,
+  "total_seconds": 0.2843971149995923,
+  "gpu_peak_allocated_bytes": 39326720,
+  "trainable_parameters": 25305,
+  "history": [
+    {
+      "epoch": 0,
+      "loss": 1.0154749155044556,
+      "recon": 1.0154749155044556
+    },
+    {
+      "epoch": 12,
+      "loss": 0.8298307657241821,
+      "recon": 0.8298307657241821
+    },
+    {
+      "epoch": 24,
+      "loss": 0.6167265772819519,
+      "recon": 0.6167265772819519
+    },
+    {
+      "epoch": 36,
+      "loss": 0.46023479104042053,
+      "recon": 0.46023479104042053
+    },
+    {
+      "epoch": 48,
+      "loss": 0.3722202181816101,
+      "recon": 0.3722202181816101
+    },
+    {
+      "epoch": 60,
+      "loss": 0.31165581941604614,
+      "recon": 0.31165581941604614
+    },
+    {
+      "epoch": 72,
+      "loss": 0.2673080861568451,
+      "recon": 0.2673080861568451
+    },
+    {
+      "epoch": 84,
+      "loss": 0.23390592634677887,
+      "recon": 0.23390592634677887
+    },
+    {
+      "epoch": 96,
+      "loss": 0.20861436426639557,
+      "recon": 0.20861436426639557
+    },
+    {
+      "epoch": 108,
+      "loss": 0.18856266140937805,
+      "recon": 0.18856266140937805
+    },
+    {
+      "epoch": 119,
+      "loss": 0.17393070459365845,
+      "recon": 0.17393070459365845
+    }
+  ],
+  "ablation": {
+    "edge_gating": false,
+    "multi_scale": true,
+    "boundary_contrastive": false,
+    "calibrated_uncertainty": false
+  },
+  "n_edges": 3309,
+  "cross_field_edges": 0,
+  "self_edges": 3309,
+  "scores": {
+    "ari": 0.20191331613152608,
+    "nmi": 0.33188227481990507,
+    "reference_edge_homogeneity": 1.0,
+    "predicted_edge_homogeneity": 1.0,
+    "gate_seam_auroc": null
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "source": "pre-revision numerical ledgers, backed up 2026-10-09 before scientific polish",
+  "sha256": {
+    "all_primary_scores.csv": "711c6e17a84c201b06aaed6d4abf5689b9dc8282d6d45a8153e63dfc10d94b01",
+    "all_transfer_scores.csv": "9379b8448968d4d1929a05f19de2c4c4d750a73b121c46b552fc1a1ce0f44046",
+    "primary_summary.csv": "b8337ed16d6d024ee86cfcece05dcbc775b1646e46c063be6fbf3bcd17103f03",
+    "seed_stability.csv": "d56133f221c10fad6ce5ac5c822eab0226ef8eacd17660f1f40fc543a8f1b0e5",
+    "manuscript_numbers.json": "dfbdd72d5934b8ab1bfffd47777e24dd3a5c73769957a5905bcca621b031fc13",
+    "patient_contrasts.json": "33d98a4a96e07af9dd8cd82d1864fc49258639d5c1140a61c578a3b5bd08389d"
+  }
+}

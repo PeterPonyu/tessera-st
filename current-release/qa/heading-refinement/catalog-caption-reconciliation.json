@@ -1,0 +1,11 @@
+{
+  "created_utc": "2026-10-12T04:18:06.870341+00:00",
+  "file": "source/manuscript/ledgers/figure_catalog.json",
+  "before_sha256": "0b988c605da7011f0edacc870564e4d3deaf1791e2be99bafc8fb1adf3d16cac",
+  "after_sha256": "5651e657d243de948d9cefac44cea5a85ed696856395ca616fc99b9cc8e71a15",
+  "scope": "Package-only stale Figure7 catalog caption synchronized byte-for-byte to the already finalized paper.tex caption. Actual manuscript, SI, atlas source captions/prose, numbers, plot coordinates and compiled PDFs unchanged. This reconciles the prior authorized breast-coordinate-map replacement, separate from the two panel-heading edits.",
+  "current_caption": "Breast spatial coordinates and matched representations. Row (a) shows full tissue and row (b) a median-centered ROI with fixed 22\\% half-extent, chosen without labels or scores. Columns show measured spot locations, the dominant Xenium-derived reference, PCA50 and Tessera (seed 1). All panels are author-generated coordinate maps; no source histology image is reproduced. Matching excludes reference categories below 1\\% object prevalence; rare reference labels, unknowns and unmatched clusters are gray. ARI badges retain all valid classes and are three-seed means. Scale bars use source calibration.",
+  "historical_catalog_caption": "Registered breast H\\&E with measured Visium spots. Row (a) shows full tissue and row (b) a median-centered ROI with fixed 22\\% half-extent, chosen without labels or scores. Columns show H\\&E, the dominant Xenium-derived reference, PCA50 and Tessera (seed 1). Matching excludes reference categories below 1\\% object prevalence; rare reference labels, unknowns and unmatched clusters are gray. ARI badges retain all valid classes and are three-seed means. Scale bars use source calibration.",
+  "source_caption_file": "source/manuscript/paper.tex",
+  "source_caption_file_sha256": "010deef1aec723171a68e16721a4ab470914f2490a39daaa57eab21d8c3c22e1"
+}

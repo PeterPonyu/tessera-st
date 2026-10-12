@@ -1,0 +1,90 @@
+{
+  "object": "NSCLC_Lung5_Rep2",
+  "cohort": "NSCLC",
+  "seed": 3,
+  "arm": "SelfOnly",
+  "n_cells": 5945,
+  "K": 7,
+  "input_sha256": "d710de0e3470385f2dcf110516ad22d668992a521c2b9bd7e8084753c5a3902b",
+  "prediction_sha256": "8dbd61276b38f879d5cac10efc9ecb0a9d49955437527418e2a50993e28c6727",
+  "fit_seconds": 0.20429314600187354,
+  "total_seconds": 0.27271275701059494,
+  "gpu_peak_allocated_bytes": 58804736,
+  "trainable_parameters": 27079,
+  "history": [
+    {
+      "epoch": 0,
+      "loss": 3.1139910221099854,
+      "recon": 3.1139910221099854
+    },
+    {
+      "epoch": 12,
+      "loss": 2.9101474285125732,
+      "recon": 2.9101474285125732
+    },
+    {
+      "epoch": 24,
+      "loss": 2.6157569885253906,
+      "recon": 2.6157569885253906
+    },
+    {
+      "epoch": 36,
+      "loss": 2.243208885192871,
+      "recon": 2.243208885192871
+    },
+    {
+      "epoch": 48,
+      "loss": 1.944035291671753,
+      "recon": 1.944035291671753
+    },
+    {
+      "epoch": 60,
+      "loss": 1.7259670495986938,
+      "recon": 1.7259670495986938
+    },
+    {
+      "epoch": 72,
+      "loss": 1.561181902885437,
+      "recon": 1.561181902885437
+    },
+    {
+      "epoch": 84,
+      "loss": 1.4362411499023438,
+      "recon": 1.4362411499023438
+    },
+    {
+      "epoch": 96,
+      "loss": 1.3412545919418335,
+      "recon": 1.3412545919418335
+    },
+    {
+      "epoch": 108,
+      "loss": 1.2613204717636108,
+      "recon": 1.2613204717636108
+    },
+    {
+      "epoch": 119,
+      "loss": 1.1953725814819336,
+      "recon": 1.1953725814819336
+    }
+  ],
+  "ablation": {
+    "edge_gating": false,
+    "multi_scale": true,
+    "boundary_contrastive": false,
+    "calibrated_uncertainty": false
+  },
+  "n_edges": 5945,
+  "cross_field_edges": 0,
+  "self_edges": 5945,
+  "scores": {
+    "ari": 0.062176822540156114,
+    "nmi": 0.12508047645900403,
+    "reference_edge_homogeneity": 1.0,
+    "predicted_edge_homogeneity": 1.0,
+    "gate_seam_auroc": null,
+    "secondary_ari": 0.312835841391062,
+    "secondary_nmi": 0.47084434753265697,
+    "secondary_n_classes": 21
+  }
+}

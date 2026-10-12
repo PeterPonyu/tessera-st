@@ -1,0 +1,55 @@
+{
+  "script_sha256": "8500e07090540f9c850058ef449676848afec084f2b0c303ab62465b88316d32",
+  "registration_geometry": [
+    {
+      "section": "SN84_A120838_Rep1",
+      "image_shape": [
+        2000,
+        1930,
+        3
+      ],
+      "centers_inside_image": 328,
+      "centers": 328,
+      "join_rate": 1.0,
+      "source_image_sha256": "5f0522f8f9c7790f45e12c458d0d296530eddeca9bc9b74f00b24256065581f7"
+    },
+    {
+      "section": "SN124_A595688_Rep2",
+      "image_shape": [
+        2000,
+        1944,
+        3
+      ],
+      "centers_inside_image": 387,
+      "centers": 387,
+      "join_rate": 1.0,
+      "source_image_sha256": "a998cd45bb3639351562132a34b095ea5d7fad4a445326a0e6dc8433a09c58db"
+    },
+    {
+      "section": "SN124_A551763_Rep2",
+      "image_shape": [
+        2000,
+        1950,
+        3
+      ],
+      "centers_inside_image": 1219,
+      "centers": 1219,
+      "join_rate": 1.0,
+      "source_image_sha256": "a0caaee255a7d4a5d64a9ce119ac81067d3351f99c3a1c774ddb3d4507bcdcc7"
+    }
+  ],
+  "evidence_sha256": {
+    "annotation-qc/arms.csv": "a77d638e7b21d7a6f12d44d2e8755c0a5cbd98a81b9fad15232701f5a926f06f",
+    "annotation-qc/label_shuffle.csv": "043b7f52eea31ed9e8c53bdcd3300fc373adecf9ca13e2a35a17a4d9d8778059",
+    "annotation-qc/patient_seams.csv": "7fba638b40c58730291928828d9b9e1bb45c8d317b76f4a2ce80bcb7ce3e6e0f",
+    "annotation-qc/patients.csv": "2a8d1a2c31f0a981dfcc63bbf2edb56323b782ad15a6e25cc409d16d99379b76",
+    "annotation-qc/seams.csv": "ea71d97284c42c744c4cc381fb5007e1d0e6c6c2b1f4806e784ca35be17f1c4d"
+  },
+  "figure_sha256": {
+    "SN124_A551763_Rep2-registration.png": "27064912eb9fd1f495449feb2e9aa1a9a3132e473ded01ea82eee4411b4e1042",
+    "SN124_A595688_Rep2-registration.png": "019762751f1b3efa5526765ed86462f171da45c9b4d86a81bdcb9944651595dc",
+    "SN84_A120838_Rep1-registration.png": "5a1e58a09d0921e28ace63907d089e49d32d59af2e8380cb8b5d8c6f8a3c58b1",
+    "pilot-summary.pdf": "067b0bc7f9e5995a3a030b62be3c25ec3031409d52f2bb974c30fb6ac4c5b503",
+    "pilot-summary.png": "9d97ce41a01f146a15eea937ed958e748c9bf4f0d28727a62c1b33ecdb87d56e"
+  }
+}

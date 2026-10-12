@@ -1,0 +1,55 @@
+{
+  "status": "passed",
+  "prepared_utc": "2026-10-12T04:40:12.686954+00:00",
+  "version": "2026.10.11-controls-audit",
+  "reserved_software_doi": "10.5281/zenodo.23308077",
+  "evaluated_original_software_doi": "10.5281/zenodo.23101191",
+  "doi_status": "reserved until parent record owner publishes",
+  "final_pdfs": {
+    "scientific-reports-supplement.pdf": {
+      "sha256": "15a15e3738733668eb36ea4fded6a73ad95b403a59cf229f62341add5e24bb0a",
+      "bytes": 8180109
+    },
+    "scientific-reports-manuscript.pdf": {
+      "sha256": "b380dedf46740a46dab8957fe732e19f4644234a26f24af1b697cd2918136846",
+      "bytes": 2582568
+    },
+    "scientific-reports-manuscript-inline.pdf": {
+      "sha256": "44ab40a066eeecf23ab03dc597810a4920b428bd7cba22fe90638a6d0219d409",
+      "bytes": 2583972
+    }
+  },
+  "tests": {
+    "initial_overlay": "76 passed, 6 stale presentation/document-artifact failures",
+    "current": "82 passed;0 failures/errors/skips after the authorized factual PCA stability sentence correction; all82 test sources/fixtures unchanged",
+    "record": "qa/release-closure/test-transition-record.json"
+  },
+  "rights_scope": "No 10x breast H&E image/background redistributed. Author-generated breast coordinate maps retain source annotation/measurement terms. Distinct CRC images retained under dataset-specific CC BY4.0 evidence.",
+  "presentation_audits": "21 native figures/75 labels; final journal manuscript + SI contain 75 readable bold panel labels >=12 pt; old breast image fingerprints absent",
+  "historical_core_adapters": "11 byte matches; 10 different/added files; unchanged comparison record",
+  "numerical_files_byte_exact": 1058,
+  "research_fits": 0,
+  "downloads": 0,
+  "raw_10x_breast_image_included": false,
+  "portable_verification": "Fresh final extraction results and archive CRC/SHA/MD5 are recorded in the external release receipt after sealing",
+  "remaining_limits_file": "provenance/verification-scope.json",
+  "heading_refinement": {
+    "status": "passed",
+    "evidence": "qa/heading-refinement/heading-check.json",
+    "scope": "Only Figure3(c) and Figure6(f) heading text changed; native graphical/numerical operators and images identical; prose/captions/numerical ledgers byte-exact; presentation hash fields updated separately"
+  },
+  "additional_external_files_byte_exact": 35,
+  "breast_image_scan": {
+    "status": "passed",
+    "pdf_files_checked": 52,
+    "embedded_pdf_images_checked": 340,
+    "raster_files_checked": 82,
+    "historical_breast_content_matches": []
+  },
+  "document_visual_review": "qa/resumed-document-review/visual-review.json; actual current main/inline overview plus corrected paragraph-page review; unchanged SI same-hash evidence carried forward",
+  "pca_stability_sentence_refinement": {
+    "status": "passed",
+    "evidence": "qa/prose-sentence-refinement/sentence-overlay.json",
+    "scope": "Exactly one authorized prose sentence changed; numerical values/figures/captions/code/model/checkpoints unchanged."
+  }
+}

@@ -1,79 +1,124 @@
-# Tessera-ST: field-aware spatial evaluation audit
+# Compact GitHub source and documents
 
-Author-review release, 2 October 2026. **SCIENTIFIC_SUBMISSION_HOLD**.
-This is a protocol audit, not a universal contiguity law, a validated method
-selector, calibrated confidence output, or a claim of superior architecture.
+This is the compact distribution of **2026.10.11-controls-audit**, selected from the finalized complete Tessera archive with SHA256 `09c75b7a7927755e60d4097fbb85b3120ee792bc2f1372b0f2d1a14a5cdde680`. The complete archive is associated with software [DOI 10.5281/zenodo.23308077](https://doi.org/10.5281/zenodo.23308077); publication status follows the public record.
 
-Code: https://github.com/PeterPonyu/tessera-st/tree/author-review-2026-10-02/current-release
-Version archive: https://doi.org/10.5281/zenodo.23101191
-Anonymous public availability is recorded separately in the publication
-receipt; a DOI in source text alone does not prove publication.
-Publication does not remove scientific HOLD.
+Current source, protocols, manuscript sources/PDFs, compact score tables, receipts and source/checksum instructions are included. Retained `.npz`, `.npy`, `.pt`, `.pth` and other large assay/model-state payloads are omitted. `COMPACT-DISTRIBUTION.json` lists every omission with its exact checksum. `provenance/full-package-MANIFEST.sha256` preserves the complete-archive file manifest.
 
-## Current manuscript
+`python portable/verify_manifest.py` checks this compact distribution's own manifest. `python portable/import_check.py` checks the packaged import closure in the documented environment. Full saved-result verification, primary-input preflight, the 82 scientific tests and refitting require the complete archive; they cannot be established by missing arrays in this compact copy. Extract the complete archive into a separate directory and follow its `README.md` and `REPRODUCE.md` for those commands.
 
-`manuscript/paper.pdf` is the **current, venue-neutral single-column article**,
-generated from the revised seven-object scientific source, not the historical
-20 August 2026 paper. `manuscript/SI.pdf` is the matching readable supplement
-(Tables S1–S5). `provenance/source-capsule-IEEE-paper.pdf` preserves the
-previous double-column author-review face, not the current default.
+The complete archive's source guide follows. Statements about included arrays or saved numerical replay in that guide refer to the complete archive.
 
-## Evidence and boundaries
+---
 
-Seven objects (DLPFC, MERFISH, STARmap, MIBI, Open-ST, CODEX, Zhuang), seven
-procedures, seeds 1/2/3: 147 saved method–seed runs. SpaceFlow, GraphST and
-SpaGCN remain unavailable in the corrected protocol. Eight historical objects
-with unresolved frame provenance are not filled with old scores. CODEX
-SpatialLeiden is not equal-K matched; niches are cluster-derived proxies.
-Three optimisation seeds are not independent tissue replicates.
+# Tessera controls audit: analysis and editable sources
 
-`experiments/generated/field-identified-fixed-backend-20260923-v1/` contains
-prediction arrays, selected row/field maps, exact source hashes, per-run records
-and package identities. `manuscript/ledgers/revision_20260923/` binds the
-current tables and figure inputs. Other ledgers and older experiment drivers
-are historical context only: their original numbers are not corrected-panel
-evidence. Synthetic effects are generator/intervention/scorer-specific and
-are never pooled with measured tissue associations. The confidence head is
-withheld and no replacement ECE claim is supplied.
+Software/source version: `2026.10.11-controls-audit`. The software DOI
+`10.5281/zenodo.23308077` is reserved for this release and is not claimed to be
+published by this package-preparation step. Manuscript/preprint identity is
+separate from software archive identity. The evaluated original implementation is separately archived at
+`10.5281/zenodo.23101191`; it does not archive these later controls and source
+additions.
 
-## Reproduction levels
+This standalone archive preserves the evaluated Tessera implementation, original
+protocols and run locks, editable manuscript and figure sources, current primary
+and patient-held-out transfer saved predictions, follow-up control evidence,
+external HER2ST and extension result evidence, and the independent CRC pilot and
+its disclosed annotation-QC sensitivity analysis. The numerical research outputs
+and frozen protocols remain unchanged. Final document/figure sources and citation metadata are bound by the sealed
+package manifest; historical document QA records describe their dated originals.
 
-From this directory, with existing Python dependencies:
+The main comparison concerns this released implementation and the supplied
+controls. The reference annotations have distinct biological and computational
+origins. Repeated fits, tissue sections and sensitivity analyses are not new
+biological donors. Interpretation and retained-evidence limits are recorded in
+`provenance/verification-scope.json` and the original protocols/results.
+
+## Verify retained results after extracting anywhere
+
+Use Python 3.13.7 with the versions in `requirements-analysis.txt`, or the validated
+existing audit runtime recorded in `provenance/environment-observed.json`. From
+the extracted package root:
 
 ```bash
-python verify_release.py
-python -m pytest -q reproducibility/tests/test_rank_ties.py reproducibility/tests/test_supporting_information.py
-bash manuscript/scripts/rebuild_current.sh
+PYTHONDONTWRITEBYTECODE=1 python portable/verify_manifest.py
+PYTHONDONTWRITEBYTECODE=1 python portable/import_check.py
+PYTHONDONTWRITEBYTECODE=1 python portable/verify_saved_results.py
+PYTHONDONTWRITEBYTECODE=1 python source/scripts/recover_followup_runners.py --verify
 ```
 
-Verification rescales no score and refits no model: it checks checksums,
-within-field saved graph edges and all 147 stored prediction ARIs, then checks
-the manuscript claim contract. The document build consumes committed vector
-figures and tables with TeX Live/latexmk and Poppler. Rendering from raw images
-is a separate operation with third-party input prerequisites, not the default.
-Arial is needed only for the optional scientific-figure redraw; its font file
-is not bundled. No dependency is installed automatically.
+These commands require no network, GPU, author-absolute paths, source symlinks or
+external working-tree checkout. The verifier checks the saved predictions and
+receipts directly and forbids neural and KMeans fitting. It reconstructs the 351
+primary rows and 90 transfer target rows; checks follow-up table arithmetic and
+39 saved gate profiles; checks HER2ST/extension selections and retained seed-1
+partitions; and reconstructs CRC ARI, unique-edge AUROC, patient bootstrap and a
+stated shuffled-label subset. The scripts print machine-readable evidence.
 
-For full tissue refits, obtain the exact upstream assays and STAGATE/SEDR
-implementations in `DATA_SOURCES.md`, set `TESSERA_DATA_ROOT` to the source
-workspace containing `data/` and `external/`, then use the field-aware runner.
-With those external implementations present, run
-`python -m pytest -q reproducibility/tests/test_field_aware_adapters.py`.
-That upstream-dependent suite is separate from the default offline tests;
-missing STAGATE is a missing prerequisite, not a silent test skip.
-Its saved protocol contains original absolute paths as **historical run
-provenance**, not portable commands. Original capsule contracts and source
-hashes remain in `provenance/`; the current `RELEASE-MANIFEST.json` binds this
-public face. An identity manifest certifies bytes, not scientific validity.
+The source has two different reproduction levels. Direct saved-score checking is
+available where the producers retained predictions. Historical HER2ST/extension
+learned embeddings, remaining seed partitions, whole-section predictions and
+geometry-null embeddings were not retained. Their source/receipt/table and
+selection consistency checks do not establish an independent replay of those
+fits. The original `validation-independent-crc/verify_pilot.py` additionally
+checks large raw archives and author-local historical integration backups; the
+portable command checks only the explicitly documented saved-evidence scope.
 
-## Licensing and status
+## Acquire exact upstream files separately
 
-Author-owned code: MIT (`LICENSE`). Author-written manuscript, explanations,
-tables and author-generated result aggregates: CC BY 4.0. Upstream assays,
-labels, photographs, external code and model weights keep their original
-conditions; see `THIRD_PARTY_NOTICES.md`. Third-party raw measurement matrices,
-external implementation source and model weights are not included.
+Large original assay archives are excluded. The primary derived inputs are
+included and bound to their original input records. `provenance/upstream-inputs.json`
+records their raw source hashes, exact HER2ST and CRC acquisition URLs, byte counts
+and SHA256 checksums, and the publisher CRC MD5 checksums. Matching a publication
+name alone is insufficient to identify equivalent input bytes.
 
-Local numerical and rendering checks are not independent scientific review,
-external validation, author sign-off or journal submission. This release is
-public for research inspection while scientific submission remains on HOLD.
+For manually acquired files, verification and copying are explicit:
+
+```bash
+python portable/acquire.py her2st --source-dir /path/to/manual/her2st --destination /path/to/fresh/her2st
+python portable/acquire.py crc --source-dir /path/to/manual/crc --destination /path/to/fresh/crc
+```
+
+To acquire from the recorded URLs instead, add `--download`. Optional
+`--proxy http://host:port` uses a per-request proxy without any machine-specific
+port restriction or global environment changes. Acquisition rejects byte or
+checksum differences. J1 counts were unavailable in the historical HER2ST source
+and J1 was excluded before fitting; the manifest keeps that exclusion and never
+substitutes a different specimen.
+
+`portable/run_analysis.py` provides configurable input and fresh-output locations
+for the original preserved producers; see `--help` and `REPRODUCE.md`. The historical
+workspace fetch gate is supplied only as checksum-bound provenance. The portable
+runner resolves its helper within this archive and checks acquired inputs before
+any experimental path is invoked.
+
+## Environment, documents and full experimental reproduction
+
+`environment.yml` and `requirements-analysis.txt` specify the observed supported
+Python audit/import environment. The current tested PyTorch build is recorded in
+`provenance/environment-observed.json`; the frozen original training environment
+is preserved in the primary and transfer run locks. No fresh package installation
+or full refit was performed during this packaging work.
+
+Document reconstruction instructions remain in `EDITABLE_SOURCE_README.md`.
+Document rebuilding requires the stated TeX/Poppler tools separately from the
+Python analysis dependencies. Saved-result verification and document compilation
+do not certify a new GPU refit. For a refit, follow each original protocol and
+write to fresh output directories; CUDA reductions were not guaranteed bitwise
+deterministic in the original runs.
+
+Rights and source-specific reuse limits are documented in `LICENSING.md` and the
+preserved source records. The release includes original source and developer
+provenance; it does not relabel shared measurements or existing labels as
+independent biological evidence.
+
+The neural core and expanded analysis adapters have separate provenance.
+`provenance/historical-core-versus-adapters.json` compares exact included source
+hashes to the historical public software checkout. Matching encoder, model,
+gating, loss and metrics code does not imply that every graph, preprocessing,
+configuration or trainer byte matches that release. Scientific receipts identify
+the expanded-analysis implementation actually evaluated here. The same-graph
+HER2ST comparison is exploratory and remains an author/developer analysis.
+No 10x breast H&E image/background is redistributed; the breast figure contains
+author-generated coordinate maps. Source annotations retain their source terms.
+The excluded image provenance and replacement scope are stated precisely in
+`provenance/breast-image-source-and-rights.json` and `LICENSING.md`.

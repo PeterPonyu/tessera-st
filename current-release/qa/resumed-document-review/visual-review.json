@@ -1,0 +1,91 @@
+{
+  "status": "PASS",
+  "created_utc": "2026-10-12T04:39:16.868187+00:00",
+  "reviewer": "Tessera release-closure agent; inline document/figure visual QA, separate from scientific independent review",
+  "render_manifest_sha256": "7a9af4e87a656563b7eece6c458182db5164ec3601e656b8e7b3bf09f6c29907",
+  "model_runtime": {
+    "requested": {
+      "model": "inherited from full-history leader fork",
+      "reasoning_effort": "inherited from full-history leader fork",
+      "explicit_override": false
+    },
+    "runtime_reported": {
+      "member": {
+        "model": "gpt-6.1-sol",
+        "reasoning_effort": "max"
+      },
+      "leader": {
+        "model": "gpt-6.1-sol",
+        "reasoning_effort": "max"
+      }
+    },
+    "source": "local session turn_context metadata; requested settings are not runtime proof"
+  },
+  "documents": {
+    "manuscript": {
+      "sha256": "b380dedf46740a46dab8957fe732e19f4644234a26f24af1b697cd2918136846",
+      "pages_inspected_in_overview": 22,
+      "overview_sheets": [
+        {
+          "path": "qa/resumed-document-review/manuscript-b380dedf4674/overview-01.jpg",
+          "sha256": "ad1492050a3bee8ae2bf6cb74396b6c657fc966629c0948f2f6022c25a11c5d5"
+        },
+        {
+          "path": "qa/resumed-document-review/manuscript-b380dedf4674/overview-02.jpg",
+          "sha256": "7a21f6006996c2904c8dc664300b4733c73c79ff2ec7845bca358a3db1937ca3"
+        },
+        {
+          "path": "qa/resumed-document-review/manuscript-b380dedf4674/overview-03.jpg",
+          "sha256": "8599a11f50296061b49c24fc748f7669a5014a1aad090e6e08dae37229a2816d"
+        }
+      ],
+      "full_size_pages": [
+        10
+      ],
+      "observations": "No clipping, overlap, stranded heading or missing glyph observed. Corrected sentence reads: For PCA50, the three seeds varied only the K-means initialization; the minimum seed-pair ARI was 0.57. Numerical macros, figures and captions unchanged."
+    },
+    "supplement": {
+      "sha256": "15a15e3738733668eb36ea4fded6a73ad95b403a59cf229f62341add5e24bb0a",
+      "pages_inspected_in_overview": 20,
+      "overview_sheets": [
+        {
+          "path": "qa/resumed-document-review/supplement-15a15e373873/overview-01.jpg",
+          "sha256": "15d22b1f2bd9387758b6cb58a36da5598257be08f37b9f63d2fef809df6a3d90"
+        },
+        {
+          "path": "qa/resumed-document-review/supplement-15a15e373873/overview-02.jpg",
+          "sha256": "b6474ebb4825a0102baf2519941b8b7dbfa056b95d691f20aa917ce376667ada"
+        },
+        {
+          "path": "qa/resumed-document-review/supplement-15a15e373873/overview-03.jpg",
+          "sha256": "471569b3206db57d2c27559fe56c5eba8d6528bc74e561a63b537acc700be331"
+        }
+      ],
+      "full_size_pages": [],
+      "observations": "No clipping, text/figure collision, stranded heading or missing glyph observed in current overview renders. Revised headings are complete and legible in the inspected full-size journal figure and inline page renders."
+    },
+    "manuscript-inline": {
+      "sha256": "44ab40a066eeecf23ab03dc597810a4920b428bd7cba22fe90638a6d0219d409",
+      "pages_inspected_in_overview": 21,
+      "overview_sheets": [
+        {
+          "path": "qa/resumed-document-review/manuscript-inline-44ab40a066ee/overview-01.jpg",
+          "sha256": "5dbb9497fc3b28bd9fe1ab1acad51c44258387daec84789055b496b9f50ece12"
+        },
+        {
+          "path": "qa/resumed-document-review/manuscript-inline-44ab40a066ee/overview-02.jpg",
+          "sha256": "f7a06206e85cfe5e11b85f1f420c2c0a2eb2640a7cafeaf2db7ee7161febc816"
+        },
+        {
+          "path": "qa/resumed-document-review/manuscript-inline-44ab40a066ee/overview-03.jpg",
+          "sha256": "29416c1096ddabe7fee8b235f27839bf7db824edb16f1d128d4998552388fae0"
+        }
+      ],
+      "full_size_pages": [
+        13
+      ],
+      "observations": "No clipping, overlap, stranded heading or missing glyph observed. Corrected sentence reads: For PCA50, the three seeds varied only the K-means initialization; the minimum seed-pair ARI was 0.57. Numerical macros, figures and captions unchanged."
+    }
+  },
+  "scope": "Current22-page main and21-page inline manuscripts viewed on six overview sheets; corrected PCA stability paragraphs inspected at full size on main page10 and inline page13. Unchanged20-page supplement retains earlier actual visual evidence at identical PDF/image hashes. This is layout verification, not independent scientific validation."
+}

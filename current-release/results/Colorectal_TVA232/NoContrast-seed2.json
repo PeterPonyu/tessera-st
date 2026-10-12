@@ -1,0 +1,90 @@
+{
+  "object": "Colorectal_TVA232",
+  "cohort": "Colorectal TVA",
+  "seed": 2,
+  "arm": "NoContrast",
+  "n_cells": 5907,
+  "K": 34,
+  "input_sha256": "c5d143da23df042954e1c15ddb05eca1ca21f3e796d6dceff67a1f14e9a0dcf7",
+  "prediction_sha256": "983a7fd7cdf243b92cb0d34604238f23b2907c465275feab18df466ec78d64e3",
+  "fit_seconds": 0.6029436070093652,
+  "total_seconds": 0.8875355669879355,
+  "gpu_peak_allocated_bytes": 326654976,
+  "trainable_parameters": 27943,
+  "history": [
+    {
+      "epoch": 0,
+      "loss": 5.155967712402344,
+      "recon": 5.155967712402344
+    },
+    {
+      "epoch": 12,
+      "loss": 4.896790981292725,
+      "recon": 4.896790981292725
+    },
+    {
+      "epoch": 24,
+      "loss": 4.468297958374023,
+      "recon": 4.468297958374023
+    },
+    {
+      "epoch": 36,
+      "loss": 3.7888107299804688,
+      "recon": 3.7888107299804688
+    },
+    {
+      "epoch": 48,
+      "loss": 3.215388536453247,
+      "recon": 3.215388536453247
+    },
+    {
+      "epoch": 60,
+      "loss": 2.902838945388794,
+      "recon": 2.902838945388794
+    },
+    {
+      "epoch": 72,
+      "loss": 2.702000379562378,
+      "recon": 2.702000379562378
+    },
+    {
+      "epoch": 84,
+      "loss": 2.541602373123169,
+      "recon": 2.541602373123169
+    },
+    {
+      "epoch": 96,
+      "loss": 2.4054198265075684,
+      "recon": 2.4054198265075684
+    },
+    {
+      "epoch": 108,
+      "loss": 2.277639150619507,
+      "recon": 2.277639150619507
+    },
+    {
+      "epoch": 119,
+      "loss": 2.168006181716919,
+      "recon": 2.168006181716919
+    }
+  ],
+  "ablation": {
+    "edge_gating": true,
+    "multi_scale": true,
+    "boundary_contrastive": false,
+    "calibrated_uncertainty": false
+  },
+  "n_edges": 70884,
+  "cross_field_edges": 0,
+  "self_edges": 0,
+  "scores": {
+    "ari": 0.09346877400320219,
+    "nmi": 0.31711764142749654,
+    "reference_edge_homogeneity": 0.33340344972654606,
+    "predicted_edge_homogeneity": 0.16519948084193894,
+    "gate_seam_auroc": 0.5419339333450354,
+    "secondary_ari": 0.029175957381888624,
+    "secondary_nmi": 0.20733366470908002,
+    "secondary_n_classes": 3
+  }
+}

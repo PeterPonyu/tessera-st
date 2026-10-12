@@ -1,0 +1,90 @@
+{
+  "object": "Colorectal_TVA232",
+  "cohort": "Colorectal TVA",
+  "seed": 1,
+  "arm": "SelfOnly",
+  "n_cells": 5907,
+  "K": 34,
+  "input_sha256": "c5d143da23df042954e1c15ddb05eca1ca21f3e796d6dceff67a1f14e9a0dcf7",
+  "prediction_sha256": "a6636f249c2c391d6a48fbc4c99dbb595b39b308b23098433da1240396399df9",
+  "fit_seconds": 0.22813660799874924,
+  "total_seconds": 0.45187026799248997,
+  "gpu_peak_allocated_bytes": 59781120,
+  "trainable_parameters": 27943,
+  "history": [
+    {
+      "epoch": 0,
+      "loss": 5.1398749351501465,
+      "recon": 5.1398749351501465
+    },
+    {
+      "epoch": 12,
+      "loss": 4.821618556976318,
+      "recon": 4.821618556976318
+    },
+    {
+      "epoch": 24,
+      "loss": 4.296942710876465,
+      "recon": 4.296942710876465
+    },
+    {
+      "epoch": 36,
+      "loss": 3.606940984725952,
+      "recon": 3.606940984725952
+    },
+    {
+      "epoch": 48,
+      "loss": 3.1270785331726074,
+      "recon": 3.1270785331726074
+    },
+    {
+      "epoch": 60,
+      "loss": 2.880105495452881,
+      "recon": 2.880105495452881
+    },
+    {
+      "epoch": 72,
+      "loss": 2.6937811374664307,
+      "recon": 2.6937811374664307
+    },
+    {
+      "epoch": 84,
+      "loss": 2.536271810531616,
+      "recon": 2.536271810531616
+    },
+    {
+      "epoch": 96,
+      "loss": 2.3933959007263184,
+      "recon": 2.3933959007263184
+    },
+    {
+      "epoch": 108,
+      "loss": 2.2681362628936768,
+      "recon": 2.2681362628936768
+    },
+    {
+      "epoch": 119,
+      "loss": 2.167733669281006,
+      "recon": 2.167733669281006
+    }
+  ],
+  "ablation": {
+    "edge_gating": false,
+    "multi_scale": true,
+    "boundary_contrastive": false,
+    "calibrated_uncertainty": false
+  },
+  "n_edges": 5907,
+  "cross_field_edges": 0,
+  "self_edges": 5907,
+  "scores": {
+    "ari": 0.09702293402211214,
+    "nmi": 0.31452683778152013,
+    "reference_edge_homogeneity": 1.0,
+    "predicted_edge_homogeneity": 1.0,
+    "gate_seam_auroc": null,
+    "secondary_ari": 0.03350272634167576,
+    "secondary_nmi": 0.2110059880604678,
+    "secondary_n_classes": 3
+  }
+}

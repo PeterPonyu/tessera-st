@@ -1,0 +1,217 @@
+{
+  "created_utc": "2026-10-12T04:37:36.159364+00:00",
+  "scope": "One authorized factual PCA stability sentence correction; removal of nearly-identical characterization. No numeric value, figure, caption, equation, protocol, source code, model or checkpoint changed. Generated journal TeX/PDF and presentation/source QA hashes refreshed.",
+  "old_sentence": "For PCA50, the three seeds varied only the K-means initialization and gave nearly identical partitions (seed-pair ARI at least \\StabilityPcaMin{}).",
+  "current_sentence": "For PCA50, the three seeds varied only the K-means initialization; the minimum seed-pair ARI was \\StabilityPcaMin{}.",
+  "canonical_source_change_exactly_this_sentence": true,
+  "canonical_source": "source/manuscript/paper.tex",
+  "canonical_source_sha256": "87073a3e54fcfbfc5d1ebc09a077be8691d1c1225bbad451296cc47966c57849",
+  "overlaid": {
+    "source/manuscript/paper.tex": {
+      "before_sha256": "010deef1aec723171a68e16721a4ab470914f2490a39daaa57eab21d8c3c22e1",
+      "after_sha256": "87073a3e54fcfbfc5d1ebc09a077be8691d1c1225bbad451296cc47966c57849",
+      "bytes": 69080
+    },
+    "source/manuscript/paper_srep.tex": {
+      "before_sha256": "a6b994b981a3c235efad58c11f9194bfb0419c935ff22f2640c12d676041ea2a",
+      "after_sha256": "f71b275ef07753a7dd2c078cfccc919b4ad13c9c6853a765b5faf4c81c551b76",
+      "bytes": 64448
+    },
+    "source/manuscript/paper_srep_inline.tex": {
+      "before_sha256": "cf7ecbc87e680daa80f7c9e34082506516a70e816150fbbf2c989e01127b8e80",
+      "after_sha256": "99815edb0db30873072dfbc85cc9588ef004df389622b78a6c5a259bc80e1674",
+      "bytes": 64392
+    },
+    "source/manuscript/supporting_srep.tex": {
+      "before_sha256": "18ca32c211f89b2d7fb968e9708761fefe11e62e23a6bd7e98ab7767d080189a",
+      "after_sha256": "18ca32c211f89b2d7fb968e9708761fefe11e62e23a6bd7e98ab7767d080189a",
+      "bytes": 25311
+    },
+    "journal-style-report.json": {
+      "before_sha256": "01326abcf9db5e54a7881742aa5d0df7b517a59a7fbdce340170d483eebfeabd",
+      "after_sha256": "01326abcf9db5e54a7881742aa5d0df7b517a59a7fbdce340170d483eebfeabd",
+      "bytes": 99617
+    },
+    "output/scientific-reports/scientific-reports-supplement.pdf": {
+      "before_sha256": "15a15e3738733668eb36ea4fded6a73ad95b403a59cf229f62341add5e24bb0a",
+      "after_sha256": "15a15e3738733668eb36ea4fded6a73ad95b403a59cf229f62341add5e24bb0a",
+      "bytes": 8180109
+    },
+    "output/scientific-reports/scientific-reports-manuscript.pdf": {
+      "before_sha256": "a943b65041d1ca8a2360b62dfa56b678abc81a0907c1d6bf107ae987162872e2",
+      "after_sha256": "b380dedf46740a46dab8957fe732e19f4644234a26f24af1b697cd2918136846",
+      "bytes": 2582568
+    },
+    "output/scientific-reports/scientific-reports-manuscript-inline.pdf": {
+      "before_sha256": "8759b0bbc5d0b219a8e53e6d8c4be6239f96044e0f4f275de2b6d66a889afcd6",
+      "after_sha256": "44ab40a066eeecf23ab03dc597810a4920b428bd7cba22fe90638a6d0219d409",
+      "bytes": 2583972
+    },
+    "qa/scientific-reports/manuscript-inline-build.txt": {
+      "before_sha256": "5dfa30dc429a6ebd5f829c6c4050e58fa91fa95f558739facb4707d493c89f05",
+      "after_sha256": "4f3c12aef91bdb97dc38c7021411f0f628239df73c1c4fcfc69618a87146c153",
+      "bytes": 17194
+    },
+    "qa/scientific-reports/supplement-build.txt": {
+      "before_sha256": "43084cfc5cccda837d4e4ca4c6eefc12f4253e34d06018285acd21d965bc7cff",
+      "after_sha256": "43084cfc5cccda837d4e4ca4c6eefc12f4253e34d06018285acd21d965bc7cff",
+      "bytes": 369
+    },
+    "qa/scientific-reports/word-count-discussion.tex": {
+      "before_sha256": "02dfba47dc9bfc5026b0102e553d178ced63b739441ff0ade421cae7ec5472a4",
+      "after_sha256": "02dfba47dc9bfc5026b0102e553d178ced63b739441ff0ade421cae7ec5472a4",
+      "bytes": 6654
+    },
+    "qa/scientific-reports/word-count-results.tex": {
+      "before_sha256": "6209faff9866e031ae3fa2295364278d731377dd74f95eceafac7d0ed73b142e",
+      "after_sha256": "fc62d27d1df4f9dd6985ecb8b4e94ce187112ee9dadd7facb9477aa599012687",
+      "bytes": 16898
+    },
+    "qa/scientific-reports/word-count-introduction.tex": {
+      "before_sha256": "1ad6ad6d698e0c78c028f70c101cc22b42f969e5deee11ddd578006e505f2e6b",
+      "after_sha256": "1ad6ad6d698e0c78c028f70c101cc22b42f969e5deee11ddd578006e505f2e6b",
+      "bytes": 5498
+    },
+    "qa/scientific-reports/word-count-results.txt": {
+      "before_sha256": "fc06d92d572f7f1abf8b37bfd602aa15989e353a20e38c91b09b35d620675cdd",
+      "after_sha256": "87d540df6e011baa0db333f3d73d6d210cff7366b058557c28c46d6b56aec38f",
+      "bytes": 215
+    },
+    "qa/scientific-reports/format-check.json": {
+      "before_sha256": "2dd2a6d8798073222048ff0a13b86b58c16c51ab0e0250f67b91e3fd53230b5d",
+      "after_sha256": "2faaee8a79ae2dc414dfbe254fe54725b01c74be96f4035656556eb26ad46c42",
+      "bytes": 4724
+    },
+    "qa/scientific-reports/manuscript-build.txt": {
+      "before_sha256": "ceffac39ad2128b3ed3db5b5b1753357cee9f41706e38e3d89c86a1e7718f070",
+      "after_sha256": "620f7bafb74507b97c059d79adf86880ea2447c7f7cd5687030226dde28d90f1",
+      "bytes": 16969
+    },
+    "qa/scientific-reports/word-count-discussion.txt": {
+      "before_sha256": "4ccb85769d26183a51177efc3b153d9d8a9b3259ec7c3e6adb40c6c13293d845",
+      "after_sha256": "4ccb85769d26183a51177efc3b153d9d8a9b3259ec7c3e6adb40c6c13293d845",
+      "bytes": 217
+    },
+    "qa/scientific-reports/word-count-introduction.txt": {
+      "before_sha256": "6d0f0b487b8c19d41f07cc41989bc8bedbeb9a2970d70e7a0f9914774d65e423",
+      "after_sha256": "6d0f0b487b8c19d41f07cc41989bc8bedbeb9a2970d70e7a0f9914774d65e423",
+      "bytes": 219
+    }
+  },
+  "superseded_archive_sha256": "236eaa0e4ea7acad60881ae2f90c027e11e6221994425c21b9b253628f6a4a01",
+  "superseded_archive_and_receipts": "external releases/tessera/superseded-236eaa0e4ea7acad/",
+  "model_runtime": {
+    "requested": {
+      "model": "inherited from full-history leader fork",
+      "reasoning_effort": "inherited from full-history leader fork",
+      "explicit_override": false
+    },
+    "runtime_reported": {
+      "member": {
+        "model": "gpt-6.1-sol",
+        "reasoning_effort": "max"
+      },
+      "leader": {
+        "model": "gpt-6.1-sol",
+        "reasoning_effort": "max"
+      }
+    },
+    "source": "local session turn_context metadata; requested settings are not runtime proof"
+  },
+  "protected_files": {
+    "status": "passed",
+    "count": 1368,
+    "categories": {
+      "data/BCC_PatientA": 3,
+      "data/BCC_PatientB": 3,
+      "data/BCC_PatientC": 3,
+      "data/BCC_PatientD": 3,
+      "data/Breast_Visium": 3,
+      "data/Colorectal_TVA232": 3,
+      "data/MIBI": 3,
+      "data/NSCLC_Lung12": 3,
+      "data/NSCLC_Lung13": 3,
+      "data/NSCLC_Lung5_Rep2": 3,
+      "data/NSCLC_Lung6": 3,
+      "data/NSCLC_Lung9_Rep1": 3,
+      "data/OpenST_HNSCC26": 3,
+      "data/index.json": 1,
+      "results/BCC_PatientA": 55,
+      "results/BCC_PatientB": 55,
+      "results/BCC_PatientC": 55,
+      "results/BCC_PatientD": 55,
+      "results/Breast_Visium": 55,
+      "results/Colorectal_TVA232": 55,
+      "results/MIBI": 55,
+      "results/NSCLC_Lung12": 55,
+      "results/NSCLC_Lung13": 55,
+      "results/NSCLC_Lung5_Rep2": 55,
+      "results/NSCLC_Lung6": 55,
+      "results/NSCLC_Lung9_Rep1": 55,
+      "results/OpenST_HNSCC26": 55,
+      "results/followup-20261010": 40,
+      "results/run-lock.json": 1,
+      "results/transfer": 126,
+      "source/manuscript": 175,
+      "source/scripts": 29,
+      "source/src": 21,
+      "source/tests": 8,
+      "validation-extension/.gitignore": 1,
+      "validation-extension/PROTOCOL_EXTENSION.md": 1,
+      "validation-extension/RESULT_EXTENSION.md": 1,
+      "validation-extension/replicates": 11,
+      "validation-extension/results": 13,
+      "validation-extension/run_extension.py": 1,
+      "validation-external/.gitignore": 1,
+      "validation-external/ENHANCED_PROTOCOL.md": 1,
+      "validation-external/ENHANCED_RESULT.md": 1,
+      "validation-external/PROTOCOL.md": 1,
+      "validation-external/VALIDATION_RESULT.md": 1,
+      "validation-external/results": 11,
+      "validation-external/run_enhanced_targets.py": 1,
+      "validation-external/run_her2st_validation.py": 1,
+      "validation-independent-crc/ANNOTATION_QC_PROTOCOL.lock.json": 1,
+      "validation-independent-crc/ANNOTATION_QC_PROTOCOL.md": 1,
+      "validation-independent-crc/PROTOCOL.md": 1,
+      "validation-independent-crc/RESULTS.md": 1,
+      "validation-independent-crc/analyze_annotation_qc.py": 1,
+      "validation-independent-crc/annotation-qc": 45,
+      "validation-independent-crc/cohort-audit.json": 1,
+      "validation-independent-crc/download-plan.json": 1,
+      "validation-independent-crc/fetch-failure.json": 1,
+      "validation-independent-crc/fetch-receipt-attempt1.json": 1,
+      "validation-independent-crc/fetch-receipt.json": 1,
+      "validation-independent-crc/fetch_pilot.py": 1,
+      "validation-independent-crc/figures": 6,
+      "validation-independent-crc/inputs": 9,
+      "validation-independent-crc/integration-backup.json": 1,
+      "validation-independent-crc/integration-manifest.json": 1,
+      "validation-independent-crc/protected-before.json": 1,
+      "validation-independent-crc/protocol-lock.json": 1,
+      "validation-independent-crc/regression-tests.xml": 1,
+      "validation-independent-crc/render_pilot.py": 1,
+      "validation-independent-crc/results": 82,
+      "validation-independent-crc/run_pilot.py": 1,
+      "validation-independent-crc/run_singlethread.py": 1,
+      "validation-independent-crc/runtime-decision.json": 1,
+      "validation-independent-crc/source-record.json": 1,
+      "validation-independent-crc/verification-before-integration.json": 1,
+      "validation-independent-crc/verification-final.json": 1,
+      "validation-independent-crc/verify_pilot.py": 1,
+      "validation-independent-crc/visual-review.json": 1
+    },
+    "scope": "Every existing data/result, validation, source code/test, numerical ledger, native/journal figure and figure-QA payload under the protected prefixes is byte-identical to the superseded236eaa archive."
+  },
+  "configuration_sha256": "b282233dc2c6aec56f08cab8ced048e53d9b00e78fd7639d4a4d364d17093887",
+  "generator_sha256": "bafc55ca78fd56e6f16274f15661d22250094095d0fd73ae2a6498401cfc378a",
+  "qa_sha256": {
+    "qa/figure_methods_audit.json": "d410277f550f7dfe738a3605400da8f5a1913ae39d9487aa15c007d328bf3371",
+    "qa/manuscript_structure_audit.json": "ad50dd710be7f6021d33be4c231c5fd07eba2d9eea0a33c542f011df7b925b36",
+    "qa/document_qa_manifest.json": "e85152c799ab0b7affb487ab5f7fc3499448aa6fc26a7a4acec1294d3aa72b76",
+    "qa/scientific-reports/format-check.json": "2faaee8a79ae2dc414dfbe254fe54725b01c74be96f4035656556eb26ad46c42",
+    "qa/resumed-document-review/render-manifest.json": "7a9af4e87a656563b7eece6c458182db5164ec3601e656b8e7b3bf09f6c29907",
+    "qa/resumed-document-review/visual-review.json": "18223ad79e590bfa847acfbd562b1768c34feb4338347148f9c46564f1d08307",
+    "journal-style-report.json": "01326abcf9db5e54a7881742aa5d0df7b517a59a7fbdce340170d483eebfeabd"
+  },
+  "visual_review_status": "PASS"
+}

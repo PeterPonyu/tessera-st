@@ -1,0 +1,69 @@
+{
+  "scope": "Protected scientific baseline; allowlisted document/build/citation-test edits only",
+  "backup": "/home/zeyufu/Desktop/singlecell-genomics-research/research/revisions/tessera-20261008-expanded/backups/before-crc-pilot-integration-20261011-w4frsxan",
+  "protected_manifest_sha256": "039e33977ebba1b7f12f4ce9cb78f4ecd897ead21c25f71b8278048e7539a025",
+  "changes": {
+    "EDITABLE_SOURCE_README.md": {
+      "before_sha256": "fab2bb6d8c1ad7a932adc09327a2ecf0ff278312a27aa2f0315324b6311de79b",
+      "after_sha256": "cc8e80788448e04623995a93f8d318ba52b53563716504299a2f3ddbcaa188cd"
+    },
+    "FIGURE_STYLE_AND_VALIDATION_PLAN.md": {
+      "before_sha256": "3b4dbc62020eca3236bf7cca36963b8b4ee6d9ffa63042801807f3902059f683",
+      "after_sha256": "56403c4b38c87f3858ecc3fd4394a5ac06b103803ced1b2c97c45636169bdbc6"
+    },
+    "FOLLOWUP_PROVENANCE.md": {
+      "before_sha256": "b932ebb53249d5d27e50ca0f92c783a4600c1002de1f3e241eae537a5e726fee",
+      "after_sha256": "4370b3ae6c2e26aaaebde52ae233da240e5a6c4445d997b1356515b18376845e"
+    },
+    "REVISION_REPORT.md": {
+      "before_sha256": "995539515a8b32e05353f872f7af565d469f8dc36ca85fa1b9303d13e47432bb",
+      "after_sha256": "b754cb79359171432078847a81e2e3b6416d12f024738adc600c2addbf0fc84e"
+    },
+    "output/pdf/tessera-revised-manuscript.pdf": {
+      "before_sha256": "7ea7d285e808423ec2e41b8112af7626545164e2ece19128d988c3a0cf84d9b2",
+      "after_sha256": "bd829782bf1c0126b4cec75e45e82e0dcf54adaec6ce34d6c7e187f97b2c2b31"
+    },
+    "output/pdf/tessera-supporting-information.pdf": {
+      "before_sha256": "1097731c91c1a3f146edbb9f9adb81dfa334a39f2feb0406cb5def550420020b",
+      "after_sha256": "8cf0d7fff5f1050464a6cf03b41eaa8e40bf6415f64c5a238e5568f3d4504ecc"
+    },
+    "source/manuscript/ledgers/reference_audit.json": {
+      "before_sha256": "235e25899e6cc142bd965870074a9c0bd3afaf39e04c6f2d5e45220fd17da067",
+      "after_sha256": "a6690def1ea1090e3db0406be8a86500c7721a6241b4dab802033a4731761e81"
+    },
+    "source/manuscript/ledgers/reference_metadata.json": {
+      "before_sha256": "6e842f79256bab7ab7a08c31942bedd59457b5478de858cb14cecc318e1aef20",
+      "after_sha256": "8b6ab9e70693b93f6fc3154f3f134a2c27b21367164241485cfac03cd3d2ae5a"
+    },
+    "source/manuscript/paper.tex": {
+      "before_sha256": "029a130e24212a27ec49a38af6e8e7d18725078dbe6f678c2d1cc584172823a3",
+      "after_sha256": "f82d999777c18b630312caa319b7de05bac9a133d85cea19b50340b4822f3687"
+    },
+    "source/manuscript/supporting.tex": {
+      "before_sha256": "a235597704a32c7e39a20673a1035f0f02624d086370adbf04f10c5a9463fa41",
+      "after_sha256": "709843d926fd86ba17762e60c332d895f3e15df517926c0d37e5fbad8bbd2673"
+    },
+    "source/scripts/build_revision.py": {
+      "before_sha256": "007a7ef0f4fef2987073d95312f7b776387569c25806eb3074e4f6017cda98d9",
+      "after_sha256": "a218ba6637bfbaabb670749af0e943602ceb14b26cc047b92b226f41ea67e76c"
+    },
+    "source/scripts/package_revision.py": {
+      "before_sha256": "bc759ea8edea188c039d03dd36164dced4a21aedd0f953227cce48dd8f211a13",
+      "after_sha256": "38182b7bbadb05316bcb93be55355ea383f8295f436956f465e3d2f128aa808f"
+    },
+    "source/scripts/reference_metadata.py": {
+      "before_sha256": "69b0f387eb238885dc09f0b259343c706520456730b5cae9dcb01815deea3857",
+      "after_sha256": "4435e86eda6801fb3ed0750ef1ad98e135b1bc9e0875fdf0118f3fa27d2a7f6d"
+    },
+    "source/scripts/write_visual_review.py": {
+      "before_sha256": "c35886478ba32ab70723d1513a6a83d88f5db4566b3854db76c85b433b4200af",
+      "after_sha256": "a8d5ea425977f4680e94c801b11178e4516d73371c126874a638a391051d9a38"
+    },
+    "source/tests/test_presentation.py": {
+      "before_sha256": "3b43fd3e4e90e9cfd52b7005588e35ce5cfbd5ab3c0403910c0b6d45e8fb973a",
+      "after_sha256": "ba6f18da04cb82a2450868a60f3bfd3f4e6c5149cb85cdd14c5981c6e1598e1e"
+    }
+  },
+  "unchanged_files": 603,
+  "total_protected_files": 618
+}

@@ -1,0 +1,81 @@
+{
+  "status": "saved-result consistency verified; historical producer sources available",
+  "historical_run_receipts": {
+    "scale": {
+      "recorded_producer_sha256": "9261ceb03afebf4735769bd28bd5672f4093e278e724505a9c2bcf48e41a2915",
+      "current_runner_sha256": "c96d933da9b71ec039df0c7dbfe1eaf5c7f5ec1c9d07918858300590b19aa538",
+      "current_runner_matches": false,
+      "historical_source_available": true,
+      "historical_source_path": "source/provenance/followup-runners/9261ceb03afebf4735769bd28bd5672f4093e278e724505a9c2bcf48e41a2915/run_followup.py"
+    },
+    "rescore": {
+      "recorded_producer_sha256": "9261ceb03afebf4735769bd28bd5672f4093e278e724505a9c2bcf48e41a2915",
+      "current_runner_sha256": "c96d933da9b71ec039df0c7dbfe1eaf5c7f5ec1c9d07918858300590b19aa538",
+      "current_runner_matches": false,
+      "historical_source_available": true,
+      "historical_source_path": "source/provenance/followup-runners/9261ceb03afebf4735769bd28bd5672f4093e278e724505a9c2bcf48e41a2915/run_followup.py"
+    },
+    "nulls": {
+      "recorded_producer_sha256": "9261ceb03afebf4735769bd28bd5672f4093e278e724505a9c2bcf48e41a2915",
+      "current_runner_sha256": "c96d933da9b71ec039df0c7dbfe1eaf5c7f5ec1c9d07918858300590b19aa538",
+      "current_runner_matches": false,
+      "historical_source_available": true,
+      "historical_source_path": "source/provenance/followup-runners/9261ceb03afebf4735769bd28bd5672f4093e278e724505a9c2bcf48e41a2915/run_followup.py"
+    },
+    "whole": {
+      "recorded_producer_sha256": "c96d933da9b71ec039df0c7dbfe1eaf5c7f5ec1c9d07918858300590b19aa538",
+      "current_runner_sha256": "c96d933da9b71ec039df0c7dbfe1eaf5c7f5ec1c9d07918858300590b19aa538",
+      "current_runner_matches": true,
+      "historical_source_available": true,
+      "historical_source_path": "source/scripts/run_followup.py"
+    },
+    "transfer": {
+      "recorded_producer_sha256": "d1d90c72da262b51283ad95f64fbaab1676d452063e68b5e1b8d29acf0d53a6b",
+      "current_runner_sha256": "c96d933da9b71ec039df0c7dbfe1eaf5c7f5ec1c9d07918858300590b19aa538",
+      "current_runner_matches": false,
+      "historical_source_available": true,
+      "historical_source_path": "source/provenance/followup-runners/d1d90c72da262b51283ad95f64fbaab1676d452063e68b5e1b8d29acf0d53a6b/run_followup.py"
+    }
+  },
+  "unrecovered_historical_modes": [],
+  "gate_diagnostic_producer": {
+    "sha256": "d3c2e7205f7e74fc27ad414cabf4e77ddfdd81d5584b0faef01fca5582c74d42",
+    "path": "source/provenance/followup-runners/d3c2e7205f7e74fc27ad414cabf4e77ddfdd81d5584b0faef01fca5582c74d42/audit_followup.py",
+    "original_receipt_preserved": true
+  },
+  "counts": {
+    "scale_records": 1170,
+    "spatial_configurations_per_object": 29,
+    "rescore_records": 234,
+    "null_records": 39,
+    "whole_records": 108,
+    "transfer_records": 20
+  },
+  "selection_scope": {
+    "bounded": "patient-excluded nested configuration selection",
+    "whole": "same patients; fixed cohort-modal controls from bounded analysis, sensitivity only",
+    "transfer": "k=200 informed by the lung bounded analysis; descriptive control, not fold-nested tuning"
+  },
+  "current_output_sha256": {
+    "gate_baseline.csv": "fd8cd8d3700066ee29430e61b4367e6aaa428d00be9c30da3a34c3af3e3b3625",
+    "gate_weight_diagnostics-20261011.csv": "f3467b7ef994532a03e335ce8bbe149656bb8cd9c83de25917f933585e302b60",
+    "geometry_nulls.csv": "84c7960d82eefd8b2607579b4fe493c455d6d992c363fd2aac2fb28cc24ee9d9",
+    "geometry_nulls_summary.json": "5ccbb711fb5f68959a2113eb031e1d3d07355e9aa163d2ef82cc2cdd9633d458",
+    "rescore.csv": "8ec80234ca00bf60d36eb1adf07cc6033336db6eb54e20b969a6dc6d2d2700c5",
+    "rescore_summary.json": "958aac61df9fad520b88ab79e9b9a14baa8e1e6ebe9f08952e09109199028621",
+    "run-gate-weights-20261011.json": "56a1cab3b14b59d862cd4c1c5f3de5832652442f4c1ee04c79fe99797aa64670",
+    "run-nulls.json": "863e17fd5c44a176340845498fa8165c7cdfeec12df4beefc5d129964b02e830",
+    "run-rescore.json": "da86f98c3807b1cd56fd2919221078ba6f61cf7267f0930fd10a0f8e5d9f3399",
+    "run-scale.json": "39933b094250292a1b5673425fd63fa05e4f907aea51609d072eb1e1bd3bba3a",
+    "run-transfer.json": "41fa7f5be5f20d7bee5d953a2393d8f37f9712a61dd3f498b0a5e849581868dd",
+    "run-whole.json": "8753e02fc95fed8128a2ee2d7602604aa69f64f16211c994a9572a57aa97910e",
+    "scale_controls.csv": "7aa646b5b7b86fe6acc1d4a535901a11512f8618a11103e0a5b557fc083549e7",
+    "scale_controls_summary.json": "5da210276f7f9d205b1f7317eef4f408a2b64cc14cc41c42b5ca204d1bf9641c",
+    "transfer_neighbor_mean.csv": "8e88650396e1e42649766e385d4e6757c3d78eaed66ccd18c806e64ca5295714",
+    "transfer_neighbor_mean_summary.json": "9151efa682804020486bc7979bc13c3d9c584e3ea7190ae6ea37c53f96cde55e",
+    "whole_sections.csv": "a51d713f0f62dd5925194ec4ff42ecd71cddc49814469e8294da1fdeb38c396f",
+    "whole_sections_summary.json": "126aee1dc16c7e961b0487e595e6557c29d4e51f50282ac03df0aaadc4fdacbf"
+  },
+  "audit_source_sha256": "e2eeb622188ce6aa1272d746d9a405046862d267d8a842ee3ac47499d7b83e2b",
+  "caveat": "Saved-result bindings are retrospective, not a rerun. Recovered sources match original producer hashes; historical receipts and saved gate diagnostics are unchanged."
+}

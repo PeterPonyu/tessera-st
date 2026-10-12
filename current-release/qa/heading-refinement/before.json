@@ -1,0 +1,103 @@
+{
+  "created_utc": "2026-10-12T04:05:08.975139+00:00",
+  "files": {
+    "source/scripts/render_figures.py": {
+      "sha256": "c1b266d7a223ecfd5739ba94bafeed333461084bee11da9422382e5de30e60f0",
+      "bytes": 48361
+    },
+    "source/scripts/render_external_figures.py": {
+      "sha256": "933b1fb4d77bc890fa0ebfe274d34bd28cb5b65bbc3addae5a43ef4ec5c56b9c",
+      "bytes": 17039
+    },
+    "source/manuscript/figures/figure04-ablations.pdf": {
+      "sha256": "204fbf67bbed6fb50404ee7f6da6d801ca00f39bcba46218556db4adcd899098",
+      "bytes": 92335
+    },
+    "source/manuscript/figures/figure15-external-cohort.pdf": {
+      "sha256": "daff2d916c4181b7de48a4bd13f1aa17ff80a9ea7b75107919a0d2ea79ca76e0",
+      "bytes": 92368
+    },
+    "source/manuscript/journal-figures/figure04-ablations.pdf": {
+      "sha256": "9f450ea2208aaf6f93ecc0623bf8d79fd52d254f57300d42da59c90d74bfd307",
+      "bytes": 124723
+    },
+    "source/manuscript/journal-figures/figure15-external-cohort.pdf": {
+      "sha256": "dde061cddf2847f25105a7ddec2f47e863af53e54f5f1e9b7de563df020aa5d0",
+      "bytes": 125527
+    },
+    "journal-style-report.json": {
+      "sha256": "85c5e9843b07acb278d16a38ab469706262e863eb017c3cac66c2a82acc52d9a",
+      "bytes": 99179
+    },
+    "qa/statistical_figure_style_audit.json": {
+      "sha256": "437501648764e4202d6a9f59d2defc458674e895ea7acbecd6407c523d45eed9",
+      "bytes": 1562
+    },
+    "qa/scientific-reports/format-check.json": {
+      "sha256": "3d17cb34125809d865b938cab80c9c53d4d6dbb28a125db6fcb886c7d15a5731",
+      "bytes": 4724
+    },
+    "output/scientific-reports/scientific-reports-supplement.pdf": {
+      "sha256": "15a15e3738733668eb36ea4fded6a73ad95b403a59cf229f62341add5e24bb0a",
+      "bytes": 8180109
+    },
+    "output/scientific-reports/scientific-reports-manuscript.pdf": {
+      "sha256": "dd424f2d78a2fafc77dd77c0383ec6ae6ac163da95aea27901e9cf2fc16c3b29",
+      "bytes": 2582591
+    },
+    "output/scientific-reports/scientific-reports-manuscript-inline.pdf": {
+      "sha256": "472356e26aed49a8aabe3e109276e37ca11633f459cd019a1f70581868213569",
+      "bytes": 2583972
+    }
+  },
+  "protected_prose_caption_and_ledger_sha256": {
+    "source/manuscript/ledgers/reference_audit.json": "235e25899e6cc142bd965870074a9c0bd3afaf39e04c6f2d5e45220fd17da067",
+    "source/manuscript/ledgers/common_k_rows.tex": "128b5ec7dd3d704255b0c142914133e836c6797185492313d17b4bc5633e20bb",
+    "source/manuscript/ledgers/result_rows.tex": "6155d071d1d5347ed3df5e19bd844a5930bc7aa9869668b3649034379792b520",
+    "source/manuscript/ledgers/replicates.csv": "e2f7bb05ceb88128b587a3dea644b299217e8fb5c18e8007a74f01b5b6955bea",
+    "source/manuscript/ledgers/seed_stability.csv": "d56133f221c10fad6ce5ac5c822eab0226ef8eacd17660f1f40fc543a8f1b0e5",
+    "source/manuscript/ledgers/figure_manifest.json": "6607d9ffb80329cc603d285b8808731f67926f54ef8475dadce3eff194fb58b0",
+    "source/manuscript/ledgers/manuscript_numbers.json": "dfbdd72d5934b8ab1bfffd47777e24dd3a5c73769957a5905bcca621b031fc13",
+    "source/manuscript/ledgers/source_dictionary.json": "b8533838c4b186ae61457c8a4933623365c4d0422ab4ba4d5181c71592183293",
+    "source/manuscript/ledgers/followup_numbers.json": "5c3d4a6dbdb0fc00dd576783f81d0f023f284eec65e409f6fa1b558f38e4f4c7",
+    "source/manuscript/ledgers/histology_roi.json": "542f814a2474597b2f0fd69f603e35c3595e5c01404470a008b0040d1e5ef8b0",
+    "source/manuscript/ledgers/gate_weight_rows.tex": "320e5a4b057b50f1c8f620656a22bec7397019885e1cb32da557528c179967ed",
+    "source/manuscript/ledgers/reference_metadata.json": "6e842f79256bab7ab7a08c31942bedd59457b5478de858cb14cecc318e1aef20",
+    "source/manuscript/ledgers/landscape.csv": "32255e59a9987a5a73ded48ffadb271da532fe746eccad718183e78ac57fcf12",
+    "source/manuscript/ledgers/external_numbers.json": "cadcaae554b2e4bd3a79fa31726fabdaffe99ef826cb295824a5edcc3f9f967b",
+    "source/manuscript/ledgers/nmi_rows_2.tex": "1e7ab3286be23933bb817b21256798d486c02edaecddf6e0999c7046ff5ef0ca",
+    "source/manuscript/ledgers/ari_rows_1.tex": "6973bf33034a9284de03f30bae94d48fe968daeb4d514057d4eb453504cea134",
+    "source/manuscript/ledgers/breadth_rows.tex": "7579e0f1a27a72f333269d7d1566f29e9c7f2624a0343dc95f40b5d0ab9b34f4",
+    "source/manuscript/ledgers/external_contrast_rows.tex": "69bd6eeae9be0f1d8015db2657db443e2d6d464bfcb75dde0461b80f613d58a5",
+    "source/manuscript/ledgers/input_rows.tex": "6c221883f5dd79ed9af5b3f488a1b955b337e0426656b71cd8739f76055efe14",
+    "source/manuscript/ledgers/numbers.tex": "fde26ef9e39c56c9a49081d3cdefef94b7236e8ab5d650b5c54c931b6678f0bc",
+    "source/manuscript/ledgers/external_seam_rows.tex": "1a1270e5aced2636497988bac4b99c10e63bd2c578b2eff57f1eaacdc5b449f2",
+    "source/manuscript/ledgers/figure_catalog.json": "96e638188b63683431cb177e6c2c3bd32fc26c9dad70ac4514315b20b4f79d9e",
+    "source/manuscript/ledgers/external_numbers.tex": "a87ec29eb197d6bc1ec339849bb9c2d35f3fb25b95c9ff05e4a229b406f29129",
+    "source/manuscript/ledgers/external_rows.tex": "2444bd269448b502a83379fc89126eb936c353803cabe5ecdea2dff36924039b",
+    "source/manuscript/ledgers/crc_numbers.tex": "65e0bf1ac32b48e2c8a4df1a71f1cc85959c275451c2fa4e686f041c5de204b6",
+    "source/manuscript/ledgers/all_transfer_scores.csv": "9379b8448968d4d1929a05f19de2c4c4d750a73b121c46b552fc1a1ce0f44046",
+    "source/manuscript/ledgers/external_composition_rows.tex": "a7f09c7633d4ff507b0cc3516829aea23770eeac5afb912d8ff890102ac4a54e",
+    "source/manuscript/ledgers/ari_rows_2.tex": "71f9b8694b45b5303af67707c0855c7314efba030d73681140127ca6f446771c",
+    "source/manuscript/ledgers/crc_raw_rows.tex": "3c2f5dfe6b546eb82fa325a2a3b8a3061a1bb9f5385734b205650059c0fdfcbd",
+    "source/manuscript/ledgers/crc_rows.tex": "a7edb7d88436faa18863b4f0ad7f95b5d906e7acb4ac22cb2fc4a47cbff0d3d8",
+    "source/manuscript/ledgers/primary_summary.csv": "b8337ed16d6d024ee86cfcece05dcbc775b1646e46c063be6fbf3bcd17103f03",
+    "source/manuscript/ledgers/transfer_rows.tex": "e84865b79220e8079dcb0c20a727ae07fa612728d6904e25e8be53fa0e0ad1de",
+    "source/manuscript/ledgers/followup_rows.tex": "0835491ed907ad5385d052726e388186fe78cfafb0c5b44266e836401de69b1c",
+    "source/manuscript/ledgers/crc_numbers.json": "686fd2be46a6360772384ddaede5d4afc35c693bccd339af7c74451972409879",
+    "source/manuscript/ledgers/nmi_rows_1.tex": "3df1f678055e45032642975fb44a08f3fc3c4996af5f0675794270f7f07ad7a3",
+    "source/manuscript/ledgers/all_primary_scores.csv": "711c6e17a84c201b06aaed6d4abf5689b9dc8282d6d45a8153e63dfc10d94b01",
+    "source/manuscript/ledgers/followup_numbers.tex": "3d8db4d33d463763e0da7a85df5ac408afefad9d3e112daa2690d3eb4ca99932",
+    "source/manuscript/ledgers/replicate_rows.tex": "2cc741e2fae2ab6c26f7067fda48924291d587c3457f23c146461de55bfdd30d",
+    "source/manuscript/ledgers/gate_rows.tex": "cd493cead60c250da23e832dba78bed60bedf6294e6877883740b191c4f12a88",
+    "source/manuscript/ledgers/patient_contrasts.json": "33d98a4a96e07af9dd8cd82d1864fc49258639d5c1140a61c578a3b5bd08389d",
+    "source/manuscript/paper.tex": "010deef1aec723171a68e16721a4ab470914f2490a39daaa57eab21d8c3c22e1",
+    "source/manuscript/supporting.tex": "94af5855130b5aafde71db351678b1ca22b08eb110f0a2436a2e0ad81c166564",
+    "source/manuscript/paper_srep.tex": "a6b994b981a3c235efad58c11f9194bfb0419c935ff22f2640c12d676041ea2a",
+    "source/manuscript/paper_srep_inline.tex": "cf7ecbc87e680daa80f7c9e34082506516a70e816150fbbf2c989e01127b8e80",
+    "source/manuscript/supporting_srep.tex": "18ca32c211f89b2d7fb968e9708761fefe11e62e23a6bd7e98ab7767d080189a",
+    "source/manuscript/atlas.tex": "4d8bd0b07a42575056ccac17549d10a758b3420d4a2d4500c97745ce8844f206",
+    "PROTOCOL.md": "3a01b34835070c953b0e0be115c76558bd0e500f578042302da99dd797801ee2"
+  },
+  "archive_sha256": "a360f1de3d1a6b7d52150c83377b81f2637ce645a5013c1a9e1764c1e0229467"
+}

@@ -1,0 +1,87 @@
+{
+  "object": "MIBI",
+  "cohort": "MIBI",
+  "seed": 3,
+  "arm": "SelfOnly",
+  "n_cells": 3309,
+  "K": 8,
+  "input_sha256": "d3d3d19935a6f0d9a8ff97f3bd6ffa7e95e5f2ec1ab8d8794c886ad187e34102",
+  "prediction_sha256": "e0e51f60bc4dbfb18272f824f31589a5310357f430a21ea00864799d610511be",
+  "fit_seconds": 0.22434188998886384,
+  "total_seconds": 0.27462619300058577,
+  "gpu_peak_allocated_bytes": 39326720,
+  "trainable_parameters": 25305,
+  "history": [
+    {
+      "epoch": 0,
+      "loss": 1.0456777811050415,
+      "recon": 1.0456777811050415
+    },
+    {
+      "epoch": 12,
+      "loss": 0.879601240158081,
+      "recon": 0.879601240158081
+    },
+    {
+      "epoch": 24,
+      "loss": 0.6670346260070801,
+      "recon": 0.6670346260070801
+    },
+    {
+      "epoch": 36,
+      "loss": 0.4601180851459503,
+      "recon": 0.4601180851459503
+    },
+    {
+      "epoch": 48,
+      "loss": 0.36712417006492615,
+      "recon": 0.36712417006492615
+    },
+    {
+      "epoch": 60,
+      "loss": 0.31188511848449707,
+      "recon": 0.31188511848449707
+    },
+    {
+      "epoch": 72,
+      "loss": 0.27131959795951843,
+      "recon": 0.27131959795951843
+    },
+    {
+      "epoch": 84,
+      "loss": 0.24068573117256165,
+      "recon": 0.24068573117256165
+    },
+    {
+      "epoch": 96,
+      "loss": 0.21711952984333038,
+      "recon": 0.21711952984333038
+    },
+    {
+      "epoch": 108,
+      "loss": 0.1962752342224121,
+      "recon": 0.1962752342224121
+    },
+    {
+      "epoch": 119,
+      "loss": 0.17972032725811005,
+      "recon": 0.17972032725811005
+    }
+  ],
+  "ablation": {
+    "edge_gating": false,
+    "multi_scale": true,
+    "boundary_contrastive": false,
+    "calibrated_uncertainty": false
+  },
+  "n_edges": 3309,
+  "cross_field_edges": 0,
+  "self_edges": 3309,
+  "scores": {
+    "ari": 0.21332764629871814,
+    "nmi": 0.32720017320220873,
+    "reference_edge_homogeneity": 1.0,
+    "predicted_edge_homogeneity": 1.0,
+    "gate_seam_auroc": null
+  }
+}

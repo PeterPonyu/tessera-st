@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "byte_exact_saved_numerical_and_input_files": 1058,
+  "additional_external_result_and_retained_partition_files_byte_exact": 35,
+  "scope": "All retained primary/follow-up/transfer data/results and CRC inputs/predictions/annotation-QC files in the original evidence manifest, plus external/extension results and retained partitions. Authorized document/figure/metadata replacements are separate.",
+  "refreshed_after_heading_changes_utc": "2026-10-12T04:15:14.871866+00:00",
+  "numerical_reference_fixture_sha256": "1808f3969d70d2de7438c303943aea2ab58b902394059df1d51fc62199095583",
+  "model_runtime": {
+    "requested": {
+      "model": "inherited from full-history leader fork",
+      "reasoning_effort": "inherited from full-history leader fork",
+      "explicit_override": false
+    },
+    "runtime_reported": {
+      "member": {
+        "model": "gpt-6.1-sol",
+        "reasoning_effort": "max"
+      },
+      "leader": {
+        "model": "gpt-6.1-sol",
+        "reasoning_effort": "max"
+      }
+    },
+    "source": "local session turn_context metadata; requested settings are not runtime proof"
+  },
+  "all82_test_sources_and_fixtures_byte_exact_to_superseded_release": true
+}

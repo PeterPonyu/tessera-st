@@ -1,0 +1,21 @@
+{
+  "object": "Breast_Visium",
+  "source_article": "Janesick et al. 2023; DOI 10.1038/s41467-023-43458-x",
+  "vendor": "10x Genomics",
+  "vendor_dataset": "CytAssist_FFPE_Human_Breast_Cancer",
+  "image_member": "spatial/tissue_hires_image.png",
+  "image_sha256": "5337270c72c40739899a4d05b6d4d642d536a2d10a308f644f33930a669837a8",
+  "source_archive_url": "https://cf.10xgenomics.com/samples/spatial-exp/2.0.0/CytAssist_FFPE_Human_Breast_Cancer/CytAssist_FFPE_Human_Breast_Cancer_spatial.tar.gz",
+  "visium_counts_url": "https://cf.10xgenomics.com/samples/spatial-exp/2.0.0/CytAssist_FFPE_Human_Breast_Cancer/CytAssist_FFPE_Human_Breast_Cancer_filtered_feature_bc_matrix.h5",
+  "retained_source_manifest_sha256": "d76c65e766b01aedc3823e1b14d704033629597ac0f95e34d857621a73c9a53c",
+  "source_paths_are_historical_provenance": true,
+  "image_raw_asset_included": false,
+  "image_derived_figure_assets": null,
+  "license_or_terms_in_local_source_manifest": null,
+  "rights_status": "No 10x breast H&E image/background is redistributed. Source annotations, measurements and calibration retain their source-specific terms; author software licensing does not grant additional rights in them.",
+  "shared_measurement_scope": "Visium and Xenium are separate measurements of the same FFPE breast block; co-registration and molecular category truth are not additional donors.",
+  "image_background_redistributed": false,
+  "breast_figure_type": "Author-generated spot-location/reference/PCA50/Tessera coordinate maps, without the 10x breast H&E image or background",
+  "replacement_scope": "User-authorized replacement in this new package only; immutable historical releases/original research outputs remain unchanged",
+  "historical_filename_note": "figure07-breast-histology.pdf is the retained cross-reference filename; its current content is a coordinate map rather than histology imagery."
+}

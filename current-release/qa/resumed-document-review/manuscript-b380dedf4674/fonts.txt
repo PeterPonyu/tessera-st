@@ -1,0 +1,53 @@
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+PNMYHB+TeXGyreTermesX-Regular        Type 1            Custom           yes yes yes    110  0
+PNMYHB+TeXGyreTermesX-Regular        Type 1            Custom           yes yes yes    111  0
+HGQHEO+NewTXMI                       Type 1            Builtin          yes yes yes    112  0
+ICASBO+txsys                         Type 1            Builtin          yes yes yes    113  0
+AULDVP+t1xtt                         Type 1            Builtin          yes yes yes    114  0
+KDUAQR+TeXGyreTermesX-Bold           Type 1            Custom           yes yes yes    115  0
+UYUMAM+txmiaX                        Type 1            Builtin          yes yes yes    116  0
+HIHZAX+txsym                         Type 1            Builtin          yes yes yes    167  0
+GNURSL+NewTXMI7                      Type 1            Builtin          yes yes yes    168  0
+PHVEJL+txexs                         Type 1            Builtin          yes yes yes    169  0
+KDUAQR+TeXGyreTermesX-Bold           Type 1            Custom           yes yes yes    171  0
+QAASPK+TeXGyreHeros-Regular          Type 1            Custom           yes yes yes    172  0
+XABBGU+NewTXMI5                      Type 1            Builtin          yes yes yes    189  0
+CDXIDN+TeXGyreTermesX-Italic         Type 1            Custom           yes yes yes    195  0
+VFQQFJ+Arial-BoldMT                  TrueType          WinAnsi          yes yes yes    471  0
+FGYFJY+ArialMT                       TrueType          WinAnsi          yes yes yes    472  0
+OUHZRJ+ArialMT                       CID TrueType      Identity-H       yes yes yes    473  0
+PNMYHB+TeXGyreTermesX-Regular        Type 1            Custom           yes yes yes    778  0
+PNMYHB+TeXGyreTermesX-Regular        Type 1            Custom           yes yes yes    780  0
+KDUAQR+TeXGyreTermesX-Bold           Type 1            Custom           yes yes yes    783  0
+HGQHEO+NewTXMI                       Type 1            Custom           yes yes yes    786  0
+GNURSL+NewTXMI7                      Type 1            Custom           yes yes yes    789  0
+UYUMAM+txmiaX                        Type 1            Custom           yes yes yes    792  0
+Arial Regular                        CID TrueType      Identity-H       yes no  yes    793  0
+Arial Bold                           CID TrueType      Identity-H       yes no  yes    794  0
+PNMYHB+TeXGyreTermesX-Regular        Type 1            Custom           yes yes yes    829  0
+KDUAQR+TeXGyreTermesX-Bold           Type 1            Custom           yes yes yes    831  0
+UYUMAM+txmiaX                        Type 1            Custom           yes yes yes    833  0
+Arial Regular                        CID TrueType      Identity-H       yes no  yes    834  0
+Arial Bold                           CID TrueType      Identity-H       yes no  yes    835  0
+PNMYHB+TeXGyreTermesX-Regular        Type 1            Custom           yes yes yes    865  0
+KDUAQR+TeXGyreTermesX-Bold           Type 1            Custom           yes yes yes    867  0
+Arial Regular                        CID TrueType      Identity-H       yes no  yes    868  0
+Arial Bold                           CID TrueType      Identity-H       yes no  yes    869  0
+PNMYHB+TeXGyreTermesX-Regular        Type 1            Custom           yes yes yes    930  0
+KDUAQR+TeXGyreTermesX-Bold           Type 1            Custom           yes yes yes    932  0
+GNURSL+NewTXMI7                      Type 1            Custom           yes yes yes    934  0
+UYUMAM+txmiaX                        Type 1            Custom           yes yes yes    936  0
+PNMYHB+TeXGyreTermesX-Regular        Type 1            Custom           yes yes yes    938  0
+Arial Regular                        CID TrueType      Identity-H       yes no  yes    939  0
+Arial Bold                           CID TrueType      Identity-H       yes no  yes    940  0
+PNMYHB+TeXGyreTermesX-Regular        Type 1            Custom           yes yes yes    967  0
+KDUAQR+TeXGyreTermesX-Bold           Type 1            Custom           yes yes yes    969  0
+ICASBO+txsys                         Type 1            Custom           yes yes yes    972  0
+Arial Regular                        CID TrueType      Identity-H       yes no  yes    973  0
+Arial Bold                           CID TrueType      Identity-H       yes no  yes    974  0
+PNMYHB+TeXGyreTermesX-Regular        Type 1            Custom           yes yes yes    998  0
+KDUAQR+TeXGyreTermesX-Bold           Type 1            Custom           yes yes yes   1000  0
+ICASBO+txsys                         Type 1            Custom           yes yes yes   1002  0
+Arial Regular                        CID TrueType      Identity-H       yes no  yes   1003  0
+Arial Bold                           CID TrueType      Identity-H       yes no  yes   1004  0

@@ -1,0 +1,364 @@
+{
+  "schema_version": 1,
+  "scope": "Exact historical file hashes and acquisition receipts; no new network requests. Derived primary input NPZs are included. Full raw preprocessing is distinct from saved-result verification.",
+  "acquisition": {
+    "her2st": [
+      {
+        "filename": "A1.tsv.gz",
+        "url": "https://raw.githubusercontent.com/almaan/her2st/master/data/ST-cnts/A1.tsv.gz",
+        "bytes": 1033376,
+        "sha256": "d91035e5d8a9c4ce7865e4c61446deec1a7318602d41b3220e9fcb3ce7e41fe3"
+      },
+      {
+        "filename": "A1_labeled_coordinates.tsv",
+        "url": "https://raw.githubusercontent.com/almaan/her2st/master/data/ST-pat/lbl/A1_labeled_coordinates.tsv",
+        "bytes": 22117,
+        "sha256": "23a0a68dccd54a8397ea4066994edb7110e88373d5b3bc6e35254dda9253fa5f"
+      },
+      {
+        "filename": "B1.tsv.gz",
+        "url": "https://raw.githubusercontent.com/almaan/her2st/master/data/ST-cnts/B1.tsv.gz",
+        "bytes": 657516,
+        "sha256": "97b3abf2676c596ac7dd53829780005724cab62a6f676697516006481a443f74"
+      },
+      {
+        "filename": "B1_labeled_coordinates.tsv",
+        "url": "https://raw.githubusercontent.com/almaan/her2st/master/data/ST-pat/lbl/B1_labeled_coordinates.tsv",
+        "bytes": 18510,
+        "sha256": "f7050caa71c47a4c95fcca2a7f29560d387310877b1c9e4a54f841059db837ee"
+      },
+      {
+        "filename": "C1.tsv.gz",
+        "url": "https://raw.githubusercontent.com/almaan/her2st/master/data/ST-cnts/C1.tsv.gz",
+        "bytes": 752999,
+        "sha256": "8383130eebf0f9f8186f006ed6b704149ba62303605a312a9080fa9901be9c20"
+      },
+      {
+        "filename": "C1_labeled_coordinates.tsv",
+        "url": "https://raw.githubusercontent.com/almaan/her2st/master/data/ST-pat/lbl/C1_labeled_coordinates.tsv",
+        "bytes": 11396,
+        "sha256": "41b6e1bbb1031480d969e725e739971cb39dbdb6e2b6d662d585bebacf093040"
+      },
+      {
+        "filename": "D1.tsv.gz",
+        "url": "https://raw.githubusercontent.com/almaan/her2st/master/data/ST-cnts/D1.tsv.gz",
+        "bytes": 1251370,
+        "sha256": "8fe13d29763b3f6a9e85322dae97e05c4ca42b57cef4b1077c88b9b7b6a980ac"
+      },
+      {
+        "filename": "D1_labeled_coordinates.tsv",
+        "url": "https://raw.githubusercontent.com/almaan/her2st/master/data/ST-pat/lbl/D1_labeled_coordinates.tsv",
+        "bytes": 19707,
+        "sha256": "c8bf26103d1aac42611d9c85ba3db9c596b9a80ec045ca9b246b8d14d8b3c20f"
+      },
+      {
+        "filename": "E1.tsv.gz",
+        "url": "https://raw.githubusercontent.com/almaan/her2st/master/data/ST-cnts/E1.tsv.gz",
+        "bytes": 1017499,
+        "sha256": "b2f572ea0a95d256cb172a9284e96b6d2ff236398d4934a992df85c96d11c4cc"
+      },
+      {
+        "filename": "E1_labeled_coordinates.tsv",
+        "url": "https://raw.githubusercontent.com/almaan/her2st/master/data/ST-pat/lbl/E1_labeled_coordinates.tsv",
+        "bytes": 37579,
+        "sha256": "29db60fe5b306bb982fbd2bbdd1f9c60eedf90c6ac1d56bedd3c18ed5a369829"
+      },
+      {
+        "filename": "F1.tsv.gz",
+        "url": "https://raw.githubusercontent.com/almaan/her2st/master/data/ST-cnts/F1.tsv.gz",
+        "bytes": 1778749,
+        "sha256": "187aa13f204d514851d3674dfa09b4a8d7f2676f1d40d2ef63e9e368c7cf672a"
+      },
+      {
+        "filename": "F1_labeled_coordinates.tsv",
+        "url": "https://raw.githubusercontent.com/almaan/her2st/master/data/ST-pat/lbl/F1_labeled_coordinates.tsv",
+        "bytes": 43854,
+        "sha256": "3b59970f0c6ba09d8e0fc9286ace2a295bf06d36c59684162b7a8aca0e021ec5"
+      },
+      {
+        "filename": "G1.tsv.gz",
+        "url": "https://raw.githubusercontent.com/almaan/her2st/master/data/ST-cnts/G1.tsv.gz",
+        "bytes": 852454,
+        "sha256": "396153436dfc39e199bdc01447b3f8929aef598d7064c0c24a33da00f54570ea"
+      },
+      {
+        "filename": "G2.tsv.gz",
+        "url": "https://raw.githubusercontent.com/almaan/her2st/master/data/ST-cnts/G2.tsv.gz",
+        "bytes": 954118,
+        "sha256": "9d51a5ed85bdf60069dcf51beeffba4e90e35e8630ec3b707a2453ffdd608e3b"
+      },
+      {
+        "filename": "G2_labeled_coordinates.tsv",
+        "url": "https://raw.githubusercontent.com/almaan/her2st/master/data/ST-pat/lbl/G2_labeled_coordinates.tsv",
+        "bytes": 29799,
+        "sha256": "8466275647ad125569ee94d099cc7b78c15028968ba1dd267a85a81c001a16ff"
+      },
+      {
+        "filename": "H1.tsv.gz",
+        "url": "https://raw.githubusercontent.com/almaan/her2st/master/data/ST-cnts/H1.tsv.gz",
+        "bytes": 972770,
+        "sha256": "90b391782535f38c9ab20fe8b38f44ebbfdad2201075a677a198cbef12c29b07"
+      },
+      {
+        "filename": "H1_labeled_coordinates.tsv",
+        "url": "https://raw.githubusercontent.com/almaan/her2st/master/data/ST-pat/lbl/H1_labeled_coordinates.tsv",
+        "bytes": 38594,
+        "sha256": "b65cbc99ed7a01281bc2eb87be87b902312e47ca91bc1f00ff351489b78434c3"
+      },
+      {
+        "filename": "J1_labeled_coordinates.tsv",
+        "url": "https://raw.githubusercontent.com/almaan/her2st/master/data/ST-pat/lbl/J1_labeled_coordinates.tsv",
+        "bytes": 16280,
+        "sha256": "36fa0cdccfd07ca4f77940481f893a6a8b92762bc27abd891cc246fdf2beece1"
+      }
+    ],
+    "crc": [
+      {
+        "filename": "Pathology_SpotAnnotations.zip",
+        "url": "https://zenodo.org/records/7760264/files/Pathology_SpotAnnotations.zip?download=1",
+        "bytes": 702660,
+        "sha256": "2468ad1208468277eaa7693cbaf92735e76d52207e87d534e0ac8fe77fcacb47",
+        "md5": "92882eb0db7c2cacc5077cb5fc9578fd"
+      },
+      {
+        "filename": "SN84_A120838_Rep1.zip",
+        "url": "https://zenodo.org/records/7760264/files/SN84_A120838_Rep1.zip?download=1",
+        "bytes": 53827477,
+        "sha256": "d982693f971b6eda7fa8c4c3b49afe487a8cd009cfcf5d0900db8c4d93770b10",
+        "md5": "4a185c5e1bf88995ee0c03dbb4e8b63c"
+      },
+      {
+        "filename": "SN124_A595688_Rep2.zip",
+        "url": "https://zenodo.org/records/7760264/files/SN124_A595688_Rep2.zip?download=1",
+        "bytes": 56124799,
+        "sha256": "2510c1e854126ca227dc1dee8ab8a5763658867deb0f0f1abb9354f78aefd552",
+        "md5": "808ed49a24eea7d41c575d8c238caa76"
+      },
+      {
+        "filename": "SN124_A551763_Rep2.zip",
+        "url": "https://zenodo.org/records/7760264/files/SN124_A551763_Rep2.zip?download=1",
+        "bytes": 61982650,
+        "sha256": "b884bc451ee05645e7777a1239c1a64d5416ae79dbc7010b58b843a8c4186e5e",
+        "md5": "adf0ea575a09f473fa4ceb465a6ec66e"
+      }
+    ]
+  },
+  "primary_raw_sources": [
+    {
+      "lab_relative_path": "deconv-lab/data/realgt3_benchmark/downloads/bcc_export/counts_genes_x_cells.mtx.gz",
+      "sha256": "28de59a3808c74552ca7b3b4b6b689bdd1311c0a84e6c09678de0f9dc235fdc2",
+      "bytes": 319586399,
+      "objects": [
+        "BCC_PatientA",
+        "BCC_PatientB",
+        "BCC_PatientC",
+        "BCC_PatientD"
+      ],
+      "source_identifiers": [
+        "10.5281/zenodo.14330691"
+      ]
+    },
+    {
+      "lab_relative_path": "deconv-lab/data/realgt3_benchmark/downloads/bcc_export/cells.txt",
+      "sha256": "67aa126911cd9f7017d4d580f13733accb7029d837957c85dcdc61105b5ca7cc",
+      "bytes": 5678754,
+      "objects": [
+        "BCC_PatientA",
+        "BCC_PatientB",
+        "BCC_PatientC",
+        "BCC_PatientD"
+      ],
+      "source_identifiers": [
+        "10.5281/zenodo.14330691"
+      ]
+    },
+    {
+      "lab_relative_path": "deconv-lab/data/realgt3_benchmark/downloads/bcc_export/features.txt",
+      "sha256": "5c63ba116d752085dccb8523d8f59428be90313ba1c4b262892f312e8157ff15",
+      "bytes": 37698,
+      "objects": [
+        "BCC_PatientA",
+        "BCC_PatientB",
+        "BCC_PatientC",
+        "BCC_PatientD"
+      ],
+      "source_identifiers": [
+        "10.5281/zenodo.14330691"
+      ]
+    },
+    {
+      "lab_relative_path": "deconv-lab/data/realgt3_benchmark/downloads/bcc_export/metadata.csv",
+      "sha256": "ae217bfd8ef811b4a20407aed629f6153b723ff94adab1b047f0fbd9a290ca5d",
+      "bytes": 30689853,
+      "objects": [
+        "BCC_PatientA",
+        "BCC_PatientB",
+        "BCC_PatientC",
+        "BCC_PatientD"
+      ],
+      "source_identifiers": [
+        "10.5281/zenodo.14330691"
+      ]
+    },
+    {
+      "lab_relative_path": "deconv-lab/data/realgt_benchmark/benchmark_spots_counts.h5ad",
+      "sha256": "3df52ddb886e443a1399f712a436589a3acb93ebbc600f32b13e3615adc2ba99",
+      "bytes": 4168420,
+      "objects": [
+        "Breast_Visium"
+      ],
+      "source_identifiers": [
+        "10.1038/s41467-023-43458-x"
+      ]
+    },
+    {
+      "lab_relative_path": "deconv-lab/data/realgt_benchmark/downloads/visium_spatial/spatial/tissue_hires_image.png",
+      "sha256": "5337270c72c40739899a4d05b6d4d642d536a2d10a308f644f33930a669837a8",
+      "bytes": 4626786,
+      "objects": [
+        "Breast_Visium"
+      ],
+      "source_identifiers": [
+        "10.1038/s41467-023-43458-x"
+      ]
+    },
+    {
+      "lab_relative_path": "spgd-tme/data/external/crc_cosmx/232.h5ad",
+      "sha256": "1d12810852183ceb8c1fdb8012ddfa9626c96c7539624ca04369c562191c8560",
+      "bytes": 226754597,
+      "objects": [
+        "Colorectal_TVA232"
+      ],
+      "source_identifiers": [
+        "10.5281/zenodo.15574384"
+      ]
+    },
+    {
+      "lab_relative_path": "spatial-omics-reform/data/raw/squidpy/mibitof.h5ad",
+      "sha256": "3f125c51695d78ed1c36d5485dc390ab400154d021f0c7715b89f8ee83978690",
+      "bytes": 20272897,
+      "objects": [
+        "MIBI"
+      ],
+      "source_identifiers": [
+        "10.1038/s41587-020-0651-8"
+      ]
+    },
+    {
+      "lab_relative_path": "spgd-tme/data/external/he_nsclc/cosmx_lung.zip",
+      "sha256": "04567d69367b6cebae509412f17cc0dbef45efeaa80ad2288708823747b727fd",
+      "bytes": 285358421,
+      "objects": [
+        "NSCLC_Lung12",
+        "NSCLC_Lung13",
+        "NSCLC_Lung5_Rep2",
+        "NSCLC_Lung6",
+        "NSCLC_Lung9_Rep1"
+      ],
+      "source_identifiers": [
+        "10.1038/s41587-022-01483-z",
+        "10.5281/zenodo.15487520"
+      ]
+    },
+    {
+      "lab_relative_path": "spatial-omics-reform/data/processed/openst_hnscc_sub15k/anndata.h5ad",
+      "sha256": "8faac6daec67977f775a42abd88e6ec20520030431a39757e0c197b9bdcf74de",
+      "bytes": 126240200,
+      "objects": [
+        "OpenST_HNSCC26"
+      ],
+      "source_identifiers": [
+        "GSE251926; Schott et al. 2024"
+      ]
+    },
+    {
+      "lab_relative_path": "deconv-lab/data/realgt_benchmark/truth_proportions.csv",
+      "sha256": "4c165b4852f8248c9b9630f0b8e0abab443f7b9a7d0ef3269bf896f7a3457e81",
+      "bytes": 412440,
+      "objects": [
+        "Breast_Visium"
+      ],
+      "source_identifiers": [
+        "10.1038/s41467-023-43458-x"
+      ],
+      "role": "Breast registration/preprocessing auxiliary input"
+    },
+    {
+      "lab_relative_path": "deconv-lab/data/realgt_benchmark/downloads/visium_filtered.h5",
+      "sha256": "6b00ec1f4abcafde2d2f140ea0456553dd47b8279c684a38eaa45adc09e72a4b",
+      "bytes": 33301941,
+      "objects": [
+        "Breast_Visium"
+      ],
+      "source_identifiers": [
+        "10.1038/s41467-023-43458-x"
+      ],
+      "role": "Breast registration/preprocessing auxiliary input"
+    },
+    {
+      "lab_relative_path": "deconv-lab/data/realgt_benchmark/benchmark_manifest.json",
+      "sha256": "d76c65e766b01aedc3823e1b14d704033629597ac0f95e34d857621a73c9a53c",
+      "bytes": 9634,
+      "objects": [
+        "Breast_Visium"
+      ],
+      "source_identifiers": [
+        "10.1038/s41467-023-43458-x"
+      ],
+      "role": "Breast registration/preprocessing auxiliary input"
+    },
+    {
+      "lab_relative_path": "deconv-lab/data/realgt_benchmark/downloads/visium_spatial/spatial/tissue_positions.csv",
+      "sha256": "fd8953276dad4f010ab1a876fb6eff78b7fca641e4ee1b268dd4d5e46fe33492",
+      "bytes": 189914,
+      "objects": [
+        "Breast_Visium"
+      ],
+      "source_identifiers": [
+        "10.1038/s41467-023-43458-x"
+      ],
+      "role": "Breast registration/preprocessing auxiliary input"
+    },
+    {
+      "lab_relative_path": "deconv-lab/data/realgt_benchmark/downloads/visium_spatial/spatial/scalefactors_json.json",
+      "sha256": "050ed3a08e48bd99bb9055584b455390e7aa82c6aa8d4622676808e7145142c0",
+      "bytes": 205,
+      "objects": [
+        "Breast_Visium"
+      ],
+      "source_identifiers": [
+        "10.1038/s41467-023-43458-x"
+      ],
+      "role": "Breast registration/preprocessing auxiliary input"
+    }
+  ],
+  "breadth_raw_sources": [
+    {
+      "object": "DLPFC_151673",
+      "lab_relative_path": "spatial-omics-reform/data/raw/dlpfc_maynard_2021_visium/dlpfc_maynard_2021_151673.h5ad",
+      "sha256": "46f364d590e34bfccdd90e1bc34ec485fac6e9e0cd4b6bdd395d80569a038268",
+      "label_column": "Region"
+    },
+    {
+      "object": "MERFISH_hypothalamus",
+      "lab_relative_path": "spatial-omics-reform/data/baselines/serial3d_ref/merfish_mouse_hypothalamus/merfish_0.h5ad",
+      "sha256": "1b40d0f40171aac452457e6f381333c101bf9c18954d5c3aaf34731cd5dd42e2",
+      "label_column": "domain"
+    },
+    {
+      "object": "STARmap_visual_cortex",
+      "lab_relative_path": "spatial-omics-reform/data/processed/starmap_mouse_vcortex_wang2018/anndata.h5ad",
+      "sha256": "ce93557645928cf104a6131d0d03599b01ee86ea4dce04837cf429222a01f0ce",
+      "label_column": "Region"
+    }
+  ],
+  "unavailable_historical_file": {
+    "cohort": "HER2ST",
+    "filename": "J1.tsv.gz",
+    "historical_status": "HTTP 404; section excluded before fitting; do not substitute another section"
+  },
+  "raw_preprocessing_limits": [
+    "BCC export and breast benchmark are checksum-bound derived exports rather than the complete original vendor assay. See original adapter and data-access documentation.",
+    "Breadth raw file checksums are bound to the earlier distributed annotated H5AD objects; matching publication titles alone does not identify equivalent input bytes."
+  ]
+}

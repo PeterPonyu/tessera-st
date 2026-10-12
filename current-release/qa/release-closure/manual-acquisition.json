@@ -1,0 +1,96 @@
+{
+  "status": "passed",
+  "cohort": "her2st",
+  "records": [
+    {
+      "file": "A1.tsv.gz",
+      "status": "copied-verified-manual-source",
+      "sha256": "d91035e5d8a9c4ce7865e4c61446deec1a7318602d41b3220e9fcb3ce7e41fe3"
+    },
+    {
+      "file": "A1_labeled_coordinates.tsv",
+      "status": "copied-verified-manual-source",
+      "sha256": "23a0a68dccd54a8397ea4066994edb7110e88373d5b3bc6e35254dda9253fa5f"
+    },
+    {
+      "file": "B1.tsv.gz",
+      "status": "copied-verified-manual-source",
+      "sha256": "97b3abf2676c596ac7dd53829780005724cab62a6f676697516006481a443f74"
+    },
+    {
+      "file": "B1_labeled_coordinates.tsv",
+      "status": "copied-verified-manual-source",
+      "sha256": "f7050caa71c47a4c95fcca2a7f29560d387310877b1c9e4a54f841059db837ee"
+    },
+    {
+      "file": "C1.tsv.gz",
+      "status": "copied-verified-manual-source",
+      "sha256": "8383130eebf0f9f8186f006ed6b704149ba62303605a312a9080fa9901be9c20"
+    },
+    {
+      "file": "C1_labeled_coordinates.tsv",
+      "status": "copied-verified-manual-source",
+      "sha256": "41b6e1bbb1031480d969e725e739971cb39dbdb6e2b6d662d585bebacf093040"
+    },
+    {
+      "file": "D1.tsv.gz",
+      "status": "copied-verified-manual-source",
+      "sha256": "8fe13d29763b3f6a9e85322dae97e05c4ca42b57cef4b1077c88b9b7b6a980ac"
+    },
+    {
+      "file": "D1_labeled_coordinates.tsv",
+      "status": "copied-verified-manual-source",
+      "sha256": "c8bf26103d1aac42611d9c85ba3db9c596b9a80ec045ca9b246b8d14d8b3c20f"
+    },
+    {
+      "file": "E1.tsv.gz",
+      "status": "copied-verified-manual-source",
+      "sha256": "b2f572ea0a95d256cb172a9284e96b6d2ff236398d4934a992df85c96d11c4cc"
+    },
+    {
+      "file": "E1_labeled_coordinates.tsv",
+      "status": "copied-verified-manual-source",
+      "sha256": "29db60fe5b306bb982fbd2bbdd1f9c60eedf90c6ac1d56bedd3c18ed5a369829"
+    },
+    {
+      "file": "F1.tsv.gz",
+      "status": "copied-verified-manual-source",
+      "sha256": "187aa13f204d514851d3674dfa09b4a8d7f2676f1d40d2ef63e9e368c7cf672a"
+    },
+    {
+      "file": "F1_labeled_coordinates.tsv",
+      "status": "copied-verified-manual-source",
+      "sha256": "3b59970f0c6ba09d8e0fc9286ace2a295bf06d36c59684162b7a8aca0e021ec5"
+    },
+    {
+      "file": "G1.tsv.gz",
+      "status": "copied-verified-manual-source",
+      "sha256": "396153436dfc39e199bdc01447b3f8929aef598d7064c0c24a33da00f54570ea"
+    },
+    {
+      "file": "G2.tsv.gz",
+      "status": "copied-verified-manual-source",
+      "sha256": "9d51a5ed85bdf60069dcf51beeffba4e90e35e8630ec3b707a2453ffdd608e3b"
+    },
+    {
+      "file": "G2_labeled_coordinates.tsv",
+      "status": "copied-verified-manual-source",
+      "sha256": "8466275647ad125569ee94d099cc7b78c15028968ba1dd267a85a81c001a16ff"
+    },
+    {
+      "file": "H1.tsv.gz",
+      "status": "copied-verified-manual-source",
+      "sha256": "90b391782535f38c9ab20fe8b38f44ebbfdad2201075a677a198cbef12c29b07"
+    },
+    {
+      "file": "H1_labeled_coordinates.tsv",
+      "status": "copied-verified-manual-source",
+      "sha256": "b65cbc99ed7a01281bc2eb87be87b902312e47ca91bc1f00ff351489b78434c3"
+    },
+    {
+      "file": "J1_labeled_coordinates.tsv",
+      "status": "copied-verified-manual-source",
+      "sha256": "36fa0cdccfd07ca4f77940481f893a6a8b92762bc27abd891cc246fdf2beece1"
+    }
+  ]
+}

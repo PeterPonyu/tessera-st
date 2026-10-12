@@ -12,13 +12,16 @@ from __future__ import annotations
 import numpy as np
 
 
-def refine_labels(labels: np.ndarray, coords: np.ndarray, k: int = 6, rounds: int = 2) -> np.ndarray:
+def refine_labels(labels: np.ndarray, coords: np.ndarray, k: int = 6, rounds: int = 2, *, field_ids=None) -> np.ndarray:
     """Spatial majority-vote refinement of cluster labels. Labels must be non-negative ints."""
-    from sklearn.neighbors import NearestNeighbors
+    from tessera_st.spatial import neighbor_rows
 
-    idx = NearestNeighbors(n_neighbors=min(k + 1, len(coords))).fit(coords).kneighbors(coords)[1]
+    idx, _ = neighbor_rows(coords, k, field_ids=field_ids, include_self=True)
     lab = np.asarray(labels).copy()
+    if lab.ndim != 1 or len(lab) != len(coords) or not np.issubdtype(lab.dtype, np.integer) or (lab < 0).any():
+        raise ValueError("one non-negative integer label per coordinate is required")
+    if not isinstance(rounds, int) or rounds < 0:
+        raise ValueError("rounds must be a non-negative integer")
     for _ in range(rounds):
-        block = lab[idx]  # (n, k+1): self + k neighbours
-        lab = np.array([np.bincount(row).argmax() for row in block])
+        lab = np.array([np.bincount(lab[row]).argmax() for row in idx])
     return lab

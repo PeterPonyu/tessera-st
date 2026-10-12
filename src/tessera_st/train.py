@@ -15,7 +15,7 @@ class FitResult:
     labels: np.ndarray
     embed: np.ndarray
     boundary: np.ndarray
-    confidence: np.ndarray
+    confidence: np.ndarray | None
     history: list[dict]
 
 
@@ -36,6 +36,7 @@ def fit_predict(
     model_cfg: ModelConfig | None = None,
     knn_k: int = 6,
     refine: bool = False,
+    field_ids=None,
 ) -> FitResult:
     """Train TesseraNet on one slide and return domain labels + boundary + confidence.
 
@@ -54,7 +55,11 @@ def fit_predict(
     torch.manual_seed(train_cfg.seed)
     gen = torch.Generator(device=device).manual_seed(train_cfg.seed)
 
-    edge_index_np, edge_dist_np = build_knn_edges(coords, k=knn_k)
+    if len(expr) != len(coords):
+        raise ValueError("expression and coordinate rows must match")
+    edge_index_np, edge_dist_np = build_knn_edges(coords, k=knn_k, field_ids=field_ids)
+    if edge_index_np.shape[1] == 0:
+        raise ValueError("no within-field spatial edges; model training is undefined")
     x = torch.tensor(expr, dtype=torch.float32, device=device)
     edge_index = torch.tensor(edge_index_np, dtype=torch.long, device=device)
     edge_dist = torch.tensor(_zscore(edge_dist_np), dtype=torch.float32, device=device)
@@ -79,13 +84,15 @@ def fit_predict(
         out = model(x, edge_index, edge_dist)
         embed = out.z.cpu().numpy()
         boundary = out.boundary.cpu().numpy()
-        q = out.q.cpu().numpy()
 
     labels = kmeans_labels(embed, n_clusters, seed=train_cfg.seed)
     if refine:
         from tessera_st.eval.refine import refine_labels
-        labels = refine_labels(labels, coords, k=knn_k)
-    confidence = q.max(axis=1)
+        labels = refine_labels(labels, coords, k=knn_k, field_ids=field_ids)
+    # The legacy soft head has no loss term or held-out calibration, and its
+    # centroids are not the KMeans centroids used for labels. Do not publish
+    # its random-head maximum as confidence in those predictions.
+    confidence = None
     return FitResult(labels=labels, embed=embed, boundary=boundary,
                      confidence=confidence, history=history)
 

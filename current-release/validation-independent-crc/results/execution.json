@@ -1,0 +1,18 @@
+{
+  "started_at_utc": "2026-10-11T15:51:10.764818+00:00",
+  "device": "cpu",
+  "torch_num_threads": 1,
+  "invocation_script_sha256": "ba34cc794665efa33c03637910050cf592d15b5a38111be3b037da7c58c039c4",
+  "implementation_sha256": "ca19044a207d5a375c9b3a7ec0d994eb3dbcc1a574560e8e16e9ffd3c0c11e08",
+  "runtime_decision_sha256": "a426356ffe95e0c5d1aa00e66a08458dc888b1f4860abc57b64d616c930f93fc",
+  "fit_arm_seeds": [
+    1,
+    2,
+    3
+  ],
+  "fit_arms": [
+    "Tessera",
+    "NoGate"
+  ],
+  "partial_fourthread_results": "runtime-fourthread-partial/; excluded from final results"
+}

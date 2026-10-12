@@ -1,0 +1,40 @@
+{
+  "object": "Breast_Visium",
+  "cohort": "Breast",
+  "seed": 3,
+  "arm": "PCA30",
+  "n_cells": 2863,
+  "K": 14,
+  "input_sha256": "838f90d40bc60e7bd75b34234a8285357ce3d92c7b7f9673b6ce211e5d7e29ae",
+  "prediction_sha256": "feb941272dd77eb3e8524284e07bd45d793a24e9996dc6823965cafc4cfeeb4d",
+  "fit_seconds": 2.5609915610402822e-06,
+  "total_seconds": 0.07623520999914035,
+  "gpu_peak_allocated_bytes": null,
+  "trainable_parameters": 0,
+  "history": [],
+  "ablation": null,
+  "n_edges": 34356,
+  "cross_field_edges": 0,
+  "self_edges": 0,
+  "scores": {
+    "ari": 0.21519765001321042,
+    "nmi": 0.3950204433050201,
+    "reference_edge_homogeneity": 0.6141576434974968,
+    "predicted_edge_homogeneity": 0.4327046221911748,
+    "gate_seam_auroc": null,
+    "purity_strata": {
+      "0": {
+        "n": 2863,
+        "ari": 0.21519765001321042
+      },
+      "0.5": {
+        "n": 2009,
+        "ari": 0.26365342771301414
+      },
+      "0.75": {
+        "n": 1006,
+        "ari": 0.2927114832295692
+      }
+    }
+  }
+}

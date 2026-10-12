@@ -72,7 +72,7 @@ def _hard_confidence(features: np.ndarray, labels: np.ndarray) -> np.ndarray:
     """Post-hoc per-spot confidence for a hard clusterer, so its ECE is comparable.
 
     Soft-assigns each spot to cluster centroids by distance-softmax and takes the max
-    probability. This is NOT a learned confidence (Tessera's comes from its cluster head); it
+    probability. This is an uncalibrated, descriptive confidence proxy; it
     just lets the calibration axis include the baselines instead of leaving a blank cell.
     """
     clusters = np.unique(labels)
@@ -116,8 +116,14 @@ def _metric_row(
         }
     )
     if confidence is not None:
-        correct = (pred == _aligned(pred, true)).astype(float)
-        row["ECE"] = round(expected_calibration_error(confidence, correct), 4)
+        valid = np.asarray(true) >= 0
+        if np.asarray(confidence).shape != np.asarray(pred).shape:
+            raise ValueError("confidence must match predicted labels")
+        # Cluster numbers are arbitrary. Compare mapped predictions to true
+        # labels, never to the original cluster numbers themselves.
+        correct = (_aligned(pred, true)[valid] == np.asarray(true)[valid]).astype(float)
+        row["ECE"] = (round(expected_calibration_error(np.asarray(confidence)[valid], correct), 4)
+                      if valid.any() else None)
     else:
         row["ECE"] = None
     mp = marker_purity(pred, layer_scores) if layer_scores else None
@@ -135,6 +141,7 @@ def reference_baseline_rows(
     seed: int = 0,
     knn_k: int = 6,
     layer_scores: dict | None = None,
+    field_ids=None,
 ) -> list[dict]:
     """Brand-neutral reference clusterers, scored on the same metrics as Tessera.
 
@@ -145,7 +152,7 @@ def reference_baseline_rows(
     from tessera_st.eval.baselines import expression_kmeans, mean_smoothed_kmeans
     from tessera_st.model.graph import build_knn_edges
 
-    edge_index, _ = build_knn_edges(coords, k=knn_k)
+    edge_index, _ = build_knn_edges(coords, k=knn_k, field_ids=field_ids)
     builders = [
         ("ref:nonspatial-kmeans", "non-spatial floor",
          lambda: expression_kmeans(expr, n_clusters, seed)),
@@ -172,6 +179,7 @@ def run_ablation(
     n_clusters: int | None = None,
     train_cfg: TrainConfig | None = None,
     layer_scores: dict | None = None,
+    field_ids=None,
 ) -> list[dict]:
     """Train every config in the curated grid and score it."""
     train_cfg = train_cfg or TrainConfig()
@@ -179,7 +187,8 @@ def run_ablation(
     rows: list[dict] = []
     for cfg in curated_ablation_grid():
         t0 = time.perf_counter()
-        res = fit_predict(expr, coords, n_clusters, cfg, train_cfg=train_cfg)
+        res = fit_predict(expr, coords, n_clusters, cfg, train_cfg=train_cfg,
+                          field_ids=field_ids)
         dt = time.perf_counter() - t0
         row = _metric_row(
             cfg.name, coords, true_labels, res.labels, res.embed, res.confidence,
@@ -197,13 +206,15 @@ def run_benchmark(
     n_clusters: int | None = None,
     train_cfg: TrainConfig | None = None,
     layer_scores: dict | None = None,
+    field_ids=None,
 ) -> list[dict]:
     """Reference baselines + the Tessera ablation grid, in one table."""
     train_cfg = train_cfg or TrainConfig()
     n_clusters = n_clusters or int(len(np.unique(true_labels[true_labels >= 0])))
     rows = reference_baseline_rows(expr, coords, true_labels, n_clusters, seed=train_cfg.seed,
-                                   layer_scores=layer_scores)
-    rows += run_ablation(expr, coords, true_labels, n_clusters, train_cfg, layer_scores=layer_scores)
+                                   layer_scores=layer_scores, field_ids=field_ids)
+    rows += run_ablation(expr, coords, true_labels, n_clusters, train_cfg,
+                         layer_scores=layer_scores, field_ids=field_ids)
     return rows
 
 
@@ -248,12 +259,13 @@ def run_benchmark_multiseed(
     n_clusters: int | None = None,
     train_cfg: TrainConfig | None = None,
     layer_scores: dict | None = None,
+    field_ids=None,
 ) -> list[dict]:
     """Run the full benchmark under several seeds and aggregate to mean±std."""
     train_cfg = train_cfg or TrainConfig()
     per_seed = [
         run_benchmark(expr, coords, true_labels, n_clusters, replace(train_cfg, seed=sd),
-                      layer_scores=layer_scores)
+                      layer_scores=layer_scores, field_ids=field_ids)
         for sd in seeds
     ]
     return aggregate_seeds(per_seed)
@@ -330,7 +342,7 @@ def format_table(rows: list[dict], cols: list[str] | None = None) -> str:
     legend = (
         "\nref:* = baselines (non-spatial floor / naive over-smoothing) · backbone = standard "
         "graph-autoencoder (SOTA-class stand-in)\n"
-        "baseline ECE uses post-hoc distance-softmax confidence (Tessera ECE is from its learned "
+        "baseline ECE uses post-hoc distance-softmax confidence (Tessera confidence is withheld; legacy "
         "cluster head); '±' columns are std over seeds when present\n"
         "ALL metrics are semi-circular AND conditioned — none is ground truth (ARI/NMI: GT is "
         "expression-derived; ASW/DBI: scored in the method's own embedding; CHAOS/PAS: smoothing is "

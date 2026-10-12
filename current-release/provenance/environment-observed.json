@@ -1,0 +1,17 @@
+{
+  "python": "3.13.7 | packaged by Anaconda, Inc. | (main, Sep  9 2025, 19:59:03) [GCC 11.2.0]",
+  "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.43",
+  "packages": {
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "scipy": "1.16.2",
+    "scikit-learn": "1.6.1",
+    "torch": "2.12.1+cu130",
+    "h5py": "3.15.1",
+    "anndata": "0.12.3",
+    "matplotlib": "3.10.7",
+    "Pillow": "11.3.0"
+  },
+  "installation_tested": false,
+  "existing_runtime_tested": true
+}

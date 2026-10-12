@@ -1,0 +1,29 @@
+{
+  "object": "NSCLC_Lung9_Rep1",
+  "cohort": "NSCLC",
+  "seed": 3,
+  "arm": "PCA30",
+  "n_cells": 4313,
+  "K": 5,
+  "input_sha256": "7b89ab0e1fbf21986f01aa95a80967ad1e26135dae12956e4cacf78df2bfce74",
+  "prediction_sha256": "3fd80c1c2efb09c4aa273daaa45dfedebba83082e0fb6822ca3af0890e4f24e1",
+  "fit_seconds": 2.577013219706714e-06,
+  "total_seconds": 0.053848957002628595,
+  "gpu_peak_allocated_bytes": null,
+  "trainable_parameters": 0,
+  "history": [],
+  "ablation": null,
+  "n_edges": 51756,
+  "cross_field_edges": 0,
+  "self_edges": 0,
+  "scores": {
+    "ari": 0.12507494670874858,
+    "nmi": 0.1708498817041327,
+    "reference_edge_homogeneity": 0.9118169874024268,
+    "predicted_edge_homogeneity": 0.46166628023804,
+    "gate_seam_auroc": null,
+    "secondary_ari": 0.3484338273619633,
+    "secondary_nmi": 0.4392831737666008,
+    "secondary_n_classes": 22
+  }
+}

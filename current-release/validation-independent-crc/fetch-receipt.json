@@ -1,0 +1,58 @@
+{
+  "protocol_sha256": "453342e09ff8b04addeed1d23f1b731f5c1a5427004b587e7d2457ceb5544f95",
+  "fetch_gate_sha256": "f639b5fd373aa2980b1f33cc8ba7191bd1d58a74bf1cc3ab1a58faa73ffbc710",
+  "script_sha256": "720c23680890bdc891bc1a24723dc4efb1c72e5ed6c91dc2288061fe5d8b365a",
+  "files": [
+    {
+      "ok": true,
+      "cached": true,
+      "bytes": 702660,
+      "sha256": "2468ad1208468277eaa7693cbaf92735e76d52207e87d534e0ac8fe77fcacb47",
+      "filename": "Pathology_SpotAnnotations.zip",
+      "url": "https://zenodo.org/records/7760264/files/Pathology_SpotAnnotations.zip?download=1",
+      "publisher_md5": "md5:92882eb0db7c2cacc5077cb5fc9578fd",
+      "seconds": 0.0018470819923095405
+    },
+    {
+      "ok": true,
+      "cached": true,
+      "bytes": 53827477,
+      "sha256": "d982693f971b6eda7fa8c4c3b49afe487a8cd009cfcf5d0900db8c4d93770b10",
+      "filename": "SN84_A120838_Rep1.zip",
+      "url": "https://zenodo.org/records/7760264/files/SN84_A120838_Rep1.zip?download=1",
+      "publisher_md5": "md5:4a185c5e1bf88995ee0c03dbb4e8b63c",
+      "seconds": 0.19564026899752207
+    },
+    {
+      "ok": true,
+      "cached": true,
+      "bytes": 56124799,
+      "sha256": "2510c1e854126ca227dc1dee8ab8a5763658867deb0f0f1abb9354f78aefd552",
+      "filename": "SN124_A595688_Rep2.zip",
+      "url": "https://zenodo.org/records/7760264/files/SN124_A595688_Rep2.zip?download=1",
+      "publisher_md5": "md5:808ed49a24eea7d41c575d8c238caa76",
+      "seconds": 0.33882203701068647
+    },
+    {
+      "url": "https://zenodo.org/records/7760264/files/SN124_A551763_Rep2.zip?download=1",
+      "path": "/home/zeyufu/Desktop/singlecell-genomics-research/research/revisions/tessera-20261008-expanded/validation-independent-crc/raw/SN124_A551763_Rep2.zip",
+      "bytes": 61982650,
+      "sha256": "b884bc451ee05645e7777a1239c1a64d5416ae79dbc7010b58b843a8c4186e5e",
+      "download": true,
+      "under_10mb": false,
+      "ok": true,
+      "head": {
+        "url": "https://zenodo.org/records/7760264/files/SN124_A551763_Rep2.zip?download=1",
+        "ok": true,
+        "status": 200,
+        "content_length": 61982650,
+        "content_type": "application/octet-stream",
+        "error": null,
+        "final_url": "https://zenodo.org/records/7760264/files/SN124_A551763_Rep2.zip?download=1"
+      },
+      "filename": "SN124_A551763_Rep2.zip",
+      "publisher_md5": "md5:adf0ea575a09f473fa4ceb465a6ec66e",
+      "seconds": 25.18617164401803
+    }
+  ]
+}

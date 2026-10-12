@@ -1,0 +1,33 @@
+{
+  "protocol": "tessera-tumor-expansion-20261008-v1",
+  "objects": [
+    "NSCLC_Lung5_Rep2",
+    "NSCLC_Lung6",
+    "NSCLC_Lung9_Rep1",
+    "NSCLC_Lung12",
+    "NSCLC_Lung13",
+    "BCC_PatientA",
+    "BCC_PatientB",
+    "BCC_PatientC",
+    "BCC_PatientD",
+    "Breast_Visium",
+    "Colorectal_TVA232",
+    "MIBI",
+    "OpenST_HNSCC26"
+  ],
+  "inputs": {
+    "NSCLC_Lung5_Rep2": "d710de0e3470385f2dcf110516ad22d668992a521c2b9bd7e8084753c5a3902b",
+    "NSCLC_Lung6": "c24ff3fe10af4d044965a36229951de13e16f829afbc36006c2af4cec28e589a",
+    "NSCLC_Lung9_Rep1": "7b89ab0e1fbf21986f01aa95a80967ad1e26135dae12956e4cacf78df2bfce74",
+    "NSCLC_Lung12": "e8788802554295a4af14b639b3c093c19cabf3c89662c8ac5bd3a487493bac8b",
+    "NSCLC_Lung13": "562c6711278c95e67030b7819cb3c1f2ce622fddaaf2cd32bdb5676c2f0f5365",
+    "BCC_PatientA": "c3a8aff77b78898ea67d6dfd618ccdef8a5772c8ed63656443a26a5d140e67cf",
+    "BCC_PatientB": "13d32838479450a3c9ea9d88c5e04bc3ca880c070903cf717009f2b300de1786",
+    "BCC_PatientC": "80dff4b454ee9aa0654787c4be55c2f376f5c87472f0b14ebe84861423dced70",
+    "BCC_PatientD": "c08f6b11cb008eee8f8fefc761192885d8e49873096c6a7e7857bc99e0daaf32",
+    "Breast_Visium": "838f90d40bc60e7bd75b34234a8285357ce3d92c7b7f9673b6ce211e5d7e29ae",
+    "Colorectal_TVA232": "c5d143da23df042954e1c15ddb05eca1ca21f3e796d6dceff67a1f14e9a0dcf7",
+    "MIBI": "d3d3d19935a6f0d9a8ff97f3bd6ffa7e95e5f2ec1ab8d8794c886ad187e34102",
+    "OpenST_HNSCC26": "c42116ee6b492d60a521f721248a10aee34157d37bf895afad148fec415dbc4f"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "initial_counts": [
+    {
+      "tests": "82",
+      "failures": "6",
+      "errors": "0",
+      "skipped": "0",
+      "time": "4.252"
+    }
+  ],
+  "initial_failures": [
+    {
+      "test": "test_rendered_abstract_fits_the_journal_200_word_limit",
+      "class": "output.scientific-reports-readiness-20261011-r2.tessera.analysis-release.package.source.tests.test_closeout",
+      "message": "subprocess.CalledProcessError: Command '['pdftotext', '-nopgbrk', '/home/zeyufu/Desktop/ortho-diabetic-wound-insilico/output/scientific-reports-readiness-20261011-r2/tessera/analysis-release/package/output/pdf/tessera-revised-manuscript.pdf', '-']' returned non-zero exit status 1."
+    },
+    {
+      "test": "test_every_figure_has_a_complete_caption_and_verified_pdf",
+      "class": "output.scientific-reports-readiness-20261011-r2.tessera.analysis-release.package.source.tests.test_presentation",
+      "message": "AssertionError: assert '4527c45ba7fe...88912b5498465' == '7c4876f46fcc...3ab4fb449e95c'\n  \n  - 7c4876f46fcc19ed231007ba0cbc97817e5bb75753ac139fa653ab4fb449e95c\n  + 4527c45ba7fe609f44db2853ed7e113289b37643af805a2019c88912b5498465"
+    },
+    {
+      "test": "test_rendered_statistical_figures_use_separate_regular_titles",
+      "class": "output.scientific-reports-readiness-20261011-r2.tessera.analysis-release.package.source.tests.test_presentation",
+      "message": "AssertionError: assert '7c4876f46fcc...3ab4fb449e95c' == '4527c45ba7fe...88912b5498465'\n  \n  - 4527c45ba7fe609f44db2853ed7e113289b37643af805a2019c88912b5498465\n  + 7c4876f46fcc19ed231007ba0cbc97817e5bb75753ac139fa653ab4fb449e95c"
+    },
+    {
+      "test": "test_exported_figure_font_audit_is_bound_to_all_final_figures",
+      "class": "output.scientific-reports-readiness-20261011-r2.tessera.analysis-release.package.source.tests.test_presentation",
+      "message": "AssertionError: assert '7c4876f46fcc...3ab4fb449e95c' == '4527c45ba7fe...88912b5498465'\n  \n  - 4527c45ba7fe609f44db2853ed7e113289b37643af805a2019c88912b5498465\n  + 7c4876f46fcc19ed231007ba0cbc97817e5bb75753ac139fa653ab4fb449e95c"
+    },
+    {
+      "test": "test_figure_methods_map_covers_every_semantic_section_and_is_hash_bound",
+      "class": "output.scientific-reports-readiness-20261011-r2.tessera.analysis-release.package.source.tests.test_presentation",
+      "message": "AssertionError: assert '6f1d8231d308...c85f879f01630' == '010deef1aec7...ab21d8c3c22e1'\n  \n  - 010deef1aec723171a68e16721a4ab470914f2490a39daaa57eab21d8c3c22e1\n  + 6f1d8231d3088b8eee629978422ef8922d3e0c62328cd8c1346c85f879f01630"
+    },
+    {
+      "test": "test_statistical_markers_remain_readable_in_final_document_placements",
+      "class": "output.scientific-reports-readiness-20261011-r2.tessera.analysis-release.package.source.tests.test_presentation",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: '/home/zeyufu/Desktop/ortho-diabetic-wound-insilico/output/scientific-reports-readiness-20261011-r2/tessera/analysis-release/package/output/pdf/tessera-figure-atlas.pdf'"
+    }
+  ],
+  "cause": "Four stale presentation artifact/hash audits and two retired compiled-document paths after authorized presentation overlay",
+  "changes": "Refresh only actual presentation audits; point abstract/document checks at current journal PDFs and require all 75 readable journal panel labels; preserve all numerical baselines and all 82 tests",
+  "final_counts": [
+    {
+      "tests": "82",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "3.877"
+    }
+  ],
+  "numerical_baseline_changed": false,
+  "test_count_preserved": true,
+  "research_fits": 0,
+  "unit_test_synthetic_fits": "The unchanged encoder equivalence unit test fits only synthetic in-memory inputs"
+}

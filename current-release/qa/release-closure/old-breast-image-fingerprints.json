@@ -1,0 +1,62 @@
+{
+  "old_figure07_pdf_sha256": "7c4876f46fcc19ed231007ba0cbc97817e5bb75753ac139fa653ab4fb449e95c",
+  "embedded_images": [
+    {
+      "name": "Im1.png",
+      "width": 527,
+      "height": 583,
+      "decoded_rgb_sha256": "c2658afd1229117d6af189bd806a75584886f7d5fbac39aa53189103049f21f9",
+      "encoded_sha256": "5781bd0dce7ca0cd4392bf6928be1def98c2c672875a77a978bb3e9bbb8c660e"
+    },
+    {
+      "name": "Im2.png",
+      "width": 527,
+      "height": 583,
+      "decoded_rgb_sha256": "70d6fc640b8e4721d6e496a606c455a4554feb27282dcfb637c1c3970e105a43",
+      "encoded_sha256": "a727e9c08ec2a0a6ca53dcb04a5c5b2768a2bd4a58d4db83b70470dde8bec4de"
+    },
+    {
+      "name": "Im3.png",
+      "width": 527,
+      "height": 583,
+      "decoded_rgb_sha256": "b9bef685f3076d7fceeaa744890ca32fbdec5bbba0d961e9ea097cd46e558cdb",
+      "encoded_sha256": "d54253513ee69b40bc1c710cc96ec9b2760cd6c6d42eff6c11aff948124932d2"
+    },
+    {
+      "name": "Im4.png",
+      "width": 527,
+      "height": 583,
+      "decoded_rgb_sha256": "75a791beffc615039c2477c5e20018b6449b11f70eccb79809ea6405511b65ff",
+      "encoded_sha256": "993e38ae1c845be395881243736b3bedc396050fac0a5740a83dd1ee5c9d37d0"
+    },
+    {
+      "name": "Im5.png",
+      "width": 527,
+      "height": 676,
+      "decoded_rgb_sha256": "406ff5933fae64fb73f60bb1515ccf6ec12ec3f00d5e21c5f9f3d046ee68bb02",
+      "encoded_sha256": "62fc9b25ccfbbbdab68b0aa56cef79d1af2226cd345564075a2b92fca5d8f42b"
+    },
+    {
+      "name": "Im6.png",
+      "width": 527,
+      "height": 676,
+      "decoded_rgb_sha256": "6da8494626c36704c1b3ad726dd95dbf187bebb1e2acb304f1c948917884185d",
+      "encoded_sha256": "e4f09ef29d4c12340e78dfc45f8bdef3c8e14370fe295bd2a7da40035e5a07b2"
+    },
+    {
+      "name": "Im7.png",
+      "width": 527,
+      "height": 676,
+      "decoded_rgb_sha256": "a8ac09fad65fd2e8a04d742135108b2c2dbdc65d6808089e13efbe4aee1e80e8",
+      "encoded_sha256": "e4bee2947d2825efe6f0400fdc3c550fdff887b4b0f5bec6c229f0ded3cddd37"
+    },
+    {
+      "name": "Im8.png",
+      "width": 527,
+      "height": 676,
+      "decoded_rgb_sha256": "152772947787f2c73590bb5385a6703ec529b3c0e8d957df372ceeaef8b8421f",
+      "encoded_sha256": "15a882fb839e5c283448a929216c55345fd462db4f329935d8bb58e0300031a2"
+    }
+  ],
+  "scope": "Historical breast H&E figure before authorized new-package replacement; original archive/source remain immutable"
+}

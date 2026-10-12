@@ -1,0 +1,26 @@
+{
+  "object": "BCC_PatientA",
+  "cohort": "BCC",
+  "seed": 1,
+  "arm": "PCA50",
+  "n_cells": 5666,
+  "K": 12,
+  "input_sha256": "c3a8aff77b78898ea67d6dfd618ccdef8a5772c8ed63656443a26a5d140e67cf",
+  "prediction_sha256": "a93fd1a65610d67de02626a004e1c324f3290fa71288eac91905d7ce80b4841c",
+  "fit_seconds": 1.0999938240274787e-06,
+  "total_seconds": 0.12743823700293433,
+  "gpu_peak_allocated_bytes": null,
+  "trainable_parameters": 0,
+  "history": [],
+  "ablation": null,
+  "n_edges": 67992,
+  "cross_field_edges": 0,
+  "self_edges": 0,
+  "scores": {
+    "ari": 0.29506952273280296,
+    "nmi": 0.5039512706985809,
+    "reference_edge_homogeneity": 0.6216907871514296,
+    "predicted_edge_homogeneity": 0.4021943758089187,
+    "gate_seam_auroc": null
+  }
+}

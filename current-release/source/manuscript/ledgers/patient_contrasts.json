@@ -1,0 +1,35 @@
+{
+  "NSCLC": {
+    "n_patients": 5,
+    "delta_ari_mean": 0.0965078096367737,
+    "delta_patient_values": [
+      0.1717717294636722,
+      -0.054171936950008215,
+      0.07201608888458683,
+      0.14114896234690136,
+      0.1517742044387164
+    ],
+    "percentile_ci95": [
+      0.016254401499646874,
+      0.1576481660303357
+    ],
+    "unit": "patient, fixed retained fields; small convenience cohort",
+    "B": 10000
+  },
+  "BCC": {
+    "n_patients": 4,
+    "delta_ari_mean": -0.026303024618751482,
+    "delta_patient_values": [
+      -0.0012456401678358486,
+      -0.023709210173041964,
+      -0.028949106293313973,
+      -0.05130814184081414
+    ],
+    "percentile_ci95": [
+      -0.044408408923871094,
+      -0.00817150669920538
+    ],
+    "unit": "patient, fixed retained fields; small convenience cohort",
+    "B": 10000
+  }
+}

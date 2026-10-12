@@ -1,0 +1,26 @@
+{
+  "object": "OpenST_HNSCC26",
+  "cohort": "Open-ST HNSCC",
+  "seed": 2,
+  "arm": "PCA30",
+  "n_cells": 6000,
+  "K": 14,
+  "input_sha256": "c42116ee6b492d60a521f721248a10aee34157d37bf895afad148fec415dbc4f",
+  "prediction_sha256": "bfa5c1f5c071876cb6baf71f37f7ada9c29dac4c78c9c4b05f91cb2bdfbd11fb",
+  "fit_seconds": 2.2080057533457875e-06,
+  "total_seconds": 0.14694998699997086,
+  "gpu_peak_allocated_bytes": null,
+  "trainable_parameters": 0,
+  "history": [],
+  "ablation": null,
+  "n_edges": 72000,
+  "cross_field_edges": 0,
+  "self_edges": 0,
+  "scores": {
+    "ari": 0.263533636929144,
+    "nmi": 0.41758622123691247,
+    "reference_edge_homogeneity": 0.5502338009352037,
+    "predicted_edge_homogeneity": 0.42094444444444445,
+    "gate_seam_auroc": null
+  }
+}

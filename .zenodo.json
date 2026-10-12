@@ -1,0 +1,31 @@
+{
+  "title": "Tessera controls audit: analysis and editable sources",
+  "creators": [
+    {
+      "name": "Fu, Zeyu",
+      "orcid": "0009-0001-8329-0108"
+    }
+  ],
+  "version": "2026.10.11-controls-audit",
+  "doi": "10.5281/zenodo.23308077",
+  "upload_type": "software",
+  "license": "MIT",
+  "description": "Standalone analysis/source archive preserving evaluated Tessera code, immutable protocols and run locks, saved primary and patient-held-out transfer evidence, controls, exploratory HER2ST comparator extensions and the colorectal pilot. Includes corrected manuscript sources and final PDFs with author-generated breast coordinate maps. No 10x breast H&E image/background is redistributed. Author-owned software is MIT; authored text and result aggregates are identified as CC BY 4.0, while third-party measurements, annotations and dataset-licensed CRC images retain source-specific rights. Saved-evidence verification and its documented limits are distinct from full experimental refitting.",
+  "notes": "The software DOI is reserved until the record owner publishes. The evaluated original implementation DOI 10.5281/zenodo.23101191 archives a distinct earlier software product and does not archive later controls or presentation replacements. No manuscript DOI is asserted here.",
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.23101191",
+      "relation": "references",
+      "scheme": "doi",
+      "resource_type": "software"
+    }
+  ],
+  "keywords": [
+    "spatial transcriptomics",
+    "neighborhood averaging",
+    "graph encoder",
+    "component ablation",
+    "patient-held-out transfer",
+    "reproducibility"
+  ]
+}
