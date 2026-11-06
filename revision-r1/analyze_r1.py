@@ -8,6 +8,8 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
@@ -15,10 +17,12 @@ import pandas as pd
 import common_r1 as c
 
 E1, E2, E3, E4 = (c.OUT / e for e in ['E1', 'E2', 'E3', 'E4'])
-SUMMARY = c.OUT / 'summary'
+SUMMARY = Path(os.environ.get('TESSERA_R1_SUMMARY') or c.OUT / 'summary')
 EXT = c.VALIDATION / 'validation-extension' / 'results'
 FOLLOW = c.RESULTS / 'followup-20261010'
-MACROS = c.PROJECT / 'submissions/frontiers-in-genetics/revision-1-2028706/source/revision-macros.tex'
+_PACKET_SOURCE = c.PROJECT / 'submissions/frontiers-in-genetics/revision-1-2028706/source'
+MACROS = Path(os.environ.get('TESSERA_MACROS') or
+              (_PACKET_SOURCE if _PACKET_SOURCE.exists() else SUMMARY) / 'revision-macros.tex')
 COHORTS = [('NSCLC', 'primary'), ('BCC', 'primary'), ('HER2ST', 'all'), ('HER2ST', 'boundary_T1')]
 
 

@@ -96,7 +96,7 @@ def sentences(s) -> dict:
     else:
         out['E4_sentence'] = '[native-method results pending]'
         out['E4_scope_sentence'] = ''
-    out['n_main_figures'] = '10' if e4.get('by_setting') else '9'
+    out['n_main_figures'] = '9'
     return out
 
 
