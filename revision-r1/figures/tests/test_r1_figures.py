@@ -82,7 +82,9 @@ def test_fonts_are_arial_only(name):
 def test_names(name):
     content = text(PDF / (name + '.pdf'))
     assert not re.search(r'Tessera(?!-ST)', content), name
-    assert not re.search(r'Neighbou?r mean|[Ss]ix-neighbou?r|\bMean 6\b|\bMean 200\b', content), name
+    # The transfer figure's six-neighbor control averages directed nearest-neighbor lists; it is not the same-graph mean.
+    banned = r'Neighbou?r mean|\bMean 6\b|\bMean 200\b' if name == 'figure-07' else r'Neighbou?r mean|[Ss]ix-neighbou?r|\bMean 6\b|\bMean 200\b'
+    assert not re.search(banned, content), name
 
 
 @pytest.mark.parametrize('name', EXPECTED)

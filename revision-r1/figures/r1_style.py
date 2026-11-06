@@ -108,6 +108,9 @@ SHORT = {n: n.replace('NSCLC_', '').replace('BCC_Patient', 'BCC ').replace('Brea
 LUNG, BCC = OBJECTS[:5], OBJECTS[5:9]
 SEEDS = [1, 2, 3]
 BANNED = [r'Tessera(?!-ST)', r'Neighbou?r mean', r'[Ss]ix-neighbou?r', r'\bMean 6\b', r'\$']
+# The transfer figure's six-neighbor control averages directed nearest-neighbor lists, so it is not the same-graph
+# mean and keeps its own name there.
+ALLOWED = {'figure-07': {r'[Ss]ix-neighbou?r'}}
 
 INPUTS: dict[str, str] = {}
 PLOT_DATA: dict[str, object] = {}
@@ -412,6 +415,8 @@ def save(cv, name, plot_data=None):
     for artist in visible_texts(fig):
         text = artist.get_text()
         for pattern in BANNED:
+            if pattern in ALLOWED.get(name, ()):
+                continue
             assert not re.search(pattern, text), (name, text, pattern)
         assert artist.get_fontfamily() == [FAMILY], (name, text, artist.get_fontfamily())
         weight = artist.get_fontweight()

@@ -5,12 +5,14 @@ Modes:
   sweep          K grid x {Euclidean, cosine} K-means, shared label-free K, Leiden (secondary)
   harmonize      HER2ST per-K-head refits on CPU (one thread) for comparison with the fixed head
   refine         matched majority-vote refinement sensitivity at K_ref
+  agreement      Amendment A4: partition agreement between representations and between seeds at K_ref
 Run after E1 (which supplies the 200-epoch embeddings and the HER2ST fixed-head fits).
 """
 from __future__ import annotations
 
 import argparse
 import hashlib
+import itertools
 import json
 import multiprocessing as mp
 import time
@@ -238,20 +240,62 @@ def run_refine(processes):
     pd.DataFrame(rows).to_csv(E3 / 'E3_refinement.csv', index=False)
 
 
+AGREEMENT_TARGETS = {('NSCLC', 'primary'), ('BCC', 'primary'), ('HER2ST', 'all'), ('HER2ST', 'boundary_T1')}
+AGREEMENT_REPS = ['PCA50', 'SameGraphMean', 'TunedControl', 'Tessera120']
+
+
+def agreement_job(args):
+    """Amendment A4: ARI between partitions at K_ref (Euclidean K-means), across representations and across seeds."""
+    index, target = args
+    torch.set_num_threads(1)
+    unit = UNITS[index]
+    k_ref = len(unit['targets'][target][1])
+    parts = {}
+    for name, rep_seed, array in representations(unit, target):
+        if name not in AGREEMENT_REPS:
+            continue
+        for seed in (c.SEEDS if rep_seed is None else [rep_seed]):
+            parts[(name, seed)] = KMeans(k_ref, n_init=10, random_state=seed).fit(array).labels_
+    names = [n for n in AGREEMENT_REPS if (n, c.SEEDS[0]) in parts]
+    base = dict(unit=unit['name'], cohort=unit['cohort'], target=target, K_ref=k_ref, n_obs=len(parts[(names[0], 1)]))
+    rows = []
+    for seed in c.SEEDS:
+        for a, b in itertools.combinations(names, 2):
+            rows.append(dict(base, kind='between', a=a, b=b, seed_a=seed, seed_b=seed,
+                             ari=float(adjusted_rand_score(parts[(a, seed)], parts[(b, seed)]))))
+    for name in names:
+        for s, t in itertools.combinations(c.SEEDS, 2):
+            rows.append(dict(base, kind='within', a=name, b=name, seed_a=s, seed_b=t,
+                             ari=float(adjusted_rand_score(parts[(name, s)], parts[(name, t)]))))
+    return rows
+
+
+def run_agreement(processes):
+    jobs = [(i, t) for i, u in enumerate(UNITS) for t in u['targets'] if (u['cohort'], t) in AGREEMENT_TARGETS]
+    with mp.get_context('fork').Pool(processes) as pool:
+        rows = [r for part in pool.imap_unordered(agreement_job, jobs) for r in part]
+    pd.DataFrame(rows).sort_values(['cohort', 'target', 'unit', 'kind', 'a', 'b', 'seed_a', 'seed_b']).to_csv(
+        E3 / 'E3_agreement.csv', index=False)
+
+
 UNITS: list[dict] = []
 
 
 def main():
     global UNITS
     p = argparse.ArgumentParser()
-    p.add_argument('mode', choices=['sweep', 'harmonize', 'refine'])
+    p.add_argument('mode', choices=['sweep', 'harmonize', 'refine', 'agreement'])
     p.add_argument('--processes', type=int, default=10)
     args = p.parse_args()
-    c.write_lock(E3, 'E3 cluster number and geometry')
+    if args.mode == 'agreement':
+        c.write_lock(E3, 'A4 partition agreement', name='run-lock-A4.json')
+    else:
+        c.write_lock(E3, 'E3 cluster number and geometry')
     started = time.perf_counter()
-    if args.mode in ('sweep', 'refine'):
+    if args.mode in ('sweep', 'refine', 'agreement'):
         UNITS = build_units()
-    {'sweep': run_sweep, 'harmonize': run_harmonize, 'refine': run_refine}[args.mode](args.processes)
+    {'sweep': run_sweep, 'harmonize': run_harmonize, 'refine': run_refine,
+     'agreement': run_agreement}[args.mode](args.processes)
     print('E3', args.mode, 'done in', round(time.perf_counter() - started), 's', flush=True)
 
 

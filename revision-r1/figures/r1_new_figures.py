@@ -21,7 +21,7 @@ from r1_style import COLOR, INK, LEGEND, LIGHT, MINUS, NOTE, TICK, TST, W, X_AXI
 
 SUMMARY = Path(os.environ.get('TESSERA_R1_SUMMARY') or S.RESULTS / 'revision-r1/summary')
 TARGETS = [('NSCLC', 'primary', 'NSCLC regions'), ('BCC', 'primary', 'BCC cell types'),
-           ('HER2ST', 'all', 'HER2ST, all labels'), ('HER2ST', 'boundary_T1', 'HER2ST, tumor boundary')]
+           ('HER2ST', 'all', 'HER2ST, all labels'), ('HER2ST', 'boundary_T1', 'HER2ST, tumor/non-tumor')]
 PATIENT_LINE = '#a9b1b6'
 DOT = '#9aa3a9'
 GUIDE = '#8c8c8c'

@@ -228,6 +228,56 @@ def a3(comps):
     return out, table
 
 
+def a4(comps):
+    """Amendment A4: leave-one-patient-out control selection, partition agreement and transfer by fold."""
+    out, table = {}, None
+    hard = json.loads((EXT / 'run-hardening.json').read_text())['result']['targets']['all']
+    grid = pd.read_csv(EXT / 'hardening' / 'grid.csv')
+    means = grid[grid.target == 'all'].groupby(['unit', 'config']).ari.mean().unstack()
+    candidates = [k for k in means.columns if not str(k).startswith('PCA50')]
+    units = sorted(hard['per_unit'])
+    tessera = pd.Series({u: float(hard['per_unit'][u]['Tessera']) for u in units})
+
+    def select(pool, held):
+        return str(means.loc[[u for u in pool if u != held], candidates].mean().idxmax())
+    full = {u: select(units, u) for u in units}
+    if full != hard['selected_control']:
+        raise ValueError('A4: full selection does not reproduce the saved selections')
+    full_delta = float(np.mean([tessera[u] - means.loc[u, full[u]] for u in units]))
+    by_omitted = {}
+    for omit in units:
+        pool = [u for u in units if u != omit]
+        by_omitted[omit] = float(np.mean([tessera[u] - means.loc[u, select(pool, u)] for u in pool]))
+    values = np.array(list(by_omitted.values()))
+    out['loo_all'] = dict(full=full_delta, by_omitted=by_omitted, min=float(values.min()), max=float(values.max()),
+                          n_neg=int((values < 0).sum()), n=len(values))
+    f = E3 / 'E3_agreement.csv'
+    if f.exists():
+        a = pd.read_csv(f)
+        per = a.groupby(['cohort', 'target', 'unit', 'kind', 'a', 'b']).ari.mean().reset_index()
+        per.to_csv(SUMMARY / 'table_A4_agreement.csv', index=False)
+        agree = {}
+        for (cohort, target), g in per.groupby(['cohort', 'target']):
+            entry = {}
+            for (kind, x, y), h in g.groupby(['kind', 'a', 'b']):
+                entry[f'{kind}|{x}|{y}'] = dict(mean=float(h.ari.mean()), min=float(h.ari.min()),
+                                                 max=float(h.ari.max()), n=int(len(h)))
+            agree[f'{cohort}|{target}'] = entry
+        out['agreement'] = agree
+        table = agree
+    led = next(d for d in [c.PROJECT / 'manuscripts/scientific-reports/source/manuscript/ledgers',
+                           c.REPO / 'current-release/source/manuscript/ledgers'] if d.exists())
+    primary = pd.read_csv(led / 'all_transfer_scores.csv').groupby(['patient', 'arm', 'target']).balanced_accuracy.mean()
+    means_t = pd.read_csv(FOLLOW / 'transfer_neighbor_mean.csv').set_index(['patient', 'arm', 'target']).balanced_accuracy
+    tess = pd.Series({n: float(primary.loc[(n, 'Tessera', 'region')]) for n in c.LUNG})
+    wide = pd.Series({n: float(means_t.loc[(n, 'NeighborMean-k200', 'region')]) for n in c.LUNG})
+    keep = [n for n in c.LUNG if n != 'NSCLC_Lung6']
+    out['transfer_by_fold'] = dict(mean200_above_tessera=int((wide > tess).sum()), folds=len(tess),
+                                   mean200_without_lung6=float(wide[keep].mean()),
+                                   tessera_without_lung6=float(tess[keep].mean()))
+    return out, table
+
+
 def tuning_summary(comps, sel, mech, cohorts, k_max, table_name):
     out, rows = {}, []
     for cohort, target in cohorts:
@@ -689,6 +739,30 @@ def write_macros(summary):
         if e:
             mac('RHerEOneSeedMin', fmt(e[0]))
             mac('RHerEOneSeedMax', fmt(e[1]))
+    a4s = summary.get('A4', {})
+    if 'loo_all' in a4s:
+        v = a4s['loo_all']
+        mac('RLooAllFull', fmt(v['full'], True))
+        mac('RLooAllMin', fmt(v['min'], True))
+        mac('RLooAllMax', fmt(v['max'], True))
+        mac('RLooAllNeg', v['n_neg'])
+    for key, tag in [('NSCLC|primary', 'Lung'), ('BCC|primary', 'Bcc'), ('HER2ST|all', 'HerAll'),
+                     ('HER2ST|boundary_T1', 'HerBnd')]:
+        v = a4s.get('agreement', {}).get(key)
+        if not v:
+            continue
+        for pair, short in [('between|SameGraphMean|Tessera120', 'TessMean'), ('between|TunedControl|Tessera120', 'TessCtl'),
+                            ('between|PCA50|Tessera120', 'TessPca'), ('between|SameGraphMean|TunedControl', 'MeanCtl'),
+                            ('within|Tessera120|Tessera120', 'SeedTess'), ('within|SameGraphMean|SameGraphMean', 'SeedMean'),
+                            ('within|TunedControl|TunedControl', 'SeedCtl'), ('within|PCA50|PCA50', 'SeedPca')]:
+            mac(f'RAgree{tag}{short}', fmt(v[pair]['mean']))
+        mac(f'RAgree{tag}TessMeanMin', fmt(v['between|SameGraphMean|Tessera120']['min']))
+        mac(f'RAgree{tag}TessMeanMax', fmt(v['between|SameGraphMean|Tessera120']['max']))
+    if 'transfer_by_fold' in a4s:
+        v = a4s['transfer_by_fold']
+        mac('RTransferWideWins', v['mean200_above_tessera'])
+        mac('RTransferWideNoSix', fmt(v['mean200_without_lung6']))
+        mac('RTransferTessNoSix', fmt(v['tessera_without_lung6']))
     MACROS.write_text('\n'.join(lines) + '\n')
 
 
@@ -720,7 +794,7 @@ PATIENT_LABEL = {'NSCLC_Lung5_Rep2': 'Lung5\\_Rep2', 'NSCLC_Lung6': 'Lung6', 'NS
                  'NSCLC_Lung12': 'Lung12', 'NSCLC_Lung13': 'Lung13', 'BCC_PatientA': 'BCC A', 'BCC_PatientB': 'BCC B',
                  'BCC_PatientC': 'BCC C', 'BCC_PatientD': 'BCC D'}
 BLOCK = {('NSCLC', 'primary'): 'NSCLC regions', ('BCC', 'primary'): 'BCC cell types',
-         ('HER2ST', 'all'): 'HER2ST, all labels', ('HER2ST', 'boundary_T1'): 'HER2ST, tumor boundary'}
+         ('HER2ST', 'all'): 'HER2ST, all labels', ('HER2ST', 'boundary_T1'): 'HER2ST, tumor/non-tumor'}
 
 
 def n3(x):
@@ -780,12 +854,25 @@ def write_tables(tables: dict) -> None:
     t3 = tables.get('A3')
     lines = []
     if t3 is not None and len(t3):
-        for target, label in [('all', 'HER2ST, all labels'), ('boundary_T1', 'HER2ST, tumor boundary')]:
+        for target, label in [('all', 'HER2ST, all labels'), ('boundary_T1', 'HER2ST, tumor/non-tumor')]:
             lines.append(f'\\multicolumn{{7}}{{@{{}}l}}{{\\emph{{{label}}}}}\\\\')
             for r in t3[t3.target == target].itertuples():
                 lines.append(f'{r.patient} & {n3(r.tessera_3)} & {n3(r.tessera_10)} & {n3(r.seed_min)}--{n3(r.seed_max)} & '
                              f'{n3(r.control)} & {n3(r.same_graph_mean)} & {fmt(r.tessera_10 - r.control, True)}\\\\')
     bodies['RTableSeeds'] = '\n'.join(lines)
+    agree = tables.get('A4')
+    lines = []
+    if agree:
+        for key, label in BLOCK.items():
+            v = agree.get(f'{key[0]}|{key[1]}')
+            if not v:
+                continue
+            cells = [n3(v[pair]['mean']) for pair in [
+                'between|SameGraphMean|Tessera120', 'between|TunedControl|Tessera120', 'between|PCA50|Tessera120',
+                'between|SameGraphMean|TunedControl', 'within|Tessera120|Tessera120', 'within|SameGraphMean|SameGraphMean',
+                'within|TunedControl|TunedControl', 'within|PCA50|PCA50']]
+            lines.append(f'{label} & ' + ' & '.join(cells) + '\\\\')
+    bodies['RTableAgreement'] = '\n'.join(lines)
     bodies['RTableK'] = tables.get('E3summary') or ''
     if tables.get('E4') is not None and len(tables['E4']):
         t4 = tables['E4']
@@ -795,7 +882,7 @@ def write_tables(tables: dict) -> None:
             mean = getattr(r, 'minus_SameGraphMean', None)
             ctl_s = f"{fmt(ctl['mean'], True)} ({ctl['n_neg']}/{ctl['n']})" if isinstance(ctl, dict) else '--'
             mean_s = f"{fmt(mean['mean'], True)} ({mean['n_neg']}/{mean['n']})" if isinstance(mean, dict) else '--'
-            tgt = {'primary': 'regions', 'cell_type': 'cell types', 'all': 'all labels', 'boundary_T1': 'boundary'}[r.target]
+            tgt = {'primary': 'regions', 'cell_type': 'cell types', 'all': 'all labels', 'boundary_T1': 'tumor/non-tumor'}[r.target]
             clus = 'K-means' if r.clustering == 'kmeans_matched' else 'native'
             names = {'lambda0.8': '$\\lambda=0.8$', 'lambda0.2': '$\\lambda=0.2$', 'celltype': 'cell-type graph',
                      'expression': 'expression graph'}
@@ -835,13 +922,13 @@ def k_table(summary) -> str:
 
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument('--parts', nargs='+', default=['E1', 'E2', 'E2W', 'A2', 'A3', 'E3', 'E4'])
+    p.add_argument('--parts', nargs='+', default=['E1', 'E2', 'E2W', 'A2', 'A3', 'A4', 'E3', 'E4'])
     args = p.parse_args()
     SUMMARY.mkdir(parents=True, exist_ok=True)
     comps = comparators()
     comps.to_csv(SUMMARY / 'comparators.csv', index=False)
     summary, tables = {}, {}
-    for part, fn in [('E1', e1), ('E2', e2), ('E2W', e2_wide), ('A2', a2_lung), ('A3', a3), ('E3', e3), ('E4', e4)]:
+    for part, fn in [('E1', e1), ('E2', e2), ('E2W', e2_wide), ('A2', a2_lung), ('A3', a3), ('A4', a4), ('E3', e3), ('E4', e4)]:
         if part in args.parts:
             summary[part], tables[part] = fn(comps)
     if 'E3' in summary:

@@ -336,7 +336,7 @@ def figure_07():
     mean_names = sorted(set(means.index.get_level_values('arm')), key=lambda a: float(''.join(c for c in a if c.isdigit())))
     assert mean_names == ['NeighborMean-k6', 'NeighborMean-k200'], mean_names
     arms = ['PCA50', 'SelfOnly', mean_names[0], mean_names[1], 'Tessera']
-    labels = ['PCA50', 'Self-only', SGM, '200-neighbor mean', TST]
+    labels = ['PCA50', 'Self-only', 'Six-neighbor mean', '200-neighbor mean', TST]
     colors = [COLOR['PCA50'], COLOR['SelfOnly'], COLOR['NeighborMean'], COLOR['Mean200'], COLOR['Tessera']]
     cv = Canvas(400)
     gap_x, gap_y = 10, 4
@@ -403,7 +403,7 @@ def arm_dots(ax, target, xlim, ticks):
     return {c: [per[u][c] for u in units] for c, *_ in ARM_DOT_COLUMNS}
 
 
-FOREST_TARGETS = [('All labels', 'all'), ('Compartments', 'compartments'), ('Tumor boundary', 'boundary_T1')]
+FOREST_TARGETS = [('All labels', 'all'), ('Compartments', 'compartments'), ('Tumor/non-tumor', 'boundary_T1')]
 FOREST_SPEC = [('Tessera_minus_UniformSameGraph', f'{TST} {MINUS} same-graph mean', 'Tessera'),
                ('Tessera_minus_NestedControl', f'{TST} {MINUS} tuned control', 'Tessera'),
                ('UniformSameGraph_minus_NestedControl', f'{SGM} {MINUS} tuned control', 'NeighborMean')]
@@ -471,7 +471,7 @@ def seam_dots(ax):
     ax.axvline(.5, color=S.GRAY, lw=.8, ls='--', zorder=0)
     ax.set_xlim(.33, .78)
     ax.set_xticks([.4, .5, .6, .7])
-    ax.set_xlabel('Seam AUROC on tumor-boundary edges')
+    ax.set_xlabel('Seam AUROC on tumor/non-tumor edges')
     return {c: {'per_unit': [seam['per_unit'][u][c] for u in units], 'mean': seam['mean'][c]} for c, *_ in SEAM_COLUMNS}
 
 
@@ -558,7 +558,7 @@ def figure_S15():
     row, h = 17, 214
     gap = 8
     w = (W - 2 * gap) / 3
-    a = cv.panel(0, row, w, h, 'a', 'Tumor boundary', left=16, bottom=X_AXIS, right=8)
+    a = cv.panel(0, row, w, h, 'a', 'Tumor/non-tumor', left=16, bottom=X_AXIS, right=8)
     rec_a = arm_dots(a, 'boundary_T1', (-.04, .8), [0, .2, .4, .6, .8])
     b = cv.panel(w + gap, row, w, h, 'b', 'Replicate fits', left=16, bottom=X_AXIS, right=8)
     rec_b = replicate_dots(b)
