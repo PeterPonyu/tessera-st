@@ -72,12 +72,12 @@
  "figure-03": {
   "page_points": [
    508.8,
-   451.0
+   417.0
   ],
   "border_points_per_side": 6.0,
   "jpg_pixels": [
    2067,
-   1833
+   1695
   ],
   "fonts": [
    {
@@ -188,12 +188,12 @@
  "figure-07": {
   "page_points": [
    508.8,
-   402.0
+   352.0
   ],
   "border_points_per_side": 6.0,
   "jpg_pixels": [
    2067,
-   1634
+   1430
   ],
   "fonts": [
    {
@@ -210,19 +210,19 @@
    }
   ],
   "unrenamed_Tessera": 0,
-  "Tessera-ST_occurrences": 4,
-  "Same-graph_mean_occurrences": 4,
+  "Tessera-ST_occurrences": 2,
+  "Same-graph_mean_occurrences": 2,
   "images": 0
  },
  "figure-08": {
   "page_points": [
    496.8,
-   409.0
+   383.0
   ],
   "border_points_per_side": 0,
   "jpg_pixels": [
    2067,
-   1702
+   1594
   ],
   "fonts": [
    {
@@ -246,12 +246,12 @@
  "figure-09": {
   "page_points": [
    496.8,
-   436.0
+   410.0
   ],
   "border_points_per_side": 0,
   "jpg_pixels": [
    2067,
-   1815
+   1706
   ],
   "fonts": [
    {

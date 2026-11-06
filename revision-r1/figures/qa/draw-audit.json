@@ -30,12 +30,12 @@
    "min_text_points": 7.5,
    "max_text_points": 8.5,
    "letter_points": 12.0,
-   "text_runs_checked": 78,
+   "text_runs_checked": 84,
    "overlapping_text_runs": 0,
    "text_outside_canvas": 0,
    "canvas_points": [
     496.8,
-    439
+    405
    ],
    "panel_letters": [
     "a",
@@ -78,12 +78,12 @@
    "min_text_points": 7.5,
    "max_text_points": 8.5,
    "letter_points": 12.0,
-   "text_runs_checked": 52,
+   "text_runs_checked": 42,
    "overlapping_text_runs": 0,
    "text_outside_canvas": 0,
    "canvas_points": [
     496.8,
-    390
+    340.0
    ],
    "panel_letters": [
     "a",
@@ -102,12 +102,12 @@
    "min_text_points": 7.0,
    "max_text_points": 8.5,
    "letter_points": 12.0,
-   "text_runs_checked": 69,
+   "text_runs_checked": 67,
    "overlapping_text_runs": 0,
    "text_outside_canvas": 0,
    "canvas_points": [
     496.8,
-    409
+    383
    ],
    "panel_letters": [
     "a",
@@ -130,7 +130,7 @@
    "text_outside_canvas": 0,
    "canvas_points": [
     496.8,
-    436
+    410
    ],
    "panel_letters": [
     "a",

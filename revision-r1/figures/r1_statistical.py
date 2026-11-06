@@ -185,12 +185,18 @@ def figure_03():
     gap = 6
     wa = 196
     wb = (W - wa - 2 * gap) / 2
+    # Panels b and c hold only the nine lung and BCC rows. They keep panel a's row pitch, so each row lines up
+    # with its label in a, and panels e and f move up into the space the other four rows would have used.
+    pitch = (h1 - HEADER - bottom1) / 13.2
+    hb = HEADER + 9.2 * pitch + bottom1
     a = cv.panel(0, row1, wa, h1, 'a', 'Partition agreement', left=left_a, bottom=bottom1, right=8)
-    b = cv.panel(wa + gap, row1, wb, h1, 'b', 'Subsampled fields', left=6, bottom=bottom1, right=8)
-    c = cv.panel(wa + 2 * gap + wb, row1, wb, h1, 'c', 'Whole sections', left=6, bottom=bottom1, right=8)
+    b = cv.panel(wa + gap, row1, wb, hb, 'b', 'Subsampled fields', left=6, bottom=bottom1, right=8)
+    c = cv.panel(wa + 2 * gap + wb, row1, wb, hb, 'c', 'Whole sections', left=6, bottom=bottom1, right=8)
+    a.set_ylim(12.6, -.6)
+    for ax in (b, c):
+        ax.set_ylim(8.6, -.6)
     for ax in (a, b, c):
-        ax.set_ylim(12.6, -.6)
-        ax.set_yticks(y)
+        ax.set_yticks(y if ax is a else y[:9])
         ax.tick_params(axis='y', length=0)
     a.set_yticklabels([SHORT[n] for n in OBJECTS])
     for ax in (b, c):
@@ -216,9 +222,12 @@ def figure_03():
         ax.set_xlim(-.30, .22)
         ax.set_xticks([-.2, 0, .2])
         contrast_label(ax)
-    row2, h2 = row1 + h1 + 8, 162
+    row2, hd = row1 + h1 + 8, 128
     bottom2 = X_AXIS
-    d = cv.panel(0, row2, wa, h2 - 34, 'd', 'Cell-type cluster count', left=left_a, bottom=bottom2, right=8)
+    total = row2 + hd
+    row_ef = row1 + hb + 8
+    h_ef = total - row_ef - 34  # 34 pt below each panel for its legend
+    d = cv.panel(0, row2, wa, hd, 'd', 'Cell-type cluster count', left=left_a, bottom=bottom2, right=8)
     rescore = S.read_csv(FOLLOW / 'rescore.csv')
     r = rescore[rescore.object.isin(OBJECTS[:5])].groupby(['object', 'arm']).ari_celltype_at_celltype_K.mean()
     celltype = {}
@@ -237,7 +246,7 @@ def figure_03():
     for i, (letter, text, names, kind) in enumerate([('e', 'Lung neighborhood scale', OBJECTS[:5], 'NeighborMean'),
                                                      ('f', 'BCC neighborhood scale', OBJECTS[5:9], 'BANKSY-style')]):
         x = wa + gap + i * (wb + gap)
-        ax = cv.panel(x, row2, wb, h2 - 34, letter, text, left=Y_AXIS - 4, bottom=bottom2, right=8)
+        ax = cv.panel(x, row_ef, wb, h_ef, letter, text, left=Y_AXIS - 4, bottom=bottom2, right=8)
         for n, col in zip(names, S.PATIENT_SHADES):
             sub = scales[(scales.object == n) & (scales.kind == kind)]
             if kind == 'BANKSY-style':
@@ -252,9 +261,9 @@ def figure_03():
         ax.set_ylabel('ARI')
         box = ax.get_position()
         centre = (box.x0 + box.x1) / 2 * W
-        cv.legend(ax.get_legend_handles_labels()[0], centre, row2 + h2 - 30, ncol=2, size=LEGEND,
+        cv.legend(ax.get_legend_handles_labels()[0], centre, row_ef + h_ef + 4, ncol=2, size=LEGEND,
                   handlelength=1.1, columnspacing=.8, handletextpad=.3)
-    cv.resize(row2 + h2)
+    cv.resize(total)
     return save(cv, 'figure-03', {'a': series, 'bounded_vs_pca': vp, 'bounded_vs_tuned': vt, 'whole_vs_pca': wp,
                                    'whole_vs_tuned': wt, 'd': celltype, 'scale_curves': curves})
 
@@ -330,17 +339,20 @@ def figure_07():
     labels = ['PCA50', 'Self-only', SGM, '200-neighbor mean', TST]
     colors = [COLOR['PCA50'], COLOR['SelfOnly'], COLOR['NeighborMean'], COLOR['Mean200'], COLOR['Tessera']]
     cv = Canvas(400)
-    gap_x, gap_y = 10, 10
+    gap_x, gap_y = 10, 4
     wb = (W - gap_x) / 2
-    hb = 190
+    plot_h = 118                    # plotting height of every panel
+    top_h = HEADER + plot_h + 8     # upper row: the arms are named once, under the lower row
+    low_h = HEADER + plot_h + 52    # lower row: room for the slanted arm names
     record = {}
     for i, (target, metric) in enumerate([('region', 'balanced_accuracy'), ('cell_type', 'balanced_accuracy'),
                                           ('region', 'accuracy'), ('cell_type', 'accuracy')]):
         x = 0 if i % 2 == 0 else wb + gap_x
-        y = 0 if i < 2 else hb + gap_y
+        y = 0 if i < 2 else top_h + gap_y
         title = ('Regions' if target == 'region' else 'Cell types') + (': balanced accuracy' if metric == 'balanced_accuracy'
                                                                          else ': accuracy')
-        ax = cv.panel(x, y, wb, hb, 'abcd'[i], title, left=Y_AXIS + 6, bottom=52, right=8)
+        ax = cv.panel(x, y, wb, top_h if i < 2 else low_h, 'abcd'[i], title, left=Y_AXIS + 6,
+                      bottom=8 if i < 2 else 52, right=8)
         matrix = np.array([[float((means if a in mean_names else primary).loc[(n, a, target), metric]) for n in OBJECTS[:5]]
                            for a in arms])
         for values in matrix.T:
@@ -348,13 +360,16 @@ def figure_07():
         for j, col in enumerate(colors):
             ax.scatter(np.full(5, j), matrix[j], s=14, color=col, linewidths=0, zorder=3)
             ax.plot([j - .22, j + .22], [matrix[j].mean()] * 2, color=INK, lw=1.5, zorder=4)
-        ax.set_xticks(np.arange(5), labels, rotation=30, ha='right', rotation_mode='anchor')
+        if i < 2:
+            ax.set_xticks(np.arange(5), [])
+        else:
+            ax.set_xticks(np.arange(5), labels, rotation=30, ha='right', rotation_mode='anchor')
         ax.set_xlim(-.5, 4.5)
         ax.set_ylim(0, 1)
         ax.set_yticks([0, .25, .5, .75, 1])
         ax.set_ylabel('Held-out patient score')
         record[f'{target}_{metric}'] = matrix
-    cv.resize(2 * hb + gap_y)
+    cv.resize(top_h + gap_y + low_h)
     return save(cv, 'figure-07', {'arms': arms, 'patients': OBJECTS[:5], **record})
 
 
@@ -454,8 +469,8 @@ def seam_dots(ax):
                    linewidths=0)
     ax.set_yticks(list(y) + [mean_row], [u[0] for u in units] + ['Mean'])
     ax.axvline(.5, color=S.GRAY, lw=.8, ls='--', zorder=0)
-    ax.set_xlim(.3, .92)
-    ax.set_xticks([.3, .4, .5, .6, .7, .8])
+    ax.set_xlim(.33, .78)
+    ax.set_xticks([.4, .5, .6, .7])
     ax.set_xlabel('Seam AUROC on tumor-boundary edges')
     return {c: {'per_unit': [seam['per_unit'][u][c] for u in units], 'mean': seam['mean'][c]} for c, *_ in SEAM_COLUMNS}
 
@@ -473,7 +488,7 @@ def figure_08():
     """Independent pathologist cohort (old Figure 11 panels a, c and d)."""
     cv = Canvas(420)
     top_legend(cv, arm_legend_handles())
-    row1, h1 = 17, 206
+    row1, h1 = 17, 192
     wa = 186
     a = cv.panel(0, row1, wa, h1, 'a', 'All labels', left=16, bottom=X_AXIS, right=8)
     rec_a = arm_dots(a, 'all', (-.01, .38), [0, .1, .2, .3])
@@ -482,7 +497,7 @@ def figure_08():
     xb = wa + 8
     b = cv.panel(xb, row1, W - xb, h1, 'b', 'Paired contrasts', left=left_b, bottom=X_AXIS, right=30)
     rec_b = forest(b, left_b)
-    row2, h2 = row1 + h1 + 8, 178
+    row2, h2 = row1 + h1 + 8, 166
     wc = 312
     c = cv.panel(0, row2, wc, h2, 'c', 'Seam AUROC', left=34, bottom=X_AXIS, right=8)
     rec_c = seam_dots(c)
@@ -558,7 +573,7 @@ def figure_S15():
 
 
 # ============================================================ main Figure 9 / S16
-def landscape_panels(cv, specs, top, height, legend_handles=None):
+def landscape_panels(cv, specs, top, height, legend_handles=None, contrast_xlim=(-.4, .5), contrast_ticks=(-.3, 0, .3)):
     """Shared 24-row layout for the landscape contrasts (old Figure 12, upper row)."""
     table = landscape()
     n = len(table)
@@ -591,8 +606,8 @@ def landscape_panels(cv, specs, top, height, legend_handles=None):
                                   'pca': ('tessera_minus_pca50', 'o', 'PCA50')}[kind]
             open_marker(ax, table[field], yy, key, marker=marker, s=16)
             ax.axvline(0, color=INK, lw=.6)
-            ax.set_xlim(-.4, .5)
-            ax.set_xticks([-.3, 0, .3])
+            ax.set_xlim(*contrast_xlim)
+            ax.set_xticks(list(contrast_ticks))
             contrast_label(ax)
             record[field] = table[field].tolist()
     return record
@@ -602,8 +617,9 @@ def figure_09():
     """Annotation landscape (old Figure 12 panels a, b and e)."""
     table = landscape()
     cv = Canvas(470)
-    top, h1 = 0, 318
-    record = landscape_panels(cv, [('a', SGM, 'same'), ('b', 'Test-selected', 'oracle')], top, h1)
+    top, h1 = 0, 292
+    record = landscape_panels(cv, [('a', SGM, 'same'), ('b', 'Test-selected', 'oracle')], top, h1,
+                              contrast_xlim=(-.3, .23), contrast_ticks=(-.2, 0, .2))
     row2 = top + h1 + 6
     groups = table.group.drop_duplicates().tolist()
     left = cv.text_width(groups, TICK) + 7
