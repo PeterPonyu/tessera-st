@@ -9,7 +9,7 @@ There are three levels of reproduction. Level 1 needs only the saved results. Le
 **Getting the files.** Clone this repository. The GitHub copy omits large arrays (inputs, embeddings, model states). To get them:
 
 - **Original submission:** download the complete archive at [doi:10.5281/zenodo.23308077](https://doi.org/10.5281/zenodo.23308077) and reassemble it as described in its `REASSEMBLE.md`.
-- **Revision analyses:** the revision code and result tables are archived at [doi:10.5281/zenodo.23992954](https://doi.org/10.5281/zenodo.23992954) (version 2026.11.05-revision-r1.1), which also keeps every file of the original archive.
+- **Revision analyses:** the revision code and result tables are archived at [doi:10.5281/zenodo.23996936](https://doi.org/10.5281/zenodo.23996936) (version 2026.11.05-revision-r1.2), which also keeps every file of the original archive.
 
 **Environment.** Python 3.13 with the versions in `current-release/requirements-analysis.txt`. PyTorch 2.12 with CUDA is used for the GPU steps; every step also runs on CPU, more slowly.
 
@@ -27,7 +27,7 @@ python revision-r1/figures/build_r1_figures.py all            # every main and s
 |---|---|
 | Tables 1–3 and Supplementary Tables S1–S15 | the original analyses, checked by `verify_saved_results.py` |
 | Supplementary Table S16 (settings) and S17 (data sources) | written in the manuscript source from the configuration and the source manifests |
-| Supplementary Tables S18–S21 and Figures 5 and 6 | `revision-r1/analyze_r1.py` and `revision-r1/figures/build_r1_figures.py` |
+| Supplementary Tables S18–S23 and Figures 5 and 6 | `revision-r1/analyze_r1.py` and `revision-r1/figures/build_r1_figures.py` |
 | All other figures | `revision-r1/figures/build_r1_figures.py` from the saved results |
 
 ### Level 2: refit every analysis from the archived derived inputs (about 2 h on a laptop GPU)
@@ -49,8 +49,12 @@ python revision-r1/run_budget.py gpu;    python revision-r1/run_budget.py her2st
 python revision-r1/run_tuning.py grid-gpu; python revision-r1/run_tuning.py grid-her2st; python revision-r1/run_tuning.py mechanism
 python revision-r1/run_k_sweep.py sweep; python revision-r1/run_k_sweep.py harmonize; python revision-r1/run_k_sweep.py refine
 python revision-r1/native/prepare_inputs.py                   # then the native methods; see revision-r1/native/VERSIONS.md
+python revision-r1/run_tuning.py grid-gpu-wide; python revision-r1/run_tuning.py grid-her2st-wide; python revision-r1/run_tuning.py mechanism-wide
+python revision-r1/run_budget.py early; python revision-r1/run_budget.py her2st-seeds
 python revision-r1/analyze_r1.py
 ```
+
+The last two fitting lines are the exploratory extensions A1 (graphs of 50 and 100 neighbors) and A3 (earlier checkpoints, ten breast seeds) of the protocol; they take several more hours. Extension A2, the 200-neighbor lung graphs, needs a GPU with about 80 GB of memory. `revision-r1/remote/setup_box.sh` prepares such a machine from a commit of this repository and `revision-r1/remote/run_a2.sh` runs the modes `hwcheck-a2`, `grid-gpu-a2` and `mechanism-a2` of `run_tuning.py`; the machine and run used for the archived scores are recorded in `E2/remote-a2/` of the results archive.
 
 Breast (HER2ST) fits run on one CPU thread, so they are deterministic. GPU fits are not bitwise deterministic, so refitted scores can differ slightly from the saved ones.
 
@@ -68,7 +72,7 @@ python current-release/portable/run_analysis.py prepare --lab-root RAW/sources -
 
 The reviewed main Article, Supplementary Information and editable document sources are available in the [submission-2026-10-12 document release](https://github.com/PeterPonyu/tessera-st/releases/tag/submission-2026-10-12) and in [submission-2026-10-12/](submission-2026-10-12/README.md).
 
-The analyses of the original submission are version 2026.10.11-controls-audit, DOI [10.5281/zenodo.23308077](https://doi.org/10.5281/zenodo.23308077). The analyses added during review are version 2026.11.05-revision-r1.1, DOI [10.5281/zenodo.23992954](https://doi.org/10.5281/zenodo.23992954), which keeps the earlier files and adds the revision code and result tables. It archives the frozen computational evidence and its earlier document sources. The later editorial revision has a separate GitHub document tag; it adds no model fits or biological samples. Earlier document files remain available for provenance.
+The analyses of the original submission are version 2026.10.11-controls-audit, DOI [10.5281/zenodo.23308077](https://doi.org/10.5281/zenodo.23308077). The analyses added during review are version 2026.11.05-revision-r1.2, DOI [10.5281/zenodo.23996936](https://doi.org/10.5281/zenodo.23996936), which keeps the earlier files and adds the revision code and result tables. It archives the frozen computational evidence and its earlier document sources. The later editorial revision has a separate GitHub document tag; it adds no model fits or biological samples. Earlier document files remain available for provenance.
 
 Frozen research-source version **2026.10.11-controls-audit** is in [current-release/](current-release/). The earlier archived [inline manuscript](current-release/output/scientific-reports/scientific-reports-manuscript-inline.pdf), [journal manuscript](current-release/output/scientific-reports/scientific-reports-manuscript.pdf) and [supplement](current-release/output/scientific-reports/scientific-reports-supplement.pdf) report matched neighbourhood controls, component removals, patient-held-out transfer, exploratory HER2ST comparator extensions and the separate colorectal pilot. The author developed and maintains the evaluated implementation.
 

@@ -6,15 +6,18 @@ authors:
   - family-names: Fu
     given-names: Zeyu
     orcid: "https://orcid.org/0009-0001-8329-0108"
-version: "2026.11.05-revision-r1.1"
-doi: "10.5281/zenodo.23992954"
+version: "2026.11.05-revision-r1.2"
+doi: "10.5281/zenodo.23996936"
 date-released: "2026-11-05"
 license: MIT
-abstract: "Tessera-ST is a self-supervised gated graph encoder for spatial molecular data (earlier releases call it Tessera). This release contains the evaluated implementation, the controls audit of the original submission, and the analyses added during review: training budget, patient-excluded tuning of the encoder, cluster number with fixed representations, and native external methods, together with their protocol, tests and result tables. Third-party data, annotations and images retain their source-specific terms."
+abstract: "Tessera-ST is a self-supervised gated graph encoder for spatial molecular data (earlier releases call it Tessera). This release contains the evaluated implementation, the controls audit of the original submission, and the analyses added during review: training budget, patient-excluded tuning of the encoder, cluster number with fixed representations, and native external methods, with exploratory extensions to wider encoder graphs, earlier checkpoints and more breast seeds, together with their protocol, tests and result tables. Third-party data, annotations and images retain their source-specific terms."
 identifiers:
   - type: doi
+    value: "10.5281/zenodo.23996936"
+    description: "Version 2026.11.05-revision-r1.2: analyses added during review and their exploratory extensions, with the files of the original archive retained"
+  - type: doi
     value: "10.5281/zenodo.23992954"
-    description: "Version 2026.11.05-revision-r1.1: analyses added during review, with the files of the original archive retained"
+    description: "Version 2026.11.05-revision-r1.1: analyses added during review, before the exploratory extensions"
   - type: doi
     value: "10.5281/zenodo.23992778"
     description: "Version 2026.11.05-revision-r1: the same analyses, superseded by 2026.11.05-revision-r1.1"
