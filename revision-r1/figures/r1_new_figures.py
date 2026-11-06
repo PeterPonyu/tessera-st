@@ -9,6 +9,9 @@ Layout uses r1_style (Arial, explicit point offsets, overlap checks).
 """
 from __future__ import annotations
 
+import os
+from pathlib import Path
+
 import numpy as np
 from matplotlib.lines import Line2D
 from matplotlib.transforms import blended_transform_factory
@@ -16,7 +19,7 @@ from matplotlib.transforms import blended_transform_factory
 import r1_style as S
 from r1_style import COLOR, INK, LEGEND, LIGHT, MINUS, NOTE, TICK, TST, W, X_AXIS, Canvas, save
 
-SUMMARY = S.RESULTS / 'revision-r1/summary'
+SUMMARY = Path(os.environ.get('TESSERA_R1_SUMMARY') or S.RESULTS / 'revision-r1/summary')
 TARGETS = [('NSCLC', 'primary', 'NSCLC regions'), ('BCC', 'primary', 'BCC cell types'),
            ('HER2ST', 'all', 'HER2ST, all labels'), ('HER2ST', 'boundary_T1', 'HER2ST, tumor boundary')]
 PATIENT_LINE = '#a9b1b6'

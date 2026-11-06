@@ -13,7 +13,7 @@ There are three levels of reproduction. Level 1 needs only the saved results. Le
 
 **Environment.** Python 3.13 with the versions in `current-release/requirements-analysis.txt`. PyTorch 2.12 with CUDA is used for the GPU steps; every step also runs on CPU, more slowly.
 
-**Where the files go.** By default the scripts look for `data/`, `results/` and `validation/` next to this repository, and otherwise for the same folders under `current-release/`. Override with the environment variables `TESSERA_DATA`, `TESSERA_RESULTS`, `TESSERA_VALIDATION`, `TESSERA_R1_OUT` (revision outputs) and `TESSERA_LAB_ROOT` (raw anatomical sections).
+**Where the files go.** By default the scripts look for `data/`, `results/` and `validation/` next to this repository, and otherwise for the same folders under `current-release/`. Override with the environment variables `TESSERA_DATA`, `TESSERA_RESULTS`, `TESSERA_VALIDATION`, `TESSERA_R1_OUT` (revision outputs), `TESSERA_R1_SUMMARY` (revision summary tables) and `TESSERA_LAB_ROOT` (raw anatomical sections). The figure scripts honor the same variables, write to the folders given by `R1_PDF_OUT`, `R1_JPG_OUT` and `R1_QA_OUT`, and use Arial; if Arial is not installed system-wide, set `R1_FONT_DIR` to a folder containing the Arial TTF files.
 
 ### Level 1: regenerate every table and figure from saved results (minutes, no fitting)
 
