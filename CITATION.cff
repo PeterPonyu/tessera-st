@@ -7,9 +7,14 @@ authors:
     given-names: Zeyu
     orcid: "https://orcid.org/0009-0001-8329-0108"
 version: "2026.11.05-revision-r1"
+doi: "10.5281/zenodo.23992778"
+date-released: "2026-11-05"
 license: MIT
 abstract: "Tessera-ST is a self-supervised gated graph encoder for spatial molecular data (earlier releases call it Tessera). This release contains the evaluated implementation, the controls audit of the original submission, and the analyses added during review: training budget, patient-excluded tuning of the encoder, cluster number with fixed representations, and native external methods, together with their protocol, tests and result tables. Third-party data, annotations and images retain their source-specific terms."
 identifiers:
+  - type: doi
+    value: "10.5281/zenodo.23992778"
+    description: "Version 2026.11.05-revision-r1: analyses added during review, with the files of the previous version retained"
   - type: doi
     value: "10.5281/zenodo.23308077"
     description: "Version 2026.10.11-controls-audit: evaluated implementation and analyses of the original submission"
