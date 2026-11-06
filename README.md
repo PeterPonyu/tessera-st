@@ -27,7 +27,7 @@ python revision-r1/figures/build_r1_figures.py all            # every main and s
 |---|---|
 | Tables 1–3 and Supplementary Tables S1–S15 | the original analyses, checked by `verify_saved_results.py` |
 | Supplementary Table S16 (settings) and S17 (data sources) | written in the manuscript source from the configuration and the source manifests |
-| Supplementary Tables S18–S23 and Figures 5 and 6 | `revision-r1/analyze_r1.py` and `revision-r1/figures/build_r1_figures.py` |
+| Supplementary Tables S18–S25 and Figures 5 and 6 | `revision-r1/analyze_r1.py` and `revision-r1/figures/build_r1_figures.py` |
 | All other figures | `revision-r1/figures/build_r1_figures.py` from the saved results |
 
 ### Level 2: refit every analysis from the archived derived inputs (about 2 h on a laptop GPU)
@@ -51,10 +51,11 @@ python revision-r1/run_k_sweep.py sweep; python revision-r1/run_k_sweep.py harmo
 python revision-r1/native/prepare_inputs.py                   # then the native methods; see revision-r1/native/VERSIONS.md
 python revision-r1/run_tuning.py grid-gpu-wide; python revision-r1/run_tuning.py grid-her2st-wide; python revision-r1/run_tuning.py mechanism-wide
 python revision-r1/run_budget.py early; python revision-r1/run_budget.py her2st-seeds
+python revision-r1/run_k_sweep.py agreement
 python revision-r1/analyze_r1.py
 ```
 
-The last two fitting lines are the exploratory extensions A1 (graphs of 50 and 100 neighbors) and A3 (earlier checkpoints, ten breast seeds) of the protocol; they take several more hours. Extension A2, the 200-neighbor lung graphs, needs a GPU with about 80 GB of memory. `revision-r1/remote/setup_box.sh` prepares such a machine from a commit of this repository and `revision-r1/remote/run_a2.sh` runs the modes `hwcheck-a2`, `grid-gpu-a2` and `mechanism-a2` of `run_tuning.py`; the machine and run used for the archived scores are recorded in `E2/remote-a2/` of the results archive.
+The last three command lines run the exploratory extensions A1 (graphs of 50 and 100 neighbors) and A3 (earlier checkpoints, ten breast seeds) of the protocol, and A4 (partition agreement at the reference cluster number, from saved embeddings, about a minute); A1 and A3 take several more hours. Extension A2, the 200-neighbor lung graphs, needs a GPU with about 80 GB of memory. `revision-r1/remote/setup_box.sh` prepares such a machine from a commit of this repository and `revision-r1/remote/run_a2.sh` runs the modes `hwcheck-a2`, `grid-gpu-a2` and `mechanism-a2` of `run_tuning.py`; the machine and run used for the archived scores are recorded in `E2/remote-a2/` of the results archive.
 
 Breast (HER2ST) fits run on one CPU thread, so they are deterministic. GPU fits are not bitwise deterministic, so refitted scores can differ slightly from the saved ones.
 
