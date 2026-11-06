@@ -205,7 +205,8 @@ def main():
     (E1 / 'embeddings').mkdir(parents=True, exist_ok=True)
     (E1 / 'records').mkdir(parents=True, exist_ok=True)
     if args.mode in ('early', 'her2st-seeds'):
-        c.write_lock(E1, 'E1 Amendment A3: earlier checkpoints and more breast seeds', name='run-lock-A3.json')
+        c.write_lock(E1, f'E1 Amendment A3 ({args.mode})',
+                     name='run-lock-A3.json' if args.mode == 'early' else 'run-lock-A3-seeds.json')
     else:
         c.write_lock(E1, 'E1 training budget')
     started = time.perf_counter()
