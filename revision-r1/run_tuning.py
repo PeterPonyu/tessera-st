@@ -257,7 +257,8 @@ def main():
         c.write_lock(E2, 'E2 Amendment A2: 200-neighbour lung graphs on a rented GPU', name='run-lock-A2.json',
                      extra=dict(a2_k=A2_K, dry_run=A2_DRY))
     elif args.mode.endswith('-wide'):
-        c.write_lock(E2, 'E2 Amendment A1: wider encoder graphs', name='run-lock-A1.json')
+        c.write_lock(E2, f'E2 Amendment A1: wider encoder graphs ({args.mode})',
+                     name='run-lock-A1.json' if args.mode.startswith('grid') else 'run-lock-A1-mechanism.json')
     else:
         c.write_lock(E2, 'E2 nested tuning')
     started = time.perf_counter()
