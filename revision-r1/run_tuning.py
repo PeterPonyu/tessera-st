@@ -9,6 +9,10 @@ Modes:
   grid-gpu-wide, grid-her2st-wide, mechanism-wide
                  Amendment A1 (PROTOCOL-R1.md): k in {50, 100} for NSCLC regions and HER2ST, selection
                  over the 40-configuration grid, and the mechanism arms at the new selections
+  hwcheck-a2, grid-gpu-a2, mechanism-a2
+                 Amendment A2: on a rented A100 80 GB, refit the released and A1-selected lung configurations
+                 (hardware check), fit k = 200 for NSCLC regions, select over the 48-configuration lung grid and
+                 fit NoGate/NoContrast where k = 200 is selected. A2_K and A2_DRY=1 shrink the run for a dry run.
 """
 from __future__ import annotations
 
@@ -19,6 +23,8 @@ import time
 
 import numpy as np
 import pandas as pd
+import os
+
 import torch
 
 import common_r1 as c
@@ -29,6 +35,8 @@ E2 = c.OUT / 'E2'
 GRAPH_K = [6, 15, 30]
 GRAPH_K_WIDE = [50, 100]  # Amendment A1
 WIDE_COHORTS = ['NSCLC', 'HER2ST']
+A2_K = int(os.environ.get('A2_K', '200'))      # Amendment A2; a smaller value only for dry runs
+A2_DRY = os.environ.get('A2_DRY') == '1'          # one patient, one setting, one seed
 WEIGHTS = [0.5, 1.0]
 TEMPS = [0.2, 0.5]
 EPOCHS = [120, 200]
@@ -104,6 +112,10 @@ def selections(wide: bool = False) -> pd.DataFrame:
     if wide:
         grid = pd.concat([grid[grid.cohort.isin(WIDE_COHORTS)], pd.read_csv(E2 / 'E2_grid_gpu_wide.csv'),
                           pd.read_csv(E2 / 'E2_grid_her2st_wide.csv')])
+    return select_from(grid, 'E2_selection_wide.csv' if wide else 'E2_selection.csv')
+
+
+def select_from(grid: pd.DataFrame, out: str) -> pd.DataFrame:
     rows = []
     for (cohort, target), part in grid.groupby(['cohort', 'target']):
         means = part.groupby(['patient', 'config']).ari.mean().unstack()
@@ -115,7 +127,7 @@ def selections(wide: bool = False) -> pd.DataFrame:
                              oracle_config=str(means.loc[patient].idxmax()),
                              oracle_tessera_ari=float(means.loc[patient].max())))
     table = pd.DataFrame(rows)
-    table.to_csv(E2 / ('E2_selection_wide.csv' if wide else 'E2_selection.csv'), index=False)
+    table.to_csv(E2 / out, index=False)
     return table
 
 
@@ -159,13 +171,90 @@ def run_mechanism(processes: int, wide: bool = False):
     out.to_csv(E2 / ('E2_mechanism_wide.csv' if wide else 'E2_mechanism.csv'), index=False)
 
 
+# ------------------------------------------------------------------ Amendment A2 (rented GPU)
+def _a2_names():
+    return c.LUNG[:1] if A2_DRY else c.LUNG
+
+
+def _a2_seeds():
+    return c.SEEDS[:1] if A2_DRY else c.SEEDS
+
+
+def _gpu_job(args):
+    name, graph_k, weight, temp, seed, arm, epochs = args
+    torch.set_num_threads(4)
+    unit = next(u for u in cohort_units('NSCLC') if u['name'] == name)
+    rows = fit_grid_point(unit, graph_k, weight, temp, seed, 'cuda', unit['head_k'], arm=arm, epochs=epochs)
+    torch.cuda.empty_cache()
+    return rows
+
+
+def run_gpu_pool(jobs, processes, out):
+    """Fit jobs in parallel GPU workers; the table is rewritten after every fit, so a cut-off run keeps its rows."""
+    rows = []
+    with mp.get_context('spawn').Pool(processes) as pool:
+        for part in pool.imap_unordered(_gpu_job, jobs):
+            rows += part
+            pd.DataFrame(rows).to_csv(E2 / out, index=False)
+            print('A2', out, len(rows), 'rows', flush=True)
+    return rows
+
+
+def run_hwcheck_a2(processes):
+    sel = pd.read_csv(E2 / 'E2_selection_wide.csv')
+    configs = {config_id(6, 0.5, 0.2, 120)} | set(sel[sel.cohort == 'NSCLC'].selected)
+    settings = sorted({parse_config(cfg)[:3] for cfg in configs})
+    if A2_DRY:
+        settings = settings[:1]
+    jobs = [(name, k, w, t, seed, 'Tessera', (120, 200)) for k, w, t in settings for name in _a2_names()
+            for seed in _a2_seeds()]
+    return run_gpu_pool(jobs, processes, 'E2_hwcheck_a2.csv')
+
+
+def run_grid_a2(processes):
+    settings = list(itertools.product([A2_K], WEIGHTS, TEMPS))[:1 if A2_DRY else None]
+    jobs = [(name, k, w, t, seed, 'Tessera', (120, 200)) for k, w, t in settings for name in _a2_names()
+            for seed in _a2_seeds()]
+    return run_gpu_pool(jobs, processes, 'E2_grid_gpu_a2.csv')
+
+
+def run_mechanism_a2(processes):
+    base = pd.read_csv(E2 / 'E2_grid_gpu.csv')
+    grid = pd.concat([base[base.cohort == 'NSCLC'], pd.read_csv(E2 / 'E2_grid_gpu_wide.csv'),
+                      pd.read_csv(E2 / 'E2_grid_gpu_a2.csv')])
+    table = select_from(grid, 'E2_selection_a2.csv')
+    done = pd.read_csv(E2 / 'E2_mechanism_wide.csv')
+    wanted = set(zip(table.patient, table.target, table.selected))
+    reuse = done[[key in wanted for key in zip(done.patient, done.target, done.config)]]
+    have = set(zip(reuse.patient, reuse.target, reuse.config))
+    todo = table[[key not in have for key in zip(table.patient, table.target, table.selected)]]
+    assert all(parse_config(cfg)[0] == A2_K for cfg in todo.selected), 'a fold without A1 mechanism rows'
+    jobs = [(r.patient, *parse_config(r.selected)[:3], seed, arm, (parse_config(r.selected)[3],))
+            for r in todo.itertuples() for arm in ['NoGate', 'NoContrast'] for seed in _a2_seeds()]
+    rows = run_gpu_pool(jobs, processes, 'E2_mechanism_a2_fits.csv') if jobs else []
+    for r in todo.itertuples():
+        unit = next(u for u in cohort_units('NSCLC') if u['name'] == r.patient)
+        graph_k = parse_config(r.selected)[0]
+        y, classes = unit['targets'][r.target]
+        mean, _ = same_graph_mean(unit['x'], unit['coords'], unit['fields'], graph_k)
+        for seed in _a2_seeds():
+            ari, nmi = score_partition(mean, y, len(classes), seed)
+            rows.append(dict(cohort='NSCLC', patient=r.patient, target=r.target, arm=f'SameGraphMean-k{graph_k}',
+                             graph_k=graph_k, weight=None, temp=None, epochs=None, config=r.selected, seed=seed,
+                             ari=ari, nmi=nmi, fit_seconds=None))
+    pd.concat([reuse, pd.DataFrame(rows)]).to_csv(E2 / 'E2_mechanism_a2.csv', index=False)
+
+
 def main():
     p = argparse.ArgumentParser()
     p.add_argument('mode', choices=['grid-gpu', 'grid-her2st', 'mechanism', 'grid-gpu-wide', 'grid-her2st-wide',
-                                    'mechanism-wide'])
+                                    'mechanism-wide', 'hwcheck-a2', 'grid-gpu-a2', 'mechanism-a2'])
     p.add_argument('--processes', type=int, default=8)
     args = p.parse_args()
-    if args.mode.endswith('-wide'):
+    if args.mode.endswith('-a2'):
+        c.write_lock(E2, 'E2 Amendment A2: 200-neighbour lung graphs on a rented GPU', name='run-lock-A2.json',
+                     extra=dict(a2_k=A2_K, dry_run=A2_DRY))
+    elif args.mode.endswith('-wide'):
         c.write_lock(E2, 'E2 Amendment A1: wider encoder graphs', name='run-lock-A1.json')
     else:
         c.write_lock(E2, 'E2 nested tuning')
@@ -174,7 +263,10 @@ def main():
      'mechanism': lambda: run_mechanism(args.processes),
      'grid-gpu-wide': lambda: run_grid_gpu(('NSCLC',), GRAPH_K_WIDE, 'E2_grid_gpu_wide.csv'),
      'grid-her2st-wide': lambda: run_grid_her2st(args.processes, GRAPH_K_WIDE, 'E2_grid_her2st_wide.csv'),
-     'mechanism-wide': lambda: run_mechanism(args.processes, wide=True)}[args.mode]()
+     'mechanism-wide': lambda: run_mechanism(args.processes, wide=True),
+     'hwcheck-a2': lambda: run_hwcheck_a2(args.processes),
+     'grid-gpu-a2': lambda: run_grid_a2(args.processes),
+     'mechanism-a2': lambda: run_mechanism_a2(args.processes)}[args.mode]()
     print('E2', args.mode, 'done in', round(time.perf_counter() - started), 's', flush=True)
 
 

@@ -24,6 +24,8 @@ from train_core import ARMS, train_core
 
 E1 = c.OUT / 'E1'
 SAVE_EPOCHS = [120, 200, 400]
+EARLY = [10, 20, 30, 40]          # Amendment A3
+EXTRA_SEEDS = list(range(4, 11))  # Amendment A3
 
 
 def score_partition(emb, y, k, seed):
@@ -153,16 +155,62 @@ def run_transfer():
     return rows
 
 
+# ------------------------------------------------------------------ Amendment A3
+def fit_scores(unit: dict, seed: int, device: str, head_k: int, epochs: int, checkpoints: list) -> list[dict]:
+    """Tessera-ST at the released configuration, scored at each checkpoint; nothing else is saved."""
+    fit = train_core(unit['x'], unit['coords'], unit['fields'], head_k, 'Tessera', seed, device, epochs=epochs,
+                     checkpoints=checkpoints)
+    rows = []
+    for epoch, point in fit['checkpoints'].items():
+        for target, (y, classes) in unit['targets'].items():
+            ari, nmi = score_partition(point['z'], y, len(classes), seed)
+            rows.append(dict(object=unit['name'], cohort=unit['cohort'], arm='Tessera', seed=seed, epoch=epoch,
+                             target=target, K=len(classes), ari=ari, nmi=nmi,
+                             seam_auroc=seam_auroc(fit['edge'], point['gate'], y),
+                             fit_seconds_to_epoch=point['seconds']))
+    return rows
+
+
+def _her2st_a3_job(args):
+    stem, seed, epochs, checkpoints = args
+    torch.set_num_threads(1)
+    return fit_scores(c.her2st_unit(stem), seed, 'cpu', 2, epochs, checkpoints)
+
+
+def run_early(processes: int):
+    rows = []
+    for unit in primary_units():
+        for seed in c.SEEDS:
+            rows += fit_scores(unit, seed, 'cuda', unit['head_k'], max(EARLY), EARLY)
+        print('A3 early', unit['name'], flush=True)
+    pd.DataFrame(rows).to_csv(E1 / 'E1_scores_early_gpu.csv', index=False)
+    jobs = [(stem, seed, max(EARLY), EARLY) for stem in c.HER2ST for seed in c.SEEDS]
+    with mp.get_context('spawn').Pool(processes) as pool:
+        rows = [r for part in pool.imap_unordered(_her2st_a3_job, jobs) for r in part]
+    pd.DataFrame(rows).to_csv(E1 / 'E1_scores_early_her2st.csv', index=False)
+
+
+def run_her2st_seeds(processes: int):
+    jobs = [(stem, seed, 200, [120, 200]) for stem in c.HER2ST for seed in EXTRA_SEEDS]
+    with mp.get_context('spawn').Pool(processes) as pool:
+        rows = [r for part in pool.imap_unordered(_her2st_a3_job, jobs) for r in part]
+    pd.DataFrame(rows).to_csv(E1 / 'E1_scores_her2st_seeds.csv', index=False)
+
+
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument('mode', choices=['gpu', 'her2st', 'transfer'])
+    p.add_argument('mode', choices=['gpu', 'her2st', 'transfer', 'early', 'her2st-seeds'])
     p.add_argument('--processes', type=int, default=8)
     args = p.parse_args()
     (E1 / 'embeddings').mkdir(parents=True, exist_ok=True)
     (E1 / 'records').mkdir(parents=True, exist_ok=True)
-    c.write_lock(E1, 'E1 training budget')
+    if args.mode in ('early', 'her2st-seeds'):
+        c.write_lock(E1, 'E1 Amendment A3: earlier checkpoints and more breast seeds', name='run-lock-A3.json')
+    else:
+        c.write_lock(E1, 'E1 training budget')
     started = time.perf_counter()
-    {'gpu': run_gpu, 'her2st': lambda: run_her2st(args.processes), 'transfer': run_transfer}[args.mode]()
+    {'gpu': run_gpu, 'her2st': lambda: run_her2st(args.processes), 'transfer': run_transfer,
+     'early': lambda: run_early(args.processes), 'her2st-seeds': lambda: run_her2st_seeds(args.processes)}[args.mode]()
     print('E1', args.mode, 'done in', round(time.perf_counter() - started), 's', flush=True)
 
 

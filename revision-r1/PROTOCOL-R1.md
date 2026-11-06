@@ -80,3 +80,20 @@ Written after the E2 results and an independent critique had been seen, and befo
 - Selection, comparators and wording: as in E2 and DR-1, applied to the 40-configuration grid. The matched-scale control is selected from the saved control grid restricted to k at most 100. NoGate and NoContrast are fitted at each fold's selected configuration, reusing E2 fits where the configuration is unchanged.
 - Status: exploratory, because it was specified after the E2 results were known. The pre-specified 24-configuration results remain the primary E2 report, and the extension is reported beside them.
 - Correction (5 November 2026, while the A1 fits were running; the design is unchanged): the reason given above for not extending BCC is inaccurate. In the original analysis only the unweighted neighbour mean lost BCC agreement as neighbourhoods grew; the BANKSY-style controls were flat. BCC is not extended because its E2 folds did not consistently select the largest graph (k = 6, 15 and 30 were each selected), unlike the lung folds.
+
+## Amendment A2 (5 November 2026): 200-neighbour encoder graphs for the lung cohort on a rented GPU
+
+Written after A1 was launched and before any A2 fit. Reason: a 200-neighbour graph, the largest scale offered to the lung controls, does not fit in the laptop GPU's 24 GB, so A1 stopped at k = 100.
+
+- Fits: NSCLC regions only (the HER2ST sections hold 176 to 691 spots, so k = 200 is not a meaningful neighbourhood there). k = 200 crossed with the E2 contrastive weights, temperatures and epochs (8 configurations; 48 in the lung grid), seeds 1 to 3, on one rented A100 80 GB GPU with the same PyTorch build (2.12.1, CUDA 13.0) as the laptop.
+- Hardware check, run first on the same box: the released configuration and each configuration selected for lung in A1, seeds 1 to 3, refitted and compared with the laptop fits. Differences are reported; they do not gate the analysis.
+- Selection, comparators and wording: as in E2, DR-1 and A1, over the 48-configuration lung grid, with the matched-scale control taken from the full saved control grid (k at most 200). NoGate and NoContrast are fitted on the box at each fold whose selected configuration has k = 200; other folds reuse A1.
+- Status: exploratory, like A1. The rental (offer, machine, image, driver, timings and cost) is recorded with the results.
+
+## Amendment A3 (5 November 2026): earlier checkpoints and more breast seeds
+
+Written before any A3 fit. Reason: choosing the epoch on the other patients selected the earliest saved checkpoint (40 epochs) for lung regions and for the HER2ST complete annotation, and the HER2ST comparison depends on one patient's fit.
+
+- Earlier checkpoints: Tessera-ST at the released configuration, seeds 1 to 3, trained to 40 epochs with checkpoints at 10, 20, 30 and 40, on every E1 dataset instance and device as in E1. Epoch selection on the other patients is repeated over checkpoints 10 to 400; the 40-epoch checkpoint of this run and of E1 are compared as a repeat check.
+- More seeds: HER2ST, released configuration, fixed two-cluster head, CPU with one thread, seeds 4 to 10 (checkpoints 120 and 200), reported with seeds 1 to 3 as ten-seed means against the tuned control and the same-graph mean, with each patient's seed range.
+- Status: exploratory.
