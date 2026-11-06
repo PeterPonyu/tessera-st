@@ -6,6 +6,9 @@ Modes:
   grid-her2st    HER2ST all labels and tumor boundary, CPU with one thread per process
   mechanism      nested selection per held-out patient, then NoGate/NoContrast at the selected
                  configuration and the same-graph mean on the selected graph
+  grid-gpu-wide, grid-her2st-wide, mechanism-wide
+                 Amendment A1 (PROTOCOL-R1.md): k in {50, 100} for NSCLC regions and HER2ST, selection
+                 over the 40-configuration grid, and the mechanism arms at the new selections
 """
 from __future__ import annotations
 
@@ -24,6 +27,8 @@ from train_core import same_graph_mean, train_core
 
 E2 = c.OUT / 'E2'
 GRAPH_K = [6, 15, 30]
+GRAPH_K_WIDE = [50, 100]  # Amendment A1
+WIDE_COHORTS = ['NSCLC', 'HER2ST']
 WEIGHTS = [0.5, 1.0]
 TEMPS = [0.2, 0.5]
 EPOCHS = [120, 200]
@@ -62,15 +67,16 @@ def fit_grid_point(unit, graph_k, weight, temp, seed, device, head_k, arm='Tesse
     return rows
 
 
-def run_grid_gpu():
+def run_grid_gpu(cohorts=('NSCLC', 'BCC'), ks=GRAPH_K, out='E2_grid_gpu.csv'):
     rows = []
-    for cohort in ['NSCLC', 'BCC']:
+    for cohort in cohorts:
         for unit in cohort_units(cohort):
-            for graph_k, weight, temp in itertools.product(GRAPH_K, WEIGHTS, TEMPS):
+            for graph_k, weight, temp in itertools.product(ks, WEIGHTS, TEMPS):
                 for seed in c.SEEDS:
                     rows += fit_grid_point(unit, graph_k, weight, temp, seed, 'cuda', unit['head_k'])
-            print('E2 grid', unit['name'], flush=True)
-            pd.DataFrame(rows).to_csv(E2 / 'E2_grid_gpu.csv', index=False)
+                    torch.cuda.empty_cache()
+            print('E2 grid', unit['name'], list(ks), flush=True)
+            pd.DataFrame(rows).to_csv(E2 / out, index=False)
 
 
 def _her2st_job(args):
@@ -79,12 +85,13 @@ def _her2st_job(args):
     return fit_grid_point(c.her2st_unit(stem), graph_k, weight, temp, seed, 'cpu', 2)
 
 
-def run_grid_her2st(processes: int):
-    jobs = [(s, k, w, t, seed) for s in c.HER2ST for k, w, t in itertools.product(GRAPH_K, WEIGHTS, TEMPS)
+def run_grid_her2st(processes: int, ks=GRAPH_K, out='E2_grid_her2st.csv'):
+    jobs = [(s, k, w, t, seed) for s in c.HER2ST for k, w, t in itertools.product(ks, WEIGHTS, TEMPS)
             for seed in c.SEEDS]
+    jobs.sort(key=lambda j: -j[1])  # longest fits first
     with mp.get_context('spawn').Pool(processes) as pool:
         rows = [r for part in pool.imap_unordered(_her2st_job, jobs) for r in part]
-    pd.DataFrame(rows).to_csv(E2 / 'E2_grid_her2st.csv', index=False)
+    pd.DataFrame(rows).to_csv(E2 / out, index=False)
 
 
 def parse_config(config: str):
@@ -92,8 +99,11 @@ def parse_config(config: str):
     return int(k[1:]), float(w[1:]), float(t[1:]), int(e[1:])
 
 
-def selections() -> pd.DataFrame:
+def selections(wide: bool = False) -> pd.DataFrame:
     grid = pd.concat([pd.read_csv(E2 / 'E2_grid_gpu.csv'), pd.read_csv(E2 / 'E2_grid_her2st.csv')])
+    if wide:
+        grid = pd.concat([grid[grid.cohort.isin(WIDE_COHORTS)], pd.read_csv(E2 / 'E2_grid_gpu_wide.csv'),
+                          pd.read_csv(E2 / 'E2_grid_her2st_wide.csv')])
     rows = []
     for (cohort, target), part in grid.groupby(['cohort', 'target']):
         means = part.groupby(['patient', 'config']).ari.mean().unstack()
@@ -105,7 +115,7 @@ def selections() -> pd.DataFrame:
                              oracle_config=str(means.loc[patient].idxmax()),
                              oracle_tessera_ari=float(means.loc[patient].max())))
     table = pd.DataFrame(rows)
-    table.to_csv(E2 / 'E2_selection.csv', index=False)
+    table.to_csv(E2 / ('E2_selection_wide.csv' if wide else 'E2_selection.csv'), index=False)
     return table
 
 
@@ -131,25 +141,40 @@ def _mechanism_job(args):
     return rows
 
 
-def run_mechanism(processes: int):
-    table = selections()
+def run_mechanism(processes: int, wide: bool = False):
+    table = selections(wide)
+    reuse = pd.DataFrame()
+    if wide:  # Amendment A1: refit only where the selected configuration changed
+        done = pd.read_csv(E2 / 'E2_mechanism.csv')
+        wanted = set(zip(table.patient, table.target, table.selected))
+        reuse = done[[key in wanted for key in zip(done.patient, done.target, done.config)]]
+        have = set(zip(reuse.patient, reuse.target, reuse.config))
+        table = table[[key not in have for key in zip(table.patient, table.target, table.selected)]]
     gpu = [(r.cohort, r.target, r.patient, r.selected, 'cuda') for r in table.itertuples() if r.cohort != 'HER2ST']
     cpu = [(r.cohort, r.target, r.patient, r.selected, 'cpu') for r in table.itertuples() if r.cohort == 'HER2ST']
     rows = [row for job in gpu for row in _mechanism_job(job)]
     with mp.get_context('spawn').Pool(processes) as pool:
         rows += [r for part in pool.imap_unordered(_mechanism_job, cpu) for r in part]
-    pd.DataFrame(rows).to_csv(E2 / 'E2_mechanism.csv', index=False)
+    out = pd.concat([reuse, pd.DataFrame(rows)]) if wide else pd.DataFrame(rows)
+    out.to_csv(E2 / ('E2_mechanism_wide.csv' if wide else 'E2_mechanism.csv'), index=False)
 
 
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument('mode', choices=['grid-gpu', 'grid-her2st', 'mechanism'])
+    p.add_argument('mode', choices=['grid-gpu', 'grid-her2st', 'mechanism', 'grid-gpu-wide', 'grid-her2st-wide',
+                                    'mechanism-wide'])
     p.add_argument('--processes', type=int, default=8)
     args = p.parse_args()
-    c.write_lock(E2, 'E2 nested tuning')
+    if args.mode.endswith('-wide'):
+        c.write_lock(E2, 'E2 Amendment A1: wider encoder graphs', name='run-lock-A1.json')
+    else:
+        c.write_lock(E2, 'E2 nested tuning')
     started = time.perf_counter()
     {'grid-gpu': run_grid_gpu, 'grid-her2st': lambda: run_grid_her2st(args.processes),
-     'mechanism': lambda: run_mechanism(args.processes)}[args.mode]()
+     'mechanism': lambda: run_mechanism(args.processes),
+     'grid-gpu-wide': lambda: run_grid_gpu(('NSCLC',), GRAPH_K_WIDE, 'E2_grid_gpu_wide.csv'),
+     'grid-her2st-wide': lambda: run_grid_her2st(args.processes, GRAPH_K_WIDE, 'E2_grid_her2st_wide.csv'),
+     'mechanism-wide': lambda: run_mechanism(args.processes, wide=True)}[args.mode]()
     print('E2', args.mode, 'done in', round(time.perf_counter() - started), 's', flush=True)
 
 

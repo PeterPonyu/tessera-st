@@ -89,7 +89,7 @@ def environment() -> dict:
                 torch_threads=torch.get_num_threads())
 
 
-def write_lock(directory: Path, analysis: str, extra: dict | None = None) -> dict:
+def write_lock(directory: Path, analysis: str, extra: dict | None = None, name: str = 'run-lock.json') -> dict:
     directory.mkdir(parents=True, exist_ok=True)
     scripts = sorted(HERE.glob('*.py'))
     record = dict(analysis=analysis, protocol='PROTOCOL-R1.md', protocol_sha256=sha(PROTOCOL),
@@ -97,7 +97,7 @@ def write_lock(directory: Path, analysis: str, extra: dict | None = None) -> dic
                   frozen_sha256={p.relative_to(REPO).as_posix(): sha(p) for p in
                                  sorted((FROZEN / 'src').rglob('*.py'))},
                   environment=environment(), **(extra or {}))
-    path = directory / 'run-lock.json'
+    path = directory / name
     if path.exists():
         previous = json.loads(path.read_text())
         if previous['protocol_sha256'] != record['protocol_sha256']:

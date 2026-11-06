@@ -70,3 +70,12 @@ DR-4 (native methods). GraphST or CASTLE is described as also accounted for by a
 ## Outputs
 
 Each analysis writes a run lock (this protocol's SHA-256, code hashes, environment), one JSON record per fit and tidy CSV tables under `results/revision-r1/<E#>/`. Manuscript numbers are generated from these CSV tables only.
+
+## Amendment A1 (5 November 2026): wider encoder graphs in E2
+
+Written after the E2 results and an independent critique had been seen, and before any of the fits below. Reason: every NSCLC fold of E2 selected the largest graph offered to the encoder (k = 30), whereas the neighbourhood controls could use up to 200 neighbours, so the E2 grid itself may have limited the encoder.
+
+- Extension: k in {50, 100}, crossed with the E2 contrastive weights, temperatures and epochs (16 further configurations; 40 in total). k = 200 was attempted and does not fit in the 24 GB of GPU memory for a 6,000-cell lung section with the released training code (full-batch training with ten contrastive negatives per edge); the training code is not changed to make it fit.
+- Cohorts and devices: NSCLC regions on CUDA; HER2ST all labels and tumor boundary on CPU with one thread and the fixed two-cluster head, as in E2. BCC is not extended, because larger neighbourhoods lowered BCC cell-type agreement for every control family in the original analysis.
+- Selection, comparators and wording: as in E2 and DR-1, applied to the 40-configuration grid. The matched-scale control is selected from the saved control grid restricted to k at most 100. NoGate and NoContrast are fitted at each fold's selected configuration, reusing E2 fits where the configuration is unchanged.
+- Status: exploratory, because it was specified after the E2 results were known. The pre-specified 24-configuration results remain the primary E2 report, and the extension is reported beside them.
