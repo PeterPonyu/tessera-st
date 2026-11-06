@@ -142,17 +142,27 @@ def saved_grid(cohort, target):
 
 
 def e2(comps):
-    grid = pd.concat([pd.read_csv(E2 / 'E2_grid_gpu.csv'), pd.read_csv(E2 / 'E2_grid_her2st.csv')])
-    sel = pd.read_csv(E2 / 'E2_selection.csv')
-    mech = pd.read_csv(E2 / 'E2_mechanism.csv')
+    return tuning_summary(comps, pd.read_csv(E2 / 'E2_selection.csv'), pd.read_csv(E2 / 'E2_mechanism.csv'),
+                          COHORTS, 30, 'table_E2.csv')
+
+
+def e2_wide(comps):
+    """Amendment A1 (PROTOCOL-R1.md): the same comparisons over the 40-configuration grid (k up to 100)."""
+    if not (E2 / 'E2_selection_wide.csv').exists() or not (E2 / 'E2_mechanism_wide.csv').exists():
+        return {'status': 'not available'}, None
+    return tuning_summary(comps, pd.read_csv(E2 / 'E2_selection_wide.csv'), pd.read_csv(E2 / 'E2_mechanism_wide.csv'),
+                          [x for x in COHORTS if x[0] != 'BCC'], 100, 'table_E2_wide.csv')
+
+
+def tuning_summary(comps, sel, mech, cohorts, k_max, table_name):
     out, rows = {}, []
-    for cohort, target in COHORTS:
+    for cohort, target in cohorts:
         s = sel[(sel.cohort == cohort) & (sel.target == target)].set_index('patient')
         cmp_ = comp_lookup(comps, cohort, target).reindex(s.index)
         g = saved_grid(cohort, target)
         means = g.groupby(['patient', 'config']).ari.mean().unstack()
         small = [col for col in means.columns if not str(col).startswith('PCA50') and
-                 str(col).split('|')[1] not in ('None', 'nan') and float(str(col).split('|')[1]) <= 30]
+                 str(col).split('|')[1] not in ('None', 'nan') and float(str(col).split('|')[1]) <= k_max]
         matched = {p: float(means.loc[p, c.select_nested(means[small], p)]) for p in s.index}
         oracle_control = means.max(axis=1)
         m = mech[(mech.cohort == cohort) & (mech.target == target)].groupby(['patient', 'arm']).ari.mean().unstack()
@@ -179,9 +189,10 @@ def e2(comps):
             nocontrast_minus_tessera=c.summarize(rec.nocontrast_selected - rec.tessera_nested),
             oracle_tessera_minus_oracle_control=c.summarize(rec.tessera_oracle - rec.control_oracle),
             selected_configs=s.selected.value_counts().to_dict(),
-            selected_k_values=sorted({int(x.split('|')[0][1:]) for x in s.selected}))
+            selected_k_values=sorted({int(x.split('|')[0][1:]) for x in s.selected}),
+            n_selected_k_over_30=int(sum(int(x.split('|')[0][1:]) > 30 for x in s.selected)))
     table = pd.concat(rows)
-    table.to_csv(SUMMARY / 'table_E2.csv', index=False)
+    table.to_csv(SUMMARY / table_name, index=False)
     return out, table
 
 
@@ -412,6 +423,22 @@ def write_macros(summary):
                     mac(f'R{tag}{tagl}Lo', fmt(v['bootstrap_95'][0], True))
                     mac(f'R{tag}{tagl}Hi', fmt(v['bootstrap_95'][1], True))
             mac(f'R{tag}SelectedK', ', '.join(str(k) for k in e2s['selected_k_values']))
+        if 'E2W' in summary and key in summary['E2W']:
+            w = summary['E2W'][key]
+            for lab, tagl in [('DR1_vs_nested_control', 'TunedVsCtl'), ('DR1_vs_same_graph_mean_selected_k', 'TunedVsMean'),
+                              ('tuned_minus_default', 'TunedVsDefault'), ('vs_matched_scale_control', 'TunedVsMatched'),
+                              ('nogate_minus_tessera', 'NoGateAtSel'), ('nocontrast_minus_tessera', 'NoContrastAtSel'),
+                              ('oracle_tessera_minus_oracle_control', 'OracleVsOracle')]:
+                v = w[lab]
+                mac(f'R{tag}Wide{tagl}Mean', fmt(v['mean'], True))
+                mac(f'R{tag}Wide{tagl}Pos', v['n_pos'])
+                mac(f'R{tag}Wide{tagl}Neg', v['n_neg'])
+                mac(f'R{tag}Wide{tagl}Outcome', v['outcome'])
+                if 'bootstrap_95' in v:
+                    mac(f'R{tag}Wide{tagl}Lo', fmt(v['bootstrap_95'][0], True))
+                    mac(f'R{tag}Wide{tagl}Hi', fmt(v['bootstrap_95'][1], True))
+            mac(f'R{tag}WideSelectedK', ', '.join(str(k) for k in w['selected_k_values']))
+            mac(f'R{tag}WideOverThirty', w['n_selected_k_over_30'])
         if 'E3' in summary and key in summary['E3'] and 'DR2' in summary['E3'][key]:
             d = summary['E3'][key]['DR2']
             mac(f'R{tag}KRobust', 'held' if d['robust'] else 'did not hold')
@@ -606,6 +633,21 @@ def write_tables(tables: dict) -> None:
                          f'{n3(r.nested_control)} & {n3(r.same_graph_mean_selected_k)} & {n3(r.matched_scale_control)} & '
                          f'{n3(r.nogate_selected)} & {n3(r.nocontrast_selected)}\\\\')
     bodies['RTableTuning'] = '\n'.join(lines)
+    t2w = tables.get('E2W')
+    lines = []
+    if t2w is not None and len(t2w):
+        for (cohort, target), label in BLOCK.items():
+            part = t2w[(t2w.cohort == cohort) & (t2w.target == target)]
+            if not len(part):
+                continue
+            lines.append(f'\\multicolumn{{9}}{{@{{}}l}}{{\\emph{{{label}}}}}\\\\')
+            for r in part.itertuples():
+                k, w, tmp, e = r.selected.split('|')
+                cfg = f'{k[1:]}/{w[1:]}/{tmp[1:]}/{e[1:]}'
+                lines.append(f'{PATIENT_LABEL.get(r.patient, r.patient)} & {cfg} & {n3(r.tessera_nested)} & {n3(r.tessera_default)} & '
+                             f'{n3(r.nested_control)} & {n3(r.same_graph_mean_selected_k)} & {n3(r.matched_scale_control)} & '
+                             f'{n3(r.nogate_selected)} & {n3(r.nocontrast_selected)}\\\\')
+    bodies['RTableTuningWide'] = '\n'.join(lines)
     bodies['RTableK'] = tables.get('E3summary') or ''
     if tables.get('E4') is not None and len(tables['E4']):
         t4 = tables['E4']
@@ -655,13 +697,13 @@ def k_table(summary) -> str:
 
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument('--parts', nargs='+', default=['E1', 'E2', 'E3', 'E4'])
+    p.add_argument('--parts', nargs='+', default=['E1', 'E2', 'E2W', 'E3', 'E4'])
     args = p.parse_args()
     SUMMARY.mkdir(parents=True, exist_ok=True)
     comps = comparators()
     comps.to_csv(SUMMARY / 'comparators.csv', index=False)
     summary, tables = {}, {}
-    for part, fn in [('E1', e1), ('E2', e2), ('E3', e3), ('E4', e4)]:
+    for part, fn in [('E1', e1), ('E2', e2), ('E2W', e2_wide), ('E3', e3), ('E4', e4)]:
         if part in args.parts:
             summary[part], tables[part] = fn(comps)
     if 'E3' in summary:
