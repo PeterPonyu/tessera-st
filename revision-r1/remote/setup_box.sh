@@ -5,6 +5,7 @@
 #   ROOT holds the uploaded capsule: inputs/data (lung inputs), inputs/E2 (tables A2 reads) and inputs.sha256.
 #   COMMIT is the repository commit to run; its source is downloaded from GitHub on the box.
 # PY selects the interpreter (default python); A2_SKIP_PIP=1 skips the package install (laptop dry runs only).
+# The image's Python is the system Python (PEP 668); the box is disposable, so packages go into it directly.
 set -euo pipefail
 PY=${PY:-python}
 ROOT=${1:?root}
@@ -30,7 +31,7 @@ print('source', commit, len(data), 'bytes')
 PY
   mv "tessera-st-$COMMIT" repo
   if [ "${A2_SKIP_PIP:-0}" != 1 ]; then
-    "$PY" -m pip install --no-cache-dir -q numpy==2.2.6 scipy==1.16.2 scikit-learn==1.6.1 pandas==2.3.3
+    "$PY" -m pip install --break-system-packages --no-cache-dir -q numpy==2.2.6 scipy==1.16.2 scikit-learn==1.6.1 pandas==2.3.3
   fi
   cp inputs/E2/*.csv r1out/E2/
   echo "setup finished $(date -u +%FT%TZ)"
