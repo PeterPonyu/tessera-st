@@ -32,7 +32,7 @@ AUTHOR_RUNTIME = {
     'requested_model': 'gpt-6.1-sol', 'requested_effort': 'max',
     'runtime_reported_model': 'gpt-6.1-sol', 'runtime_reported_effort': 'max',
     'evidence': 'rollout-2026-10-11T20-14-20-01a12e1a-a4d3-7d82-be7b-5a8a76c61177.jsonl / turn_context',
-    'scope': 'Authoring agent at initial creation, not a claim about later script reruns',
+    'scope': 'Author at initial creation, not a claim about later script reruns',
 }
 TEXT_OPS = {'BT','ET','Tf','Tz','Tc','Tw','Ts','TL','Tr','Tm','Td','TD','T*','Tj','TJ',"'",'"'}
 SVG_NS = '{http://www.w3.org/2000/svg}'
@@ -396,7 +396,7 @@ def main():
             'rerun_command':'python '+str(script),'font_files':{n:sha(args.font_dir/n) for n in ['Arial.ttf','Arial Bold.ttf']},
             'normalization':'NFKC (including ligatures), whitespace, minus/en-dash typography and micro/mu; independent wound bold panel markers are intentionally lowercase',
             'figure_count':len(records),'figures':records,
-            'visual_review':{'status':'PENDING','comparison_directory':str(qa),'scope':'Representative/dense figures require human/agent image inspection; script does not assert absence of collisions'},
+            'visual_review':{'status':'PENDING','comparison_directory':str(qa),'scope':'Representative/dense figures require visual inspection; script does not assert absence of collisions'},
             'status':'MECHANICAL_PASS_VISUAL_PENDING' if all(r['status']=='PASS' for r in records.values()) else 'UNRESOLVED'}
     (root/'journal-style-report.json').write_text(json.dumps(report,indent=2)+'\n')
 

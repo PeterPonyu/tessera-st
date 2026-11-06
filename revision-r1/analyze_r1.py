@@ -94,6 +94,7 @@ def e1(comps):
         change = rec.ari_200 - rec.ari_120
         out[key] = dict(n=len(rec), budget_200_minus_120=c.summarize(change),
                         budget_200_minus_120_rounded_pos=int((change.round(3) > 0).sum()),
+                        budget_200_minus_120_rounded_neg=int((change.round(3) < 0).sum()),
                         nested_epochs=sorted({int(e) for e in rec.nested_epoch}),
                         mean_ari={e: float(wide[e].mean()) for e in wide.columns})
         for comp in ['NestedControl', 'SameGraphMean', 'PCA50']:
@@ -244,7 +245,9 @@ def e3(comps):
         h.to_csv(SUMMARY / 'table_E3_harmonization.csv', index=False)
         extra['harmonization'] = dict(mean_abs_difference=float((h.ari_per_k_head - h.ari_fixed_head).abs().mean()),
                                       max_abs_difference=float((h.ari_per_k_head - h.ari_fixed_head).abs().max()),
-                                      sign_flips=h[h.flip][['unit', 'target']].values.tolist(), n_pairs=len(h))
+                                      sign_flips=h[h.flip][['unit', 'target']].values.tolist(), n_pairs=len(h),
+                                      sign_flip_values=h[h.flip][['unit', 'target', 'ari_per_k_head', 'ari_fixed_head',
+                                                                  'nested']].to_dict('records'))
     if (E3 / 'E3_harmonization.csv').exists() and (E2 / 'E2_selection.csv').exists():
         hz = pd.read_csv(E3 / 'E3_harmonization.csv')
         hz = hz[hz.target == 'all'].groupby('unit')[['ari_per_k_head', 'ari_fixed_head']].mean()
@@ -377,6 +380,7 @@ def write_macros(summary):
         mac(f'R{tag}BudgetPos', b['n_pos'])
         mac(f'R{tag}BudgetNeg', b['n_neg'])
         mac(f'R{tag}BudgetRoundPos', e1s['budget_200_minus_120_rounded_pos'])
+        mac(f'R{tag}BudgetRoundNeg', e1s['budget_200_minus_120_rounded_neg'])
         if len(e1s['nested_epochs']) == 1:
             mac(f'R{tag}NestedEpochSel', e1s['nested_epochs'][0])
         mac(f'R{tag}N', b['n'])
@@ -450,6 +454,11 @@ def write_macros(summary):
         mac('RHarmMaxAbs', fmt(h['max_abs_difference']))
         mac('RHarmFlips', len(h['sign_flips']))
         mac('RHarmPairs', h['n_pairs'])
+        for word, flip in zip(['One', 'Two', 'Three', 'Four'], h.get('sign_flip_values', [])):
+            mac(f'RHarmFlip{word}Patient', str(flip['unit'])[0])
+            mac(f'RHarmFlip{word}PerK', fmt(flip['ari_per_k_head']))
+            mac(f'RHarmFlip{word}Fixed', fmt(flip['ari_fixed_head']))
+            mac(f'RHarmFlip{word}Ctl', fmt(flip['nested']))
     if 'refinement' in extra:
         for key, tag in [('NSCLC|primary', 'Lung'), ('BCC|primary', 'Bcc'), ('HER2ST|all', 'HerAll'),
                          ('HER2ST|boundary_T1', 'HerBnd')]:

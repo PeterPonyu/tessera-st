@@ -6,7 +6,7 @@
       "orcid": "0009-0001-8329-0108"
     }
   ],
-  "version": "2026.11.05-revision-r1",
+  "version": "2026.11.05-revision-r1.1",
   "upload_type": "software",
   "license": "MIT",
   "description": "Tessera-ST is a self-supervised gated graph encoder for spatial molecular data; earlier releases call it Tessera. This version contains the evaluated implementation, the controls audit of the original submission and the analyses added during review (training budget, patient-excluded tuning of the encoder, cluster number with fixed representations, and native external methods), with their written protocol, tests, result tables and reproduction guide. Author-owned software is MIT licensed; author-generated text, figures and result aggregates are CC BY 4.0; third-party measurements, annotations and images retain their source-specific terms.",
