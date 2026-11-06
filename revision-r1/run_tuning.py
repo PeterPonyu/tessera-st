@@ -159,9 +159,9 @@ def run_mechanism(processes: int, wide: bool = False):
     if wide:  # Amendment A1: refit only where the selected configuration changed
         done = pd.read_csv(E2 / 'E2_mechanism.csv')
         wanted = set(zip(table.patient, table.target, table.selected))
-        reuse = done[[key in wanted for key in zip(done.patient, done.target, done.config)]]
+        reuse = done[np.array([key in wanted for key in zip(done.patient, done.target, done.config)], dtype=bool)]
         have = set(zip(reuse.patient, reuse.target, reuse.config))
-        table = table[[key not in have for key in zip(table.patient, table.target, table.selected)]]
+        table = table[np.array([key not in have for key in zip(table.patient, table.target, table.selected)], dtype=bool)]
     gpu = [(r.cohort, r.target, r.patient, r.selected, 'cuda') for r in table.itertuples() if r.cohort != 'HER2ST']
     cpu = [(r.cohort, r.target, r.patient, r.selected, 'cpu') for r in table.itertuples() if r.cohort == 'HER2ST']
     rows = [row for job in gpu for row in _mechanism_job(job)]
@@ -200,9 +200,14 @@ def run_gpu_pool(jobs, processes, out):
     return rows
 
 
+def lung_grid(*extra: str) -> pd.DataFrame:
+    base = pd.read_csv(E2 / 'E2_grid_gpu.csv')
+    return pd.concat([base[base.cohort == 'NSCLC'], *[pd.read_csv(E2 / f) for f in ('E2_grid_gpu_wide.csv', *extra)]])
+
+
 def run_hwcheck_a2(processes):
-    sel = pd.read_csv(E2 / 'E2_selection_wide.csv')
-    configs = {config_id(6, 0.5, 0.2, 120)} | set(sel[sel.cohort == 'NSCLC'].selected)
+    sel = select_from(lung_grid(), 'E2_selection_a1_lung.csv')  # the A1 lung selections, from the lung grids alone
+    configs = {config_id(6, 0.5, 0.2, 120)} | set(sel.selected)
     settings = sorted({parse_config(cfg)[:3] for cfg in configs})
     if A2_DRY:
         settings = settings[:1]
@@ -219,16 +224,13 @@ def run_grid_a2(processes):
 
 
 def run_mechanism_a2(processes):
-    base = pd.read_csv(E2 / 'E2_grid_gpu.csv')
-    grid = pd.concat([base[base.cohort == 'NSCLC'], pd.read_csv(E2 / 'E2_grid_gpu_wide.csv'),
-                      pd.read_csv(E2 / 'E2_grid_gpu_a2.csv')])
-    table = select_from(grid, 'E2_selection_a2.csv')
-    done = pd.read_csv(E2 / 'E2_mechanism_wide.csv')
+    table = select_from(lung_grid('E2_grid_gpu_a2.csv'), 'E2_selection_a2.csv')
+    done_file = E2 / 'E2_mechanism_wide.csv'  # laptop A1 fits, reused where present
+    done = pd.read_csv(done_file) if done_file.exists() else pd.DataFrame(columns=['patient', 'target', 'config'])
     wanted = set(zip(table.patient, table.target, table.selected))
-    reuse = done[[key in wanted for key in zip(done.patient, done.target, done.config)]]
+    reuse = done[np.array([key in wanted for key in zip(done.patient, done.target, done.config)], dtype=bool)]
     have = set(zip(reuse.patient, reuse.target, reuse.config))
-    todo = table[[key not in have for key in zip(table.patient, table.target, table.selected)]]
-    assert all(parse_config(cfg)[0] == A2_K for cfg in todo.selected), 'a fold without A1 mechanism rows'
+    todo = table[np.array([key not in have for key in zip(table.patient, table.target, table.selected)], dtype=bool)]
     jobs = [(r.patient, *parse_config(r.selected)[:3], seed, arm, (parse_config(r.selected)[3],))
             for r in todo.itertuples() for arm in ['NoGate', 'NoContrast'] for seed in _a2_seeds()]
     rows = run_gpu_pool(jobs, processes, 'E2_mechanism_a2_fits.csv') if jobs else []

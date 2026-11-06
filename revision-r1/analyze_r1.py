@@ -154,6 +154,80 @@ def e2_wide(comps):
                           [x for x in COHORTS if x[0] != 'BCC'], 100, 'table_E2_wide.csv')
 
 
+def a2_lung(comps):
+    """Amendment A2: lung tuning over the 48-configuration grid (k up to 200), and the box-versus-laptop check."""
+    if not all((E2 / f).exists() for f in ('E2_selection_a2.csv', 'E2_mechanism_a2.csv', 'E2_hwcheck_a2.csv')):
+        return {'status': 'not available'}, None
+    out, table = tuning_summary(comps, pd.read_csv(E2 / 'E2_selection_a2.csv'), pd.read_csv(E2 / 'E2_mechanism_a2.csv'),
+                                [('NSCLC', 'primary')], 200, 'table_E2_a2.csv')
+    sel = pd.read_csv(E2 / 'E2_selection_a2.csv')
+    out['NSCLC|primary']['n_selected_k200'] = int(sum(int(x.split('|')[0][1:]) == 200 for x in sel.selected))
+    hw = pd.read_csv(E2 / 'E2_hwcheck_a2.csv')
+    local = pd.concat([pd.read_csv(E2 / 'E2_grid_gpu.csv'), pd.read_csv(E2 / 'E2_grid_gpu_wide.csv')])
+    m = hw.merge(local[['patient', 'config', 'seed', 'target', 'ari']], on=['patient', 'config', 'seed', 'target'],
+                 suffixes=('_box', '_laptop'))
+    pm = m.groupby(['patient', 'config'])[['ari_box', 'ari_laptop']].mean()
+    out['hardware_check'] = dict(n_fits=len(m), configs=sorted(m.config.unique()),
+                                 seed_max_abs=float((m.ari_box - m.ari_laptop).abs().max()),
+                                 seed_mean_abs=float((m.ari_box - m.ari_laptop).abs().mean()),
+                                 patient_mean_max_abs=float((pm.ari_box - pm.ari_laptop).abs().max()))
+    grid = pd.read_csv(E2 / 'E2_grid_gpu_a2.csv')
+    out['box_fit_seconds_median'] = float(grid[grid.epochs == 200].fit_seconds.median())
+    return out, table
+
+
+def a3(comps):
+    """Amendment A3: epoch selection with checkpoints from 10 epochs, and ten seeds for HER2ST."""
+    needed = ['E1_scores_early_gpu.csv', 'E1_scores_early_her2st.csv', 'E1_scores_her2st_seeds.csv']
+    if not all((E1 / f).exists() for f in needed):
+        return {'status': 'not available'}, None
+    base = pd.concat([pd.read_csv(E1 / 'E1_scores_gpu.csv'), pd.read_csv(E1 / 'E1_scores_her2st.csv')])
+    base = base[base.arm == 'Tessera']
+    early = pd.concat([pd.read_csv(E1 / 'E1_scores_early_gpu.csv'), pd.read_csv(E1 / 'E1_scores_early_her2st.csv')])
+    out = {}
+    rep = early[early.epoch == 40].merge(base[base.epoch == 40][['object', 'seed', 'target', 'ari']],
+                                         on=['object', 'seed', 'target'], suffixes=('_early', '_e1'))
+    rep['device'] = np.where(rep.cohort == 'HER2ST', 'cpu', 'gpu')
+    out['repeat_40'] = {d: float((g.ari_early - g.ari_e1).abs().max()) for d, g in rep.groupby('device')}
+    per = pd.concat([base, early[early.epoch < 40]]).groupby(['cohort', 'object', 'target', 'epoch']).ari.mean()
+    per = per.reset_index()
+    rows = []
+    for cohort, target in COHORTS:
+        t = per[(per.cohort == cohort) & (per.target == target)]
+        wide = t.pivot(index='object', columns='epoch', values='ari')
+        cmp_ = comp_lookup(comps, cohort, target).reindex(wide.index)
+        nested = {p: int(c.select_nested(wide, p)) for p in wide.index}
+        value = pd.Series({p: float(wide.loc[p, nested[p]]) for p in wide.index})
+        out[f'{cohort}|{target}'] = dict(nested_epochs=sorted(set(nested.values())),
+                                         vs_control=c.summarize(value - cmp_['NestedControl'], bootstrap=len(value) >= 8),
+                                         mean_by_epoch={int(e): float(wide[e].mean()) for e in wide.columns})
+        rows += [dict(cohort=cohort, target=target, patient=p, nested_epoch=nested[p], ari=value[p],
+                      control=float(cmp_.loc[p, 'NestedControl'])) for p in wide.index]
+    seeds = pd.read_csv(E1 / 'E1_scores_her2st_seeds.csv')
+    h = base[(base.cohort == 'HER2ST') & base.seed.isin(c.SEEDS)]
+    ten = pd.concat([h[['object', 'seed', 'epoch', 'target', 'ari']], seeds[['object', 'seed', 'epoch', 'target', 'ari']]])
+    seed_rows = []
+    for target in ['all', 'boundary_T1']:
+        x = ten[(ten.target == target) & (ten.epoch == 120)]
+        m10, m3 = x.groupby('object').ari.mean(), x[x.seed.isin(c.SEEDS)].groupby('object').ari.mean()
+        cmp_ = comp_lookup(comps, 'HER2ST', target).reindex(m10.index)
+        d10 = m10 - cmp_['NestedControl']
+        out[f'seeds|{target}'] = dict(n_seeds=int(x.seed.nunique()),
+                                      vs_control_10=c.summarize(d10, bootstrap=True), median_10=float(d10.median()),
+                                      vs_control_3=c.summarize(m3 - cmp_['NestedControl'], bootstrap=True),
+                                      vs_mean_10=c.summarize(m10 - cmp_['SameGraphMean'], bootstrap=True),
+                                      seed_range={p: [float(g.ari.min()), float(g.ari.max())] for p, g in x.groupby('object')})
+        seed_rows += [dict(target=target, patient=p, tessera_3=float(m3[p]), tessera_10=float(m10[p]),
+                           seed_min=out[f'seeds|{target}']['seed_range'][p][0],
+                           seed_max=out[f'seeds|{target}']['seed_range'][p][1],
+                           control=float(cmp_.loc[p, 'NestedControl']), same_graph_mean=float(cmp_.loc[p, 'SameGraphMean']))
+                      for p in m10.index]
+    pd.DataFrame(rows).to_csv(SUMMARY / 'table_A3_epochs.csv', index=False)
+    table = pd.DataFrame(seed_rows)
+    table.to_csv(SUMMARY / 'table_A3_seeds.csv', index=False)
+    return out, table
+
+
 def tuning_summary(comps, sel, mech, cohorts, k_max, table_name):
     out, rows = {}, []
     for cohort, target in cohorts:
@@ -570,6 +644,51 @@ def write_macros(summary):
         if key.startswith('DR4|'):
             _, method, variant = key.split('|')
             mac(f'RNatDRFour{words[method]}{words[variant]}', 'held' if v['holds'] else 'did not hold')
+    a2 = summary.get('A2', {})
+    if 'NSCLC|primary' in a2:
+        w = a2['NSCLC|primary']
+        for lab, tagl in [('DR1_vs_nested_control', 'TunedVsCtl'), ('DR1_vs_same_graph_mean_selected_k', 'TunedVsMean'),
+                          ('tuned_minus_default', 'TunedVsDefault'), ('vs_matched_scale_control', 'TunedVsMatched'),
+                          ('nogate_minus_tessera', 'NoGateAtSel'), ('nocontrast_minus_tessera', 'NoContrastAtSel'),
+                          ('oracle_tessera_minus_oracle_control', 'OracleVsOracle')]:
+            v = w[lab]
+            mac(f'RLungExt{tagl}Mean', fmt(v['mean'], True))
+            mac(f'RLungExt{tagl}Pos', v['n_pos'])
+            mac(f'RLungExt{tagl}Neg', v['n_neg'])
+            mac(f'RLungExt{tagl}Outcome', v['outcome'])
+        mac('RLungExtSelectedK', ', '.join(str(k) for k in w['selected_k_values']))
+        mac('RLungExtKTwoHundred', w['n_selected_k200'])
+        hw = a2['hardware_check']
+        mac('RHwSeedMaxAbs', fmt(hw['seed_max_abs']))
+        mac('RHwSeedMeanAbs', fmt(hw['seed_mean_abs']))
+        mac('RHwPatientMaxAbs', fmt(hw['patient_mean_max_abs']))
+        mac('RBoxFitSeconds', fmt(a2['box_fit_seconds_median'], digits=0))
+    a3s = summary.get('A3', {})
+    if 'repeat_40' in a3s:
+        for device, value in a3s['repeat_40'].items():
+            mac('RRepeatForty' + device.capitalize(), fmt(value))
+        for key, tag in [('NSCLC|primary', 'Lung'), ('BCC|primary', 'Bcc'), ('HER2ST|all', 'HerAll'),
+                         ('HER2ST|boundary_T1', 'HerBnd')]:
+            v = a3s[key]
+            mac(f'R{tag}EarlySel', ', '.join(str(e) for e in v['nested_epochs']))
+            mac(f'R{tag}EarlyVsCtlMean', fmt(v['vs_control']['mean'], True))
+            mac(f'R{tag}EarlyVsCtlPos', v['vs_control']['n_pos'])
+            mac(f'R{tag}EarlyVsCtlNeg', v['vs_control']['n_neg'])
+        for target, tag in [('all', 'HerAll'), ('boundary_T1', 'HerBnd')]:
+            v = a3s[f'seeds|{target}']
+            mac(f'R{tag}TenSeeds', v['n_seeds'])
+            for lab, short in [('vs_control_10', 'TenVsCtl'), ('vs_control_3', 'ThreeVsCtl'), ('vs_mean_10', 'TenVsMean')]:
+                mac(f'R{tag}{short}Mean', fmt(v[lab]['mean'], True))
+                mac(f'R{tag}{short}Neg', v[lab]['n_neg'])
+                mac(f'R{tag}{short}Pos', v[lab]['n_pos'])
+                if 'bootstrap_95' in v[lab]:
+                    mac(f'R{tag}{short}Lo', fmt(v[lab]['bootstrap_95'][0], True))
+                    mac(f'R{tag}{short}Hi', fmt(v[lab]['bootstrap_95'][1], True))
+            mac(f'R{tag}TenVsCtlMedian', fmt(v['median_10'], True))
+        e = a3s['seeds|all']['seed_range'].get('E1')
+        if e:
+            mac('RHerEOneSeedMin', fmt(e[0]))
+            mac('RHerEOneSeedMax', fmt(e[1]))
     MACROS.write_text('\n'.join(lines) + '\n')
 
 
@@ -648,6 +767,25 @@ def write_tables(tables: dict) -> None:
                              f'{n3(r.nested_control)} & {n3(r.same_graph_mean_selected_k)} & {n3(r.matched_scale_control)} & '
                              f'{n3(r.nogate_selected)} & {n3(r.nocontrast_selected)}\\\\')
     bodies['RTableTuningWide'] = '\n'.join(lines)
+    t2x = tables.get('A2')
+    lines = []
+    if t2x is not None and len(t2x):
+        lines.append('\\multicolumn{9}{@{}l}{\\emph{NSCLC regions, graphs of up to 200 neighbors}}\\\\')
+        for r in t2x.itertuples():
+            k, w, tmp, e = r.selected.split('|')
+            lines.append(f'{PATIENT_LABEL.get(r.patient, r.patient)} & {k[1:]}/{w[1:]}/{tmp[1:]}/{e[1:]} & {n3(r.tessera_nested)} & '
+                         f'{n3(r.tessera_default)} & {n3(r.nested_control)} & {n3(r.same_graph_mean_selected_k)} & '
+                         f'{n3(r.matched_scale_control)} & {n3(r.nogate_selected)} & {n3(r.nocontrast_selected)}\\\\')
+    bodies['RTableTuningExt'] = '\n'.join(lines)
+    t3 = tables.get('A3')
+    lines = []
+    if t3 is not None and len(t3):
+        for target, label in [('all', 'HER2ST, all labels'), ('boundary_T1', 'HER2ST, tumor boundary')]:
+            lines.append(f'\\multicolumn{{7}}{{@{{}}l}}{{\\emph{{{label}}}}}\\\\')
+            for r in t3[t3.target == target].itertuples():
+                lines.append(f'{r.patient} & {n3(r.tessera_3)} & {n3(r.tessera_10)} & {n3(r.seed_min)}--{n3(r.seed_max)} & '
+                             f'{n3(r.control)} & {n3(r.same_graph_mean)} & {fmt(r.tessera_10 - r.control, True)}\\\\')
+    bodies['RTableSeeds'] = '\n'.join(lines)
     bodies['RTableK'] = tables.get('E3summary') or ''
     if tables.get('E4') is not None and len(tables['E4']):
         t4 = tables['E4']
@@ -697,13 +835,13 @@ def k_table(summary) -> str:
 
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument('--parts', nargs='+', default=['E1', 'E2', 'E2W', 'E3', 'E4'])
+    p.add_argument('--parts', nargs='+', default=['E1', 'E2', 'E2W', 'A2', 'A3', 'E3', 'E4'])
     args = p.parse_args()
     SUMMARY.mkdir(parents=True, exist_ok=True)
     comps = comparators()
     comps.to_csv(SUMMARY / 'comparators.csv', index=False)
     summary, tables = {}, {}
-    for part, fn in [('E1', e1), ('E2', e2), ('E2W', e2_wide), ('E3', e3), ('E4', e4)]:
+    for part, fn in [('E1', e1), ('E2', e2), ('E2W', e2_wide), ('A2', a2_lung), ('A3', a3), ('E3', e3), ('E4', e4)]:
         if part in args.parts:
             summary[part], tables[part] = fn(comps)
     if 'E3' in summary:

@@ -21,7 +21,11 @@ commit = sys.argv[1]
 url = f'https://github.com/PeterPonyu/tessera-st/archive/{commit}.tar.gz'
 with urllib.request.urlopen(url, timeout=600) as r:
     data = r.read()
-tarfile.open(fileobj=io.BytesIO(data)).extractall('.')
+archive = tarfile.open(fileobj=io.BytesIO(data))
+try:
+    archive.extractall('.', filter='data')
+except TypeError:  # Python without extraction filters
+    archive.extractall('.')
 print('source', commit, len(data), 'bytes')
 PY
   mv "tessera-st-$COMMIT" repo
