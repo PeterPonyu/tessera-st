@@ -20,14 +20,14 @@ There are three levels of reproduction. Level 1 needs only the saved results. Le
 ```bash
 python current-release/portable/verify_saved_results.py      # original tables: recomputed from saved predictions
 python revision-r1/analyze_r1.py                              # revision tables, decision rules, manuscript numbers
-python revision-r1/figures/build_r1_figures.py all            # every main and supplementary figure
+python revision-r1/figures/build_r1_figures.py all            # every main and supplementary figure (needs matplotlib and PyMuPDF)
 ```
 
 | Manuscript item | Produced by |
 |---|---|
 | Tables 1–3 and Supplementary Tables S1–S15 | the original analyses, checked by `verify_saved_results.py` |
 | Supplementary Table S16 (settings) and S17 (data sources) | written in the manuscript source from the configuration and the source manifests |
-| Supplementary Tables S18–S21, and Figures 5, 6 and 10 | `revision-r1/analyze_r1.py` and `revision-r1/figures/build_r1_figures.py` |
+| Supplementary Tables S18–S21 and Figures 5 and 6 | `revision-r1/analyze_r1.py` and `revision-r1/figures/build_r1_figures.py` |
 | All other figures | `revision-r1/figures/build_r1_figures.py` from the saved results |
 
 ### Level 2: refit every analysis from the archived derived inputs (about 2 h on a laptop GPU)

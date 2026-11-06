@@ -91,7 +91,10 @@ def e1(comps):
                 rec[comp] = cmp_[comp].values
         tables.append(rec)
         key = f'{cohort}|{target}'
-        out[key] = dict(n=len(rec), budget_200_minus_120=c.summarize(rec.ari_200 - rec.ari_120),
+        change = rec.ari_200 - rec.ari_120
+        out[key] = dict(n=len(rec), budget_200_minus_120=c.summarize(change),
+                        budget_200_minus_120_rounded_pos=int((change.round(3) > 0).sum()),
+                        nested_epochs=sorted({int(e) for e in rec.nested_epoch}),
                         mean_ari={e: float(wide[e].mean()) for e in wide.columns})
         for comp in ['NestedControl', 'SameGraphMean', 'PCA50']:
             if comp in rec:
@@ -242,6 +245,52 @@ def e3(comps):
         extra['harmonization'] = dict(mean_abs_difference=float((h.ari_per_k_head - h.ari_fixed_head).abs().mean()),
                                       max_abs_difference=float((h.ari_per_k_head - h.ari_fixed_head).abs().max()),
                                       sign_flips=h[h.flip][['unit', 'target']].values.tolist(), n_pairs=len(h))
+    if (E3 / 'E3_harmonization.csv').exists() and (E2 / 'E2_selection.csv').exists():
+        hz = pd.read_csv(E3 / 'E3_harmonization.csv')
+        hz = hz[hz.target == 'all'].groupby('unit')[['ari_per_k_head', 'ari_fixed_head']].mean()
+        cm = comps[(comps.cohort == 'HER2ST') & (comps.target == 'all')].pivot(index='patient', columns='comparator', values='ari')
+        sel = pd.read_csv(E2 / 'E2_selection.csv')
+        sel = sel[(sel.cohort == 'HER2ST') & (sel.target == 'all')].set_index('patient').nested_tessera_ari
+        variants = {'per_k': hz.ari_per_k_head, 'fixed': hz.ari_fixed_head, 'tuned': sel, 'original': cm.Tessera_original}
+        res = {}
+        for k, v in variants.items():
+            dlt = (v - cm.NestedControl).dropna()
+            res[k] = dict(mean=float(dlt.mean()), median=float(dlt.median()), n_neg=int((dlt < 0).sum()), n=len(dlt),
+                          without_E1=float(dlt.drop('E1').mean()))
+        res['E1_per_k'] = float(hz.loc['E1', 'ari_per_k_head'])
+        res['E1_fixed'] = float(hz.loc['E1', 'ari_fixed_head'])
+        res['without_E1_min'] = min(r['without_E1'] for r in res.values() if isinstance(r, dict))
+        res['without_E1_max'] = max(r['without_E1'] for r in res.values() if isinstance(r, dict))
+        extra['her2st_head'] = res
+    if (E1 / 'E1_scores_gpu.csv').exists() and (E2 / 'E2_grid_gpu.csv').exists():
+        a = pd.read_csv(E1 / 'E1_scores_gpu.csv')
+        a = a[(a.arm == 'Tessera') & (a.epoch == 120) & (a.target == 'primary') & a.cohort.isin(['NSCLC', 'BCC'])]
+        b = pd.read_csv(E2 / 'E2_grid_gpu.csv')
+        b = b[b.config == 'k6|w0.5|t0.2|e120']
+        mm = a.merge(b, left_on=['object', 'seed'], right_on=['patient', 'seed'], suffixes=('_e1', '_e2'))
+        extra['gpu_repeat_max'] = float((mm.ari_e1 - mm.ari_e2).abs().max())
+    bcc = out.get('BCC|primary', {}).get('euclidean', {}).get('by_offset', {})
+    low = {int(o): s['Tessera120-TunedControl'] for o, s in bcc.items() if int(o) <= -4 and 'Tessera120-TunedControl' in s}
+    if low:
+        o = max(low, key=lambda k: low[k]['mean'])
+        extra['bcc_low_k'] = dict(offset=o, max_mean=low[o]['mean'], n_pos=low[o]['n_pos'])
+    part = agg[(agg.cohort == 'NSCLC') & (agg.target == 'cell_type') & (agg.geometry == 'euclidean')]
+    if len(part):
+        dl = (part.Tessera120 - part.PCA50)
+        by = pd.DataFrame({'K': part.K, 'd': dl}).groupby('K').d.agg(['mean', 'count', lambda x: int((x < 0).sum())])
+        by.columns = ['mean', 'count', 'neg']
+        n_units = part.unit.nunique()
+        by = by[by['count'] == n_units].sort_index()
+        below = by['mean'] < 0
+        neg_from = int(next(k for k in by.index if below.loc[k:].all()))        # mean below zero from here on
+        strong = by['neg'] >= n_units - 1
+        strong_from = int(next(k for k in by.index if strong.loc[k:].all()))  # all but one patient below from here on
+        tail, low = by.loc[neg_from:], by.loc[:neg_from - 1]
+        extra['lung_cell_k_vs_pca'] = dict(min=float(tail['mean'].min()), max=float(tail['mean'].max()),
+                                           neg_from=neg_from, k_min=strong_from, k_max=int(by.index.max()),
+                                           min_neg=int(by.loc[strong_from:, 'neg'].min()),
+                                           low_to=int(low.index.max()) if len(low) else None,
+                                           low_max=float(low['mean'].max()) if len(low) else None)
     if (E3 / 'E3_refinement.csv').exists():
         r = pd.read_csv(E3 / 'E3_refinement.csv').groupby(['cohort', 'unit', 'target', 'representation'])[
             ['ari', 'ari_refined']].mean().reset_index()
@@ -291,14 +340,16 @@ def e4(comps):
                 rec[f'minus_{comp}'] = c.summarize(d.dropna())
         rows.append(rec)
     out['by_setting'] = rows
-    for method in m.method.unique():
-        verdict = []
-        for cohort, target in [('NSCLC', 'primary'), ('HER2ST', 'all')]:
-            for clustering in ['kmeans_matched', 'native']:
-                cand = [r for r in rows if r['method'] == method and r['cohort'] == cohort and r['target'] == target
-                        and r['clustering'] == clustering and 'minus_NestedControl' in r]
-                verdict += [r['minus_NestedControl']['outcome'] == 'retained' for r in cand]
-        out[f'DR4|{method}'] = bool(verdict) and all(verdict)
+    # DR-4 applies to the learned encoders only; BANKSY is the native form of the averaging control.
+    for method in [x for x in ('GraphST', 'CASTLE') if x in set(m.method)]:
+        variants = [v for v in sorted(set(m[m.method == method].variant.astype(str)))
+                    if all(any(r['method'] == method and str(r['variant']) == v and r['cohort'] == co and r['target'] == tg
+                               for r in rows) for co, tg in [('NSCLC', 'primary'), ('HER2ST', 'all')])]
+        for variant in variants:
+            verdict = [r['minus_NestedControl']['outcome'] == 'retained' for r in rows
+                       if r['method'] == method and str(r['variant']) == variant and 'minus_NestedControl' in r
+                       and (r['cohort'], r['target']) in (('NSCLC', 'primary'), ('HER2ST', 'all'))]
+            out[f'DR4|{method}|{variant}'] = dict(holds=bool(verdict) and all(verdict), n_settings=len(verdict))
     return out, pd.DataFrame(rows)
 
 
@@ -325,6 +376,9 @@ def write_macros(summary):
         mac(f'R{tag}BudgetMean', fmt(b['mean'], True))
         mac(f'R{tag}BudgetPos', b['n_pos'])
         mac(f'R{tag}BudgetNeg', b['n_neg'])
+        mac(f'R{tag}BudgetRoundPos', e1s['budget_200_minus_120_rounded_pos'])
+        if len(e1s['nested_epochs']) == 1:
+            mac(f'R{tag}NestedEpochSel', e1s['nested_epochs'][0])
         mac(f'R{tag}N', b['n'])
         for lab in ['e120', 'e200', 'nested_epoch', 'oracle_epoch']:
             v = e1s['vs_NestedControl'][lab]
@@ -397,7 +451,8 @@ def write_macros(summary):
         mac('RHarmFlips', len(h['sign_flips']))
         mac('RHarmPairs', h['n_pairs'])
     if 'refinement' in extra:
-        for key, tag in [('NSCLC|primary', 'Lung'), ('HER2ST|all', 'HerAll')]:
+        for key, tag in [('NSCLC|primary', 'Lung'), ('BCC|primary', 'Bcc'), ('HER2ST|all', 'HerAll'),
+                         ('HER2ST|boundary_T1', 'HerBnd')]:
             v = extra['refinement']['by_cohort'].get(key)
             if v:
                 mac(f'R{tag}RefinedVsCtlMean', fmt(v['tessera120_minus_control_refined']['mean'], True))
@@ -419,6 +474,66 @@ def write_macros(summary):
             ks = lf[mask].K_label_free
             mac(f'R{tag}KFreeMin', int(ks.min()))
             mac(f'R{tag}KFreeMax', int(ks.max()))
+    # Lung cell types: component contrasts across budgets (gates help cell-type preservation slightly)
+    comp = summary['E1']['NSCLC|cell_type']['components']
+    for e in (120, 200, 400):
+        v = comp.get(str(e), comp.get(e, {})).get('Tessera_minus_NoGate')
+        if v:
+            mac(f'RLungCellMinusArmNoGate{WORD[e]}Mean', fmt(v['mean'], True))
+            mac(f'RLungCellMinusArmNoGate{WORD[e]}Pos', v['n_pos'])
+    v = summary['E1']['BCC|primary']['vs_PCA50']['e200']
+    mac('RBccTwoHundredVsPcaMean', fmt(v['mean'], True))
+    mac('RBccTwoHundredVsPcaPos', v['n_pos'])
+    v = summary['E1']['BCC|primary']['vs_PCA50']['e120']
+    mac('RBccOneTwentyVsPcaMean', fmt(v['mean'], True))
+    mac('RBccOneTwentyVsPcaNeg', v['n_neg'])
+    extra = summary.get('E3', {}).get('extra', {})
+    hh = extra.get('her2st_head')
+    if hh:
+        for key, tag in [('per_k', 'PerK'), ('fixed', 'Fixed'), ('tuned', 'Tuned'), ('original', 'Orig')]:
+            mac(f'RHerHead{tag}Mean', fmt(hh[key]['mean'], True))
+            mac(f'RHerHead{tag}Median', fmt(hh[key]['median'], True))
+            mac(f'RHerHead{tag}Neg', hh[key]['n_neg'])
+        mac('RHerHeadEOnePerK', fmt(hh['E1_per_k']))
+        mac('RHerHeadEOneFixed', fmt(hh['E1_fixed']))
+        mac('RHerHeadNoEMin', fmt(hh['without_E1_min'], True))
+        mac('RHerHeadNoEMax', fmt(hh['without_E1_max'], True))
+    if 'gpu_repeat_max' in extra:
+        mac('RGpuRepeatMax', fmt(extra['gpu_repeat_max']))
+    if 'bcc_low_k' in extra:
+        mac('RBccKLowMax', fmt(extra['bcc_low_k']['max_mean'], True))
+        mac('RBccKLowPos', extra['bcc_low_k']['n_pos'])
+        mac('RBccKLowOffset', extra['bcc_low_k']['offset'])
+    if 'lung_cell_k_vs_pca' in extra:
+        mac('RLungCellKVsPcaMin', fmt(extra['lung_cell_k_vs_pca']['min'], True))
+        mac('RLungCellKVsPcaMax', fmt(extra['lung_cell_k_vs_pca']['max'], True))
+        mac('RLungCellKFrom', extra['lung_cell_k_vs_pca']['k_min'])
+        mac('RLungCellKTo', extra['lung_cell_k_vs_pca']['k_max'])
+        mac('RLungCellKMinNeg', extra['lung_cell_k_vs_pca']['min_neg'])
+        mac('RLungCellKNegFrom', extra['lung_cell_k_vs_pca']['neg_from'])
+        if extra['lung_cell_k_vs_pca']['low_to'] is not None:
+            mac('RLungCellKLowTo', extra['lung_cell_k_vs_pca']['low_to'])
+            mac('RLungCellKLowMax', fmt(extra['lung_cell_k_vs_pca']['low_max'], True))
+    e4s = summary.get('E4', {})
+    words = {'GraphST': 'Graphst', 'BANKSY': 'Banksy', 'CASTLE': 'Castle', '': '', 'default': '', 'nan': '',
+             'lambda0.8': 'LamHigh', 'lambda0.2': 'LamLow', 'celltype': 'Ct', 'expression': 'Expr',
+             'NSCLC': 'Lung', 'HER2ST': 'Her', 'primary': 'Reg', 'cell_type': 'Cell', 'all': 'All',
+             'boundary_T1': 'Bnd', 'kmeans_matched': 'Km', 'native': 'Nat'}
+    for r in e4s.get('by_setting', []):
+        tag = 'RNat' + ''.join(words[str(r[k])] for k in ('method', 'variant', 'cohort', 'target', 'clustering'))
+        mac(f'{tag}Ari', fmt(r['mean_ari']))
+        mac(f'{tag}N', r['n'])
+        for comp, short in [('NestedControl', 'Ctl'), ('SameGraphMean', 'Mean'), ('PCA50', 'Pca'),
+                            ('Tessera_original', 'Tess')]:
+            v = r.get(f'minus_{comp}')
+            if v:
+                mac(f'{tag}{short}Mean', fmt(v['mean'], True))
+                mac(f'{tag}{short}Neg', v['n_neg'])
+                mac(f'{tag}{short}Pos', v['n_pos'])
+    for key, v in e4s.items():
+        if key.startswith('DR4|'):
+            _, method, variant = key.split('|')
+            mac(f'RNatDRFour{words[method]}{words[variant]}', 'held' if v['holds'] else 'did not hold')
     MACROS.write_text('\n'.join(lines) + '\n')
 
 
@@ -454,7 +569,7 @@ BLOCK = {('NSCLC', 'primary'): 'NSCLC regions', ('BCC', 'primary'): 'BCC cell ty
 
 
 def n3(x):
-    return 'NA' if pd.isna(x) else f'{x:.3f}'
+    return 'NA' if pd.isna(x) else fmt(float(x))  # math minus sign for negative values
 
 
 def write_tables(tables: dict) -> None:
@@ -489,11 +604,14 @@ def write_tables(tables: dict) -> None:
         for r in t4.sort_values(['method', 'variant', 'cohort', 'target', 'clustering']).itertuples():
             ctl = getattr(r, 'minus_NestedControl', None)
             mean = getattr(r, 'minus_SameGraphMean', None)
-            ctl_s = f"{ctl['mean']:+.3f} ({ctl['n_neg']}/{ctl['n']})" if isinstance(ctl, dict) else '--'
-            mean_s = f"{mean['mean']:+.3f} ({mean['n_neg']}/{mean['n']})" if isinstance(mean, dict) else '--'
+            ctl_s = f"{fmt(ctl['mean'], True)} ({ctl['n_neg']}/{ctl['n']})" if isinstance(ctl, dict) else '--'
+            mean_s = f"{fmt(mean['mean'], True)} ({mean['n_neg']}/{mean['n']})" if isinstance(mean, dict) else '--'
             tgt = {'primary': 'regions', 'cell_type': 'cell types', 'all': 'all labels', 'boundary_T1': 'boundary'}[r.target]
             clus = 'K-means' if r.clustering == 'kmeans_matched' else 'native'
-            variant = '' if r.variant in ('', 'default', 'nan') or pd.isna(r.variant) else f' ({r.variant})'
+            names = {'lambda0.8': '$\\lambda=0.8$', 'lambda0.2': '$\\lambda=0.2$', 'celltype': 'cell-type graph',
+                     'expression': 'expression graph'}
+            variant = ('' if pd.isna(r.variant) or str(r.variant) in ('', 'default', 'nan')
+                       else f' ({names.get(str(r.variant), str(r.variant))})')
             lines.append(f'{r.method}{variant} & {r.cohort} {tgt} & {clus} & {r.mean_ari:.3f} & '
                          f'{ctl_s} & {mean_s}\\\\')
         bodies['RTableNative'] = '\n'.join(lines)
@@ -518,10 +636,10 @@ def k_table(summary) -> str:
             cells = []
             for off in range(-2, 3):
                 v = s[geometry]['by_offset'].get(off, {}).get('Tessera120-TunedControl')
-                cells.append('--' if v is None else f"{v['mean']:+.3f} ({v['n_neg']}/{v['n']})")
+                cells.append('--' if v is None else f"{fmt(v['mean'], True)} ({v['n_neg']}/{v['n']})")
             lf = s[geometry]['label_free']
             v = lf['Tessera120-TunedControl'] if lf else None
-            cells.append('--' if v is None else f"{v['mean']:+.3f} ({v['n_neg']}/{v['n']})")
+            cells.append('--' if v is None else f"{fmt(v['mean'], True)} ({v['n_neg']}/{v['n']})")
             lines.append(f'{label} & {gl} & ' + ' & '.join(cells) + '\\\\')
     return '\n'.join(lines) + '\n'
 

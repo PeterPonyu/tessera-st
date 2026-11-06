@@ -1,0 +1,733 @@
+{
+ "figure-01": {
+  "page_points": [
+   496.8,
+   246.2
+  ],
+  "border_points_per_side": 0,
+  "jpg_pixels": [
+   2067,
+   1025
+  ],
+  "fonts": [
+   {
+    "name": "VFQQFJ+Arial-BoldMT",
+    "type": "TrueType WinAnsi",
+    "embedded": "yes",
+    "subset": "yes"
+   },
+   {
+    "name": "FGYFJY+ArialMT",
+    "type": "TrueType WinAnsi",
+    "embedded": "yes",
+    "subset": "yes"
+   },
+   {
+    "name": "OUHZRJ+ArialMT",
+    "type": "CID TrueType Identity-H",
+    "embedded": "yes",
+    "subset": "yes"
+   }
+  ],
+  "unrenamed_Tessera": 0,
+  "Tessera-ST_occurrences": 1,
+  "Same-graph_mean_occurrences": 0,
+  "images": 0
+ },
+ "figure-02": {
+  "page_points": [
+   496.8,
+   313.98
+  ],
+  "border_points_per_side": 0,
+  "jpg_pixels": [
+   2067,
+   1307
+  ],
+  "fonts": [
+   {
+    "name": "GRMKLM+Arial-BoldMT",
+    "type": "TrueType WinAnsi",
+    "embedded": "yes",
+    "subset": "yes"
+   },
+   {
+    "name": "YQPGTU+ArialMT",
+    "type": "TrueType WinAnsi",
+    "embedded": "yes",
+    "subset": "yes"
+   },
+   {
+    "name": "NBOCRW+ArialMT",
+    "type": "CID TrueType Identity-H",
+    "embedded": "yes",
+    "subset": "yes"
+   }
+  ],
+  "unrenamed_Tessera": 0,
+  "Tessera-ST_occurrences": 0,
+  "Same-graph_mean_occurrences": 0,
+  "images": 0
+ },
+ "figure-03": {
+  "page_points": [
+   508.8,
+   451.0
+  ],
+  "border_points_per_side": 6.0,
+  "jpg_pixels": [
+   2067,
+   1833
+  ],
+  "fonts": [
+   {
+    "name": "DQLSPY+Arial-BoldMT",
+    "type": "CID TrueType Identity-H",
+    "embedded": "yes",
+    "subset": "yes"
+   },
+   {
+    "name": "FLTGSM+ArialMT",
+    "type": "CID TrueType Identity-H",
+    "embedded": "yes",
+    "subset": "yes"
+   }
+  ],
+  "unrenamed_Tessera": 0,
+  "Tessera-ST_occurrences": 5,
+  "Same-graph_mean_occurrences": 1,
+  "images": 0
+ },
+ "figure-04": {
+  "page_points": [
+   508.8,
+   254.37
+  ],
+  "border_points_per_side": 6.0,
+  "jpg_pixels": [
+   2067,
+   1034
+  ],
+  "fonts": [
+   {
+    "name": "DQLSPY+Arial-BoldMT",
+    "type": "CID TrueType Identity-H",
+    "embedded": "yes",
+    "subset": "yes"
+   },
+   {
+    "name": "FLTGSM+ArialMT",
+    "type": "CID TrueType Identity-H",
+    "embedded": "yes",
+    "subset": "yes"
+   }
+  ],
+  "unrenamed_Tessera": 0,
+  "Tessera-ST_occurrences": 2,
+  "Same-graph_mean_occurrences": 0,
+  "images": 2
+ },
+ "figure-05": {
+  "page_points": [
+   496.8,
+   405.0
+  ],
+  "border_points_per_side": 0,
+  "jpg_pixels": [
+   2067,
+   1686
+  ],
+  "fonts": [
+   {
+    "name": "DQLSPY+Arial-BoldMT",
+    "type": "CID TrueType Identity-H",
+    "embedded": "yes",
+    "subset": "yes"
+   },
+   {
+    "name": "FLTGSM+ArialMT",
+    "type": "CID TrueType Identity-H",
+    "embedded": "yes",
+    "subset": "yes"
+   }
+  ],
+  "unrenamed_Tessera": 0,
+  "Tessera-ST_occurrences": 3,
+  "Same-graph_mean_occurrences": 0,
+  "images": 0
+ },
+ "figure-06": {
+  "page_points": [
+   496.8,
+   415.0
+  ],
+  "border_points_per_side": 0,
+  "jpg_pixels": [
+   2067,
+   1727
+  ],
+  "fonts": [
+   {
+    "name": "DQLSPY+Arial-BoldMT",
+    "type": "CID TrueType Identity-H",
+    "embedded": "yes",
+    "subset": "yes"
+   },
+   {
+    "name": "FLTGSM+ArialMT",
+    "type": "CID TrueType Identity-H",
+    "embedded": "yes",
+    "subset": "yes"
+   }
+  ],
+  "unrenamed_Tessera": 0,
+  "Tessera-ST_occurrences": 2,
+  "Same-graph_mean_occurrences": 0,
+  "images": 0
+ },
+ "figure-07": {
+  "page_points": [
+   508.8,
+   402.0
+  ],
+  "border_points_per_side": 6.0,
+  "jpg_pixels": [
+   2067,
+   1634
+  ],
+  "fonts": [
+   {
+    "name": "DQLSPY+Arial-BoldMT",
+    "type": "CID TrueType Identity-H",
+    "embedded": "yes",
+    "subset": "yes"
+   },
+   {
+    "name": "FLTGSM+ArialMT",
+    "type": "CID TrueType Identity-H",
+    "embedded": "yes",
+    "subset": "yes"
+   }
+  ],
+  "unrenamed_Tessera": 0,
+  "Tessera-ST_occurrences": 4,
+  "Same-graph_mean_occurrences": 4,
+  "images": 0
+ },
+ "figure-08": {
+  "page_points": [
+   496.8,
+   409.0
+  ],
+  "border_points_per_side": 0,
+  "jpg_pixels": [
+   2067,
+   1702
+  ],
+  "fonts": [
+   {
+    "name": "DQLSPY+Arial-BoldMT",
+    "type": "CID TrueType Identity-H",
+    "embedded": "yes",
+    "subset": "yes"
+   },
+   {
+    "name": "FLTGSM+ArialMT",
+    "type": "CID TrueType Identity-H",
+    "embedded": "yes",
+    "subset": "yes"
+   }
+  ],
+  "unrenamed_Tessera": 0,
+  "Tessera-ST_occurrences": 7,
+  "Same-graph_mean_occurrences": 7,
+  "images": 0
+ },
+ "figure-09": {
+  "page_points": [
+   496.8,
+   436.0
+  ],
+  "border_points_per_side": 0,
+  "jpg_pixels": [
+   2067,
+   1815
+  ],
+  "fonts": [
+   {
+    "name": "DQLSPY+Arial-BoldMT",
+    "type": "CID TrueType Identity-H",
+    "embedded": "yes",
+    "subset": "yes"
+   },
+   {
+    "name": "FLTGSM+ArialMT",
+    "type": "CID TrueType Identity-H",
+    "embedded": "yes",
+    "subset": "yes"
+   }
+  ],
+  "unrenamed_Tessera": 0,
+  "Tessera-ST_occurrences": 4,
+  "Same-graph_mean_occurrences": 1,
+  "images": 0
+ },
+ "figure-S1": {
+  "page_points": [
+   508.8,
+   276.0
+  ],
+  "border_points_per_side": 6.0,
+  "jpg_pixels": [
+   2067,
+   1122
+  ],
+  "fonts": [
+   {
+    "name": "DQLSPY+Arial-BoldMT",
+    "type": "CID TrueType Identity-H",
+    "embedded": "yes",
+    "subset": "yes"
+   },
+   {
+    "name": "FLTGSM+ArialMT",
+    "type": "CID TrueType Identity-H",
+    "embedded": "yes",
+    "subset": "yes"
+   }
+  ],
+  "unrenamed_Tessera": 0,
+  "Tessera-ST_occurrences": 0,
+  "Same-graph_mean_occurrences": 0,
+  "images": 0
+ },
+ "figure-S2": {
+  "page_points": [
+   508.8,
+   285.68
+  ],
+  "border_points_per_side": 6.0,
+  "jpg_pixels": [
+   2067,
+   1161
+  ],
+  "fonts": [
+   {
+    "name": "GRMKLM+Arial-BoldMT",
+    "type": "TrueType WinAnsi",
+    "embedded": "yes",
+    "subset": "yes"
+   },
+   {
+    "name": "HAOUYV+ArialMT",
+    "type": "TrueType WinAnsi",
+    "embedded": "yes",
+    "subset": "yes"
+   }
+  ],
+  "unrenamed_Tessera": 0,
+  "Tessera-ST_occurrences": 0,
+  "Same-graph_mean_occurrences": 0,
+  "images": 0
+ },
+ "figure-S3": {
+  "page_points": [
+   508.8,
+   292.89
+  ],
+  "border_points_per_side": 6.0,
+  "jpg_pixels": [
+   2067,
+   1190
+  ],
+  "fonts": [
+   {
+    "name": "DQLSPY+Arial-BoldMT",
+    "type": "CID TrueType Identity-H",
+    "embedded": "yes",
+    "subset": "yes"
+   },
+   {
+    "name": "FLTGSM+ArialMT",
+    "type": "CID TrueType Identity-H",
+    "embedded": "yes",
+    "subset": "yes"
+   }
+  ],
+  "unrenamed_Tessera": 0,
+  "Tessera-ST_occurrences": 1,
+  "Same-graph_mean_occurrences": 0,
+  "images": 9
+ },
+ "figure-S4": {
+  "page_points": [
+   496.8,
+   300.0
+  ],
+  "border_points_per_side": 0,
+  "jpg_pixels": [
+   2067,
+   1249
+  ],
+  "fonts": [
+   {
+    "name": "DQLSPY+Arial-BoldMT",
+    "type": "CID TrueType Identity-H",
+    "embedded": "yes",
+    "subset": "yes"
+   },
+   {
+    "name": "FLTGSM+ArialMT",
+    "type": "CID TrueType Identity-H",
+    "embedded": "yes",
+    "subset": "yes"
+   }
+  ],
+  "unrenamed_Tessera": 0,
+  "Tessera-ST_occurrences": 4,
+  "Same-graph_mean_occurrences": 0,
+  "images": 0
+ },
+ "figure-S5": {
+  "page_points": [
+   496.8,
+   135.8
+  ],
+  "border_points_per_side": 0,
+  "jpg_pixels": [
+   2067,
+   566
+  ],
+  "fonts": [
+   {
+    "name": "DQLSPY+Arial-BoldMT",
+    "type": "CID TrueType Identity-H",
+    "embedded": "yes",
+    "subset": "yes"
+   },
+   {
+    "name": "FLTGSM+ArialMT",
+    "type": "CID TrueType Identity-H",
+    "embedded": "yes",
+    "subset": "yes"
+   }
+  ],
+  "unrenamed_Tessera": 0,
+  "Tessera-ST_occurrences": 1,
+  "Same-graph_mean_occurrences": 1,
+  "images": 4
+ },
+ "figure-S6": {
+  "page_points": [
+   496.8,
+   413.27
+  ],
+  "border_points_per_side": 0,
+  "jpg_pixels": [
+   2067,
+   1720
+  ],
+  "fonts": [
+   {
+    "name": "DQLSPY+Arial-BoldMT",
+    "type": "CID TrueType Identity-H",
+    "embedded": "yes",
+    "subset": "yes"
+   },
+   {
+    "name": "FLTGSM+ArialMT",
+    "type": "CID TrueType Identity-H",
+    "embedded": "yes",
+    "subset": "yes"
+   }
+  ],
+  "unrenamed_Tessera": 0,
+  "Tessera-ST_occurrences": 3,
+  "Same-graph_mean_occurrences": 3,
+  "images": 12
+ },
+ "figure-S7": {
+  "page_points": [
+   496.8,
+   237.96
+  ],
+  "border_points_per_side": 0,
+  "jpg_pixels": [
+   2067,
+   991
+  ],
+  "fonts": [
+   {
+    "name": "DQLSPY+Arial-BoldMT",
+    "type": "CID TrueType Identity-H",
+    "embedded": "yes",
+    "subset": "yes"
+   },
+   {
+    "name": "FLTGSM+ArialMT",
+    "type": "CID TrueType Identity-H",
+    "embedded": "yes",
+    "subset": "yes"
+   }
+  ],
+  "unrenamed_Tessera": 0,
+  "Tessera-ST_occurrences": 0,
+  "Same-graph_mean_occurrences": 0,
+  "images": 12
+ },
+ "figure-S8": {
+  "page_points": [
+   496.8,
+   419.58
+  ],
+  "border_points_per_side": 0,
+  "jpg_pixels": [
+   2067,
+   1746
+  ],
+  "fonts": [
+   {
+    "name": "DQLSPY+Arial-BoldMT",
+    "type": "CID TrueType Identity-H",
+    "embedded": "yes",
+    "subset": "yes"
+   },
+   {
+    "name": "FLTGSM+ArialMT",
+    "type": "CID TrueType Identity-H",
+    "embedded": "yes",
+    "subset": "yes"
+   }
+  ],
+  "unrenamed_Tessera": 0,
+  "Tessera-ST_occurrences": 4,
+  "Same-graph_mean_occurrences": 4,
+  "images": 20
+ },
+ "figure-S9": {
+  "page_points": [
+   496.8,
+   512.13
+  ],
+  "border_points_per_side": 0,
+  "jpg_pixels": [
+   2067,
+   2131
+  ],
+  "fonts": [
+   {
+    "name": "DQLSPY+Arial-BoldMT",
+    "type": "CID TrueType Identity-H",
+    "embedded": "yes",
+    "subset": "yes"
+   },
+   {
+    "name": "FLTGSM+ArialMT",
+    "type": "CID TrueType Identity-H",
+    "embedded": "yes",
+    "subset": "yes"
+   }
+  ],
+  "unrenamed_Tessera": 0,
+  "Tessera-ST_occurrences": 5,
+  "Same-graph_mean_occurrences": 5,
+  "images": 20
+ },
+ "figure-S10": {
+  "page_points": [
+   496.8,
+   514.13
+  ],
+  "border_points_per_side": 0,
+  "jpg_pixels": [
+   2067,
+   2140
+  ],
+  "fonts": [
+   {
+    "name": "DQLSPY+Arial-BoldMT",
+    "type": "CID TrueType Identity-H",
+    "embedded": "yes",
+    "subset": "yes"
+   },
+   {
+    "name": "FLTGSM+ArialMT",
+    "type": "CID TrueType Identity-H",
+    "embedded": "yes",
+    "subset": "yes"
+   }
+  ],
+  "unrenamed_Tessera": 0,
+  "Tessera-ST_occurrences": 4,
+  "Same-graph_mean_occurrences": 4,
+  "images": 16
+ },
+ "figure-S11": {
+  "page_points": [
+   496.8,
+   355.04
+  ],
+  "border_points_per_side": 0,
+  "jpg_pixels": [
+   2067,
+   1478
+  ],
+  "fonts": [
+   {
+    "name": "DQLSPY+Arial-BoldMT",
+    "type": "CID TrueType Identity-H",
+    "embedded": "yes",
+    "subset": "yes"
+   },
+   {
+    "name": "FLTGSM+ArialMT",
+    "type": "CID TrueType Identity-H",
+    "embedded": "yes",
+    "subset": "yes"
+   }
+  ],
+  "unrenamed_Tessera": 0,
+  "Tessera-ST_occurrences": 2,
+  "Same-graph_mean_occurrences": 0,
+  "images": 8
+ },
+ "figure-S12": {
+  "page_points": [
+   496.8,
+   372.0
+  ],
+  "border_points_per_side": 0,
+  "jpg_pixels": [
+   2067,
+   1548
+  ],
+  "fonts": [
+   {
+    "name": "DQLSPY+Arial-BoldMT",
+    "type": "CID TrueType Identity-H",
+    "embedded": "yes",
+    "subset": "yes"
+   },
+   {
+    "name": "FLTGSM+ArialMT",
+    "type": "CID TrueType Identity-H",
+    "embedded": "yes",
+    "subset": "yes"
+   }
+  ],
+  "unrenamed_Tessera": 0,
+  "Tessera-ST_occurrences": 1,
+  "Same-graph_mean_occurrences": 1,
+  "images": 3
+ },
+ "figure-S13": {
+  "page_points": [
+   496.8,
+   276.0
+  ],
+  "border_points_per_side": 0,
+  "jpg_pixels": [
+   2067,
+   1149
+  ],
+  "fonts": [
+   {
+    "name": "DQLSPY+Arial-BoldMT",
+    "type": "CID TrueType Identity-H",
+    "embedded": "yes",
+    "subset": "yes"
+   },
+   {
+    "name": "FLTGSM+ArialMT",
+    "type": "CID TrueType Identity-H",
+    "embedded": "yes",
+    "subset": "yes"
+   }
+  ],
+  "unrenamed_Tessera": 0,
+  "Tessera-ST_occurrences": 2,
+  "Same-graph_mean_occurrences": 0,
+  "images": 0
+ },
+ "figure-S14": {
+  "page_points": [
+   508.8,
+   208.0
+  ],
+  "border_points_per_side": 6.0,
+  "jpg_pixels": [
+   2067,
+   845
+  ],
+  "fonts": [
+   {
+    "name": "FLTGSM+ArialMT",
+    "type": "CID TrueType Identity-H",
+    "embedded": "yes",
+    "subset": "yes"
+   }
+  ],
+  "unrenamed_Tessera": 0,
+  "Tessera-ST_occurrences": 0,
+  "Same-graph_mean_occurrences": 0,
+  "images": 0
+ },
+ "figure-S15": {
+  "page_points": [
+   496.8,
+   273.0
+  ],
+  "border_points_per_side": 0,
+  "jpg_pixels": [
+   2067,
+   1136
+  ],
+  "fonts": [
+   {
+    "name": "DQLSPY+Arial-BoldMT",
+    "type": "CID TrueType Identity-H",
+    "embedded": "yes",
+    "subset": "yes"
+   },
+   {
+    "name": "FLTGSM+ArialMT",
+    "type": "CID TrueType Identity-H",
+    "embedded": "yes",
+    "subset": "yes"
+   }
+  ],
+  "unrenamed_Tessera": 0,
+  "Tessera-ST_occurrences": 2,
+  "Same-graph_mean_occurrences": 2,
+  "images": 0
+ },
+ "figure-S16": {
+  "page_points": [
+   496.8,
+   335.0
+  ],
+  "border_points_per_side": 0,
+  "jpg_pixels": [
+   2067,
+   1394
+  ],
+  "fonts": [
+   {
+    "name": "DQLSPY+Arial-BoldMT",
+    "type": "CID TrueType Identity-H",
+    "embedded": "yes",
+    "subset": "yes"
+   },
+   {
+    "name": "FLTGSM+ArialMT",
+    "type": "CID TrueType Identity-H",
+    "embedded": "yes",
+    "subset": "yes"
+   }
+  ],
+  "unrenamed_Tessera": 0,
+  "Tessera-ST_occurrences": 2,
+  "Same-graph_mean_occurrences": 0,
+  "images": 0
+ }
+}
