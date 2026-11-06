@@ -1,16 +1,25 @@
 cff-version: 1.2.0
-message: "Cite this software/source release when using its author-owned analysis code or retained controls audit. The software DOI is reserved until publication by the record owner; it is distinct from a manuscript DOI and the evaluated original software DOI."
+message: "If you use this software or its analyses, please cite the version you used. Version DOIs are listed on the Zenodo record; the earlier versions are identified below."
 type: software
-title: "Tessera controls audit: analysis and editable sources"
+title: "Tessera-ST: a gated graph encoder for spatial omics and its controls audit"
 authors:
   - family-names: Fu
     given-names: Zeyu
     orcid: "https://orcid.org/0009-0001-8329-0108"
-version: "2026.10.11-controls-audit"
-doi: "10.5281/zenodo.23308077"
+version: "2026.11.05-revision-r1"
 license: MIT
-abstract: "Standalone source and saved-evidence archive for matched neighborhood controls, component ablations, patient-held-out transfer, exploratory HER2ST comparator extensions and a separate colorectal pilot. Includes corrected manuscript sources and author-generated breast coordinate maps. Software licensing applies to author-owned code; third-party measurements, annotations and CRC images retain their source-specific rights."
-references:
-  - type: software
-    title: "Tessera-ST evaluated original implementation"
-    doi: "10.5281/zenodo.23101191"
+abstract: "Tessera-ST is a self-supervised gated graph encoder for spatial molecular data (earlier releases call it Tessera). This release contains the evaluated implementation, the controls audit of the original submission, and the analyses added during review: training budget, patient-excluded tuning of the encoder, cluster number with fixed representations, and native external methods, together with their protocol, tests and result tables. Third-party data, annotations and images retain their source-specific terms."
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.23308077"
+    description: "Version 2026.10.11-controls-audit: evaluated implementation and analyses of the original submission"
+  - type: doi
+    value: "10.5281/zenodo.23101191"
+    description: "Version 2026.10.02-author-review: earlier author-review release of the software"
+repository-code: "https://github.com/PeterPonyu/tessera-st"
+keywords:
+  - spatial transcriptomics
+  - graph encoder
+  - neighborhood averaging
+  - attribution
+  - reproducibility

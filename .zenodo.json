@@ -1,29 +1,35 @@
 {
-  "title": "Tessera controls audit: analysis and editable sources",
+  "title": "Tessera-ST: a gated graph encoder for spatial omics and its controls audit",
   "creators": [
     {
       "name": "Fu, Zeyu",
       "orcid": "0009-0001-8329-0108"
     }
   ],
-  "version": "2026.10.11-controls-audit",
-  "doi": "10.5281/zenodo.23308077",
+  "version": "2026.11.05-revision-r1",
   "upload_type": "software",
   "license": "MIT",
-  "description": "Standalone analysis/source archive preserving evaluated Tessera code, immutable protocols and run locks, saved primary and patient-held-out transfer evidence, controls, exploratory HER2ST comparator extensions and the colorectal pilot. Includes corrected manuscript sources and final PDFs with author-generated breast coordinate maps. No 10x breast H&E image/background is redistributed. Author-owned software is MIT; authored text and result aggregates are identified as CC BY 4.0, while third-party measurements, annotations and dataset-licensed CRC images retain source-specific rights. Saved-evidence verification and its documented limits are distinct from full experimental refitting.",
-  "notes": "The software DOI is reserved until the record owner publishes. The evaluated original implementation DOI 10.5281/zenodo.23101191 archives a distinct earlier software product and does not archive later controls or presentation replacements. No manuscript DOI is asserted here.",
+  "description": "Tessera-ST is a self-supervised gated graph encoder for spatial molecular data; earlier releases call it Tessera. This version contains the evaluated implementation, the controls audit of the original submission and the analyses added during review (training budget, patient-excluded tuning of the encoder, cluster number with fixed representations, and native external methods), with their written protocol, tests, result tables and reproduction guide. Author-owned software is MIT licensed; author-generated text, figures and result aggregates are CC BY 4.0; third-party measurements, annotations and images retain their source-specific terms.",
+  "notes": "The earlier versions are doi:10.5281/zenodo.23308077 (2026.10.11-controls-audit) and doi:10.5281/zenodo.23101191 (2026.10.02-author-review). No manuscript DOI is asserted here.",
   "related_identifiers": [
     {
+      "identifier": "10.5281/zenodo.23308077",
+      "relation": "isNewVersionOf",
+      "scheme": "doi",
+      "resource_type": "software"
+    },
+    {
       "identifier": "10.5281/zenodo.23101191",
-      "relation": "references",
+      "relation": "isNewVersionOf",
       "scheme": "doi",
       "resource_type": "software"
     }
   ],
   "keywords": [
     "spatial transcriptomics",
-    "neighborhood averaging",
     "graph encoder",
+    "neighborhood averaging",
+    "attribution",
     "component ablation",
     "patient-held-out transfer",
     "reproducibility"

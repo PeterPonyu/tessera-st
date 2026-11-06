@@ -1,4 +1,68 @@
-# Tessera: implementation-specific spatial controls audit
+# Tessera-ST: a gated graph encoder for spatial omics, and its controls audit
+
+Tessera-ST is a self-supervised graph encoder for spatial molecular data (package `tessera_st`). Earlier releases call it Tessera. It is unrelated to other tools named Tessera, such as the tissue-tiling method of Stein et al. (2025), the multi-sample differential-expression model of Constantine et al. (2026) and the representation-learning framework of Dehghani Amirabad et al. (2026). The accompanying study tests how much of the encoder's spatial gain is explained by neighborhood averaging, using matched controls, component removals and patient-held-out evaluation.
+
+## Reproduce this study
+
+There are three levels of reproduction. Level 1 needs only the saved results. Levels 2 and 3 refit models.
+
+**Getting the files.** Clone this repository. The GitHub copy omits large arrays (inputs, embeddings, model states). To get them:
+
+- **Original submission:** download the complete archive at [doi:10.5281/zenodo.23308077](https://doi.org/10.5281/zenodo.23308077) and reassemble it as described in its `REASSEMBLE.md`.
+- **Revision analyses:** download the revision archive listed in the manuscript's Code availability statement.
+
+**Environment.** Python 3.13 with the versions in `current-release/requirements-analysis.txt`. PyTorch 2.12 with CUDA is used for the GPU steps; every step also runs on CPU, more slowly.
+
+**Where the files go.** By default the scripts look for `data/`, `results/` and `validation/` next to this repository, and otherwise for the same folders under `current-release/`. Override with the environment variables `TESSERA_DATA`, `TESSERA_RESULTS`, `TESSERA_VALIDATION`, `TESSERA_R1_OUT` (revision outputs) and `TESSERA_LAB_ROOT` (raw anatomical sections).
+
+### Level 1: regenerate every table and figure from saved results (minutes, no fitting)
+
+```bash
+python current-release/portable/verify_saved_results.py      # original tables: recomputed from saved predictions
+python revision-r1/analyze_r1.py                              # revision tables, decision rules, manuscript numbers
+python revision-r1/figures/build_r1_figures.py all            # every main and supplementary figure
+```
+
+| Manuscript item | Produced by |
+|---|---|
+| Tables 1–3 and Supplementary Tables S1–S15 | the original analyses, checked by `verify_saved_results.py` |
+| Supplementary Table S16 (settings) and S17 (data sources) | written in the manuscript source from the configuration and the source manifests |
+| Supplementary Tables S18–S21, and Figures 5, 6 and 10 | `revision-r1/analyze_r1.py` and `revision-r1/figures/build_r1_figures.py` |
+| All other figures | `revision-r1/figures/build_r1_figures.py` from the saved results |
+
+### Level 2: refit every analysis from the archived derived inputs (about 2 h on a laptop GPU)
+
+The original analyses:
+
+```bash
+python current-release/portable/run_analysis.py primary  --device cuda --output-root OUT/primary
+python current-release/portable/run_analysis.py transfer --device cuda --output-root OUT/transfer
+python current-release/portable/run_analysis.py her2st   --raw-dir RAW/her2st --output-root OUT/her2st
+python current-release/portable/run_analysis.py crc      --output-root OUT/crc
+```
+
+The analyses added during review follow `revision-r1/PROTOCOL-R1.md`. Run the tests before any fit:
+
+```bash
+python -m pytest revision-r1/test_r1.py                       # the training loop reproduces the original fits exactly on CPU
+python revision-r1/run_budget.py gpu;    python revision-r1/run_budget.py her2st;      python revision-r1/run_budget.py transfer
+python revision-r1/run_tuning.py grid-gpu; python revision-r1/run_tuning.py grid-her2st; python revision-r1/run_tuning.py mechanism
+python revision-r1/run_k_sweep.py sweep; python revision-r1/run_k_sweep.py harmonize; python revision-r1/run_k_sweep.py refine
+python revision-r1/native/prepare_inputs.py                   # then the native methods; see revision-r1/native/VERSIONS.md
+python revision-r1/analyze_r1.py
+```
+
+Breast (HER2ST) fits run on one CPU thread, so they are deterministic. GPU fits are not bitwise deterministic, so refitted scores can differ slightly from the saved ones.
+
+### Level 3: rebuild the derived inputs from the public sources
+
+The public datasets and their repository identifiers are listed in the manuscript's Supplementary Table S17. Each acquired file is checked against the size and SHA-256 recorded in the archive:
+
+```bash
+python current-release/portable/acquire.py her2st --source-dir RAW/manual-her2st --destination RAW/her2st
+python current-release/portable/acquire.py crc    --source-dir RAW/manual-crc    --destination RAW/crc
+python current-release/portable/run_analysis.py prepare --lab-root RAW/sources --output-root OUT/inputs
+```
 
 ## Current manuscript documents
 
