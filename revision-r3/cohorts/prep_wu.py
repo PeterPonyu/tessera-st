@@ -57,7 +57,7 @@ def member(files: dict, patient: str, suffixes) -> bytes:
     if len(hits) != 1:
         raise ValueError(f'{patient}: expected one member ending in {suffixes}, found {hits}')
     data = files[hits[0]]
-    return gzip.decompress(data) if hits[0].endswith('.gz') else data
+    return gzip.decompress(data) if data[:2] == b'\x1f\x8b' else data   # some '.gz' members are stored uncompressed
 
 
 def load(files: dict, patient: str):
