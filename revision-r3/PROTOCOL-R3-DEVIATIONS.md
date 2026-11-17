@@ -34,3 +34,6 @@ PROTOCOL-R3.md stays byte-identical to its public deposit (doi:10.5281/zenodo.24
     - **Records.** The original header and both archive hashes are in each input.json.
     - **When decided.** On 17 Nov, after reading only the header lines and before any score, so that two of four patients are not lost to a header spelling.
 13. **Provenance label of Open-ST (calibration only).** The calibration code labelled the Open-ST target "pathologist", but its source annotation is molecular, so it is expression-assigned. Section 3.2's vocabulary never listed it as pathologist. The label was corrected and WP1 re-run on 17 Nov. This changes only the provenance-class summaries of the calibration datasets: no number in P1, P2 or P3, and no frozen threshold, uses it.
+14. **P3 decision threshold (section 6.1; implementation, not a change of the rule).** The P3 analysis script, written after the freeze, called a verdict when a Holm-adjusted one-sided p-value fell below 0.05. That corresponds to a 90% interval, whereas section 6.1 decides from a 95% interval against plus or minus the SESOI.
+    - **Fix.** A verdict now requires a Holm-adjusted one-sided p-value below 0.025 in its direction, which reduces to the 95% interval rule when there is one comparison.
+    - **When decided.** On 17 Nov, before any P3 result existed; the box had not finished its stage-1 fits.

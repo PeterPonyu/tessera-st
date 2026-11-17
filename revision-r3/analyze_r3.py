@@ -30,6 +30,7 @@ R = c3.OUT
 NEW_COHORTS = ('spinal', 'colorectal', 'wu_breast')
 REGION = {'pathologist', 'histology-anatomical', 'geometry-derived', 'computed-niche', 'dominant-category'}
 DEPTH = {'graphst': 2, 'stagate': 1, 'tessera': 3}
+ALPHA_ONE_SIDED = 0.025
 
 
 def holm(p: dict) -> dict:
@@ -134,8 +135,10 @@ def p3(units: pd.DataFrame, sesoi_by_cohort: dict) -> dict:
         adj_inf = holm({k: v['p_counterpart_superior'] for k, v in tests.items()})
         for k, v in tests.items():
             v['p_holm_encoder_superior'], v['p_holm_counterpart_superior'] = adj_sup[k], adj_inf[k]
-            v['verdict'] = ('encoder superior' if adj_sup[k] < 0.05 else
-                            'counterpart superior' if adj_inf[k] < 0.05 else 'no resolvable difference')
+            # Section 6.1 decides from a two-sided 95% interval against +/-SESOI, which is a one-sided
+            # test at 0.025 in each direction; Holm is applied within each direction (deviation 14).
+            v['verdict'] = ('encoder superior' if adj_sup[k] < ALPHA_ONE_SIDED else
+                            'counterpart superior' if adj_inf[k] < ALPHA_ONE_SIDED else 'no resolvable difference')
         out[cls] = tests
     return out
 
