@@ -60,18 +60,40 @@ def one(task):
     return rows
 
 
+def tasks_for(out: str) -> list[tuple]:
+    selected = json.loads((Path(out) / 'selected_configs.json').read_text())
+    default = {'graphst': 'k3-e600', 'stagate': 'knn6-e1000', 'tessera': 'k6-w0.5-t0.2-e120'}
+    return sorted({(out, d, e, c) for d, by in selected.items() for e, cs in by.items() for c in [*cs, default[e]]})
+
+
 def main() -> None:
+    """Shards replace the worker pool: run N independent processes with --shard i --nshards N, then --merge.
+    Each shard loads only its datasets, checks them against the fits' fingerprint, and writes one file whole."""
     ap = argparse.ArgumentParser()
     ap.add_argument('--out', required=True)
-    ap.add_argument('--processes', type=int, default=8)
+    ap.add_argument('--processes', type=int, default=1, help='unused; kept so old calls still parse')
+    ap.add_argument('--shard', type=int, default=0)
+    ap.add_argument('--nshards', type=int, default=1)
+    ap.add_argument('--merge', action='store_true', help='concatenate the shard files into counterparts.csv')
     args = ap.parse_args()
-    selected = json.loads((Path(args.out) / 'selected_configs.json').read_text())
-    default = {'graphst': 'k3-e600', 'stagate': 'knn6-e1000', 'tessera': 'k6-w0.5-t0.2-e120'}
-    tasks = sorted({(args.out, d, e, c) for d, by in selected.items() for e, cs in by.items()
-                    for c in [*cs, default[e]]})
-    import common_external as ce   # one load per dataset, in the parent, checked against the fits' fingerprint
-    for d in sorted({t[1] for t in tasks}):
-        rec = next((json.loads(p.read_text()) for p in sorted((Path(args.out) / 'fits' / d.replace('/', '__')).glob('*.json'))), None)
+    out, tasks = Path(args.out), tasks_for(args.out)
+    parts = out / 'counterparts-shards'
+    if args.merge:
+        files = sorted(parts.glob('shard-*.csv'))
+        rows = pd.concat([pd.read_csv(f) for f in files], ignore_index=True)
+        covered = set(zip(rows.dataset, rows.encoder, rows.config))
+        missing = [t for t in tasks if (t[1], t[2], t[3]) not in covered]
+        rows.to_csv(out / 'counterparts.csv', index=False)
+        print(f'{len(files)} shard files, {len(tasks)} graphs planned, {len(missing)} without rows, {len(rows)} rows')
+        for t in missing[:20]:
+            print('  missing', t[1:])
+        if missing:
+            raise SystemExit(1)
+        return
+    mine = tasks[args.shard::args.nshards]
+    import common_external as ce
+    for d in sorted({t[1] for t in mine}):
+        rec = next((json.loads(p.read_text()) for p in sorted((out / 'fits' / d.replace('/', '__')).glob('*.json'))), None)
         for _ in range(3):
             ds = ce.load_dataset(d)
             if rec is None or ds['fingerprint'] == rec['dataset_fingerprint']:
@@ -79,12 +101,13 @@ def main() -> None:
         else:
             raise ValueError(f'{d}: dataset differs from the one the encoders were fitted on')
         DATASETS[d] = {key: ds[key] for key in ('x_common', 'frames', 'targets', 'K', 'fingerprint')}
-    import multiprocessing as mp
-    with ProcessPoolExecutor(args.processes, mp_context=mp.get_context('spawn'), initializer=init_worker,
-                             initargs=(dict(DATASETS),)) as pool:
-        rows = [r for block in pool.map(one, tasks) for r in block]
-    pd.DataFrame(rows).to_csv(Path(args.out) / 'counterparts.csv', index=False)
-    print(f'{len(tasks)} graphs, {len(rows)} rows')
+    rows = [r for task in mine for r in one(task)]
+    parts.mkdir(exist_ok=True)
+    final = parts / f'shard-{args.shard:02d}-of-{args.nshards:02d}.csv'
+    tmp = final.with_suffix('.csv.tmp')
+    pd.DataFrame(rows).to_csv(tmp, index=False)
+    tmp.replace(final)
+    print(f'shard {args.shard}/{args.nshards}: {len(mine)} graphs, {len(rows)} rows')
 
 
 if __name__ == '__main__':

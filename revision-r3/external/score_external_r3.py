@@ -139,6 +139,9 @@ def main() -> None:
     ap.add_argument("--processes", type=int, default=1)
     ap.add_argument("--rules", nargs="+", default=["kmeans", "leiden"], choices=["kmeans", "leiden"],
                     help="clustering rules to score; a cached score counts as current only if it holds them all")
+    ap.add_argument("--shard", type=int, default=0, help="with --nshards: score only every nshards-th dataset group")
+    ap.add_argument("--nshards", type=int, default=1,
+                    help="run N independent shard processes (no worker pool), then one plain run to assemble scores.csv")
     args = ap.parse_args()
     out = Path(args.out)
     groups, failed = {}, 0
@@ -148,7 +151,17 @@ def main() -> None:
             continue
         groups.setdefault(record_path.parent.name, []).append(record_path)
     tasks = [(out, paths, tuple(args.rules)) for paths in groups.values()]
-    for paths in groups.values():   # load every dataset once, before forking, against its recorded fingerprint
+    if args.nshards > 1:   # independent shard process: its own groups, sequentially, per-fit files only
+        mine = tasks[args.shard::args.nshards]
+        for _, paths, _ in mine:
+            first = json.loads(paths[0].read_text())
+            reference(first["dataset"], first["dataset_fingerprint"])
+        limit_threads()
+        results = [score_group(task) for task in mine]
+        print(f"shard {args.shard}/{args.nshards}: scored {sum(r[0] for r in results)} new of "
+              f"{sum(r[1] for r in results)} ok fits in {len(mine)} groups")
+        return
+    for paths in groups.values():   # load every dataset once, against its recorded fingerprint
         first = json.loads(paths[0].read_text())
         reference(first["dataset"], first["dataset_fingerprint"])
     if args.processes > 1:
