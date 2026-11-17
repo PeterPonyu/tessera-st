@@ -1,39 +1,27 @@
 cff-version: 1.2.0
-message: "If you use this software or its analyses, please cite the version you used. Version DOIs are listed on the Zenodo record; the earlier versions are identified below."
+message: "Cite this software and results archive when using its author-owned analysis code or results. The DOI identifies a software and results version, not a journal publication."
 type: software
-title: "Tessera-ST: a gated graph encoder for spatial omics and its controls audit"
+title: "Matched neighbourhood controls and annotation diagnostics for attributing the gains of spatial encoders: software and results archive"
 authors:
   - family-names: Fu
     given-names: Zeyu
     orcid: "https://orcid.org/0009-0001-8329-0108"
-version: "2026.11.05-revision-r1.3"
-doi: "10.5281/zenodo.23999069"
-date-released: "2026-11-05"
+version: "2026.11.17-revision-r3"
+doi: "10.5281/zenodo.24315838"
+date-released: "2026-11-17"
 license: MIT
-abstract: "Tessera-ST is a self-supervised gated graph encoder for spatial molecular data (earlier releases call it Tessera). This release contains the evaluated implementation, the controls audit of the original submission, and the analyses added during review: training budget, patient-excluded tuning of the encoder, cluster number with fixed representations, and native external methods, with exploratory extensions to wider encoder graphs, earlier checkpoints, more breast seeds and saved-data checks of partition agreement, together with their protocol, tests and result tables. Third-party data, annotations and images retain their source-specific terms."
-identifiers:
-  - type: doi
-    value: "10.5281/zenodo.23999069"
-    description: "Version 2026.11.05-revision-r1.3: analyses added during review and all exploratory extensions (A1-A4), with the files of the original archive retained"
-  - type: doi
-    value: "10.5281/zenodo.23996936"
-    description: "Version 2026.11.05-revision-r1.2: analyses added during review with extensions A1-A3"
-  - type: doi
-    value: "10.5281/zenodo.23992954"
-    description: "Version 2026.11.05-revision-r1.1: analyses added during review, before the exploratory extensions"
-  - type: doi
-    value: "10.5281/zenodo.23992778"
-    description: "Version 2026.11.05-revision-r1: the same analyses, superseded by 2026.11.05-revision-r1.1"
-  - type: doi
-    value: "10.5281/zenodo.23308077"
-    description: "Version 2026.10.11-controls-audit: evaluated implementation and analyses of the original submission"
-  - type: doi
-    value: "10.5281/zenodo.23101191"
-    description: "Version 2026.10.02-author-review: earlier author-review release of the software"
 repository-code: "https://github.com/PeterPonyu/tessera-st"
-keywords:
-  - spatial transcriptomics
-  - graph encoder
-  - neighborhood averaging
-  - attribution
-  - reproducibility
+abstract: "Code, derived inputs and result tables for label diagnostics of spatial reference annotations and for an attribution protocol that compares spatial encoders (Tessera-ST, GraphST and STAGATE) with parameter-free propagation on their own graphs. Earlier versions in the same record archive the original controls audit and the first revision. Software licensing applies to author-owned code; third-party measurements and annotations retain their source-specific rights."
+references:
+  - type: software
+    title: "Analysis protocol for the third review round, deposited before the new cohorts' expression data were downloaded"
+    doi: "10.5281/zenodo.24303149"
+  - type: software
+    title: "Tessera-ST analyses of the first revision (version 2026.11.05-revision-r1.3)"
+    doi: "10.5281/zenodo.23999069"
+  - type: software
+    title: "Tessera controls audit: analysis and editable sources (version 2026.10.11-controls-audit)"
+    doi: "10.5281/zenodo.23308077"
+  - type: software
+    title: "Tessera-ST evaluated original implementation"
+    doi: "10.5281/zenodo.23101191"
