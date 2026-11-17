@@ -47,7 +47,7 @@ OUT = Path(os.environ.get("TESSERA_R3_OUT") or ce.c.RESULTS / "revision-r3" / "W
 PYTHON = {"graphst": os.environ.get("TESSERA_R3_PY_GRAPHST", "/home/zeyufu/miniconda3/envs/tessera-native/bin/python"),
           "stagate": os.environ.get("TESSERA_R3_PY_STAGATE", "/home/zeyufu/miniconda3/envs/dl/bin/python"),
           "tessera": os.environ.get("TESSERA_R3_PY_TESSERA", "/home/zeyufu/miniconda3/envs/dl/bin/python")}
-NEEDS = {"graphst": "GraphST", "stagate": "torch_geometric"}
+NEEDS = {"graphst": "GraphST", "stagate": "torch_geometric", "tessera": "tessera_st"}
 MODULES = {"graphst": "run_graphst_r3", "stagate": "run_stagate_r3", "tessera": "run_tessera_r3"}
 PACKAGES = ["numpy", "scipy", "pandas", "scikit-learn", "scanpy", "anndata", "torch", "POT", "GraphST",
             "torch_geometric", "leidenalg", "igraph"]
