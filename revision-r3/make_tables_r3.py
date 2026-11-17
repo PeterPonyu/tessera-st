@@ -87,7 +87,8 @@ def p3_table(out: Path):
              r'interest, one tenth of the cohort\textquoteright s spatial headroom and at least 0.01 ARI, averaged over units '
              + f'({sesoi} ARI in both classes). '
              r'A side is superior when the one-sided test against the SESOI, Holm-adjusted over the comparisons of a target '
-             r'class, falls below 0.025; otherwise the difference is not resolvable. Region targets are pathologist '
+             r'class, falls below 0.025; otherwise the difference is not resolvable. Intervals and tests are conditional on '
+             r'the selected configurations and do not include the uncertainty of the selection. Region targets are pathologist '
              r'annotations of four colorectal and six breast cancer patients; cell-type targets are expression-assigned '
              r'labels of ten mouse spinal cords.}\label{tab:p3}',
              r'\begin{tabular}{@{}lllrrrl@{}}\toprule',
