@@ -22,7 +22,8 @@ shards() {
   [ "$bad" -eq 0 ] || fail "$label ($bad of $SH shards)"
 }
 log "waiting for the helper's stage 2 and for every planned stage-2 job to have a record"
-while pgrep -f "[h]elper_box_b.sh" > /dev/null; do sleep 60; done
+# wait for the helper's own completion line (pgrep on the script name also matches the tmux server that launched it)
+until grep -q "stage 2 share done" "$OUT/logs/helper.log" 2>/dev/null; do sleep 60; done
 until $PY "$REM/verify_w4.py" "$OUT" --stage2 > "$OUT/logs/b-verify-wait.log" 2>&1; do sleep 120; done
 log "all planned stage-2 jobs present and verified"
 shards score2 "$PY" "$EXT/score_external_r3.py" --out "$OUT" --rules kmeans leiden
