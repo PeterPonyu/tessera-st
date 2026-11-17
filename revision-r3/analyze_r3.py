@@ -87,6 +87,7 @@ def p2(w1b: pd.DataFrame, sesoi: float) -> dict:
 # ----------------------------------------------------------------------------- P3
 def encoder_units(w4: pd.DataFrame, sel: pd.DataFrame, cp: pd.DataFrame, w6: pd.DataFrame) -> pd.DataFrame:
     prov = w6.set_index(['dataset', 'target']).provenance
+    w4 = unique_scores(w4)
     km = w4[(w4.rule == 'kmeans') & (w4.input_mode == 'common') & (w4.arm == 'released')]
     enc = km.groupby(['encoder', 'dataset', 'target', 'config']).ari.mean()
     cpk = cp[cp.rule == 'kmeans'].groupby(['encoder', 'dataset', 'target', 'config', 'L']).ari.mean()
@@ -151,13 +152,22 @@ CALIBRATION_GROUPS = {('NSCLC', 'primary'): 'LungReg', ('NSCLC', 'cell_type'): '
 
 
 def _balanced(d: pd.DataFrame, column: str) -> dict:
-    """Mean over targets within a unit, over units within a cohort, then over cohorts (descriptive)."""
+    """Mean over targets within a unit, then over units, as in the P3 test (descriptive); cohort means alongside."""
     unit = d.groupby(['cohort', 'dataset'])[column].mean().dropna()
     if unit.empty:
         return dict(estimate=None, n_units=0, units_positive=0)
     means = unit.groupby(level=0).mean()
-    return dict(estimate=float(means.mean()), n_units=int(len(unit)), units_positive=int((unit > 0).sum()),
+    return dict(estimate=float(unit.mean()), n_units=int(len(unit)), units_positive=int((unit > 0).sum()),
                 cohort_means={c: float(v) for c, v in means.items()})
+
+
+SCORE_KEY = ['dataset', 'target', 'encoder', 'arm', 'config', 'seed', 'rule', 'input_mode']
+
+
+def unique_scores(w4: pd.DataFrame) -> pd.DataFrame:
+    """One row per fit and rule (repeated records of one seed, if any, are averaged, not double-counted)."""
+    extra = [c for c in ('cohort', 'unit') if c in w4]
+    return w4.groupby(SCORE_KEY + extra, as_index=False, dropna=False).ari.mean()
 
 
 def p3_descriptive(w4: pd.DataFrame, sel: pd.DataFrame, cp: pd.DataFrame, w6: pd.DataFrame,
@@ -165,7 +175,8 @@ def p3_descriptive(w4: pd.DataFrame, sel: pd.DataFrame, cp: pd.DataFrame, w6: pd
     """Component removals, propagation depth and Leiden replication in the new cohorts, and the
     calibration cohorts; every encoder at the configuration selected for that unit and target."""
     prov = w6.set_index(['dataset', 'target']).provenance
-    common = w4[w4.input_mode == 'common']
+    common = unique_scores(w4)
+    common = common[common.input_mode == 'common']
     enc = common.groupby(['rule', 'encoder', 'dataset', 'target', 'config', 'arm']).ari.mean()
     cpm = cp.groupby(['rule', 'encoder', 'dataset', 'target', 'config', 'L']).ari.mean()
     slm = (selfloop[selfloop.rule == 'kmeans'].groupby(['dataset', 'target', 'k_graph', 'L']).ari.mean()
