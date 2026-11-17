@@ -329,6 +329,15 @@ def checks():
     worst = rec.idxmin()
     put('rCnExceptionRecover', f'{100 * rec.min():.0f}'); put('rCnExceptionGain', f3(gain[worst]))
     put('rCnExceptionTess', f3(tt.ari_tessera[worst])); put('rCnExceptionVariant', f3(cn[worst]))
+    # lung cell types: the saved Tessera-ST fits against self-inclusive three-step propagation (W8, k = 6)
+    w8p = R / 'W8' / 'selfloop.csv'
+    if w8p.exists():
+        w8 = pd.read_csv(w8p)
+        s3 = w8[(w8.k_graph == 6) & (w8.L == 3)].groupby(['dataset', 'target']).ari.mean()
+        lung_ct = [d for d in tt.index if d[0].startswith('NSCLC') and d[1] == 'celltype']
+        dd = pd.Series({d: tt.ari_tessera[d] - s3[(d[0], 'cell_type')] for d in lung_ct})
+        put('rLungCtSelfMin', f3(dd.min(), sign=True)); put('rLungCtSelfMax', f3(dd.max(), sign=True))
+        put('rLungCtPcaBest', int(sum(tt.ari_pca50[d] > max(tt.ari_tessera[d], s3[(d[0], 'cell_type')]) for d in lung_ct)))
     # Leiden, rule-matched selection: single-patient effects
     s = pd.read_csv(R / 'W2' / 'selection.csv')
     def sel(cohort, target, rule):
