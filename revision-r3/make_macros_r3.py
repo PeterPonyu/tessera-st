@@ -117,6 +117,7 @@ def noise():
     s = pd.read_csv(R / 'W2' / 'seeds.csv')
     g = s.groupby('dataset').ari.agg(['std', 'min', 'max'])
     put('rSeedSdMedian', f3(g['std'].median())); put('rSeedRangeMax', f3((g['max'] - g['min']).max()))
+    put('rSeedDatasets', len(g))
     ps = json.loads((R / 'W1' / 'per_seed.json').read_text())
     d = [r.ari - ps[f'{r.dataset}|primary|tessera'][r.seed - 1] for r in s[s.seed <= 3].itertuples()]
     put('rCpuGpuMedian', f'{np.median(np.abs(d)):.4f}'); put('rCpuGpuMax', f3(np.max(np.abs(d))))
