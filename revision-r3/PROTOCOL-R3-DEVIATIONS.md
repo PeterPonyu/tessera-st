@@ -1,6 +1,6 @@
 # Deviations from the frozen protocol
 
-PROTOCOL-R3.md stays byte-identical to its public deposit (doi:10.5281/zenodo.24303149). Every departure from it, and every implementation decision it left open, is listed here with its date and reason. Items 1-12 were made before any score of the new cohorts was computed. Items 13-18 were made after the P1 scores and before any P3 result existed; their commits are dated in the repository history.
+PROTOCOL-R3.md stays byte-identical to its public deposit (doi:10.5281/zenodo.24303149). Every departure from it, and every implementation decision it left open, is listed here with its date and reason. Items 1-12 were made before any score of the new cohorts was computed. Items 13-18 were made after the P1 scores and before any P3 result existed; items 19-21 were recorded after the P3 results. Their commits are dated in the repository history.
 
 ## 17 Nov 2026, before any new-cohort score (items 1-12)
 
@@ -47,3 +47,11 @@ PROTOCOL-R3.md stays byte-identical to its public deposit (doi:10.5281/zenodo.24
     - **Fix.** The estimate is the mean over units, its standard error SD / sqrt(n), with n - 1 degrees of freedom. When a target class pools cohorts, its SESOI is the unit-weighted mean of the cohort SESOIs. Cohort means are reported alongside, descriptively.
 18. **Self-inclusive propagation for Tessera-ST (secondary, descriptive; specified before any P3 result).** The graphs saved by the GraphST and STAGATE adapters carry a self-loop on every node, so their counterparts already average each observation with its neighbours. Tessera-ST's graph has none (checked on a colorectal pilot unit: 0 self-edges of 3,936), although its layers keep each observation's own state through a residual update.
     - **Added.** Tessera-ST is also compared with propagation over its graph with a self-loop added to every node (row-normalized A + I), for L in {1, 2, 3, 4, 8}, at the configuration selected for each unit, scored by K-means at seeds 1-5. The primary counterparts are unchanged.
+
+## 17 Nov 2026, after the P3 results (items 19-21)
+
+These were recorded after an independent review of the manuscript, when every P3 result existed. None changes a P1, P2 or P3 test.
+
+19. **Silhouette-selected K sensitivity (section 5) not carried out.** Section 5 names a sensitivity analysis of the encoder comparison at a silhouette-selected K. It was not run in the time available, and item 16 had omitted it.
+20. **Native input (section 5) reported.** GraphST and STAGATE were fitted with their own preprocessing on the lung and HER2ST calibration cohorts at their released settings, as planned, in the stage-1 grids. Their summary (native minus shared input, five seeds averaged within patients, K-means and Leiden) was written and reported after the P3 results. It is descriptive; the P3 verdicts concern the shared input.
+21. **Diagnostics reported for every target (section 2.4).** The balanced accuracy with its chance level, the random-fold kappa and the correlation lengths in median nearest-neighbour distances and micrometres were computed in WP1 and WP6 as specified; tables reporting them for every target were added after the P3 results.

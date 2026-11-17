@@ -1296,7 +1296,7 @@ def fig_concept():
     size = 88.0
     step = (wa - 3 * size) / 2
     maps = [('niche', 'Computed niche', 'from neighbour composition', 'computed-niche', False),
-            ('compartment', 'Pathologist', 'compartments drawn', 'pathologist', True),
+            ('compartment', 'Pathologist', 'regions drawn', 'pathologist', True),
             ('cell', 'Expression-assigned', 'cell types, own expression', 'expression-assigned', False)]
     for i, (key, name, detail, prov, outline) in enumerate(maps):
         x0 = i * (size + step)
@@ -1374,7 +1374,7 @@ def fig_concept():
     cx.text(38, 76, 'Encoder graph', ha='center', va='baseline', fontsize=NOTE)
     cx.text(38, 85, 'and depth L', ha='center', va='baseline', fontsize=NOTE)
     bw, bh, bx0 = 112.0, 17.0, 98.0
-    rows = [('Encoder, L layers', TESSERA, '#f6e1d7'), ('Propagation, L steps', PROPAGATION, '#d9eeee'),
+    rows = [('Encoder, L steps', TESSERA, '#f6e1d7'), ('Propagation, L steps', PROPAGATION, '#d9eeee'),
             ('Same-graph mean', SAME_GRAPH, '#e5eaed')]
     ys = [6.0, 33.0, 60.0]
     for (text, edge, fill), y in zip(rows, ys):

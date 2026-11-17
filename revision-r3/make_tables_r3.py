@@ -82,7 +82,7 @@ def p3_table(out: Path):
              r'\caption{Encoders against parameter-free propagation on their own graphs in the new cohorts. Each encoder, '
              r'at the configuration selected with the unit excluded, minus a counterpart on its own graph: the mean of its '
              r'incoming neighbours (same-graph mean) or that mean repeated as many times as the encoder passes messages. '
-             r'Difference, mean over units of the difference in adjusted Rand index (ARI), with seeds averaged within units; interval, 95\% '
+             r'Difference, mean over units of the difference in adjusted Rand index (ARI), with seeds, and the two targets of a mouse or breast cancer patient, averaged within units; interval, 95\% '
              r'$t$-interval over units; positive, units with a positive difference. SESOI, smallest effect size of '
              r'interest: one tenth of the cohort\textquoteright s spatial headroom, at least 0.01 ARI, averaged over units '
              + f'({sesoi} ARI in both classes). '
