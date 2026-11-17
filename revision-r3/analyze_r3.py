@@ -4,7 +4,7 @@ P1  diagnostic scale rule versus fixed choices on the new cohorts (regret; one-s
     Wilcoxon signed-rank, Holm across four comparisons).
 P2  construction-scale dose-response on the NSCLC cells (thresholds of section 4/7).
 P3  each encoder at its patient-excluded tuned configuration minus its depth-matched
-    propagation and minus its same-graph mean, per target class; cohort-balanced mean,
+    propagation and minus its same-graph mean, per target class;
     mean over units, 95% t-interval and one-sided tests against the SESOI, Holm across six comparisons.
 Calibration summaries (W1-W3, W1b) are reported alongside as exploratory.
 
