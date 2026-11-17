@@ -99,7 +99,7 @@ GLYPHS = {weight: set(FT2Font(path).get_charmap()) for weight, path in ARIAL.ite
 PROVENANCE = ['computed-niche', 'histology-anatomical', 'pathologist', 'dominant-category', 'expression-assigned']
 PROV_COLOR = {'computed-niche': '#7b4fa0', 'histology-anatomical': '#c8962e', 'pathologist': '#4d8f3a',
               'dominant-category': '#c45c8a', 'expression-assigned': '#2c7bb6'}
-PROV_NAME = {'computed-niche': 'Computed niche', 'histology-anatomical': 'Anatomical', 'pathologist': 'Pathologist',
+PROV_NAME = {'computed-niche': 'Computed niche', 'histology-anatomical': 'Histology-anatomical', 'pathologist': 'Pathologist',
              'dominant-category': 'Dominant category', 'expression-assigned': 'Expression-assigned'}
 NEW = ('spinal', 'colorectal', 'wu_breast')          # prospective cohorts; the colorectal pilot is not new
 COHORT_NAME = {'spinal': 'Spinal cord', 'colorectal': 'Colorectal', 'wu_breast': 'Breast'}
@@ -1065,7 +1065,7 @@ def fig_encoders():
         ax.set_ylim(len(arms) - .5, -.5)
         ax.set_yticks(np.arange(len(arms)), [label for _, label in arms], linespacing=1.05)
         ax.tick_params(axis='y', length=0)
-    cv.text(W / 2, yc + head + ch + 22, f'Removal {MINUS} released encoder, same settings (ARI)', size=S.LABEL,
+    cv.text(W / 2, yc + head + ch + 22, f'Removal {MINUS} full encoder, same settings (ARI)', size=S.LABEL,
             ha='center')
 
     # d: calibration cohorts, descriptive
