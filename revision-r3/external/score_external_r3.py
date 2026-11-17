@@ -90,10 +90,17 @@ def score_path(record_path: Path, out: Path) -> Path:
 
 
 def current(path: Path, record: dict, rules=("kmeans", "leiden")) -> bool:
+    """A cached score file counts only if it parses, matches the embedding and holds every target for every rule."""
     if not path.exists():
         return False
-    saved = pd.read_csv(path)
-    return set(saved.embedding_sha256) == {record["embedding_sha256"]} and set(rules) <= set(saved.rule)
+    try:
+        saved = pd.read_csv(path)
+    except Exception:
+        return False
+    ref = REFERENCES.get(record["dataset"])
+    n_targets = len(ref["targets"]) if ref else saved.target.nunique()
+    return (set(saved.embedding_sha256) == {record["embedding_sha256"]} and set(rules) <= set(saved.rule)
+            and all(saved[saved.rule == r].target.nunique() >= n_targets for r in rules))
 
 
 def score_group(task) -> tuple[int, int]:
@@ -105,9 +112,18 @@ def score_group(task) -> tuple[int, int]:
         if current(target, record, rules):
             continue
         target.parent.mkdir(parents=True, exist_ok=True)
-        pd.DataFrame(score_record(record, out, rules), columns=COLUMNS).to_csv(target, index=False)
+        tmp = target.with_suffix(".csv.tmp")   # written whole, then renamed, so a crash cannot leave a partial file
+        pd.DataFrame(score_record(record, out, rules), columns=COLUMNS).to_csv(tmp, index=False)
+        tmp.replace(target)
         done += 1
     return done, len(record_paths)
+
+
+def init_worker(references: dict) -> None:
+    """Workers start fresh (spawn): forking the parent after it has loaded data and started native thread pools
+    crashed a worker. They receive the parent's references, so no worker reloads a dataset."""
+    REFERENCES.update(references)
+    limit_threads()
 
 
 def limit_threads() -> None:
@@ -136,7 +152,8 @@ def main() -> None:
         first = json.loads(paths[0].read_text())
         reference(first["dataset"], first["dataset_fingerprint"])
     if args.processes > 1:
-        with mp.Pool(args.processes, initializer=limit_threads) as pool:
+        with mp.get_context("spawn").Pool(args.processes, initializer=init_worker,
+                                          initargs=(dict(REFERENCES),)) as pool:
             results = list(pool.imap_unordered(score_group, tasks))
     else:
         results = [score_group(task) for task in tasks]

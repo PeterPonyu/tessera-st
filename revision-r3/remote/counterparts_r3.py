@@ -21,7 +21,11 @@ sys.path.insert(0, str(EXT))
 DEPTH = {'graphst': 2, 'stagate': 1, 'tessera': 3}
 
 
-DATASETS: dict = {}   # loaded once in the parent before the pool forks (see main)
+DATASETS: dict = {}   # loaded once in the parent and handed to fresh (spawned) workers (see main)
+
+
+def init_worker(datasets: dict) -> None:
+    DATASETS.update(datasets)
 
 
 def one(task):
@@ -69,12 +73,15 @@ def main() -> None:
     for d in sorted({t[1] for t in tasks}):
         rec = next((json.loads(p.read_text()) for p in sorted((Path(args.out) / 'fits' / d.replace('/', '__')).glob('*.json'))), None)
         for _ in range(3):
-            DATASETS[d] = ce.load_dataset(d)
-            if rec is None or DATASETS[d]['fingerprint'] == rec['dataset_fingerprint']:
+            ds = ce.load_dataset(d)
+            if rec is None or ds['fingerprint'] == rec['dataset_fingerprint']:
                 break
         else:
             raise ValueError(f'{d}: dataset differs from the one the encoders were fitted on')
-    with ProcessPoolExecutor(args.processes) as pool:
+        DATASETS[d] = {key: ds[key] for key in ('x_common', 'frames', 'targets', 'K', 'fingerprint')}
+    import multiprocessing as mp
+    with ProcessPoolExecutor(args.processes, mp_context=mp.get_context('spawn'), initializer=init_worker,
+                             initargs=(dict(DATASETS),)) as pool:
         rows = [r for block in pool.map(one, tasks) for r in block]
     pd.DataFrame(rows).to_csv(Path(args.out) / 'counterparts.csv', index=False)
     print(f'{len(tasks)} graphs, {len(rows)} rows')
