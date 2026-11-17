@@ -143,6 +143,76 @@ def p3(units: pd.DataFrame, sesoi_by_cohort: dict) -> dict:
     return out
 
 
+# ----------------------------------------------------------------------------- P3, descriptive
+CALIBRATION_GROUPS = {('NSCLC', 'primary'): 'LungReg', ('NSCLC', 'cell_type'): 'LungCt', ('BCC', 'primary'): 'Bcc',
+                      ('HER2ST', 'all'): 'HerAll', ('HER2ST', 'boundary_T1'): 'HerTumor'}
+
+
+def _balanced(d: pd.DataFrame, column: str) -> dict:
+    """Mean over targets within a unit, over units within a cohort, then over cohorts (descriptive)."""
+    unit = d.groupby(['cohort', 'dataset'])[column].mean().dropna()
+    if unit.empty:
+        return dict(estimate=None, n_units=0, units_positive=0)
+    means = unit.groupby(level=0).mean()
+    return dict(estimate=float(means.mean()), n_units=int(len(unit)), units_positive=int((unit > 0).sum()),
+                cohort_means={c: float(v) for c, v in means.items()})
+
+
+def p3_descriptive(w4: pd.DataFrame, sel: pd.DataFrame, cp: pd.DataFrame, w6: pd.DataFrame,
+                   sesoi_by_cohort: dict) -> dict:
+    """Component removals, propagation depth and Leiden replication in the new cohorts, and the
+    calibration cohorts; every encoder at the configuration selected for that unit and target."""
+    prov = w6.set_index(['dataset', 'target']).provenance
+    common = w4[w4.input_mode == 'common']
+    enc = common.groupby(['rule', 'encoder', 'dataset', 'target', 'config', 'arm']).ari.mean()
+    cpm = cp.groupby(['rule', 'encoder', 'dataset', 'target', 'config', 'L']).ari.mean()
+    rows = []
+    for r in sel.itertuples():
+        if r.cohort == 'colorectal_pilot':
+            continue
+        key = (r.encoder, r.dataset, r.target, r.selected)
+        if ('kmeans', *key, 'released') not in enc.index:
+            continue
+        base = enc[('kmeans', *key, 'released')]
+        row = dict(encoder=r.encoder, cohort=r.cohort, dataset=r.dataset, target=r.target, released=base)
+        if r.cohort in NEW_COHORTS:
+            row['target_class'] = target_class(prov.loc[(r.dataset, r.target)])
+        else:
+            row['group'] = CALIBRATION_GROUPS.get((r.cohort, r.target))
+        for arm in common[common.encoder == r.encoder].arm.unique():
+            if arm != 'released' and ('kmeans', *key, arm) in enc.index:
+                row[f'arm|{arm}'] = enc[('kmeans', *key, arm)] - base
+        for L in sorted({1, 2, 4, 8, DEPTH[r.encoder]}):
+            if ('kmeans', *key, L) in cpm.index:
+                row[f'minus_L|{L}'] = base - cpm[('kmeans', *key, L)]
+        if ('leiden', *key, 'released') in enc.index:
+            lb = enc[('leiden', *key, 'released')]
+            for name, L in (('propagation', DEPTH[r.encoder]), ('same_graph_mean', 1)):
+                if ('leiden', *key, L) in cpm.index:
+                    row[f'leiden|{name}'] = lb - cpm[('leiden', *key, L)]
+        rows.append(row)
+    d = pd.DataFrame(rows)
+    out = {'arms': {}, 'depth': {}, 'leiden': {}, 'calibration': {}}
+    new = d[d.cohort.isin(NEW_COHORTS)]
+    for (cls, encoder), g in new.groupby(['target_class', 'encoder']):
+        out['arms'].setdefault(cls, {})[encoder] = {c.split('|', 1)[1]: _balanced(g, c) for c in g.columns
+                                                    if c.startswith('arm|') and g[c].notna().any()}
+        out['depth'].setdefault(cls, {})[encoder] = {int(c.split('|')[1]): _balanced(g, c) for c in g.columns
+                                                     if c.startswith('minus_L|') and g[c].notna().any()}
+        out['leiden'].setdefault(cls, {})[encoder] = {c.split('|')[1]: balanced_test(g.dropna(subset=[c]), c, sesoi_by_cohort)
+                                                      for c in ('leiden|propagation', 'leiden|same_graph_mean')
+                                                      if c in g and g[c].notna().any()}
+    cal = d[~d.cohort.isin(NEW_COHORTS) & d.group.notna()] if 'group' in d else d.iloc[:0]
+    for (group, encoder), g in cal.groupby(['group', 'encoder']):
+        unit = g.groupby('dataset')[sorted({f'minus_L|{DEPTH[encoder]}', 'minus_L|1'})].mean()   # one column for STAGATE
+        out['calibration'].setdefault(group, {})[encoder] = {
+            name: dict(estimate=float(unit[col].mean()), n_units=int(unit[col].notna().sum()),
+                       units_positive=int((unit[col] > 0).sum()))
+            for name, col in (('propagation', f'minus_L|{DEPTH[encoder]}'), ('same_graph_mean', 'minus_L|1'))}
+    out['n_rows'] = int(len(d))
+    return out, d
+
+
 def sesoi_new(w6: pd.DataFrame) -> dict:
     t = w6[w6.cohort.isin(NEW_COHORTS)]
     return {c: float(max(0.01, 0.1 * g.groupby('dataset').headroom.mean().mean())) for c, g in t.groupby('cohort')}
@@ -165,6 +235,10 @@ def main():
                                   pd.read_csv(w4 / 'counterparts.csv'), w6)
             units.to_csv(out / 'p3_units.csv', index=False)
             summary['P3'] = p3(units, summary['sesoi_new'])
+            desc, rows = p3_descriptive(pd.read_csv(w4 / 'scores.csv'), pd.read_csv(w4 / 'selection.csv'),
+                                        pd.read_csv(w4 / 'counterparts.csv'), w6, summary['sesoi_new'])
+            rows.to_csv(out / 'p3_descriptive_rows.csv', index=False)
+            summary['P3_descriptive'] = desc
     (out / 'summary.json').write_text(json.dumps(summary, indent=1, default=float) + '\n')
     for key in ('P1', 'P2', 'P3'):
         if key in summary:
