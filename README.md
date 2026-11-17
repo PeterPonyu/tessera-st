@@ -1,10 +1,29 @@
-# Tessera: implementation-specific spatial controls audit
+# Tessera-ST: matched neighbourhood controls and label diagnostics for spatial encoders
 
-## Current manuscript documents
+## Latest version
+
+The analyses of the third review round are on the `revision-r3` branch and at the tag
+[2026.11.17-revision-r3](https://github.com/PeterPonyu/tessera-st/tree/2026.11.17-revision-r3): label diagnostics of
+reference annotations, niche labels rebuilt at known construction scales as a positive control, a prospective test in
+three new cohorts, and GraphST, STAGATE and Tessera-ST each compared with parameter-free propagation on its own graph.
+The README of that version (section "Round-3 analyses") gives the commands for each step.
+
+- Code, derived inputs and result tables: [doi:10.5281/zenodo.24315838](https://doi.org/10.5281/zenodo.24315838)
+  (version 2026.11.17-revision-r3, which keeps every file of the earlier versions).
+- Analysis protocol for the new cohorts, deposited before their expression data were downloaded:
+  [doi:10.5281/zenodo.24303149](https://doi.org/10.5281/zenodo.24303149).
+- First-revision analyses: [doi:10.5281/zenodo.23999069](https://doi.org/10.5281/zenodo.23999069), tag
+  [2026.11.05-revision-r1.3](https://github.com/PeterPonyu/tessera-st/tree/2026.11.05-revision-r1.3), branch `revision-r1`.
+
+The sections below describe the original release of October 2026, which this branch still carries.
+
+## Original release (October 2026)
+
+### Manuscript documents of the original submission
 
 The reviewed main Article, Supplementary Information and editable document sources are available in the [submission-2026-10-12 document release](https://github.com/PeterPonyu/tessera-st/releases/tag/submission-2026-10-12) and in [submission-2026-10-12/](submission-2026-10-12/README.md).
 
-The software and saved-analysis release remains version 2026.10.11-controls-audit, DOI [10.5281/zenodo.23308077](https://doi.org/10.5281/zenodo.23308077). It archives the frozen computational evidence and its earlier document sources. The later editorial revision has a separate GitHub document tag; it adds no model fits or biological samples. Earlier document files remain available for provenance.
+The software and saved-analysis release of that version is 2026.10.11-controls-audit, DOI [10.5281/zenodo.23308077](https://doi.org/10.5281/zenodo.23308077). It archives the frozen computational evidence and its earlier document sources. The later editorial revision has a separate GitHub document tag; it adds no model fits or biological samples. Earlier document files remain available for provenance.
 
 Frozen research-source version **2026.10.11-controls-audit** is in [current-release/](current-release/). The earlier archived [inline manuscript](current-release/output/scientific-reports/scientific-reports-manuscript-inline.pdf), [journal manuscript](current-release/output/scientific-reports/scientific-reports-manuscript.pdf) and [supplement](current-release/output/scientific-reports/scientific-reports-supplement.pdf) report matched neighbourhood controls, component removals, patient-held-out transfer, exploratory HER2ST comparator extensions and the separate colorectal pilot. The author developed and maintains the evaluated implementation.
 
