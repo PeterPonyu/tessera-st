@@ -4,13 +4,12 @@
 
 The analyses of the third review round are on the `revision-r3` branch and at the tag
 [2026.11.17-revision-r3](https://github.com/PeterPonyu/tessera-st/tree/2026.11.17-revision-r3): label diagnostics of
-reference annotations, niche labels rebuilt at known construction scales as a positive control, a prospective test in
-three new cohorts, and GraphST, STAGATE and Tessera-ST each compared with parameter-free propagation on its own graph.
+reference annotations, niche labels rebuilt at known construction scales as a positive control, a prospective test in three cohorts not analysed before, and GraphST, STAGATE and Tessera-ST each compared with parameter-free propagation on its own graph.
 The README of that version (section "Round-3 analyses") gives the commands for each step.
 
 - Code, derived inputs and result tables: [doi:10.5281/zenodo.24315838](https://doi.org/10.5281/zenodo.24315838)
   (version 2026.11.17-revision-r3, which keeps every file of the earlier versions).
-- Analysis protocol for the new cohorts, deposited before their expression data were downloaded:
+- Analysis protocol for the prospective cohorts, deposited before their expression data were downloaded:
   [doi:10.5281/zenodo.24303149](https://doi.org/10.5281/zenodo.24303149).
 - First-revision analyses: [doi:10.5281/zenodo.23999069](https://doi.org/10.5281/zenodo.23999069), tag
   [2026.11.05-revision-r1.3](https://github.com/PeterPonyu/tessera-st/tree/2026.11.05-revision-r1.3), branch `revision-r1`.
