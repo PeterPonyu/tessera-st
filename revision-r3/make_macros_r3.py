@@ -262,6 +262,86 @@ def secondary():
         put(f'rSecMag{short}Mae', f2(mg[name]['mae'])); put(f'rSecMag{short}Rho', f2(mg[name]['spearman']))
 
 
+def checks():
+    """Numbers requested by the independent critique: unit-level uncertainty of the calibration correlations,
+    within-class correlations, the fallback threshold on the calibration targets, the construction-scale
+    positive control, P1 ties, the breast cohort, the mechanism exception and single-patient Leiden effects."""
+    t = pd.read_csv(R / 'W1' / 'targets.csv')
+    rng = np.random.default_rng(0)
+    units = t.unit.unique()
+    for name, col in [('Hadj', 'h_adj6'), ('Li', 'li6'), ('Gain', 'info_gain_max'), ('Kappa', 'kappa_self')]:
+        m = t[['unit', col, 'g_star']].dropna()
+        put(f'rCalRho{name}N', len(m))
+        boots = []
+        for _ in range(2000):
+            pick = rng.choice(units, len(units), replace=True)
+            b = pd.concat([m[m.unit == u] for u in pick])
+            if b[col].nunique() > 1:
+                boots.append(stats.spearmanr(b[col], b.g_star).statistic)
+        lo, hi = np.percentile(boots, [2.5, 97.5])
+        put(f'rCalRho{name}Lo', f2(lo)); put(f'rCalRho{name}Hi', f2(hi))
+    put('rCalUnits', len(units))
+    for prov, short in (('pathologist', 'Path'), ('expression-assigned', 'Expr')):
+        g = t[t.provenance == prov][['h_adj6', 'g_star']].dropna()
+        put(f'rCalWithin{short}Rho', f2(stats.spearmanr(g.h_adj6, g.g_star).statistic)); put(f'rCalWithin{short}N', len(g))
+    put('rCalHadjCorrect', int(((t.h_adj6 > 0.5) == (t.g_star > 0)).sum()))
+    hc = t.groupby('provenance').h_adj6.agg(['min', 'max'])
+    put('rCalExprHadjMin', f2(hc.loc['expression-assigned', 'min'])); put('rCalExprHadjMax', f2(hc.loc['expression-assigned', 'max']))
+    put('rCalPathHadjMin', f2(hc.loc['pathologist', 'min'])); put('rCalPathHadjMax', f2(hc.loc['pathologist', 'max']))
+    # construction scale: positive control
+    b = pd.read_csv(R / 'W1b' / 'targets.csv')
+    rb = b.pivot_table(index='unit', columns='k_c', values='ari_rebuilt_vs_source')
+    put('rPTwoRebuiltMin', f2(rb[200].min())); put('rPTwoRebuiltMax', f2(rb[200].max()))
+    put('rPTwoRebuiltPeakHundred', int((rb.idxmax(axis=1) == 100).sum()))
+    ratio = b[b.k_c == 10].ell_k / 10
+    put('rPTwoEllRatioMin', f'{ratio.min():.1f}'); put('rPTwoEllRatioMax', f'{ratio.max():.1f}')
+    put('rPTwoEllCensoredHundred', int(b[(b.k_c == 100)].ell_censored.astype(bool).sum()))
+    mg = b.pivot_table(index='unit', columns='k_c', values='tessera_minus_sgm')
+    put('rPTwoMarginPatientMin', f3(mg.values.min(), sign=True)); put('rPTwoMarginPatientMax', f3(mg.values.max(), sign=True))
+    sesoi = json.loads((R / 'freeze' / 'freeze_numbers.json').read_text())['sesoi']['NSCLC|primary']['sesoi']
+    put('rPTwoAboveSesoiLarge', int(((mg[200] > sesoi) & (mg[400] > sesoi)).sum()))
+    low = mg.mean(axis=1).idxmin()
+    put('rPTwoLowPatientMean', f3(mg.loc[low].mean(), sign=True))
+    gs = b.groupby('k_c').g_star.mean()
+    put('rPTwoGainPeakKc', int(gs.idxmax())); put('rPTwoGainLargestKc', f3(gs.loc[gs.index.max()]))
+    put('rPTwoKcMax', int(gs.index.max()))
+    # P1: units better, worse and tied against never smoothing
+    w6 = pd.read_csv(R / 'W6' / 'targets.csv')
+    new = w6[w6.cohort.isin(['spinal', 'colorectal', 'wu_breast'])].reset_index(drop=True)
+    reg = pf.regret_table(new); reg['dataset'] = new.dataset.values
+    u = reg.groupby('dataset')[['rule', 'no smoothing']].mean()
+    diff = u['rule'] - u['no smoothing']
+    put('rPOneWorseNone', int((diff > 1e-12).sum())); put('rPOneTiedNone', int((diff.abs() <= 1e-12).sum()))
+    put('rPOneLosingUnits', int((u['no smoothing'] <= 1e-12).sum()))
+    wu = new[new.cohort == 'wu_breast']
+    put('rWuRhoGainGstar', f2(stats.spearmanr(wu.info_gain_max, wu.g_star).statistic, sign=True))
+    put('rWuRhoEllKstar', f2(stats.spearmanr(wu.ell_k, wu.k_star).statistic, sign=True))
+    put('rWuEllCensored', int(wu.ell_censored.astype(bool).sum()))
+    put('rNewCrcHadjNearest', f3(new[new.cohort == 'colorectal'].h_adj6.max()))
+    # mechanism: recovery by the variant without message passing on every target with a gain
+    w3 = pd.read_csv(R / 'W3' / 'scores.csv')
+    cn = w3[(w3.rule == 'kmeans') & (w3.arm == 'ContrastNoMP')].groupby(['dataset', 'target']).ari.mean()
+    tt = t.set_index(['dataset', 'target'])
+    gain = (tt.ari_tessera - tt.ari_pca50)
+    idx = [i for i in gain.index if gain[i] > 0.02 and i in cn.index]
+    rec = pd.Series({i: (cn[i] - tt.ari_pca50[i]) / gain[i] for i in idx})
+    put('rCnGainTargets', len(idx)); put('rCnRecoverHalf', int((rec >= 0.5).sum()))
+    worst = rec.idxmin()
+    put('rCnExceptionRecover', f'{100 * rec.min():.0f}'); put('rCnExceptionGain', f3(gain[worst]))
+    put('rCnExceptionTess', f3(tt.ari_tessera[worst])); put('rCnExceptionVariant', f3(cn[worst]))
+    # Leiden, rule-matched selection: single-patient effects
+    s = pd.read_csv(R / 'W2' / 'selection.csv')
+    def sel(cohort, target, rule):
+        g = s[(s.cohort == cohort) & (s.target == target) & (s.select_rule == rule) & (s.score_rule == rule)]
+        return g.set_index('unit').tessera_minus_control
+    bcc = sel('BCC', 'primary', 'leiden')
+    put('rLeidenBccLLMedian', f3(bcc.median(), sign=True)); put('rLeidenBccLLTop', f3(bcc.max(), sign=True))
+    tum = sel('HER2ST', 'boundary_T1', 'leiden')
+    put('rLeidenTumorLLTop', f3(tum.max(), sign=True)); put('rLeidenTumorLLRest', f3(tum.drop(tum.idxmax()).mean(), sign=True))
+    tk = sel('HER2ST', 'boundary_T1', 'kmeans')
+    put('rLeidenTumorKKMedian', f3(tk.median(), sign=True)); put('rLeidenTumorKKAbove', int((tk > 0).sum()))
+
+
 def frozen():
     fz = json.loads((R / 'freeze' / 'freeze_numbers.json').read_text())
     names = {'NSCLC|primary': 'Nsclc', 'BCC|primary': 'Bcc', 'HER2ST|all': 'HerAll', 'HER2ST|boundary_T1': 'HerTumor'}
@@ -276,7 +356,7 @@ def frozen():
 
 def main():
     for step in (calibration, construction, leiden, noise, mechanism, prospective, attribution, attribution_descriptive,
-                 secondary, frozen):
+                 secondary, checks, frozen):
         step()
     lines = ['% Generated by revision-r3/make_macros_r3.py from results/revision-r3; do not edit by hand.']
     lines += [f'\\newcommand{{\\{k}}}{{{v}}}' for k, v in sorted(M.items())]
