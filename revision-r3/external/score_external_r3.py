@@ -37,14 +37,30 @@ COLUMNS = ["cohort", "unit", "dataset", "target", "encoder", "arm", "config", "s
            "input_mode", "K_achieved", "n_scored", "embedding_sha256"]
 
 
-@functools.lru_cache(maxsize=2)
-def reference(dataset_id: str) -> dict:
+REFERENCES: dict = {}   # filled in the parent before the worker pool forks (see main)
+
+
+def _load_reference(dataset_id: str) -> dict:
     ds = ce.load_dataset(dataset_id)
     return {"targets": ds["targets"], "K": ds["K"], "fingerprint": ds["fingerprint"]}
 
 
+def reference(dataset_id: str, expected: str | None = None) -> dict:
+    """The dataset as the fits saw it. HER2ST inputs are recomputed on load (PCA), and inside busy worker processes
+    a load occasionally differed in the last bits of a few float32 values, which changes the hash but not the data;
+    so references are loaded once in the parent, and a mismatch is retried with fresh loads before it is fatal."""
+    ref = REFERENCES.get(dataset_id)
+    if ref is None:
+        ref = REFERENCES[dataset_id] = _load_reference(dataset_id)
+    for _ in range(3):
+        if expected is None or ref["fingerprint"] == expected:
+            return ref
+        ref = _load_reference(dataset_id)
+    return ref
+
+
 def score_record(record: dict, out: Path, rules=("kmeans", "leiden")) -> list[dict]:
-    ref = reference(record["dataset"])
+    ref = reference(record["dataset"], record["dataset_fingerprint"])
     if ref["fingerprint"] != record["dataset_fingerprint"]:
         raise ValueError(f"{record['dataset']}: dataset changed since the fit")
     with np.load(out / record["embedding_file"]) as saved:
@@ -116,6 +132,9 @@ def main() -> None:
             continue
         groups.setdefault(record_path.parent.name, []).append(record_path)
     tasks = [(out, paths, tuple(args.rules)) for paths in groups.values()]
+    for paths in groups.values():   # load every dataset once, before forking, against its recorded fingerprint
+        first = json.loads(paths[0].read_text())
+        reference(first["dataset"], first["dataset_fingerprint"])
     if args.processes > 1:
         with mp.Pool(args.processes, initializer=limit_threads) as pool:
             results = list(pool.imap_unordered(score_group, tasks))

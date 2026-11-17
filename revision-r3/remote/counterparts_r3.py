@@ -21,6 +21,9 @@ sys.path.insert(0, str(EXT))
 DEPTH = {'graphst': 2, 'stagate': 1, 'tessera': 3}
 
 
+DATASETS: dict = {}   # loaded once in the parent before the pool forks (see main)
+
+
 def one(task):
     out, dataset, encoder, config = task
     import common_external as ce
@@ -36,7 +39,7 @@ def one(task):
         return []
     with np.load(hits[0]) as f:
         src, dst = f['src'].astype(np.int64), f['dst'].astype(np.int64)
-    ds = ce.load_dataset(dataset)
+    ds = DATASETS.get(dataset) or ce.load_dataset(dataset)
     go.assert_within_frames(src, dst, ds['frames'])
     rows = []
     for L in sorted({1, 2, 4, 8, DEPTH[encoder]}):
@@ -62,6 +65,15 @@ def main() -> None:
     default = {'graphst': 'k3-e600', 'stagate': 'knn6-e1000', 'tessera': 'k6-w0.5-t0.2-e120'}
     tasks = sorted({(args.out, d, e, c) for d, by in selected.items() for e, cs in by.items()
                     for c in [*cs, default[e]]})
+    import common_external as ce   # one load per dataset, in the parent, checked against the fits' fingerprint
+    for d in sorted({t[1] for t in tasks}):
+        rec = next((json.loads(p.read_text()) for p in sorted((Path(args.out) / 'fits' / d.replace('/', '__')).glob('*.json'))), None)
+        for _ in range(3):
+            DATASETS[d] = ce.load_dataset(d)
+            if rec is None or DATASETS[d]['fingerprint'] == rec['dataset_fingerprint']:
+                break
+        else:
+            raise ValueError(f'{d}: dataset differs from the one the encoders were fitted on')
     with ProcessPoolExecutor(args.processes) as pool:
         rows = [r for block in pool.map(one, tasks) for r in block]
     pd.DataFrame(rows).to_csv(Path(args.out) / 'counterparts.csv', index=False)
