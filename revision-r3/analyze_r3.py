@@ -5,7 +5,7 @@ P1  diagnostic scale rule versus fixed choices on the new cohorts (regret; one-s
 P2  construction-scale dose-response on the NSCLC cells (thresholds of section 4/7).
 P3  each encoder at its patient-excluded tuned configuration minus its depth-matched
     propagation and minus its same-graph mean, per target class; cohort-balanced mean,
-    95% t-interval and one-sided tests against the SESOI, Holm across six comparisons.
+    mean over units, 95% t-interval and one-sided tests against the SESOI, Holm across six comparisons.
 Calibration summaries (W1-W3, W1b) are reported alongside as exploratory.
 
 Writes results/revision-r3/summary/summary.json. Every number in the manuscript is read
@@ -108,15 +108,17 @@ def encoder_units(w4: pd.DataFrame, sel: pd.DataFrame, cp: pd.DataFrame, w6: pd.
 
 
 def balanced_test(d: pd.DataFrame, column: str, sesoi_by_cohort: dict) -> dict:
+    """95% t-interval over units (section 6.1 and the frozen power code; deviation 17): seeds and targets
+    are averaged within each unit, then the mean over units, SE = SD / sqrt(n), n - 1 degrees of freedom.
+    The SESOI of a class that pools cohorts is the unit-weighted mean of the cohort SESOIs."""
     unit = d.groupby(['cohort', 'dataset'])[column].mean().dropna()
     cohorts = unit.index.get_level_values(0).unique()
     means = {c: unit.loc[c].mean() for c in cohorts}
-    var = {c: unit.loc[c].var(ddof=1) / len(unit.loc[c]) if len(unit.loc[c]) > 1 else np.nan for c in cohorts}
-    est = float(np.mean(list(means.values())))
-    se = float(np.sqrt(np.nansum(list(var.values()))) / len(cohorts))
-    df = max(1, len(unit) - len(cohorts))
+    est = float(unit.mean())
+    se = float(unit.std(ddof=1) / np.sqrt(len(unit))) if len(unit) > 1 else np.nan
+    df = max(1, len(unit) - 1)
     tcrit = stats.t.ppf(0.975, df)
-    sesoi = float(np.mean([sesoi_by_cohort[c] for c in cohorts]))
+    sesoi = float(np.mean([sesoi_by_cohort[c] for c in unit.index.get_level_values(0)]))
     p_sup = float(stats.t.sf((est - sesoi) / se, df)) if se > 0 else np.nan
     p_inf = float(stats.t.sf((-sesoi - est) / se, df)) if se > 0 else np.nan
     return dict(estimate=est, se=se, df=int(df), ci=(est - tcrit * se, est + tcrit * se), sesoi=sesoi,
