@@ -29,3 +29,7 @@ PROTOCOL-R3.md stays byte-identical to its public deposit (doi:10.5281/zenodo.24
     - **No depth is deposited:** no per-cell relative depth or traced surface.
     - **Consequence:** branch C applies. The targets are the deposited cell-type levels: `1st round cluster` (14 classes) and `MERFISH cell type annotation` (60 classes). No lamina target is built.
     - **Effect on the tests:** the spinal cord enters P1 and P3 as a cohort of expression-assigned targets. It does not provide a thin-structure test.
+12. **Colorectal pathology headers (section 3.2).** Two of the four new patients failed the frozen pilot parser. That parser accepts the label column only as "Pathologist Annotation(s)". The cause was the header name, not ambiguous data: each table holds exactly one label column, headed "Pathologist annotation" (SN123_A798015_Rep1) or "Pathologist_KH" (SN123_A938797_Rep1_X).
+    - **Fix.** The header was renamed in a temporary copy of the annotation archive. The unchanged preparation then ran, and its barcode-uniqueness check passed.
+    - **Records.** The original header and both archive hashes are in each input.json.
+    - **When decided.** On 17 Nov, after reading only the header lines and before any score, so that two of four patients are not lost to a header spelling.
