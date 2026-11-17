@@ -18,11 +18,14 @@ $PY "$REM/select_external_r3.py" --scores "$OUT/scores.csv" --out "$OUT" > "$OUT
 stamp "selection done"
 $PY "$REM/stage2_r3.py" --out "$OUT" --workers 6 > "$OUT/logs/stage2.log" 2>&1 || fail "stage 2"
 stamp "stage 2 done"
-$PY "$REM/gpu_repeats_r3.py" --out "$OUT/gpu_repeats" > "$OUT/logs/gpu_repeats.log" 2>&1 &
-REPEATS=$!
+REPEATS=""
+if [ ! -s "$OUT/gpu_repeats/gpu_repeats.csv" ]; then   # the first pass already completed the GPU repeats
+  $PY "$REM/gpu_repeats_r3.py" --out "$OUT/gpu_repeats" > "$OUT/logs/gpu_repeats.log" 2>&1 &
+  REPEATS=$!
+fi
 $PY "$EXT/score_external_r3.py" --out "$OUT" --processes "$(( NPROC - 2 ))" --rules kmeans leiden > "$OUT/logs/score2.log" 2>&1 || fail "score2"
 $PY "$REM/counterparts_r3.py" --out "$OUT" --processes "$NPROC" > "$OUT/logs/counterparts.log" 2>&1 || fail "counterparts"
-wait "$REPEATS" || fail "gpu repeats"
+if [ -n "$REPEATS" ]; then wait "$REPEATS" || fail "gpu repeats"; fi
 if [ ! -s "$OUT/repro/summary.json" ] && [ -z "$(ls -A "$OUT/repro" 2>/dev/null)" ]; then
   $PY "$EXT/repro_e4.py" --device cuda --out "$OUT/repro" > "$OUT/logs/repro.log" 2>&1 || fail "repro"
 fi
