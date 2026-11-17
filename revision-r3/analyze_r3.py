@@ -161,13 +161,15 @@ def _balanced(d: pd.DataFrame, column: str) -> dict:
 
 
 def p3_descriptive(w4: pd.DataFrame, sel: pd.DataFrame, cp: pd.DataFrame, w6: pd.DataFrame,
-                   sesoi_by_cohort: dict) -> dict:
+                   sesoi_by_cohort: dict, selfloop: pd.DataFrame | None = None) -> dict:
     """Component removals, propagation depth and Leiden replication in the new cohorts, and the
     calibration cohorts; every encoder at the configuration selected for that unit and target."""
     prov = w6.set_index(['dataset', 'target']).provenance
     common = w4[w4.input_mode == 'common']
     enc = common.groupby(['rule', 'encoder', 'dataset', 'target', 'config', 'arm']).ari.mean()
     cpm = cp.groupby(['rule', 'encoder', 'dataset', 'target', 'config', 'L']).ari.mean()
+    slm = (selfloop[selfloop.rule == 'kmeans'].groupby(['dataset', 'target', 'k_graph', 'L']).ari.mean()
+           if selfloop is not None else None)
     rows = []
     for r in sel.itertuples():
         if r.cohort == 'colorectal_pilot':
@@ -187,6 +189,11 @@ def p3_descriptive(w4: pd.DataFrame, sel: pd.DataFrame, cp: pd.DataFrame, w6: pd
         for L in sorted({1, 2, 4, 8, DEPTH[r.encoder]}):
             if ('kmeans', *key, L) in cpm.index:
                 row[f'minus_L|{L}'] = base - cpm[('kmeans', *key, L)]
+        if slm is not None and r.encoder == 'tessera':          # deviation 18: self-loop added to every node
+            k_graph = int(str(r.selected).split('-')[0][1:])
+            for L in (1, 2, 3, 4, 8):
+                if (r.dataset, r.target, k_graph, L) in slm.index:
+                    row[f'selfloop|{L}'] = base - slm[(r.dataset, r.target, k_graph, L)]
         if ('leiden', *key, 'released') in enc.index:
             lb = enc[('leiden', *key, 'released')]
             for name, L in (('propagation', DEPTH[r.encoder]), ('same_graph_mean', 1)):
@@ -204,6 +211,10 @@ def p3_descriptive(w4: pd.DataFrame, sel: pd.DataFrame, cp: pd.DataFrame, w6: pd
         out['leiden'].setdefault(cls, {})[encoder] = {c.split('|')[1]: balanced_test(g.dropna(subset=[c]), c, sesoi_by_cohort)
                                                       for c in ('leiden|propagation', 'leiden|same_graph_mean')
                                                       if c in g and g[c].notna().any()}
+    out['selfloop'] = {}
+    for cls, g in new[new.encoder == 'tessera'].groupby('target_class'):
+        out['selfloop'][cls] = {int(c.split('|')[1]): balanced_test(g.dropna(subset=[c]), c, sesoi_by_cohort)
+                                for c in g.columns if c.startswith('selfloop|') and g[c].notna().any()}
     cal = d[~d.cohort.isin(NEW_COHORTS) & d.group.notna()] if 'group' in d else d.iloc[:0]
     for (group, encoder), g in cal.groupby(['group', 'encoder']):
         unit = g.groupby('dataset')[sorted({f'minus_L|{DEPTH[encoder]}', 'minus_L|1'})].mean()   # one column for STAGATE
@@ -211,6 +222,13 @@ def p3_descriptive(w4: pd.DataFrame, sel: pd.DataFrame, cp: pd.DataFrame, w6: pd
             name: dict(estimate=float(unit[col].mean()), n_units=int(unit[col].notna().sum()),
                        units_positive=int((unit[col] > 0).sum()))
             for name, col in (('propagation', f'minus_L|{DEPTH[encoder]}'), ('same_graph_mean', 'minus_L|1'))}
+    out['calibration_selfloop'] = {}
+    for group, g in cal[cal.encoder == 'tessera'].groupby('group'):
+        cols = [c for c in g.columns if c.startswith('selfloop|') and g[c].notna().any()]
+        unit = g.groupby('dataset')[cols].mean()
+        out['calibration_selfloop'][group] = {int(c.split('|')[1]): dict(
+            estimate=float(unit[c].mean()), n_units=int(unit[c].notna().sum()), units_positive=int((unit[c] > 0).sum()))
+            for c in cols}
     out['n_rows'] = int(len(d))
     return out, d
 
@@ -237,8 +255,10 @@ def main():
                                   pd.read_csv(w4 / 'counterparts.csv'), w6)
             units.to_csv(out / 'p3_units.csv', index=False)
             summary['P3'] = p3(units, summary['sesoi_new'])
+            w8 = R / 'W8' / 'selfloop.csv'
             desc, rows = p3_descriptive(pd.read_csv(w4 / 'scores.csv'), pd.read_csv(w4 / 'selection.csv'),
-                                        pd.read_csv(w4 / 'counterparts.csv'), w6, summary['sesoi_new'])
+                                        pd.read_csv(w4 / 'counterparts.csv'), w6, summary['sesoi_new'],
+                                        pd.read_csv(w8) if w8.exists() else None)
             rows.to_csv(out / 'p3_descriptive_rows.csv', index=False)
             summary['P3_descriptive'] = desc
     (out / 'summary.json').write_text(json.dumps(summary, indent=1, default=float) + '\n')

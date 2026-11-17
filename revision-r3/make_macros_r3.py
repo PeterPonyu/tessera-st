@@ -226,6 +226,17 @@ def attribution_descriptive():
                 put(base + 'Est', f3(t['estimate'], sign=True))
                 put(base + 'Lo', f3(t['ci'][0], sign=True)); put(base + 'Hi', f3(t['ci'][1], sign=True))
                 put(base + 'Pos', t['units_positive']); put(base + 'N', t['n_units'])
+    for c, by in d.get('selfloop', {}).items():
+        for L, t in by.items():
+            base = f'rPThreeSelf{cls[c]}Tess{word[int(L)]}'
+            put(base + 'Est', f3(t['estimate'], sign=True))
+            put(base + 'Lo', f3(t['ci'][0], sign=True)); put(base + 'Hi', f3(t['ci'][1], sign=True))
+            put(base + 'Pos', t['units_positive']); put(base + 'N', t['n_units'])
+    for g, by in d.get('calibration_selfloop', {}).items():
+        for L, t in by.items():
+            base = f'rPThreeCalSelf{g}Tess{word[int(L)]}'
+            put(base + 'Est', f3(t['estimate'], sign=True)); put(base + 'Pos', t['units_positive'])
+            put(base + 'N', t['n_units'])
     for g, by in d['calibration'].items():
         for e, tests in by.items():
             for k, t in tests.items():
