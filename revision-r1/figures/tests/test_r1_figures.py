@@ -189,7 +189,7 @@ def test_figure5_values(plot):
 
 
 def test_figure6_values(plot):
-    """Cluster-number curves and label-free rows equal the ledger column Tessera120-TunedControl."""
+    """Cluster-number curves and silhouette-selected rows equal the ledger column Tessera120-TunedControl."""
     import pandas as pd
     k = pd.read_csv(SUMMARY / 'fig_k.csv')
     free = pd.read_csv(SUMMARY / 'fig_k_label_free.csv')

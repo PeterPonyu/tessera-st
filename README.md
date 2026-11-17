@@ -30,7 +30,9 @@ python revision-r1/figures/build_r1_figures.py all            # every main and s
 | Supplementary Tables S18–S25 and Figures 5 and 6 | `revision-r1/analyze_r1.py` and `revision-r1/figures/build_r1_figures.py` |
 | All other figures | `revision-r1/figures/build_r1_figures.py` from the saved results |
 
-### Level 2: refit every analysis from the archived derived inputs (about 2 h on a laptop GPU)
+### Level 2: refit the supported analyses from the archived derived inputs
+
+The original analyses take about 2 h on a laptop GPU. The analyses added during review take longer. The graphs of 200 neighbors need a GPU with about 80 GB of memory, and the breast and colorectal fits need the raw downloads of Level 3. Some extension outputs cannot be refitted from scratch; they are kept with the archived results.
 
 The original analyses:
 

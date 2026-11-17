@@ -208,7 +208,7 @@ def figure_06():
         assert (eu.K == eu.K_label_free).all() and (co.K == co.K_label_free).all() and (eu.K == co.K).all()
         groups.append((title, {'Euclidean': eu[column].to_numpy(), 'Unit length': co[column].to_numpy()}))
     h2 = 206
-    e = cv.panel(0, row2, W, h2, 'e', 'Label-free cluster number', left=lane, bottom=X_AXIS, right=30)
+    e = cv.panel(0, row2, W, h2, 'e', 'Silhouette-selected cluster number', left=lane, bottom=X_AXIS, right=30)
     record['e'] = paired_rows(e, groups, [('Euclidean', COLOR['Tessera'], True), ('Unit length', COLOR['Tessera'], False)],
                               lane, (-.45, .25), [-.4, -.3, -.2, -.1, 0, .1, .2], Y_LABEL)
     cv.resize(row2 + h2)
