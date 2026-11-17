@@ -139,6 +139,30 @@
     "c"
    ],
    "letter_axes_clearance_points": 1.0
+  },
+  "fig-encoders": {
+   "letters": [
+    "a",
+    "b",
+    "c",
+    "d"
+   ],
+   "min_text_points": 7.0,
+   "max_text_points": 8.5,
+   "text_runs_checked": 100,
+   "overlapping_text_runs": 0,
+   "text_outside_canvas": 0,
+   "canvas_points": [
+    510.24,
+    577.5
+   ],
+   "panel_letters": [
+    "a",
+    "b",
+    "c",
+    "d"
+   ],
+   "letter_axes_clearance_points": 1.0
   }
  },
  "plot_data": {
@@ -4393,20 +4417,1917 @@
     ]
    },
    "panels": 3
+  },
+  "fig-encoders": {
+   "a": {
+    "region": {
+     "tessera|propagation": {
+      "cohort": [
+       "colorectal",
+       "colorectal",
+       "colorectal",
+       "colorectal",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast"
+      ],
+      "unit": [
+       "colorectal/A121573",
+       "colorectal/A416371",
+       "colorectal/A798015",
+       "colorectal/A938797",
+       "wu_breast/1142243F",
+       "wu_breast/1160920F",
+       "wu_breast/CID4290",
+       "wu_breast/CID4465",
+       "wu_breast/CID44971",
+       "wu_breast/CID4535"
+      ],
+      "values": [
+       0.016201162581963857,
+       0.020383790051277453,
+       -0.007912808755751288,
+       -0.005111028106022264,
+       0.0120488768685248,
+       -0.11956154045859724,
+       -0.14496805573558208,
+       -0.08621018301953833,
+       -0.06628861505741529,
+       0.0036601778899076204
+      ],
+      "estimate": -0.037775822374123275,
+      "ci": [
+       -0.08160970668387942,
+       0.006058061935632866
+      ],
+      "sesoi": 0.010371944990977409,
+      "label": "Tessera-ST \u2212 three-step propagation",
+      "printed": "\u22120.038",
+      "macro": "rPThreeRegTessPropEst"
+     },
+     "tessera|same_graph_mean": {
+      "cohort": [
+       "colorectal",
+       "colorectal",
+       "colorectal",
+       "colorectal",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast"
+      ],
+      "unit": [
+       "colorectal/A121573",
+       "colorectal/A416371",
+       "colorectal/A798015",
+       "colorectal/A938797",
+       "wu_breast/1142243F",
+       "wu_breast/1160920F",
+       "wu_breast/CID4290",
+       "wu_breast/CID4465",
+       "wu_breast/CID44971",
+       "wu_breast/CID4535"
+      ],
+      "values": [
+       0.002333354211647931,
+       0.011814623001481506,
+       -0.013179591867204077,
+       -0.00650230229977003,
+       0.010636965610294988,
+       -0.0908150553882508,
+       -0.11473044050966363,
+       -0.05254189361932003,
+       -0.1098457470597613,
+       -0.014072442354876688
+      ],
+      "estimate": -0.03769025302754221,
+      "ci": [
+       -0.07361974183695341,
+       -0.0017607642181310182
+      ],
+      "sesoi": 0.010371944990977409,
+      "label": "Tessera-ST \u2212 same-graph mean",
+      "printed": "\u22120.038",
+      "macro": "rPThreeRegTessMeanEst"
+     },
+     "graphst|propagation": {
+      "cohort": [
+       "colorectal",
+       "colorectal",
+       "colorectal",
+       "colorectal",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast"
+      ],
+      "unit": [
+       "colorectal/A121573",
+       "colorectal/A416371",
+       "colorectal/A798015",
+       "colorectal/A938797",
+       "wu_breast/1142243F",
+       "wu_breast/1160920F",
+       "wu_breast/CID4290",
+       "wu_breast/CID4465",
+       "wu_breast/CID44971",
+       "wu_breast/CID4535"
+      ],
+      "values": [
+       0.011394991760521667,
+       0.006896378852878582,
+       0.00910452733314035,
+       0.0005457259320433838,
+       0.0005355217730225207,
+       -0.057907168808068746,
+       -0.05169812039870927,
+       -0.10214520294949336,
+       -0.046969119109910806,
+       -0.024907828052411207
+      ],
+      "estimate": -0.025515029366698694,
+      "ci": [
+       -0.05274122046388251,
+       0.0017111617304851195
+      ],
+      "sesoi": 0.010371944990977409,
+      "label": "GraphST \u2212 two-step propagation",
+      "printed": "\u22120.026",
+      "macro": "rPThreeRegGraphPropEst"
+     },
+     "graphst|same_graph_mean": {
+      "cohort": [
+       "colorectal",
+       "colorectal",
+       "colorectal",
+       "colorectal",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast"
+      ],
+      "unit": [
+       "colorectal/A121573",
+       "colorectal/A416371",
+       "colorectal/A798015",
+       "colorectal/A938797",
+       "wu_breast/1142243F",
+       "wu_breast/1160920F",
+       "wu_breast/CID4290",
+       "wu_breast/CID4465",
+       "wu_breast/CID44971",
+       "wu_breast/CID4535"
+      ],
+      "values": [
+       -0.00047327412798486845,
+       0.0018279640516984802,
+       0.007853775252358641,
+       0.0005472401690629625,
+       0.0010075368231616858,
+       -0.029680833654098,
+       -0.04846995410161958,
+       -0.0667991004287429,
+       -0.06918785665023347,
+       -0.030120662493647407
+      ],
+      "estimate": -0.023349516516004448,
+      "ci": [
+       -0.04467891776324505,
+       -0.002020115268763844
+      ],
+      "sesoi": 0.010371944990977409,
+      "label": "GraphST \u2212 same-graph mean",
+      "printed": "\u22120.023",
+      "macro": "rPThreeRegGraphMeanEst"
+     },
+     "stagate|same_graph_mean": {
+      "cohort": [
+       "colorectal",
+       "colorectal",
+       "colorectal",
+       "colorectal",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast"
+      ],
+      "unit": [
+       "colorectal/A121573",
+       "colorectal/A416371",
+       "colorectal/A798015",
+       "colorectal/A938797",
+       "wu_breast/1142243F",
+       "wu_breast/1160920F",
+       "wu_breast/CID4290",
+       "wu_breast/CID4465",
+       "wu_breast/CID44971",
+       "wu_breast/CID4535"
+      ],
+      "values": [
+       0.01980354370404519,
+       -0.047395784267139154,
+       -0.004906840676170476,
+       0.007850120238391212,
+       0.0008488562159847574,
+       -0.03678854327390964,
+       -0.09205181966531834,
+       -0.04942010368724783,
+       -0.022629110604115515,
+       0.028243818773263124
+      ],
+      "estimate": -0.01964458632422167,
+      "ci": [
+       -0.046245579624470526,
+       0.0069564069760271845
+      ],
+      "sesoi": 0.010371944990977409,
+      "label": "STAGATE \u2212 same-graph mean = one-step propagation",
+      "printed": "\u22120.020",
+      "macro": "rPThreeRegStagMeanEst"
+     }
+    },
+    "celltype": {
+     "tessera|propagation": {
+      "cohort": [
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal"
+      ],
+      "unit": [
+       "spinal/healthy-F1",
+       "spinal/healthy-F2",
+       "spinal/healthy-F3",
+       "spinal/healthy-F4",
+       "spinal/healthy-F5",
+       "spinal/healthy-M1",
+       "spinal/healthy-M2",
+       "spinal/healthy-M3",
+       "spinal/healthy-M4",
+       "spinal/healthy-M5"
+      ],
+      "values": [
+       0.07456635196764252,
+       0.0782895596654105,
+       0.06558346972164136,
+       0.061808267049212065,
+       0.04304647336989503,
+       0.07951773720353084,
+       0.0720759410026432,
+       0.1012971424424293,
+       0.07386429127670954,
+       0.057209358145484245
+      ],
+      "estimate": 0.07072585918445987,
+      "ci": [
+       0.05966839701244595,
+       0.08178332135647377
+      ],
+      "sesoi": 0.009999999999999998,
+      "label": "Tessera-ST \u2212 three-step propagation",
+      "printed": "+0.071",
+      "macro": "rPThreeCtTessPropEst"
+     },
+     "tessera|same_graph_mean": {
+      "cohort": [
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal"
+      ],
+      "unit": [
+       "spinal/healthy-F1",
+       "spinal/healthy-F2",
+       "spinal/healthy-F3",
+       "spinal/healthy-F4",
+       "spinal/healthy-F5",
+       "spinal/healthy-M1",
+       "spinal/healthy-M2",
+       "spinal/healthy-M3",
+       "spinal/healthy-M4",
+       "spinal/healthy-M5"
+      ],
+      "values": [
+       0.07898069196811974,
+       0.08376578124750292,
+       0.07086209789815477,
+       0.06668325145381922,
+       0.046616917680682074,
+       0.08652360830127634,
+       0.07857163935282829,
+       0.1036294127949701,
+       0.08197423624505036,
+       0.059788971872660954
+      ],
+      "estimate": 0.0757396608815065,
+      "ci": [
+       0.06449362606750031,
+       0.08698569569551268
+      ],
+      "sesoi": 0.009999999999999998,
+      "label": "Tessera-ST \u2212 same-graph mean",
+      "printed": "+0.076",
+      "macro": "rPThreeCtTessMeanEst"
+     },
+     "graphst|propagation": {
+      "cohort": [
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal"
+      ],
+      "unit": [
+       "spinal/healthy-F1",
+       "spinal/healthy-F2",
+       "spinal/healthy-F3",
+       "spinal/healthy-F4",
+       "spinal/healthy-F5",
+       "spinal/healthy-M1",
+       "spinal/healthy-M2",
+       "spinal/healthy-M3",
+       "spinal/healthy-M4",
+       "spinal/healthy-M5"
+      ],
+      "values": [
+       0.11223513028350587,
+       0.10835571444433847,
+       0.09324112030950682,
+       0.10401669465649355,
+       0.1168848512407627,
+       0.16897903037727277,
+       0.128194190042223,
+       0.13544606529352704,
+       0.11200723376009719,
+       0.11798097004452966
+      ],
+      "estimate": 0.1197341000452257,
+      "ci": [
+       0.10474947336876983,
+       0.13471872672168156
+      ],
+      "sesoi": 0.009999999999999998,
+      "label": "GraphST \u2212 two-step propagation",
+      "printed": "+0.120",
+      "macro": "rPThreeCtGraphPropEst"
+     },
+     "graphst|same_graph_mean": {
+      "cohort": [
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal"
+      ],
+      "unit": [
+       "spinal/healthy-F1",
+       "spinal/healthy-F2",
+       "spinal/healthy-F3",
+       "spinal/healthy-F4",
+       "spinal/healthy-F5",
+       "spinal/healthy-M1",
+       "spinal/healthy-M2",
+       "spinal/healthy-M3",
+       "spinal/healthy-M4",
+       "spinal/healthy-M5"
+      ],
+      "values": [
+       0.10501098646306908,
+       0.10381866765728409,
+       0.08653380189147561,
+       0.09801650091995137,
+       0.11380261311965409,
+       0.16589473107881791,
+       0.12450137627115135,
+       0.13157285675773134,
+       0.11117864161745059,
+       0.11310965843859203
+      ],
+      "estimate": 0.11534398342151775,
+      "ci": [
+       0.09971270785509397,
+       0.13097525898794152
+      ],
+      "sesoi": 0.009999999999999998,
+      "label": "GraphST \u2212 same-graph mean",
+      "printed": "+0.115",
+      "macro": "rPThreeCtGraphMeanEst"
+     },
+     "stagate|same_graph_mean": {
+      "cohort": [
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal"
+      ],
+      "unit": [
+       "spinal/healthy-F1",
+       "spinal/healthy-F2",
+       "spinal/healthy-F3",
+       "spinal/healthy-F4",
+       "spinal/healthy-F5",
+       "spinal/healthy-M1",
+       "spinal/healthy-M2",
+       "spinal/healthy-M3",
+       "spinal/healthy-M4",
+       "spinal/healthy-M5"
+      ],
+      "values": [
+       0.0037075849354447563,
+       0.0025839491792379876,
+       0.00723624389042608,
+       0.004338082711118078,
+       0.008670046177187224,
+       0.003110760483407894,
+       0.007141012556011957,
+       0.007069716006670286,
+       0.007101903483563276,
+       0.003835210656914584
+      ],
+      "estimate": 0.005479451007998212,
+      "ci": [
+       0.00392806846936047,
+       0.007030833546635955
+      ],
+      "sesoi": 0.009999999999999998,
+      "label": "STAGATE \u2212 same-graph mean = one-step propagation",
+      "printed": "+0.005",
+      "macro": "rPThreeCtStagMeanEst"
+     }
+    }
+   },
+   "b": {
+    "tessera": {
+     "L": [
+      1,
+      2,
+      3,
+      4,
+      8
+     ],
+     "region": {
+      "n": 10,
+      "median": [
+       -0.013626017111040382,
+       -0.006209828930374632,
+       -0.006511918430886776,
+       -0.008209688022176878,
+       -0.005430418488065164
+      ],
+      "q1": [
+       -0.08124676494601811,
+       -0.07651974327811112,
+       -0.08122979102900757,
+       -0.08401928846760279,
+       -0.08366469534874801
+      ],
+      "q3": [
+       0.0001244400837934409,
+       0.008789608863107753,
+       0.009951702123870506,
+       0.0185072993620439,
+       0.0192853828289367
+      ]
+     },
+     "celltype": {
+      "n": 10,
+      "median": [
+       0.07877616566047402,
+       0.06268006171722623,
+       0.07297011613967637,
+       0.07475719115373351,
+       0.0803608635995873
+      ],
+      "q1": [
+       0.06772796306490311,
+       0.05083857216354609,
+       0.06275206771731939,
+       0.06333859774052226,
+       0.06654979871709288
+      ],
+      "q3": [
+       0.08331789499688978,
+       0.0664941243121913,
+       0.07735875774096851,
+       0.07838822584475921,
+       0.08416274954702499
+      ]
+     }
+    },
+    "graphst": {
+     "L": [
+      1,
+      2,
+      4,
+      8
+     ],
+     "region": {
+      "n": 10,
+      "median": [
+       -0.015077053891041435,
+       -0.012186153139694343,
+       -0.002572567443441436,
+       0.0012818118232635406
+      ],
+      "q1": [
+       -0.04388263119962654,
+       -0.05051587007650965,
+       -0.06354108948331795,
+       -0.06626277230544468
+      ],
+      "q3": [
+       0.000892462659637005,
+       0.005308715622669782,
+       0.006970342721973166,
+       0.012970617304094184
+      ]
+     },
+     "celltype": {
+      "n": 10,
+      "median": [
+       0.1121441500280213,
+       0.11455999076213429,
+       0.12097878709826376,
+       0.1277689905316875
+      ],
+      "q1": [
+       0.10411674735873033,
+       0.10926859427327815,
+       0.11596111072868462,
+       0.11987595594610931
+      ],
+      "q3": [
+       0.12182668548327703,
+       0.12564088504279966,
+       0.13176437094513674,
+       0.13786786144295896
+      ]
+     }
+    },
+    "stagate": {
+     "L": [
+      1,
+      2,
+      4,
+      8
+     ],
+     "region": {
+      "n": 10,
+      "median": [
+       -0.013767975640142996,
+       -0.006586652973915391,
+       -0.0006660350413596611,
+       -0.00028553031756327297
+      ],
+      "q1": [
+       -0.044743974018831775,
+       -0.05782083489991761,
+       -0.061885720814861725,
+       -0.05932623540245454
+      ],
+      "q3": [
+       0.006099804232789598,
+       0.0036697475842176423,
+       0.02667685321959345,
+       0.035780580380968756
+      ]
+     },
+     "celltype": {
+      "n": 10,
+      "median": [
+       0.005703899358894182,
+       0.008806475249236391,
+       0.016378100373763207,
+       0.024970274455224605
+      ],
+      "q1": [
+       0.003739491365812213,
+       0.006310619274238726,
+       0.013517098925134915,
+       0.023190610120834974
+      ],
+      "q3": [
+       0.007131235287899787,
+       0.010302812077297344,
+       0.01862948219868734,
+       0.028833720129241354
+      ]
+     }
+    }
+   },
+   "c": {
+    "tessera": {
+     "no_gate": {
+      "label": "No gate",
+      "group": [
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region"
+      ],
+      "cohort": [
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "colorectal",
+       "colorectal",
+       "colorectal",
+       "colorectal",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast"
+      ],
+      "unit": [
+       "spinal/healthy-F1",
+       "spinal/healthy-F2",
+       "spinal/healthy-F3",
+       "spinal/healthy-F4",
+       "spinal/healthy-F5",
+       "spinal/healthy-M1",
+       "spinal/healthy-M2",
+       "spinal/healthy-M3",
+       "spinal/healthy-M4",
+       "spinal/healthy-M5",
+       "colorectal/A121573",
+       "colorectal/A416371",
+       "colorectal/A798015",
+       "colorectal/A938797",
+       "wu_breast/1142243F",
+       "wu_breast/1160920F",
+       "wu_breast/CID4290",
+       "wu_breast/CID4465",
+       "wu_breast/CID44971",
+       "wu_breast/CID4535"
+      ],
+      "values": [
+       -0.05826378664683983,
+       -0.0623806386009626,
+       -0.05118831062210892,
+       -0.04370903509695135,
+       -0.026176190207267656,
+       -0.06635358758092727,
+       -0.05757374358699487,
+       -0.08099115012825411,
+       -0.05866725740282361,
+       -0.043499927846104514,
+       -0.01043193885791091,
+       -0.0254306404039622,
+       1.6267546823711676e-05,
+       -0.0002097138551495209,
+       -0.006927105070808197,
+       0.05437557319188705,
+       0.000321655512908095,
+       0.017451894942226563,
+       0.008564824597031395,
+       0.0011548901162166114
+      ],
+      "mean": {
+       "region": 0.00388857077192626,
+       "celltype": -0.05488036277192347
+      }
+     },
+     "no_contrast": {
+      "label": "No contrastive term",
+      "group": [
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region"
+      ],
+      "cohort": [
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "colorectal",
+       "colorectal",
+       "colorectal",
+       "colorectal",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast"
+      ],
+      "unit": [
+       "spinal/healthy-F1",
+       "spinal/healthy-F2",
+       "spinal/healthy-F3",
+       "spinal/healthy-F4",
+       "spinal/healthy-F5",
+       "spinal/healthy-M1",
+       "spinal/healthy-M2",
+       "spinal/healthy-M3",
+       "spinal/healthy-M4",
+       "spinal/healthy-M5",
+       "colorectal/A121573",
+       "colorectal/A416371",
+       "colorectal/A798015",
+       "colorectal/A938797",
+       "wu_breast/1142243F",
+       "wu_breast/1160920F",
+       "wu_breast/CID4290",
+       "wu_breast/CID4465",
+       "wu_breast/CID44971",
+       "wu_breast/CID4535"
+      ],
+      "values": [
+       0.13732957339132787,
+       0.11445052596906037,
+       0.13786023376509138,
+       0.11205746261656244,
+       0.22460443653320805,
+       0.15442780102034953,
+       0.16281435377487158,
+       0.11932087812932497,
+       0.16718028312347924,
+       0.17967308502424006,
+       0.004373914370725457,
+       -0.0024887529975153033,
+       0.003106376138480721,
+       0.005857793742894857,
+       0.002704136465512705,
+       0.008201436504805044,
+       0.03587002091947511,
+       -0.010861495274414833,
+       0.008384807541017114,
+       -0.008212050934005885
+      ],
+      "mean": {
+       "region": 0.004693618647697498,
+       "celltype": 0.15097186333475154
+      }
+     },
+     "self_only": {
+      "label": "Self edges only",
+      "group": [
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region"
+      ],
+      "cohort": [
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "colorectal",
+       "colorectal",
+       "colorectal",
+       "colorectal",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast"
+      ],
+      "unit": [
+       "spinal/healthy-F1",
+       "spinal/healthy-F2",
+       "spinal/healthy-F3",
+       "spinal/healthy-F4",
+       "spinal/healthy-F5",
+       "spinal/healthy-M1",
+       "spinal/healthy-M2",
+       "spinal/healthy-M3",
+       "spinal/healthy-M4",
+       "spinal/healthy-M5",
+       "colorectal/A121573",
+       "colorectal/A416371",
+       "colorectal/A798015",
+       "colorectal/A938797",
+       "wu_breast/1142243F",
+       "wu_breast/1160920F",
+       "wu_breast/CID4290",
+       "wu_breast/CID4465",
+       "wu_breast/CID44971",
+       "wu_breast/CID4535"
+      ],
+      "values": [
+       0.12781259128027778,
+       0.10980416526410829,
+       0.1415306068828529,
+       0.11614519535928264,
+       0.22220296150805074,
+       0.15444758091545346,
+       0.16872182477357772,
+       0.11915167215128461,
+       0.1610524450619601,
+       0.19615543637403793,
+       0.00472850142649589,
+       0.0018461607983240869,
+       0.0011049120941691026,
+       -0.00015172689177177234,
+       0.005699283514053647,
+       -0.0013722341997080278,
+       0.034511120822976714,
+       -0.009513045139374099,
+       0.0070746330833403315,
+       -0.010730454690732943
+      ],
+      "mean": {
+       "region": 0.003319715081777293,
+       "celltype": 0.1517024479570886
+      }
+     },
+     "permuted_xy_no_contrast": {
+      "label": "Permuted coordinates, no contrastive term",
+      "group": [
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region"
+      ],
+      "cohort": [
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "colorectal",
+       "colorectal",
+       "colorectal",
+       "colorectal",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast"
+      ],
+      "unit": [
+       "spinal/healthy-F1",
+       "spinal/healthy-F2",
+       "spinal/healthy-F3",
+       "spinal/healthy-F4",
+       "spinal/healthy-F5",
+       "spinal/healthy-M1",
+       "spinal/healthy-M2",
+       "spinal/healthy-M3",
+       "spinal/healthy-M4",
+       "spinal/healthy-M5",
+       "colorectal/A121573",
+       "colorectal/A416371",
+       "colorectal/A798015",
+       "colorectal/A938797",
+       "wu_breast/1142243F",
+       "wu_breast/1160920F",
+       "wu_breast/CID4290",
+       "wu_breast/CID4465",
+       "wu_breast/CID44971",
+       "wu_breast/CID4535"
+      ],
+      "values": [
+       0.1392593574462438,
+       0.10366014671249525,
+       0.1403493195428301,
+       0.10980612796113215,
+       0.21797821743920662,
+       0.1535076344869914,
+       0.15790423315712265,
+       0.11209302079350655,
+       0.15881419479452114,
+       0.18827353117400286,
+       -0.004841286164463943,
+       -0.009442040082766556,
+       0.009039863287317984,
+       -0.004501667564531839,
+       0.003197070893646595,
+       0.011609735006082832,
+       0.034892544906341666,
+       -0.010477939504581386,
+       0.0038028062379792393,
+       -0.02610669784342992
+      ],
+      "mean": {
+       "region": 0.000717238917159467,
+       "celltype": 0.14816457835080526
+      }
+     },
+     "contrast_no_mp": {
+      "label": "Spatial positives, no message passing",
+      "group": [
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region"
+      ],
+      "cohort": [
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "colorectal",
+       "colorectal",
+       "colorectal",
+       "colorectal",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast"
+      ],
+      "unit": [
+       "spinal/healthy-F1",
+       "spinal/healthy-F2",
+       "spinal/healthy-F3",
+       "spinal/healthy-F4",
+       "spinal/healthy-F5",
+       "spinal/healthy-M1",
+       "spinal/healthy-M2",
+       "spinal/healthy-M3",
+       "spinal/healthy-M4",
+       "spinal/healthy-M5",
+       "colorectal/A121573",
+       "colorectal/A416371",
+       "colorectal/A798015",
+       "colorectal/A938797",
+       "wu_breast/1142243F",
+       "wu_breast/1160920F",
+       "wu_breast/CID4290",
+       "wu_breast/CID4465",
+       "wu_breast/CID44971",
+       "wu_breast/CID4535"
+      ],
+      "values": [
+       -0.02423185404915775,
+       -0.029450660155420957,
+       -0.027579743426989226,
+       -0.003819152154881794,
+       0.007239962117314071,
+       -0.0176067535843037,
+       -0.025325143213331333,
+       -0.03260426898655085,
+       -0.012454274385293111,
+       -0.006211308387254748,
+       0.011052860234853912,
+       -0.033020092110803756,
+       -0.0034972228554568385,
+       0.0024846753638888552,
+       -0.007950092208565459,
+       0.08280329002128456,
+       -0.0044299274312444865,
+       0.03781654011903014,
+       0.0014013139699473598,
+       -0.011496657924270057
+      ],
+      "mean": {
+       "region": 0.007516468717866423,
+       "celltype": -0.017204319622586943
+      }
+     }
+    },
+    "graphst": {
+     "no_contrast": {
+      "label": "No contrastive term",
+      "group": [
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region"
+      ],
+      "cohort": [
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "colorectal",
+       "colorectal",
+       "colorectal",
+       "colorectal",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast"
+      ],
+      "unit": [
+       "spinal/healthy-F1",
+       "spinal/healthy-F2",
+       "spinal/healthy-F3",
+       "spinal/healthy-F4",
+       "spinal/healthy-F5",
+       "spinal/healthy-M1",
+       "spinal/healthy-M2",
+       "spinal/healthy-M3",
+       "spinal/healthy-M4",
+       "spinal/healthy-M5",
+       "colorectal/A121573",
+       "colorectal/A416371",
+       "colorectal/A798015",
+       "colorectal/A938797",
+       "wu_breast/1142243F",
+       "wu_breast/1160920F",
+       "wu_breast/CID4290",
+       "wu_breast/CID4465",
+       "wu_breast/CID44971",
+       "wu_breast/CID4535"
+      ],
+      "values": [
+       0.0011840203535167376,
+       -0.00653019351411846,
+       0.00045512990074504656,
+       0.005773665030006356,
+       0.002414179718454812,
+       -0.006536948711006199,
+       -0.0036754358597623493,
+       -0.0017120561015950136,
+       0.007310683704954177,
+       -0.007188362574210357,
+       -0.0005873241745419644,
+       0.00017709782528724238,
+       0.0007878086452197952,
+       0.002470066403036514,
+       -5.398475046274596e-05,
+       -0.0003309864305459792,
+       -0.0004893905129076115,
+       0.00011011918586701849,
+       5.184889188236674e-05,
+       -0.006464001313573095
+      ],
+      "mean": {
+       "region": -0.0004328746230738459,
+       "celltype": -0.000850531805301525
+      }
+     },
+     "identity_encoder": {
+      "label": "Identity encoder adjacency",
+      "group": [
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region"
+      ],
+      "cohort": [
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "colorectal",
+       "colorectal",
+       "colorectal",
+       "colorectal",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast"
+      ],
+      "unit": [
+       "spinal/healthy-F1",
+       "spinal/healthy-F2",
+       "spinal/healthy-F3",
+       "spinal/healthy-F4",
+       "spinal/healthy-F5",
+       "spinal/healthy-M1",
+       "spinal/healthy-M2",
+       "spinal/healthy-M3",
+       "spinal/healthy-M4",
+       "spinal/healthy-M5",
+       "colorectal/A121573",
+       "colorectal/A416371",
+       "colorectal/A798015",
+       "colorectal/A938797",
+       "wu_breast/1142243F",
+       "wu_breast/1160920F",
+       "wu_breast/CID4290",
+       "wu_breast/CID4465",
+       "wu_breast/CID44971",
+       "wu_breast/CID4535"
+      ],
+      "values": [
+       0.12189732860740606,
+       0.1071319169240501,
+       0.1404152305150539,
+       0.10495368783163515,
+       0.19616869351636468,
+       0.08983051866107822,
+       0.14938942831469515,
+       0.11376090488392035,
+       0.15229995460011575,
+       0.16822384901334564,
+       0.02903744283733206,
+       0.007954588917157307,
+       0.005973966456139873,
+       0.00546796368604871,
+       -0.0006088046981154404,
+       -0.037038745933380066,
+       -0.019111410148134604,
+       -0.02891408977733133,
+       -0.037902779980834134,
+       0.04707832789449669
+      ],
+      "mean": {
+       "region": -0.0028063540746620943,
+       "celltype": 0.1344071512867665
+      }
+     },
+     "permuted_xy": {
+      "label": "Permuted coordinates",
+      "group": [
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region"
+      ],
+      "cohort": [
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "colorectal",
+       "colorectal",
+       "colorectal",
+       "colorectal",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast"
+      ],
+      "unit": [
+       "spinal/healthy-F1",
+       "spinal/healthy-F2",
+       "spinal/healthy-F3",
+       "spinal/healthy-F4",
+       "spinal/healthy-F5",
+       "spinal/healthy-M1",
+       "spinal/healthy-M2",
+       "spinal/healthy-M3",
+       "spinal/healthy-M4",
+       "spinal/healthy-M5",
+       "colorectal/A121573",
+       "colorectal/A416371",
+       "colorectal/A798015",
+       "colorectal/A938797",
+       "wu_breast/1142243F",
+       "wu_breast/1160920F",
+       "wu_breast/CID4290",
+       "wu_breast/CID4465",
+       "wu_breast/CID44971",
+       "wu_breast/CID4535"
+      ],
+      "values": [
+       0.06022699259304733,
+       0.028498174323402348,
+       0.05777491615452471,
+       0.0392634544532597,
+       0.0764882547136299,
+       0.01946282191367965,
+       0.07478357831377191,
+       0.0445464194328723,
+       0.08346692597840913,
+       0.08363838896056017,
+       -0.1088665786737615,
+       -0.06835313357674426,
+       -0.08416640165599132,
+       -0.0605215909509188,
+       -5.6390916209268305e-05,
+       -0.09337987073369983,
+       -0.04564966924341712,
+       -0.031308347322398726,
+       -0.19593589126750288,
+       -0.08103862006947485
+      ],
+      "mean": {
+       "region": -0.07692764944101185,
+       "celltype": 0.05681499268371572
+      }
+     }
+    },
+    "stagate": {
+     "uniform_attention": {
+      "label": "Uniform attention",
+      "group": [
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region"
+      ],
+      "cohort": [
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "colorectal",
+       "colorectal",
+       "colorectal",
+       "colorectal",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast"
+      ],
+      "unit": [
+       "spinal/healthy-F1",
+       "spinal/healthy-F2",
+       "spinal/healthy-F3",
+       "spinal/healthy-F4",
+       "spinal/healthy-F5",
+       "spinal/healthy-M1",
+       "spinal/healthy-M2",
+       "spinal/healthy-M3",
+       "spinal/healthy-M4",
+       "spinal/healthy-M5",
+       "colorectal/A121573",
+       "colorectal/A416371",
+       "colorectal/A798015",
+       "colorectal/A938797",
+       "wu_breast/1142243F",
+       "wu_breast/1160920F",
+       "wu_breast/CID4290",
+       "wu_breast/CID4465",
+       "wu_breast/CID44971",
+       "wu_breast/CID4535"
+      ],
+      "values": [
+       -0.009825525140340956,
+       -0.004152400444684384,
+       -0.0075880855010527146,
+       -0.00474344710403754,
+       -0.009810544391780383,
+       -0.003670096081310248,
+       -0.008546134955279033,
+       -0.011331962827775093,
+       -0.01224751656491107,
+       -0.009127973685512408,
+       -0.0020654396141419618,
+       0.03943254626846156,
+       0.0044613206053155385,
+       -0.004828798206952367,
+       0.0010085490911402408,
+       -0.011246193103858979,
+       -0.048895388220199544,
+       0.04642910090393701,
+       -0.01617763361344951,
+       -0.047735339591118
+      ],
+      "mean": {
+       "region": -0.003961727548086602,
+       "celltype": -0.008104368669668382
+      }
+     },
+     "identity_graph": {
+      "label": "Identity graph",
+      "group": [
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region"
+      ],
+      "cohort": [
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "colorectal",
+       "colorectal",
+       "colorectal",
+       "colorectal",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast"
+      ],
+      "unit": [
+       "spinal/healthy-F1",
+       "spinal/healthy-F2",
+       "spinal/healthy-F3",
+       "spinal/healthy-F4",
+       "spinal/healthy-F5",
+       "spinal/healthy-M1",
+       "spinal/healthy-M2",
+       "spinal/healthy-M3",
+       "spinal/healthy-M4",
+       "spinal/healthy-M5",
+       "colorectal/A121573",
+       "colorectal/A416371",
+       "colorectal/A798015",
+       "colorectal/A938797",
+       "wu_breast/1142243F",
+       "wu_breast/1160920F",
+       "wu_breast/CID4290",
+       "wu_breast/CID4465",
+       "wu_breast/CID44971",
+       "wu_breast/CID4535"
+      ],
+      "values": [
+       0.20428053129575163,
+       0.16515139844444005,
+       0.16660677980174043,
+       0.15811859042349552,
+       0.25782987472059093,
+       0.21593477000013445,
+       0.2224806069888801,
+       0.1891054425019585,
+       0.22337244744110424,
+       0.19982995969797937,
+       0.023987745814987305,
+       0.08501527913652278,
+       0.015259660072078657,
+       0.00977178430049866,
+       -0.0002123491923326031,
+       -0.05169851370993711,
+       -0.008260254963795899,
+       -0.042427310044990105,
+       -0.05661186921932759,
+       -0.004702900915907915
+      ],
+      "mean": {
+       "region": -0.0029878728722203818,
+       "celltype": 0.20027104013160751
+      }
+     },
+     "permuted_xy": {
+      "label": "Permuted coordinates",
+      "group": [
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "celltype",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region",
+       "region"
+      ],
+      "cohort": [
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "spinal",
+       "colorectal",
+       "colorectal",
+       "colorectal",
+       "colorectal",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast",
+       "wu_breast"
+      ],
+      "unit": [
+       "spinal/healthy-F1",
+       "spinal/healthy-F2",
+       "spinal/healthy-F3",
+       "spinal/healthy-F4",
+       "spinal/healthy-F5",
+       "spinal/healthy-M1",
+       "spinal/healthy-M2",
+       "spinal/healthy-M3",
+       "spinal/healthy-M4",
+       "spinal/healthy-M5",
+       "colorectal/A121573",
+       "colorectal/A416371",
+       "colorectal/A798015",
+       "colorectal/A938797",
+       "wu_breast/1142243F",
+       "wu_breast/1160920F",
+       "wu_breast/CID4290",
+       "wu_breast/CID4465",
+       "wu_breast/CID44971",
+       "wu_breast/CID4535"
+      ],
+      "values": [
+       -0.06571392301953013,
+       -0.0626774218949355,
+       -0.08262499206768455,
+       -0.08655952391841623,
+       -0.07036723465334688,
+       -0.0597408400779017,
+       -0.07502495131273121,
+       -0.08426316006481985,
+       -0.08579273534632692,
+       -0.07997154585509603,
+       -0.17717432435990843,
+       -0.03452368836337586,
+       -0.12912208116854562,
+       -0.12631649698880876,
+       -0.0022479588582328836,
+       -0.27430778777287457,
+       -0.0789360692536828,
+       -0.05661136395714293,
+       -0.38684495432422283,
+       -0.21103033150941297
+      ],
+      "mean": {
+       "region": -0.14771150565562077,
+       "celltype": -0.07527363282107889
+      }
+     }
+    }
+   },
+   "d": {
+    "graphst": {
+     "Lung regions": {
+      "unit": [
+       "NSCLC_Lung12",
+       "NSCLC_Lung13",
+       "NSCLC_Lung5_Rep2",
+       "NSCLC_Lung6",
+       "NSCLC_Lung9_Rep1"
+      ],
+      "values": [
+       -0.10050227892673493,
+       -0.16020143290371364,
+       -0.24852911002105277,
+       -0.13476095053264736,
+       -0.12546000812965857
+      ],
+      "mean": -0.15389075610276146
+     },
+     "Lung cell types": {
+      "unit": [
+       "NSCLC_Lung12",
+       "NSCLC_Lung13",
+       "NSCLC_Lung5_Rep2",
+       "NSCLC_Lung6",
+       "NSCLC_Lung9_Rep1"
+      ],
+      "values": [
+       0.021146272024406998,
+       0.07944735427418984,
+       0.04555823917973495,
+       0.026492677230279357,
+       0.05474096276616687
+      ],
+      "mean": 0.0454771010949556
+     },
+     "BCC cell types": {
+      "unit": [
+       "BCC_PatientA",
+       "BCC_PatientB",
+       "BCC_PatientC",
+       "BCC_PatientD"
+      ],
+      "values": [
+       -0.033384335995103265,
+       0.01482113521252372,
+       0.012329999862987093,
+       -0.005838405055214546
+      ],
+      "mean": -0.0030179014937017495
+     },
+     "HER2ST all labels": {
+      "unit": [
+       "HER2ST-A1",
+       "HER2ST-B1",
+       "HER2ST-C1",
+       "HER2ST-D1",
+       "HER2ST-E1",
+       "HER2ST-F1",
+       "HER2ST-G2",
+       "HER2ST-H1"
+      ],
+      "values": [
+       0.012493863528271282,
+       0.06511247921773528,
+       -0.1693782268562205,
+       0.005655644694790074,
+       0.01298819219706979,
+       0.022957975490567925,
+       -0.020082807370052747,
+       -0.023666955302632908
+      ],
+      "mean": -0.011739979300058977
+     },
+     "HER2ST tumour/non-tumour": {
+      "unit": [
+       "HER2ST-A1",
+       "HER2ST-B1",
+       "HER2ST-C1",
+       "HER2ST-D1",
+       "HER2ST-E1",
+       "HER2ST-F1",
+       "HER2ST-G2",
+       "HER2ST-H1"
+      ],
+      "values": [
+       -0.08273001668121782,
+       -0.05079340531005194,
+       0.0522453322989747,
+       0.006120508619817444,
+       0.012156551526872977,
+       -0.03903031324753142,
+       0.1062672914383127,
+       -0.1935723622714084
+      ],
+      "mean": -0.02366705170327897
+     }
+    },
+    "stagate": {
+     "Lung regions": {
+      "unit": [
+       "NSCLC_Lung12",
+       "NSCLC_Lung13",
+       "NSCLC_Lung5_Rep2",
+       "NSCLC_Lung6",
+       "NSCLC_Lung9_Rep1"
+      ],
+      "values": [
+       -0.038426918549422096,
+       0.019197809500820007,
+       -0.03502982978390329,
+       -0.0035123560642463247,
+       -0.026207119742773344
+      ],
+      "mean": -0.01679568292790501
+     },
+     "Lung cell types": {
+      "unit": [
+       "NSCLC_Lung12",
+       "NSCLC_Lung13",
+       "NSCLC_Lung5_Rep2",
+       "NSCLC_Lung6",
+       "NSCLC_Lung9_Rep1"
+      ],
+      "values": [
+       0.002318107629340385,
+       0.012473046396089843,
+       0.00445897184257249,
+       0.014480496483307737,
+       -0.0027644254335394552
+      ],
+      "mean": 0.0061932393835542
+     },
+     "BCC cell types": {
+      "unit": [
+       "BCC_PatientA",
+       "BCC_PatientB",
+       "BCC_PatientC",
+       "BCC_PatientD"
+      ],
+      "values": [
+       -0.015656728003495712,
+       -0.00376360601602356,
+       0.000780505419041358,
+       0.01310337526675831
+      ],
+      "mean": -0.001384113333429901
+     },
+     "HER2ST all labels": {
+      "unit": [
+       "HER2ST-A1",
+       "HER2ST-B1",
+       "HER2ST-C1",
+       "HER2ST-D1",
+       "HER2ST-E1",
+       "HER2ST-F1",
+       "HER2ST-G2",
+       "HER2ST-H1"
+      ],
+      "values": [
+       -0.011921932455490059,
+       0.013363010551903642,
+       -0.05509158978531603,
+       0.061644752904590344,
+       -0.0032546316203776304,
+       0.028250146510505333,
+       0.019819091160115015,
+       -0.059805142637726794
+      ],
+      "mean": -0.0008745369214745221
+     },
+     "HER2ST tumour/non-tumour": {
+      "unit": [
+       "HER2ST-A1",
+       "HER2ST-B1",
+       "HER2ST-C1",
+       "HER2ST-D1",
+       "HER2ST-E1",
+       "HER2ST-F1",
+       "HER2ST-G2",
+       "HER2ST-H1"
+      ],
+      "values": [
+       -0.17148348143049652,
+       0.018345467532552395,
+       0.0282884135218546,
+       -0.012820524068471784,
+       0.008119182768586579,
+       0.028740309808105796,
+       0.04420430137712028,
+       -0.1375610179656871
+      ],
+      "mean": -0.024270918557054467
+     }
+    }
+   },
+   "d_provenance": {
+    "Lung regions": "computed-niche",
+    "Lung cell types": "expression-assigned",
+    "BCC cell types": "expression-assigned",
+    "HER2ST all labels": "pathologist",
+    "HER2ST tumour/non-tumour": "pathologist"
+   }
   }
  },
  "inputs_sha256": {
-  "results/revision-r3/summary/revision-r3-macros.tex": "dae2a994784d201f01bd5043725036ea86dca8434dc58c9ee349e309c6d3c0f1",
+  "results/revision-r3/summary/revision-r3-macros.tex": "64e842530949ee8b17dd97b1c59754c0c0ccf2e88ac14dafe86c58aa1410b596",
   "results/revision-r3/W1/targets.csv": "60ce3c55b6930d434a45c1175cc9a1729b5efc0505349b08e5d4af09a3afaed7",
   "results/revision-r3/W6/targets.csv": "3aa628e5c38cf52e6a8ccae00be0b51d08a34be70d3996b0931b5b3e8ae4330e",
   "results/revision-r3/W1/diagnostics.csv": "047039db5f845621f796c57234400ff4c15623a8769de760a5bf7c38e813642a",
   "results/revision-r3/W6/diagnostics.csv": "72c93cb6c5528b0edd8d52f15089c5447a5f319cb57a9b3317b316c174152cfc",
-  "results/revision-r3/summary/summary.json": "10ad706e5d2831e4d665a5b9584f0742affd0f564dea6e4c5e8642ab7ddb31b1",
+  "results/revision-r3/summary/summary.json": "3797a07bd3b9e11a1a6d99fc0ac30f31a3482e68a4125679f8d9f5ce11b5b135",
   "results/revision-r3/W1b/targets.csv": "8b56dbaec86ab24f16b5f3a2a58902629627bbdf9d48e738d29dbac31eabc5f4",
   "results/revision-r3/W3/scores.csv": "bd64890709c942357153de3e4f73cc50b41d947853b88a6cd7e72e4317d421d8",
   "results/revision-r3/W2/selection.csv": "6c840c8a6077d4bb825126225262855a4e5e22fa4280a0d713da5400eb67b3cf",
   "results/revision-r3/W2/seeds.csv": "2a386180b1c13c467e3670e55decc64c48a54864405411f45217522edf60d65b",
   "results/revision-r3/W1/per_seed.json": "9c54847c1e3209f27a6dda978536b9e51cb5f5e172ab3df509b29c5a63630fc9",
-  "results/revision-r3/W4/gpu_repeats/gpu_repeats.csv": "6302698e320162da2a8bfb809376c6eebc75da09d54c6a08dc79b9f7e44127d9"
+  "results/revision-r3/W4/gpu_repeats/gpu_repeats.csv": "6302698e320162da2a8bfb809376c6eebc75da09d54c6a08dc79b9f7e44127d9",
+  "results/revision-r3/W4/scores.csv": "479422af2b07298439b431b97f05b681f3016b3b10ffadf9d29f3b34247d2cf5",
+  "results/revision-r3/W4/counterparts.csv": "52b0ed1253d75594490fcb3fc68a16573387f3c2353dcb8b8e5cc7a310496772",
+  "results/revision-r3/W4/selection.csv": "9a7550927d456d6c9beb0508ccc673106821b3fe7e4489dac927191007451061",
+  "results/revision-r3/summary/p3_units.csv": "8c110baadd9252168061a6e66309e59b3320708ae65bc858d90945a210ca9883"
  }
 }

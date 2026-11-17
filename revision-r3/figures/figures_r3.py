@@ -804,6 +804,8 @@ def fig_mechanism():
 ENCODERS = ['tessera', 'graphst', 'stagate']
 ENCODER_NAME = {'tessera': 'Tessera-ST', 'graphst': 'GraphST', 'stagate': 'STAGATE'}
 ENCODER_DEPTH = {'tessera': 3, 'graphst': 2, 'stagate': 1}     # message-passing steps of each embedding
+CAL_ENCODERS = ['graphst', 'stagate']  # refitted on the calibration cohorts; Tessera-ST was not (its calibration
+                                       # contrasts with propagation are the W3 record drawn in fig-mechanism)
 TARGET_CLASSES = ['region', 'celltype']
 CLASS_PROV = {'region': 'pathologist', 'celltype': 'expression-assigned'}   # the provenance of every new target
 CLASS_TITLE = {'region': 'Regions: colorectal and breast patients', 'celltype': 'Cell types: spinal cord mice'}
@@ -908,12 +910,13 @@ def encoders_data():
 
     w1 = table('W1/targets.csv')
     cal = t[~t.cohort.isin(NEW)]
+    assert set(cal.encoder) == set(CAL_ENCODERS), sorted(set(cal.encoder))
     d = {'provenance': {}}
     for cohort, target, title in CALIBRATION_TARGETS:
         found = w1[(w1.cohort == cohort) & (w1.target == {'cell_type': 'celltype'}.get(target, target))]
         assert found.provenance.nunique() == 1, (cohort, target)
         d['provenance'][title] = found.provenance.iloc[0]
-        for enc in ENCODERS:
+        for enc in CAL_ENCODERS:
             v = cal[(cal.encoder == enc) & (cal.group == title)].set_index('dataset').propagation
             assert v.index.is_unique, (enc, title)
             d.setdefault(enc, {})[title] = dict(unit=v.index.tolist(), values=v.tolist(), mean=float(v.mean()))
@@ -961,7 +964,7 @@ def fig_encoders():
     est_w = cv.text_width([f'{MINUS}0.000'], NOTE) + 9
     gap = 10.0
     pw = (W - lane - 2 * est_w - gap) / 2
-    pitch = 17.0
+    pitch = 15.0
     ph = pitch * len(P3_ROWS)
     cv.header(0, top, 'a', 'Primary test')
     every = [v for cls in TARGET_CLASSES for r in d['a'][cls].values()
@@ -997,12 +1000,12 @@ def fig_encoders():
         ax.set_xlabel('ARI difference')
 
     # b: encoder minus propagation across steps, median and interquartile range over units
-    yb = top + head + ph + X_AXIS + 10
+    yb = top + head + ph + X_AXIS + 6
     cv.header(0, yb, 'b', 'Propagation depth')
     sub_gap = 12.0
     left_b = Y_AXIS + 9  # a two-line axis title
     bw = (W - left_b - 2 * sub_gap - 4) / 3
-    bh = 78.0
+    bh = 66.0
     every_b = [v for enc in ENCODERS for cls in TARGET_CLASSES for q in ('q1', 'median', 'q3')
                for v in d['b'][enc][cls][q]]
     for j, enc in enumerate(ENCODERS):
@@ -1026,13 +1029,13 @@ def fig_encoders():
     cv.text(left_b + (W - left_b - 4) / 2, yb + head + bh + 22, 'Propagation steps', size=S.LABEL, ha='center')
 
     # c: component removals minus the released encoder at the same configuration
-    yc = yb + head + bh + X_AXIS + 10
+    yc = yb + head + bh + X_AXIS + 6
     cv.header(0, yc, 'c', 'Component removals')
     lanes = {enc: cv.text_width([s for _, label in REMOVALS[enc] for s in label.split('\n')], TICK) + 6
              for enc in ENCODERS}
     sub_gap_c = 10.0
     cw = (W - sum(lanes.values()) - 2 * sub_gap_c - 4) / 3
-    ch = 92.0
+    ch = 84.0
     every_c = [v for enc in ENCODERS for r in d['c'][enc].values() for v in [*r['values'], *r['mean'].values()]]
     x0 = 0.0
     for enc in ENCODERS:
@@ -1040,7 +1043,7 @@ def fig_encoders():
         ax = cv.axes(x0, yc + head, cw, ch)
         x0 += cw + sub_gap_c
         sub_title(cv, ax, yc + sub, ENCODER_NAME[enc])
-        lo, hi = ari_axis(ax, every_c, 3)
+        lo, hi = ari_axis(ax, every_c, 4)  # 0.2 steps; with 3 only the zero tick survived
         ax.axvline(0, color=INK, lw=.6, zorder=1)
         arms = REMOVALS[enc]
         row_pt = ch / len(arms)
@@ -1066,15 +1069,15 @@ def fig_encoders():
             ha='center')
 
     # d: calibration cohorts, descriptive
-    yd = yc + head + ch + X_AXIS + 10
+    yd = yc + head + ch + X_AXIS + 6
     cv.header(0, yd, 'd', 'Calibration cohorts')
     titles = [title for *_, title in CALIBRATION_TARGETS]
     lane_d = cv.text_width(titles, TICK) + 7
-    dw = (W - lane_d - 2 * sub_gap - 4) / 3
-    pitch_d = 14.0
+    dw = (W - lane_d - sub_gap - 4) / 2
+    pitch_d = 12.5
     dh = pitch_d * len(titles)
-    every_d = [v for enc in ENCODERS for r in d['d'][enc].values() for v in r['values']]
-    for j, enc in enumerate(ENCODERS):
+    every_d = [v for enc in CAL_ENCODERS for r in d['d'][enc].values() for v in r['values']]
+    for j, enc in enumerate(CAL_ENCODERS):
         ax = cv.axes(lane_d + j * (dw + sub_gap), yd + head, dw, dh)
         sub_title(cv, ax, yd + sub, ENCODER_NAME[enc])
         lo, hi = ari_axis(ax, every_d, 4)
@@ -1093,7 +1096,7 @@ def fig_encoders():
             ha='center')
     cv.resize(bottom + 6)
     return save(cv, 'fig-encoders', {'a': record_a, 'b': d['b'], 'c': d['c'],
-                                     'd': {enc: d['d'][enc] for enc in ENCODERS},
+                                     'd': {enc: d['d'][enc] for enc in CAL_ENCODERS},
                                      'd_provenance': d['d']['provenance']})
 
 

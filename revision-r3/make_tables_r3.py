@@ -67,22 +67,37 @@ def p3_table(out: Path):
     s = json.loads((c3.OUT / 'summary' / 'summary.json').read_text())
     if 'P3' not in s:
         return
-    enc = {'tessera': 'Tessera-ST', 'graphst': 'GraphST', 'stagate': 'STAGATE'}
-    cp = {'propagation': 'depth-matched propagation', 'same_graph_mean': 'same-graph mean'}
-    cls = {'region': 'Region targets', 'celltype': 'Cell-type targets'}
+    rows = [('tessera', 'propagation', 'Tessera-ST', 'three-step propagation'),
+            ('tessera', 'same_graph_mean', '', 'same-graph mean'),
+            ('graphst', 'propagation', 'GraphST', 'two-step propagation'),
+            ('graphst', 'same_graph_mean', '', 'same-graph mean'),
+            ('stagate', 'same_graph_mean', 'STAGATE', 'same-graph mean (one step)')]   # one step: the same operator
+    cls = {'region': 'Regions (10 patients)', 'celltype': 'Cell types (10 mice)'}
+    signed = lambda v: ('+' if round(float(v), 3) > 0 else '') + num(v, 3)
+    sesoi = ' or '.join(sorted({num(v['sesoi'], 3) for by in s['P3'].values() for v in by.values()}))
     lines = [r'\begin{table}[!htbp]\centering\densetablefont\setlength{\tabcolsep}{3pt}',
-             r'\caption{Each encoder at its patient-excluded tuned configuration minus a parameter-free counterpart on its '
-             r'own graph in the new cohorts: cohort-balanced mean difference in ARI, 95\% interval, units with a positive '
-             r'difference, SESOI and the decision under the protocol rule with Holm adjustment.}\label{tab:p3}',
-             r'\begin{tabular}{@{}lllrrrrl@{}}\toprule',
-             r'Targets & Encoder & Counterpart & Difference & 95\% interval & SESOI & Positive & Decision \\\midrule']
+             r'\caption{Encoders against parameter-free propagation on their own graphs in the new cohorts. Each encoder, '
+             r'at the configuration selected with the unit excluded, minus a counterpart on its own graph: the mean of its '
+             r'incoming neighbours (same-graph mean) or that mean repeated as many times as the encoder passes messages. '
+             r'Difference, mean over units of the difference in adjusted Rand index (ARI), with seeds averaged within units; interval, 95\% '
+             r'$t$-interval over units; positive, units with a positive difference. SESOI, smallest effect size of '
+             r'interest: one tenth of the cohort\textquoteright s spatial headroom, at least 0.01 ARI, averaged over units '
+             + f'({sesoi} ARI in both classes). '
+             r'A side is superior when the one-sided test against the SESOI, Holm-adjusted over the comparisons of a target '
+             r'class, falls below 0.025; otherwise the difference is not resolvable. Region targets are pathologist '
+             r'annotations of four colorectal and six breast cancer patients; cell-type targets are expression-assigned '
+             r'labels of ten mouse spinal cords.}\label{tab:p3}',
+             r'\begin{tabular}{@{}lllrrrl@{}}\toprule',
+             r'Targets & Encoder & Counterpart & Difference & 95\% interval & Positive & Decision \\\midrule']
     for c, cname in cls.items():
-        for key, t in s['P3'].get(c, {}).items():
-            e, k = key.split('|')
-            lines.append(f"{cname} & {enc[e]} & {cp[k]} & {num(t['estimate'], 3)} & "
-                         f"{num(t['ci'][0], 3)} to {num(t['ci'][1], 3)} & {num(t['sesoi'], 3)} & {t['units_positive']}/{t['n_units']} & "
+        for e, k, ename, kname in rows:
+            t = s['P3'][c][f'{e}|{k}']
+            lines.append(f"{cname} & {ename} & {kname} & {signed(t['estimate'])} & "
+                         f"{signed(t['ci'][0])} to {signed(t['ci'][1])} & {t['units_positive']}/{t['n_units']} & "
                          f"{t['verdict']} \\\\")
             cname = ''
+        if c == 'region':
+            lines.append(r'\addlinespace')
     lines += [r'\bottomrule\end{tabular}\end{table}']
     (out / 'table-p3-r3.tex').write_text('\n'.join(lines) + '\n')
 

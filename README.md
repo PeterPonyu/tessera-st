@@ -10,6 +10,7 @@ There are three levels of reproduction. Level 1 needs only the saved results. Le
 
 - **Original submission:** download the complete archive at [doi:10.5281/zenodo.23308077](https://doi.org/10.5281/zenodo.23308077) and reassemble it as described in its `REASSEMBLE.md`.
 - **Revision analyses:** the revision code and result tables are archived at [doi:10.5281/zenodo.23999069](https://doi.org/10.5281/zenodo.23999069) (version 2026.11.05-revision-r1.3), which also keeps every file of the original archive.
+- **Third-round analyses:** the protocol for the new cohorts was deposited before their expression data were downloaded at [doi:10.5281/zenodo.24303149](https://doi.org/10.5281/zenodo.24303149). The round-3 code, the derived inputs of the new cohorts and every round-3 result table are archived at [doi:10.5281/zenodo.24315838](https://doi.org/10.5281/zenodo.24315838) (version 2026.11.17-revision-r3), which also keeps every file of the earlier versions. See [Round-3 analyses](#round-3-analyses) below.
 
 **Environment.** Python 3.13 with the versions in `current-release/requirements-analysis.txt`. PyTorch 2.12 with CUDA is used for the GPU steps; every step also runs on CPU, more slowly.
 
@@ -70,6 +71,33 @@ python current-release/portable/acquire.py her2st --source-dir RAW/manual-her2st
 python current-release/portable/acquire.py crc    --source-dir RAW/manual-crc    --destination RAW/crc
 python current-release/portable/run_analysis.py prepare --lab-root RAW/sources --output-root OUT/inputs
 ```
+
+## Round-3 analyses
+
+The third review round reorganized the study around label diagnostics and matched parameter-free controls. Everything for
+it is in `revision-r3/`. The protocol is `revision-r3/PROTOCOL-R3.md`, byte-identical to its deposit, and every
+departure from it is listed with its date in `revision-r3/PROTOCOL-R3-DEVIATIONS.md`. Results are written under
+`results/revision-r3/` (override with `TESSERA_R3_OUT`).
+
+1. **Calibration on the 24 earlier datasets** (CPU): `run_w1.py` (label diagnostics and the control grid),
+   `run_w1b.py` (lung niches rebuilt at known construction scales), `run_w2.py leiden` and `run_w2.py seeds` (clustering
+   rule and seed spread), `run_w3.py` (component removals and propagation depth), then `prepare_freeze.py`, which fixed
+   the scale rule and the margins before any new cohort was downloaded.
+2. **New cohorts** (CPU): `cohorts/fetch_r3.py` downloads the public records with receipts; `cohorts/prep_spinal.py`,
+   `prep_colorectal.py` and `prep_wu.py` write the derived inputs under `data-r3/`; `run_w6_local.py` computes their
+   diagnostics and control grid; `run_w7_secondary.py` and `run_w8_selfloop.py` run the secondary analyses.
+3. **Encoders** (GPU): `remote/setup_box.sh` prepares a machine; `remote/run_box.sh` fits the stage-1 grids of
+   GraphST, STAGATE and Tessera-ST; `remote/resume2_wp4.sh` then scores them, selects each unit's configuration on the
+   other units, fits every component removal at five seeds, scores everything under K-means and Leiden, and computes
+   the parameter-free counterparts. Each fit is its own process and leaves a record with its input fingerprint;
+   `remote/verify_w4.py` checks records, embedding hashes and the stage-2 plan.
+4. **Summaries, tables and figures** (CPU, minutes): `analyze_r3.py` (writes `summary/summary.json`),
+   `make_macros_r3.py`, `make_tables_r3.py` and `figures/figures_r3.py`; `report_p3.py` prints the encoder comparison.
+
+Tests: `test_r3.py`, `external/test_external_r3.py`, `external/test_tessera_adapter_r3.py`,
+`cohorts/test_cohorts_r3.py` and `figures/test_figures_r3.py`. Two practical notes: the score tables are read with
+`float_precision="round_trip"`, because pandas' default float parser crashed on some of their values; and scoring and
+the counterparts run as independent shard processes (`--shard i --nshards N`) rather than in a Python worker pool.
 
 ## Current manuscript documents
 

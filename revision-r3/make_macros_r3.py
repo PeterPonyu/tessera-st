@@ -198,6 +198,9 @@ def attribution():
             put(base + 'Lo', f3(test['ci'][0], sign=True)); put(base + 'Hi', f3(test['ci'][1], sign=True))
             put(base + 'Pos', test['units_positive']); put(base + 'N', test['n_units'])
             put(base + 'Verdict', test['verdict'])
+            for cohort, short in (('colorectal', 'Crc'), ('wu_breast', 'Wu')):   # cohort means behind a pooled class
+                if cohort in test.get('cohort_means', {}) and test['n_cohorts'] > 1:
+                    put(base + short, f3(test['cohort_means'][cohort], sign=True))
 
 
 def attribution_descriptive():
@@ -222,6 +225,11 @@ def attribution_descriptive():
         for e, depths in by.items():
             for L, t in depths.items():
                 put(f'rPThreeDepth{cls[c]}{enc[e]}{word[int(L)]}', f3(t['estimate'], sign=True))
+            est = [t['estimate'] for t in depths.values()]          # range over one to eight steps
+            put(f'rPThreeDepth{cls[c]}{enc[e]}Min', f3(min(est), sign=True))
+            put(f'rPThreeDepth{cls[c]}{enc[e]}Max', f3(max(est), sign=True))
+        est = [t['estimate'] for depths in by.values() for t in depths.values()]   # every encoder and depth
+        put(f'rPThreeDepth{cls[c]}Min', f3(min(est), sign=True)); put(f'rPThreeDepth{cls[c]}Max', f3(max(est), sign=True))
     cp = {'propagation': 'Prop', 'same_graph_mean': 'Mean'}
     for c, by in d['leiden'].items():
         for e, tests in by.items():
@@ -247,6 +255,9 @@ def attribution_descriptive():
                 base = f'rPThreeCal{g}{enc[e]}{cp[k]}'
                 put(base + 'Est', f3(t['estimate'], sign=True)); put(base + 'Pos', t['units_positive'])
                 put(base + 'N', t['n_units'])
+    other = [t['propagation']['estimate'] for g in ('Bcc', 'HerAll', 'HerTumor') for t in d['calibration'].get(g, {}).values()]
+    if other:   # BCC cell types and the two HER2ST targets: largest distance of an encoder mean from its propagation
+        put('rPThreeCalOtherMaxAbs', f3(max(abs(v) for v in other)))
 
 
 def secondary():

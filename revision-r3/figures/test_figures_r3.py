@@ -374,8 +374,9 @@ def test_encoders_values(plot, macros, summary):
                         assert abs(unit.loc[cls].loc[cohort].mean() - m) < 1e-12, (enc, arm, cls, cohort)
     calibration = summary.get('P3_descriptive', {}).get('calibration', {})
     cal = base.merge(prop, on=keys, suffixes=('', '_prop'))
+    assert set(p['d']) == {'graphst', 'stagate'}  # Tessera-ST was not refitted on the calibration cohorts
     for title, (cohort, target, group) in CALIBRATION.items():
-        for enc in DEPTH:
+        for enc in ('graphst', 'stagate'):
             g = cal[(cal.cohort == cohort) & (cal.target == target) & (cal.encoder == enc) & (cal.L == DEPTH[enc])]
             expected = (g.ari - g.ari_prop).set_axis(g.dataset)  # one patient per dataset
             rec = p['d'][enc][title]
