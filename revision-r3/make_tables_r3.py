@@ -3,8 +3,8 @@
 table-new-cohorts-r3.tex  one row per new and pilot unit: observations, frames, targets with class
                           counts, adjusted homophily at six neighbours and label-selected gain.
 table-p3-r3.tex           P3 per encoder, counterpart and target class (written when W4 results exist).
-table-diagnostics-r3.tex  label diagnostics of every target (calibration; new cohorts and pilot).
-table-absolute-r3.tex     absolute agreement in the new cohorts (expression only, best mean, encoders, propagation).
+table-diagnostics-r3.tex  label diagnostics of every target (calibration; prospective cohorts and pilot).
+table-absolute-r3.tex     absolute agreement in the prospective cohorts (expression only, best mean, encoders, propagation).
 table-native-r3.tex       native versus shared input for GraphST and STAGATE (calibration cohorts).
 """
 from __future__ import annotations
@@ -52,7 +52,7 @@ def new_cohorts(out: Path):
                          f"{TARGET_NAME.get(t, t)} ({meta['n_classes']})",
                          num(r.h_adj6, 3) if r is not None else '', num(r.g_star, 3) if r is not None else ''))
     lines = [r'\begin{table}[!htbp]\centering\densetablefont\fontsize{8.5}{10}\selectfont\setlength{\tabcolsep}{3pt}',
-             r'\caption{Units of the new cohorts and of the colorectal pilot. Observations and coordinate frames after '
+             r'\caption{Units of the prospective cohorts and of the colorectal pilot. Observations and coordinate frames after '
              r'bounding; targets with their class counts; adjusted homophily at six neighbours; and the gain of the best '
              r'uniform neighbourhood mean over expression-only clustering (ARI), which uses the test labels and serves '
              r'only to evaluate the diagnostics.}\label{tab:new-cohorts}',
@@ -79,7 +79,7 @@ def p3_table(out: Path):
     signed = lambda v: ('+' if round(float(v), 3) > 0 else '') + num(v, 3)
     sesoi = ' or '.join(sorted({num(v['sesoi'], 3) for by in s['P3'].values() for v in by.values()}))
     lines = [r'\begin{table}[!htbp]\centering\densetablefont\setlength{\tabcolsep}{3pt}',
-             r'\caption{Encoders against parameter-free propagation on their own graphs in the new cohorts. Each encoder, '
+             r'\caption{Encoders against parameter-free propagation on their own graphs in the prospective cohorts. Each encoder, '
              r'at the configuration selected with the unit excluded, minus a counterpart on its own graph: the mean of its '
              r'incoming neighbours (same-graph mean) or that mean repeated as many times as the encoder passes messages. '
              r'Difference, mean over units of the difference in adjusted Rand index (ARI), with seeds, and the two targets of a mouse or breast cancer patient, averaged within units; interval, 95\% '
@@ -187,7 +187,7 @@ def diagnostics_tables(out: Path):
         rows_n.append(_diag_row(r, COHORT_NAME[r.cohort], r.unit, TARGET_NAME.get(r.target, r.target)))
     text = (_diag_table(rows_c, DIAG_CAPTION.format(what='Label diagnostics of the calibration targets.'),
                         'tab:diagnostics-calibration') + '\n\n' +
-            _diag_table(rows_n, DIAG_CAPTION.format(what='Label diagnostics of the targets of the new cohorts and of the '
+            _diag_table(rows_n, DIAG_CAPTION.format(what='Label diagnostics of the targets of the prospective cohorts and of the '
                                                           'colorectal pilot.'), 'tab:diagnostics-new'))
     (out / 'table-diagnostics-r3.tex').write_text(text + '\n')
 
@@ -198,7 +198,7 @@ def absolute_table(out: Path):
     order = [('spinal', 'celltype_l1'), ('spinal', 'celltype_l2'), ('colorectal', 'all'), ('wu_breast', 'all'),
              ('wu_breast', 'tumor')]
     lines = [r'\begin{table}[!htbp]\centering\densetablefont\setlength{\tabcolsep}{3pt}',
-             r'\caption{Absolute agreement in the new cohorts. Mean adjusted Rand index (ARI) of K-means clustering over '
+             r'\caption{Absolute agreement in the prospective cohorts. Mean adjusted Rand index (ARI) of K-means clustering over '
              r'units (mice or patients), with seeds averaged within units: expression-only clustering, with the range over '
              r'units; the best uniform neighbourhood mean, which is selected with the reference labels and is shown only '
              r'for reference; each encoder at the configuration selected with the unit excluded; and '

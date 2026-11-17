@@ -180,7 +180,7 @@ def agree(text, name):
 
 # --------------------------------------------------------------- drawing
 def points(ax, x, y, provenance, cohort='calibration', size=15.0, zorder=3, lw=.85):
-    """Calibration targets are filled circles; new-cohort targets are open shapes in the same colour."""
+    """Calibration targets are filled circles; prospective-cohort targets are open shapes in the same colour."""
     marker = MARKER[cohort]
     colour = PROV_COLOR[provenance]
     if cohort == 'calibration':
@@ -201,7 +201,7 @@ def cohort_handles(calibration=True, coloured=False, counts=None):
                               label='Calibration'))
     for c in NEW:
         marker = MARKER[c]
-        label = f'New: {COHORT_NAME[c].lower()}' if calibration else COHORT_NAME[c]
+        label = f'Prospective: {COHORT_NAME[c].lower()}' if calibration else COHORT_NAME[c]
         if counts:
             label += f' ({counts[c]} {COHORT_UNIT[c]})'
         handles.append(Line2D([0], [0], marker=marker, ls='', markerfacecolor='white',
@@ -339,7 +339,7 @@ def fig_diagnostics():
     a1 = cv.axes(Y_AXIS, top + HEADER, pw, ph)
     a2 = cv.axes(Y_AXIS + pw + sub_gap, top + HEADER, pw, ph)
     record_a = {}
-    for ax, group, title in ((a1, 'calibration', 'Calibration targets'), (a2, 'new', 'New cohorts')):
+    for ax, group, title in ((a1, 'calibration', 'Calibration targets'), (a2, 'new', 'Prospective cohorts')):
         sub_title(cv, ax, top, title)
         chosen = [r for r in rows if (r['cohort'] == 'calibration') == (group == 'calibration')]
         for r in sorted(chosen, key=lambda r: order[r['provenance']]):
@@ -1401,9 +1401,9 @@ def fig_concept():
     # d: the prospective protocol
     cv.header(xb, y2, 'd', 'Prospective protocol')
     dx = schematic_axes(cv, xb, y2 + HEADER, wb, h2 - HEADER)
-    steps = [('Calibration', f'{datasets} earlier datasets, {targets} targets'),
+    steps = [('Calibration', f'{datasets} datasets, {targets} targets'),
              ('Protocol frozen', 'and publicly deposited'),
-             ('Three new cohorts', 'expression data downloaded after it'),
+             ('Three prospective cohorts', 'expression data downloaded after it'),
              ('Prospective tests', f'{units} patients and animals, {new_targets} targets')]
     ys = [8.0, 33.0, 58.0, 83.0]
     dx.plot([9, 9], [ys[0], ys[-1]], color='#9aa5ad', lw=1.2, zorder=1)

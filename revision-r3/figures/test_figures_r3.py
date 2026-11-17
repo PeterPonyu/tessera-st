@@ -455,7 +455,7 @@ def test_concept_numbers(plot, macros):
     assert (p['datasets'], p['targets'], p['units'], p['new_targets']) == (
         macros['rCalDatasets'], macros['rCalTargets'], macros['rPOneUnits'], macros['rPOneTargets'])
     text = pdf_text('fig-concept')
-    assert f"{macros['rCalDatasets']} earlier datasets, {macros['rCalTargets']} targets" in text
+    assert f"{macros['rCalDatasets']} datasets, {macros['rCalTargets']} targets" in text
     assert f"{macros['rPOneUnits']} patients and animals, {macros['rPOneTargets']} targets" in text
 
 
