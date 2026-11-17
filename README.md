@@ -10,7 +10,7 @@ There are three levels of reproduction. Level 1 needs only the saved results. Le
 
 - **Original submission:** download the complete archive at [doi:10.5281/zenodo.23308077](https://doi.org/10.5281/zenodo.23308077) and reassemble it as described in its `REASSEMBLE.md`.
 - **Revision analyses:** the revision code and result tables are archived at [doi:10.5281/zenodo.23999069](https://doi.org/10.5281/zenodo.23999069) (version 2026.11.05-revision-r1.3), which also keeps every file of the original archive.
-- **Third-round analyses:** the protocol for the new cohorts was deposited before their expression data were downloaded at [doi:10.5281/zenodo.24303149](https://doi.org/10.5281/zenodo.24303149). The round-3 code, the derived inputs of the new cohorts and every round-3 result table are archived at [doi:10.5281/zenodo.24315838](https://doi.org/10.5281/zenodo.24315838) (version 2026.11.17-revision-r3), which also keeps every file of the earlier versions. See [Round-3 analyses](#round-3-analyses) below.
+- **Third-round analyses:** the protocol for the prospective cohorts was deposited before their expression data were downloaded at [doi:10.5281/zenodo.24303149](https://doi.org/10.5281/zenodo.24303149). The round-3 code, the derived inputs of the prospective cohorts and every round-3 result table are archived at [doi:10.5281/zenodo.24315838](https://doi.org/10.5281/zenodo.24315838) (version 2026.11.17-revision-r3), which also keeps every file of the earlier versions. See [Round-3 analyses](#round-3-analyses) below.
 
 **Environment.** Python 3.13 with the versions in `current-release/requirements-analysis.txt`. PyTorch 2.12 with CUDA is used for the GPU steps; every step also runs on CPU, more slowly. The round-3 encoder fits (GraphST, STAGATE and Tessera-ST, `revision-r3/remote/`) ran in a separate environment: Python 3.11.10 and PyTorch 2.5.1 with CUDA 12.4, in the container image `pytorch/pytorch:2.5.1-cuda12.4-cudnn9-runtime`. `results/revision-r3/W4/BOX.md` in the archive and every fit record give the exact versions; the round-3 calibration, scoring and summaries ran in the Python 3.13 environment above.
 
@@ -82,8 +82,8 @@ departure from it is listed with its date in `revision-r3/PROTOCOL-R3-DEVIATIONS
 1. **Calibration on the 24 earlier datasets** (CPU): `run_w1.py` (label diagnostics and the control grid),
    `run_w1b.py` (lung niches rebuilt at known construction scales), `run_w2.py leiden` and `run_w2.py seeds` (clustering
    rule and seed spread), `run_w3.py` (component removals and propagation depth), then `prepare_freeze.py`, which fixed
-   the scale rule and the margins before any new cohort was downloaded.
-2. **New cohorts** (CPU): `cohorts/fetch_r3.py` downloads the public records with receipts; `cohorts/prep_spinal.py`,
+   the scale rule and the margins before any prospective cohort was downloaded.
+2. **Prospective cohorts** (CPU): `cohorts/fetch_r3.py` downloads the public records with receipts; `cohorts/prep_spinal.py`,
    `prep_colorectal.py` and `prep_wu.py` write the derived inputs under `data-r3/`; `run_w6_local.py` computes their
    diagnostics and control grid; `run_w7_secondary.py` and `run_w8_selfloop.py` run the secondary analyses.
 3. **Encoders** (GPU): `remote/setup_box.sh` prepares a machine; `remote/run_box.sh` fits the stage-1 grids of
