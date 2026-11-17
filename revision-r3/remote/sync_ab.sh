@@ -7,7 +7,7 @@ set -u
 HOST=$1
 PORT=$2
 W=/root/work/tessera-st/results/revision-r3/W4
-RSH="ssh -i /root/.ssh/box_b -p $PORT -o StrictHostKeyChecking=accept-new -o ConnectTimeout=30"
+RSH="ssh -i /root/.ssh/box_b -o IdentitiesOnly=yes -p $PORT -o StrictHostKeyChecking=accept-new -o ConnectTimeout=30"
 OPTS=(-a --ignore-existing "--exclude=*.lock" "--exclude=*.tmp" -e "$RSH")
 while true; do
   for d in embeddings fits; do
