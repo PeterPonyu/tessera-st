@@ -23,6 +23,7 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+read_csv = functools.partial(pd.read_csv, float_precision="round_trip")  # pandas' default float parser segfaults on some 17-digit values
 from sklearn.cluster import KMeans
 from sklearn.metrics import adjusted_rand_score, normalized_mutual_info_score
 
@@ -94,7 +95,7 @@ def current(path: Path, record: dict, rules=("kmeans", "leiden")) -> bool:
     if not path.exists():
         return False
     try:
-        saved = pd.read_csv(path)
+        saved = read_csv(path)
     except Exception:
         return False
     ref = REFERENCES.get(record["dataset"])
@@ -170,7 +171,7 @@ def main() -> None:
             results = list(pool.imap_unordered(score_group, tasks))
     else:
         results = [score_group(task) for task in tasks]
-    frames = [pd.read_csv(score_path(p, out)) for paths in groups.values() for p in paths]
+    frames = [read_csv(score_path(p, out)) for paths in groups.values() for p in paths]
     scores = pd.concat(frames, ignore_index=True) if frames else pd.DataFrame(columns=COLUMNS)
     scores = scores.sort_values(["encoder", "dataset", "input_mode", "arm", "config", "seed", "target", "rule"])
     scores.to_csv(out / "scores.csv", index=False)

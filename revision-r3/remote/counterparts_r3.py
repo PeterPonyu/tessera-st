@@ -15,6 +15,8 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+import functools  # noqa: E402
+read_csv = functools.partial(pd.read_csv, float_precision="round_trip")  # pandas' default float parser segfaults on some 17-digit values
 
 EXT = Path(__file__).resolve().parent.parent / 'external'
 sys.path.insert(0, str(EXT))
@@ -80,7 +82,7 @@ def main() -> None:
     parts = out / 'counterparts-shards'
     if args.merge:
         files = sorted(parts.glob('shard-*.csv'))
-        rows = pd.concat([pd.read_csv(f) for f in files], ignore_index=True)
+        rows = pd.concat([read_csv(f) for f in files], ignore_index=True)
         covered = set(zip(rows.dataset, rows.encoder, rows.config))
         missing = [t for t in tasks if (t[1], t[2], t[3]) not in covered]
         rows.to_csv(out / 'counterparts.csv', index=False)

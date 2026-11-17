@@ -36,6 +36,8 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+import functools  # noqa: E402
+read_csv = functools.partial(pd.read_csv, float_precision="round_trip")  # pandas' default float parser segfaults on some 17-digit values
 from scipy import stats
 
 HERE = Path(__file__).resolve().parent
@@ -145,7 +147,7 @@ def track(path):
 
 @lru_cache(maxsize=None)
 def table(relative):
-    return pd.read_csv(track(R3 / relative))
+    return read_csv(track(R3 / relative))
 
 
 @lru_cache(maxsize=None)
@@ -1108,7 +1110,7 @@ def noise_data():
                cpu=cpu.ari.tolist(), gpu=gpu, pair_dataset=cpu.dataset.tolist(), pair_seed=cpu.seed.tolist())
     out['abs_diff_median'] = float(np.median(np.abs(np.array(out['cpu']) - np.array(gpu))))
     if GPU_REPEATS.exists():
-        rep = pd.read_csv(track(GPU_REPEATS))
+        rep = read_csv(track(GPU_REPEATS))
         rng = rep.groupby(['dataset', 'target', 'seed']).ari.agg(lambda v: float(v.max() - v.min())).reset_index()
         rng['group'] = [repeat_group(a, b) for a, b in zip(rng.dataset, rng.target)]
         known = ['NSCLC regions', 'NSCLC cell types', 'HER2ST all labels', 'HER2ST compartments',

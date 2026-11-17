@@ -19,6 +19,8 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+import functools  # noqa: E402
+read_csv = functools.partial(pd.read_csv, float_precision="round_trip")  # pandas' default float parser segfaults on some 17-digit values
 from scipy import stats
 
 HERE = Path(__file__).resolve().parent
@@ -254,22 +256,22 @@ def main():
     out.mkdir(parents=True, exist_ok=True)
     freeze = json.loads((R / 'freeze' / 'freeze_numbers.json').read_text())
     summary = {'freeze': freeze}
-    summary['P2'] = p2(pd.read_csv(R / 'W1b' / 'targets.csv'), freeze['sesoi']['NSCLC|primary']['sesoi'])
+    summary['P2'] = p2(read_csv(R / 'W1b' / 'targets.csv'), freeze['sesoi']['NSCLC|primary']['sesoi'])
     w6_path = R / 'W6' / 'targets.csv'
     if w6_path.exists():
-        w6 = pd.read_csv(w6_path)
+        w6 = read_csv(w6_path)
         summary['P1'] = p1(w6)
         summary['sesoi_new'] = sesoi_new(w6)
         w4 = R / 'W4'
         if (w4 / 'scores.csv').exists() and (w4 / 'counterparts.csv').exists():
-            units = encoder_units(pd.read_csv(w4 / 'scores.csv'), pd.read_csv(w4 / 'selection.csv'),
-                                  pd.read_csv(w4 / 'counterparts.csv'), w6)
+            units = encoder_units(read_csv(w4 / 'scores.csv'), read_csv(w4 / 'selection.csv'),
+                                  read_csv(w4 / 'counterparts.csv'), w6)
             units.to_csv(out / 'p3_units.csv', index=False)
             summary['P3'] = p3(units, summary['sesoi_new'])
             w8 = R / 'W8' / 'selfloop.csv'
-            desc, rows = p3_descriptive(pd.read_csv(w4 / 'scores.csv'), pd.read_csv(w4 / 'selection.csv'),
-                                        pd.read_csv(w4 / 'counterparts.csv'), w6, summary['sesoi_new'],
-                                        pd.read_csv(w8) if w8.exists() else None)
+            desc, rows = p3_descriptive(read_csv(w4 / 'scores.csv'), read_csv(w4 / 'selection.csv'),
+                                        read_csv(w4 / 'counterparts.csv'), w6, summary['sesoi_new'],
+                                        read_csv(w8) if w8.exists() else None)
             rows.to_csv(out / 'p3_descriptive_rows.csv', index=False)
             summary['P3_descriptive'] = desc
     (out / 'summary.json').write_text(json.dumps(summary, indent=1, default=float) + '\n')

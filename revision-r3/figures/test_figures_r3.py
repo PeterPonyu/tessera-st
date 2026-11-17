@@ -24,6 +24,8 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+import functools  # noqa: E402
+read_csv = functools.partial(pd.read_csv, float_precision="round_trip")  # pandas' default float parser segfaults on some 17-digit values
 import pytest
 from scipy import stats
 
@@ -73,7 +75,7 @@ def pdf_text(name):
 
 
 def csv(relative):
-    return pd.read_csv(R3 / relative)
+    return read_csv(R3 / relative)
 
 
 @pytest.fixture(scope='module')

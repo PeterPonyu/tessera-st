@@ -16,6 +16,8 @@ import json
 from pathlib import Path
 
 import pandas as pd
+import functools  # noqa: E402
+read_csv = functools.partial(pd.read_csv, float_precision="round_trip")  # pandas' default float parser segfaults on some 17-digit values
 
 POOL = {'colorectal_pilot': 'colorectal'}      # cohorts selected together
 
@@ -46,7 +48,7 @@ def main() -> None:
     ap.add_argument('--scores', type=Path, required=True)
     ap.add_argument('--out', type=Path, required=True)
     args = ap.parse_args()
-    sel = select(pd.read_csv(args.scores))
+    sel = select(read_csv(args.scores))
     sel.to_csv(args.out / 'selection.csv', index=False)
     configs = {}
     for r in sel[sel.cohort != 'colorectal_pilot'].itertuples():

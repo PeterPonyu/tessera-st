@@ -12,6 +12,8 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+import functools  # noqa: E402
+read_csv = functools.partial(pd.read_csv, float_precision="round_trip")  # pandas' default float parser segfaults on some 17-digit values
 from scipy import stats
 
 HERE = Path(__file__).resolve().parent
@@ -43,7 +45,7 @@ def put(name, value):
 
 
 def calibration():
-    t = pd.read_csv(R / 'W1' / 'targets.csv')
+    t = read_csv(R / 'W1' / 'targets.csv')
     put('rCalTargets', len(t))
     put('rCalDatasets', t.dataset.nunique())
     for name, col in [('Hadj', 'h_adj6'), ('Li', 'li6'), ('Gain', 'info_gain_max'), ('Kappa', 'kappa_self'),
@@ -81,7 +83,7 @@ def calibration():
 
 
 def construction():
-    t = pd.read_csv(R / 'W1b' / 'targets.csv')
+    t = read_csv(R / 'W1b' / 'targets.csv')
     rho_e, rho_k = [], []
     for _, g in t.groupby('unit'):
         rho_e.append(stats.spearmanr(g.k_c, g.ell_k).statistic)
@@ -101,7 +103,7 @@ def construction():
 
 
 def leiden():
-    s = pd.read_csv(R / 'W2' / 'selection.csv')
+    s = read_csv(R / 'W2' / 'selection.csv')
     cohorts = {('NSCLC', 'primary'): 'Lung', ('BCC', 'primary'): 'Bcc', ('HER2ST', 'all'): 'Her',
                ('HER2ST', 'boundary_T1'): 'Tumor'}
     rules = {('kmeans', 'kmeans'): 'KK', ('kmeans', 'leiden'): 'KL', ('leiden', 'kmeans'): 'LK',
@@ -115,7 +117,7 @@ def leiden():
 
 
 def noise():
-    s = pd.read_csv(R / 'W2' / 'seeds.csv')
+    s = read_csv(R / 'W2' / 'seeds.csv')
     g = s.groupby('dataset').ari.agg(['std', 'min', 'max'])
     put('rSeedSdMedian', f3(g['std'].median())); put('rSeedRangeMax', f3((g['max'] - g['min']).max()))
     put('rSeedDatasets', len(g))
@@ -127,8 +129,8 @@ def noise():
 
 
 def mechanism():
-    w3 = pd.read_csv(R / 'W3' / 'scores.csv')
-    t = pd.read_csv(R / 'W1' / 'targets.csv').set_index(['dataset', 'target'])
+    w3 = read_csv(R / 'W3' / 'scores.csv')
+    t = read_csv(R / 'W1' / 'targets.csv').set_index(['dataset', 'target'])
     km = w3[w3.rule == 'kmeans']
     cn = km[km.arm == 'ContrastNoMP'].groupby(['dataset', 'target']).ari.mean()
     p3 = km[(km.arm == 'Propagate') & (km.L == 3)].groupby(['dataset', 'target']).ari.mean()
@@ -158,7 +160,7 @@ def prospective():
         put(f'rPOneBetter{short}', p1['rule_better_units'][col])
         p = p1['p_holm'][col]
         put(f'rPOneP{short}', f'{p:.3f}' if p >= 0.001 else '<0.001')
-    w6 = pd.read_csv(R / 'W6' / 'targets.csv')
+    w6 = read_csv(R / 'W6' / 'targets.csv')
     new = w6[w6.cohort.isin(['spinal', 'colorectal', 'wu_breast'])]
     smooth_helps = new.g_star > 0
     put('rPOneHadjCorrect', int(((new.h_adj6 > 0.5) == smooth_helps).sum()))
@@ -253,7 +255,7 @@ def secondary():
         return
     s = json.loads(path.read_text())
     lf, mg = s['labelfree'], s['magnitude']
-    t = pd.read_csv(R / 'W7' / 'labelfree.csv')
+    t = read_csv(R / 'W7' / 'labelfree.csv')
     put('rSecFreeSmoothed', lf['free_smoothed_targets']); put('rSecFreeTargets', lf['n_targets'])
     put('rSecFreeRegret', f3(lf['mean_regret']['label-free rule']))
     put('rSecFreeRegretWu', f3(lf['by_cohort']['wu_breast']['label-free rule']))
@@ -268,7 +270,7 @@ def checks():
     """Numbers requested by the independent critique: unit-level uncertainty of the calibration correlations,
     within-class correlations, the fallback threshold on the calibration targets, the construction-scale
     positive control, P1 ties, the breast cohort, the mechanism exception and single-patient Leiden effects."""
-    t = pd.read_csv(R / 'W1' / 'targets.csv')
+    t = read_csv(R / 'W1' / 'targets.csv')
     rng = np.random.default_rng(0)
     units = t.unit.unique()
     for name, col in [('Hadj', 'h_adj6'), ('Li', 'li6'), ('Gain', 'info_gain_max'), ('Kappa', 'kappa_self')]:
@@ -291,7 +293,7 @@ def checks():
     put('rCalExprHadjMin', f2(hc.loc['expression-assigned', 'min'])); put('rCalExprHadjMax', f2(hc.loc['expression-assigned', 'max']))
     put('rCalPathHadjMin', f2(hc.loc['pathologist', 'min'])); put('rCalPathHadjMax', f2(hc.loc['pathologist', 'max']))
     # construction scale: positive control
-    b = pd.read_csv(R / 'W1b' / 'targets.csv')
+    b = read_csv(R / 'W1b' / 'targets.csv')
     rb = b.pivot_table(index='unit', columns='k_c', values='ari_rebuilt_vs_source')
     put('rPTwoRebuiltMin', f2(rb[200].min())); put('rPTwoRebuiltMax', f2(rb[200].max()))
     put('rPTwoRebuiltPeakHundred', int((rb.idxmax(axis=1) == 100).sum()))
@@ -308,7 +310,7 @@ def checks():
     put('rPTwoGainPeakKc', int(gs.idxmax())); put('rPTwoGainLargestKc', f3(gs.loc[gs.index.max()]))
     put('rPTwoKcMax', int(gs.index.max()))
     # P1: units better, worse and tied against never smoothing
-    w6 = pd.read_csv(R / 'W6' / 'targets.csv')
+    w6 = read_csv(R / 'W6' / 'targets.csv')
     new = w6[w6.cohort.isin(['spinal', 'colorectal', 'wu_breast'])].reset_index(drop=True)
     reg = pf.regret_table(new); reg['dataset'] = new.dataset.values
     u = reg.groupby('dataset')[['rule', 'no smoothing']].mean()
@@ -321,7 +323,7 @@ def checks():
     put('rWuEllCensored', int(wu.ell_censored.astype(bool).sum()))
     put('rNewCrcHadjNearest', f3(new[new.cohort == 'colorectal'].h_adj6.max()))
     # mechanism: recovery by the variant without message passing on every target with a gain
-    w3 = pd.read_csv(R / 'W3' / 'scores.csv')
+    w3 = read_csv(R / 'W3' / 'scores.csv')
     cn = w3[(w3.rule == 'kmeans') & (w3.arm == 'ContrastNoMP')].groupby(['dataset', 'target']).ari.mean()
     tt = t.set_index(['dataset', 'target'])
     gain = (tt.ari_tessera - tt.ari_pca50)
@@ -334,14 +336,14 @@ def checks():
     # lung cell types: the saved Tessera-ST fits against self-inclusive three-step propagation (W8, k = 6)
     w8p = R / 'W8' / 'selfloop.csv'
     if w8p.exists():
-        w8 = pd.read_csv(w8p)
+        w8 = read_csv(w8p)
         s3 = w8[(w8.k_graph == 6) & (w8.L == 3)].groupby(['dataset', 'target']).ari.mean()
         lung_ct = [d for d in tt.index if d[0].startswith('NSCLC') and d[1] == 'celltype']
         dd = pd.Series({d: tt.ari_tessera[d] - s3[(d[0], 'cell_type')] for d in lung_ct})
         put('rLungCtSelfMin', f3(dd.min(), sign=True)); put('rLungCtSelfMax', f3(dd.max(), sign=True))
         put('rLungCtPcaBest', int(sum(tt.ari_pca50[d] > max(tt.ari_tessera[d], s3[(d[0], 'cell_type')]) for d in lung_ct)))
     # Leiden, rule-matched selection: single-patient effects
-    s = pd.read_csv(R / 'W2' / 'selection.csv')
+    s = read_csv(R / 'W2' / 'selection.csv')
     def sel(cohort, target, rule):
         g = s[(s.cohort == cohort) & (s.target == target) & (s.select_rule == rule) & (s.score_rule == rule)]
         return g.set_index('unit').tessera_minus_control

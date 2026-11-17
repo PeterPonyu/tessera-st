@@ -11,6 +11,8 @@ import sys
 from pathlib import Path
 
 import pandas as pd
+import functools  # noqa: E402
+read_csv = functools.partial(pd.read_csv, float_precision="round_trip")  # pandas' default float parser segfaults on some 17-digit values
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
@@ -31,7 +33,7 @@ def num(v, d=2):
 
 
 def new_cohorts(out: Path):
-    w6 = pd.read_csv(c3.OUT / 'W6' / 'targets.csv').set_index(['dataset', 'target'])
+    w6 = read_csv(c3.OUT / 'W6' / 'targets.csv').set_index(['dataset', 'target'])
     rows = []
     for f in sorted(DATA_R3.glob('*/*/input.json')):
         if f.parts[-3] == 'raw':

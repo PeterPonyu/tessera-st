@@ -22,6 +22,8 @@ from types import SimpleNamespace  # noqa: E402
 
 import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
+import functools  # noqa: E402
+read_csv = functools.partial(pd.read_csv, float_precision="round_trip")  # pandas' default float parser segfaults on some 17-digit values
 from joblib import Parallel, delayed  # noqa: E402
 from scipy import stats  # noqa: E402
 
@@ -129,11 +131,11 @@ def magnitude(w1: pd.DataFrame, w6: pd.DataFrame, d1: pd.DataFrame, d6: pd.DataF
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     c3.write_lock(OUT, 'W7: label-free scale rule and magnitude model (secondary, descriptive)', frozen_protocol=True)
-    w1 = pd.read_csv(c3.OUT / 'W1' / 'targets.csv')
-    w6 = pd.read_csv(c3.OUT / 'W6' / 'targets.csv')
+    w1 = read_csv(c3.OUT / 'W1' / 'targets.csv')
+    w6 = read_csv(c3.OUT / 'W6' / 'targets.csv')
     w6 = w6[w6.cohort.isin(['spinal', 'colorectal', 'wu_breast'])].reset_index(drop=True)
-    d1 = pd.read_csv(c3.OUT / 'W1' / 'diagnostics.csv')
-    d6 = pd.read_csv(c3.OUT / 'W6' / 'diagnostics.csv')
+    d1 = read_csv(c3.OUT / 'W1' / 'diagnostics.csv')
+    d6 = read_csv(c3.OUT / 'W6' / 'diagnostics.csv')
     mag, mag_summary = magnitude(w1, w6, d1, d6)
     mag.to_csv(OUT / 'magnitude.csv', index=False)
     lf, lf_summary = labelfree(w6)
