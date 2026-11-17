@@ -35,7 +35,7 @@ PROVENANCE = {
     ('Breast_Visium', 'primary'): 'dominant-category',
     ('Colorectal_TVA232', 'primary'): 'expression-assigned',
     ('MIBI', 'primary'): 'expression-assigned',
-    ('OpenST_HNSCC26', 'primary'): 'pathologist',
+    ('OpenST_HNSCC26', 'primary'): 'expression-assigned',   # source molecular annotation
     ('HER2ST', 'all'): 'pathologist',
     ('HER2ST', 'compartments'): 'pathologist',
     ('HER2ST', 'boundary_T1'): 'pathologist',

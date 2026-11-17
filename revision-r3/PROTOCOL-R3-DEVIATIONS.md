@@ -33,3 +33,4 @@ PROTOCOL-R3.md stays byte-identical to its public deposit (doi:10.5281/zenodo.24
     - **Fix.** The header was renamed in a temporary copy of the annotation archive. The unchanged preparation then ran, and its barcode-uniqueness check passed.
     - **Records.** The original header and both archive hashes are in each input.json.
     - **When decided.** On 17 Nov, after reading only the header lines and before any score, so that two of four patients are not lost to a header spelling.
+13. **Provenance label of Open-ST (calibration only).** The calibration code labelled the Open-ST target "pathologist", but its source annotation is molecular, so it is expression-assigned. Section 3.2's vocabulary never listed it as pathologist. The label was corrected and WP1 re-run on 17 Nov. This changes only the provenance-class summaries of the calibration datasets: no number in P1, P2 or P3, and no frozen threshold, uses it.
