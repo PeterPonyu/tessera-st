@@ -1,0 +1,19 @@
+# Pinned packages for the WP4 box (torch 2.5.1 + CUDA 12.4 come from the base image pytorch/pytorch:2.5.1-cuda12.4-cudnn9-runtime).
+GraphST==1.1.1
+torch_geometric==2.6.1
+scanpy==1.11.4
+anndata==0.12.3
+numpy==2.2.6
+scipy==1.16.2
+pandas==2.3.3
+scikit-learn==1.6.1
+POT==0.9.6.post1
+scikit-misc==0.5.1
+leidenalg==0.10.2
+igraph==0.11.9
+threadpoolctl==3.6.0
+joblib==1.4.2
+h5py==3.15.1
+numba==0.61.2
+tqdm==4.67.1
+pytest==8.4.2
