@@ -25,12 +25,14 @@ M: dict[str, str] = {}
 
 def f3(v, sign=False):
     v = float(v)
+    v = 0.0 if round(v, 3) == 0 else v      # no negative zero
     s = f'{v:+.3f}' if sign else f'{v:.3f}'
     return s.replace('-', '\\ensuremath{-}') if s.startswith('-') else s
 
 
 def f2(v, sign=False):
     v = float(v)
+    v = 0.0 if round(v, 2) == 0 else v      # no negative zero
     s = f'{v:+.2f}' if sign else f'{v:.2f}'
     return s.replace('-', '\\ensuremath{-}') if s.startswith('-') else s
 

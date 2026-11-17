@@ -101,7 +101,7 @@ def encoder_units(w4: pd.DataFrame, sel: pd.DataFrame, cp: pd.DataFrame, w6: pd.
         prop = cpk.get((*key, L), np.nan)
         mean1 = cpk.get((*key, 1), np.nan)
         rows.append(dict(encoder=r.encoder, cohort=r.cohort, dataset=r.dataset, target=r.target,
-                         target_class=target_class(prov.get((r.dataset, r.target), 'expression-assigned')),
+                         target_class=target_class(prov.loc[(r.dataset, r.target)]),
                          encoder_ari=enc[key], propagation_ari=prop, same_graph_mean_ari=mean1,
                          minus_propagation=enc[key] - prop, minus_same_graph_mean=enc[key] - mean1))
     return pd.DataFrame(rows)
