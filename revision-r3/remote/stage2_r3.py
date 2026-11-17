@@ -18,6 +18,9 @@ HERE = Path(__file__).resolve().parent
 EXT = HERE.parent / 'external'
 DEFAULT = {'graphst': 'k3-e600', 'stagate': 'knn6-e1000', 'tessera': 'k6-w0.5-t0.2-e120'}
 NATIVE = {'graphst', 'stagate'}
+# GraphST memory accumulates across fits within one process (two stage-1 runners were OOM-killed), so its
+# stage-2 work is split into one process per arm, at most 15 fits each.
+GRAPHST_ARMS = ('released', 'no_contrast', 'identity_encoder', 'permuted_xy')
 
 
 def commands(selected: dict, py: str, out: str) -> list[list[str]]:
@@ -27,8 +30,13 @@ def commands(selected: dict, py: str, out: str) -> list[list[str]]:
     base = [py, str(EXT / 'run_external_r3.py'), '--device', 'cuda', '--out', out, '--seeds', '1', '2', '3', '4', '5']
     for dataset, by_encoder in selected.items():
         for encoder, configs in by_encoder.items():
-            cmds.append(base + ['--encoders', encoder, '--datasets', dataset, '--configs', *configs,
-                                '--input-modes', 'common'])
+            if encoder == 'graphst':
+                for arm in GRAPHST_ARMS:
+                    cmds.append(base + ['--encoders', encoder, '--datasets', dataset, '--configs', *configs,
+                                        '--arms', arm, '--input-modes', 'common'])
+            else:
+                cmds.append(base + ['--encoders', encoder, '--datasets', dataset, '--configs', *configs,
+                                    '--input-modes', 'common'])
             cmds.append(base + ['--encoders', encoder, '--datasets', dataset, '--configs', DEFAULT[encoder],
                                 '--arms', 'released', '--input-modes', 'common'])
             if encoder in NATIVE and ce.has_native(dataset):
