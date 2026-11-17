@@ -50,9 +50,12 @@ def main() -> None:
     ap.add_argument('--out', required=True)
     ap.add_argument('--workers', type=int, default=6)
     ap.add_argument('--python', default=sys.executable)
+    ap.add_argument('--reverse', action='store_true', help='work through the commands from the end (helper box)')
     args = ap.parse_args()
     selected = json.loads((Path(args.out) / 'selected_configs.json').read_text())
     cmds = commands(selected, args.python, args.out)
+    if args.reverse:
+        cmds = cmds[::-1]
     logs = Path(args.out) / 'logs'
     logs.mkdir(exist_ok=True)
 
