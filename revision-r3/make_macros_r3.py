@@ -69,6 +69,7 @@ def calibration():
     put('rLungCtKappaMin', f2(ct.kappa_self.min())); put('rLungCtKappaMax', f2(ct.kappa_self.max()))
     put('rLungRegKappaMin', f2(reg.kappa_self.min())); put('rLungRegKappaMax', f2(reg.kappa_self.max()))
     put('rLungRegGstarMin', f3(reg.g_star.min())); put('rLungRegGstarMax', f3(reg.g_star.max()))
+    put('rLungRegKstarMin', int(reg.k_star.min())); put('rLungRegKstarMax', int(reg.k_star.max()))
     put('rLungCtGstarMin', f3(ct.g_star.min(), sign=True)); put('rLungCtGstarMax', f3(ct.g_star.max(), sign=True))
     reg_t = pf.regret_table(t)
     for col, short in [('rule', 'Rule'), ('no smoothing', 'None'), ('k=6', 'Six'), ('k=30', 'Thirty'),
