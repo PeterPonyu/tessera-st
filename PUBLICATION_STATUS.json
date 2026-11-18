@@ -1,18 +1,7 @@
 {
- "latest_software_version": "2026.11.17-revision-r3",
- "latest_archive_doi": "10.5281/zenodo.24315838",
- "latest_code_tag": "https://github.com/PeterPonyu/tessera-st/tree/2026.11.17-revision-r3",
- "round3_protocol_doi": "10.5281/zenodo.24303149",
- "first_revision_archive_doi": "10.5281/zenodo.23999069",
- "software_version": "2026.10.11-controls-audit",
- "software_publication_and_download_check": "PASS",
- "editorial_document_release": "https://github.com/PeterPonyu/tessera-st/releases/tag/submission-2026-10-12",
- "editorial_document_commit": "35598778916bb2063a9479b508158f14957e15f3",
- "immutable_archives_and_release_tags_changed": false,
- "metadata_scope": "Mutable default-branch publication metadata; frozen software/source manifests in historical releases remain unchanged.",
- "only_removed_checksum_entry": "COVER_LETTER_DRAFT.md",
- "prior_manifest_sha256": "13f9414d07e3e987d1733bb6a20d03b0a87007bc7b1ca6a22b5c815d54183728",
- "current_manifest_sha256": "684a7e0081b49d6c5f871a6efb1dbc0e81bc54a5732f9065476094219bc292d3",
- "prior_complete_archive_manifest_retained_in_immutable_release": true,
- "fresh_full_analysis_manifest_run_claimed": false
+ "archive_doi": "10.5281/zenodo.24315838",
+ "protocol_doi": "10.5281/zenodo.24303149",
+ "analysis_code": "https://github.com/PeterPonyu/tessera-st/tree/2026.11.17-revision-r3",
+ "default_branch_scope": "Evaluated implementation, tests, exploratory benchmark code, design notes and the project page. Archived packages and their records remain in their tags, releases and Zenodo versions; git history is unchanged.",
+ "immutable_archives_and_release_tags_changed": false
 }

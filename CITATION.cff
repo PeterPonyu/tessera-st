@@ -1,27 +1,16 @@
 cff-version: 1.2.0
-message: "Cite this software and results archive when using its author-owned analysis code or results. The DOI identifies a software and results version, not a journal publication."
+message: "Cite this software and results archive when using its author-owned analysis code or results."
 type: software
 title: "Matched neighbourhood controls and annotation diagnostics for attributing the gains of spatial encoders: software and results archive"
 authors:
   - family-names: Fu
     given-names: Zeyu
     orcid: "https://orcid.org/0009-0001-8329-0108"
-version: "2026.11.17-revision-r3"
 doi: "10.5281/zenodo.24315838"
-date-released: "2026-11-17"
 license: MIT
 repository-code: "https://github.com/PeterPonyu/tessera-st"
-abstract: "Code, derived inputs and result tables for label diagnostics of spatial reference annotations and for an attribution protocol that compares spatial encoders (Tessera-ST, GraphST and STAGATE) with parameter-free propagation on their own graphs. Earlier versions in the same record archive the original controls audit and the first revision. Software licensing applies to author-owned code; third-party measurements and annotations retain their source-specific rights."
+abstract: "Code, derived inputs and result tables for label diagnostics of spatial reference annotations and for an attribution protocol that compares spatial encoders (Tessera-ST, GraphST and STAGATE) with parameter-free propagation on their own graphs. Software licensing applies to author-owned code; third-party measurements and annotations retain their source-specific rights."
 references:
   - type: software
-    title: "Analysis protocol for the third review round, deposited before the prospective cohorts' expression data were downloaded"
+    title: "Analysis protocol for the prospective cohorts, deposited before their expression data were downloaded"
     doi: "10.5281/zenodo.24303149"
-  - type: software
-    title: "Tessera-ST analyses of the first revision (version 2026.11.05-revision-r1.3)"
-    doi: "10.5281/zenodo.23999069"
-  - type: software
-    title: "Tessera controls audit: analysis and editable sources (version 2026.10.11-controls-audit)"
-    doi: "10.5281/zenodo.23308077"
-  - type: software
-    title: "Tessera-ST evaluated original implementation"
-    doi: "10.5281/zenodo.23101191"

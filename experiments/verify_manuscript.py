@@ -72,7 +72,7 @@ mrow = next(r for r in tf["rows"] if "MERFISH" in r["platform"])
 assert mrow["Tessera_rank"] == 1 and mrow["GT_contiguity"] > 0.9, "MERFISH highest-contig Tessera win"
 checks.append(("task-fit: contiguity predicts rank (rho -0.71) + spatial adv (rho +0.77)", 1, 1, True))
 
-# §7 expanded benchmark: 11 platforms, 6 methods (+SpaceFlow +SpatialLeiden), 3 seeds (post-review, hardened)
+# §7 expanded benchmark: 11 platforms, 6 methods (+SpaceFlow +SpatialLeiden), 3 seeds (hardened)
 eb = json.load(open("experiments/expanded_bench.json"))
 assert eb["n_platforms"] == 11, f"expanded n={eb['n_platforms']} != 11 (duplicate must be removed)"
 assert eb["n_distinct_winners"] == 7, f"expanded distinct winners {eb['n_distinct_winners']} != 7"
@@ -166,7 +166,7 @@ else:
 # the manuscript text actually contains the headline strings
 for s in ["0.036", "0.200", "0.494", "0.473", "0.392", "5/7", "3/7", "1/7", "0.451",
           "MERFISH", "osmFISH", "0.406", "0.449", "0.71", "0.77", "0.931",
-          # §7 strings (post-review, n=11, 6 methods, 3 seeds)
+          # §7 strings (n=11, 6 methods, 3 seeds)
           "SpaceFlow", "SpatialLeiden", "11 platforms", "7 distinct winners", "+0.72", "0.012",
           "−0.36", "0.413", "seed-level tie", "duplicate dataset", "[0.69, 0.77]",
           # §8 R2 strings (GT-free proxy, statistical rigor, backend fairness)
