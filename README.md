@@ -8,9 +8,11 @@ There are three levels of reproduction. Level 1 needs only the saved results. Le
 
 **Getting the files.** Clone this repository. The GitHub copy omits large arrays (inputs, embeddings, model states). To get them:
 
-- **Calibration analyses (controls audit of Tessera-ST):** download the complete archive at [doi:10.5281/zenodo.23308077](https://doi.org/10.5281/zenodo.23308077) and reassemble it as described in its `REASSEMBLE.md`.
-- **Budget, tuning and cluster-number analyses (`revision-r1/`):** code and result tables at [doi:10.5281/zenodo.23999069](https://doi.org/10.5281/zenodo.23999069), which also keeps every file of the archive above.
-- **Label diagnostics, construction-scale experiment, prospective test and encoder comparison (`revision-r3/`):** the protocol for the prospective cohorts was deposited before their expression data were downloaded at [doi:10.5281/zenodo.24303149](https://doi.org/10.5281/zenodo.24303149). The code, the derived inputs of the prospective cohorts and every result table are archived at [doi:10.5281/zenodo.24315838](https://doi.org/10.5281/zenodo.24315838), which also keeps every file of the archives above. See [Prospective analyses](#prospective-analyses) below.
+- **Archived files:** download the archive at [doi:10.5281/zenodo.24315838](https://doi.org/10.5281/zenodo.24315838), which holds every earlier file:
+  - the code, the derived inputs of the prospective cohorts and every result table of the label diagnostics, construction-scale experiment, prospective test and encoder comparison (`revision-r3/`);
+  - the code and result tables of the budget, tuning and cluster-number analyses (`revision-r1/`);
+  - the complete archive of the calibration analyses (controls audit of Tessera-ST), reassembled as described in its `REASSEMBLE.md`.
+- **Protocol:** the protocol for the prospective cohorts was deposited before their expression data were downloaded, at [doi:10.5281/zenodo.24303149](https://doi.org/10.5281/zenodo.24303149). See [Prospective analyses](#prospective-analyses) below.
 
 **Environment.** Python 3.13 with the versions in `current-release/requirements-analysis.txt`. PyTorch 2.12 with CUDA is used for the GPU steps; every step also runs on CPU, more slowly. The encoder fits of the prospective analyses (GraphST, STAGATE and Tessera-ST, `revision-r3/remote/`) ran in a separate environment: Python 3.11.10 and PyTorch 2.5.1 with CUDA 12.4, in the container image `pytorch/pytorch:2.5.1-cuda12.4-cudnn9-runtime`. `results/revision-r3/W4/BOX.md` in the archive and every fit record give the exact versions; their calibration, scoring and summaries ran in the Python 3.13 environment above.
 
@@ -24,7 +26,7 @@ python revision-r1/analyze_r1.py                              # tables, decision
 python revision-r1/figures/build_r1_figures.py all            # every main and supplementary figure (needs matplotlib and PyMuPDF)
 ```
 
-| Item of the controls audit | Produced by |
+| Item (numbering of the controls-audit documents) | Produced by |
 |---|---|
 | Tables 1–3 and Supplementary Tables S1–S15 | the original analyses, checked by `verify_saved_results.py` |
 | Supplementary Table S16 (settings) and S17 (data sources) | written from the configuration and the source manifests |
