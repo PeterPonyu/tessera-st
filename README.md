@@ -1,6 +1,6 @@
-# Tessera-ST: a gated graph encoder for spatial omics, and its controls audit
+# Tessera-ST: a gated graph encoder for spatial omics, with matched controls and label diagnostics
 
-Tessera-ST is a self-supervised graph encoder for spatial molecular data (package `tessera_st`). Earlier releases call it Tessera. It is unrelated to other tools named Tessera, such as the tissue-tiling method of Stein et al. (2025), the multi-sample differential-expression model of Constantine et al. (2026) and the representation-learning framework of Dehghani Amirabad et al. (2026). The accompanying study tests how much of the encoder's spatial gain is explained by neighborhood averaging, using matched controls, component removals and patient-held-out evaluation.
+Tessera-ST is a self-supervised graph encoder for spatial molecular data (package `tessera_st`). Some files call it Tessera. It is unrelated to other tools named Tessera, such as the tissue-tiling method of Stein et al. (2025), the multi-sample differential-expression model of Constantine et al. (2026) and the representation-learning framework of Dehghani Amirabad et al. (2026). The accompanying study asks what a learned spatial encoder adds beyond averaging each observation with its neighbours, using label diagnostics of reference annotations, matched parameter-free controls, component removals and patient-held-out evaluation.
 
 ## Reproduce this study
 
@@ -8,34 +8,34 @@ There are three levels of reproduction. Level 1 needs only the saved results. Le
 
 **Getting the files.** Clone this repository. The GitHub copy omits large arrays (inputs, embeddings, model states). To get them:
 
-- **Original submission:** download the complete archive at [doi:10.5281/zenodo.23308077](https://doi.org/10.5281/zenodo.23308077) and reassemble it as described in its `REASSEMBLE.md`.
-- **Revision analyses:** the revision code and result tables are archived at [doi:10.5281/zenodo.23999069](https://doi.org/10.5281/zenodo.23999069) (version 2026.11.05-revision-r1.3), which also keeps every file of the original archive.
-- **Third-round analyses:** the protocol for the prospective cohorts was deposited before their expression data were downloaded at [doi:10.5281/zenodo.24303149](https://doi.org/10.5281/zenodo.24303149). The round-3 code, the derived inputs of the prospective cohorts and every round-3 result table are archived at [doi:10.5281/zenodo.24315838](https://doi.org/10.5281/zenodo.24315838) (version 2026.11.17-revision-r3), which also keeps every file of the earlier versions. See [Round-3 analyses](#round-3-analyses) below.
+- **Calibration analyses (controls audit of Tessera-ST):** download the complete archive at [doi:10.5281/zenodo.23308077](https://doi.org/10.5281/zenodo.23308077) and reassemble it as described in its `REASSEMBLE.md`.
+- **Budget, tuning and cluster-number analyses (`revision-r1/`):** code and result tables at [doi:10.5281/zenodo.23999069](https://doi.org/10.5281/zenodo.23999069), which also keeps every file of the archive above.
+- **Label diagnostics, construction-scale experiment, prospective test and encoder comparison (`revision-r3/`):** the protocol for the prospective cohorts was deposited before their expression data were downloaded at [doi:10.5281/zenodo.24303149](https://doi.org/10.5281/zenodo.24303149). The code, the derived inputs of the prospective cohorts and every result table are archived at [doi:10.5281/zenodo.24315838](https://doi.org/10.5281/zenodo.24315838), which also keeps every file of the archives above. See [Prospective analyses](#prospective-analyses) below.
 
-**Environment.** Python 3.13 with the versions in `current-release/requirements-analysis.txt`. PyTorch 2.12 with CUDA is used for the GPU steps; every step also runs on CPU, more slowly. The round-3 encoder fits (GraphST, STAGATE and Tessera-ST, `revision-r3/remote/`) ran in a separate environment: Python 3.11.10 and PyTorch 2.5.1 with CUDA 12.4, in the container image `pytorch/pytorch:2.5.1-cuda12.4-cudnn9-runtime`. `results/revision-r3/W4/BOX.md` in the archive and every fit record give the exact versions; the round-3 calibration, scoring and summaries ran in the Python 3.13 environment above.
+**Environment.** Python 3.13 with the versions in `current-release/requirements-analysis.txt`. PyTorch 2.12 with CUDA is used for the GPU steps; every step also runs on CPU, more slowly. The encoder fits of the prospective analyses (GraphST, STAGATE and Tessera-ST, `revision-r3/remote/`) ran in a separate environment: Python 3.11.10 and PyTorch 2.5.1 with CUDA 12.4, in the container image `pytorch/pytorch:2.5.1-cuda12.4-cudnn9-runtime`. `results/revision-r3/W4/BOX.md` in the archive and every fit record give the exact versions; their calibration, scoring and summaries ran in the Python 3.13 environment above.
 
-**Where the files go.** By default the scripts look for `data/`, `results/` and `validation/` next to this repository, and otherwise for the same folders under `current-release/`. Override with the environment variables `TESSERA_DATA`, `TESSERA_RESULTS`, `TESSERA_VALIDATION`, `TESSERA_R1_OUT` (revision outputs), `TESSERA_R1_SUMMARY` (revision summary tables) and `TESSERA_LAB_ROOT` (raw anatomical sections). The figure scripts honor the same variables, write to the folders given by `R1_PDF_OUT`, `R1_JPG_OUT` and `R1_QA_OUT`, and use Arial; if Arial is not installed system-wide, set `R1_FONT_DIR` to a folder containing the Arial TTF files.
+**Where the files go.** By default the scripts look for `data/`, `results/` and `validation/` next to this repository, and otherwise for the same folders under `current-release/`. Override with the environment variables `TESSERA_DATA`, `TESSERA_RESULTS`, `TESSERA_VALIDATION`, `TESSERA_R1_OUT` (outputs of `revision-r1/`), `TESSERA_R1_SUMMARY` (its summary tables) and `TESSERA_LAB_ROOT` (raw anatomical sections). The figure scripts honor the same variables, write to the folders given by `R1_PDF_OUT`, `R1_JPG_OUT` and `R1_QA_OUT`, and use Arial; if Arial is not installed system-wide, set `R1_FONT_DIR` to a folder containing the Arial TTF files.
 
 ### Level 1: regenerate every table and figure from saved results (minutes, no fitting)
 
 ```bash
 python current-release/portable/verify_saved_results.py      # original tables: recomputed from saved predictions
-python revision-r1/analyze_r1.py                              # revision tables, decision rules, manuscript numbers
+python revision-r1/analyze_r1.py                              # tables, decision rules and numbers of revision-r1/
 python revision-r1/figures/build_r1_figures.py all            # every main and supplementary figure (needs matplotlib and PyMuPDF)
 ```
 
-| Manuscript item | Produced by |
+| Item of the controls audit | Produced by |
 |---|---|
 | Tables 1–3 and Supplementary Tables S1–S15 | the original analyses, checked by `verify_saved_results.py` |
-| Supplementary Table S16 (settings) and S17 (data sources) | written in the manuscript source from the configuration and the source manifests |
+| Supplementary Table S16 (settings) and S17 (data sources) | written from the configuration and the source manifests |
 | Supplementary Tables S18–S25 and Figures 5 and 6 | `revision-r1/analyze_r1.py` and `revision-r1/figures/build_r1_figures.py` |
 | All other figures | `revision-r1/figures/build_r1_figures.py` from the saved results |
 
 ### Level 2: refit the supported analyses from the archived derived inputs
 
-The original analyses take about 2 h on a laptop GPU. The analyses added during review take longer. The graphs of 200 neighbors need a GPU with about 80 GB of memory, and the breast and colorectal fits need the raw downloads of Level 3. Some extension outputs cannot be refitted from scratch; they are kept with the archived results.
+The primary analyses of the controls audit take about 2 h on a laptop GPU; the budget, tuning and cluster-number analyses take longer. The graphs of 200 neighbors need a GPU with about 80 GB of memory, and the breast and colorectal fits need the raw downloads of Level 3. Some extension outputs cannot be refitted from scratch; they are kept with the archived results.
 
-The original analyses:
+The primary analyses:
 
 ```bash
 python current-release/portable/run_analysis.py primary  --device cuda --output-root OUT/primary
@@ -44,10 +44,10 @@ python current-release/portable/run_analysis.py her2st   --raw-dir RAW/her2st --
 python current-release/portable/run_analysis.py crc      --output-root OUT/crc
 ```
 
-The analyses added during review follow `revision-r1/PROTOCOL-R1.md`. Run the tests before any fit:
+The budget, tuning and cluster-number analyses follow `revision-r1/PROTOCOL-R1.md`. Run the tests before any fit:
 
 ```bash
-python -m pytest revision-r1/test_r1.py                       # the training loop reproduces the original fits exactly on CPU
+python -m pytest revision-r1/test_r1.py                       # the training loop reproduces the primary fits exactly on CPU
 python revision-r1/run_budget.py gpu;    python revision-r1/run_budget.py her2st;      python revision-r1/run_budget.py transfer
 python revision-r1/run_tuning.py grid-gpu; python revision-r1/run_tuning.py grid-her2st; python revision-r1/run_tuning.py mechanism
 python revision-r1/run_k_sweep.py sweep; python revision-r1/run_k_sweep.py harmonize; python revision-r1/run_k_sweep.py refine
@@ -64,7 +64,7 @@ Breast (HER2ST) fits run on one CPU thread, so they are deterministic. GPU fits 
 
 ### Level 3: rebuild the derived inputs from the public sources
 
-The public datasets and their repository identifiers are listed in the manuscript's Supplementary Table S17. Each acquired file is checked against the size and SHA-256 recorded in the archive:
+The public datasets and their repository identifiers are recorded in the source manifests of the archive. Each acquired file is checked against the size and SHA-256 recorded in the archive:
 
 ```bash
 python current-release/portable/acquire.py her2st --source-dir RAW/manual-her2st --destination RAW/her2st
@@ -72,14 +72,14 @@ python current-release/portable/acquire.py crc    --source-dir RAW/manual-crc   
 python current-release/portable/run_analysis.py prepare --lab-root RAW/sources --output-root OUT/inputs
 ```
 
-## Round-3 analyses
+## Prospective analyses
 
-The third review round reorganized the study around label diagnostics and matched parameter-free controls. Everything for
-it is in `revision-r3/`. The protocol is `revision-r3/PROTOCOL-R3.md`, byte-identical to its deposit, and every
-departure from it is listed with its date in `revision-r3/PROTOCOL-R3-DEVIATIONS.md`. Results are written under
+The label diagnostics, the construction-scale experiment, the prospective test and the encoder comparison are in
+`revision-r3/`. The protocol is `revision-r3/PROTOCOL-R3.md`, byte-identical to its deposit, and every
+departure from it is listed in `revision-r3/PROTOCOL-R3-DEVIATIONS.md`. Results are written under
 `results/revision-r3/` (override with `TESSERA_R3_OUT`).
 
-1. **Calibration on the 24 earlier datasets** (CPU): `run_w1.py` (label diagnostics and the control grid),
+1. **Calibration on the 24 calibration datasets** (CPU): `run_w1.py` (label diagnostics and the control grid),
    `run_w1b.py` (lung niches rebuilt at known construction scales), `run_w2.py leiden` and `run_w2.py seeds` (clustering
    rule and seed spread), `run_w3.py` (component removals and propagation depth), then `prepare_freeze.py`, which fixed
    the scale rule and the margins before any prospective cohort was downloaded.
@@ -99,20 +99,21 @@ Tests: `test_r3.py`, `external/test_external_r3.py`, `external/test_tessera_adap
 `float_precision="round_trip"`, because pandas' default float parser crashed on some of their values; and scoring and
 the counterparts run as independent shard processes (`--shard i --nshards N`) rather than in a Python worker pool.
 
-## Current manuscript documents
+## Archived versions
 
-The reviewed main Article, Supplementary Information and editable document sources are available in the [submission-2026-10-12 document release](https://github.com/PeterPonyu/tessera-st/releases/tag/submission-2026-10-12) and in [submission-2026-10-12/](submission-2026-10-12/README.md).
+The calibration analyses (the controls audit of Tessera-ST) are archived as version 2026.10.11-controls-audit at
+[doi:10.5281/zenodo.23308077](https://doi.org/10.5281/zenodo.23308077); their frozen research source is in
+[current-release/](current-release/), and the complete archive, with retained arrays and model states, can be
+reassembled from that record. The budget, tuning and cluster-number analyses are archived at
+[doi:10.5281/zenodo.23999069](https://doi.org/10.5281/zenodo.23999069), and the analyses in `revision-r3/` at
+[doi:10.5281/zenodo.24315838](https://doi.org/10.5281/zenodo.24315838); each version keeps every file of the versions
+before it.
 
-The analyses of the original submission are version 2026.10.11-controls-audit, DOI [10.5281/zenodo.23308077](https://doi.org/10.5281/zenodo.23308077). The analyses added during review are version 2026.11.05-revision-r1.3, DOI [10.5281/zenodo.23999069](https://doi.org/10.5281/zenodo.23999069), which keeps the earlier files and adds the revision code and result tables. It archives the frozen computational evidence and its earlier document sources. The later editorial revision has a separate GitHub document tag; it adds no model fits or biological samples. Earlier document files remain available for provenance.
+The root `src/` implementation is byte-identical to the archived implementation. The neural core and the field-aware
+graph and data adapters have distinct provenance, documented in
+[the comparison record](current-release/provenance/historical-core-versus-adapters.json). A preliminary release of the
+software is archived at [doi:10.5281/zenodo.23101191](https://doi.org/10.5281/zenodo.23101191).
 
-Frozen research-source version **2026.10.11-controls-audit** is in [current-release/](current-release/). The earlier archived [inline manuscript](current-release/output/scientific-reports/scientific-reports-manuscript-inline.pdf), [journal manuscript](current-release/output/scientific-reports/scientific-reports-manuscript.pdf) and [supplement](current-release/output/scientific-reports/scientific-reports-supplement.pdf) report matched neighbourhood controls, component removals, patient-held-out transfer, exploratory HER2ST comparator extensions and the separate colorectal pilot. The author developed and maintains the evaluated implementation.
-
-The root `src/` implementation is byte-identical to the current archive's implementation. The original neural core and the field-aware graph/data adapters have distinct provenance, documented in [the comparison record](current-release/provenance/historical-core-versus-adapters.json). The earlier public manuscript and implementation are archived at [DOI 10.5281/zenodo.23101191](https://doi.org/10.5281/zenodo.23101191); it does not archive later controls or document changes.
-
-The complete versioned source and saved-evidence archive is associated with [software DOI 10.5281/zenodo.23308077](https://doi.org/10.5281/zenodo.23308077). This version is published, and every public file plus the reconstructed complete ZIP has been downloaded and hash-verified. The finalized complete ZIP has SHA256 `09c75b7a7927755e60d4097fbb85b3120ee792bc2f1372b0f2d1a14a5cdde680`.
-
-This checkout and the compact source/document ZIP include current code, protocols, documents, score tables and receipts. Retained input/embedding arrays and model states are supplied in the complete archive. [Compact-distribution instructions](current-release/README.md) explain which checks run here and which require the complete archive. Saved-result verification and full refitting have distinct requirements and documented limits.
-
-Author-owned code is MIT; author-owned research content is CC BY 4.0. [Licensing](LICENSING.md) and [source notices](NOTICE.md) preserve third-party terms. Breast displays use author-generated coordinate maps; no 10x breast H&E image/background is redistributed in the current release. The separate dataset-licensed CRC images retain their attribution.
-
-The mutable compact checksum list omits the removed obsolete cover draft; the complete published archive retains its original manifest. `PUBLICATION_STATUS.json` records this housekeeping change separately from the frozen software and document releases.
+Author-owned code is MIT; author-owned research content is CC BY 4.0. [Licensing](LICENSING.md) and
+[source notices](NOTICE.md) preserve third-party terms. Breast displays use author-generated coordinate maps; no 10x
+breast H&E image or background is redistributed. The separate dataset-licensed CRC images retain their attribution.

@@ -36,7 +36,7 @@ import prepare_freeze as pf  # noqa: E402  frozen regret definition
 
 R3 = F.R3
 OUT = F.OUT
-SOURCE = F.PROJECT / 'submissions/frontiers-in-genetics/revision-3-2028706/source'
+SOURCE = OUT.parent   # the manuscript source folder that holds figures-r3/ and figures-r3.tex
 CAPTIONS = SOURCE / 'figures-r3.tex'
 WIDTH_PT = 180 / 25.4 * 72
 MINUS = '\u2212'

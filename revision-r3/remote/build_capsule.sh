@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # Laptop: build the WP4 capsule from the committed repository and the small derived inputs.
 set -euo pipefail
-P=/home/zeyufu/Desktop/singlecell-genomics-research/projects/tessera-st
-S=$P/revisions/frontiers-2028706-r3-new-reviewer-20261116/capsule
+P=${TESSERA_PROJECT:?set TESSERA_PROJECT to the project folder that holds repository/, data/ and results/}
+S=${CAPSULE_DIR:-$P/capsule}
 test -z "$(git -C "$P/repository" status --porcelain -- revision-r3)" || { echo "commit revision-r3 first"; exit 1; }
 rm -rf "$S"; mkdir -p "$S/stage/tessera-st/results/revision-r1/E4"
 git -C "$P/repository" archive --prefix=tessera-st/repository/ HEAD | tar -x -C "$S/stage"

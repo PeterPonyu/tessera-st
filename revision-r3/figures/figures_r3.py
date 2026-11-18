@@ -1,4 +1,4 @@
-"""Round-3 main figures for the Frontiers in Genetics revision, drawn natively in Arial from saved results.
+"""Main figures of the prospective analyses, drawn natively in Arial from saved results.
 
 Figures (vector PDF plus 300-dpi PNG, 180 mm wide):
   fig-concept       schematic: one synthetic tissue under three references, the label diagnostics,
@@ -64,8 +64,7 @@ plt = S.plt
 
 # ------------------------------------------------------------------ paths
 R3 = Path(os.environ.get('TESSERA_R3_OUT') or PROJECT / 'results' / 'revision-r3')
-OUT = Path(os.environ.get('R3_FIG_OUT') or
-           PROJECT / 'submissions/frontiers-in-genetics/revision-3-2028706/source/figures-r3')
+OUT = Path(os.environ.get('R3_FIG_OUT') or PROJECT / 'manuscript' / 'figures-r3')   # set R3_FIG_OUT to the manuscript's figure folder
 QA = Path(os.environ.get('R3_FIG_QA') or HERE / 'qa')
 GPU_REPEATS = Path(os.environ.get('R3_GPU_REPEATS') or R3 / 'W4' / 'gpu_repeats' / 'gpu_repeats.csv')
 MACROS = R3 / 'summary' / 'revision-r3-macros.tex'
