@@ -6,8 +6,9 @@ of a reference annotation decides that comparison before any method is run.
 
 ## Analysis code and archives
 
-- **Analysis code:** tag [`2026.11.17-revision-r3`](https://github.com/PeterPonyu/tessera-st/tree/2026.11.17-revision-r3),
-  folder `revision-r3/`. Its README gives the commands for each step: label diagnostics of reference annotations, the
+- **Analysis code:** folder `revision-r3/` on the branch
+  [`revision-r3`](https://github.com/PeterPonyu/tessera-st/tree/revision-r3), whose README gives the commands for each
+  step: label diagnostics of reference annotations, the
   construction-scale experiment, the prospective test, and the comparison of GraphST, STAGATE and Tessera-ST with
   parameter-free propagation on their own graphs.
 - **Code, derived inputs and result tables:** [doi:10.5281/zenodo.24315838](https://doi.org/10.5281/zenodo.24315838).

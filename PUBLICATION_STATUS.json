@@ -1,7 +1,7 @@
 {
  "archive_doi": "10.5281/zenodo.24315838",
  "protocol_doi": "10.5281/zenodo.24303149",
- "analysis_code": "https://github.com/PeterPonyu/tessera-st/tree/2026.11.17-revision-r3",
+ "analysis_code": "https://github.com/PeterPonyu/tessera-st/tree/revision-r3",
  "default_branch_scope": "Evaluated implementation, tests, exploratory benchmark code, design notes and the project page. Archived packages and their records remain in their tags, releases and Zenodo versions; git history is unchanged.",
  "immutable_archives_and_release_tags_changed": false
 }
