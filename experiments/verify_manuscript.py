@@ -264,7 +264,7 @@ for s in ["+0.72", "+0.79", "+0.56", "+0.98", "0.473", "20 of 81", "0.36", "mclu
 # R6 decoupling control: load the adopted local artifact directly. JSON files remain git-ignored
 # experiment outputs, but the release builder requires this one and this verifier fails if it is absent.
 dc = json.load(open("experiments/mechanism_decoupled_v2.json"))
-assert dc["status"].startswith("ADOPTED as CLAIM_LEDGER.md R6 robustness evidence"), \
+assert dc["status"].startswith("ADOPTED as R6 robustness evidence"), \
     f"v2 decoupling artifact is not adopted: {dc['status']}"
 assert dc["fidelity_restored"]["stagate_n_epochs"] == 400, "v2 must match the primary 400-epoch fidelity"
 assert dc["fidelity_restored"]["seeds_v2"] == [1, 2, 3, 4, 5], "v2 must use the reported five seeds"
@@ -318,7 +318,7 @@ checks.append(("R6 v2: slopes favor contiguity; only B flips; B floor is flatter
                1, 1, True))
 
 # --- numeric ties: derive hand-typed table/prose values from the JSON and require them in paper.tex
-# (red-team found the presence-only list left tables/p-values un-tied to the ledger; this closes it:
+# (a presence-only list left tables/p-values un-tied to the saved results; this closes it:
 # a wrong OR deleted value fails the check because the JSON-derived string is no longer present) ---
 _ci = sr["bootstrap_gt_contiguity"]["ci95"]
 _prt = sr["contiguity_partial_spearman_controlling"]

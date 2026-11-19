@@ -1,6 +1,6 @@
 # experiments/
 
-Generated ablation outputs. **None of these is a scientific claim** — see `../CLAIM_LEDGER.md`.
+Generated ablation outputs. **None of these is a scientific claim.**
 
 ## `synth_ablation.json`
 
@@ -14,8 +14,8 @@ correctness + harness-discrimination check**, not biology:
   near-zero noise everything (including the bare backbone) hits ARI≈1.0 and the table shows
   no headroom; that easy regime is uninformative by construction.
 - Whether each component *helps* is an empirical question reserved for the real DLPFC ablation
-  (`tessera ablate-real`), and stays LOCKED in the claim ledger until that evidence + seed
-  variance + same-data baseline parity land.
+  (`tessera ablate-real`); no such claim is made without that evidence, seed variance and
+  same-data baseline parity.
 
 Reproduce:
 

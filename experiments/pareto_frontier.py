@@ -3,7 +3,7 @@
 Reads rigorous_bench.json (cross-section GMM results). Plots (ASCII) ARI vs boundary_F1, computes
 the non-dominated frontier, and labels where each method sits. The mechanism story (contrastive ->
 boundary end; reconstruction/smoothing -> global end) is corroborated by the 4 failed transfer
-experiments recorded in CLAIM_LEDGER (BANKSY-aug, SEDR-VAE, GAT-attn, decoupled — all traded ARI
+experiments (BANKSY-aug, SEDR-VAE, GAT-attn, decoupled — all traded ARI
 against boundary_F1). Emits a figure spec + frontier JSON for the manuscript.
 """
 

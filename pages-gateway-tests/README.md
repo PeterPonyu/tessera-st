@@ -1,18 +1,20 @@
-# Tessera-ST Pages landing tests (Playwright)
+# Tests of the Tessera-ST Pages leaf (Playwright)
 
-Browser policy gate for **this repo's** GitHub Pages leaf only (`https://peterponyu.github.io/tessera-st/`). It does **not** crawl sibling paper sites.
+Browser tests for this repository's GitHub Pages leaf only (`https://peterponyu.github.io/tessera-st/`). Other sites
+are not crawled.
 
-## Contract
+## What is checked
 
 | Check | Rule |
 |---|---|
-| Home | HTTP 200 code-description leaf |
-| Leak tokens | No `0.022` / `0.931` / ρ / Spearman / unpublished-results copy |
-| Retired routes | `/results/` `/methods/` `/evidence/` `/claims/` stay custom 404 (`path retired`) |
-| Chrome | Sticky header with Homepage + SCPortal |
-| Layout | No horizontal overflow on Home @ 1280 and 390 |
-| Packaging | No venue-intended / under review / BibTeX kit |
-| Links | Public `PeterPonyu/tessera-st`; no HetCLOP href; no invented article DOI |
+| Home | HTTP 200 |
+| Heading | The main heading is descriptive, not a marketing phrase |
+| Content | No result values; the list of checked tokens is in `sites.mjs` |
+| Retired routes | `/results/`, `/methods/`, `/evidence/` and `/claims/` return the custom 404 page |
+| Header | Sticky header with links to Homepage and SCPortal |
+| Layout | No horizontal overflow at 1280 px and 390 px |
+| Citation and venue text | No journal or citation material on the page |
+| Links | The public `PeterPonyu/tessera-st` repository; no link to a listed private repository; no article DOI |
 
 ## Run locally
 

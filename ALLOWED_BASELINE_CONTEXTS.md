@@ -6,7 +6,7 @@ conventions* — never code.
 ## Allowed
 
 - Cite baseline papers and name baseline methods in: `README.md`, `DESIGN.md`,
-  `BASELINE_REFERENCES.md`, `CLAIM_LEDGER.md`, and `experiments/**` result notes.
+  `BASELINE_REFERENCES.md`, and `experiments/**` result notes.
 - Reproduce baseline *behaviour* by running their upstream repos behind an adapter to produce
   comparison numbers on the same DLPFC inputs.
 - Reuse field-standard conventions that are not anyone's IP: kNN spatial graph, HVG→PCA

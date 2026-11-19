@@ -143,7 +143,7 @@ rule stands for them too: enthrone none.
 
 ## Non-goals / guardrails
 
-- No performance claim graduates until a real-DLPFC run + full ablation + same-data baseline
-  parity + a clean leakage scan land in `CLAIM_LEDGER.md`. The synthetic smoke proves the
-  machine runs; it proves nothing biological.
-- Clean-room: baseline brand names live only in the three provenance docs, never in `src/`.
+- No performance claim is made without a real-DLPFC run + full ablation + same-data baseline
+  parity + a clean leakage scan. The synthetic smoke proves the machine runs; it proves nothing
+  biological.
+- Clean-room: baseline brand names live only in the provenance docs, never in `src/`.

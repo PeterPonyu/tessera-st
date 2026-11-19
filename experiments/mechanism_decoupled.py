@@ -43,7 +43,7 @@ procedure -- is identical to `mechanism_synth.py`.
 
 Writes experiments/mechanism_decoupled.json only. Does NOT touch mechanism_synth.json,
 verify_manuscript.py, or any bayesspace_*.json artifact. This is a STAGED result for human review
--- no manuscript/paper.tex or CLAIM_LEDGER.md edits are made here.
+-- no manuscript/paper.tex edits are made here.
 """
 
 import sys
@@ -306,7 +306,7 @@ out = {
                                "alignment_control_range": alignment_control_range_b},
     "contrast": contrast,
     "verdict": verdict,
-    "status": "STAGED -- not promoted through CLAIM_LEDGER.md LOCKED->graduated gate; report only",
+    "status": "STAGED -- report only; not promoted to a claim",
 }
 json.dump(out, open("experiments/mechanism_decoupled.json", "w"), indent=2)
 print("\nwrote experiments/mechanism_decoupled.json")

@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tessera-ST · field-aware protocol audit</title>
-  <meta name="description" content="Public code and author-review archive for a field-aware spatial evaluation-protocol audit. Scientific submission remains on hold.">
+  <title>Tessera-ST · matched controls and label diagnostics</title>
+  <meta name="description" content="Public code and analysis archives for label diagnostics of spatial reference annotations and for comparing spatial encoders with parameter-free propagation on their own graphs.">
   <meta name="robots" content="noindex, follow">
   <link rel="canonical" href="https://peterponyu.github.io/tessera-st/">
   <link rel="stylesheet" href="landing.css">
@@ -24,52 +24,45 @@
 
   <main class="ts-sheet">
     <p class="ts-kicker">Public code leaf</p>
-    <h1>Tessera-ST field-aware protocol audit</h1>
+    <h1>Matched neighbourhood controls and label diagnostics for spatial encoders</h1>
     <p>
       This page describes the public repository
       <a href="https://github.com/PeterPonyu/tessera-st">PeterPonyu/tessera-st</a>.
-      The current research version is under <code>current-release/</code>, not the older root-level workbench.
-    </p>
-    <p class="mute">
-      This leaf points to the versioned research release. Scientific submission remains on HOLD;
-      public availability does not establish scientific clearance.
+      The analysis code, the protocol and its departures are on the analysis branch linked below; code, derived inputs
+      and result tables are archived on Zenodo.
     </p>
 
-    <h2>What the package does</h2>
+    <h2>What the code does</h2>
     <p>
-      The release audits coordinate-frame identities, genuinely expression-only controls
-      and the interpretation of specified synthetic interventions. Tessera is one audited
-      procedure, not a validated superior architecture or a deployment-ready selector.
+      It asks what a learned spatial encoder adds beyond averaging each observation with its neighbours, and how much
+      the construction of a reference annotation decides that comparison before any method is run.
     </p>
     <ul>
-      <li>Adaptive edge gating (off: plain mean aggregation)</li>
-      <li>Multi-scale fusion (off: last layer only)</li>
-      <li>Boundary-contrastive loss (off: reconstruction only)</li>
-      <li>Legacy confidence output withheld; no validated confidence claim</li>
+      <li>Label diagnostics from a reference annotation and its coordinates: chance-corrected homophily across scales, label informativeness, a label correlation length, and how well each observation's own expression predicts its label</li>
+      <li>Tuned neighbourhood-mean controls, selected on other patients with the same rule as each encoder's settings</li>
+      <li>Parameter-free propagation on each encoder's own graph, matched to its message-passing depth</li>
+      <li>Unmodified runs of GraphST and STAGATE through adapters, beside the Tessera-ST gated graph encoder</li>
+      <li>Component removals for all three encoders, including spatial positives without message passing</li>
     </ul>
-
-    <h2>Current code and archive</h2>
-    <p><a href="https://github.com/PeterPonyu/tessera-st/tree/author-review-2026-10-02/current-release">Versioned research code and saved outputs</a><br>
-      <a href="https://doi.org/10.5281/zenodo.23101191">Zenodo research archive</a><br>
-      <a href="https://github.com/PeterPonyu/tessera-st/blob/author-review-2026-10-02/current-release/manuscript/paper.pdf">Current single-column article</a></p>
-    <pre>cd current-release
-python verify_release.py</pre>
     <p class="mute">
-      Complete refits require separately acquired, hash-matched upstream data and methods.
-      See the current release README for distinct verification and reproduction tiers.
+      Tessera-ST is one of the three encoders compared.
     </p>
 
-    <h2>What this leaf is not</h2>
-    <p>
-      Not a method-ranking page. Not a journal companion. Not an archive of figures.
-      Install the package from GitHub if you want the code; do not treat this leaf
-      as a findings report.
+    <h2>Code and archives</h2>
+    <p><a href="https://github.com/PeterPonyu/tessera-st/tree/revision-r3/revision-r3">Analysis code, protocol and departures</a><br>
+      <a href="https://doi.org/10.5281/zenodo.24315838">Zenodo archive (code, derived inputs and result tables)</a><br>
+      <a href="https://doi.org/10.5281/zenodo.24303149">Analysis protocol, deposited before the prospective cohorts&#8217; expression data were downloaded</a></p>
+    <pre>git clone https://github.com/PeterPonyu/tessera-st
+cd tessera-st
+git checkout revision-r3</pre>
+    <p class="mute">
+      The repository README lists the commands for each step, from the saved result tables to complete refits.
+      Complete refits need the public source data; the README explains how to obtain and check them.
     </p>
 
     <p class="ts-foot">
       Source:
       <a href="https://github.com/PeterPonyu/tessera-st">github.com/PeterPonyu/tessera-st</a>.
-      No article DOI is assigned on this leaf.
     </p>
   </main>
 </body>

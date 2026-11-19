@@ -1,8 +1,7 @@
 """Clean-room gate: no baseline brand name may appear in the executable source tree.
 
 Brand names are permitted ONLY in the provenance docs (BASELINE_REFERENCES.md,
-ALLOWED_BASELINE_CONTEXTS.md, CLAIM_LEDGER.md). This mirrors the parent program's
-leakage-scan discipline so the project can graduate cleanly.
+ALLOWED_BASELINE_CONTEXTS.md).
 """
 
 from pathlib import Path

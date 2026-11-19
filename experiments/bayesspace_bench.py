@@ -71,8 +71,7 @@ RUNTIME ESTIMATE (inferred --- no BayesSpace run exists on disk to calibrate aga
     estimates from BayesSpace's published scaling, NOT measured here.
 
 DO NOT add BayesSpace numbers to the public study from a single unvalidated run: fold results in only
-after the neighbour-structure caveat is checked and (per CLAIM_LEDGER.md's LOCKED->graduated gate) the
-panel-count / winner claims are re-verified.
+after the neighbour-structure caveat is checked and the panel-count / winner claims are re-verified.
 """
 
 import os

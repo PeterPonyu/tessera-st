@@ -31,8 +31,7 @@ v1's naive abs(rho) verdict ignored:
 
 Writes experiments/mechanism_decoupled_v2.json ONLY. Does NOT touch mechanism_synth.json or
 mechanism_decoupled.json (v1 kept intact). The generated artifact is adopted as the R6 robustness
-evidence in CLAIM_LEDGER.md and manuscript/paper.tex; the scientific claim itself remains LOCKED
-under the ledger's global honest-claims policy.
+evidence in manuscript/paper.tex; no causal claim is made from it.
 """
 
 import sys
@@ -363,8 +362,7 @@ out = {
                      "held flat [clean manipulation] -- Arm A's expr-swap also destroys the "
                      "recoverable signal, so its shrinking advantage is partly generic signal loss."),
     "runtime_sec": round(time.time() - t0, 1),
-    "status": ("ADOPTED as CLAIM_LEDGER.md R6 robustness evidence; causal claim remains LOCKED "
-               "under the global honest-claims policy"),
+    "status": "ADOPTED as R6 robustness evidence; no causal claim is made",
 }
 json.dump(out, open("experiments/mechanism_decoupled_v2.json", "w"), indent=2)
 print(f"\nwrote experiments/mechanism_decoupled_v2.json  ({out['runtime_sec']}s)")
